@@ -1,0 +1,218 @@
+import MathlibNt.AnalyticNumberTheory.LargeSieve.StandardBVPayload
+/-! Finite versions of the existing elementary BV payments (Apache-2.0).
+All three estimates hold already for N >= 3. -/
+namespace ChenEffective
+open AnalyticNumberTheory.LargeSieve
+open Classical Finset Filter
+open scoped BigOperators ArithmeticFunction Topology
+noncomputable section
+set_option maxHeartbeats 2400000
+
+theorem explicit_Q_sqrt_log_payment (A k N : ℕ) (hN : 3 ≤ N) :
+    ∀ Q : ℕ,
+      (Q : ℝ) ≤ Real.sqrt N / Real.log N ^ (A + k) →
+      (Q : ℝ) * (Real.sqrt N + 1) * Real.log N ^ k ≤
+        2 * (N : ℝ) / Real.log N ^ A := by
+  intro Q hQ
+  have hlog : 0 < Real.log (N : ℝ) := Real.log_pos (by
+    exact_mod_cast (show 1 < N by omega))
+  have hs1 : 1 ≤ Real.sqrt (N : ℝ) := Real.one_le_sqrt.mpr (by
+    exact_mod_cast (show 1 ≤ N by omega))
+  have hs2 : Real.sqrt (N : ℝ) ^ 2 = (N : ℝ) := Real.sq_sqrt (by positivity)
+  have hden : 0 < Real.log (N : ℝ) ^ (A + k) := pow_pos hlog _
+  have hQ' : (Q : ℝ) * Real.log (N : ℝ) ^ (A + k) ≤ Real.sqrt N :=
+    (le_div_iff₀ hden).mp hQ
+  have hmain : (Q : ℝ) * Real.sqrt N * Real.log N ^ k ≤
+      (N : ℝ) / Real.log N ^ A := by
+    apply (le_div_iff₀ (pow_pos hlog A)).2
+    calc
+      (Q : ℝ) * Real.sqrt N * Real.log N ^ k * Real.log N ^ A =
+          Real.sqrt N * ((Q : ℝ) * Real.log N ^ (A + k)) := by
+            rw [pow_add]
+            ring
+      _ ≤ Real.sqrt N * Real.sqrt N := by gcongr
+      _ = (N : ℝ) := by rw [← sq, hs2]
+  have hsmall : (Q : ℝ) * 1 * Real.log N ^ k ≤
+      (Q : ℝ) * Real.sqrt N * Real.log N ^ k := by gcongr
+  calc
+    (Q : ℝ) * (Real.sqrt N + 1) * Real.log N ^ k =
+        (Q : ℝ) * Real.sqrt N * Real.log N ^ k +
+          (Q : ℝ) * 1 * Real.log N ^ k := by ring
+    _ ≤ (N : ℝ) / Real.log N ^ A + (N : ℝ) / Real.log N ^ A :=
+      add_le_add hmain (hsmall.trans hmain)
+    _ = 2 * (N : ℝ) / Real.log N ^ A := by ring
+
+theorem explicit_payload_envelope (N : ℕ) (hN : 3 ≤ N) :
+    ∀ Q : ℕ, Q ≤ N →
+      StandardBVPayload N Q ≤
+        90 * (Q : ℝ) * (Real.sqrt N + 1) * Real.log N ^ 3 := by
+  intro Q hQN
+  by_cases hQzero : Q = 0
+  · subst Q
+    simp [StandardBVPayload, principalBadPhysical, primePowerPhysical,
+      directConductorCorrectionMean]
+  have hQpos : 0 < Q := Nat.pos_of_ne_zero hQzero
+  have hQone : (1 : ℝ) ≤ Q := by exact_mod_cast hQpos
+  have hNR : (0 : ℝ) < N := by positivity
+  have hlog : 1 ≤ Real.log (N : ℝ) := by
+    have hexp : Real.exp 1 < (N : ℝ) := by
+      calc
+        Real.exp 1 < 3 := Real.exp_one_lt_d9.trans (by norm_num)
+        _ ≤ (N : ℝ) := by exact_mod_cast hN
+    exact ((Real.lt_log_iff_exp_lt hNR).2 hexp).le
+  have hlog0 : 0 ≤ Real.log (N : ℝ) := by linarith
+  have hlog2N := natLog2_cast_le_two_log (show 2 ≤ N by omega)
+  have hpp := primePowerPhysical_le_explicit N Q
+  have hbad := principalBadPhysical_le_explicit N Q
+  have hcond := directConductorCorrectionMean_vonMangoldt_le N Q
+  have hsqrt := natSqrt_cast_le_realSqrt N
+  have habel := discreteAbelAmplifierPrefixMax_le_two_inv_log_two N
+  have hab3 : discreteAbelAmplifierPrefixMax N ≤ 3 := by
+    refine habel.trans ?_
+    have htwo : (2 / 3 : ℝ) < Real.log 2 := by
+      linarith [Real.log_two_gt_d9]
+    rw [mul_inv_le_iff₀ (Real.log_pos (by norm_num : (1 : ℝ) < 2))]
+    linarith
+  have hlogQ : (Nat.log2 Q : ℝ) ≤ 2 * Real.log (N : ℝ) := by
+    by_cases hQ2 : 2 ≤ Q
+    · have hlogmono : Real.log (Q : ℝ) ≤ Real.log (N : ℝ) :=
+        Real.strictMonoOn_log.monotoneOn
+          (by change (0 : ℝ) < (Q : ℝ); exact_mod_cast hQpos)
+          hNR (by exact_mod_cast hQN)
+      linarith [natLog2_cast_le_two_log hQ2]
+    · have hQle : Q ≤ 1 := by omega
+      have hlog2Q : Nat.log2 Q = 0 := by interval_cases Q; rfl
+      rw [hlog2Q]
+      norm_num
+      exact hlog0
+  have hL : (Nat.log2 N + 1 : ℝ) ≤ 3 * Real.log N := by linarith
+  let X : ℝ := (Q : ℝ) * (Real.sqrt N + 1) * Real.log N ^ 3
+  have hX0 : 0 ≤ X := by dsimp [X]; positivity
+  have hbad' : principalBadPhysical N Q ≤ 6 * X := by
+    refine hbad.trans ?_
+    dsimp [X]
+    calc
+      (Q : ℝ) * (Nat.log2 Q : ℝ) * (Nat.log2 N + 1 : ℝ) * Real.log N
+          ≤ (Q : ℝ) * (2 * Real.log N) * (3 * Real.log N) * Real.log N := by
+            gcongr
+      _ ≤ 6 * ((Q : ℝ) * (Real.sqrt N + 1) * Real.log N ^ 3) := by
+            have hs : 1 ≤ Real.sqrt (N : ℝ) + 1 := by
+              linarith [Real.sqrt_nonneg (N : ℝ)]
+            calc
+              (Q : ℝ) * (2 * Real.log N) * (3 * Real.log N) * Real.log N =
+                  (6 * (Q : ℝ) * Real.log N ^ 3) * 1 := by ring
+              _ ≤ (6 * (Q : ℝ) * Real.log N ^ 3) *
+                    (Real.sqrt N + 1) :=
+                mul_le_mul_of_nonneg_left hs (by positivity)
+              _ = 6 * ((Q : ℝ) * (Real.sqrt N + 1) * Real.log N ^ 3) := by ring
+  have hcond' : 2 * directConductorCorrectionMean vonMangoldtIntegerCoeff N Q ≤
+      12 * X := by
+    have hc := mul_le_mul_of_nonneg_left hcond (by norm_num : (0 : ℝ) ≤ 2)
+    refine hc.trans ?_
+    dsimp [X]
+    calc
+      2 * ((Q : ℝ) *
+          (2 * (Nat.log2 Q : ℝ) * (Nat.log2 N + 1 : ℝ) * Real.log N))
+          ≤ 2 * ((Q : ℝ) *
+            (2 * (2 * Real.log N) * (3 * Real.log N) * Real.log N)) := by
+              gcongr
+      _ ≤ 12 * ((Q : ℝ) * (Real.sqrt N + 1) * Real.log N ^ 3) := by
+              have hs : 2 ≤ Real.sqrt (N : ℝ) + 1 := by
+                have hsN : 1 ≤ Real.sqrt (N : ℝ) :=
+                  Real.one_le_sqrt.mpr (by exact_mod_cast (show 1 ≤ N by omega))
+                linarith
+              calc
+                2 * ((Q : ℝ) *
+                    (2 * (2 * Real.log N) * (3 * Real.log N) * Real.log N)) =
+                    (12 * (Q : ℝ) * Real.log N ^ 3) * 2 := by ring
+                _ ≤ (12 * (Q : ℝ) * Real.log N ^ 3) *
+                      (Real.sqrt N + 1) :=
+                  mul_le_mul_of_nonneg_left hs (by positivity)
+                _ = 12 * ((Q : ℝ) * (Real.sqrt N + 1) * Real.log N ^ 3) := by ring
+  have hpp' : primePowerPhysical N Q ≤ 6 * X := by
+    refine hpp.trans ?_
+    unfold primePowerCorrectionExplicitBound
+    change (Q : ℝ) * (((N.sqrt + 1 : ℕ) : ℝ) *
+      (Nat.log2 N + 1 : ℝ) * Real.log N) ≤ 6 * X
+    dsimp [X]
+    have hsN : ((N.sqrt + 1 : ℕ) : ℝ) ≤ Real.sqrt N + 1 := by
+      norm_num
+      linarith
+    calc
+      (Q : ℝ) * (((N.sqrt + 1 : ℕ) : ℝ) *
+          (Nat.log2 N + 1 : ℝ) * Real.log N)
+          ≤ (Q : ℝ) * ((Real.sqrt N + 1) *
+            (3 * Real.log N) * Real.log N) := by gcongr
+      _ ≤ 6 * ((Q : ℝ) * (Real.sqrt N + 1) * Real.log N ^ 3) := by
+            have := mul_nonneg (show (0 : ℝ) ≤ (Q : ℝ) * (Real.sqrt N + 1) by positivity)
+              (sq_nonneg (Real.log N))
+            nlinarith
+  unfold StandardBVPayload
+  have hins : principalBadPhysical N Q + primePowerPhysical N Q +
+      2 * directConductorCorrectionMean vonMangoldtIntegerCoeff N Q ≤ 30 * X := by
+    calc
+      _ ≤ 6 * X + 6 * X + 12 * X := add_le_add (add_le_add hbad' hpp') hcond'
+      _ ≤ 30 * X := by nlinarith [hX0]
+  have hins0 : 0 ≤ principalBadPhysical N Q + primePowerPhysical N Q +
+      2 * directConductorCorrectionMean vonMangoldtIntegerCoeff N Q := by
+    have hb0 : 0 ≤ principalBadPhysical N Q := by
+      unfold principalBadPhysical
+      positivity
+    have hp0 : 0 ≤ primePowerPhysical N Q := by
+      unfold primePowerPhysical
+      apply Finset.sum_nonneg
+      intro q hq
+      unfold lambdaPrimePowerCorrectionPrefixMaxError
+      exact Finset.le_max' _ 0 (Finset.mem_insert_self 0 _)
+    have hc0 : 0 ≤ directConductorCorrectionMean vonMangoldtIntegerCoeff N Q := by
+      unfold directConductorCorrectionMean
+      apply Finset.sum_nonneg
+      intro q hq
+      exact mul_nonneg (by positivity)
+        (Finset.sum_nonneg fun χ _ => conductorErrorAmplitude_nonneg χ _ _)
+    positivity
+  calc
+    discreteAbelAmplifierPrefixMax N *
+        (principalBadPhysical N Q + primePowerPhysical N Q +
+          2 * directConductorCorrectionMean vonMangoldtIntegerCoeff N Q)
+        ≤ 3 * (30 * X) := mul_le_mul hab3 hins hins0 (by norm_num)
+    _ = 90 * (Q : ℝ) * (Real.sqrt N + 1) * Real.log N ^ 3 := by
+      dsimp [X]
+      ring
+
+theorem explicit_payload_payment (A N : ℕ) (hN : 3 ≤ N) :
+    ∀ Q : ℕ,
+      (Q : ℝ) ≤ Real.sqrt N / Real.log N ^ (A + 3) →
+      StandardBVPayload N Q ≤
+        180 * (N : ℝ) / Real.log N ^ A := by
+  intro Q hQ
+  have hpayload := explicit_payload_envelope N hN
+  have hpay := explicit_Q_sqrt_log_payment A 3 N hN
+  have hlog : 1 ≤ Real.log (N : ℝ) := by
+    have hNR : (0 : ℝ) < N := by positivity
+    have hexp : Real.exp 1 < (N : ℝ) := by
+      calc
+        Real.exp 1 < 3 := Real.exp_one_lt_d9.trans (by norm_num)
+        _ ≤ (N : ℝ) := by exact_mod_cast hN
+    exact ((Real.lt_log_iff_exp_lt hNR).2 hexp).le
+  have hden : 1 ≤ Real.log N ^ (A + 3) := one_le_pow₀ hlog
+  have hsqrt0 : 0 ≤ Real.sqrt (N : ℝ) := Real.sqrt_nonneg _
+  have hcut : Real.sqrt N / Real.log N ^ (A + 3) ≤ Real.sqrt N :=
+    div_le_self hsqrt0 hden
+  have hsqrtN : Real.sqrt (N : ℝ) ≤ N :=
+    Real.sqrt_le_self_iff.mpr (Or.inr (by
+      exact_mod_cast (show 1 ≤ N by omega)))
+  have hQNreal : (Q : ℝ) ≤ N := hQ.trans (hcut.trans hsqrtN)
+  have hQN : Q ≤ N := by exact_mod_cast hQNreal
+  calc
+    StandardBVPayload N Q ≤
+        90 * (Q : ℝ) * (Real.sqrt N + 1) * Real.log N ^ 3 :=
+      hpayload Q hQN
+    _ ≤ 90 * (2 * (N : ℝ) / Real.log N ^ A) := by
+      have hm := mul_le_mul_of_nonneg_left (hpay Q hQ) (by norm_num : (0 : ℝ) ≤ 90)
+      simpa [mul_assoc] using hm
+    _ = 180 * (N : ℝ) / Real.log N ^ A := by ring
+
+#print axioms explicit_payload_payment
+end
+end ChenEffective

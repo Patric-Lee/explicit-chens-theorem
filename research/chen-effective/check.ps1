@@ -7,13 +7,18 @@ $lakePath = if ($lakeCommand) { $lakeCommand.Source } else {
     Join-Path $env:USERPROFILE '.elan\bin\lake.exe'
 }
 
+$previousLeanPath = $env:LEAN_PATH
+$env:LEAN_PATH = if ($previousLeanPath) { $artifactDir + ';' + $previousLeanPath } else { $artifactDir }
 Push-Location -LiteralPath $repoRoot
 try {
-    foreach ($name in @('ExplicitSiegel', 'NumericalThresholds', 'ExplicitLowConductor')) {
+    $modules = @('ExplicitSiegel', 'NumericalThresholds', 'ExplicitLowConductor',
+        'ExplicitLogBounds', 'ExplicitBVHigh', 'ExplicitBVPayload', 'ExplicitBVAssembly',
+        'ExplicitChenTriple', 'ExplicitChenLower')
+    foreach ($name in $modules) {
         $source = Join-Path $PSScriptRoot "$name.lean"
         $output = Join-Path $artifactDir "$name.olean"
         $log = Join-Path $artifactDir "$name.log"
-        & $lakePath env lean -DwarningAsError=true -o $output $source 2>&1 |
+        & $lakePath env lean -DwarningAsError=true -R $PSScriptRoot -o $output $source 2>&1 |
             Tee-Object -FilePath $log
         if ($LASTEXITCODE -ne 0) { throw "Lean failed for $name (exit $LASTEXITCODE)" }
         if (Select-String -LiteralPath $log -Pattern 'sorryAx' -Quiet) {
@@ -47,11 +52,12 @@ try {
     if ($axioms.Count -ne 1 -or $axioms[0].Line -notmatch 'dirichlet_seven_eighths') {
         throw 'Expected exactly the one declared Dirichlet axiom'
     }
-    Write-Output 'All three research modules compiled with warnings treated as errors.'
+    Write-Output "All $($modules.Count) research modules compiled with warnings treated as errors."
     Write-Output 'Exactly one local axiom; zero OpenAI imports; zero Li-Liu theorem imports.'
     Write-Output 'Existing shared LiLiu-named helpers in the project-side import closure:'
     $seen | Where-Object { $_ -match 'LiLiu' } | Sort-Object
     Write-Output "Artifacts and axiom reports: $artifactDir"
 } finally {
+    $env:LEAN_PATH = $previousLeanPath
     Pop-Location
 }

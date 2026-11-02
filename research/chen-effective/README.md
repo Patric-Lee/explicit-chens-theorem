@@ -1,7 +1,8 @@
 # Effective Chen investigation
 
-Status: the explicit Siegel constant, finite counting endgame, and finite
-nonprincipal low-conductor summation are proved and compile-checked.
+Status: the explicit Siegel constant, finite counting endgame, numerical
+high-conductor BV and elementary payments, finite BV assembly, and downstream
+Chen distribution/triple residual payments are proved and compile-checked.
 **A closed numerical Chen threshold has not been obtained.** The analytic
 starting points `nLower`, `nTriple`, and a numerical bound `B` for the triple
 error constant remain unresolved. This directory does not change the main
@@ -28,7 +29,8 @@ On inspection, that file and
 contain `sorry` proofs. They are statement references, not proofs imported here.
 Neither file nor any other OpenAI module has been added as a dependency.
 No additional packages are required. Existing Lake manifests and production
-sources remain unchanged.
+sources remain unchanged. The first research checkpoint was committed as
+`ae118ce9` before the second pass described below.
 
 The Dirichlet axiom directly excludes the quadratic exceptional zeros in the
 Siegel argument. The zeta statement alone does not directly exclude zeros of
@@ -141,6 +143,128 @@ Thus if the primitive estimate is known for `N >= nPsi`, this summation step
 works for `N >= max 8 nPsi`. It does not prove a numerical value for `nPsi`
 or `K`, and it does not include the separate principal/PNT contribution.
 
+## Second pass: numerical BV payments and propagation
+
+All results in this section have only Lean's standard axioms. They have no
+additional analytic axiom; their unsolved analytic inputs are theorem
+parameters, not postulated facts.
+
+### A fully numerical high-conductor bound
+
+`ExplicitLogBounds.lean` proves
+
+```
+logPowerCutoff(k) = 3^(16*(k+1)^2)
+N >= logPowerCutoff(k)  =>  log(N)^k <= sqrt(N).
+```
+
+It also proves the rational power-saving variant: if `m > 0`, `m*k <= t`,
+and `N >= logPowerCutoff(t)`, then `log(N)^k <= N^(1/m)`. These replace actual
+uses of little-o/eventual growth, rather than selecting witnesses from them.
+
+`ExplicitBVHigh.lean` makes all three chosen high-conductor lanes finite:
+
+```
+B(A) = 3*A + 200
+C(A) = 2*(A+50)
+R(N) = floor(log(N)^C(A))
+Q(N) = floor(sqrt(N)/log(N)^B(A))
+Nhigh(A) = 3^(16*(6*A+401)^2)
+```
+
+For every `N >= Nhigh(A)`, the Type-I, Type-II, and small-lane constants are
+respectively `2000`, `1000000000000000000`, and `10000`. The full weighted
+high hybrid is bounded by
+
+```
+(1000000000000012000) * N/log(N)^A.
+```
+
+This high estimate is unconditional and has no unspecified starting point or
+constant. Proof bodies preserve the repository's existing finite estimates;
+their eventual growth premises are replaced by the numerical log lemmas.
+
+`ExplicitBVPayload.lean` proves that the complete elementary BV correction
+packet has constant `180` for `N >= 3`, in the appropriate modulus range.
+
+### Finite full-BV assembly, with the two remaining analytic inputs visible
+
+`ExplicitBVAssembly.lean` proves an estimate for the **actual** standard
+prime-AP prefix-maximal error sum, with
+
+```
+KBV = 32*Kpsi + 4*Kprincipal + 1000000000000012180
+NBV = max(Nhigh(A), nPsi, nPrincipal).
+```
+
+Here the required primitive estimate is the uniform prefix-amplitude bound
+with conductor exponent `C(A)` and saving exponent `A+C(A)+5`, valid from
+`nPsi`, with constant `Kpsi`. The principal input is the actual
+`globalPartialSummationSource`, with saving exponent `A+3`, valid from
+`nPrincipal`, with constant `Kprincipal`.
+
+**This does not assert numerical values for those four low analytic data.**
+The high and elementary sides are now numerical; the two low inputs remain
+unproved in numerical form. The old asymptotic SW or MediumPNT theorem is not
+used to pretend otherwise.
+
+### Propagation into Chen's lower-sieve distribution term
+
+`ExplicitChenLower.lean` fixes ordinary BV exponent `A=3`, hence `B=209` and
+`C=106`. Its primitive input needs saving exponent `114`, and its principal
+input needs saving exponent `6`.
+
+For natural `m >= 3`, `d >= 1`, and an integer `b >= KBV`, set
+
+```
+epsilon = 1/m
+delta = 1/d
+Ndist = max(Nhigh(3), logPowerCutoff(m*209), logPowerCutoff(4),
+            3^(4*b*d + 16*d + 1)).
+```
+
+Above this numerical additional cutoff, a finite BV input at `N` implies
+
+```
+jurkatRichertSourceRemainderSum N epsilon
+    <= delta * S(N)*N/log(N)^2.
+```
+
+The proof pays both the source modulus-range inclusion and the genuine
+exceptional-prime correction. `explicit_base_distribution_of_low_inputs`
+connects the finite BV assembly directly to this statement. The full weighted
+lower estimate still needs numerical sieve/Mertens normalization and the
+varying-prime/prime-power inputs; it is not proved merely by this remainder
+estimate.
+
+### Propagation into Chen's triple bound and final representation theorem
+
+`ExplicitChenTriple.lean` proves the endpoint complement and the paper-modulus
+residual with coefficients `13` and `6`, respectively, for every
+
+```
+N >= 3^21904 = logPowerCutoff(36).
+```
+
+If the actual Selberg-square estimate has main coefficient `3.94033` and
+error coefficient `Csquare`, valid above a numerical `nSquare`, then the
+actual corrected triple estimate has coefficient **`Csquare+19`**, valid for
+
+```
+N >= max(nSquare, 3^21904).
+```
+
+`explicit_chen_from_square_estimates` carries this through the checked finite
+counting endgame. Given the numerical weighted lower input starting at
+`nLower` and an integer `B >= Csquare+19`, its final threshold is
+
+```
+max(9, nLower, nSquare, 3^21904, 3^(20000*B+1)).
+```
+
+The square constant and its numerical starting point are still required;
+they have not been evaluated or replaced with an additional axiom.
+
 ## What remains before a numerical N0
 
 | Stage | Existing seam | Numerical work still needed |
@@ -148,9 +272,10 @@ or `K`, and it does not include the separate principal/PNT contribution.
 | Quadratic L-value lower bound | `Siegel/Bombieri1965Theorem4SiegelLowerBound.lean` | Replaced here by explicit `c(eta)` under the local axiom. |
 | Low-conductor primitive estimates | `LargeSieve/DirichLTwistedQuadraticPointwiseSiegelWalfisz.lean` and its nonquadratic counterpart | Bound contour/smoothing constants; replace the eventual scale/decay payments by explicit cutoffs. The quadratic exponent is already the formula `1/(4096*(C+D+1))`. |
 | Low-conductor summation | `LargeSieve/StandardBVLowSiegelWalfiszProducer.lean` | Finite nonprincipal payment proved here. Still supply numerical primitive and principal/PNT inputs. |
-| Full BV and Liu-Pan distribution | `LargeSieve/StandardBVFinalNonprincipalOnly.lean` and `SieveTheory/Distribution/LiuPan` | Propagate numerical constants and moduli-range thresholds, including the high-conductor route. |
+| High-conductor BV and elementary packet | `ExplicitBVHigh.lean`, `ExplicitBVPayload.lean` | Completed with numerical constants and starting points. |
+| Full BV and Liu-Pan distribution | `ExplicitBVAssembly.lean` and `SieveTheory/Distribution/LiuPan` | BV assembly now carries explicit data. Supply the two low analytic inputs numerically, then quantify the remaining weighted/Liu-Pan transformations. |
 | Weighted lower estimate | `LinearSieve/JurkatRichert/JurkatRichert1965ChenRichertConsumer.lean` | Obtain a numerical `nLower`. Its Suzuki varying-family, Mertens/Euler-product, distribution, and prime-power limits currently hide rates. |
-| Triple upper estimate | `Selberg/Liu/LiuSelbergCorrectedChenBridge.lean` | Obtain `nTriple` and bound `Cend + Cpan + 6` by a concrete integer `B`, with the paper-modulus and complement residual cutoffs. |
+| Triple upper estimate | `ExplicitChenTriple.lean` and `Selberg/Liu/LiuSelbergCorrectedChenBridge.lean` | Residual constants are `13+6`, both paid from `3^21904`. Obtain numerical `nSquare` and `Csquare`, then take `B >= Csquare+19`. |
 | Finite endpoint | This directory | Completed conditionally on those numerical analytic inputs. |
 
 The Suzuki source explicitly uses `Tendsto` to absorb its error, independently
@@ -161,11 +286,14 @@ constant does not make the existing public theorem numerically explicit.
 This table identifies known obligations; it is not a certificate that every
 hidden asymptotic constant in the full analytic closure has been enumerated.
 
-A practical next stage is a numerical BV contract carrying an explicit
-constant and starting point for each requested exponent. Prove the principal,
-nonprincipal low, and high-conductor estimates against that contract, then
-carry those data through the two sieve estimates above. Use the finite endpoint
-here only after the three numerical inputs have actually been proved.
+The next analytic stage is to supply numerical primitive SW and principal/PNT
+data to the finite BV assembly. The principal route still invokes an
+`IsBigO` witness from `MediumPNT`; the primitive route still chooses
+contour/smoothing constants. Those need quantitative estimates. The single
+Dirichlet axiom gives zero-freeness but does not itself provide those norm
+estimates. Carry the resulting finite BV data through the remaining weighted
+distribution and sieve normalizations, and use the endpoint only once its
+numerical inputs have actually been proved.
 
 ## Reproduce
 
@@ -175,8 +303,10 @@ From the checkout, in PowerShell:
 & ./research/chen-effective/check.ps1
 ```
 
-This checks only the three research modules, treating warnings as errors,
+This checks only the nine research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
-Li-Liu development or alter the pinned dependency manifests. The ordinary
+Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is
+temporarily extended with the research artifact directory and restored by the
+script, and each source uses this directory as its package root. The ordinary
 default `lake build` does not include these research files.
