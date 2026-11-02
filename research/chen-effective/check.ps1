@@ -1,3 +1,4 @@
+param([string]$FromModule = '')
 $ErrorActionPreference = 'Stop'
 $repoRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..\..')).Path
 $artifactDir = Join-Path $repoRoot '.lake\build\chen-effective'
@@ -13,11 +14,21 @@ Push-Location -LiteralPath $repoRoot
 try {
     $modules = @('ExplicitSiegel', 'NumericalThresholds', 'ExplicitLowConductor',
         'ExplicitLogBounds', 'ExplicitBVHigh', 'ExplicitBVPayload', 'ExplicitBVAssembly',
-        'ExplicitChenTriple', 'ExplicitChenLower')
+        'ExplicitChenTriple', 'ExplicitChenLower',
+        'NumericalSmoothing', 'NumericalMellin', 'NumericalLogDerivative',
+        'NumericalDirichletStrip', 'NumericalZetaStrip', 'NumericalRightTail',
+        'NumericalPrimitiveContour', 'NumericalPrimitivePower', 'NumericalLowConductor',
+        'NumericalPrincipalContour', 'NumericalContourEdges')
+    if ($FromModule) {
+        $startIndex = [Array]::IndexOf($modules, $FromModule)
+        if ($startIndex -lt 0) { throw "Unknown research module: $FromModule" }
+        $modules = $modules[$startIndex..($modules.Length - 1)]
+    }
     foreach ($name in $modules) {
         $source = Join-Path $PSScriptRoot "$name.lean"
         $output = Join-Path $artifactDir "$name.olean"
         $log = Join-Path $artifactDir "$name.log"
+        Set-Content -LiteralPath $log -Value ''
         & $lakePath env lean -DwarningAsError=true -R $PSScriptRoot -o $output $source 2>&1 |
             Tee-Object -FilePath $log
         if ($LASTEXITCODE -ne 0) { throw "Lean failed for $name (exit $LASTEXITCODE)" }

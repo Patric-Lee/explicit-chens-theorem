@@ -1,7 +1,8 @@
 # Effective Chen investigation
 
 Status: the explicit Siegel constant, finite counting endgame, numerical
-high-conductor BV and elementary payments, finite BV assembly, and downstream
+high-conductor BV and elementary payments, numerical primitive low-conductor
+estimates, finite BV assembly, and downstream
 Chen distribution/triple residual payments are proved and compile-checked.
 **A closed numerical Chen threshold has not been obtained.** The analytic
 starting points `nLower`, `nTriple`, and a numerical bound `B` for the triple
@@ -270,8 +271,8 @@ they have not been evaluated or replaced with an additional axiom.
 | Stage | Existing seam | Numerical work still needed |
 | --- | --- | --- |
 | Quadratic L-value lower bound | `Siegel/Bombieri1965Theorem4SiegelLowerBound.lean` | Replaced here by explicit `c(eta)` under the local axiom. |
-| Low-conductor primitive estimates | `LargeSieve/DirichLTwistedQuadraticPointwiseSiegelWalfisz.lean` and its nonquadratic counterpart | Bound contour/smoothing constants; replace the eventual scale/decay payments by explicit cutoffs. The quadratic exponent is already the formula `1/(4096*(C+D+1))`. |
-| Low-conductor summation | `LargeSieve/StandardBVLowSiegelWalfiszProducer.lean` | Finite nonprincipal payment proved here. Still supply numerical primitive and principal/PNT inputs. |
+| Low-conductor primitive estimates | `NumericalLowConductor.lean` | Completed under the local axiom: `Kpsi(C)=10^11*(C+1)`, `nPsi(D)=3^(16*(128*(D+1)+1)^2)`. Covers all prefixes and both character classes. |
+| Low-conductor summation | `LargeSieve/StandardBVLowSiegelWalfiszProducer.lean` | Finite nonprincipal payment and numerical primitive input proved here. Still supply the numerical principal/PNT input. |
 | High-conductor BV and elementary packet | `ExplicitBVHigh.lean`, `ExplicitBVPayload.lean` | Completed with numerical constants and starting points. |
 | Full BV and Liu-Pan distribution | `ExplicitBVAssembly.lean` and `SieveTheory/Distribution/LiuPan` | BV assembly now carries explicit data. Supply the two low analytic inputs numerically, then quantify the remaining weighted/Liu-Pan transformations. |
 | Weighted lower estimate | `LinearSieve/JurkatRichert/JurkatRichert1965ChenRichertConsumer.lean` | Obtain a numerical `nLower`. Its Suzuki varying-family, Mertens/Euler-product, distribution, and prime-power limits currently hide rates. |
@@ -286,14 +287,64 @@ constant does not make the existing public theorem numerically explicit.
 This table identifies known obligations; it is not a certificate that every
 hidden asymptotic constant in the full analytic closure has been enumerated.
 
-The next analytic stage is to supply numerical primitive SW and principal/PNT
-data to the finite BV assembly. The principal route still invokes an
-`IsBigO` witness from `MediumPNT`; the primitive route still chooses
-contour/smoothing constants. Those need quantitative estimates. The single
-Dirichlet axiom gives zero-freeness but does not itself provide those norm
-estimates. Carry the resulting finite BV data through the remaining weighted
+The next analytic stage is to finish the numerical principal/PNT producer
+and wire both numerical inputs into the finite BV assembly. The existing
+principal producer still invokes an `IsBigO` witness from `MediumPNT`.
+Carry the resulting finite BV data through the remaining weighted
 distribution and sieve normalizations, and use the endpoint only once its
 numerical inputs have actually been proved.
+
+## Numerical primitive checkpoint
+
+`NumericalSmoothing.lean` constructs a rational polynomial kernel with mass
+one, support `[1/2,2]`, and derivative norm at most `128`.
+`NumericalMellin.lean` proves Mellin constant `768` and smoothing-removal
+constant `60`; `NumericalRightTail.lean` exposes the quantitative tail proof
+with a caller-supplied Mellin bound, giving constant `4608` here.
+
+`NumericalLogDerivative.lean` proves a disk estimate using Borel--Caratheodory
+and Schwarz. `NumericalDirichletStrip.lean` applies it under the local axiom:
+
+```
+15/16 <= re(s) <= 2
+norm(L'(s,chi)/L(s,chi)) <= 8192*log(16*q*(abs(im(s))+4))
+```
+
+`NumericalPrimitiveContour.lean` supplies an explicit finite contour bound.
+`NumericalPrimitivePower.lean` fixes the right displacement `1/1024`, height
+`X^(1/32)`, and smoothing width `X^(-1/128)`, obtaining for every `X >= 9`:
+
+```
+norm(psi(X,chi)) <=
+ (10^10 + 2*10^8*log(16*q*(X^(1/32)+4)) + 60*log(X))*X^(127/128).
+```
+
+`NumericalLowConductor.lean` controls every endpoint `y <= N`, including
+small endpoints, and proves the actual primitive prefix-amplitude bound
+with `Kpsi(C)` and `nPsi(D)` above, uniformly for `q <= log(N)^C`.
+`numerical_primitive_low_conductor_cutoff` uses the repository's exact
+`logConductorThreshold` interface. There is no remaining primitive
+smoothing, contour, compactness, or eventual-payment witness in this result.
+
+## Principal PNT progress (incomplete)
+
+`NumericalZetaStrip.lean` proves the regularized-zeta bound
+
+```
+norm(zeta_1'(s)/zeta_1(s)) <= 8192*log(32*(abs(im(s))+6)^2)
+```
+
+on the same strip, where `zeta_1(s)=(s-1)*zeta(s)` with the pole removed.
+It also proves the exact logarithmic-derivative identity including the pole
+term. `NumericalContourEdges.lean` bounds the actual zeta logarithmic
+derivative by `8192*log(32*(T+6)^2)+16` on the left and horizontal contour
+edges. `NumericalPrincipalContour.lean` checks the residue identity giving
+the main term `Mellin(Smooth1)(1)*X`.
+
+These are numerical analytic ingredients, **not a completed numerical PNT**.
+The principal contour error assembly, explicit Mellin-main-term normalization,
+and propagation through `globalPartialSummationSource` remain to be finished.
+No numerical principal constant or starting point is claimed at this checkpoint.
 
 ## Reproduce
 
@@ -303,7 +354,10 @@ From the checkout, in PowerShell:
 & ./research/chen-effective/check.ps1
 ```
 
-This checks only the nine research modules, in dependency order, treating warnings as errors,
+After an interrupted check, `-FromModule ModuleName` resumes compilation at
+that module; the full import and local-axiom audit still runs.
+
+This checks only the twenty research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is
