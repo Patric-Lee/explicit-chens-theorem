@@ -18,7 +18,10 @@ try {
         'NumericalSmoothing', 'NumericalMellin', 'NumericalLogDerivative',
         'NumericalDirichletStrip', 'NumericalZetaStrip', 'NumericalRightTail',
         'NumericalPrimitiveContour', 'NumericalPrimitivePower', 'NumericalLowConductor',
-        'NumericalPrincipalContour', 'NumericalContourEdges')
+        'NumericalPrincipalContour', 'NumericalContourEdges',
+        'NumericalResidueAssembly', 'NumericalPrincipalSmoothed', 'NumericalMainTerm',
+        'NumericalPrincipalPower', 'NumericalPrincipalElementary', 'NumericalPrincipalPNT',
+        'NumericalBV')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)
         if ($startIndex -lt 0) { throw "Unknown research module: $FromModule" }

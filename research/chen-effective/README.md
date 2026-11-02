@@ -2,7 +2,7 @@
 
 Status: the explicit Siegel constant, finite counting endgame, numerical
 high-conductor BV and elementary payments, numerical primitive low-conductor
-estimates, finite BV assembly, and downstream
+estimates, numerical principal PNT, numerical BV, and downstream
 Chen distribution/triple residual payments are proved and compile-checked.
 **A closed numerical Chen threshold has not been obtained.** The analytic
 starting points `nLower`, `nTriple`, and a numerical bound `B` for the triple
@@ -272,9 +272,9 @@ they have not been evaluated or replaced with an additional axiom.
 | --- | --- | --- |
 | Quadratic L-value lower bound | `Siegel/Bombieri1965Theorem4SiegelLowerBound.lean` | Replaced here by explicit `c(eta)` under the local axiom. |
 | Low-conductor primitive estimates | `NumericalLowConductor.lean` | Completed under the local axiom: `Kpsi(C)=10^11*(C+1)`, `nPsi(D)=3^(16*(128*(D+1)+1)^2)`. Covers all prefixes and both character classes. |
-| Low-conductor summation | `LargeSieve/StandardBVLowSiegelWalfiszProducer.lean` | Finite nonprincipal payment and numerical primitive input proved here. Still supply the numerical principal/PNT input. |
+| Low-conductor summation and principal PNT | `NumericalPrincipalPNT.lean`, `ExplicitLowConductor.lean` | Completed. Principal source constant `5*10^11`, with threshold `3^(16*(128*(D+1)+1)^2)`. |
 | High-conductor BV and elementary packet | `ExplicitBVHigh.lean`, `ExplicitBVPayload.lean` | Completed with numerical constants and starting points. |
-| Full BV and Liu-Pan distribution | `ExplicitBVAssembly.lean` and `SieveTheory/Distribution/LiuPan` | BV assembly now carries explicit data. Supply the two low analytic inputs numerically, then quantify the remaining weighted/Liu-Pan transformations. |
+| Full BV and Liu-Pan distribution | `NumericalBV.lean` and `SieveTheory/Distribution/LiuPan` | BV completed under the single local axiom, with explicit constant and threshold below. Quantify the remaining weighted/Liu-Pan transformations. |
 | Weighted lower estimate | `LinearSieve/JurkatRichert/JurkatRichert1965ChenRichertConsumer.lean` | Obtain a numerical `nLower`. Its Suzuki varying-family, Mertens/Euler-product, distribution, and prime-power limits currently hide rates. |
 | Triple upper estimate | `ExplicitChenTriple.lean` and `Selberg/Liu/LiuSelbergCorrectedChenBridge.lean` | Residual constants are `13+6`, both paid from `3^21904`. Obtain numerical `nSquare` and `Csquare`, then take `B >= Csquare+19`. |
 | Finite endpoint | This directory | Completed conditionally on those numerical analytic inputs. |
@@ -287,9 +287,9 @@ constant does not make the existing public theorem numerically explicit.
 This table identifies known obligations; it is not a certificate that every
 hidden asymptotic constant in the full analytic closure has been enumerated.
 
-The next analytic stage is to finish the numerical principal/PNT producer
-and wire both numerical inputs into the finite BV assembly. The existing
-principal producer still invokes an `IsBigO` witness from `MediumPNT`.
+The principal/PNT and primitive inputs are now supplied numerically to the
+finite BV assembly. The new production proof does not select any constants or
+thresholds from the existing `MediumPNT` asymptotic theorem.
 Carry the resulting finite BV data through the remaining weighted
 distribution and sieve normalizations, and use the endpoint only once its
 numerical inputs have actually been proved.
@@ -326,7 +326,7 @@ with `Kpsi(C)` and `nPsi(D)` above, uniformly for `q <= log(N)^C`.
 `logConductorThreshold` interface. There is no remaining primitive
 smoothing, contour, compactness, or eventual-payment witness in this result.
 
-## Principal PNT progress (incomplete)
+## Numerical principal PNT and BV
 
 `NumericalZetaStrip.lean` proves the regularized-zeta bound
 
@@ -341,10 +341,49 @@ derivative by `8192*log(32*(T+6)^2)+16` on the left and horizontal contour
 edges. `NumericalPrincipalContour.lean` checks the residue identity giving
 the main term `Mellin(Smooth1)(1)*X`.
 
-These are numerical analytic ingredients, **not a completed numerical PNT**.
-The principal contour error assembly, explicit Mellin-main-term normalization,
-and propagation through `globalPartialSummationSource` remain to be finished.
-No numerical principal constant or starting point is claimed at this checkpoint.
+`NumericalResidueAssembly.lean` and `NumericalPrincipalSmoothed.lean` assemble
+the contour error, keeping the exact pole main term. `NumericalMainTerm.lean`
+proves `norm(Mellin(Smooth1)(1)-1) <= 2*epsilon` for `0 < epsilon < 1`.
+It uses the kernel's unit mass and `abs(log(x)) < 1` on its support.
+
+`NumericalPrincipalPower.lean` fixes the same contour parameters as the
+primitive proof. For every real `X >= 9` it proves
+
+```
+norm(lambdaCharacterPrefix(floor(X),1,1) - X) <=
+ (3*10^10 + 2*10^8*log(32*(X^(1/32)+6)^2) + 60*log(X))*X^(127/128).
+```
+
+`NumericalPrincipalElementary.lean` bounds the Abel amplifier and the
+discrete-to-true-li discrepancy by `4`, including endpoints `0` and `1`.
+The reciprocal-log integrals crossing the singularity at `1` are checked
+to be nonintegrable, so their total Bochner integral is zero under the
+repository's existing definitions. This endpoint fact does not invoke an
+unspecified numerical bound.
+
+`NumericalPrincipalPNT.lean` controls every integer prefix through `N` and
+proves the exact input consumed by BV:
+
+```
+N >= principalNumericalThreshold(D) = 3^(16*(128*(D+1)+1)^2)
+globalPartialSummationSource(N) <= 500000000000*N/log(N)^D.
+```
+
+`NumericalBV.lean` discharges both analytic hypotheses of `ExplicitBVAssembly`.
+For every natural `A`, its constant and threshold are
+
+```
+K_BV(A) = 32*10^11*(2*A+101) + 4*(5*10^11) + 1000000000000012180
+N_BV(A) = 3^(16*(384*A+13569)^2).
+```
+
+`numerical_BV` bounds the actual sum of prime-AP prefix-max errors through
+the repository's modulus cutoff with exponent `3*A+200`, by
+`K_BV(A)*N/log(N)^A` for all `N >= N_BV(A)`.
+In particular, `K_BV(3)=1000344400000012180` and
+`N_BV(3)=3^3467325456`. No unknown analytic constant or starting point remains
+in this BV statement. The weighted lower sieve and triple-square producer
+remain separate obligations before a fully numerical Chen threshold.
 
 ## Reproduce
 
@@ -357,7 +396,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the twenty research modules, in dependency order, treating warnings as errors,
+This checks only the twenty-seven research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is
