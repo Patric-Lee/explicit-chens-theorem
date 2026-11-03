@@ -43,7 +43,14 @@ try {
         'NumericalErrorTransport', 'NumericalSigmaZeroCutoff', 'NumericalCaseIICoreDecay',
         'NumericalC1Geometry', 'NumericalCaseIIGap', 'NumericalC1Tools',
         'NumericalCaseIStrict', 'NumericalCaseIEven', 'NumericalCaseIITransport',
-        'NumericalCaseII', 'NumericalSuzukiC1')
+        'NumericalCaseII', 'NumericalSuzukiC1',
+        'NumericalPanQuotient', 'NumericalPanPrincipalPNT', 'NumericalPanBudget',
+        'NumericalPanPrincipal', 'NumericalPanLargeSieve', 'NumericalPanShort',
+        'NumericalPanLong', 'NumericalPanPrimePrefix', 'NumericalPanCell',
+        'NumericalPanAggregate', 'NumericalPanLow', 'NumericalPanLedger',
+        'NumericalPanUnweighted', 'NumericalPanEnvelope', 'NumericalPanWeighted',
+        'NumericalPanSource', 'NumericalPanNormalization', 'NumericalPanR1',
+        'NumericalSelbergRemainder', 'NumericalSquareConstants', 'NumericalSquareAssembly')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)
         if ($startIndex -lt 0) { throw "Unknown research module: $FromModule" }

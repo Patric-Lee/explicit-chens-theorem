@@ -731,6 +731,63 @@ The following numerical producers are still unfinished:
 
 There is still no numerical `nLower`, and no fully numerical Chen `N0`.
 
+## Numerical Selberg remainder and triple error coefficient
+
+`NumericalSelbergRemainder.lean` proves a numerical bound for the actual signed
+Selberg remainder, for every admissible lambda and epsilon `1/m`:
+
+```
+|R(N,1/m,lambda)| <= CRem(A) * N / log(N)^A
+N >= selbergRemainderThreshold A m.
+```
+
+Both the coefficient and threshold are displayed formulas. The proof includes
+the moving principal convolution PNT, actual-prime primitive prefixes at `N/a`,
+low-conductor deletion and harmonic payment, the high bilinear/Perron source,
+cofactor induction, the actual unweighted convolution sum, weighted Cauchy,
+source-window support, strict modulus cutoffs, normalization to `li_2`, and
+the noncoprime `R1` correction.
+
+The high source uses the explicit real primitive large-sieve coefficient
+`8+2*pi` and complex coefficient `2*(8+2*pi)`. It does not bound an arbitrary
+chosen large-sieve witness. The weighted source uses a totient envelope with
+coefficient `6 + liuLogarithmicIntegralUpperConstant(kappa)/log(2)` and the
+already numerical divisor moment. Thus no selected reciprocal-totient or
+Mertens coefficient enters these new numerical formulas. Its unweighted saving
+is `2*A+20`, and the source cutoff exponent is `2*A+28`.
+
+In `NumericalSquareConstants.lean`:
+
+```
+numericalSquareError = CRem(3)
+numericalTripleErrorCap = 10^40
+numericalSquareError + 19 <= numericalTripleErrorCap.
+```
+
+`NumericalSquareAssembly.lean` fixes `epsilon=1/10000000000` and propagates
+the numerical remainder through the square expansion and corrected Chen
+triple penalty. The triple coefficient is `3.94033`, with error coefficient
+at most `10^40`. **These square/triple assembly theorems still require two
+explicit finite main-term premises**:
+
+- the denominator bound
+  `log(N)/((8+1/10000000)*S(N)) <= liuSelbergDenominator N epsilon`;
+- the genuine-li prime-pair bound
+  `LiuGenuineLiWeightMainSumBound 2 (0.49254+1/10000000) N`.
+
+The production proofs establish these only eventually. Numerical convergence
+rates are still needed for both: uniform denominator Euler/logarithmic moments
+and prime-divisor growth in the first case; quantitative prime-pair quadrature
+and genuine-li transfer in the second. Therefore **there is still no numerical
+`nSquare` or fully numerical `N0`**. The new work closes the remainder/error
+coefficient branch; it does not choose a threshold from those eventual proofs.
+
+Validation for this checkpoint: all 21 new modules compiled individually with
+warnings treated as errors; the copied sources were compared against the
+current compiled versions, and the full local import/axiom audit passed. A
+subsequent batch rerun was blocked by Windows application control when starting
+`lake.exe` (OS error 4551), after the individual checks had succeeded.
+
 ## Reproduce
 
 From the checkout, in PowerShell:
@@ -742,7 +799,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the ninety research modules, in dependency order, treating warnings as errors,
+This checks only the 111 research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is
