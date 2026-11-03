@@ -54,7 +54,10 @@ try {
         'NumericalSelbergEulerMajorant', 'NumericalSelbergRoot',
         'NumericalSelbergDivisorGeometry', 'NumericalSelbergDivisorProduct',
         'NumericalSelbergDivisorLog', 'NumericalSelbergMoments',
-        'NumericalSelbergDenominator', 'NumericalSelbergDenominatorClosed')
+        'NumericalSelbergDenominator', 'NumericalSelbergDenominatorClosed',
+        'NumericalPrimePairThreshold', 'NumericalPrimePairInterval', 'NumericalPrimePairGrid',
+        'NumericalGenuineLiPointwise', 'NumericalGenuineLiSum',
+        'NumericalSquareThresholdCap', 'NumericalNSquare')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)
         if ($startIndex -lt 0) { throw "Unknown research module: $FromModule" }

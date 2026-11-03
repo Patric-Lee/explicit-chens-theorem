@@ -263,8 +263,8 @@ counting endgame. Given the numerical weighted lower input starting at
 max(9, nLower, nSquare, 3^21904, 3^(20000*B+1)).
 ```
 
-The square constant and its numerical starting point are still required;
-they have not been evaluated or replaced with an additional axiom.
+The completed `NumericalNSquare.lean` instantiates this bridge numerically,
+as described below: `nSquare=3^(3^4000000000000)` and `B=10^40`.
 
 ## What remains before a numerical N0
 
@@ -274,16 +274,17 @@ they have not been evaluated or replaced with an additional axiom.
 | Low-conductor primitive estimates | `NumericalLowConductor.lean` | Completed under the local axiom: `Kpsi(C)=10^11*(C+1)`, `nPsi(D)=3^(16*(128*(D+1)+1)^2)`. Covers all prefixes and both character classes. |
 | Low-conductor summation and principal PNT | `NumericalPrincipalPNT.lean`, `ExplicitLowConductor.lean` | Completed. Principal source constant `5*10^11`, with threshold `3^(16*(128*(D+1)+1)^2)`. |
 | High-conductor BV and elementary packet | `ExplicitBVHigh.lean`, `ExplicitBVPayload.lean` | Completed with numerical constants and starting points. |
-| Full BV and weighted distribution | `NumericalBV.lean`, `NumericalUpperDistribution.lean` | Ordinary BV and the Richert weighted/varying-prime distribution input are numerical. The Liu-Pan convolution branch for the triple estimate remains unfinished. |
+| Full BV and weighted distribution | `NumericalBV.lean`, `NumericalUpperDistribution.lean`, `NumericalPanWeighted.lean` | Completed for ordinary BV, the Richert weighted/varying-prime distribution input, and the Liu-Pan convolution branch used for the triple bound. |
 | Weighted lower estimate | `NumericalLowerEndpoint.lean` and `LinearSieve/JurkatRichert/JurkatRichert1965ChenRichertConsumer.lean` | Obtain numerical lower/upper density producers and `nLower`. Distribution, the Suzuki coordinate gate, lower-source mass normalization, and endpoint losses are numerical. The shared Suzuki separator and final fixed-K coefficient are now numerical. Upper normalization and prime-q transfer still need numerical rates. |
-| Triple upper estimate | `ExplicitChenTriple.lean` and `Selberg/Liu/LiuSelbergCorrectedChenBridge.lean` | Residual constants are `13+6`, both paid from `3^21904`. Obtain numerical `nSquare` and `Csquare`, then take `B >= Csquare+19`. |
-| Finite endpoint | This directory | Completed conditionally on those numerical analytic inputs. |
+| Triple upper estimate | `NumericalNSquare.lean` | Completed: `nSquare=3^(3^4000000000000)`, actual triple coefficient `3.94033`, and error coefficient at most `B=10^40`. |
+| Finite endpoint | `numerical_chen_from_lower` | Completed conditionally only on the numerical weighted lower estimate. |
 
 The Suzuki source explicitly uses `Tendsto` to absorb its error, independently
 of Siegel ineffectivity (`Suzuki/SuzukiChenAdaptiveDepthAbsorption.lean`).
-The triple producer explicitly chooses `Cend` and `Cpan` and joins several
-eventual estimates. These are concrete reasons the single explicit Siegel
-constant does not make the existing public theorem numerically explicit.
+The original triple producer chooses `Cend` and `Cpan` and joins several
+eventual estimates; the completed numerical research branch now replaces
+those selections. The remaining work for a numerical `N0` is on the lower
+estimate branch.
 This table identifies known obligations; it is not a certificate that every
 hidden asymptotic constant in the full analytic closure has been enumerated.
 
@@ -767,17 +768,16 @@ numericalSquareError + 19 <= numericalTripleErrorCap.
 `NumericalSquareAssembly.lean` fixes `epsilon=1/10000000000` and propagates
 the numerical remainder through the square expansion and corrected Chen
 triple penalty. The triple coefficient is `3.94033`, with error coefficient
-at most `10^40`. **These square/triple assembly theorems still require two
-explicit finite main-term premises**:
+at most `10^40`. This intermediate assembly has two finite main-term premises:
 
 - the denominator bound
   `log(N)/((8+1/10000000)*S(N)) <= liuSelbergDenominator N epsilon`;
 - the genuine-li prime-pair bound
   `LiuGenuineLiWeightMainSumBound 2 (0.49254+1/10000000) N`.
 
-The denominator premise is discharged numerically below. The prime-pair
-premise still needs quantitative quadrature and genuine-li transfer rates.
-Therefore **there is still no numerical `nSquare` or fully numerical `N0`**.
+Both premises are discharged numerically by the completed `NumericalNSquare`
+assembly below. There is still no fully numerical Chen `N0`, because the
+weighted lower estimate and `nLower` remain unfinished.
 
 Validation for the remainder checkpoint: all 21 modules passed a batch rerun
 with warnings treated as errors, including the full local import/axiom audit,
@@ -816,17 +816,68 @@ certifies its literal integer-tower formula. Internal opaque certificates
 keep enormous integers symbolic during kernel checking; their proved
 equalities specify exact numerical values, with no choice or new axioms.
 
-`numerical_square_from_prime_pair` discharges the denominator in the square
-assembly. Once the remaining prime-pair producer supplies a numerical `nPair`,
-the final square threshold is
-
-```
-max(squareAnalyticThreshold, 3^(3^4000000000000), nPair).
-```
+`numerical_square_from_prime_pair` discharges the denominator in the
+intermediate square assembly. The final assembly below also discharges the
+prime-pair premise and proves that all auxiliary thresholds lie below the
+same integer tower.
 
 All eight denominator modules passed the batch check with warnings treated as
 errors. The full import/axiom audit also passed: the single existing local
 Dirichlet axiom, zero OpenAI imports, and zero Li-Liu theorem imports.
+
+## Completed numerical nSquare and triple estimate
+
+`NumericalNSquare.lean` defines and proves the literal numerical value
+
+```
+nSquare = 3^(3^4000000000000).
+```
+
+For every even `N >= nSquare`, `numerical_square_bound` proves the actual
+optimal Selberg square estimate, with no remaining analytic hypotheses:
+
+```
+Square(N) <= 3.94033*S(N)*N/log(N)^2 + numericalSquareError*N/log(N)^3.
+```
+
+At the same cutoff, `numerical_triple_bound` proves
+
+```
+correctedChenTriplePenalty N
+  <= 3.94033*S(N)*N/log(N)^2 + 10^40*N/log(N)^3.
+```
+
+The last prime-pair step uses the fixed logarithmic grid `n=10^12`.
+The already finite mesh-error bound is `759/n`. The numerical Mertens
+estimate gives interval error `18000000000000/log(N)` uniformly over all
+grid endpoints; summing rectangle errors gives
+`105*n^2*18000000000000/log(N)`. The proved finite prime-pair threshold
+ensures `log(N) >= 10^80`, paying this error by `10^-8`. Together with the
+mesh error, the normalized proxy is at most `0.49254+2*10^-8`.
+
+For the genuine logarithmic integral, an elementary split at `sqrt(x)`
+proves `|li_2(x)-x/log(x)| <= 10*x/log(x)^2` above a numerical cutoff.
+The proxy bound itself bounds the exact reciprocal pair mass by `1`,
+avoiding the old chosen Mertens pair constants. Its summed correction is
+at most `10^-8*N/log(N)`. This proves the required genuine-li coefficient
+`0.49254+10^-7`.
+
+`NumericalSquareThresholdCap.lean` bounds the entire numerical remainder
+threshold by `3^(10^80)`. The final proof shows that both this threshold
+and the prime-pair threshold lie below `nSquare`; the triple residual cutoff
+does too. The axiom reports contain only `propext`, `Classical.choice`,
+`Quot.sound`, and the single existing local `dirichlet_seven_eighths`.
+
+`numerical_chen_from_lower` now leaves only the lower producer as a hypothesis.
+Once a numerical `nLower` is proved, the endgame cutoff is
+
+```
+max(9, nLower, 3^(3^4000000000000), 3^(20000*10^40+1)).
+```
+
+All seven modules completing this branch passed the batch check with warnings
+treated as errors. The full local import/axiom audit passed. No new external
+dependencies, OpenAI imports, or local axioms were added.
 
 ## Reproduce
 
@@ -839,7 +890,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the 119 research modules, in dependency order, treating warnings as errors,
+This checks only the 126 research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is
