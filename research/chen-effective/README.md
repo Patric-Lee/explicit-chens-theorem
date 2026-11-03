@@ -437,7 +437,41 @@ source-coordinate gate from `N >= 3^381469726563`. The scalar error payment in
 `NumericalSuzukiAbsorption.lean` is finite: an amplitude bounded by the integer
 `M` is absorbed below `1/r` from
 `D >= 3^max(152587890625,4096*(M+1)^2*r^2)`, uniformly for `0<s<=5`.
-**Bounding the actual sieve amplitude by a numerical M remains required.**
+
+`NumericalSuzukiHat.lean` now bounds the actual Section 13 hat functions:
+`0 <= H(sign,s) <= 4` for `s >= 2`, hence `s*H(sign,s) <= 20` for
+`2 <= s <= 5`. If the remaining Suzuki constant `C <= c` and local-product
+constant `K <= k`, with natural `c,k` and `k >= 1`, the actual amplitude is
+at most `M = 20*c*3^k`. For every depth, the actual Chen-level error is below
+`1/r` once
+
+```
+N >= 3^(5*max(152587890625,4096*(20*c*3^k+1)^2*r^2)).
+```
+
+Numerical caps for `C` and `K` are still required; the hat-function amplitude
+itself no longer contributes an unnamed constant.
+
+`NumericalLowerFactor.lean` replaces qualitative continuity near `s=5` by
+`f(5)-3*(5-s) <= f(s)` on `[4,5]`, for the actual dimension-one lower
+linear-sieve factor. Choosing `epsilon=1/(60*r)`, `r>0`, gives
+`0 < epsilon < 1/10` and `f(5)-1/(2*r) <= f(chenS(epsilon))`.
+This quantifies the lower-factor loss; the remaining coefficient losses
+must still be allocated before fixing the final common epsilon.
+
+`NumericalMertens.lean` proves, for every real `x >= 3^1056784`,
+
+```
+abs(theta(x)-x) <= 300000000000*x/log(x)
+abs(sum(p<=x,1/p) - (log(log(x))+B)) <= 900000000000/log(x).
+```
+
+Here `B` is the existing canonical Mertens constant. It cancels in the
+checked interval version: for `3^1056784 <= w <= z`, the reciprocal-prime
+sum over `(w,z]` differs from `log(log(z))-log(log(w))` by at most
+`1800000000000/log(w)`. These are numerical consequences of the one local
+Dirichlet axiom, using the already proved principal PNT. Product and
+singular-series normalization still need to be deduced from them.
 
 `NumericalLowerEndpoint.lean` pays boundary and prime-power losses from
 
@@ -451,9 +485,11 @@ reduces the remaining task to finite actual-candidate and medium-prime
 aggregate bounds with margins `1/40000` and `1/20000`, respectively.
 The following numerical producers are still unfinished:
 
-- Suzuki lower/upper density constants and local-product/amplitude bounds;
-- Mertens/singular-series normalization and prime-q main-term transfer rates;
-- a fixed admissible rational epsilon meeting the coefficient error budgets.
+- numerical caps for the Suzuki lower/upper density constants and local-product constant;
+- product/singular-series normalization and prime-q main-term transfer rates,
+  now with a numerical reciprocal-prime Mertens estimate available;
+- a common rational epsilon meeting all coefficient error budgets, beyond
+  the quantified lower-factor loss above.
 
 There is still no numerical `nLower`, and no fully numerical Chen `N0`.
 
@@ -468,7 +504,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the thirty-five research modules, in dependency order, treating warnings as errors,
+This checks only the thirty-eight research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is
