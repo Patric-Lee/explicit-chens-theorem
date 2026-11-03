@@ -617,9 +617,10 @@ No compactness minimum or qualitative tail cutoff is used in this result.
 
 ```
 L(q) = log(q)
+Q(q) = ceil(log(q))
 R(q,K) = (L(q)/log(2))*(1+K/log(2))
 B(q,K) = (1/R(q,K)) * exp(sqrt(K))/(L(q)*sourceSigma(q,16))
-         * eps(q) * L(q)^(-1/2)
+         * eps(Q(q)) * L(q)^(-1/2)
 A(q,K) = exp(2*suzukiSourceL(q,K)) / B(q,K)
 J(C1,K) = ceil(exp(C1*K^7)) + 1
 CBounded(C1,K) = exp(sqrt(K)) * (1 + sum(2 <= q < J(C1,K), A(q,K))).
@@ -629,6 +630,18 @@ For `C1>=0` and `1<=K<=Kmax`, `CBounded(C1,Kmax)` proves the actual bounded-K
 Case-A inequality uniformly in the bounding sieve. Its fixed-q coefficients
 are displayed arithmetic expressions; its finite sum contains no chosen
 analytic constants.
+
+The envelope budget now uses `ceil(log(q))`, replacing the earlier coarse
+choice `q`. `quotientHatCutoff_log_budget` proves that whenever `log(q)<=A`,
+the compact hat coordinate is at most `1679616*(A+1)+6`. In the bounded-K
+branch, `A=C1*Kmax^7`; this avoids feeding the exponentially large quotient
+range back into the exponentially small compact-hat lower bound.
+
+This is the first reduction in the lower-threshold optimization. A final
+numerical `nLower` and its total number of exponential layers are not yet
+proved. Further planned improvements are a single uniform bound over the
+logarithmic quotient range, replacing the finite quotient sum, and a joint
+bound on the hat/perturbation error envelope before separating its factors.
 
 `SuzukiFixedKAssembly.lean` fixes `K` before the sieve family varies and uses
 this bounded-K estimate for Case A and coefficient `1` for Case B. Thus it

@@ -10,12 +10,33 @@ open MathlibNt.SieveTheory.SwitchingPrinciple.SuzukiLemma144KappaOne
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 1800000
 
+/-- The envelope needs a budget for log(q), rather than for q itself. -/
+noncomputable def quotientLogBudget (q : ℕ) : ℕ := ⌈Real.log (q : ℝ)⌉₊
+
+theorem quotientLogBudget_covers (q : ℕ) : Real.log (q : ℝ) ≤ quotientLogBudget q :=
+  Nat.le_ceil _
+
+theorem quotientLogBudget_le {q : ℕ} {A : ℝ} (h : Real.log (q : ℝ) ≤ A) :
+    quotientLogBudget q ≤ ⌈A⌉₊ := Nat.ceil_mono h
+
+/-- In the bounded branch, the compact hat coordinate is linear in the
+logarithmic budget A, instead of exponential in A. -/
+theorem quotientHatCutoff_log_budget {q : ℕ} {A : ℝ} (hq : 2 ≤ q)
+    (h : Real.log (q : ℝ) ≤ A) :
+    (quotientCoordinateCutoff (quotientLogBudget q) : ℝ) ≤ 1679616*(A+1)+6 := by
+  have hlog : 0 < Real.log (q : ℝ) := Real.log_pos (by exact_mod_cast (show 1 < q by omega))
+  have hA : 0 ≤ A := hlog.le.trans h
+  have hqA : (quotientLogBudget q : ℝ) ≤ (⌈A⌉₊ : ℝ) := by exact_mod_cast quotientLogBudget_le h
+  have hc := Nat.ceil_lt_add_one hA
+  simp only [quotientCoordinateCutoff,Nat.cast_add,Nat.cast_mul,Nat.cast_ofNat]
+  linarith only [hqA,hc]
+
 noncomputable def fixedQuotientScalarConstant (q : ℕ) (K : ℝ) : ℝ :=
   let L := Real.log (q : ℝ)
   let R := (L / Real.log 2) * (1 + K / Real.log 2)
   Real.exp (2 * suzukiSourceL (q : ℝ) K) /
     ((1 / R) * (Real.exp (Real.sqrt K) / (L * sourceSigma (q : ℝ) 16)) *
-      quotientEnvelopeLower q * L ^ (-(1 / 2 : ℝ)))
+      quotientEnvelopeLower (quotientLogBudget q) * L ^ (-(1 / 2 : ℝ)))
 
 /-- The fixed-quotient scalar has a displayed coefficient, with no hat minima. -/
 theorem numerical_fixed_quotient_scalar
@@ -30,13 +51,11 @@ theorem numerical_fixed_quotient_scalar
           (sourceSigma (q : ℝ) 16) K x := by
   let d : ℝ := 16
   let Δ : ℝ := 1 / 2
-  let e0 := quotientEnvelopeLower q
-  have he0 : 0 < e0 := quotientEnvelopeLower_pos q
+  let e0 := quotientEnvelopeLower (quotientLogBudget q)
+  have he0 : 0 < e0 := quotientEnvelopeLower_pos (quotientLogBudget q)
   have hEnvelopeLower (n : ℕ) (x : ℝ) (hx : 2 ≤ x) :
       e0 ≤ errorEnvelope H n (q : ℝ) d x := by
-    have hlogq : Real.log (q : ℝ) ≤ q :=
-      (Real.log_le_sub_one_of_pos (by exact_mod_cast (show 0 < q by omega))).trans (by linarith)
-    exact numerical_error_envelope_lower hH.toSection13HatContract hq hlogq n hx
+    exact numerical_error_envelope_lower hH.toSection13HatContract hq (quotientLogBudget_covers q) n hx
   have hq1 : (1 : ℝ) < (q : ℝ) := by exact_mod_cast (show 1 < q by omega)
   have hlogq : 0 < Real.log (q : ℝ) := Real.log_pos hq1
   have hsigma : 0 < sourceSigma (q : ℝ) d := sourceSigma_pos_of_nat_two_le hq
