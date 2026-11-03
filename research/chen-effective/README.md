@@ -546,11 +546,47 @@ Lean; their displayed formulas contain only numerical arithmetic.
 is at most `4*C145` for nonnegative `C145`. Its finite denominator bound
 is `sourceSigma(2,16) >= 1/2`.
 
-This does **not** yet cap the final all-depth Suzuki coefficient `C`.
-Its remaining producer inputs are the strict Case-I constant `CBstrict`,
-the even-endpoint constant `CBeven`, and the Claim-14.5 coefficients
-`C145` and `Clow`, including their shared source-large-log cutoff
-`C1min`. Their existential source witnesses still need numerical bounds.
+`NumericalSuzukiCaseOne.lean` exposes the literal coefficient `1` constructed
+by the Case-B source proof and propagates it through the strict and even
+Case-I producers. Thus `CBstrict=CBeven=1` can be used. Their source-large-log
+thresholds remain existential; numerical coefficients do not by themselves
+make those thresholds numerical.
+
+`NumericalSuzukiLowStripScalar.lean` removes the separate low-strip eventual-K
+and bounded-K witnesses. For every nonnegative `C1`, every `K>=2`, and every
+natural `D>=2` with `log(D)<=C1*K^7`, it proves the actual odd low-strip
+Claim-14.5 estimate with
+
+```
+Clow(C1) = 9000*C1^6*88!.
+```
+
+The proof bounds the scalar by `9000*log(D)^6*K^2` and uses the exponential
+series term of order `88` to pay `K^44`. It involves no compactness-selected
+minimum or unspecified analytic endpoint.
+
+`SuzukiCoefficientAssembly.lean` combines these producers with the actual
+all-depth moving-domain theorem at `(d,Delta,Theta)=(16,1/2,7)`. Its coefficient
+is the explicit formula
+
+```
+C(C145,C1) = max(36, 4*C145, 36000*C1^6*88!).
+```
+
+The checked assembly still selects a shared `C1min` and the complete
+Claim-14.5 coefficient `C145` existentially. It therefore does **not** yet
+give a closed numerical final `C`. The checked cap interface says that
+`0<=C1<=b` and `C145<=a` suffice for
+
+```
+C <= max(36, 4*a, 36000*b^6*88!).
+```
+
+What remains is to establish actual numerical `a,b` for the complete Claim-14.5
+producer and an admissible shared separator. In the source, this reaches
+the quantitative hat lower profile, the bounded-K/fixed-quotient compact
+hat minimum, and the fixed geometry/transport cutoffs entering `C1min`.
+The new formulas do not conceal these remaining witnesses as numerals.
 
 `NumericalLowerEndpoint.lean` pays boundary and prime-power losses from
 
@@ -583,7 +619,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the forty-six research modules, in dependency order, treating warnings as errors,
+This checks only the forty-nine research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is

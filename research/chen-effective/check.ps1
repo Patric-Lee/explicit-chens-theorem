@@ -28,7 +28,8 @@ try {
         'NumericalMertens', 'NumericalMertensProduct', 'NumericalGoldbachProduct',
         'NumericalSingularNormalization', 'NumericalSourceMass',
         'NumericalMertensGlobal', 'NumericalGoldbachInterval', 'NumericalLocalProduct',
-        'NumericalSuzukiNormalization')
+        'NumericalSuzukiNormalization', 'NumericalSuzukiLowStripScalar',
+        'NumericalSuzukiCaseOne', 'SuzukiCoefficientAssembly')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)
         if ($startIndex -lt 0) { throw "Unknown research module: $FromModule" }
