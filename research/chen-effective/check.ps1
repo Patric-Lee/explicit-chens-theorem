@@ -50,7 +50,11 @@ try {
         'NumericalPanAggregate', 'NumericalPanLow', 'NumericalPanLedger',
         'NumericalPanUnweighted', 'NumericalPanEnvelope', 'NumericalPanWeighted',
         'NumericalPanSource', 'NumericalPanNormalization', 'NumericalPanR1',
-        'NumericalSelbergRemainder', 'NumericalSquareConstants', 'NumericalSquareAssembly')
+        'NumericalSelbergRemainder', 'NumericalSquareConstants', 'NumericalSquareAssembly',
+        'NumericalSelbergEulerMajorant', 'NumericalSelbergRoot',
+        'NumericalSelbergDivisorGeometry', 'NumericalSelbergDivisorProduct',
+        'NumericalSelbergDivisorLog', 'NumericalSelbergMoments',
+        'NumericalSelbergDenominator', 'NumericalSelbergDenominatorClosed')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)
         if ($startIndex -lt 0) { throw "Unknown research module: $FromModule" }

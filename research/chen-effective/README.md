@@ -775,18 +775,58 @@ explicit finite main-term premises**:
 - the genuine-li prime-pair bound
   `LiuGenuineLiWeightMainSumBound 2 (0.49254+1/10000000) N`.
 
-The production proofs establish these only eventually. Numerical convergence
-rates are still needed for both: uniform denominator Euler/logarithmic moments
-and prime-divisor growth in the first case; quantitative prime-pair quadrature
-and genuine-li transfer in the second. Therefore **there is still no numerical
-`nSquare` or fully numerical `N0`**. The new work closes the remainder/error
-coefficient branch; it does not choose a threshold from those eventual proofs.
+The denominator premise is discharged numerically below. The prime-pair
+premise still needs quantitative quadrature and genuine-li transfer rates.
+Therefore **there is still no numerical `nSquare` or fully numerical `N0`**.
 
-Validation for this checkpoint: all 21 new modules compiled individually with
-warnings treated as errors; the copied sources were compared against the
-current compiled versions, and the full local import/axiom audit passed. A
-subsequent batch rerun was blocked by Windows application control when starting
-`lake.exe` (OS error 4551), after the individual checks had succeeded.
+Validation for the remainder checkpoint: all 21 modules passed a batch rerun
+with warnings treated as errors, including the full local import/axiom audit,
+after `lake.exe` was allowlisted in Windows application control.
+
+## Numerical Selberg denominator
+
+`NumericalSelbergDenominatorClosed.lean` proves, for every even integer
+
+```
+N >= 3^(3^4000000000000),
+```
+
+the exact required denominator bound at `epsilon=1/10000000000`:
+
+```
+log(N)/((8+1/10000000)*S(N)) <= liuSelbergDenominator N epsilon.
+```
+
+The numerical ingredients are:
+
+- The fourth-root Euler mass `sum_d |h_2(d)| d^(1/4) <= exp(29)`, proved
+  by a finite smooth-number Euler-product majorant and the numerical
+  `zeta(3/2) <= 3` integral comparison.
+- Universal absolute Euler mass at most `exp(29)` and logarithmic moment
+  at most `4*exp(29)`.
+- Prime-divisor product at most `54*(1+log log N)` and prime-divisor
+  logarithmic moment at most `3*(1+log log N)^2`, at an explicit cutoff.
+  The latter uses an elementary harmonic bound, without a Mertens witness.
+- Combined denominator error numerator at most
+  `10^24*(1+log log N)^6`, normalized error at most `10^-12`, and the
+  finite correction for the floored moving Selberg cutoff.
+
+The threshold is deliberately generous. `numericalDenominatorThreshold_eq`
+certifies its literal integer-tower formula. Internal opaque certificates
+keep enormous integers symbolic during kernel checking; their proved
+equalities specify exact numerical values, with no choice or new axioms.
+
+`numerical_square_from_prime_pair` discharges the denominator in the square
+assembly. Once the remaining prime-pair producer supplies a numerical `nPair`,
+the final square threshold is
+
+```
+max(squareAnalyticThreshold, 3^(3^4000000000000), nPair).
+```
+
+All eight denominator modules passed the batch check with warnings treated as
+errors. The full import/axiom audit also passed: the single existing local
+Dirichlet axiom, zero OpenAI imports, and zero Li-Liu theorem imports.
 
 ## Reproduce
 
@@ -799,7 +839,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the 111 research modules, in dependency order, treating warnings as errors,
+This checks only the 119 research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is
