@@ -1,13 +1,13 @@
 # Effective Chen investigation
 
-Status: the explicit Siegel constant, finite counting endgame, numerical
-high-conductor BV and elementary payments, numerical primitive low-conductor
-estimates, numerical principal PNT, numerical BV, and downstream
-Chen distribution/triple residual payments are proved and compile-checked.
-**A closed numerical Chen threshold has not been obtained.** The analytic
-starting points `nLower`, `nTriple`, and a numerical bound `B` for the triple
-error constant remain unresolved. This directory does not change the main
-libraries or claim those hypotheses have been discharged.
+Status: numerical primitive and principal estimates, BV and weighted
+distribution, the fully numerical Suzuki coefficient, and the actual
+base-candidate lower bound are proved and compile-checked. The square/triple
+branch is complete with `nSquare=3^(3^4000000000000)` and error cap `B=10^40`.
+**A closed numerical Chen threshold has not been obtained.** The remaining
+lower-estimate producer is the medium-prime aggregate upper bound; its
+numerical threshold must be joined to the completed base and endpoint
+cutoffs to obtain `nLower`.
 
 Base checkout: `9d4c3a4010d42aedd9e7231bf94386019cfffccc`.
 Toolchain: `leanprover/lean4:v4.33.0-rc1`.
@@ -275,7 +275,7 @@ as described below: `nSquare=3^(3^4000000000000)` and `B=10^40`.
 | Low-conductor summation and principal PNT | `NumericalPrincipalPNT.lean`, `ExplicitLowConductor.lean` | Completed. Principal source constant `5*10^11`, with threshold `3^(16*(128*(D+1)+1)^2)`. |
 | High-conductor BV and elementary packet | `ExplicitBVHigh.lean`, `ExplicitBVPayload.lean` | Completed with numerical constants and starting points. |
 | Full BV and weighted distribution | `NumericalBV.lean`, `NumericalUpperDistribution.lean`, `NumericalPanWeighted.lean` | Completed for ordinary BV, the Richert weighted/varying-prime distribution input, and the Liu-Pan convolution branch used for the triple bound. |
-| Weighted lower estimate | `NumericalLowerEndpoint.lean` and `LinearSieve/JurkatRichert/JurkatRichert1965ChenRichertConsumer.lean` | Obtain numerical lower/upper density producers and `nLower`. Distribution, the Suzuki coordinate gate, lower-source mass normalization, and endpoint losses are numerical. The shared Suzuki separator and final fixed-K coefficient are now numerical. Upper normalization and prime-q transfer still need numerical rates. |
+| Weighted lower estimate | `NumericalLowerEndpoint.lean` and `LinearSieve/JurkatRichert/JurkatRichert1965ChenRichertConsumer.lean` | Base candidates are completed in `NumericalBaseCandidates.lean`, including the `1/40000` loss at an explicit cutoff. The remaining producer is the medium-prime aggregate upper bound with `1/20000` loss, followed by the maximum defining `nLower`. Upper normalization and prime-q transfer still need numerical rates. |
 | Triple upper estimate | `NumericalNSquare.lean` | Completed: `nSquare=3^(3^4000000000000)`, actual triple coefficient `3.94033`, and error coefficient at most `B=10^40`. |
 | Finite endpoint | `numerical_chen_from_lower` | Completed conditionally only on the numerical weighted lower estimate. |
 
@@ -719,13 +719,15 @@ Nend = max(2^110+1, logPowerCutoff(30), 3^2400000).
 
 A source weighted coefficient `2.64075` then gives the required production
 coefficient `2.6407`. More precisely, `numerical_lower_from_density_bounds`
-reduces the remaining task to finite actual-candidate and medium-prime
-aggregate bounds with margins `1/40000` and `1/20000`, respectively.
+uses finite actual-candidate and medium-prime aggregate bounds with margins
+`1/40000` and `1/20000`, respectively. The candidate bound is now proved in
+`NumericalBaseCandidates.lean`; `numerical_lower_from_medium_prime_bound`
+leaves only the medium-prime aggregate as its analytic hypothesis.
 The following numerical producers are still unfinished:
 
 - varying-prime upper-product normalization and prime-q main-term transfer rates;
-- a common rational epsilon meeting all coefficient error budgets, beyond
-  the quantified lower-factor loss above.
+- the upper-sieve epsilon and coefficient error budgets. The base-candidate
+  epsilon and all its budgets are already fixed numerically.
 
 There is still no numerical `nLower`, and no fully numerical Chen `N0`.
 
@@ -914,9 +916,60 @@ only for `d=0`; it is not used by the Suzuki source assembly. Both improved
 cutoffs feed the existing shared `numericalSuzukiC1` formula.
 
 These changes reduce avoidable exponential layers in the constants. They
-do not yet produce `nLower`: the quantitative lower-sieve absorption,
-normalization, and common error-budget assembly remain to be completed.
+do not by themselves produce `nLower`. The base-candidate absorption and
+normalization are completed below; the medium-prime upper estimate remains.
 The completed `nSquare` branch and its `10^40` triple error cap are unchanged.
+
+## Completed numerical base-candidate lower bound
+
+`NumericalBaseDensity.lean` proves the finite lower density at Chen's literal
+floor level, uniformly in the adaptive supported-carrier depth. It consumes
+the fully numerical Suzuki theorem directly, without selecting a constant,
+an eventual threshold, or a continuity radius. The source-family index and
+recursion depth are independent.
+
+Let `Cnum=numericalChenSuzukiCoefficient`, `Knum=numericalLocalProductK`, and
+
+```
+c = ceil(max(1,Cnum)), k = ceil(max(1,Knum))
+r = 20000000, epsilon = 1/(60*r) = 1/1200000000
+DensityCutoff(r) = max(2, suzukiCoordinateThreshold,
+                       suzukiErrorThreshold(c,k,r))
+DistributionCutoff(m,d) = max(numericalBVThreshold(3),
+  lowerDistributionThreshold(m,d,1000344400000012180))
+nBase = max(DensityCutoff(2*r), sourceMassThreshold(r),
+            DistributionCutoff(60*r,r)).
+```
+
+Here `c` and `k` are ceilings of closed numerical formulas; they are not
+chosen witnesses. The existing definitions expand every threshold above
+into integer arithmetic, powers, maxima, and the numerical Suzuki formulas.
+
+For every even `N>=nBase`, `numerical_base_candidates` proves
+
+```
+(jurkatRichertBaseMainCoefficient(jurkatRichertJ)-1/40000)
+  * S(N)*N/log(N)^2 <= card(jurkatRichertSourceCandidates(N)).
+```
+
+The proof uses `A=jurkatRichertBaseSieveFactor(J)`,
+`B=jurkatRichertMertensFactor`, and `M=S(N)*N/log(N)^2`.
+The explicit epsilon costs at most `1/(2*r)` in the lower factor, and
+Suzuki absorption at `DensityCutoff(2*r)` costs less than `1/(2*r)`.
+Thus the density factor is at least `A-1/r`. Source mass is at least
+`(B-40/r)*M`, and the genuine finite Rosser remainder is at most `M/r`
+by numerical BV. The proved elementary bounds `2/5<=A<=10` and `B<=20`
+give total coefficient loss at most `421/r < 1/40000`.
+
+`numerical_lower_from_medium_prime_bound` discharges the base hypothesis
+of the finite weighted-lower endpoint. It needs only the actual medium-prime
+aggregate upper bound with coefficient
+`jurkatRichertQ1MainCoefficient(K)+1/20000`, above the maximum of `nBase`
+and `lowerEndpointThreshold`. This is the remaining lower-estimate producer;
+a fully numerical `nLower` and Chen cutoff still require it.
+
+The new proofs retain exactly the existing local `dirichlet_seven_eighths`
+axiom, with zero OpenAI imports and no new dependencies.
 
 ## Reproduce
 
@@ -929,7 +982,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the 128 research modules, in dependency order, treating warnings as errors,
+This checks only the 130 research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is

@@ -58,7 +58,8 @@ try {
         'NumericalSelbergDenominator', 'NumericalSelbergDenominatorClosed',
         'NumericalPrimePairThreshold', 'NumericalPrimePairInterval', 'NumericalPrimePairGrid',
         'NumericalGenuineLiPointwise', 'NumericalGenuineLiSum',
-        'NumericalSquareThresholdCap', 'NumericalNSquare')
+        'NumericalSquareThresholdCap', 'NumericalNSquare',
+        'NumericalBaseDensity', 'NumericalBaseCandidates')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)
         if ($startIndex -lt 0) { throw "Unknown research module: $FromModule" }
