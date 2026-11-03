@@ -32,7 +32,18 @@ try {
         'NumericalSuzukiCaseOne', 'SuzukiCoefficientAssembly',
         'NumericalHatCompact', 'NumericalHatLower', 'NumericalQuotientEnvelope',
         'NumericalCaseABounded', 'SuzukiFixedKAssembly',
-        'NumericalRealLogBounds', 'NumericalC1Scalar', 'NumericalFiniteHat', 'NumericalC1Order')
+        'NumericalRealLogBounds', 'NumericalC1Scalar', 'NumericalFiniteHat', 'NumericalC1Order',
+        'NumericalHatComparison', 'NumericalReverseEnvelope', 'NumericalReverseRatio',
+        'NumericalHatBarrier', 'NumericalSharpHatProfile', 'NumericalCaseBCutoff',
+        'NumericalC1Endpoint', 'NumericalForwardEnvelope', 'NumericalSourceGeometry',
+        'NumericalCompactDerivative', 'NumericalSourceLogDomination', 'NumericalSourceRatio',
+        'NumericalDerivativeCertificate', 'NumericalClaim146Monotone', 'NumericalHatTail',
+        'NumericalPerturbation', 'NumericalWeightedHead', 'NumericalMovingTail',
+        'NumericalClaim146Tail', 'NumericalClaim146', 'NumericalSigmaTwelveContraction',
+        'NumericalErrorTransport', 'NumericalSigmaZeroCutoff', 'NumericalCaseIICoreDecay',
+        'NumericalC1Geometry', 'NumericalCaseIIGap', 'NumericalC1Tools',
+        'NumericalCaseIStrict', 'NumericalCaseIEven', 'NumericalCaseIITransport',
+        'NumericalCaseII', 'NumericalSuzukiC1')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)
         if ($startIndex -lt 0) { throw "Unknown research module: $FromModule" }

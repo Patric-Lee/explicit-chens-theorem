@@ -275,7 +275,7 @@ they have not been evaluated or replaced with an additional axiom.
 | Low-conductor summation and principal PNT | `NumericalPrincipalPNT.lean`, `ExplicitLowConductor.lean` | Completed. Principal source constant `5*10^11`, with threshold `3^(16*(128*(D+1)+1)^2)`. |
 | High-conductor BV and elementary packet | `ExplicitBVHigh.lean`, `ExplicitBVPayload.lean` | Completed with numerical constants and starting points. |
 | Full BV and weighted distribution | `NumericalBV.lean`, `NumericalUpperDistribution.lean` | Ordinary BV and the Richert weighted/varying-prime distribution input are numerical. The Liu-Pan convolution branch for the triple estimate remains unfinished. |
-| Weighted lower estimate | `NumericalLowerEndpoint.lean` and `LinearSieve/JurkatRichert/JurkatRichert1965ChenRichertConsumer.lean` | Obtain numerical lower/upper density producers and `nLower`. Distribution, the Suzuki coordinate gate, lower-source mass normalization, and endpoint losses are numerical. The fixed-K Suzuki coefficient is explicit in `C1`; its shared admissibility cutoff, upper normalization, and prime-q transfer still need numerical rates. |
+| Weighted lower estimate | `NumericalLowerEndpoint.lean` and `LinearSieve/JurkatRichert/JurkatRichert1965ChenRichertConsumer.lean` | Obtain numerical lower/upper density producers and `nLower`. Distribution, the Suzuki coordinate gate, lower-source mass normalization, and endpoint losses are numerical. The shared Suzuki separator and final fixed-K coefficient are now numerical. Upper normalization and prime-q transfer still need numerical rates. |
 | Triple upper estimate | `ExplicitChenTriple.lean` and `Selberg/Liu/LiuSelbergCorrectedChenBridge.lean` | Residual constants are `13+6`, both paid from `3^21904`. Obtain numerical `nSquare` and `Csquare`, then take `B >= Csquare+19`. |
 | Finite endpoint | This directory | Completed conditionally on those numerical analytic inputs. |
 
@@ -573,8 +573,8 @@ is the explicit formula
 C(C145,C1) = max(36, 4*C145, 36000*C1^6*88!).
 ```
 
-This generic-in-K assembly still selects a shared `C1min` and the complete
-Claim-14.5 coefficient `C145` existentially. It therefore does **not** yet
+This generic-in-K assembly selects a shared `C1min` and the complete
+Claim-14.5 coefficient `C145` existentially. By itself it does not
 give a closed numerical final `C`. The checked cap interface says that
 `0<=C1<=b` and `C145<=a` suffice for
 
@@ -582,8 +582,8 @@ give a closed numerical final `C`. The checked cap interface says that
 C <= max(36, 4*a, 36000*b^6*88!).
 ```
 
-The fixed-K route below now avoids the separate unknown `a`. The shared
-separator still needs a numerical admissibility proof.
+The completed fixed-K route below avoids the separate unknown `a` and
+proves numerical admissibility of its shared separator.
 
 ## Explicit hat lower bounds and fixed-K assembly
 
@@ -641,13 +641,9 @@ Cfixed(C1,K) = max(36, 4*C145(C1,K), 36000*C1^6*88!).
 
 `source_suzuki_coefficient_formula` specializes this to the actual Jurkat--Richert
 hat functions and Chen source family at the already numerical `Knum`.
-The only remaining unspecified coefficient input on this route is an
-admissible shared `C1`: the theorem still obtains `C1min` existentially.
-**The final C is not yet a closed numerical constant.** Quantifying `C1min`
-still requires the source-large-log Case-B cutoff (including its sharper
-hat lower profile), the strict/even geometry and transport cutoffs, and
-the Case-II separator. The coarse lower profile above is sufficient for
-the fixed-quotient branch; it does not discharge those sharper thresholds.
+That earlier theorem obtains `C1min` existentially. The strengthened theorem
+`source_suzuki_fully_numerical` in `NumericalSuzukiC1.lean` now supplies its
+closed numerical value and closes the final Suzuki coefficient as well.
 
 ## Numerical subconditions for the shared C1
 
@@ -680,12 +676,42 @@ and Case-B coefficient `1`, the actual endpoint amplitude is at most
 `1+300*R`. Thus a numerical reverse-ratio cap `R<=r` would give the
 checked order cutoff `C1>=3^(1200*r+5)`.
 
-**These are subconditions, not a completed numerical shared C1.** In particular
-no numerical `r` is claimed. The reverse adjacent-ratio cap, source-large-log
-Case-B cutoff, Claim-14.6 contraction/transport cutoffs, rounded geometry,
-and Case-II separator still need numerical proofs and assembly. The
-fixed-K source theorem above still selects its shared `C1min` qualitatively;
-these replacements are available for reconstructing that selection.
+## Completed numerical shared C1
+
+`NumericalSuzukiC1.lean` defines the closed expression
+
+```
+numericalSuzukiC1 = max(1, caseBSourceC1, caseIStrictC1, caseIEvenC1, caseIIC1).
+numericalChenSuzukiCoefficient = Cfixed(numericalSuzukiC1, Knum).
+```
+
+Every constituent is a displayed numerical formula, independent of the sieve,
+hat functions, recursion depth, and varying parameters. These formulas use
+rational numbers, integer powers, logarithms, exponentials, real powers,
+maxima, and natural ceilings. No unspecified analytic constant or
+compactness-selected minimum remains in them. The finite sum in `CBounded`
+is the explicitly bounded sum displayed above; it is not evaluated by
+enumerating its enormous range.
+
+The new proofs supply:
+
+- Comparison `Qhat <= 51200000000 * T` and reverse-ratio cap
+  `r = 51200000000 * (800 * 22^20 + 75)`.
+- A forward majorant with `cMinus=1152`, `A=2`, cutoff `exp(2309)`.
+- The sharp lower profile with coefficient `60000000000` from `s=20000`,
+  and an explicit source-large-log Case-B cutoff.
+- Numerical compact derivative and moving source-range bounds, all three
+  clauses of Claim 14.6, and the resulting contraction and error transport.
+- Numerical strict/even Case-I separators and a numerical Case-II separator,
+  including finite endpoint bounds `864` and `576`.
+
+`numerical_fixedK_suzuki` proves admissibility for every separator at least
+`numericalSuzukiC1`. `source_suzuki_fully_numerical` specializes at that
+displayed value to the actual Jurkat--Richert hats and Chen source sieve,
+uniformly for every depth `N>=1`. Its axiom report is exactly `propext`,
+`Classical.choice`, `Quot.sound`, and the existing local
+`dirichlet_seven_eighths`. There are no new axiom declarations, OpenAI
+imports, or external dependencies.
 
 `NumericalLowerEndpoint.lean` pays boundary and prime-power losses from
 
@@ -699,8 +725,6 @@ reduces the remaining task to finite actual-candidate and medium-prime
 aggregate bounds with margins `1/40000` and `1/20000`, respectively.
 The following numerical producers are still unfinished:
 
-- a numerical admissible shared `C1` for the fixed-K Suzuki assembly above;
-  the local-product constant and the coefficient as a function of `C1` are explicit;
 - varying-prime upper-product normalization and prime-q main-term transfer rates;
 - a common rational epsilon meeting all coefficient error budgets, beyond
   the quantified lower-factor loss above.
@@ -718,7 +742,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the fifty-eight research modules, in dependency order, treating warnings as errors,
+This checks only the ninety research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is
