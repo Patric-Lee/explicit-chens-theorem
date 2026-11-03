@@ -470,8 +470,50 @@ Here `B` is the existing canonical Mertens constant. It cancels in the
 checked interval version: for `3^1056784 <= w <= z`, the reciprocal-prime
 sum over `(w,z]` differs from `log(log(z))-log(log(w))` by at most
 `1800000000000/log(w)`. These are numerical consequences of the one local
-Dirichlet axiom, using the already proved principal PNT. Product and
-singular-series normalization still need to be deduced from them.
+Dirichlet axiom, using the already proved principal PNT.
+
+## Numerical lower-source normalization
+
+The lower-source product and singular-series normalization now have explicit
+error budgets. For a positive natural `r`, define
+
+```
+P(r) = max(3^1056784, 3^(1800000000004*r))
+Nproduct(r) = (P(r)+1)^10
+Nseries(r) = max(2^110+1, (80*r+3)^10)
+Nmass(r) = max(Nproduct(r), Nseries(r)).
+```
+
+`NumericalMertensProduct.lean` proves
+`abs(primeProduct(n)*log(n)*exp(gamma)-1) <= 1/r` for `n >= P(r)`.
+It uses the existing exact Euler--Mascheroni constant identity and the
+explicit `2/n` logarithmic-correction tail, without choosing any new
+asymptotic witnesses.
+
+`NumericalGoldbachProduct.lean` transfers the lower bound to the literal
+source cutoff `z=floor(N^(1/10))+1`. For even `N >= Nproduct(r)`,
+
+```
+10*(1-1/r)*exp(-gamma)*S_truncated(N,z-1)/log(N) <= V(N,z).
+```
+
+`NumericalSingularNormalization.lean` proves, for even `N >= Nseries(r)`,
+`2*S_Liu(N) <= (1+1/r)*S_truncated(N,z-1)`. It quantifies the existing
+ten-large-prime-divisor tail estimate and the one-point cutoff correction.
+This part is elementary and uses no Dirichlet axiom.
+
+Combining both with the finite logarithmic-integral lower bound,
+`NumericalSourceMass.lean` proves, for even `N >= Nmass(r)`,
+
+```
+(20*exp(-gamma)-40/r)*S_Liu(N)*N/log(N)^2
+  <= sourceSieve.totalMass * sieveProductPrimeFactors(sourceSieve).
+```
+
+The concrete specialization `r=1600000` pays a source-mass coefficient
+loss of `1/40000` at the displayed numerical threshold. This is a mass
+normalization estimate; the lower-density factor and its error must still
+be combined with it to obtain the candidate-count coefficient.
 
 `NumericalLowerEndpoint.lean` pays boundary and prime-power losses from
 
@@ -486,8 +528,7 @@ aggregate bounds with margins `1/40000` and `1/20000`, respectively.
 The following numerical producers are still unfinished:
 
 - numerical caps for the Suzuki lower/upper density constants and local-product constant;
-- product/singular-series normalization and prime-q main-term transfer rates,
-  now with a numerical reciprocal-prime Mertens estimate available;
+- varying-prime upper-product normalization and prime-q main-term transfer rates;
 - a common rational epsilon meeting all coefficient error budgets, beyond
   the quantified lower-factor loss above.
 
@@ -504,7 +545,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the thirty-eight research modules, in dependency order, treating warnings as errors,
+This checks only the forty-two research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is
