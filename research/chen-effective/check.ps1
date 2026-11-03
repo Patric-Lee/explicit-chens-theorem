@@ -29,7 +29,9 @@ try {
         'NumericalSingularNormalization', 'NumericalSourceMass',
         'NumericalMertensGlobal', 'NumericalGoldbachInterval', 'NumericalLocalProduct',
         'NumericalSuzukiNormalization', 'NumericalSuzukiLowStripScalar',
-        'NumericalSuzukiCaseOne', 'SuzukiCoefficientAssembly')
+        'NumericalSuzukiCaseOne', 'SuzukiCoefficientAssembly',
+        'NumericalHatCompact', 'NumericalHatLower', 'NumericalQuotientEnvelope',
+        'NumericalCaseABounded', 'SuzukiFixedKAssembly')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)
         if ($startIndex -lt 0) { throw "Unknown research module: $FromModule" }

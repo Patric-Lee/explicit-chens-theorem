@@ -275,7 +275,7 @@ they have not been evaluated or replaced with an additional axiom.
 | Low-conductor summation and principal PNT | `NumericalPrincipalPNT.lean`, `ExplicitLowConductor.lean` | Completed. Principal source constant `5*10^11`, with threshold `3^(16*(128*(D+1)+1)^2)`. |
 | High-conductor BV and elementary packet | `ExplicitBVHigh.lean`, `ExplicitBVPayload.lean` | Completed with numerical constants and starting points. |
 | Full BV and weighted distribution | `NumericalBV.lean`, `NumericalUpperDistribution.lean` | Ordinary BV and the Richert weighted/varying-prime distribution input are numerical. The Liu-Pan convolution branch for the triple estimate remains unfinished. |
-| Weighted lower estimate | `NumericalLowerEndpoint.lean` and `LinearSieve/JurkatRichert/JurkatRichert1965ChenRichertConsumer.lean` | Obtain numerical lower/upper density producers and `nLower`. Distribution, the Suzuki coordinate gate, and endpoint/prime-power losses are numerical. The Suzuki constants, density normalization, and prime-q main-term transfer still need rates. |
+| Weighted lower estimate | `NumericalLowerEndpoint.lean` and `LinearSieve/JurkatRichert/JurkatRichert1965ChenRichertConsumer.lean` | Obtain numerical lower/upper density producers and `nLower`. Distribution, the Suzuki coordinate gate, lower-source mass normalization, and endpoint losses are numerical. The fixed-K Suzuki coefficient is explicit in `C1`; its shared admissibility cutoff, upper normalization, and prime-q transfer still need numerical rates. |
 | Triple upper estimate | `ExplicitChenTriple.lean` and `Selberg/Liu/LiuSelbergCorrectedChenBridge.lean` | Residual constants are `13+6`, both paid from `3^21904`. Obtain numerical `nSquare` and `Csquare`, then take `B >= Csquare+19`. |
 | Finite endpoint | This directory | Completed conditionally on those numerical analytic inputs. |
 
@@ -573,7 +573,7 @@ is the explicit formula
 C(C145,C1) = max(36, 4*C145, 36000*C1^6*88!).
 ```
 
-The checked assembly still selects a shared `C1min` and the complete
+This generic-in-K assembly still selects a shared `C1min` and the complete
 Claim-14.5 coefficient `C145` existentially. It therefore does **not** yet
 give a closed numerical final `C`. The checked cap interface says that
 `0<=C1<=b` and `C145<=a` suffice for
@@ -582,11 +582,72 @@ give a closed numerical final `C`. The checked cap interface says that
 C <= max(36, 4*a, 36000*b^6*88!).
 ```
 
-What remains is to establish actual numerical `a,b` for the complete Claim-14.5
-producer and an admissible shared separator. In the source, this reaches
-the quantitative hat lower profile, the bounded-K/fixed-quotient compact
-hat minimum, and the fixed geometry/transport cutoffs entering `C1min`.
-The new formulas do not conceal these remaining witnesses as numerals.
+The fixed-K route below now avoids the separate unknown `a`. The shared
+separator still needs a numerical admissibility proof.
+
+## Explicit hat lower bounds and fixed-K assembly
+
+`NumericalHatCompact.lean` replaces the compactness-selected positive minimum
+by the formula
+
+```
+e(m) = 1 / (8*m^2*[2*(m+1)]^(2*m)),   m >= 3.
+```
+
+Both normalized Section-13 hat functions are at least `e(m)` on `[2,m]`.
+The proof uses the tail-integral identity on half-step windows and finite
+induction, uniformly for every normalized `Section13HatContract H 2`.
+`NumericalHatLower.lean` deduces the explicit coarse lower profile
+`exp(-8*s*log(6*s)) <= H(sign,s)` for all `s >= 2`.
+
+For a natural log budget `Q`, set
+
+```
+M(Q) = 1679616*Q + 6
+eps(Q) = min(1, 2*e(M(Q))).
+```
+
+`NumericalQuotientEnvelope.lean` proves `eps(Q)>0` and bounds the actual
+error envelope below by `eps(Q)`, for every depth, every `s>=2`, and every
+integer `D>=2` with `log(D)<=Q`. Above `M(Q)` the envelope is at least `1`.
+No compactness minimum or qualitative tail cutoff is used in this result.
+
+`NumericalCaseABounded.lean` provides explicit coefficients. Write
+
+```
+L(q) = log(q)
+R(q,K) = (L(q)/log(2))*(1+K/log(2))
+B(q,K) = (1/R(q,K)) * exp(sqrt(K))/(L(q)*sourceSigma(q,16))
+         * eps(q) * L(q)^(-1/2)
+A(q,K) = exp(2*suzukiSourceL(q,K)) / B(q,K)
+J(C1,K) = ceil(exp(C1*K^7)) + 1
+CBounded(C1,K) = exp(sqrt(K)) * (1 + sum(2 <= q < J(C1,K), A(q,K))).
+```
+
+For `C1>=0` and `1<=K<=Kmax`, `CBounded(C1,Kmax)` proves the actual bounded-K
+Case-A inequality uniformly in the bounding sieve. Its fixed-q coefficients
+are displayed arithmetic expressions; its finite sum contains no chosen
+analytic constants.
+
+`SuzukiFixedKAssembly.lean` fixes `K` before the sieve family varies and uses
+this bounded-K estimate for Case A and coefficient `1` for Case B. Thus it
+bypasses the qualitative large-K thresholds `Klow,Khigh`. It proves the
+actual all-depth theorem with
+
+```
+C145(C1,K) = max(1, CBounded(C1,K))
+Cfixed(C1,K) = max(36, 4*C145(C1,K), 36000*C1^6*88!).
+```
+
+`source_suzuki_coefficient_formula` specializes this to the actual Jurkat--Richert
+hat functions and Chen source family at the already numerical `Knum`.
+The only remaining unspecified coefficient input on this route is an
+admissible shared `C1`: the theorem still obtains `C1min` existentially.
+**The final C is not yet a closed numerical constant.** Quantifying `C1min`
+still requires the source-large-log Case-B cutoff (including its sharper
+hat lower profile), the strict/even geometry and transport cutoffs, and
+the Case-II separator. The coarse lower profile above is sufficient for
+the fixed-quotient branch; it does not discharge those sharper thresholds.
 
 `NumericalLowerEndpoint.lean` pays boundary and prime-power losses from
 
@@ -600,8 +661,8 @@ reduces the remaining task to finite actual-candidate and medium-prime
 aggregate bounds with margins `1/40000` and `1/20000`, respectively.
 The following numerical producers are still unfinished:
 
-- numerical caps for the remaining Suzuki lower/upper density producer constants
-  listed above; the local-product constant is now numerical;
+- a numerical admissible shared `C1` for the fixed-K Suzuki assembly above;
+  the local-product constant and the coefficient as a function of `C1` are explicit;
 - varying-prime upper-product normalization and prime-q main-term transfer rates;
 - a common rational epsilon meeting all coefficient error budgets, beyond
   the quantified lower-factor loss above.
@@ -619,7 +680,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the forty-nine research modules, in dependency order, treating warnings as errors,
+This checks only the fifty-four research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is
