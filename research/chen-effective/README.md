@@ -649,6 +649,44 @@ hat lower profile), the strict/even geometry and transport cutoffs, and
 the Case-II separator. The coarse lower profile above is sufficient for
 the fixed-quotient branch; it does not discharge those sharper thresholds.
 
+## Numerical subconditions for the shared C1
+
+`NumericalRealLogBounds.lean` extends the explicit logarithmic payments to
+real endpoints. In particular these payments can be applied to `x=log(D)`;
+no integer-rounding or eventual witness is introduced for that substitution.
+
+`NumericalC1Scalar.lean` proves the literal Case-I (14.23) scalar condition
+for `K,D>=2`, `C1>=3^9461776`, and `C1*K^7<log(D)`:
+
+```
+K^2 * sourceSigma(D,16)^3 * log(exp(1)*sourceSigma(D,16)) * log(log(D))
+  / log(D)^(1/2) <= 1.
+```
+
+The parameter margin is `1/2-(2/7+3/16)=3/112`. Its explicit logarithmic
+payment is `32*log(x)^5 <= x^(3/224)` for `x>=3^9461776`.
+This removes the `Xlog` little-o witness from this scalar subcondition.
+
+`NumericalFiniteHat.lean` proves the Section-13 endpoint slack is at least
+`1/72`, by integrating the initial-strip bound over `[3,4]`. It propagates
+that bound through the full finite-depth induction to give the literal
+coefficient `L=144`. Both the strict predecessor estimate and the closed
+even endpoint are checked with this same coefficient.
+
+`NumericalC1Order.lean` proves source-order absorption with the canonical
+midpoint strict factor whenever `A<=a`, natural `a`, and
+`C1>=3^(4*a+1)` under the same source-large-log condition. With `L=144`
+and Case-B coefficient `1`, the actual endpoint amplitude is at most
+`1+300*R`. Thus a numerical reverse-ratio cap `R<=r` would give the
+checked order cutoff `C1>=3^(1200*r+5)`.
+
+**These are subconditions, not a completed numerical shared C1.** In particular
+no numerical `r` is claimed. The reverse adjacent-ratio cap, source-large-log
+Case-B cutoff, Claim-14.6 contraction/transport cutoffs, rounded geometry,
+and Case-II separator still need numerical proofs and assembly. The
+fixed-K source theorem above still selects its shared `C1min` qualitatively;
+these replacements are available for reconstructing that selection.
+
 `NumericalLowerEndpoint.lean` pays boundary and prime-power losses from
 
 ```
@@ -680,7 +718,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the fifty-four research modules, in dependency order, treating warnings as errors,
+This checks only the fifty-eight research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is

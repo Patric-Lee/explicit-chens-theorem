@@ -31,7 +31,8 @@ try {
         'NumericalSuzukiNormalization', 'NumericalSuzukiLowStripScalar',
         'NumericalSuzukiCaseOne', 'SuzukiCoefficientAssembly',
         'NumericalHatCompact', 'NumericalHatLower', 'NumericalQuotientEnvelope',
-        'NumericalCaseABounded', 'SuzukiFixedKAssembly')
+        'NumericalCaseABounded', 'SuzukiFixedKAssembly',
+        'NumericalRealLogBounds', 'NumericalC1Scalar', 'NumericalFiniteHat', 'NumericalC1Order')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)
         if ($startIndex -lt 0) { throw "Unknown research module: $FromModule" }
