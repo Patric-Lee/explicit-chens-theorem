@@ -515,6 +515,43 @@ loss of `1/40000` at the displayed numerical threshold. This is a mass
 normalization estimate; the lower-density factor and its error must still
 be combined with it to obtain the candidate-count coefficient.
 
+## Suzuki constant caps
+
+The local-product constant now has a fixed numerical choice. Define
+
+```
+nstar = 3^1056784
+A = (4*nstar + 900000000006)*nstar
+E = 4*A + 52
+Knum = (E+2)*3^(2*E).
+```
+
+`NumericalMertensGlobal.lean` proves the reciprocal-prime Mertens error is
+at most `A/log(n)` for **every** integer `n >= 2`, using elementary bounds
+below `nstar` and the previous numerical Mertens estimate above it.
+`NumericalGoldbachInterval.lean` gives the resulting real-endpoint inverse
+Goldbach-factor interval bound, retaining the closed lower endpoint.
+`NumericalLocalProduct.lean` proves `2 <= Knum` and
+
+```
+HasDimensionOneLocalProductBound (jurkatRichertSourceBoundingSieve N) Knum
+```
+
+for every `N`. Thus the Suzuki local-product input needs no existential
+choice or starting threshold. The large constants are kept symbolic in
+Lean; their displayed formulas contain only numerical arithmetic.
+
+`NumericalSuzukiNormalization.lean` proves the depth-one constant at
+`Delta=1/2` is at most `36`, and the Claim-14.5 normalization at `d=16`
+is at most `4*C145` for nonnegative `C145`. Its finite denominator bound
+is `sourceSigma(2,16) >= 1/2`.
+
+This does **not** yet cap the final all-depth Suzuki coefficient `C`.
+Its remaining producer inputs are the strict Case-I constant `CBstrict`,
+the even-endpoint constant `CBeven`, and the Claim-14.5 coefficients
+`C145` and `Clow`, including their shared source-large-log cutoff
+`C1min`. Their existential source witnesses still need numerical bounds.
+
 `NumericalLowerEndpoint.lean` pays boundary and prime-power losses from
 
 ```
@@ -527,7 +564,8 @@ reduces the remaining task to finite actual-candidate and medium-prime
 aggregate bounds with margins `1/40000` and `1/20000`, respectively.
 The following numerical producers are still unfinished:
 
-- numerical caps for the Suzuki lower/upper density constants and local-product constant;
+- numerical caps for the remaining Suzuki lower/upper density producer constants
+  listed above; the local-product constant is now numerical;
 - varying-prime upper-product normalization and prime-q main-term transfer rates;
 - a common rational epsilon meeting all coefficient error budgets, beyond
   the quantified lower-factor loss above.
@@ -545,7 +583,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the forty-two research modules, in dependency order, treating warnings as errors,
+This checks only the forty-six research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is

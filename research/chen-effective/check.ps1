@@ -26,7 +26,9 @@ try {
         'NumericalUpperDistribution', 'NumericalLowerEndpoint', 'NumericalSuzukiGate',
         'NumericalSuzukiAbsorption', 'NumericalSuzukiHat', 'NumericalLowerFactor',
         'NumericalMertens', 'NumericalMertensProduct', 'NumericalGoldbachProduct',
-        'NumericalSingularNormalization', 'NumericalSourceMass')
+        'NumericalSingularNormalization', 'NumericalSourceMass',
+        'NumericalMertensGlobal', 'NumericalGoldbachInterval', 'NumericalLocalProduct',
+        'NumericalSuzukiNormalization')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)
         if ($startIndex -lt 0) { throw "Unknown research module: $FromModule" }
