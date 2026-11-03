@@ -21,7 +21,10 @@ try {
         'NumericalPrincipalContour', 'NumericalContourEdges',
         'NumericalResidueAssembly', 'NumericalPrincipalSmoothed', 'NumericalMainTerm',
         'NumericalPrincipalPower', 'NumericalPrincipalElementary', 'NumericalPrincipalPNT',
-        'NumericalBV')
+        'NumericalBV', 'NumericalWeightedMass', 'NumericalWeightedEnvelope',
+        'NumericalWeightedDistribution', 'NumericalVaryingCorrections',
+        'NumericalUpperDistribution', 'NumericalLowerEndpoint', 'NumericalSuzukiGate',
+        'NumericalSuzukiAbsorption')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)
         if ($startIndex -lt 0) { throw "Unknown research module: $FromModule" }

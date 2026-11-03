@@ -274,8 +274,8 @@ they have not been evaluated or replaced with an additional axiom.
 | Low-conductor primitive estimates | `NumericalLowConductor.lean` | Completed under the local axiom: `Kpsi(C)=10^11*(C+1)`, `nPsi(D)=3^(16*(128*(D+1)+1)^2)`. Covers all prefixes and both character classes. |
 | Low-conductor summation and principal PNT | `NumericalPrincipalPNT.lean`, `ExplicitLowConductor.lean` | Completed. Principal source constant `5*10^11`, with threshold `3^(16*(128*(D+1)+1)^2)`. |
 | High-conductor BV and elementary packet | `ExplicitBVHigh.lean`, `ExplicitBVPayload.lean` | Completed with numerical constants and starting points. |
-| Full BV and Liu-Pan distribution | `NumericalBV.lean` and `SieveTheory/Distribution/LiuPan` | BV completed under the single local axiom, with explicit constant and threshold below. Quantify the remaining weighted/Liu-Pan transformations. |
-| Weighted lower estimate | `LinearSieve/JurkatRichert/JurkatRichert1965ChenRichertConsumer.lean` | Obtain a numerical `nLower`. Its Suzuki varying-family, Mertens/Euler-product, distribution, and prime-power limits currently hide rates. |
+| Full BV and weighted distribution | `NumericalBV.lean`, `NumericalUpperDistribution.lean` | Ordinary BV and the Richert weighted/varying-prime distribution input are numerical. The Liu-Pan convolution branch for the triple estimate remains unfinished. |
+| Weighted lower estimate | `NumericalLowerEndpoint.lean` and `LinearSieve/JurkatRichert/JurkatRichert1965ChenRichertConsumer.lean` | Obtain numerical lower/upper density producers and `nLower`. Distribution, the Suzuki coordinate gate, and endpoint/prime-power losses are numerical. The Suzuki constants, density normalization, and prime-q main-term transfer still need rates. |
 | Triple upper estimate | `ExplicitChenTriple.lean` and `Selberg/Liu/LiuSelbergCorrectedChenBridge.lean` | Residual constants are `13+6`, both paid from `3^21904`. Obtain numerical `nSquare` and `Csquare`, then take `B >= Csquare+19`. |
 | Finite endpoint | This directory | Completed conditionally on those numerical analytic inputs. |
 
@@ -385,6 +385,78 @@ In particular, `K_BV(3)=1000344400000012180` and
 in this BV statement. The weighted lower sieve and triple-square producer
 remain separate obligations before a fully numerical Chen threshold.
 
+## Numerical Richert distribution and lower-sieve checkpoint
+
+`NumericalWeightedMass.lean` proves an elementary totient-weighted moment:
+
+```
+sum(d in S, k^omega(d)/phi(d)) <= (1+log(Q))^(2*k)
+```
+
+for squarefree `S` inside `[1,Q]`. It uses the existing ordered-divisor mean
+helper already in the research import closure. No additional Li-Liu theorem
+module is imported. A finite Cauchy inequality uses `phi(d)` directly, and
+`NumericalWeightedEnvelope.lean` proves
+`phi(q)*standardPrimeAPMaxError(N,q) <= 12*N` for `N >= 9`, `1 <= q <= N`.
+Thus the old unspecified Mertens/totient-envelope constants are unnecessary
+for this Richert distribution route.
+
+`NumericalWeightedDistribution.lean` takes ordinary BV saving `U=2*A+18`.
+For `epsilon=1/m`, `m>0`, it proves the actual reduced combined-modulus sum
+
+```
+jurkatRichertSourceReducedWeightedBVSum(N,1/m) <= Kweight(A)*N/log(N)^A
+Kweight(A) = 3145728*(K_BV(2*A+18)+1)
+Nweight(A,m) = max(N_BV(2*A+18), logPowerCutoff(m*(6*A+254))).
+```
+
+`NumericalVaryingCorrections.lean` retains the exact truncated divisor
+carriers rather than enlarging to all divisors of the sifting product.
+It proves the actual nonreduced/source-support correction is at most
+`3000*N^(9/10)*log(N)^7` for `N >= 9`, `epsilon >= 0`.
+
+Set the explicit integer
+
+```
+b = 3145728*(1000478800000012180+1)+3000.
+```
+
+`NumericalUpperDistribution.lean` bounds the actual varying-q upper remainder
+by `(1/d)*S(N)*N/log(N)^2` for `m,d>0`, even `N`, and
+
+```
+N >= max(max(Nweight(3,m),logPowerCutoff(100)), 3^(2*b*d+1)).
+```
+
+This completes the Richert distribution input needed by the lower sieve.
+It does not prove the distinct Liu-Pan convolution distribution input for
+the triple-square remainder.
+
+For the lower sieve, `NumericalSuzukiGate.lean` proves the actual Chen-to-Suzuki
+source-coordinate gate from `N >= 3^381469726563`. The scalar error payment in
+`NumericalSuzukiAbsorption.lean` is finite: an amplitude bounded by the integer
+`M` is absorbed below `1/r` from
+`D >= 3^max(152587890625,4096*(M+1)^2*r^2)`, uniformly for `0<s<=5`.
+**Bounding the actual sieve amplitude by a numerical M remains required.**
+
+`NumericalLowerEndpoint.lean` pays boundary and prime-power losses from
+
+```
+Nend = max(2^110+1, logPowerCutoff(30), 3^2400000).
+```
+
+A source weighted coefficient `2.64075` then gives the required production
+coefficient `2.6407`. More precisely, `numerical_lower_from_density_bounds`
+reduces the remaining task to finite actual-candidate and medium-prime
+aggregate bounds with margins `1/40000` and `1/20000`, respectively.
+The following numerical producers are still unfinished:
+
+- Suzuki lower/upper density constants and local-product/amplitude bounds;
+- Mertens/singular-series normalization and prime-q main-term transfer rates;
+- a fixed admissible rational epsilon meeting the coefficient error budgets.
+
+There is still no numerical `nLower`, and no fully numerical Chen `N0`.
+
 ## Reproduce
 
 From the checkout, in PowerShell:
@@ -396,7 +468,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the twenty-seven research modules, in dependency order, treating warnings as errors,
+This checks only the thirty-five research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is
