@@ -1,4 +1,4 @@
-import NumericalQuotientEnvelope
+import NumericalLogarithmicScalar
 import MathlibNt.SieveTheory.LinearSieve.Suzuki.SuzukiClaim145CaseABoundedK
 
 open scoped Classical BigOperators
@@ -197,8 +197,7 @@ theorem numerical_fixedD_scalar
 
 
 noncomputable def boundedCaseAConstant (C1 Kmax : ℝ) : ℝ :=
-  let Dmin := ⌈Real.exp (C1 * Kmax ^ (7 : ℝ))⌉₊ + 1
-  fixedDScalarConstant Dmin Kmax * Real.exp (Real.sqrt Kmax)
+  logarithmicScalarConstant (C1 * Kmax ^ (7 : ℝ)) Kmax * Real.exp (Real.sqrt Kmax)
 
 /-- Fully explicit coefficient for the bounded-K branch, as a function of its two inputs. -/
 theorem numerical_caseA_boundedK
@@ -217,20 +216,9 @@ theorem numerical_caseA_boundedK
   let Θ : ℝ := 7
   have hΘ : 0 ≤ Θ := by norm_num [Θ]
   let A : ℝ := C1 * Kmax ^ Θ
-  let Dmin : ℕ := ⌈Real.exp A⌉₊ + 1
   have hKmax0 : 0 < Kmax := lt_of_lt_of_le zero_lt_one hKmax
-  have hrange : ∀ q : ℕ, 2 ≤ q →
-      Real.log (q : ℝ) ≤ C1 * Kmax ^ Θ → q < Dmin := by
-    intro q hq hlog
-    have hq0 : (0 : ℝ) < (q : ℝ) := by positivity
-    have hqexp : (q : ℝ) ≤ Real.exp A := by
-      rw [← Real.exp_log hq0]
-      exact Real.exp_le_exp.mpr (by simpa [A] using hlog)
-    have hqceil : q ≤ ⌈Real.exp A⌉₊ := by
-      exact_mod_cast hqexp.trans (Nat.le_ceil (Real.exp A))
-    simpa [Dmin] using Nat.lt_succ_iff.mpr hqceil
-  let C0 := fixedDScalarConstant Dmin Kmax
-  obtain ⟨hC0, hscalar⟩ := numerical_fixedD_scalar H hH Dmin hKmax0 hrange
+  let C0 := logarithmicScalarConstant A Kmax
+  have hC0 : 0 < C0 := logarithmicScalarConstant_pos hKmax0
   let C145 : ℝ := C0 * Real.exp (Real.sqrt Kmax)
   have hC145 : 0 < C145 := by dsimp [C145]; positivity
   refine ⟨hC145, ?_⟩
@@ -243,7 +231,7 @@ theorem numerical_caseA_boundedK
   have htail := suzukiLemma14_3_natCeil_uniform_explicit
     (S := S) (N := N) (D := D) (z := z) (s := s) (K := Kmax)
     hlocal' (by omega) hs hz
-  have hscalar' := hscalar S hlocal' N D z s hD hz hs hsmall'
+  have hscalar' := numerical_uniform_log_scalar H hH hKmax0 S hlocal' N D z s hD hz hs hsmall'
   have hupper : suzukiActualT S N D z ≤
       C0 * claim14_5Scale S H N (D : ℝ) d Δ
         (sourceSigma (D : ℝ) d) Kmax s := htail.trans hscalar'
@@ -258,7 +246,7 @@ theorem numerical_caseA_boundedK
         (sourceSigma (D : ℝ) d) K s := hupper.trans (by
     dsimp [C145]
     nlinarith [mul_le_mul_of_nonneg_left hscale hC0.le])
-  simpa [Claim14_5Bound, d, Δ, C145, C0, Dmin, A, Θ, boundedCaseAConstant] using hfinal
+  simpa [Claim14_5Bound, d, Δ, C145, C0, A, Θ, boundedCaseAConstant] using hfinal
 
 
 

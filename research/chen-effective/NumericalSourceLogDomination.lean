@@ -9,10 +9,10 @@ open MathlibNt.SieveTheory.SwitchingPrinciple.SuzukiLemma144KappaOne
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 2400000
 
-noncomputable def sourceLowerCutoff (L : ℝ) : ℝ := Real.exp (Real.exp (max 1 L))
+noncomputable def legacySourceLowerCutoff (L : ℝ) : ℝ := Real.exp (Real.exp (max 1 L))
 
-theorem numerical_sourceSigma_lower (d L : ℝ) (hd : 0 ≤ d) :
-    ∀ D : ℝ, sourceLowerCutoff L ≤ D → L ≤ sourceSigma D d := by
+theorem legacy_sourceSigma_lower (d L : ℝ) (hd : 0 ≤ d) :
+    ∀ D : ℝ, legacySourceLowerCutoff L ≤ D → L ≤ sourceSigma D d := by
   let X : ℝ := max 1 L
   have hX1 : 1 ≤ X := le_max_left _ _
   have hLX : L ≤ X := le_max_right _ _
@@ -46,6 +46,47 @@ theorem numerical_sourceSigma_lower (d L : ℝ) (hd : 0 ≤ d) :
     _ ≤ Real.log (Real.log (27 * D)) := hll
     _ ≤ (Real.log D) ^ (1 / d) * Real.log (Real.log (27 * D)) := by
       simpa only [one_mul] using mul_le_mul_of_nonneg_right hpow1 hll0
+/-- For positive d the source endpoint only needs a single exponential. The
+zero-exponent compatibility branch retains the necessary double logarithm. -/
+noncomputable def sourceLowerCutoffFor (d L : ℝ) : ℝ :=
+  if d=0 then legacySourceLowerCutoff L
+  else Real.exp (max (Real.exp 1) ((max 1 L)^d))
+noncomputable def sourceLowerCutoff (L : ℝ) : ℝ := sourceLowerCutoffFor 16 L
+
+theorem sourceLowerCutoffFor_gt_one (d L : ℝ) : 1 < sourceLowerCutoffFor d L := by
+  unfold sourceLowerCutoffFor
+  split
+  · exact Real.one_lt_exp_iff.mpr (Real.exp_pos _)
+  · exact Real.one_lt_exp_iff.mpr ((Real.exp_pos 1).trans_le (le_max_left _ _))
+theorem sourceLowerCutoff_gt_one (L : ℝ) : 1 < sourceLowerCutoff L :=
+  sourceLowerCutoffFor_gt_one 16 L
+
+theorem numerical_sourceSigma_lower (d L : ℝ) (hd : 0 ≤ d) :
+    ∀ D : ℝ, sourceLowerCutoffFor d L ≤ D → L ≤ sourceSigma D d := by
+  by_cases hd0 : d=0
+  · simpa only [sourceLowerCutoffFor,if_pos hd0] using legacy_sourceSigma_lower d L hd
+  have hdpos : 0 < d := lt_of_le_of_ne hd (Ne.symm hd0)
+  intro D hD
+  have hD0 : 0 < D := (zero_lt_one.trans (sourceLowerCutoffFor_gt_one d L)).trans_le hD
+  have hh : max (Real.exp 1) ((max 1 L)^d) ≤ Real.log D :=
+    (Real.le_log_iff_exp_le hD0).mpr (by simpa only [sourceLowerCutoffFor,if_neg hd0] using hD)
+  have he : Real.exp 1 ≤ Real.log D := (le_max_left _ _).trans hh
+  have hl0 : 0 < Real.log D := (Real.exp_pos 1).trans_le he
+  have hX : 0 < max (1 : ℝ) L := zero_lt_one.trans_le (le_max_left _ _)
+  have hp : max 1 L ≤ (Real.log D)^(1/d) := by
+    have h := Real.rpow_le_rpow (Real.rpow_nonneg hX.le d) ((le_max_right _ _).trans hh)
+      (show 0 ≤ 1/d by positivity)
+    rwa [← Real.rpow_mul hX.le,mul_one_div_cancel hd0,Real.rpow_one] at h
+  have hi : Real.exp 1 ≤ Real.log (27*D) := by
+    rw [Real.log_mul (by norm_num) hD0.ne']
+    have h27 := Real.log_nonneg (by norm_num : (1 : ℝ) ≤ 27)
+    linarith only [he,h27]
+  have hll : 1 ≤ Real.log (Real.log (27*D)) := by
+    simpa only [Real.log_exp] using Real.log_le_log (Real.exp_pos 1) hi
+  exact (le_max_right (1 : ℝ) L).trans (hp.trans (by
+    unfold sourceSigma
+    simpa only [mul_one] using mul_le_mul_of_nonneg_left hll (Real.rpow_nonneg hl0.le (1/d))))
+
 noncomputable def sourceLogM (K A d : ℝ) : ℝ := Real.exp (4 * (2 * (d+1)*K^2*A) + 1)
 noncomputable def sourceLogCutoff (K A d : ℝ) : ℝ :=
   let C := 2*(d+1)*K^2*A
@@ -53,7 +94,7 @@ noncomputable def sourceLogCutoff (K A d : ℝ) : ℝ :=
   let q := d-e
   let r := 1/q - 1/d
   let X := max 2 (max (Real.log 27) ((4/r)^(1/(r/2))))
-  max (sourceLowerCutoff (sourceLogM K A d)) (Real.exp X)
+  max (sourceLowerCutoffFor d (sourceLogM K A d)) (Real.exp X)
 
 theorem numerical_source_log_domination {K A d : ℝ}
     (hd : 0 < d) (hK : 1 ≤ K) (hA : 1 ≤ A) :
@@ -81,7 +122,7 @@ theorem numerical_source_log_domination {K A d : ℝ}
   let X := max 2 (max (Real.log 27) ((4 / r) ^ (1 / (r / 2))))
   let M := Real.exp (4 * C + 1)
   have hM : 1 < M := Real.one_lt_exp_iff.mpr (by positivity)
-  let D₁ := sourceLowerCutoff M
+  let D₁ := sourceLowerCutoffFor d M
   have hlower := numerical_sourceSigma_lower d M hd.le
   change ∀ D : ℝ, max D₁ (Real.exp X) ≤ D → _
   intro D hD

@@ -13,7 +13,7 @@ noncomputable def movingTailCutoff (M : ℝ) : ℝ :=
   max (max sourceRatioCutoff (sourceLowerCutoff M)) (Real.exp (M^(16 : ℝ)))
 
 theorem movingTailCutoff_gt_one (M : ℝ) : 1 < movingTailCutoff M :=
-  (Real.one_lt_exp_iff.mpr (Real.exp_pos (max 1 M))).trans_le
+  (sourceLowerCutoff_gt_one M).trans_le
     ((le_max_right _ _).trans (le_max_left _ _))
 private lemma slope_le_log
     {D d t : ℝ} (hlog : 0 < Real.log D) (hd : 0 ≤ d) (ht : 0 < t) :
@@ -51,7 +51,7 @@ theorem numerical_asymptotic_certificate {H : Section13HatLayers}
   have hH := hSource.toSection13HatContract
   let D₀ := max sourceRatioCutoff (sourceLowerCutoff M)
   have hD₀ : 1 < D₀ :=
-    (Real.one_lt_exp_iff.mpr (Real.exp_pos (max 1 M))).trans_le (le_max_right _ _)
+    (sourceLowerCutoff_gt_one M).trans_le (le_max_right _ _)
   have hratio : ∀ D : ℝ, D₀ ≤ D → M ≤ sourceSigma D d ∧
       ∀ t, M ≤ t → t ≤ sourceSigma D d →
         2*(d+1)*max 1 (Real.log (1+t^d/Real.log D))*weightedHat H sign t ≤

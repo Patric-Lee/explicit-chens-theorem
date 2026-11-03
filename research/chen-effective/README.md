@@ -613,35 +613,20 @@ error envelope below by `eps(Q)`, for every depth, every `s>=2`, and every
 integer `D>=2` with `log(D)<=Q`. Above `M(Q)` the envelope is at least `1`.
 No compactness minimum or qualitative tail cutoff is used in this result.
 
-`NumericalCaseABounded.lean` provides explicit coefficients. Write
+`NumericalCaseABounded.lean` retains the legacy fixed-quotient coefficient,
+using `Q(q)=ceil(log(q))`. The active bounded-K assembly now uses the joint
+envelope and one uniform logarithmic coefficient described below; it does
+not use the legacy finite quotient sum. For `A=C1*Kmax^7`, write
 
 ```
-L(q) = log(q)
-Q(q) = ceil(log(q))
-R(q,K) = (L(q)/log(2))*(1+K/log(2))
-B(q,K) = (1/R(q,K)) * exp(sqrt(K))/(L(q)*sourceSigma(q,16))
-         * eps(Q(q)) * L(q)^(-1/2)
-A(q,K) = exp(2*suzukiSourceL(q,K)) / B(q,K)
-J(C1,K) = ceil(exp(C1*K^7)) + 1
-CBounded(C1,K) = exp(sqrt(K)) * (1 + sum(2 <= q < J(C1,K), A(q,K))).
+B=max(1,A), R=2*B*(1+2*Kmax)
+r=6*(1+max(0,A))^(1/8), f=exp(-8*r*log(6*r))
+CBounded(C1,Kmax)=exp(sqrt(Kmax))*7*R^3*B^4/f.
 ```
 
-For `C1>=0` and `1<=K<=Kmax`, `CBounded(C1,Kmax)` proves the actual bounded-K
-Case-A inequality uniformly in the bounding sieve. Its fixed-q coefficients
-are displayed arithmetic expressions; its finite sum contains no chosen
-analytic constants.
-
-The envelope budget now uses `ceil(log(q))`, replacing the earlier coarse
-choice `q`. `quotientHatCutoff_log_budget` proves that whenever `log(q)<=A`,
-the compact hat coordinate is at most `1679616*(A+1)+6`. In the bounded-K
-branch, `A=C1*Kmax^7`; this avoids feeding the exponentially large quotient
-range back into the exponentially small compact-hat lower bound.
-
-This is the first reduction in the lower-threshold optimization. A final
-numerical `nLower` and its total number of exponential layers are not yet
-proved. Further planned improvements are a single uniform bound over the
-logarithmic quotient range, replacing the finite quotient sum, and a joint
-bound on the hat/perturbation error envelope before separating its factors.
+For `C1>=0` and `1<=K<=Kmax`, this proves the actual bounded-K Case-A
+inequality uniformly in the bounding sieve. A final numerical `nLower`
+and its total number of exponential layers are not yet proved.
 
 `SuzukiFixedKAssembly.lean` fixes `K` before the sieve family varies and uses
 this bounded-K estimate for Case A and coefficient `1` for Case B. Thus it
@@ -703,9 +688,8 @@ Every constituent is a displayed numerical formula, independent of the sieve,
 hat functions, recursion depth, and varying parameters. These formulas use
 rational numbers, integer powers, logarithms, exponentials, real powers,
 maxima, and natural ceilings. No unspecified analytic constant or
-compactness-selected minimum remains in them. The finite sum in `CBounded`
-is the explicitly bounded sum displayed above; it is not evaluated by
-enumerating its enormous range.
+compactness-selected minimum remains in them. The bounded-K coefficient
+uses a single uniform logarithmic formula, with no finite quotient sum.
 
 The new proofs supply:
 
@@ -892,6 +876,48 @@ All seven modules completing this branch passed the batch check with warnings
 treated as errors. The full local import/axiom audit passed. No new external
 dependencies, OpenAI imports, or local axioms were added.
 
+## Logarithmic bounded-K and source-endpoint improvements
+
+The active bounded-K coefficient no longer enumerates quotients up to an
+exponential cutoff. With `A=C1*Kmax^7`, put
+
+```
+r = 6*(1+max(0,A))^(1/8)
+f = exp(-8*r*log(6*r))
+B = max(1,A)
+R = 2*B*(1+2*Kmax).
+```
+
+`NumericalJointEnvelope.lean` proves `f <= E_D(s)` for every `D>=2`,
+`log(D)<=A`, and `s>=2`. The large-s branch retains the perturbation factor:
+once `s>=r`, it compensates for the coarse hat decay. For `A>=0`, the
+same floor is at least `exp(-2000*(1+A)^(1/8)*log(e+A))`.
+
+`NumericalLogarithmicScalar.lean` proves one coefficient `7*R^3*B^4/f`
+for every natural quotient in that logarithmic range. The active
+`boundedCaseAConstant` is this coefficient times `exp(sqrt(Kmax))`.
+There is no quotient sum and no factor counting quotients. The older
+fixed-quotient and finite-sum lemmas remain available for compatibility;
+the assembly no longer uses them.
+
+The compact derivative estimate now uses the floor
+`1/(51200000000*m)`. Only the fixed head `[2,4]` uses an absolute hat
+minimum. Beyond it, global comparison of the two hats and monotonicity
+between adjacent arguments give the ratio bound directly. The derivative
+cutoff consequently has a polynomial exponent in `m` at fixed `d`, rather
+than the reciprocal of a rapidly decaying compact minimum.
+
+For positive `d`, `sourceLowerCutoffFor d M` is now
+`exp(max(e,max(1,M)^d))`. In the actual `d=16` source branch this replaces
+`exp(exp(max(1,M)))`. The double-exponential compatibility branch is retained
+only for `d=0`; it is not used by the Suzuki source assembly. Both improved
+cutoffs feed the existing shared `numericalSuzukiC1` formula.
+
+These changes reduce avoidable exponential layers in the constants. They
+do not yet produce `nLower`: the quantitative lower-sieve absorption,
+normalization, and common error-budget assembly remain to be completed.
+The completed `nSquare` branch and its `10^40` triple error cap are unchanged.
+
 ## Reproduce
 
 From the checkout, in PowerShell:
@@ -903,7 +929,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the 126 research modules, in dependency order, treating warnings as errors,
+This checks only the 128 research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is

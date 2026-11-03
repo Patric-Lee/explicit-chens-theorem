@@ -31,6 +31,7 @@ try {
         'NumericalSuzukiNormalization', 'NumericalSuzukiLowStripScalar',
         'NumericalSuzukiCaseOne', 'SuzukiCoefficientAssembly',
         'NumericalHatCompact', 'NumericalHatLower', 'NumericalQuotientEnvelope',
+        'NumericalJointEnvelope', 'NumericalLogarithmicScalar',
         'NumericalCaseABounded', 'SuzukiFixedKAssembly',
         'NumericalRealLogBounds', 'NumericalC1Scalar', 'NumericalFiniteHat', 'NumericalC1Order',
         'NumericalHatComparison', 'NumericalReverseEnvelope', 'NumericalReverseRatio',

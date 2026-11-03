@@ -219,7 +219,7 @@ theorem numerical_derivative_certificate {H : Section13HatLayers}
   refine ⟨hhead4.trans hratio.1, ?_⟩
   intro sign ε t hε ht htσ
   by_cases htM : t ≤ derivativeHead
-  · exact numerical_compact_derivative hH.toSection13HatContract
+  · exact numerical_compact_derivative hH
       (show 3 ≤ derivativeHead by have hh := derivativeHead_sixteen; omega)
       (by norm_num : (0 : ℝ) ≤ 16) D ((le_max_right _ _).trans hD) sign ε t hε ht htM
   · have hMt : (derivativeHead : ℝ) ≤ t := (lt_of_not_ge htM).le
