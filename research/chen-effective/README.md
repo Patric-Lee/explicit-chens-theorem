@@ -520,15 +520,14 @@ be combined with it to obtain the candidate-count coefficient.
 The local-product constant now has a fixed numerical choice. Define
 
 ```
-nstar = 3^1056784
-A = (4*nstar + 900000000006)*nstar
-E = 4*A + 52
-Knum = (E+2)*3^(2*E).
+A = 10
+E = 4*A + 52 = 92
+Knum = (E+2)*3^(2*E) = 94*3^184 < 10^90.
 ```
 
 `NumericalMertensGlobal.lean` proves the reciprocal-prime Mertens error is
-at most `A/log(n)` for **every** integer `n >= 2`, using elementary bounds
-below `nstar` and the previous numerical Mertens estimate above it.
+at most `A/log(n)` for **every** integer `n >= 2`, using the elementary
+Mertens proof described below. This replaces the former PNT-cutoff-based budget.
 `NumericalGoldbachInterval.lean` gives the resulting real-endpoint inverse
 Goldbach-factor interval bound, retaining the closed lower endpoint.
 `NumericalLocalProduct.lean` proves `2 <= Knum` and
@@ -1103,7 +1102,7 @@ The traversal independently verifies the allowed axioms and rejects unsafe const
 Thus importing the old statements in the audit cannot hide circular reasoning.
 
 Run `./research/chen-effective/audit.ps1` for the compatibility and final audit,
-or add `-Rebuild` to recompile all 148 research modules first. The source audit
+or add `-Rebuild` to recompile all 149 research modules first. The source audit
 covers all research modules and their locally imported project sources,
 ignoring comments/string literals, and rejects proof placeholders,
 `native_decide`, unsafe declarations, compiler bypass attributes/options, and every
@@ -1111,10 +1110,61 @@ axiom declaration except the one existing Dirichlet axiom. The transitive
 axiom whitelist additionally checks proof dependencies in external libraries.
 No external dependencies or OpenAI imports are introduced.
 
-Final validation: all 148 research modules recompiled with warnings treated as
+Validation before the elementary Mertens replacement: all 148 research modules recompiled with warnings treated as
 errors and unchanged source hashes. The source scan passed for 671 files; the
 proof dependency walk passed for 81,818 constants. All four original statement
 comparisons and all seven exact final-theorem axiom checks passed.
+
+## Elementary Mertens replacement
+
+`NumericalElementaryMertens.lean` adapts only the elementary proof chain from
+`PrimeNumberTheoremAnd/IEANTN/Mertens.lean` at upstream revision
+`127b50e33f6033e2147921167a117af96d9ba4ea` (Apache-2.0). It imports Mathlib
+modules only: no PNT+, IEANTN, Euler-Maclaurin, or numerical certificate module.
+The source is https://github.com/AlexKontorovich/PrimeNumberTheoremAnd/blob/127b50e33f6033e2147921167a117af96d9ba4ea/PrimeNumberTheoremAnd/IEANTN/Mertens.lean.
+
+The local port proves, for every real `x >= 2`,
+
+```
+|sum_{p <= x} 1/p - log(log x) - M| <= 10/log x.
+```
+
+Here `M` is explicitly defined by an integral of the bounded error in the first
+Mertens theorem. Its numerical value is unnecessary: the existing interval
+argument cancels any shared additive constant. `numerical_mertens_all` now
+uses this elementary constant, with `globalMertensBudget = 10`. No identification
+with the earlier PNT-based constant is assumed or required.
+
+The boundedness witnesses used to prove integrability are themselves proved
+with the explicit coefficient `log 4 + 4`. There is no implicit starting
+threshold or unverified node statement in this proof chain. It uses Mathlib's
+coarse Chebyshev bound, not the PNT+ `1.11*x` estimate whose finite verification
+uses `native_decide`.
+
+The existing local-product conversion now gives the certified literal cap
+
+```
+localProductExponent = 92
+numericalLocalProductK = 94*3^184 < 10^90.
+```
+
+`audit/AuditElementaryMertens.lean` independently checks both elementary Mertens
+endpoints: exactly `propext`, `Classical.choice`, and `Quot.sound`; no unsafe
+proof dependencies, no Dirichlet axiom, and no imported project result. The
+final Chen audit separately verifies that the elementary global Mertens and
+local-product bounds need no Dirichlet axiom. The final Chen theorems retain
+the original single Dirichlet axiom and the same statements.
+
+The source-ratio/Suzuki C1 estimates are unchanged. This replaces one major
+inflated input but does not yet certify a double-exponential final cutoff.
+The previously proved four-layer tower cap remains valid.
+
+Validation for this replacement: all 20 affected research modules rebuilt with
+warnings treated as errors. The independent elementary audit traversed 43,607
+proof dependencies; the complete final Chen audit traversed 81,977. The source
+audit passed for 672 research/project files. Both proof-dependency audits
+passed their exact axiom whitelists and unsafe-dependency checks. The old and
+new Chen statements remain definitionally identical in the compatibility audit.
 
 ## Reproduce
 
@@ -1127,7 +1177,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the 148 research modules, in dependency order, treating warnings as errors,
+This checks only the 149 research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is

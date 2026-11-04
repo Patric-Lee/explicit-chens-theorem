@@ -1,12 +1,12 @@
-import NumericalMertens
+import NumericalElementaryMertens
+import AnalyticNumberTheory.Mertens.Basic
 
 namespace ChenEffective
 open Real AnalyticNumberTheory.Mertens
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 1500000
 
-@[irreducible] def globalMertensBudget : ℕ :=
-  (4 * principalNumericalThreshold 1 + 900000000006) * principalNumericalThreshold 1
+@[irreducible] def globalMertensBudget : ℕ := 10
 
 theorem numerical_reciprocal_prefix (n : ℕ) :
     0 ≤ primeReciprocalSum n ∧ primeReciprocalSum n ≤ (n : ℝ) + 1 := by
@@ -40,54 +40,26 @@ theorem numerical_log_log_nat {n : ℕ} (hn : 2 ≤ n) :
   rw [abs_le]
   constructor <;> linarith only [hlow, hhigh, hln, Real.log_two_lt_d9, hn2]
 
-/-- A numerical constant valid at every integer endpoint, including below the PNT cutoff. -/
+/-- The finite prime sum uses the elementary Mertens constant. Its value cancels
+in the interval-product application; no PNT cutoff or chosen threshold is used. -/
 theorem numerical_mertens_all {n : ℕ} (hn : 2 ≤ n) :
-    |primeReciprocalSum n - (Real.log (Real.log (n : ℝ)) + mertensSecondConstant)| ≤
+    |primeReciprocalSum n - (Real.log (Real.log (n : ℝ)) + ElementaryMertens.M)| ≤
       (globalMertensBudget : ℝ) / Real.log (n : ℝ) := by
-  let n0 := principalNumericalThreshold 1
-  have hn09 : 9 ≤ n0 := logPowerCutoff_nine_le _
-  have hn0R : (9 : ℝ) ≤ n0 := by exact_mod_cast hn09
-  have hn0pos : (0 : ℝ) < n0 := by linarith only [hn0R]
-  have hlog0 : 1 ≤ Real.log (n0 : ℝ) := numerical_mertens_log_one (le_refl _)
-  have hC : (globalMertensBudget : ℝ) = (4 * (n0 : ℝ) + 900000000006) * n0 := by
-    unfold globalMertensBudget
-    change (((4 * n0 + 900000000006) * n0 : ℕ) : ℝ) = _
-    rw [Nat.cast_mul, Nat.cast_add, Nat.cast_mul]
-    norm_num only [Nat.cast_ofNat]
-  have hCQ : (900000000000 : ℝ) ≤ globalMertensBudget := by
-    rw [hC]
-    nlinarith only [hn0R, sq_nonneg (n0 : ℝ)]
-  have hl : 0 < Real.log (n : ℝ) := Real.log_pos (by exact_mod_cast (show 1 < n by omega))
-  by_cases hlarge : n0 ≤ n
-  · have hh := numerical_mertens_second (show (principalNumericalThreshold 1 : ℝ) ≤ n by exact_mod_cast hlarge)
-    rw [Nat.floor_natCast] at hh
-    exact hh.trans (div_le_div_of_nonneg_right hCQ hl.le)
-  · have hnle : n ≤ n0 := by omega
-    have hnleR : (n : ℝ) ≤ n0 := by exact_mod_cast hnle
-    have hb0 := numerical_mertens_second (x := (n0 : ℝ)) (le_refl _)
-    rw [Nat.floor_natCast] at hb0
-    have hb0' : |primeReciprocalSum n0 -
-        (Real.log (Real.log (n0 : ℝ)) + mertensSecondConstant)| ≤ 900000000000 :=
-      hb0.trans (div_le_self (by norm_num) hlog0)
-    have hp0 := numerical_reciprocal_prefix n0
-    have hll0 := numerical_log_log_nat (show 2 ≤ n0 by omega)
-    have hB : |mertensSecondConstant| ≤ 2 * (n0 : ℝ) + 900000000003 := by
-      rw [abs_le] at hb0' hll0 ⊢
-      constructor <;> linarith only [hb0'.1, hb0'.2, hp0.1, hp0.2, hll0.1, hll0.2]
-    have hp := numerical_reciprocal_prefix n
-    have hll := numerical_log_log_nat hn
-    have herr : |primeReciprocalSum n -
-        (Real.log (Real.log (n : ℝ)) + mertensSecondConstant)| ≤
-        4 * (n0 : ℝ) + 900000000006 := by
-      rw [abs_le] at hB hll ⊢
-      constructor <;> linarith only [hB.1, hB.2, hll.1, hll.2, hp.1, hp.2, hnleR]
-    apply herr.trans
-    apply (le_div_iff₀ hl).mpr
-    rw [hC]
-    have hln : Real.log (n : ℝ) ≤ n0 :=
-      (Real.log_le_sub_one_of_pos (by exact_mod_cast (show 0 < n by omega))).trans
-        (by linarith only [hnleR])
-    exact mul_le_mul_of_nonneg_left hln (by linarith only [hn0pos])
+  have h := ElementaryMertens.prime_reciprocal_error_ten
+    (show (2 : ℝ) ≤ n by exact_mod_cast hn)
+  have hsum : (∑ p ∈ Finset.Ioc 0 n with p.Prime, (1 : ℝ)/p) = primeReciprocalSum n := by
+    unfold primeReciprocalSum primesUpTo
+    have hs : (Finset.Ioc 0 n).filter Nat.Prime = (Finset.range (n+1)).filter Nat.Prime := by
+      ext p
+      simp only [Finset.mem_filter,Finset.mem_Ioc,Finset.mem_range]
+      constructor
+      · intro hp
+        exact ⟨by omega,hp.2⟩
+      · intro hp
+        exact ⟨⟨hp.2.pos,by omega⟩,hp.2⟩
+    rw [hs]
+  rw [Nat.floor_natCast,hsum] at h
+  simpa only [globalMertensBudget,Nat.cast_ofNat,sub_add_eq_sub_sub] using h
 
 #print axioms numerical_mertens_all
 end ChenEffective

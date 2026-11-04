@@ -8,31 +8,10 @@ set_option maxHeartbeats 4000000
 attribute [local irreducible] logPowerCutoff mertensProductThreshold
 
 theorem tower_local_exponent : localProductExponent ≤ towerU^4 := by
-  have hu : 1000000000000 ≤ towerU := (by norm_num : 1000000000000 ≤ (10 : ℕ)^100).trans towerU_large
+  have hu : 92 ≤ towerU := (by norm_num : 92 ≤ (10 : ℕ)^100).trans towerU_large
   have hu1 : 1 ≤ towerU := by omega
-  have hP : principalNumericalThreshold 1 ≤ towerU := by
-    rw [principalNumericalThreshold_one]
-    unfold towerU
-    apply Nat.pow_le_pow_right (by norm_num)
-    rw [towerSeed_eq]
-    norm_num
-  have hcoef : 4*principalNumericalThreshold 1+900000000006 ≤ towerU^2 := by
-    have hh : 5*towerU ≤ towerU^2 := by nlinarith only [hu]
-    nlinarith only [hh,hP,hu]
-  have hG : globalMertensBudget ≤ towerU^3 := by
-    unfold globalMertensBudget
-    calc
-      _ ≤ towerU^2*towerU := Nat.mul_le_mul hcoef hP
-      _ = _ := by ring
-  have hu3 : 52 ≤ towerU^3 := (show 52 ≤ towerU by omega).trans
-    (by simpa only [pow_one] using Nat.pow_le_pow_right hu1 (show 1 ≤ 3 by norm_num))
-  have hp : 5*towerU^3 ≤ towerU^4 := by
-    calc
-      _ ≤ towerU*towerU^3 := Nat.mul_le_mul_right _ (by omega : 5 ≤ towerU)
-      _ = _ := by ring
-  unfold localProductExponent
-  nlinarith only [hG,hu3,hp]
-
+  norm_num only [localProductExponent,globalMertensBudget,Nat.reduceMul,Nat.reduceAdd]
+  exact hu.trans (by simpa only [pow_one] using Nat.pow_le_pow_right hu1 (show 1 ≤ 4 by norm_num))
 theorem tower_local_K : numericalLocalProductK ≤ towerH := by
   have hu : 100 ≤ towerU := (by norm_num : 100 ≤ (10 : ℕ)^100).trans towerU_large
   have hu1 : 1 ≤ towerU := by omega

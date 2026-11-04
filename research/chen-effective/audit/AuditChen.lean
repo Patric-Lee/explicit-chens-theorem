@@ -41,6 +41,14 @@ run_elab do
     let axs ← Lean.collectAxioms n
     unless axs.all (fun a => allowed.contains a && a != ``ChenEffective.dirichlet_seven_eighths) do
       throwError "Unexpected threshold axioms for {n}: {axs}"
+  for n in #[``ChenEffective.numerical_mertens_all,
+      ``ChenEffective.numerical_source_local_product,
+      ``ChenEffective.numericalLocalProductK_eq,
+      ``ChenEffective.numericalLocalProductK_lt] do
+    let axs ← Lean.collectAxioms n
+    unless axs.all (fun a => allowed.contains a && a != ``ChenEffective.dirichlet_seven_eighths) do
+      throwError "Unexpected elementary product axioms for {n}: {axs}"
+  logInfo "Elementary Mertens and local-product caps use only standard axioms."
   -- Independently traverse proof/type references: none of the old implicit
   -- theorem proofs may supply the numerical theorem or its compatibility bridges.
   let forbidden := #[``Goldbach.chen_theorem, ``Goldbach.representation_lower_bound,

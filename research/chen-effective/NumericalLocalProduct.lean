@@ -11,6 +11,13 @@ set_option maxHeartbeats 1500000
 noncomputable def numericalLocalProductK : ℝ :=
   ((localProductExponent : ℝ) + 2) * (3 : ℝ) ^ (2 * localProductExponent)
 
+/-- The elementary Mertens budget makes the local-product cap a literal integer. -/
+theorem numericalLocalProductK_eq : numericalLocalProductK = (94*3^184 : ℕ) := by
+  norm_num [numericalLocalProductK,localProductExponent,globalMertensBudget]
+
+theorem numericalLocalProductK_lt : numericalLocalProductK < (10^90 : ℝ) := by
+  rw [numericalLocalProductK_eq]
+  norm_num
 theorem two_le_product_cap (E : ℕ) : (2 : ℝ) ≤ ((E : ℝ) + 2) * (3 : ℝ) ^ (2 * E) := by
   have hp : (1 : ℝ) ≤ (3 : ℝ) ^ (2 * E) := one_le_pow₀ (by norm_num)
   have he : (0 : ℝ) ≤ E := Nat.cast_nonneg E

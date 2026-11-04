@@ -27,7 +27,7 @@ try {
         'NumericalSuzukiAbsorption', 'NumericalSuzukiHat', 'NumericalLowerFactor',
         'NumericalMertens', 'NumericalMertensProduct', 'NumericalGoldbachProduct',
         'NumericalSingularNormalization', 'NumericalSourceMass',
-        'NumericalMertensGlobal', 'NumericalGoldbachInterval', 'NumericalLocalProduct',
+        'NumericalElementaryMertens', 'NumericalMertensGlobal', 'NumericalGoldbachInterval', 'NumericalLocalProduct',
         'NumericalSuzukiNormalization', 'NumericalSuzukiLowStripScalar',
         'NumericalSuzukiCaseOne', 'SuzukiCoefficientAssembly',
         'NumericalHatCompact', 'NumericalHatLower', 'NumericalQuotientEnvelope',

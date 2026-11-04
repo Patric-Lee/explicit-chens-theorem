@@ -88,10 +88,13 @@ $previousLeanPath = $env:LEAN_PATH
 $env:LEAN_PATH = if ($previousLeanPath) { $artifactDir + ';' + $previousLeanPath } else { $artifactDir }
 Push-Location -LiteralPath $repoRoot
 try {
-    $fixture = Join-Path $PSScriptRoot 'audit\AuditChen.lean'
-    & $lakePath env lean -DwarningAsError=true -R $PSScriptRoot $fixture 2>&1 |
-        Tee-Object -FilePath (Join-Path $artifactDir 'FinalAudit.log')
-    if ($LASTEXITCODE -ne 0) { throw "Final Lean audit failed (exit $LASTEXITCODE)" }
+    foreach ($fixtureName in @('AuditElementaryMertens','AuditChen')) {
+        $fixture = Join-Path $PSScriptRoot "audit\$fixtureName.lean"
+        $logName = if ($fixtureName -eq 'AuditChen') { 'FinalAudit.log' } else { 'ElementaryMertensAudit.log' }
+        & $lakePath env lean -DwarningAsError=true -R $PSScriptRoot $fixture 2>&1 |
+            Tee-Object -FilePath (Join-Path $artifactDir $logName)
+        if ($LASTEXITCODE -ne 0) { throw "Lean audit failed for $fixtureName (exit $LASTEXITCODE)" }
+    }
 } finally {
     $env:LEAN_PATH = $previousLeanPath
     Pop-Location
