@@ -12,32 +12,34 @@ open SuzukiLemma144KappaOne
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 1800000
 
-noncomputable def polynomialCorrectionWeight : ℝ := Real.exp (-20000)
+noncomputable def polynomialCorrectionWeight : ℝ := Real.exp (-1000)
 
 theorem polynomialCorrectionWeight_pos : 0 < polynomialCorrectionWeight := Real.exp_pos _
 
 theorem polynomialCorrectionWeight_small :
-    100 * polynomialCorrectionWeight ≤ Real.exp (-12288 : ℝ) := by
-  have hh : (100 : ℝ) ≤ Real.exp 7712 := by linarith only [Real.add_one_le_exp (7712 : ℝ)]
+    100 * polynomialCorrectionWeight ≤ Real.exp (-896 : ℝ) := by
+  have hh : (100 : ℝ) ≤ Real.exp 104 := by linarith only [Real.add_one_le_exp (104 : ℝ)]
   calc
-    _ ≤ Real.exp 7712 * Real.exp (-20000 : ℝ) :=
+    _ ≤ Real.exp 104 * Real.exp (-1000 : ℝ) :=
       mul_le_mul_of_nonneg_right hh (Real.exp_pos _).le
     _ = _ := by rw [← Real.exp_add]; norm_num
 
 theorem polynomial_compact_hat_floor {H : Section13HatLayers}
     (hH : Section13HatContract H 2) {D s : ℝ} (hD : 1 < D)
     (n : ℕ) (hs : 2 ≤ s) (hs16 : s ≤ 16) :
-    Real.exp (-12288 : ℝ) ≤ errorEnvelope H n D 16 s := by
+    Real.exp (-896 : ℝ) ≤ errorEnvelope H n D 16 s := by
   have hs0 : 0 < s := by linarith only [hs]
   have hLD : 0 < Real.log D := Real.log_pos hD
-  have hlog : Real.log (6 * s) ≤ 96 := by
-    have hh := Real.log_le_sub_one_of_pos (show 0 < 6 * s by positivity)
-    linarith only [hh, hs16]
+  have hlog : Real.log (6 * s) ≤ 7 := by
+    calc
+      _ ≤ Real.log ((2 : ℝ) ^ 7) := Real.log_le_log (by positivity) (by norm_num; linarith only [hs16])
+      _ = 7 * Real.log 2 := by rw [Real.log_pow]; norm_num
+      _ ≤ 7 := by linarith only [Real.log_two_lt_d9]
   have hlog0 : 0 ≤ Real.log (6 * s) := Real.log_nonneg (by linarith only [hs])
-  have hbound : 8 * s * Real.log (6 * s) ≤ 12288 := by
+  have hbound : 8 * s * Real.log (6 * s) ≤ 896 := by
     nlinarith only [mul_le_mul_of_nonneg_right hs16 hlog0,
       mul_le_mul_of_nonneg_left hlog (show (0 : ℝ) ≤ 16 by norm_num)]
-  have hhat : Real.exp (-12288 : ℝ) ≤ H.T (ErrorSign.ofDepth n) s :=
+  have hhat : Real.exp (-896 : ℝ) ≤ H.T (ErrorSign.ofDepth n) s :=
     (Real.exp_le_exp.mpr (by linarith only [hbound])).trans
       (numerical_hat_lower_profile hH _ hs)
   have hP : 1 ≤ (1 + s ^ (16 : ℝ) / Real.log D) ^ s :=
@@ -55,7 +57,7 @@ The result has no recursion depth parameter. -/
 theorem polynomial_compact_correction_payment {L σ E : ℝ}
     (hL : 0 < L) (hσ : 0 < σ)
     (hgate : σ * L ^ (-(1 / 8 : ℝ)) ≤ 1)
-    (hE : Real.exp (-12288 : ℝ) ≤ E) :
+    (hE : Real.exp (-896 : ℝ) ≤ E) :
     polynomialCorrectionWeight * L ^ (-(5 / 8 : ℝ)) ≤
       E * L ^ (-(1 / 2 : ℝ)) / (100 * σ) := by
   have hb : 100 * polynomialCorrectionWeight ≤ E := polynomialCorrectionWeight_small.trans hE

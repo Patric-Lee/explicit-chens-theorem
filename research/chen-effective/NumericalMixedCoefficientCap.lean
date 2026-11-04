@@ -11,10 +11,10 @@ theorem mixedSuzukiSeparator_cap : mixedSuzukiSeparator ≤ Real.exp (10 ^ 40 : 
   exact mixedEndpointC1_budget.trans (Real.exp_le_exp.mpr (by norm_num))
 
 theorem mixed_claim_coefficient_cap :
-    mixedClaimCoefficient mixedSuzukiSeparator numericalLocalProductK ≤ Real.exp (10 ^ 45 : ℝ) := by
+    mixedClaimCoefficient mixedSuzukiSeparator refinedLocalProductK ≤ Real.exp (10 ^ 45 : ℝ) := by
   apply max_le (Real.one_le_exp (by positivity))
   exact polynomialClaimConstant_single_exp_cap mixedSuzukiSeparator_cap
-    (by linarith only [numerical_local_product_two]) numericalLocalProductK_lt.le
+    (by linarith only [refined_local_product_two]) (refined_local_product_cap.trans (by norm_num))
 
 theorem mixed_low_strip_cap : lowStripNumericalConstant mixedSuzukiSeparator ≤ Real.exp (10 ^ 42 : ℝ) := by
   have hC10 : 0 ≤ mixedSuzukiSeparator :=
@@ -35,10 +35,10 @@ theorem mixed_low_strip_cap : lowStripNumericalConstant mixedSuzukiSeparator ≤
     _ ≤ _ := Real.exp_le_exp.mpr (by norm_num)
 
 theorem mixed_suzuki_coefficient_cap :
-    mixedSuzukiCoefficient mixedSuzukiSeparator numericalLocalProductK ≤ Real.exp (10 ^ 46 : ℝ) := by
+    mixedSuzukiCoefficient mixedSuzukiSeparator refinedLocalProductK ≤ Real.exp (10 ^ 46 : ℝ) := by
   have h4 : (4 : ℝ) ≤ Real.exp (10 ^ 45 : ℝ) := by
     linarith only [Real.add_one_le_exp (10 ^ 45 : ℝ)]
-  have hclaim : 4 * mixedClaimCoefficient mixedSuzukiSeparator numericalLocalProductK ≤ Real.exp (10 ^ 46 : ℝ) := by
+  have hclaim : 4 * mixedClaimCoefficient mixedSuzukiSeparator refinedLocalProductK ≤ Real.exp (10 ^ 46 : ℝ) := by
     calc
       _ ≤ Real.exp (10 ^ 45 : ℝ) * Real.exp (10 ^ 45 : ℝ) :=
         mul_le_mul h4 mixed_claim_coefficient_cap

@@ -1,5 +1,5 @@
 import NumericalTowerFinite
-import NumericalMixedCoefficientCap
+import NumericalSuzukiSharpBudget
 
 noncomputable section
 namespace ChenEffective
@@ -11,18 +11,18 @@ set_option maxRecDepth 4000
 set_option exponentiation.threshold 512
 attribute [local irreducible] logPowerCutoff mertensProductThreshold numericalBVThreshold
 
-private opaque doubleTopCertificate : {n : ℕ // n = 10 ^ 100} := ⟨10 ^ 100, rfl⟩
+private opaque doubleTopCertificate : {n : ℕ // n = 10 ^ 43} := ⟨10 ^ 43, rfl⟩
 def numericalDoubleTop : ℕ := doubleTopCertificate.1
-theorem numericalDoubleTop_eq : numericalDoubleTop = 10 ^ 100 := doubleTopCertificate.2
+theorem numericalDoubleTop_eq : numericalDoubleTop = 10 ^ 43 := doubleTopCertificate.2
 
-private opaque doubleBudgetCertificate : {n : ℕ // n = 10 ^ 96} := ⟨10 ^ 96, rfl⟩
+private opaque doubleBudgetCertificate : {n : ℕ // n = 10 ^ 42} := ⟨10 ^ 42, rfl⟩
 def doubleBudgetExponent : ℕ := doubleBudgetCertificate.1
-theorem doubleBudgetExponent_eq : doubleBudgetExponent = 10 ^ 96 := doubleBudgetCertificate.2
+theorem doubleBudgetExponent_eq : doubleBudgetExponent = 10 ^ 42 := doubleBudgetCertificate.2
 
 @[irreducible] def numericalDoubleExpCutoff : ℕ := 3 ^ (3 ^ numericalDoubleTop)
 @[irreducible] def doubleAbsorptionBudget : ℕ := 3 ^ doubleBudgetExponent
 
-theorem numericalDoubleExpCutoff_eq : numericalDoubleExpCutoff = 3 ^ (3 ^ (10 ^ 100)) := by
+theorem numericalDoubleExpCutoff_eq : numericalDoubleExpCutoff = 3 ^ (3 ^ (10 ^ 43)) := by
   rw [numericalDoubleExpCutoff, numericalDoubleTop_eq]
 
 theorem double_budget_large : 10 ^ 100 ≤ doubleAbsorptionBudget := by
@@ -55,33 +55,32 @@ theorem double_H : towerH ≤ numericalDoubleExpCutoff :=
     simpa only [pow_one] using Nat.pow_le_pow_right tower_H_one_nat (show 1 ≤ 20 by norm_num)).trans double_H_twenty
 
 theorem double_base_C : baseSuzukiC ≤ doubleAbsorptionBudget := by
-  have hh := exp_le_three_pow (n := doubleBudgetExponent) (x := (10 ^ 47 : ℝ))
+  have hh := exp_le_three_pow (n := doubleBudgetExponent) (x := (10 ^ 42 : ℝ))
     (by rw [doubleBudgetExponent_eq]; norm_num)
   have hc : numericalEffectiveSuzukiCoefficient ≤ (doubleAbsorptionBudget : ℝ) :=
-    numericalEffectiveSuzukiCoefficient_cap.trans (by simpa only [doubleAbsorptionBudget, Nat.cast_pow, Nat.cast_ofNat] using hh)
+    numericalEffectiveSuzukiCoefficient_sharp_cap.trans (by simpa only [doubleAbsorptionBudget, Nat.cast_pow, Nat.cast_ofNat] using hh)
   change ⌈max 1 numericalEffectiveSuzukiCoefficient⌉₊ ≤ doubleAbsorptionBudget
   exact Nat.ceil_le.mpr (max_le (by exact_mod_cast double_budget_one) hc)
 
-theorem double_base_K : baseSuzukiK ≤ 10 ^ 91 := by
-  change ⌈max 1 numericalLocalProductK⌉₊ ≤ 10 ^ 91
-  apply Nat.ceil_le.mpr
-  rw [Nat.cast_pow, Nat.cast_ofNat]
-  exact max_le (by norm_num) (numericalLocalProductK_lt.le.trans (by norm_num))
+theorem double_base_K : baseSuzukiK ≤ 10 ^ 12 := by rw [baseSuzukiK_eq]
 
-theorem double_amplitude : suzukiAmplitudeCap baseSuzukiC baseSuzukiK ≤ doubleAbsorptionBudget ^ 3 := by
+theorem double_amplitude : sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK ≤ doubleAbsorptionBudget ^ 3 := by
   have h20 : 20 ≤ doubleAbsorptionBudget := (by norm_num : 20 ≤ (10 : ℕ) ^ 100).trans double_budget_large
-  have hk : 3 ^ baseSuzukiK ≤ doubleAbsorptionBudget := by
+  have hk : 3 ^ (Nat.sqrt baseSuzukiK + 1) ≤ doubleAbsorptionBudget := by
     unfold doubleAbsorptionBudget
     apply Nat.pow_le_pow_right (by norm_num)
-    exact double_base_K.trans (by rw [doubleBudgetExponent_eq]; norm_num)
-  unfold suzukiAmplitudeCap
+    have hr : Nat.sqrt baseSuzukiK + 1 ≤ 10 ^ 7 := by
+      have hh : Nat.sqrt baseSuzukiK < 10 ^ 7 := Nat.sqrt_lt'.mpr (by rw [baseSuzukiK_eq]; norm_num)
+      omega
+    exact hr.trans (by rw [doubleBudgetExponent_eq]; norm_num)
+  unfold sqrtSuzukiAmplitudeCap
   calc
     _ ≤ doubleAbsorptionBudget * doubleAbsorptionBudget * doubleAbsorptionBudget :=
       Nat.mul_le_mul (Nat.mul_le_mul h20 double_base_C) hk
     _ = _ := by ring
 
 theorem double_scalar_exponent {r : ℕ} (hr : r ≤ 10 ^ 12) :
-    max 152587890625 (4096 * (suzukiAmplitudeCap baseSuzukiC baseSuzukiK + 1) ^ 2 * r ^ 2) ≤
+    max 152587890625 (4096 * (sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK + 1) ^ 2 * r ^ 2) ≤
       doubleAbsorptionBudget ^ 9 := by
   have hJ : 2 ≤ doubleAbsorptionBudget := (by norm_num : 2 ≤ (10 : ℕ) ^ 100).trans double_budget_large
   have hJ3 : 1 ≤ doubleAbsorptionBudget ^ 3 := one_le_pow₀ double_budget_one
@@ -89,7 +88,7 @@ theorem double_scalar_exponent {r : ℕ} (hr : r ≤ 10 ^ 12) :
     calc
       _ ≤ doubleAbsorptionBudget * doubleAbsorptionBudget ^ 3 := Nat.mul_le_mul_right _ hJ
       _ = _ := by ring
-  have ha : suzukiAmplitudeCap baseSuzukiC baseSuzukiK + 1 ≤ doubleAbsorptionBudget ^ 4 := by
+  have ha : sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK + 1 ≤ doubleAbsorptionBudget ^ 4 := by
     nlinarith only [double_amplitude, hJ3, hp]
   have hc : 4096 * r ^ 2 ≤ doubleAbsorptionBudget :=
     (show 4096 * r ^ 2 ≤ 10 ^ 100 by nlinarith only [Nat.pow_le_pow_left hr 2]).trans double_budget_large
@@ -97,13 +96,13 @@ theorem double_scalar_exponent {r : ℕ} (hr : r ≤ 10 ^ 12) :
   · exact (show 152587890625 ≤ doubleAbsorptionBudget by have hh := double_budget_large; omega).trans
       (by simpa only [pow_one] using Nat.pow_le_pow_right double_budget_one (show 1 ≤ 9 by norm_num))
   · calc
-      _ = (4096 * r ^ 2) * (suzukiAmplitudeCap baseSuzukiC baseSuzukiK + 1) ^ 2 := by ring
+      _ = (4096 * r ^ 2) * (sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK + 1) ^ 2 := by ring
       _ ≤ doubleAbsorptionBudget * (doubleAbsorptionBudget ^ 4) ^ 2 := Nat.mul_le_mul hc (Nat.pow_le_pow_left ha 2)
       _ = _ := by ring
 
 theorem double_suzuki_error {r : ℕ} (hr : r ≤ 10 ^ 12) :
-    suzukiErrorThreshold baseSuzukiC baseSuzukiK r ≤ numericalDoubleExpCutoff := by
-  unfold suzukiErrorThreshold numericalDoubleExpCutoff
+    sqrtSuzukiErrorThreshold baseSuzukiC baseSuzukiK r ≤ numericalDoubleExpCutoff := by
+  unfold sqrtSuzukiErrorThreshold numericalDoubleExpCutoff
   apply Nat.pow_le_pow_right (by norm_num)
   apply le_trans _ double_budget_tenth
   have h5 : 5 ≤ doubleAbsorptionBudget := (by norm_num : 5 ≤ (10 : ℕ) ^ 100).trans double_budget_large
@@ -114,7 +113,7 @@ theorem double_suzuki_error {r : ℕ} (hr : r ≤ 10 ^ 12) :
 
 theorem double_upper_density {r : ℕ} (hr : r ≤ 10 ^ 12) :
     mediumUpperDensityThreshold r ≤ numericalDoubleExpCutoff := by
-  let E := max 152587890625 (4096 * (suzukiAmplitudeCap baseSuzukiC baseSuzukiK + 1) ^ 2 * r ^ 2)
+  let E := max 152587890625 (4096 * (sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK + 1) ^ 2 * r ^ 2)
   have hE : E ≤ doubleAbsorptionBudget ^ 9 := double_scalar_exponent hr
   have hJ9 : 1 ≤ doubleAbsorptionBudget ^ 9 := one_le_pow₀ double_budget_one
   have h20 : 20 ≤ doubleAbsorptionBudget := (by norm_num : 20 ≤ (10 : ℕ) ^ 100).trans double_budget_large

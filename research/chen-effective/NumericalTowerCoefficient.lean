@@ -40,7 +40,7 @@ theorem tower_local_K : numericalLocalProductK ≤ towerH := by
   exact hK.trans hbound
 
 theorem tower_base_K : baseSuzukiK ≤ towerH :=
-  Nat.ceil_le.mpr (max_le towerH_one tower_local_K)
+  by rw [baseSuzukiK_eq]; exact (by norm_num : (10 : ℕ)^12 ≤ 10^100).trans (by exact_mod_cast towerH_large)
 
 theorem tower_bounded_coefficient : boundedCaseAConstant numericalSuzukiC1 numericalLocalProductK ≤ towerV := by
   let H : ℝ := towerH

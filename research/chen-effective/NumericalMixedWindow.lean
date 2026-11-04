@@ -1,4 +1,5 @@
 import NumericalMixedInduction
+import NumericalRefinedLocalProduct
 
 namespace ChenEffective
 open Real Set Finset
@@ -15,7 +16,7 @@ theorem mixed_window_error_le {H : Section13HatLayers} (hH : Section13HatSourceC
   have hD1 : (1 : ℝ) < D := by exact_mod_cast (show 1 < D by omega)
   have hL : 0 < Real.log (D : ℝ) := Real.log_pos hD1
   have hs0 : 0 < s := by linarith only [hs]
-  have hE : Real.exp (-12288 : ℝ) ≤ errorEnvelope H N D 16 s := by
+  have hE : Real.exp (-896 : ℝ) ≤ errorEnvelope H N D 16 s := by
     by_cases hs2 : 2 ≤ s
     · exact polynomial_compact_hat_floor hH.toSection13HatContract hD1 N hs2 (by linarith only [hs5])
     · have ho : Odd N := by
@@ -23,10 +24,10 @@ theorem mixed_window_error_le {H : Section13HatLayers} (hH : Section13HatSourceC
         have he := Nat.not_odd_iff_even.mp hn
         have hh : 2 ≤ s := by simpa [KappaOneModel.parityDomain, Nat.even_iff.mp he] using hsdom
         exact hs2 hh
-      have hf : Real.exp (-12288 : ℝ) ≤ 1 / 3 := by
+      have hf : Real.exp (-896 : ℝ) ≤ 1 / 3 := by
         rw [Real.exp_neg]
         simpa only [one_div] using one_div_le_one_div_of_le (by norm_num : (0 : ℝ) < 3)
-          (show (3 : ℝ) ≤ Real.exp 12288 by linarith only [Real.add_one_le_exp (12288 : ℝ)])
+          (show (3 : ℝ) ≤ Real.exp 896 by linarith only [Real.add_one_le_exp (896 : ℝ)])
       exact hf.trans (one_third_le_errorEnvelope_caseII hH.toSection13HatContract ho hD1
         (by linarith only [hs]) (by linarith only [hs5, hs2]))
   have hhalf : (1 / 2 : ℝ) ≤ Real.log (D : ℝ) := by
@@ -87,7 +88,7 @@ theorem numerical_mixed_suzuki_window (H : Section13HatLayers) (hH : Section13Ha
   nlinarith only [hh, hscaled]
 
 noncomputable def numericalEffectiveSuzukiCoefficient : ℝ :=
-  2 * mixedSuzukiCoefficient mixedSuzukiSeparator numericalLocalProductK
+  2 * mixedSuzukiCoefficient mixedSuzukiSeparator refinedLocalProductK
 
 #print axioms numerical_mixed_suzuki_window
 end ChenEffective

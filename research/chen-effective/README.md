@@ -6,7 +6,7 @@ cutoffs. **A closed numerical Chen threshold is now proved under the single
 local Dirichlet seven-eighths axiom.** `NumericalChenCutoff.lean` supplies
 `numerical_chen` and the quantitative representation-count theorem. There
 are no remaining analytic estimates as hypotheses of these final theorems.
-A double-exponential common cap, `3^(3^(10^100))`, is now proved for both `nLower` and `N0` in `NumericalDoubleExponential.lean`.
+A double-exponential common cap, `3^(3^(10^43))`, is now proved for both `nLower` and `N0` in `NumericalDoubleExponential.lean`.
 The threshold is an explicit formula built from the numerical constants
 below; no unspecified or chosen analytic threshold occurs in it.
 
@@ -1354,6 +1354,49 @@ comparisons and all nine exact final-theorem axiom checks passed, including
 the double-exponential entry points. The audit also checks that the numerical
 proofs do not use the original implicit Chen proofs.
 
+## First quantitative tightening of the double-exponential cutoff
+
+The current common cap is `3^(3^(10^43))`, replacing the preceding
+`3^(3^(10^100))` certificate. In natural logarithmic coordinates this is
+`log log N` approximately `1.099 * 10^43`. This remains a conservative cap;
+it does not claim proximity to `exp(exp(36))`.
+
+- `NumericalSqrtAbsorption.lean` bounds `exp(sqrt K)` by
+  `3^(Nat.sqrt k+1)` when `K <= k`, preserving the square root in both the
+  lower-density and medium-prime upper-density absorption thresholds.
+- `NumericalProductExponential.lean` retains the exponential Euler-product
+  estimate before linearization. `NumericalProductSplit.lean` splits at 1024.
+  Below 1024, a product over all integers telescopes, avoiding a large finite
+  prime computation. Above 1024, the exponential estimate has a fixed small
+  exponent. The resulting interval bound holds at every real lower endpoint
+  `z >= 2`, including the closed endpoint. It proves a global local-product
+  constant `K = 10^12`, replacing `94*3^184` in the active Chen proof.
+- The compact hat proof now uses `log(6*s) <= 7` on `[2,16]`, giving the
+  floor `exp(-896)` instead of `exp(-12288)`. The polynomial correction
+  weight increases from `exp(-20000)` to `exp(-1000)`. The full mixed
+  induction, including compact Case I, the even endpoint and Case II,
+  is rebuilt with this stronger correction.
+- `NumericalSuzukiSharpBudget.lean` tracks the powers in the terminal
+  coefficient directly. For the refined local product constant it proves
+  an effective Suzuki coefficient at most `exp(10^42)`, replacing the
+  previous `exp(10^47)` cap. `NumericalDoubleExponential.lean` propagates
+  these bounds to both detailed thresholds and the public convenience cutoffs.
+
+The remaining major lower-sieve losses include the global C1 separator,
+derivative-ratio bounds, large-level gate, and deliberately small error
+allocations. Independently, reducing the full cutoff toward `exp(exp(36))`
+also requires tightening the square/denominator threshold, the final triple
+error constant, and distribution thresholds. The original `0.67` count
+coefficient and the single local Dirichlet axiom are retained. No OpenAI
+module or external dependency is added; the sieve structure is unchanged.
+
+Validation: all 40 affected modules compiled in dependency order with warnings
+treated as errors. The extended audit traversed 81,946 proof/type dependencies,
+checked all four original statement comparisons and all nine final-theorem
+axiom whitelists, and verified that every new product, absorption, compact-hat,
+and coefficient lemma uses only the three standard axioms. The final source
+and elementary Mertens audits also pass.
+
 ## Reproduce
 
 From the checkout, in PowerShell:
@@ -1365,7 +1408,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the 175 research modules, in dependency order, treating warnings as errors,
+This checks only the 180 research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is

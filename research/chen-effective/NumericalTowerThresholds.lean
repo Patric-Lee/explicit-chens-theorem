@@ -11,13 +11,16 @@ theorem tower_three_pow_F {n : ℕ} (hn : n ≤ towerV^100) : 3^n ≤ towerF := 
   unfold towerF
   exact Nat.pow_le_pow_right (by norm_num) hn
 
-theorem tower_amplitude : suzukiAmplitudeCap baseSuzukiC baseSuzukiK ≤ towerV^4 := by
+theorem tower_amplitude : sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK ≤ towerV^4 := by
   have hv : 20 ≤ towerV := (by norm_num : 20 ≤ (10 : ℕ)^100).trans tower_V_large_nat
-  have hk : 3^baseSuzukiK ≤ towerV := by
+  have hk : 3^(Nat.sqrt baseSuzukiK+1) ≤ towerV := by
     unfold towerV
     apply Nat.pow_le_pow_right (by norm_num)
-    exact tower_base_K.trans (by simpa only [pow_one] using Nat.pow_le_pow_right tower_H_one_nat (show 1 ≤ 100 by norm_num))
-  unfold suzukiAmplitudeCap
+    have hr : Nat.sqrt baseSuzukiK + 1 ≤ baseSuzukiK := by
+      have hh := Nat.sqrt_lt_self (show 1 < baseSuzukiK by rw [baseSuzukiK_eq]; norm_num)
+      omega
+    exact hr.trans (tower_base_K.trans (by simpa only [pow_one] using Nat.pow_le_pow_right tower_H_one_nat (show 1 ≤ 100 by norm_num)))
+  unfold sqrtSuzukiAmplitudeCap
   calc
     _ ≤ 20*(towerV^2)*towerV := Nat.mul_le_mul (Nat.mul_le_mul_left _ tower_base_C) hk
     _ = 20*towerV^3 := by ring
@@ -25,10 +28,10 @@ theorem tower_amplitude : suzukiAmplitudeCap baseSuzukiC baseSuzukiK ≤ towerV^
     _ = _ := by ring
 
 theorem tower_scalar_exponent {r : ℕ} (hr : r ≤ 10^12) :
-    max 152587890625 (4096*(suzukiAmplitudeCap baseSuzukiC baseSuzukiK+1)^2*r^2) ≤ towerV^11 := by
+    max 152587890625 (4096*(sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK+1)^2*r^2) ≤ towerV^11 := by
   have hv : 100 ≤ towerV := (by norm_num : 100 ≤ (10 : ℕ)^100).trans tower_V_large_nat
   have hv1 : 1 ≤ towerV^4 := one_le_pow₀ tower_V_one_nat
-  have ha : suzukiAmplitudeCap baseSuzukiC baseSuzukiK+1 ≤ towerV^5 := by
+  have ha : sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK+1 ≤ towerV^5 := by
     have hh : 2*towerV^4 ≤ towerV^5 := by
       calc
         _ ≤ towerV*towerV^4 := Nat.mul_le_mul_right _ (by omega : 2 ≤ towerV)
@@ -40,12 +43,12 @@ theorem tower_scalar_exponent {r : ℕ} (hr : r ≤ 10^12) :
   · exact (show 152587890625 ≤ towerV by have hh := tower_V_large_nat; omega).trans
       (by simpa only [pow_one] using Nat.pow_le_pow_right tower_V_one_nat (show 1 ≤ 11 by norm_num))
   · calc
-      _ = (4096*r^2)*(suzukiAmplitudeCap baseSuzukiC baseSuzukiK+1)^2 := by ring
+      _ = (4096*r^2)*(sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK+1)^2 := by ring
       _ ≤ towerV*(towerV^5)^2 := Nat.mul_le_mul hc (Nat.pow_le_pow_left ha 2)
       _ = _ := by ring
 
-theorem tower_suzuki_error {r : ℕ} (hr : r ≤ 10^12) : suzukiErrorThreshold baseSuzukiC baseSuzukiK r ≤ towerF := by
-  unfold suzukiErrorThreshold
+theorem tower_suzuki_error {r : ℕ} (hr : r ≤ 10^12) : sqrtSuzukiErrorThreshold baseSuzukiC baseSuzukiK r ≤ towerF := by
+  unfold sqrtSuzukiErrorThreshold
   apply tower_three_pow_F
   have hE := tower_scalar_exponent hr
   have hv : 5 ≤ towerV := (by norm_num : 5 ≤ (10 : ℕ)^100).trans tower_V_large_nat
@@ -56,7 +59,7 @@ theorem tower_suzuki_error {r : ℕ} (hr : r ≤ 10^12) : suzukiErrorThreshold b
     _ ≤ _ := Nat.pow_le_pow_right tower_V_one_nat (by norm_num)
 
 theorem tower_upper_density {r : ℕ} (hr : r ≤ 10^12) : mediumUpperDensityThreshold r ≤ towerF := by
-  let E := max 152587890625 (4096*(suzukiAmplitudeCap baseSuzukiC baseSuzukiK+1)^2*r^2)
+  let E := max 152587890625 (4096*(sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK+1)^2*r^2)
   have hE : E ≤ towerV^11 := tower_scalar_exponent hr
   have h1 : 1 ≤ 3^E := one_le_pow₀ (by norm_num)
   have hbase : 3^E+1 ≤ 3^(E+1) := by rw [pow_succ]; omega

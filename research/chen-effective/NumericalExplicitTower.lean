@@ -51,8 +51,8 @@ theorem numerical_N0_tower : N0 ≤ numericalTowerCutoff := tower_N0.trans tower
 def numericalNLower : ℕ := numericalDoubleExpCutoff
 def numericalN0 : ℕ := numericalDoubleExpCutoff
 
-theorem numericalNLower_eq : numericalNLower = 3^(3^(10^100)) := numericalDoubleExpCutoff_eq
-theorem numericalN0_eq : numericalN0 = 3^(3^(10^100)) := numericalDoubleExpCutoff_eq
+theorem numericalNLower_eq : numericalNLower = 3^(3^(10^43)) := numericalDoubleExpCutoff_eq
+theorem numericalN0_eq : numericalN0 = 3^(3^(10^43)) := numericalDoubleExpCutoff_eq
 
 theorem numerical_lower_above_tower {N : ℕ} (hN : numericalNLower ≤ N) (hEven : Even N) :
     (2.6407 : ℝ)*liuSingularSeries N*N/Real.log (N : ℝ)^2 ≤ jurkatRichertWeightedCount N :=

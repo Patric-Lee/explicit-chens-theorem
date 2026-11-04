@@ -23,9 +23,9 @@ theorem polynomialClaimConstant_single_exp_cap {C1 K : ℝ}
   unfold polynomialClaimConstant polynomialCorrectionWeight
   rw [div_eq_mul_inv, ← Real.exp_neg, neg_neg]
   calc
-    _ ≤ Real.exp (10 ^ 44 : ℝ) * Real.exp 20000 :=
+    _ ≤ Real.exp (10 ^ 44 : ℝ) * Real.exp 1000 :=
       mul_le_mul_of_nonneg_right hcap (Real.exp_pos _).le
-    _ = Real.exp ((10 ^ 44 : ℝ) + 20000) := (Real.exp_add _ _).symm
+    _ = Real.exp ((10 ^ 44 : ℝ) + 1000) := (Real.exp_add _ _).symm
     _ ≤ _ := Real.exp_le_exp.mpr (by norm_num)
 
 /-- No compact hat minimum is used in this bounded-level base case. -/

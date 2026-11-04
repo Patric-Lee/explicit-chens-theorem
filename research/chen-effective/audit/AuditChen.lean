@@ -84,7 +84,16 @@ run_elab do
     ``ChenEffective.numerical_nLower_double_exp,
     ``ChenEffective.numerical_N0_double_exp,
     ``ChenEffective.numericalNLower_eq,
-    ``ChenEffective.numericalN0_eq]
+    ``ChenEffective.numericalN0_eq,
+    ``ChenEffective.goldbach_interval_exponential,
+    ``ChenEffective.goldbach_integer_product,
+    ``ChenEffective.numerical_goldbach_split_interval,
+    ``ChenEffective.numerical_refined_source_local_product,
+    ``ChenEffective.numerical_exp_sqrt_round_bound,
+    ``ChenEffective.numerical_chen_sqrt_suzuki_error,
+    ``ChenEffective.mixed_claim_coefficient_sharp_cap,
+    ``ChenEffective.mixed_low_strip_sharp_cap,
+    ``ChenEffective.numericalEffectiveSuzukiCoefficient_sharp_cap]
   for n in #[``ChenEffective.numerical_mertens_all,
       ``ChenEffective.numerical_source_local_product,
       ``ChenEffective.numericalLocalProductK_eq,
@@ -100,6 +109,7 @@ run_elab do
   logInfo "Absolute small-quotient and additive terminal bounds use only standard axioms."
   logInfo "Polynomial correction, natural-ceiling Case-I/II transport, gates, and bounded mixed branch use only standard axioms."
   logInfo "All-depth mixed induction, compact Case I, even endpoint, Case II, coefficient cap, and double-exponential cutoffs use only standard axioms."
+  logInfo "Fixed-endpoint Euler-product split, K=10^12, square-root absorption, and sharp coefficient budgets use only standard axioms."
   -- Independently traverse proof/type references: none of the old implicit
   -- theorem proofs may supply the numerical theorem or its compatibility bridges.
   let forbidden := #[``Goldbach.chen_theorem, ``Goldbach.representation_lower_bound,
