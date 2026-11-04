@@ -1,3 +1,4 @@
+import NumericalMixedCoefficientCap
 import NumericalTowerC1
 
 noncomputable section
@@ -145,8 +146,13 @@ theorem tower_numerical_coefficient : numericalChenSuzukiCoefficient ≤ (towerV
   exact max_le (by nlinarith only [hVbig,sq_nonneg ((towerV : ℝ)-1)])
     (max_le (by have hh := mul_le_mul_of_nonneg_left hclaim (by norm_num : (0 : ℝ) ≤ 4); nlinarith only [hh,hVbig,sq_nonneg ((towerV : ℝ)-2)]) (hlow.trans hVV))
 
-theorem tower_base_C : baseSuzukiC ≤ towerV^2 :=
-  Nat.ceil_le.mpr (by rw [Nat.cast_pow]; exact max_le (one_le_pow₀ towerV_one) tower_numerical_coefficient)
-
+theorem tower_base_C : baseSuzukiC ≤ towerV^2 := by
+  have hx : (10 ^ 47 : ℝ) ≤ (towerH : ℝ) ^ 1 := by
+    rw [pow_one]
+    exact (by norm_num : (10 ^ 47 : ℝ) ≤ 10 ^ 100).trans towerH_large
+  have hc := numericalEffectiveSuzukiCoefficient_cap.trans (exp_H_pow_le_V (by norm_num : 1 ≤ 100) hx)
+  apply Nat.ceil_le.mpr
+  rw [Nat.cast_pow]
+  exact max_le (one_le_pow₀ towerV_one) (hc.trans (by nlinarith only [towerV_one]))
 #print axioms tower_numerical_coefficient
 end ChenEffective

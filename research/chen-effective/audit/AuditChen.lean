@@ -2,6 +2,7 @@ import NumericalChenCompatibility
 import NumericalC1SingleExponential
 import NumericalSmallQuotientChen
 import NumericalPolynomialChen
+import NumericalDoubleExponential
 -- Only this audit fixture imports the old proofs, to compare declaration types.
 import Goldbach.Theorem
 import Lean.Util.CollectAxioms
@@ -32,6 +33,8 @@ run_elab do
     ``ChenEffective.numerical_chen_representation_count,
     ``ChenEffective.numerical_chen_above_tower,
     ``ChenEffective.numerical_count_above_tower,
+    ``ChenEffective.numerical_chen_above_double_exp,
+    ``ChenEffective.numerical_count_above_double_exp,
     ``ChenEffective.numerical_implies_original_chen,
     ``ChenEffective.numerical_implies_original_internal_chen,
     ``ChenEffective.numerical_implies_original_representation_bound]
@@ -40,7 +43,8 @@ run_elab do
     unless axs.size == allowed.size && axs.all allowed.contains do
       throwError "Unexpected axioms for {n}: {axs}"
     logInfo m!"Exact four-axiom whitelist passed: {n}"
-  for n in #[``ChenEffective.numerical_nLower_tower, ``ChenEffective.numerical_N0_tower] do
+  for n in #[``ChenEffective.numerical_nLower_tower, ``ChenEffective.numerical_N0_tower,
+      ``ChenEffective.numerical_nLower_double_exp, ``ChenEffective.numerical_N0_double_exp] do
     let axs ← Lean.collectAxioms n
     unless axs.all (fun a => allowed.contains a && a != ``ChenEffective.dirichlet_seven_eighths) do
       throwError "Unexpected threshold axioms for {n}: {axs}"
@@ -70,7 +74,17 @@ run_elab do
     ``ChenEffective.numerical_polynomial_terminal_bound,
     ``ChenEffective.polynomialTerminalConstant_single_exp_cap,
     ``ChenEffective.polynomialClaimConstant_single_exp_cap,
-    ``ChenEffective.numerical_chen_mixed_bounded]
+    ``ChenEffective.numerical_chen_mixed_bounded,
+    ``ChenEffective.numerical_mixed_suzuki,
+    ``ChenEffective.numerical_mixed_caseI_cutoff,
+    ``ChenEffective.numerical_mixed_even_cutoff,
+    ``ChenEffective.mixed_caseII_from_cube,
+    ``ChenEffective.numerical_mixed_suzuki_window,
+    ``ChenEffective.numericalEffectiveSuzukiCoefficient_cap,
+    ``ChenEffective.numerical_nLower_double_exp,
+    ``ChenEffective.numerical_N0_double_exp,
+    ``ChenEffective.numericalNLower_eq,
+    ``ChenEffective.numericalN0_eq]
   for n in #[``ChenEffective.numerical_mertens_all,
       ``ChenEffective.numerical_source_local_product,
       ``ChenEffective.numericalLocalProductK_eq,
@@ -85,6 +99,7 @@ run_elab do
   logInfo "Elementary Mertens, local-product, and improved C1 bounds use only standard axioms."
   logInfo "Absolute small-quotient and additive terminal bounds use only standard axioms."
   logInfo "Polynomial correction, natural-ceiling Case-I/II transport, gates, and bounded mixed branch use only standard axioms."
+  logInfo "All-depth mixed induction, compact Case I, even endpoint, Case II, coefficient cap, and double-exponential cutoffs use only standard axioms."
   -- Independently traverse proof/type references: none of the old implicit
   -- theorem proofs may supply the numerical theorem or its compatibility bridges.
   let forbidden := #[``Goldbach.chen_theorem, ``Goldbach.representation_lower_bound,

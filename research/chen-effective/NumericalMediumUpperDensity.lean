@@ -1,3 +1,4 @@
+import NumericalMixedUpper
 import NumericalBaseDensity
 import NumericalMediumPrimeShift
 import MathlibNt.SieveTheory.LinearSieve.Suzuki.SuzukiUpperRosserDensityEndpointDirect
@@ -55,13 +56,13 @@ theorem numerical_upper_level_parameters {D r : ℕ} (hD : mediumUpperScalarThre
 
 theorem numerical_upper_suzuki_error {D r depth : ℕ} (hD : mediumUpperScalarThreshold r ≤ D)
     (hr : 0 < r) (hdepth : Odd depth) {s : ℝ} (hs : 3/2 ≤ s) (hs4 : s ≤ 4) :
-    numericalChenSuzukiCoefficient*Real.exp (Real.sqrt numericalLocalProductK)*
+    numericalEffectiveSuzukiCoefficient*Real.exp (Real.sqrt numericalLocalProductK)*
         errorEnvelope jr1965Section13HatLayers depth D 16 s*(Real.log (D : ℝ))^(-(1/2 : ℝ)) < 1/(r : ℝ) := by
   obtain ⟨hD1,hL5,_⟩ := numerical_upper_level_parameters hD
   have hL0 : 0 < Real.log (D : ℝ) := Real.log_pos hD1
   have he := numerical_exp_sqrt_bound baseSuzukiK_one baseSuzukiK_bound
-  let a := numericalChenSuzukiCoefficient*Real.exp (Real.sqrt numericalLocalProductK)*16
-  have ha0 : 0 ≤ a := by dsimp [a]; exact mul_nonneg (mul_nonneg numericalChenSuzukiCoefficient_nonneg (Real.exp_pos _).le) (by norm_num)
+  let a := numericalEffectiveSuzukiCoefficient*Real.exp (Real.sqrt numericalLocalProductK)*16
+  have ha0 : 0 ≤ a := by dsimp [a]; exact mul_nonneg (mul_nonneg numericalEffectiveSuzukiCoefficient_nonneg (Real.exp_pos _).le) (by norm_num)
   have haM : a ≤ suzukiAmplitudeCap baseSuzukiC baseSuzukiK := by
     have hc : (0 : ℝ) ≤ baseSuzukiC := Nat.cast_nonneg _
     have hh := mul_le_mul baseSuzukiC_bound he (Real.exp_pos _).le hc
@@ -77,7 +78,7 @@ theorem numerical_upper_suzuki_error {D r depth : ℕ} (hD : mediumUpperScalarTh
   calc
     _ ≤ a*(Real.log (D : ℝ))^(-(1/2 : ℝ)) :=
       mul_le_mul_of_nonneg_right (mul_le_mul_of_nonneg_left hE
-        (mul_nonneg numericalChenSuzukiCoefficient_nonneg (Real.exp_pos _).le)) hdecay
+        (mul_nonneg numericalEffectiveSuzukiCoefficient_nonneg (Real.exp_pos _).le)) hdecay
     _ ≤ a*(1+(1 : ℝ)^16/Real.log (D : ℝ))^(1 : ℝ)*(Real.log (D : ℝ))^(-(1/2 : ℝ)) := by
       have hh := mul_le_mul_of_nonneg_left hbase ha0
       exact mul_le_mul_of_nonneg_right (by simpa only [mul_one] using hh) hdecay
@@ -114,10 +115,19 @@ theorem numerical_conditioned_upper_density {N q r : ℕ} (hr : 0 < r)
   have hDcut : mediumUpperScalarThreshold r ≤ D := by exact_mod_cast hzcut.trans hzD.le
   have hSigma : s ≤ sourceSigma (D : ℝ) 16 := hs.2.trans (numerical_upper_level_parameters hDcut).2.2
   have hlocal := jurkatRichertSourceConditioned_dimensionOneLocalProductBound (q := q) (numerical_source_local_product N)
-  have hall := numerical_fixedK_suzuki jr1965Section13HatLayers jr1965Section13HatSourceContract
-    numericalLocalProductK numerical_local_product_two numericalSuzukiC1 le_rfl S hlocal
-  have hpoint := upperRosserDensity_at_natCeil_of_allDepth jr1965Section13HatLayers jr1965Section13HatSourceContract S hall
-    D s hD2 hs.1 hs.2 hSigma hzceil (fun p hp => Nat.lt_ceil.mpr ((jurkatRichertSourceConditioned_primeFactor_le_cutoff N q p hp).trans_lt hzroot))
+  let depth := 2 * S.prodPrimes.primeFactors.card + 1
+  have hodd : Odd depth := by dsimp [depth]; exact ⟨_, rfl⟩
+  have hsdom : s ∈ KappaOneModel.parityDomain 2 depth := by
+    simp only [KappaOneModel.parityDomain, Nat.odd_iff.mp hodd, ite_true, Set.mem_Ioi]
+    linarith only [hs.1]
+  have hSuzuki := numerical_mixed_suzuki_window jr1965Section13HatLayers jr1965Section13HatSourceContract
+    numerical_local_product_two (show mixedSuzukiSeparator ≤ mixedSuzukiSeparator from le_rfl) S hlocal
+    depth D (by dsimp [depth]; omega) hD2 s hsdom hs.1 (hs.2.trans (by norm_num : (4 : ℝ) ≤ 5)) hSigma hzceil
+  have hpoint := upperRosserDensity_at_natCeil_of_point jr1965Section13HatLayers jr1965Section13HatSourceContract S
+    (C := numericalEffectiveSuzukiCoefficient) (K := numericalLocalProductK) (d := (16 : ℝ)) (Δ := (1 / 2 : ℝ))
+    D s hD2 hs.1 hs.2
+    (fun p hp => Nat.lt_ceil.mpr ((jurkatRichertSourceConditioned_primeFactor_le_cutoff N q p hp).trans_lt hzroot))
+    (by simpa only [numericalEffectiveSuzukiCoefficient, depth] using hSuzuki)
   have hfactor := suzukiContinuousUpperFactor_eq_jurkatRichertUpperLinearSieveFactor_of_sourceContract
     jr1965Section13HatLayers jr1965Section13HatSourceContract hs.1 hs.2
   rw [hfactor] at hpoint
@@ -128,7 +138,7 @@ theorem numerical_conditioned_upper_density {N q r : ℕ} (hr : 0 < r)
       ((Nat.mem_primeFactors_of_ne_zero S.prodPrimes_ne_zero).mp hp).2).le)
   have hh := mul_le_mul_of_nonneg_left hError.le hV0
   change S.mainSum (upperRosserWeight S.prodPrimes D) ≤ _
-  dsimp only [numericalChenSuzukiCoefficient,chenSuzukiCoefficient,s,S] at hpoint hh ⊢
+  dsimp only [numericalEffectiveSuzukiCoefficient,mixedSuzukiCoefficient,s,S] at hpoint hh ⊢
   nlinarith only [hpoint,hh]
 
 #print axioms numerical_conditioned_upper_density

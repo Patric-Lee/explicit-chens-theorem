@@ -6,6 +6,7 @@ cutoffs. **A closed numerical Chen threshold is now proved under the single
 local Dirichlet seven-eighths axiom.** `NumericalChenCutoff.lean` supplies
 `numerical_chen` and the quantitative representation-count theorem. There
 are no remaining analytic estimates as hypotheses of these final theorems.
+A double-exponential common cap, `3^(3^(10^100))`, is now proved for both `nLower` and `N0` in `NumericalDoubleExponential.lean`.
 The threshold is an explicit formula built from the numerical constants
 below; no unspecified or chosen analytic threshold occurs in it.
 
@@ -44,7 +45,9 @@ The project-side import closure contains one existing shared helper named
 the standard BV infrastructure. The Li-Liu 1+1.9 theorem modules are excluded.
 This helper comes from the existing checkout, not from OpenAI.
 
-## Proved results
+## Development history and proved results
+
+The sections below record successive checkpoints. The final mixed-error closure supersedes the earlier outstanding-work descriptions and four-layer cap.
 
 ### Explicit quadratic Siegel bound
 
@@ -1064,7 +1067,7 @@ nLower <= T
 N0 <= T.
 ```
 
-Thus `numericalNLower = numericalN0 = T` is a concrete common choice.
+This was the previous common choice. The public `numericalNLower` and `numericalN0` now use the double-exponential cap proved below.
 `numerical_lower_above_tower` proves the weighted lower bound above this
 integer, and `numerical_chen_above_tower` and `numerical_count_above_tower`
 prove Chen's conclusion and the quantitative representation count above it.
@@ -1233,7 +1236,7 @@ The single terminal coefficient is bounded by `exp(10^42)`, and the entire
 immediate terminal sum is bounded by `exp(10^43)`. Both are kernel-verified
 single-exponential bounds with only the three standard axioms.
 
-These local estimates do **not** yet replace `fixedSuzukiCoefficient` in the
+At this intermediate checkpoint these local estimates did **not** replace `fixedSuzukiCoefficient` in the
 all-depth induction. What remains is a depth-uniform bound on the propagated
 terminal error, including the odd low strip and Case-II recursion. Bounding
 one terminal sum does not establish that bound: simply paying the same error
@@ -1280,7 +1283,7 @@ The mixed scale is the old Claim-14.5 scale plus `b` times the polynomial
 correction scale. The new term is **not** multiplied by the old perturbation
 factor, which would invalidate the polynomial tail integral.
 
-The full mixed-error induction is still unfinished. In particular, the
+At this intermediate checkpoint the full mixed-error induction was unfinished. The
 Case-I strict and even-endpoint producers and the Case-II final assembly must
 be rethreaded with this invariant and the compact-strip payment, preserving
 enough of their contraction gap. Per-step depth-independent estimates do not
@@ -1297,6 +1300,60 @@ dependency traversal passes for 82,075 constants. The new polynomial bounds
 use only the three standard axioms. The original statement comparisons,
 final exact four-axiom whitelist, and elementary Mertens audit still pass.
 
+## Completed mixed-error induction and double-exponential cutoff
+
+`NumericalMixedInduction.lean` now proves `numerical_mixed_suzuki` for every
+positive recursion depth, including natural-ceiling quotients. Its invariant
+uses the original hat envelope plus
+
+```
+exp(-20000) * (log D)^(-5/8) / s^4.
+```
+
+The bounded-level branch uses the polynomial terminal coefficient. Large
+levels retain a contraction of `1 - 1/(10*sigma)` in Case I, including the
+compact strip, the closed odd cubic endpoint, and the even endpoint. Case II
+uses the exact cubic-cutoff identity and the contracted Case-I estimate at
+the same depth and `s = 3`; that estimate uses the predecessor-depth induction
+hypothesis, so this step is not circular. The scalar Case-II closure pays its
+local-product and source errors from the retained contraction gap. No error
+is multiplied by the recursion depth.
+
+`NumericalMixedWindow.lean` converts this invariant to twice the old hat-error
+shape on Chen's actual coordinate window `3/2 <= s <= 5`. Both the base lower
+density and the medium-prime aggregate upper density now use this theorem.
+`NumericalMixedCoefficientCap.lean` proves the effective coefficient is at
+most `exp(10^47)`. Analytic induction modules are separated from the later
+numerical cap certificates to keep the import graph acyclic.
+
+`NumericalDoubleExponential.lean` proves the literal integer bounds
+
+```
+nLower <= 3^(3^(10^100))
+N0     <= 3^(3^(10^100)).
+```
+
+These are kernel-verified conservative caps, not size estimates. Existing
+BV, source-mass, normalization, square/triple, and final-error bounds fit
+inside this same cap. `numericalNLower` and `numericalN0` now equal this
+integer; their older `_above_tower` entry points remain available with the
+improved constants. The new `numerical_chen_above_double_exp` and
+`numerical_count_above_double_exp` give the literal Chen conclusion and the
+same `0.67` representation-count bound. The lower coefficient remains
+`2.6407`, the triple coefficient `3.94033`, and the triple error cap `10^40`.
+
+The full induction, coefficient cap, and cutoff comparisons use only Lean's
+three standard axioms. The final Chen results retain the single local
+Dirichlet seven-eighths axiom. No OpenAI module or dependency is added.
+
+Validation: all 32 affected modules compiled in dependency order with warnings
+treated as errors. The installed checkout passed the source audit for 698
+research/project files and the proof traversal of 81,907 constants. The
+elementary Mertens audit passed independently. All four original statement
+comparisons and all nine exact final-theorem axiom checks passed, including
+the double-exponential entry points. The audit also checks that the numerical
+proofs do not use the original implicit Chen proofs.
+
 ## Reproduce
 
 From the checkout, in PowerShell:
@@ -1308,7 +1365,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the 160 research modules, in dependency order, treating warnings as errors,
+This checks only the 175 research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is

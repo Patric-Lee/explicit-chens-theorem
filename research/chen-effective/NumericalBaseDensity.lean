@@ -1,4 +1,4 @@
-import NumericalSuzukiC1
+import NumericalMixedWindow
 import NumericalLowerFactor
 import MathlibNt.SieveTheory.LinearSieve.Suzuki.SuzukiChenVaryingFamilyLowerDensity
 
@@ -14,19 +14,19 @@ set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 3000000
 
 /-- Integer caps of closed numerical formulas, with no selected witnesses. -/
-def baseSuzukiC : ℕ := ⌈max 1 numericalChenSuzukiCoefficient⌉₊
+def baseSuzukiC : ℕ := ⌈max 1 numericalEffectiveSuzukiCoefficient⌉₊
 def baseSuzukiK : ℕ := ⌈max 1 numericalLocalProductK⌉₊
 
-theorem baseSuzukiC_bound : numericalChenSuzukiCoefficient ≤ baseSuzukiC :=
+theorem baseSuzukiC_bound : numericalEffectiveSuzukiCoefficient ≤ baseSuzukiC :=
   (le_max_right _ _).trans (Nat.le_ceil _)
 theorem baseSuzukiK_bound : numericalLocalProductK ≤ baseSuzukiK :=
   (le_max_right _ _).trans (Nat.le_ceil _)
 theorem baseSuzukiK_one : 1 ≤ baseSuzukiK := by
   have h : (1 : ℝ) ≤ baseSuzukiK := (le_max_left _ _).trans (Nat.le_ceil _)
   exact_mod_cast h
-theorem numericalChenSuzukiCoefficient_nonneg : 0 ≤ numericalChenSuzukiCoefficient := by
-  change 0 ≤ max 36 _
-  exact (by norm_num : (0 : ℝ) ≤ 36).trans (le_max_left _ _)
+theorem numericalEffectiveSuzukiCoefficient_nonneg : 0 ≤ numericalEffectiveSuzukiCoefficient := by
+  unfold numericalEffectiveSuzukiCoefficient
+  exact mul_nonneg (by norm_num) ((by norm_num : (0 : ℝ) ≤ 36).trans (le_max_left _ _))
 
 def baseDensityThreshold (r : ℕ) : ℕ :=
   max 2 (max suzukiCoordinateThreshold (suzukiErrorThreshold baseSuzukiC baseSuzukiK r))
@@ -68,9 +68,9 @@ theorem numerical_base_density {N r : ℕ} {ε : ℝ}
   have hsdom : s ∈ KappaOneModel.parityDomain 2 depth := by
     simp [KappaOneModel.parityDomain,Nat.even_iff.mp heven,show 2 ≤ s by linarith only [hs4]]
   have hsigma : s ≤ sourceSigma (D : ℝ) 16 := numerical_suzuki_coordinate_gate hgate hε0 hε
-  have hSuzuki := numerical_fixedK_suzuki jr1965Section13HatLayers jr1965Section13HatSourceContract
-    numericalLocalProductK numerical_local_product_two numericalSuzukiC1 le_rfl S
-    (numerical_source_local_product N) depth hdepth D hD2 hD2 s hsdom hsigma hz2
+  have hSuzuki := numerical_mixed_suzuki_window jr1965Section13HatLayers jr1965Section13HatSourceContract
+    numerical_local_product_two (show mixedSuzukiSeparator ≤ mixedSuzukiSeparator from le_rfl) S
+    (numerical_source_local_product N) depth D hdepth hD2 s hsdom (by linarith only [hs4]) hs5 hsigma hz2
   have hdensity := lowerRosserSetDensitySum_eq_euler_sub_suzukiActualT_all_supported
     S (show 1 < D by omega) hzD
   have hEuler := sourceDiscreteEuler_eq_suzukiVProduct_nat S z
@@ -81,14 +81,14 @@ theorem numerical_base_density {N r : ℕ} {ε : ℝ}
   have hV : 0 ≤ suzukiVProduct S (z : ℝ) := (suzukiVProduct_pos S _).le
   have hfactorV := mul_le_mul_of_nonneg_left hfactor hV
   have hError := numerical_chen_suzuki_error herr baseSuzukiK_one hr
-    numericalChenSuzukiCoefficient_nonneg baseSuzukiC_bound baseSuzukiK_bound hε0 hε depth
+    numericalEffectiveSuzukiCoefficient_nonneg baseSuzukiC_bound baseSuzukiK_bound hε0 hε depth
   have hbound : suzukiVProduct S (z : ℝ)*(dimensionOneLowerLinearSieveFactor s-1/(r : ℝ)) ≤
       lowerRosserSetDensitySum S.nu D (suzukiSupportedBelow S z) := by
     rw [hdensity,hEuler]
     dsimp only [suzukiFiniteLowerFactor] at hfactorV
     change _ < 1/(r : ℝ) at hError
     have he := mul_le_mul_of_nonneg_left hError.le hV
-    dsimp only [depth,z,chenZ,D,s,S,numericalChenSuzukiCoefficient,chenSuzukiCoefficient] at hSuzuki hfactorV he ⊢
+    dsimp only [depth,z,chenZ,D,s,S,numericalEffectiveSuzukiCoefficient,mixedSuzukiCoefficient] at hSuzuki hfactorV he ⊢
     linarith only [hSuzuki,hfactorV,he]
   have hcutZ : ∀ p ∈ S.prodPrimes.primeFactors, p < z := by
     intro p hp
