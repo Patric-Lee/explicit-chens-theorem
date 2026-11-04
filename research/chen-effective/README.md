@@ -1055,6 +1055,35 @@ new modules with warnings treated as errors. The full import/local-axiom
 audit passed, including the axiom reports for the final Chen and
 representation-count theorems.
 
+## Pure integer tower cutoff
+
+`NumericalExplicitTower.lean` proves that both detailed thresholds are bounded by
+
+```
+T = 3^(3^(3^(3^(10^21))))
+nLower <= T
+N0 <= T.
+```
+
+Thus `numericalNLower = numericalN0 = T` is a concrete common choice.
+`numerical_lower_above_tower` proves the weighted lower bound above this
+integer, and `numerical_chen_above_tower` and `numerical_count_above_tower`
+prove Chen's conclusion and the quantitative representation count above it.
+The detailed cutoffs remain available and are smaller than this convenient cap.
+
+The eight tower modules bound the source logarithmic cutoff, Suzuki C1,
+bounded-K coefficient, integer Suzuki caps, BV and normalization cutoffs,
+and final density absorption. The largest absorption cutoff fits within four
+base-three exponential layers with top exponent `10^21`. This is a proved
+conservative cap, rather than the earlier rough size estimate.
+
+The threshold-comparison theorems use only Lean's standard axioms. The final
+Chen theorem additionally uses the existing `dirichlet_seven_eighths` axiom;
+no further axiom, OpenAI import, or external dependency is introduced.
+
+Validation: `check.ps1 -FromModule NumericalTowerTools` checks all eight tower
+modules with warnings treated as errors, then runs the full import and
+local-axiom audit.
 ## Reproduce
 
 From the checkout, in PowerShell:
@@ -1066,7 +1095,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the 139 research modules, in dependency order, treating warnings as errors,
+This checks only the 147 research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is

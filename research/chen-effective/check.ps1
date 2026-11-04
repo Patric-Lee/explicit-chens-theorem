@@ -62,7 +62,10 @@ try {
         'NumericalBaseDensity', 'NumericalBaseCandidates',
         'NumericalUniversalTail', 'NumericalSourceUpperMass', 'NumericalUpperFactor',
         'NumericalMediumPrimeGrid', 'NumericalMediumPrimeSum', 'NumericalMediumPrimeShift',
-        'NumericalMediumUpperDensity', 'NumericalMediumAggregate', 'NumericalChenCutoff')
+        'NumericalMediumUpperDensity', 'NumericalMediumAggregate', 'NumericalChenCutoff',
+        'NumericalTowerTools', 'NumericalTowerSource', 'NumericalTowerHeads',
+        'NumericalTowerC1', 'NumericalTowerCoefficient', 'NumericalTowerFinite',
+        'NumericalTowerThresholds', 'NumericalExplicitTower')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)
         if ($startIndex -lt 0) { throw "Unknown research module: $FromModule" }
