@@ -85,7 +85,7 @@ theorem numerical_Qhat_unit_shift {H : Section13HatLayers} (hH : Section13HatSou
   have hm := mul_le_mul_of_nonneg_right hphase (mul_nonneg hs0.le hQ0)
   nlinarith only [henv, hm]
 
-def reverseRatioCap : ℕ := 51200 * (800 * 22 ^ 20 + 75)
+def reverseRatioCap : ℕ := 51200 * 10075
 
 theorem reverseRatioCap_eq : (reverseRatioCap : ℝ) = 51200 * (numericalReverseSlope + 10) := by
   norm_num [reverseRatioCap, numericalReverseSlope, compactHatLower]
@@ -121,23 +121,34 @@ theorem numerical_reverse_ratio {H : Section13HatLayers} (hH : Section13HatSourc
     have hmono := mul_le_mul_of_nonneg_right (mul_le_mul_of_nonneg_left hprod hr0) hT0.le
     rw [reverseRatioCap_eq] at hmono ⊢
     nlinarith only [hn, hshift, hh, hmono]
-  · have hbound := numerical_hat_compact hH.toSection13HatContract (m := 10) (by norm_num)
-      sign hs (le_of_not_ge hlarge)
-    have hn := numerical_hat_upper_two hH.toSection13HatContract sign.opposite
-      (show 1 ≤ s - 1 by linarith only [hs])
-    have he := compactHatLower_pos (m := 10) (by norm_num)
-    have hraw : proposition131iiiReverseRatio H sign s ≤ 2 / compactHatLower 10 := by
-      unfold proposition131iiiReverseRatio
-      exact (div_le_div_of_nonneg_right hn hT0.le).trans
-        (div_le_div_of_nonneg_left (by norm_num) he hbound)
-    have hcap : (2 : ℝ) / compactHatLower 10 ≤ reverseRatioCap := by
-      norm_num [compactHatLower, reverseRatioCap]
+  · have hraw : proposition131iiiReverseRatio H sign s ≤ reverseRatioCap := by
+      by_cases hs4 : 4 ≤ s
+      · have hn : H.T sign.opposite (s - 1) ≤ section13Qhat H (s - 1) := by
+          have hp := (hH.positive .plus (s - 1) (by linarith only [hs])).le
+          have hm := (hH.positive .minus (s - 1) (by linarith only [hs])).le
+          cases sign <;> dsimp [section13Qhat, ErrorSign.opposite] <;> linarith only [hp, hm]
+        have hshift := relative_Qhat_unit_step hH.toSection13HatContract hs4 (le_of_not_ge hlarge)
+        have hcomp := numerical_Qhat_le_hat hH sign (by linarith only [hs4])
+        have hh := mul_le_mul_of_nonneg_left hcomp (by norm_num : (0 : ℝ) ≤ 968)
+        have hc : (968 : ℝ) * 51200 ≤ reverseRatioCap := by norm_num [reverseRatioCap]
+        have hh' := mul_le_mul_of_nonneg_right hc hT0.le
+        unfold proposition131iiiReverseRatio
+        apply (div_le_iff₀ hT0).mpr
+        nlinarith only [hn, hshift, hh, hh']
+      · have hbound := numerical_hat_compact_four hH.toSection13HatContract sign hs (le_of_not_ge hs4)
+        have hn := numerical_hat_upper_two hH.toSection13HatContract sign.opposite
+          (show 1 ≤ s - 1 by linarith only [hs])
+        have hh : proposition131iiiReverseRatio H sign s ≤ 25600 := by
+          unfold proposition131iiiReverseRatio
+          apply (div_le_iff₀ hT0).mpr
+          linarith only [hbound, hn]
+        exact hh.trans (by norm_num [reverseRatioCap])
     have hfactor : 1 ≤ σ * Real.log (Real.exp 1 * σ) := by
       have hh := mul_le_mul (show (1 : ℝ) ≤ σ by linarith only [hs, hsσ]) (hlogs.trans hlogσ)
         (by norm_num : (0 : ℝ) ≤ 1) hσ0.le
       norm_num only [one_mul] at hh
       exact hh
-    exact (hraw.trans hcap).trans (le_mul_of_one_le_right hr0 hfactor)
+    exact hraw.trans (le_mul_of_one_le_right hr0 hfactor)
 
 #print axioms numerical_reverse_ratio
 end ChenEffective

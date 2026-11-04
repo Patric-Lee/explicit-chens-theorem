@@ -1,4 +1,4 @@
-import NumericalHatComparison
+import NumericalRelativeHat
 import MathlibNt.SieveTheory.LinearSieve.Suzuki.SuzukiLemma1028ReverseEnvelope
 
 open scoped Classical BigOperators Interval
@@ -19,34 +19,12 @@ theorem numerical_exp_two_le_nine : Real.exp 2 ≤ (9 : ℝ) := by
       (Real.exp_one_lt_d9.le.trans (by norm_num : (2.7182818286 : ℝ) ≤ 3)) 2
     _ = 9 := by norm_num
 
-noncomputable def numericalReverseSlope : ℝ := 1 / compactHatLower 10 + 65
+noncomputable def numericalReverseSlope : ℝ := 10065
 
 theorem numerical_Qhat_initial_slope {H : Section13HatLayers} (hH : Section13HatSourceContract H)
     {u : ℝ} (hu : u ∈ Icc (3 : ℝ) 10) :
-    -normalizedMinusBase (section13Qhat H) xi u ≤ 1 / compactHatLower 10 + 1 := by
-  have he := compactHatLower_pos (m := 10) (by norm_num)
-  have hQu : 0 < section13Qhat H u := section13Qhat_pos hH.toSection13HatContract (by linarith only [hu.1])
-  have hqp := numerical_hat_upper_two hH.toSection13HatContract .plus
-    (show 1 ≤ u - 1 by linarith only [hu.1])
-  have hqm := numerical_hat_upper_two hH.toSection13HatContract .minus
-    (show 1 ≤ u - 1 by linarith only [hu.1])
-  have hlp := numerical_hat_compact hH.toSection13HatContract (m := 10) (by norm_num) .plus
-    (by linarith only [hu.1]) hu.2
-  have hlm := numerical_hat_compact hH.toSection13HatContract (m := 10) (by norm_num) .minus
-    (by linarith only [hu.1]) hu.2
-  have hQlow : 2 * compactHatLower 10 ≤ section13Qhat H u := by
-    unfold section13Qhat
-    linarith only [hlp, hlm]
-  have hQhigh : section13Qhat H (u - 1) ≤ 4 := by
-    unfold section13Qhat
-    linarith only [hqp, hqm]
-  have hden : 0 < u * section13Qhat H u := mul_pos (by linarith only [hu.1]) hQu
-  have hratio : section13Qhat H (u - 1) / (u * section13Qhat H u) ≤ 1 / compactHatLower 10 := by
-    apply (div_le_div_iff₀ hden he).mpr
-    have hh := mul_le_mul_of_nonneg_left hQlow (show 0 ≤ u by linarith only [hu.1])
-    have hh' := mul_le_mul_of_nonneg_right hu.1 he.le
-    have hn := mul_le_mul_of_nonneg_right hQhigh he.le
-    nlinarith only [hh, hh', hn, he.le]
+    -normalizedMinusBase (section13Qhat H) xi u ≤ 10001 := by
+  have hratio := relative_Qhat_initial_ratio hH.toSection13HatContract hu
   have hxi : 0 ≤ xi u := (xi_pos (by linarith only [hu.1])).le
   have htwo : 2 / u ≤ (1 : ℝ) := (div_le_one (by linarith only [hu.1])).mpr (by linarith only [hu.1])
   unfold normalizedMinusBase
@@ -83,11 +61,7 @@ theorem numerical_reverse_envelope {H : Section13HatLayers} (hH : Section13HatSo
         have heq := sub_eq_zero.mp hz
         simpa [section10SignedPairing, section13AdjointPlus] using heq }
   have hadj : h.adjoint = explicitKappaOneAdjointPlus := by funext s; rfl
-  have he := compactHatLower_pos (m := 10) (by norm_num)
-  have hc64 : (64 : ℝ) ≤ numericalReverseSlope := by
-    have hh : 0 ≤ 1 / compactHatLower 10 := by positivity
-    unfold numericalReverseSlope
-    linarith only [hh]
+  have hc64 : (64 : ℝ) ≤ numericalReverseSlope := by norm_num [numericalReverseSlope]
   have hinitial : ∀ u ∈ Icc (3 : ℝ) 10,
       0 < normalizedMinusBase (section13Qhat H) xi u + numericalReverseSlope := by
     intro u hu

@@ -6,7 +6,7 @@ cutoffs. **A closed numerical Chen threshold is now proved under the single
 local Dirichlet seven-eighths axiom.** `NumericalChenCutoff.lean` supplies
 `numerical_chen` and the quantitative representation-count theorem. There
 are no remaining analytic estimates as hypotheses of these final theorems.
-A double-exponential common cap, `3^(3^(10^43))`, is now proved for both `nLower` and `N0` in `NumericalDoubleExponential.lean`.
+A double-exponential common cap, `3^(3^(10^19))`, is now proved for both `nLower` and `N0` in `NumericalDoubleExponential.lean`.
 The threshold is an explicit formula built from the numerical constants
 below; no unspecified or chosen analytic threshold occurs in it.
 
@@ -1397,6 +1397,27 @@ axiom whitelists, and verified that every new product, absorption, compact-hat,
 and coefficient lemma uses only the three standard axioms. The final source
 and elementary Mertens audits also pass.
 
+## Relative hat bounds and the smaller C1 budget
+
+`NumericalRelativeHat.lean` obtains neighbouring-value bounds from the positive
+tail identity and monotonicity, rather than an absolute minimum on `[3,10]`.
+Two half-steps give a factor 484 for the weighted hat on `[4,10]`, and a
+factor 968 for the sum of the two hats. On `[3,4]`, the existing short-interval
+floor completes the initial ratio estimate. The resulting initial ratio is
+at most 10000, and the reverse slope is 10065.
+
+The global reverse-ratio constant decreases from approximately `2.89*10^34`
+to `515840000`. The first-crossing proof propagates the improved seed to the
+entire tail. All later source-ratio and derivative certificates are rebuilt.
+The separator is now bounded by `exp(10^16)`, and the effective coefficient
+by `exp(10^18)`. Both `nLower` and `N0` are bounded by
+`3^(3^(10^19))`, or natural `log log N` approximately `1.099*10^19`.
+
+All 72 affected modules compile with warnings treated as errors. This
+checkpoint completes the relative-hat improvement; separating the hat and
+polynomial coefficients is the next step. The original count coefficient,
+single local axiom, import restrictions and dependency boundary are retained.
+
 ## Reproduce
 
 From the checkout, in PowerShell:
@@ -1408,7 +1429,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the 180 research modules, in dependency order, treating warnings as errors,
+This checks only the 181 research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is

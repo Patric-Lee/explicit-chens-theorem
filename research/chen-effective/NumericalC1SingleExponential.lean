@@ -7,7 +7,7 @@ set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 5000000
 
 /-- A convenient one-exponential budget for the individual separator terms. -/
-def c1SingleBudget : ℝ := Real.exp (10^39 : ℝ)
+def c1SingleBudget : ℝ := Real.exp (10^15 : ℝ)
 
 theorem c1SingleBudget_one : 1 ≤ c1SingleBudget := Real.one_le_exp (by norm_num)
 
@@ -22,7 +22,7 @@ theorem c1_U_pow_budget {n : ℕ} (hn : n ≤ 100) : (towerU : ℝ)^n ≤ c1Sing
   rw [Real.log_pow]
   have hnR : (n : ℝ) ≤ 100 := by exact_mod_cast hn
   have hh := mul_le_mul_of_nonneg_left hu (Nat.cast_nonneg n)
-  change (n : ℝ)*Real.log (towerU : ℝ) ≤ (10^39 : ℝ)
+  change (n : ℝ)*Real.log (towerU : ℝ) ≤ (10^15 : ℝ)
   nlinarith only [hh,hnR]
 
 theorem c1_U_budget : (towerU : ℝ) ≤ c1SingleBudget := by
@@ -58,14 +58,14 @@ theorem c1_caseI_Dcuts : caseIStrictDcut ≤ (towerH : ℝ)^4 ∧ caseIEvenDcut 
   · exact max_le h4 (max_le hf (max_le hf (max_le hp (max_le he (max_le hr hq)))))
 
 theorem c1_endpoint_budget : (caseIEndpointC1 : ℝ) ≤ c1SingleBudget := by
-  have hn : 1200*reverseRatioCap+5 ≤ 10^38 := by norm_num [reverseRatioCap]
-  have hnR : ((1200*reverseRatioCap+5 : ℕ) : ℝ) ≤ 10^38 := by exact_mod_cast hn
+  have hn : 1200*reverseRatioCap+5 ≤ 10^13 := by norm_num [reverseRatioCap]
+  have hnR : ((1200*reverseRatioCap+5 : ℕ) : ℝ) ≤ 10^13 := by exact_mod_cast hn
   have h3 : Real.log (3 : ℝ) ≤ 2 := by
     linarith only [Real.log_le_sub_one_of_pos (by norm_num : (0 : ℝ)<3)]
   rw [caseIEndpointC1_eq,Nat.cast_pow,Nat.cast_ofNat]
   apply (Real.log_le_iff_le_exp (by positivity)).mp
   rw [Real.log_pow]
-  change ((1200*reverseRatioCap+5 : ℕ) : ℝ)*Real.log 3 ≤ (10^39 : ℝ)
+  change ((1200*reverseRatioCap+5 : ℕ) : ℝ)*Real.log 3 ≤ (10^15 : ℝ)
   have h := mul_le_mul_of_nonneg_left h3 (Nat.cast_nonneg (1200*reverseRatioCap+5))
   nlinarith only [h,hnR]
 
@@ -113,7 +113,7 @@ theorem c1_gap_budget : caseIIGapC1 ≤ c1SingleBudget := by
     ((by norm_num : (3 : ℝ)^(16 : ℝ) ≤ 10^100).trans (towerU_real_large.trans hu)))
 
 /-- The complete Suzuki separator now has a single-exponential numerical cap. -/
-theorem numericalSuzukiC1_single_exp_cap : numericalSuzukiC1 ≤ Real.exp (10^40 : ℝ) := by
+theorem numericalSuzukiC1_single_exp_sharp_cap : numericalSuzukiC1 ≤ Real.exp (10^16 : ℝ) := by
   have hP1 := c1SingleBudget_one
   have hP0 := zero_le_one.trans hP1
   have h14 : (towerH : ℝ) ≤ (towerH : ℝ)^4 := by
@@ -169,10 +169,13 @@ theorem numericalSuzukiC1_single_exp_cap : numericalSuzukiC1 ≤ Real.exp (10^40
   apply hall.trans
   unfold c1SingleBudget
   calc
-    _ ≤ Real.exp 10*Real.exp (10^39 : ℝ) := mul_le_mul_of_nonneg_right
+    _ ≤ Real.exp 10*Real.exp (10^15 : ℝ) := mul_le_mul_of_nonneg_right
       (by linarith only [Real.add_one_le_exp (10 : ℝ)] : (10 : ℝ) ≤ Real.exp 10) (Real.exp_pos _).le
-    _ = Real.exp (10+(10^39 : ℝ)) := by rw [Real.exp_add]
+    _ = Real.exp (10+(10^15 : ℝ)) := by rw [Real.exp_add]
     _ ≤ _ := Real.exp_le_exp.mpr (by norm_num)
 
-#print axioms numericalSuzukiC1_single_exp_cap
+theorem numericalSuzukiC1_single_exp_cap : numericalSuzukiC1 ≤ Real.exp (10^40 : ℝ) :=
+  numericalSuzukiC1_single_exp_sharp_cap.trans (Real.exp_le_exp.mpr (by norm_num))
+
+#print axioms numericalSuzukiC1_single_exp_sharp_cap
 end ChenEffective

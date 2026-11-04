@@ -93,7 +93,11 @@ run_elab do
     ``ChenEffective.numerical_chen_sqrt_suzuki_error,
     ``ChenEffective.mixed_claim_coefficient_sharp_cap,
     ``ChenEffective.mixed_low_strip_sharp_cap,
-    ``ChenEffective.numericalEffectiveSuzukiCoefficient_sharp_cap]
+    ``ChenEffective.numericalEffectiveSuzukiCoefficient_sharp_cap,
+    ``ChenEffective.relative_hat_unit_step,
+    ``ChenEffective.relative_Qhat_unit_step,
+    ``ChenEffective.relative_Qhat_initial_ratio,
+    ``ChenEffective.numericalSuzukiC1_single_exp_sharp_cap]
   for n in #[``ChenEffective.numerical_mertens_all,
       ``ChenEffective.numerical_source_local_product,
       ``ChenEffective.numericalLocalProductK_eq,

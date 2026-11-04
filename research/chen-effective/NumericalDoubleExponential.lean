@@ -11,18 +11,18 @@ set_option maxRecDepth 4000
 set_option exponentiation.threshold 512
 attribute [local irreducible] logPowerCutoff mertensProductThreshold numericalBVThreshold
 
-private opaque doubleTopCertificate : {n : ℕ // n = 10 ^ 43} := ⟨10 ^ 43, rfl⟩
+private opaque doubleTopCertificate : {n : ℕ // n = 10 ^ 19} := ⟨10 ^ 19, rfl⟩
 def numericalDoubleTop : ℕ := doubleTopCertificate.1
-theorem numericalDoubleTop_eq : numericalDoubleTop = 10 ^ 43 := doubleTopCertificate.2
+theorem numericalDoubleTop_eq : numericalDoubleTop = 10 ^ 19 := doubleTopCertificate.2
 
-private opaque doubleBudgetCertificate : {n : ℕ // n = 10 ^ 42} := ⟨10 ^ 42, rfl⟩
+private opaque doubleBudgetCertificate : {n : ℕ // n = 10 ^ 18} := ⟨10 ^ 18, rfl⟩
 def doubleBudgetExponent : ℕ := doubleBudgetCertificate.1
-theorem doubleBudgetExponent_eq : doubleBudgetExponent = 10 ^ 42 := doubleBudgetCertificate.2
+theorem doubleBudgetExponent_eq : doubleBudgetExponent = 10 ^ 18 := doubleBudgetCertificate.2
 
 @[irreducible] def numericalDoubleExpCutoff : ℕ := 3 ^ (3 ^ numericalDoubleTop)
 @[irreducible] def doubleAbsorptionBudget : ℕ := 3 ^ doubleBudgetExponent
 
-theorem numericalDoubleExpCutoff_eq : numericalDoubleExpCutoff = 3 ^ (3 ^ (10 ^ 43)) := by
+theorem numericalDoubleExpCutoff_eq : numericalDoubleExpCutoff = 3 ^ (3 ^ (10 ^ 19)) := by
   rw [numericalDoubleExpCutoff, numericalDoubleTop_eq]
 
 theorem double_budget_large : 10 ^ 100 ≤ doubleAbsorptionBudget := by
@@ -55,7 +55,7 @@ theorem double_H : towerH ≤ numericalDoubleExpCutoff :=
     simpa only [pow_one] using Nat.pow_le_pow_right tower_H_one_nat (show 1 ≤ 20 by norm_num)).trans double_H_twenty
 
 theorem double_base_C : baseSuzukiC ≤ doubleAbsorptionBudget := by
-  have hh := exp_le_three_pow (n := doubleBudgetExponent) (x := (10 ^ 42 : ℝ))
+  have hh := exp_le_three_pow (n := doubleBudgetExponent) (x := (10 ^ 18 : ℝ))
     (by rw [doubleBudgetExponent_eq]; norm_num)
   have hc : numericalEffectiveSuzukiCoefficient ≤ (doubleAbsorptionBudget : ℝ) :=
     numericalEffectiveSuzukiCoefficient_sharp_cap.trans (by simpa only [doubleAbsorptionBudget, Nat.cast_pow, Nat.cast_ofNat] using hh)

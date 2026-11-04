@@ -25,15 +25,15 @@ theorem mixedEndpointC1_eq : mixedEndpointC1 = 3 ^ (2400 * reverseRatioCap + 9) 
   apply congrArg (fun n : ℕ => 3 ^ n)
   ring
 
-theorem mixedEndpointC1_budget : (mixedEndpointC1 : ℝ) ≤ Real.exp (10 ^ 39 : ℝ) := by
-  have hn : 2400 * reverseRatioCap + 9 ≤ 10 ^ 38 := by norm_num [reverseRatioCap]
-  have hnR : ((2400 * reverseRatioCap + 9 : ℕ) : ℝ) ≤ 10 ^ 38 := by exact_mod_cast hn
+theorem mixedEndpointC1_budget : (mixedEndpointC1 : ℝ) ≤ Real.exp (10 ^ 15 : ℝ) := by
+  have hn : 2400 * reverseRatioCap + 9 ≤ 10 ^ 13 := by norm_num [reverseRatioCap]
+  have hnR : ((2400 * reverseRatioCap + 9 : ℕ) : ℝ) ≤ 10 ^ 13 := by exact_mod_cast hn
   have h3 : Real.log (3 : ℝ) ≤ 2 := by
     linarith only [Real.log_le_sub_one_of_pos (by norm_num : (0 : ℝ) < 3)]
   rw [mixedEndpointC1_eq, Nat.cast_pow, Nat.cast_ofNat]
   apply (Real.log_le_iff_le_exp (by positivity)).mp
   rw [Real.log_pow]
-  change ((2400 * reverseRatioCap + 9 : ℕ) : ℝ) * Real.log 3 ≤ (10 ^ 39 : ℝ)
+  change ((2400 * reverseRatioCap + 9 : ℕ) : ℝ) * Real.log 3 ≤ (10 ^ 15 : ℝ)
   have hh := mul_le_mul_of_nonneg_left h3 (Nat.cast_nonneg (2400 * reverseRatioCap + 9))
   nlinarith only [hh, hnR]
 
