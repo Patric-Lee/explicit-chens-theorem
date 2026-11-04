@@ -12,7 +12,8 @@ $previousLeanPath = $env:LEAN_PATH
 $env:LEAN_PATH = if ($previousLeanPath) { $artifactDir + ';' + $previousLeanPath } else { $artifactDir }
 Push-Location -LiteralPath $repoRoot
 try {
-    $modules = @(        'ExplicitSiegel',
+    $modules = @(
+        'ExplicitSiegel',
         'NumericalThresholds',
         'ExplicitLowConductor',
         'ExplicitLogBounds',
@@ -21,6 +22,7 @@ try {
         'NumericalLogDerivative',
         'NumericalElementaryMertens',
         'NumericalPanLargeSieve',
+        'NumericalCorrectionProfile',
         'ExplicitBVHigh',
         'ExplicitChenTriple',
         'NumericalMellin',
@@ -112,6 +114,7 @@ try {
         'NumericalPolynomialMiddle',
         'NumericalSourceRatio',
         'NumericalPanEnvelope',
+        'NumericalStrongLogGate',
         'NumericalPolynomialCompact',
         'NumericalDerivativeCertificate',
         'NumericalPanWeighted',
@@ -172,6 +175,7 @@ try {
         'NumericalMixedBase',
         'NumericalMixedInduction',
         'NumericalMixedWindow',
+        'NumericalSeparateCoefficients',
         'NumericalBaseDensity',
         'NumericalMixedUpper',
         'NumericalBaseCandidates',

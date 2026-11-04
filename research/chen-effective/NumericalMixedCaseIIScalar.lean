@@ -1,6 +1,7 @@
 import NumericalMixedFinish
 
 namespace ChenEffective
+variable [profile : CorrectionProfile]
 open Real Set
 open MathlibNt.SieveTheory MathlibNt.SieveTheory.SwitchingPrinciple
 open SuzukiLemma144KappaOne
@@ -9,6 +10,7 @@ set_option maxHeartbeats 3000000
 
 def mixedCubicPerturbation : ℝ := 7 * (3 : ℝ) ^ (16 : ℕ)
 
+omit profile in
 theorem mixed_gate_power_large {L : ℝ} (hcut : (logPowerCutoff 32 : ℝ) ≤ L) :
     (10 ^ 12 : ℝ) ≤ L ^ (1 / 8 : ℝ) := by
   have hL9 := real_log_power_cutoff_nine hcut
@@ -22,6 +24,7 @@ theorem mixed_gate_power_large {L : ℝ} (hcut : (logPowerCutoff 32 : ℝ) ≤ L
   apply hh.trans (Real.exp_le_exp.mpr ?_)
   nlinarith only [hl]
 
+omit profile in
 theorem mixed_caseII_small_parameter {D K : ℝ} (hD : 1 < D)
     (hcut : (logPowerCutoff 32 : ℝ) ≤ Real.log D) (hK : 2 ≤ K)
     (hKlevel : K ^ (7 : ℝ) ≤ Real.log D) :
@@ -60,6 +63,7 @@ theorem mixed_caseII_small_parameter {D K : ℝ} (hD : 1 < D)
       simpa only [one_div] using (inv_le_inv₀ (Real.rpow_pos_of_pos hL (1 / 8 : ℝ))
         (by norm_num : (0 : ℝ) < 10 ^ 12)).mpr hroot
 
+omit profile in
 theorem mixed_caseII_scalar {L σ K s F A3 A C : ℝ}
     (hL : 1 ≤ L) (hσ : 3 ≤ σ) (hK : 2 ≤ K) (hs : 1 < s)
     (hQ : mixedCubicPerturbation ≤ L)

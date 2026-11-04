@@ -2,6 +2,7 @@ import NumericalMixedGap
 
 open scoped Classical BigOperators Interval
 namespace ChenEffective
+variable [profile : CorrectionProfile]
 open Real Set Finset
 open MathlibNt.SieveTheory MathlibNt.SieveTheory.SwitchingPrinciple
 open SuzukiFiniteContinuousLayers SuzukiLemma144KappaOne SuzukiLemma144Equation1410
@@ -42,7 +43,7 @@ theorem mixed_caseI_correction (S : BoundingSieve) (H : Section13HatLayers)
   · apply Or.inr
     have hσ0 : 0 < sourceSigma (D : ℝ) 16 := (by norm_num : (0 : ℝ) < 2).trans_le (hs.trans hsσ)
     have hp := polynomial_compact_correction_payment hL hσ0
-      (polynomial_sourceSigma_gate hD hcut)
+      (strong_sourceSigma_gate hD hcut)
       (polynomial_compact_hat_floor hH.toSection13HatContract hD M hs (le_of_not_ge hhigh))
     have hi := mixed_polynomial_coarse hD hz2 hw2 hwz hz rfl hs hsσ hK hlocal hlevel
     have hbi : polynomialCorrectionWeight * polynomialInheritedSum S D z (sourceSigma D 16) s ≤

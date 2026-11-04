@@ -3,6 +3,7 @@ import MathlibNt.SieveTheory.LinearSieve.Suzuki.SuzukiRoundedBaseOne
 
 open scoped Classical BigOperators Interval
 namespace ChenEffective
+variable [profile : CorrectionProfile]
 open Real Set Finset
 open MathlibNt.SieveTheory MathlibNt.SieveTheory.SwitchingPrinciple
 open SuzukiFiniteContinuousLayers SuzukiLemma144KappaOne SuzukiLemma144Equation1410

@@ -14,7 +14,7 @@ theorem mixed_claim_coefficient_cap :
     mixedClaimCoefficient mixedSuzukiSeparator refinedLocalProductK ≤ Real.exp (10 ^ 45 : ℝ) := by
   apply max_le (Real.one_le_exp (by positivity))
   exact polynomialClaimConstant_single_exp_cap mixedSuzukiSeparator_cap
-    (by linarith only [refined_local_product_two]) (refined_local_product_cap.trans (by norm_num))
+    (by linarith only [refined_local_product_two]) (refined_local_product_cap.trans (by norm_num)) default_correction_lower
 
 theorem mixed_low_strip_cap : lowStripNumericalConstant mixedSuzukiSeparator ≤ Real.exp (10 ^ 42 : ℝ) := by
   have hC10 : 0 ≤ mixedSuzukiSeparator :=

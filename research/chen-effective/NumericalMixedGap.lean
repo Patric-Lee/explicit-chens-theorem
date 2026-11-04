@@ -2,6 +2,7 @@ import NumericalMixedObjects
 
 open scoped Classical BigOperators Interval
 namespace ChenEffective
+variable [profile : CorrectionProfile]
 open Real Set Finset
 open MathlibNt.SieveTheory MathlibNt.SieveTheory.SwitchingPrinciple
 open SuzukiLemma144KappaOne SuzukiLemma144Equation1410
@@ -11,20 +12,24 @@ set_option maxRecDepth 4096
 
 @[irreducible] def mixedEndpointC1 : ℕ := caseIOrderC1 (2 + 600 * reverseRatioCap)
 
+omit profile in
 theorem mixedEndpointC1_one : (1 : ℝ) ≤ mixedEndpointC1 := by
   unfold mixedEndpointC1 caseIOrderC1
   exact real_nat_three_pow_one _
 
+omit profile in
 theorem mixedEndpointC1_gate : logPowerCutoff 32 ≤ mixedEndpointC1 := by
   unfold logPowerCutoff mixedEndpointC1 caseIOrderC1
   apply Nat.pow_le_pow_right (by norm_num : 0 < 3)
   norm_num [reverseRatioCap]
 
+omit profile in
 theorem mixedEndpointC1_eq : mixedEndpointC1 = 3 ^ (2400 * reverseRatioCap + 9) := by
   unfold mixedEndpointC1 caseIOrderC1
   apply congrArg (fun n : ℕ => 3 ^ n)
   ring
 
+omit profile in
 theorem mixedEndpointC1_budget : (mixedEndpointC1 : ℝ) ≤ Real.exp (10 ^ 15 : ℝ) := by
   have hn : 2400 * reverseRatioCap + 9 ≤ 10 ^ 13 := by norm_num [reverseRatioCap]
   have hnR : ((2400 * reverseRatioCap + 9 : ℕ) : ℝ) ≤ 10 ^ 13 := by exact_mod_cast hn
@@ -43,6 +48,7 @@ noncomputable def mixedEvenC1 : ℝ := max 1 (max (mixedEndpointC1 : ℝ)
   (max (caseIScalarC1 : ℝ) (max sigmaZeroC1 (max 1 (Real.log caseIEvenDcut)))))
 noncomputable def mixedSuzukiSeparator : ℝ := max numericalSuzukiC1 (mixedEndpointC1 : ℝ)
 
+omit profile in
 theorem mixed_endpoint_order_uniform (C1 K D A : ℝ)
     (hC1 : (mixedEndpointC1 : ℝ) ≤ C1) (hK : 2 ≤ K) (hD : 2 ≤ D)
     (_hA : 0 ≤ A) (hAcap : A ≤ 1 + 2 * 144 * (reverseRatioCap : ℝ) + 12 * (reverseRatioCap : ℝ))
@@ -60,6 +66,7 @@ theorem mixed_endpoint_order_uniform (C1 K D A : ℝ)
   rw [mul_div_assoc] at hh
   linarith only [hh]
 
+omit profile in
 theorem mixed_three_remainders_half_gap
     {x₀ x₁ x₂ a₀ a₁ a₂ B D d ρ : ℝ} (hB : 0 ≤ B)
     (h₀ : x₀ ≤ a₀ * caseI1423RemainderUnit B D (sourceSigma D d))
@@ -74,6 +81,7 @@ theorem mixed_three_remainders_half_gap
       ring
     _ ≤ _ := mul_le_mul_of_nonneg_right hgap hB
 
+omit profile in
 theorem mixed_caseI_gap_lower {σ ρ : ℝ} (hσ : 1 < σ)
     (hρ : ρ = (1 + sigma12ContractionMultiplier σ (1 / 2)) / 2) :
     1 / (4 * σ) ≤ 1 - ρ := by
@@ -83,6 +91,7 @@ theorem mixed_caseI_gap_lower {σ ρ : ℝ} (hσ : 1 < σ)
   convert hh using 1
   ring
 
+omit profile in
 theorem mixed_gap_arithmetic {B P extra side σ ρ : ℝ}
     (hB : 0 ≤ B) (hP : 0 ≤ P) (hσ : 2 ≤ σ)
     (hgap : 1 / (4 * σ) ≤ 1 - ρ)
@@ -119,6 +128,7 @@ theorem mixed_gap_arithmetic {B P extra side σ ρ : ℝ}
       simpa only [div_eq_mul_inv, one_mul, mul_comm] using he
     nlinarith only [hbase, he', hh, hp]
 
+omit profile in
 theorem mixed_polynomial_coarse
     {S : BoundingSieve} {D z : ℕ} {w s σ K : ℝ}
     (hD : 1 < (D : ℝ)) (hz2 : 2 ≤ (D : ℝ) ^ (1 / s)) (hw2 : 2 ≤ w)

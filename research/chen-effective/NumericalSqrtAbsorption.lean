@@ -31,8 +31,18 @@ theorem sqrtSuzukiAmplitudeCap_le {c k : ℕ} (hk : 2 ≤ k) :
   have hh := Nat.sqrt_lt_self (show 1 < k by omega)
   omega
 
+def sqrtSuzukiScalarThreshold (M r : ℕ) : ℕ :=
+  3 ^ (max (logPowerCutoff 32) (max 152587890625 (4096 * (M + 1) ^ 2 * r ^ 2)))
+
+theorem sqrt_scalar_old_le (M r : ℕ) : suzukiScalarThreshold M r ≤ sqrtSuzukiScalarThreshold M r := by
+  unfold suzukiScalarThreshold sqrtSuzukiScalarThreshold
+  exact Nat.pow_le_pow_right (by norm_num) (le_max_right _ _)
+
+theorem sqrt_scalar_log_gate {D M r : ℕ} (hD : sqrtSuzukiScalarThreshold M r ≤ D) :
+    (logPowerCutoff 32 : ℝ) ≤ Real.log (D : ℝ) := by
+  exact (Nat.cast_le.mpr (le_max_left _ _)).trans (log_ge_power_three hD)
 theorem numerical_sqrt_suzuki_error_at_level {D c k r : ℕ} {C K s : ℝ}
-    (hD : suzukiScalarThreshold (sqrtSuzukiAmplitudeCap c k) r ≤ D)
+    (hD : sqrtSuzukiScalarThreshold (sqrtSuzukiAmplitudeCap c k) r ≤ D)
     (hk : 1 ≤ k) (hr : 0 < r) (hC0 : 0 ≤ C) (hC : C ≤ c) (hK : K ≤ k)
     (hs : 2 ≤ s) (hs5 : s ≤ 5) (depth : ℕ) :
     C * Real.exp (Real.sqrt K) * errorEnvelope jr1965Section13HatLayers depth D 16 s *
@@ -48,7 +58,7 @@ theorem numerical_sqrt_suzuki_error_at_level {D c k r : ℕ} {C K s : ℝ}
       _ ≤ (c : ℝ) * (3 : ℝ) ^ (Nat.sqrt k + 1) * 20 := by
         exact mul_le_mul (mul_le_mul hC he (Real.exp_pos _).le hc) hh.2 hh.1 (by positivity)
       _ = _ := by simp only [sqrtSuzukiAmplitudeCap, Nat.cast_mul, Nat.cast_pow, Nat.cast_ofNat]; ring
-  have hb := numerical_suzuki_scalar_absorption hD hr (by linarith only [hs]) hs5 ha haM
+  have hb := numerical_suzuki_scalar_absorption ((sqrt_scalar_old_le _ _).trans hD) hr (by linarith only [hs]) hs5 ha haM
   convert hb using 1
   dsimp [a, sign, errorEnvelope, Section13HatLayers.kappaHat]
   norm_num only [sub_self, zero_add, Real.rpow_one, Real.rpow_natCast]
@@ -56,16 +66,12 @@ theorem numerical_sqrt_suzuki_error_at_level {D c k r : ℕ} {C K s : ℝ}
   ring
 
 def sqrtSuzukiErrorThreshold (c k r : ℕ) : ℕ :=
-  3 ^ (5 * max 152587890625 (4096 * (sqrtSuzukiAmplitudeCap c k + 1) ^ 2 * r ^ 2))
+  3 ^ (5 * max (logPowerCutoff 32) (max 152587890625 (4096 * (sqrtSuzukiAmplitudeCap c k + 1) ^ 2 * r ^ 2)))
 
-theorem numerical_chen_sqrt_suzuki_error {N c k r : ℕ} {C K ε : ℝ}
-    (hN : sqrtSuzukiErrorThreshold c k r ≤ N) (hk : 1 ≤ k) (hr : 0 < r)
-    (hC0 : 0 ≤ C) (hC : C ≤ c) (hK : K ≤ k) (hε0 : 0 ≤ ε) (hε : ε < 1 / 10)
-    (depth : ℕ) :
-    C * Real.exp (Real.sqrt K) *
-      errorEnvelope jr1965Section13HatLayers depth (chenLevel N ε) 16 (chenS ε) *
-      (Real.log (chenLevel N ε)) ^ (-(1 / 2 : ℝ)) < 1 / (r : ℝ) := by
-  let H := max 152587890625 (4096 * (sqrtSuzukiAmplitudeCap c k + 1) ^ 2 * r ^ 2)
+theorem sqrt_scalar_at_chen {N c k r : ℕ} {ε : ℝ}
+    (hN : sqrtSuzukiErrorThreshold c k r ≤ N) (_hε0 : 0 ≤ ε) (hε : ε < 1 / 10) :
+    sqrtSuzukiScalarThreshold (sqrtSuzukiAmplitudeCap c k) r ≤ chenLevel N ε := by
+  let H := max (logPowerCutoff 32) (max 152587890625 (4096 * (sqrtSuzukiAmplitudeCap c k + 1) ^ 2 * r ^ 2))
   have hlogN : ((5 * H : ℕ) : ℝ) ≤ Real.log (N : ℝ) :=
     log_ge_power_three (b := 5 * H) hN
   have hNpos : 0 < N := by
@@ -85,7 +91,7 @@ theorem numerical_chen_sqrt_suzuki_error {N c k r : ℕ} {C K ε : ℝ}
     have hb := mul_le_mul_of_nonneg_right hβ hlog0
     norm_num only [Nat.cast_mul, Nat.cast_ofNat] at hlogN
     nlinarith only [hh, hb, hlogN]
-  have hcut : suzukiScalarThreshold (sqrtSuzukiAmplitudeCap c k) r ≤ chenLevel N ε := by
+  have hcut : sqrtSuzukiScalarThreshold (sqrtSuzukiAmplitudeCap c k) r ≤ chenLevel N ε := by
     have hpow : (0 : ℝ) < (3 : ℝ) ^ H := pow_pos (by norm_num) H
     have hlog3 : Real.log (3 : ℝ) ≤ 2 := by
       have hh := Real.log_le_sub_one_of_pos (by norm_num : (0 : ℝ) < 3)
@@ -96,6 +102,16 @@ theorem numerical_chen_sqrt_suzuki_error {N c k r : ℕ} {C K ε : ℝ}
       have hh := mul_le_mul_of_nonneg_left hlog3 (Nat.cast_nonneg H)
       nlinarith only [hh, hlogD]
     exact_mod_cast hp
+  exact hcut
+
+theorem numerical_chen_sqrt_suzuki_error {N c k r : ℕ} {C K ε : ℝ}
+    (hN : sqrtSuzukiErrorThreshold c k r ≤ N) (hk : 1 ≤ k) (hr : 0 < r)
+    (hC0 : 0 ≤ C) (hC : C ≤ c) (hK : K ≤ k) (hε0 : 0 ≤ ε) (hε : ε < 1 / 10)
+    (depth : ℕ) :
+    C * Real.exp (Real.sqrt K) *
+      errorEnvelope jr1965Section13HatLayers depth (chenLevel N ε) 16 (chenS ε) *
+      (Real.log (chenLevel N ε)) ^ (-(1 / 2 : ℝ)) < 1 / (r : ℝ) := by
+  have hcut := sqrt_scalar_at_chen hN hε0 hε
   apply numerical_sqrt_suzuki_error_at_level hcut hk hr hC0 hC hK _ _ depth
   · unfold chenS
     linarith only [hε]

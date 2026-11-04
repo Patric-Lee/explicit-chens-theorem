@@ -79,7 +79,7 @@ theorem double_amplitude : sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK ≤ do
       Nat.mul_le_mul (Nat.mul_le_mul h20 double_base_C) hk
     _ = _ := by ring
 
-theorem double_scalar_exponent {r : ℕ} (hr : r ≤ 10 ^ 12) :
+theorem double_scalar_exponent_old {r : ℕ} (hr : r ≤ 10 ^ 12) :
     max 152587890625 (4096 * (sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK + 1) ^ 2 * r ^ 2) ≤
       doubleAbsorptionBudget ^ 9 := by
   have hJ : 2 ≤ doubleAbsorptionBudget := (by norm_num : 2 ≤ (10 : ℕ) ^ 100).trans double_budget_large
@@ -100,6 +100,17 @@ theorem double_scalar_exponent {r : ℕ} (hr : r ≤ 10 ^ 12) :
       _ ≤ doubleAbsorptionBudget * (doubleAbsorptionBudget ^ 4) ^ 2 := Nat.mul_le_mul hc (Nat.pow_le_pow_left ha 2)
       _ = _ := by ring
 
+theorem double_scalar_exponent {r : ℕ} (hr : r ≤ 10 ^ 12) :
+    max (logPowerCutoff 32) (max 152587890625 (4096 * (sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK + 1) ^ 2 * r ^ 2)) ≤
+      doubleAbsorptionBudget ^ 9 := by
+  have hg : logPowerCutoff 32 ≤ doubleAbsorptionBudget := by
+    unfold logPowerCutoff doubleAbsorptionBudget
+    apply Nat.pow_le_pow_right (by norm_num)
+    rw [doubleBudgetExponent_eq]
+    norm_num
+  have hp : doubleAbsorptionBudget ≤ doubleAbsorptionBudget ^ 9 := by
+    simpa only [pow_one] using Nat.pow_le_pow_right double_budget_one (show 1 ≤ 9 by norm_num)
+  exact max_le (hg.trans hp) (double_scalar_exponent_old hr)
 theorem double_suzuki_error {r : ℕ} (hr : r ≤ 10 ^ 12) :
     sqrtSuzukiErrorThreshold baseSuzukiC baseSuzukiK r ≤ numericalDoubleExpCutoff := by
   unfold sqrtSuzukiErrorThreshold numericalDoubleExpCutoff
@@ -113,7 +124,7 @@ theorem double_suzuki_error {r : ℕ} (hr : r ≤ 10 ^ 12) :
 
 theorem double_upper_density {r : ℕ} (hr : r ≤ 10 ^ 12) :
     mediumUpperDensityThreshold r ≤ numericalDoubleExpCutoff := by
-  let E := max 152587890625 (4096 * (sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK + 1) ^ 2 * r ^ 2)
+  let E := max (logPowerCutoff 32) (max 152587890625 (4096 * (sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK + 1) ^ 2 * r ^ 2))
   have hE : E ≤ doubleAbsorptionBudget ^ 9 := double_scalar_exponent hr
   have hJ9 : 1 ≤ doubleAbsorptionBudget ^ 9 := one_le_pow₀ double_budget_one
   have h20 : 20 ≤ doubleAbsorptionBudget := (by norm_num : 20 ≤ (10 : ℕ) ^ 100).trans double_budget_large

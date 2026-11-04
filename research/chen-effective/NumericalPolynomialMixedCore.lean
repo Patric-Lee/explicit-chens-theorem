@@ -3,6 +3,7 @@ import NumericalPolynomialGate
 import NumericalSuzukiC1
 
 namespace ChenEffective
+variable [profile : CorrectionProfile]
 open Real
 open MathlibNt.SieveTheory MathlibNt.SieveTheory.SwitchingPrinciple
 open SuzukiLemma144KappaOne
@@ -17,14 +18,15 @@ noncomputable def mixedClaimScale (S : BoundingSieve) (H : Section13HatLayers)
     polynomialCorrectionWeight * polynomialTerminalScale S D K s
 
 theorem polynomialClaimConstant_single_exp_cap {C1 K : ℝ}
-    (hC1cap : C1 ≤ Real.exp (10 ^ 40 : ℝ)) (hK : 0 ≤ K) (hKcap : K ≤ (10 ^ 90 : ℝ)) :
+    (hC1cap : C1 ≤ Real.exp (10 ^ 40 : ℝ)) (hK : 0 ≤ K) (hKcap : K ≤ (10 ^ 90 : ℝ))
+    (hweight : Real.exp (-1000 : ℝ) ≤ polynomialCorrectionWeight) :
     polynomialClaimConstant (C1 * K ^ (7 : ℝ)) K ≤ Real.exp (10 ^ 45 : ℝ) := by
   have hcap := polynomialTerminalConstant_single_exp_cap hC1cap hK hKcap
-  unfold polynomialClaimConstant polynomialCorrectionWeight
-  rw [div_eq_mul_inv, ← Real.exp_neg, neg_neg]
+  unfold polynomialClaimConstant
+  rw [div_eq_mul_inv]
   calc
     _ ≤ Real.exp (10 ^ 44 : ℝ) * Real.exp 1000 :=
-      mul_le_mul_of_nonneg_right hcap (Real.exp_pos _).le
+      mul_le_mul hcap (polynomialCorrectionWeight_inverse hweight) (inv_nonneg.mpr polynomialCorrectionWeight_pos.le) (Real.exp_pos _).le
     _ = Real.exp ((10 ^ 44 : ℝ) + 1000) := (Real.exp_add _ _).symm
     _ ≤ _ := Real.exp_le_exp.mpr (by norm_num)
 

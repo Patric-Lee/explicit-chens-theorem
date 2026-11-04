@@ -2,6 +2,7 @@ import NumericalMixedInduction
 import NumericalRefinedLocalProduct
 
 namespace ChenEffective
+variable [profile : CorrectionProfile]
 open Real Set Finset
 open MathlibNt.SieveTheory MathlibNt.SieveTheory.SwitchingPrinciple
 open SuzukiFiniteContinuousLayers SuzukiLemma144KappaOne
@@ -10,7 +11,8 @@ set_option maxHeartbeats 2400000
 
 theorem mixed_window_error_le {H : Section13HatLayers} (hH : Section13HatSourceContract H)
     {D : ℕ} (hD : 2 ≤ D) {s : ℝ} (hs : 3 / 2 ≤ s) (hs5 : s ≤ 5)
-    (N : ℕ) (hsdom : s ∈ KappaOneModel.parityDomain 2 N) :
+    (N : ℕ) (hsdom : s ∈ KappaOneModel.parityDomain 2 N)
+    (hcut : (logPowerCutoff 32 : ℝ) ≤ Real.log (D : ℝ)) :
     mixedError H N D 16 (1 / 2) s ≤
       2 * (errorEnvelope H N D 16 s * (Real.log (D : ℝ)) ^ (-(1 / 2 : ℝ))) := by
   have hD1 : (1 : ℝ) < D := by exact_mod_cast (show 1 < D by omega)
@@ -45,9 +47,14 @@ theorem mixed_window_error_le {H : Section13HatLayers} (hH : Section13HatSourceC
   have hb := polynomialCorrectionWeight_pos.le
   have hbE : polynomialCorrectionWeight * (Real.log (D : ℝ)) ^ (-(1 / 8 : ℝ)) ≤
       errorEnvelope H N D 16 s := by
-    have hh := mul_le_mul_of_nonneg_left hInv hb
-    have hp := polynomialCorrectionWeight_small.trans hE
-    nlinarith only [hh, hp, hb]
+    have hdec := strong_log_inverse_eighth hD1 hcut
+    have hlarge : Real.exp (-940 : ℝ) ≤ errorEnvelope H N D 16 s :=
+      (Real.exp_le_exp.mpr (by norm_num)).trans hE
+    have hh := mul_le_mul_of_nonneg_right polynomialCorrectionWeight_small
+      (Real.rpow_nonneg hL.le (-(1 / 8 : ℝ)))
+    have hh' : polynomialCorrectionWeight * (Real.log (D : ℝ)) ^ (-(1 / 8 : ℝ)) ≤
+        (Real.log (D : ℝ)) ^ (-(1 / 8 : ℝ)) := by simpa only [one_mul] using hh
+    exact hh'.trans (hdec.trans hlarge)
   have hs4 : 1 ≤ s ^ 4 := one_le_pow₀ (by linarith only [hs] : (1 : ℝ) ≤ s)
   have hpc : polynomialCorrectionWeight * polynomialCorrection D s ≤
       errorEnvelope H N D 16 s * (Real.log (D : ℝ)) ^ (-(1 / 2 : ℝ)) := by
@@ -73,13 +80,14 @@ theorem numerical_mixed_suzuki_window (H : Section13HatLayers) (hH : Section13Ha
     (S : BoundingSieve) (hlocal : HasDimensionOneLocalProductBound S K)
     (N D : ℕ) (hN : 1 ≤ N) (hD : 2 ≤ D) (s : ℝ)
     (hsdom : s ∈ KappaOneModel.parityDomain 2 N) (hslo : 3 / 2 ≤ s) (hshi : s ≤ 5)
-    (hsSigma : s ≤ sourceSigma D 16) (hz : 2 ≤ ⌈(D : ℝ) ^ (1 / s)⌉₊) :
+    (hsSigma : s ≤ sourceSigma D 16) (hz : 2 ≤ ⌈(D : ℝ) ^ (1 / s)⌉₊)
+    (hcut : (logPowerCutoff 32 : ℝ) ≤ Real.log (D : ℝ)) :
     suzukiActualT S N D ⌈(D : ℝ) ^ (1 / s)⌉₊ ≤
       suzukiVProduct S (⌈(D : ℝ) ^ (1 / s)⌉₊ : ℝ) *
         (finiteSourceLayer 1 2 N s + (2 * mixedSuzukiCoefficient C1 K) * Real.exp (Real.sqrt K) *
           errorEnvelope H N D 16 s * (Real.log (D : ℝ)) ^ (-(1 / 2 : ℝ))) := by
   have hh := numerical_mixed_suzuki H hH K hK C1 hC1 S hlocal N hN D hD hD s hsdom hsSigma hz
-  have he := mixed_window_error_le hH hD hslo hshi N hsdom
+  have he := mixed_window_error_le hH hD hslo hshi N hsdom hcut
   have hc : 0 ≤ mixedSuzukiCoefficient C1 K :=
     (by norm_num : (0 : ℝ) ≤ 36).trans (le_max_left _ _)
   have hv := (suzukiVProduct_pos S (⌈(D : ℝ) ^ (1 / s)⌉₊ : ℝ)).le
@@ -88,7 +96,7 @@ theorem numerical_mixed_suzuki_window (H : Section13HatLayers) (hH : Section13Ha
   nlinarith only [hh, hscaled]
 
 noncomputable def numericalEffectiveSuzukiCoefficient : ℝ :=
-  2 * mixedSuzukiCoefficient mixedSuzukiSeparator refinedLocalProductK
+  2 * mixedSuzukiCoefficient (profile := defaultCorrectionProfile) mixedSuzukiSeparator refinedLocalProductK
 
 #print axioms numerical_mixed_suzuki_window
 end ChenEffective

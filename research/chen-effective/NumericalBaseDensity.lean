@@ -72,9 +72,10 @@ theorem numerical_base_density {N r : ℕ} {ε : ℝ}
   have hsdom : s ∈ KappaOneModel.parityDomain 2 depth := by
     simp [KappaOneModel.parityDomain,Nat.even_iff.mp heven,show 2 ≤ s by linarith only [hs4]]
   have hsigma : s ≤ sourceSigma (D : ℝ) 16 := numerical_suzuki_coordinate_gate hgate hε0 hε
+  have hwindowcut := sqrt_scalar_log_gate (sqrt_scalar_at_chen herr hε0 hε)
   have hSuzuki := numerical_mixed_suzuki_window jr1965Section13HatLayers jr1965Section13HatSourceContract
     refined_local_product_two (show mixedSuzukiSeparator ≤ mixedSuzukiSeparator from le_rfl) S
-    (numerical_refined_source_local_product N) depth D hdepth hD2 s hsdom (by linarith only [hs4]) hs5 hsigma hz2
+    (numerical_refined_source_local_product N) depth D hdepth hD2 s hsdom (by linarith only [hs4]) hs5 hsigma hz2 (by simpa only [D] using hwindowcut)
   have hdensity := lowerRosserSetDensitySum_eq_euler_sub_suzukiActualT_all_supported
     S (show 1 < D by omega) hzD
   have hEuler := sourceDiscreteEuler_eq_suzukiVProduct_nat S z

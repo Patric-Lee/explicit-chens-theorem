@@ -1418,6 +1418,53 @@ checkpoint completes the relative-hat improvement; separating the hat and
 polynomial coefficients is the next step. The original count coefficient,
 single local axiom, import restrictions and dependency boundary are retained.
 
+## Independent hat and polynomial error coefficients
+
+`NumericalSeparateCoefficients.lean` proves an all-depth natural-ceiling bound
+with error
+
+```
+exp(sqrt K) * (C * errorEnvelope * (log D)^(-1/2)
+                + P * (log D)^(-5/8)/s^4).
+```
+
+The two coefficients satisfy explicit compatibility conditions:
+`C >= 36`, `C >= 4*lowStripNumericalConstant C1`, and
+`4*max(1,polynomialTerminalConstant(C1*K^7,K)) <= P <= C`.
+There is no fixed lower bound on `P/C`. A concrete unequal allocation is
+also proved with these conditions discharged. The underlying induction is
+generic in the ratio `P/C`, covering compact Case I, the even endpoint and
+Case II. These are theorem hypotheses for a selectable error budget, not
+new axioms; the final Chen proof uses a fully specified profile.
+
+The active correction weight is now exactly 1. Consequently, the bounded
+branch's coefficient is the terminal coefficient itself, with no division
+by `exp(-1000)`. `unweighted_mixed_claim_coefficient` certifies this exact
+formula. The common hat/poly budget remains available as one allocation.
+
+The stronger estimate `sigma(D)*(log D)^(-1/8) <= exp(-940)` retains the
+logarithmic decay that the earlier compact payment discarded. It makes the
+unweighted correction affordable against the `exp(-896)` compact hat floor.
+The final window conversion now requires the explicit logarithmic gate;
+that gate is included in the lower and medium-prime scalar thresholds and
+discharged in both actual Chen applications. It is not an additional
+analytic assumption of the final theorem.
+
+The common certified cap remains `3^(3^(10^19))`: the C1/source-cutoff budgets
+still dominate it. This checkpoint removes the fixed exponential penalty
+from the coefficient formulas and provides independent coefficient control
+for future refinements, without claiming a further reduction of the common
+cap. The single Dirichlet axiom, original Chen statements and count coefficient
+are retained; no OpenAI module or external dependency is added.
+
+Validation: all 40 affected modules compile with warnings treated as errors.
+The extended proof/type traversal checks 81,976 constants, including the
+generic coefficient theorem, its concrete unequal allocation, the exact
+unweighted coefficient formula, and both numerical gate lemmas. They use only
+the standard axioms. All four original statement comparisons and all nine
+exact final-theorem axiom checks pass. The installed source scan and the
+independent elementary Mertens audit also pass.
+
 ## Reproduce
 
 From the checkout, in PowerShell:
@@ -1429,7 +1476,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the 181 research modules, in dependency order, treating warnings as errors,
+This checks only the 184 research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is

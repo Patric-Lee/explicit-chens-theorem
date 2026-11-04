@@ -5,12 +5,14 @@ import NumericalMixedCaseII
 
 open scoped Classical BigOperators Interval
 namespace ChenEffective
+variable [profile : CorrectionProfile]
 open Real Set Finset
 open MathlibNt.SieveTheory MathlibNt.SieveTheory.SwitchingPrinciple
 open SuzukiFiniteContinuousLayers SuzukiLemma144KappaOne SuzukiLemma144Equation1410
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 4000000
 
+omit profile in
 theorem mixed_sourceSigma_three {D : ℝ} (hD : 1 < D)
     (hcut : (logPowerCutoff 32 : ℝ) ≤ Real.log D) : 3 ≤ sourceSigma D 16 := by
   have hL9 := real_log_power_cutoff_nine hcut

@@ -3,6 +3,7 @@ import NumericalC1SingleExponential
 import NumericalSmallQuotientChen
 import NumericalPolynomialChen
 import NumericalDoubleExponential
+import NumericalSeparateCoefficients
 -- Only this audit fixture imports the old proofs, to compare declaration types.
 import Goldbach.Theorem
 import Lean.Util.CollectAxioms
@@ -97,7 +98,12 @@ run_elab do
     ``ChenEffective.relative_hat_unit_step,
     ``ChenEffective.relative_Qhat_unit_step,
     ``ChenEffective.relative_Qhat_initial_ratio,
-    ``ChenEffective.numericalSuzukiC1_single_exp_sharp_cap]
+    ``ChenEffective.numericalSuzukiC1_single_exp_sharp_cap,
+    ``ChenEffective.strong_sourceSigma_gate,
+    ``ChenEffective.strong_log_inverse_eighth,
+    ``ChenEffective.numerical_separate_suzuki,
+    ``ChenEffective.numerical_separate_suzuki_explicit,
+    ``ChenEffective.unweighted_mixed_claim_coefficient]
   for n in #[``ChenEffective.numerical_mertens_all,
       ``ChenEffective.numerical_source_local_product,
       ``ChenEffective.numericalLocalProductK_eq,
@@ -114,6 +120,7 @@ run_elab do
   logInfo "Polynomial correction, natural-ceiling Case-I/II transport, gates, and bounded mixed branch use only standard axioms."
   logInfo "All-depth mixed induction, compact Case I, even endpoint, Case II, coefficient cap, and double-exponential cutoffs use only standard axioms."
   logInfo "Fixed-endpoint Euler-product split, K=10^12, square-root absorption, and sharp coefficient budgets use only standard axioms."
+  logInfo "Separate hat/polynomial coefficients, the unweighted active profile, and its numerical gates use only standard axioms."
   -- Independently traverse proof/type references: none of the old implicit
   -- theorem proofs may supply the numerical theorem or its compatibility bridges.
   let forbidden := #[``Goldbach.chen_theorem, ``Goldbach.representation_lower_bound,

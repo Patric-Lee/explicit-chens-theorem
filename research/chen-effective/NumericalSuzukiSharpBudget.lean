@@ -41,9 +41,12 @@ theorem mixed_claim_coefficient_sharp_cap :
   have hR0 : 0 ≤ logarithmicR A refinedLocalProductK := by
     unfold logarithmicR
     exact mul_nonneg (mul_nonneg (by norm_num) hB0) (by norm_num [refinedLocalProductK])
+  have hw := polynomialCorrectionWeight_inverse (profile := defaultCorrectionProfile) default_correction_lower
+  have hw0 : 0 ≤ (polynomialCorrectionWeight (profile := defaultCorrectionProfile))⁻¹ :=
+    inv_nonneg.mpr polynomialCorrectionWeight_pos.le
   have hpoly : polynomialClaimConstant A refinedLocalProductK ≤ exp (3 * (10 ^ 17 : ℝ)) := by
-    unfold polynomialClaimConstant polynomialTerminalConstant polynomialCorrectionWeight
-    rw [div_eq_mul_inv, ← Real.exp_neg, neg_neg]
+    unfold polynomialClaimConstant polynomialTerminalConstant
+    rw [div_eq_mul_inv]
     calc
       _ ≤ exp 1792 * (exp ((10 ^ 16 : ℝ) + 2000)) ^ 18 *
           (exp ((10 ^ 16 : ℝ) + 1000)) ^ 4 * exp 1000 := by

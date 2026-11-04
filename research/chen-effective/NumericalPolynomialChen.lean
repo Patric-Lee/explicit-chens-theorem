@@ -19,7 +19,7 @@ theorem numerical_chen_mixed_bounded (N n q : ℕ) {x : ℝ} (hq : 2 ≤ q)
     jr1965Section13HatLayers jr1965Section13HatSourceContract hK (numerical_source_local_product N)
     n q ⌈(q : ℝ) ^ (1 / x)⌉₊ hq rfl hx hsmall
   have hc := polynomialClaimConstant_single_exp_cap numericalSuzukiC1_single_exp_cap
-    hK.le numericalLocalProductK_lt.le
+    hK.le numericalLocalProductK_lt.le default_correction_lower
   have hscale : 0 ≤ mixedClaimScale (jurkatRichertSourceBoundingSieve N) jr1965Section13HatLayers n q numericalLocalProductK x := by
     have hL : 0 < Real.log (q : ℝ) := Real.log_pos (by exact_mod_cast (show 1 < q by omega))
     have hsigma := sourceSigma_pos_of_nat_two_le (d := (16 : ℝ)) hq

@@ -3,6 +3,7 @@ import NumericalMixedFinish
 open scoped Classical BigOperators Interval
 open Set Filter Finset Topology MeasureTheory intervalIntegral
 namespace ChenEffective
+variable [profile : CorrectionProfile]
 open MathlibNt.SieveTheory
 open MathlibNt.SieveTheory.LinearSieve MathlibNt.SieveTheory.SwitchingPrinciple
 open MathlibNt.SieveTheory.SuzukiFiniteContinuousLayers

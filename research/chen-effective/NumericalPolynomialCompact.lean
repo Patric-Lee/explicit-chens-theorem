@@ -1,4 +1,6 @@
 import NumericalPolynomialMiddle
+import NumericalCorrectionProfile
+import NumericalStrongLogGate
 
 /-! Paying the compact-strip polynomial correction from a fixed fraction of
 the hat error. The logarithmic gate is explicit in the statement; this module
@@ -6,24 +8,30 @@ does not yet choose the global separator for the mixed induction. -/
 
 open scoped Classical BigOperators
 namespace ChenEffective
+variable [profile : CorrectionProfile]
 open Real Set Finset
 open MathlibNt.SieveTheory MathlibNt.SieveTheory.SwitchingPrinciple
 open SuzukiLemma144KappaOne
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 1800000
 
-noncomputable def polynomialCorrectionWeight : ℝ := Real.exp (-1000)
+noncomputable def polynomialCorrectionWeight : ℝ := CorrectionProfile.weight
 
-theorem polynomialCorrectionWeight_pos : 0 < polynomialCorrectionWeight := Real.exp_pos _
+theorem polynomialCorrectionWeight_pos : 0 < polynomialCorrectionWeight := CorrectionProfile.positive
 
-theorem polynomialCorrectionWeight_small :
-    100 * polynomialCorrectionWeight ≤ Real.exp (-896 : ℝ) := by
-  have hh : (100 : ℝ) ≤ Real.exp 104 := by linarith only [Real.add_one_le_exp (104 : ℝ)]
-  calc
-    _ ≤ Real.exp 104 * Real.exp (-1000 : ℝ) :=
-      mul_le_mul_of_nonneg_right hh (Real.exp_pos _).le
-    _ = _ := by rw [← Real.exp_add]; norm_num
+theorem polynomialCorrectionWeight_small : polynomialCorrectionWeight ≤ 1 := CorrectionProfile.le_one
 
+theorem polynomialCorrectionWeight_inverse (hweight : Real.exp (-1000 : ℝ) ≤ polynomialCorrectionWeight) :
+    polynomialCorrectionWeight⁻¹ ≤ Real.exp 1000 := by
+  have hh := (inv_le_inv₀ polynomialCorrectionWeight_pos (Real.exp_pos (-1000 : ℝ))).mpr hweight
+  simpa only [← Real.exp_neg, neg_neg] using hh
+
+omit profile in
+theorem default_correction_lower : Real.exp (-1000 : ℝ) ≤
+    polynomialCorrectionWeight (profile := defaultCorrectionProfile) := by
+  change Real.exp (-1000 : ℝ) ≤ 1
+  exact Real.exp_le_one_iff.mpr (by norm_num)
+omit profile in
 theorem polynomial_compact_hat_floor {H : Section13HatLayers}
     (hH : Section13HatContract H 2) {D s : ℝ} (hD : 1 < D)
     (n : ℕ) (hs : 2 ≤ s) (hs16 : s ≤ 16) :
@@ -56,15 +64,21 @@ theorem polynomial_compact_hat_floor {H : Section13HatLayers}
 The result has no recursion depth parameter. -/
 theorem polynomial_compact_correction_payment {L σ E : ℝ}
     (hL : 0 < L) (hσ : 0 < σ)
-    (hgate : σ * L ^ (-(1 / 8 : ℝ)) ≤ 1)
+    (hgate : σ * L ^ (-(1 / 8 : ℝ)) ≤ Real.exp (-940 : ℝ))
     (hE : Real.exp (-896 : ℝ) ≤ E) :
     polynomialCorrectionWeight * L ^ (-(5 / 8 : ℝ)) ≤
       E * L ^ (-(1 / 2 : ℝ)) / (100 * σ) := by
-  have hb : 100 * polynomialCorrectionWeight ≤ E := polynomialCorrectionWeight_small.trans hE
-  have hleft : (100 * polynomialCorrectionWeight) * (σ * L ^ (-(1 / 8 : ℝ))) ≤ E :=
-    (mul_le_mul_of_nonneg_left hgate
-      (mul_nonneg (by norm_num) polynomialCorrectionWeight_pos.le)).trans
-        (by simpa only [mul_one] using hb)
+  have h100 : (100 : ℝ) ≤ Real.exp 44 := by
+    have hh := Real.pow_div_factorial_le_exp (44 : ℝ) (by norm_num) 2
+    norm_num [Nat.factorial] at hh
+    linarith only [hh]
+  have hb : 100 * polynomialCorrectionWeight ≤ Real.exp 44 :=
+    (show 100 * polynomialCorrectionWeight ≤ (100 : ℝ) by nlinarith only [polynomialCorrectionWeight_small]).trans h100
+  have hleft : (100 * polynomialCorrectionWeight) * (σ * L ^ (-(1 / 8 : ℝ))) ≤ E := by
+    calc
+      _ ≤ Real.exp 44 * Real.exp (-940 : ℝ) := mul_le_mul hb hgate (by positivity) (Real.exp_pos _).le
+      _ = Real.exp (-896 : ℝ) := by rw [← Real.exp_add]; norm_num
+      _ ≤ E := hE
   have hh := mul_le_mul_of_nonneg_right hleft
     (Real.rpow_nonneg hL.le (-(1 / 2 : ℝ)))
   apply (le_div_iff₀ (by positivity : 0 < 100 * σ)).mpr
@@ -74,6 +88,7 @@ theorem polynomial_compact_correction_payment {L σ E : ℝ}
   rw [heq]
   nlinarith only [hh]
 
+omit profile in
 /-- A uniform coarse bound for the discrete polynomial kernel on the whole
 Case-I strip, before the sharper high-coordinate contraction is used. -/
 theorem numerical_polynomial_transport_coarse

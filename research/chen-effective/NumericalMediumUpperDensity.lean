@@ -15,13 +15,13 @@ set_option maxHeartbeats 3000000
 attribute [local irreducible] logPowerCutoff
 
 def mediumUpperScalarThreshold (r : ℕ) : ℕ :=
-  suzukiScalarThreshold (sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK) r
+  sqrtSuzukiScalarThreshold (sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK) r
 def mediumUpperDensityThreshold (r : ℕ) : ℕ := (mediumUpperScalarThreshold r+1)^10
 
 theorem mediumUpperScalarThreshold_three (r : ℕ) : 3 ≤ mediumUpperScalarThreshold r := by
-  have hh : 1 ≤ max 152587890625 (4096*(sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK+1)^2*r^2) :=
-    (by norm_num : 1 ≤ 152587890625).trans (le_max_left _ _)
-  exact (show 3^1 ≤ 3^max 152587890625 (4096*(sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK+1)^2*r^2) from
+  have hh : 1 ≤ max (logPowerCutoff 32) (max 152587890625 (4096*(sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK+1)^2*r^2)) :=
+    (by norm_num : 1 ≤ 152587890625).trans ((le_max_left _ _).trans (le_max_right _ _))
+  exact (show 3^1 ≤ 3^max (logPowerCutoff 32) (max 152587890625 (4096*(sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK+1)^2*r^2)) from
     Nat.pow_le_pow_right (by norm_num) hh)
 
 theorem numerical_upper_level_parameters {D r : ℕ} (hD : mediumUpperScalarThreshold r ≤ D) :
@@ -32,8 +32,8 @@ theorem numerical_upper_level_parameters {D r : ℕ} (hD : mediumUpperScalarThre
   have hlog := log_ge_power_three hD
   have hL5 : (5 : ℝ)^16 ≤ Real.log (D : ℝ) := by
     have hh : (152587890625 : ℝ) ≤
-        (max 152587890625 (4096*(sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK+1)^2*r^2) : ℕ) :=
-      by exact_mod_cast (le_max_left 152587890625 (4096*(sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK+1)^2*r^2))
+        (max (logPowerCutoff 32) (max 152587890625 (4096*(sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK+1)^2*r^2)) : ℕ) :=
+      by exact_mod_cast ((le_max_left 152587890625 (4096*(sqrtSuzukiAmplitudeCap baseSuzukiC baseSuzukiK+1)^2*r^2)).trans (le_max_right _ _))
     norm_num only [Nat.reducePow] at hh ⊢
     exact hh.trans hlog
   have hL0 : 0 < Real.log (D : ℝ) := Real.log_pos hD1
@@ -69,7 +69,7 @@ theorem numerical_upper_suzuki_error {D r depth : ℕ} (hD : mediumUpperScalarTh
     dsimp [a,sqrtSuzukiAmplitudeCap]
     push_cast
     nlinarith only [hh,mul_nonneg hc (pow_nonneg (by norm_num : (0 : ℝ) ≤ 3) (Nat.sqrt baseSuzukiK + 1))]
-  have hscalar := numerical_suzuki_scalar_absorption hD hr (s := 1) (by norm_num) (by norm_num) ha0 haM
+  have hscalar := numerical_suzuki_scalar_absorption ((sqrt_scalar_old_le _ _).trans hD) hr (s := 1) (by norm_num) (by norm_num) ha0 haM
   have hE := errorEnvelope_odd_le_sixteen_on_upper_window jr1965Section13HatLayers
     jr1965Section13HatSourceContract.toSection13HatContract hdepth (by norm_num) hD1
     (show (4 : ℝ)^(16 : ℝ) ≤ Real.log (D : ℝ) by norm_num at hL5 ⊢; linarith only [hL5]) hs hs4
@@ -122,7 +122,7 @@ theorem numerical_conditioned_upper_density {N q r : ℕ} (hr : 0 < r)
     linarith only [hs.1]
   have hSuzuki := numerical_mixed_suzuki_window jr1965Section13HatLayers jr1965Section13HatSourceContract
     refined_local_product_two (show mixedSuzukiSeparator ≤ mixedSuzukiSeparator from le_rfl) S hlocal
-    depth D (by dsimp [depth]; omega) hD2 s hsdom hs.1 (hs.2.trans (by norm_num : (4 : ℝ) ≤ 5)) hSigma hzceil
+    depth D (by dsimp [depth]; omega) hD2 s hsdom hs.1 (hs.2.trans (by norm_num : (4 : ℝ) ≤ 5)) hSigma hzceil (sqrt_scalar_log_gate hDcut)
   have hpoint := upperRosserDensity_at_natCeil_of_point jr1965Section13HatLayers jr1965Section13HatSourceContract S
     (C := numericalEffectiveSuzukiCoefficient) (K := refinedLocalProductK) (d := (16 : ℝ)) (Δ := (1 / 2 : ℝ))
     D s hD2 hs.1 hs.2
