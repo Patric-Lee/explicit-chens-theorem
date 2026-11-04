@@ -12,11 +12,28 @@ open MathlibNt.SieveTheory.SwitchingPrinciple.SuzukiLemma144Equation1410
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 5000000
 
+/-- A threshold for D must enter a bound on log D in logarithmic coordinates. -/
+noncomputable def c1LogBudget (x : ℝ) : ℝ := max 0 (Real.log x)
+
+theorem le_of_c1LogBudget {x D : ℝ} (hD : 0 < D)
+    (h : c1LogBudget x ≤ Real.log D) : x ≤ D := by
+  by_cases hx : 0 < x
+  · have hl : Real.log x ≤ Real.log D := (le_max_right _ _).trans h
+    have he := Real.exp_le_exp.mpr hl
+    simpa only [Real.exp_log hx,Real.exp_log hD] using he
+  · exact (le_of_not_gt hx).trans hD.le
+
+theorem c1LogBudget_le {x B : ℝ} (hx : 0 ≤ x) (hB : 1 ≤ B) (hxB : x ≤ B) :
+    c1LogBudget x ≤ B := by
+  apply max_le (zero_le_one.trans hB)
+  by_cases hx0 : x=0
+  · simpa only [hx0,Real.log_zero] using zero_le_one.trans hB
+  · exact (Real.log_le_sub_one_of_pos (lt_of_le_of_ne hx (Ne.symm hx0))).trans (by linarith only [hxB])
 noncomputable def caseIIC1 : ℝ :=
-  3 + max 0 caseIIGapC1 + max 0 caseBSourceC1 + max 0 sourceRoundedCutoff +
-    (transportCaseIICutoff : ℝ) + (recursiveNatCutoff : ℝ) + max 0 claim146FullCutoff +
-    max 0 (Real.exp 1) + max 0 (Real.exp (max 1 (3*((1+3*(16 : ℝ))*4^(16 : ℝ))))) +
-    ((2 : ℕ)^2 : ℝ)
+  3 + max 0 caseIIGapC1 + max 0 caseBSourceC1 + c1LogBudget sourceRoundedCutoff +
+    c1LogBudget (transportCaseIICutoff : ℝ) + c1LogBudget (recursiveNatCutoff : ℝ) + c1LogBudget claim146FullCutoff +
+    c1LogBudget (Real.exp 1) + c1LogBudget (Real.exp (max 1 (3*((1+3*(16 : ℝ))*4^(16 : ℝ))))) +
+    c1LogBudget ((2 : ℕ)^2 : ℝ)
 theorem numerical_caseII_cutoff
     (H : Section13HatLayers)
     {Dmin : ℕ} {d Δ Θ : ℝ}
@@ -65,18 +82,21 @@ theorem numerical_caseII_cutoff
   let A : ℝ := (1 + 3 * d) * (4 : ℝ) ^ d
   let Dlarge : ℝ := Real.exp (max 1 (3 * A))
   let C1min : ℝ :=
-    3 + max 0 Cgap + max 0 Ccase + max 0 Dg +
-      (Derr : ℝ) + (Dcoord : ℝ) + max 0 D146 + max 0 Dconst +
-      max 0 Dlarge + (Dmin ^ 2 : ℝ)
+    3 + max 0 Cgap + max 0 Ccase + c1LogBudget Dg +
+      c1LogBudget (Derr : ℝ) + c1LogBudget (Dcoord : ℝ) + c1LogBudget D146 + c1LogBudget Dconst +
+      c1LogBudget Dlarge + c1LogBudget (Dmin ^ 2 : ℝ)
   have hmGap : 0 ≤ max (0 : ℝ) Cgap := le_max_left _ _
   have hmCase : 0 ≤ max (0 : ℝ) Ccase := le_max_left _ _
-  have hmDg : 0 ≤ max (0 : ℝ) Dg := le_max_left _ _
-  have hm146 : 0 ≤ max (0 : ℝ) D146 := le_max_left _ _
-  have hmConst : 0 ≤ max (0 : ℝ) Dconst := le_max_left _ _
-  have hmLarge : 0 ≤ max (0 : ℝ) Dlarge := le_max_left _ _
+  have hmDg : 0 ≤ c1LogBudget Dg := le_max_left _ _
+  have hmErr : 0 ≤ c1LogBudget (Derr : ℝ) := le_max_left _ _
+  have hmCoord : 0 ≤ c1LogBudget (Dcoord : ℝ) := le_max_left _ _
+  have hm146 : 0 ≤ c1LogBudget D146 := le_max_left _ _
+  have hmConst : 0 ≤ c1LogBudget Dconst := le_max_left _ _
+  have hmLarge : 0 ≤ c1LogBudget Dlarge := le_max_left _ _
+  have hmSq : 0 ≤ c1LogBudget (Dmin^2 : ℝ) := le_max_left _ _
   have hCmin1 : 1 ≤ C1min := by
-    dsimp [C1min]
-    nlinarith [hmGap, hmCase, hmDg, hm146, hmConst, hmLarge]
+    dsimp only [C1min]
+    linarith only [hmGap,hmCase,hmDg,hmErr,hmCoord,hm146,hmConst,hmLarge,hmSq]
   refine ⟨C1min, rfl, hCmin1, ?_⟩
   intro S C1 C K N D s hCmin hC3 hK hD2 hlocal hlarge hN hN3 hs1 hs3 hglobal
   have hCaseB := hCaseBAll S
@@ -85,35 +105,28 @@ theorem numerical_caseII_cutoff
   have hKpow : 1 ≤ K ^ Θ := Real.one_le_rpow hK1 hsrc.hTheta_pos.le
   have hC1log : C1 < Real.log (D : ℝ) := by
     calc
-      C1 = C1 * 1 := by ring
-      _ ≤ C1 * K ^ Θ := mul_le_mul_of_nonneg_left hKpow hC10
-      _ < Real.log (D : ℝ) := hlarge
+      C1 = C1*1 := by ring
+      _ ≤ C1*K^Θ := mul_le_mul_of_nonneg_left hKpow hC10
+      _ < _ := hlarge
   have hCminlog : C1min < Real.log (D : ℝ) := hCmin.trans_lt hC1log
   have hDnat1 : 1 < D := by omega
   have hDreal1 : (1 : ℝ) < (D : ℝ) := by exact_mod_cast hDnat1
   have hD0 : (0 : ℝ) < (D : ℝ) := zero_lt_one.trans hDreal1
-  have hlogDlt : Real.log (D : ℝ) < (D : ℝ) := by
-    exact (Real.log_le_sub_one_of_pos hD0).trans_lt
-      (sub_lt_self _ zero_lt_one)
-  have hCminD : C1min < (D : ℝ) := hCminlog.trans hlogDlt
-  have hcuts : Cgap ≤ C1min ∧ Ccase ≤ C1min ∧ Dg ≤ C1min ∧
-      (Derr : ℝ) ≤ C1min ∧ (Dcoord : ℝ) ≤ C1min ∧ D146 ≤ C1min ∧
-      Dconst ≤ C1min ∧ Dlarge ≤ C1min ∧ (Dmin ^ 2 : ℝ) ≤ C1min := by
-    dsimp [C1min]
-    refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩ <;>
-      linarith [le_max_right (0 : ℝ) Cgap, le_max_right (0 : ℝ) Ccase,
-        le_max_right (0 : ℝ) Dg, le_max_right (0 : ℝ) D146,
-        le_max_right (0 : ℝ) Dconst, le_max_right (0 : ℝ) Dlarge,
-        Nat.cast_nonneg (α := ℝ) Derr, Nat.cast_nonneg (α := ℝ) Dcoord,
-        sq_nonneg (Dmin : ℝ)]
-  obtain ⟨hCgap, hCcase, hDg, hDerrR, hDcoordR, hD146, hDconst, hDlarge, hDsqR⟩ := hcuts
-  have hDg := hDg.trans hCminD.le
-  have hDerrR := hDerrR.trans hCminD.le
-  have hDcoordR := hDcoordR.trans hCminD.le
-  have hD146 := hD146.trans hCminD.le
-  have hDconst := hDconst.trans hCminD.le
-  have hDlarge := hDlarge.trans hCminD.le
-  have hDsq : Dmin ^ 2 ≤ D := by exact_mod_cast hDsqR.trans hCminD.le
+  have hcuts : Cgap ≤ C1min ∧ Ccase ≤ C1min ∧ c1LogBudget Dg ≤ C1min ∧
+      c1LogBudget (Derr : ℝ) ≤ C1min ∧ c1LogBudget (Dcoord : ℝ) ≤ C1min ∧ c1LogBudget D146 ≤ C1min ∧
+      c1LogBudget Dconst ≤ C1min ∧ c1LogBudget Dlarge ≤ C1min ∧ c1LogBudget (Dmin^2 : ℝ) ≤ C1min := by
+    dsimp only [C1min]
+    refine ⟨?_,?_,?_,?_,?_,?_,?_,?_,?_⟩ <;>
+      linarith only [hmGap,hmCase,hmDg,hmErr,hmCoord,hm146,hmConst,hmLarge,hmSq,
+        le_max_right (0 : ℝ) Cgap,le_max_right (0 : ℝ) Ccase]
+  obtain ⟨hCgap,hCcase,hDg,hDerrR,hDcoordR,hD146,hDconst,hDlarge,hDsqR⟩ := hcuts
+  have hDg := le_of_c1LogBudget hD0 (hDg.trans hCminlog.le)
+  have hDerrR := le_of_c1LogBudget hD0 (hDerrR.trans hCminlog.le)
+  have hDcoordR := le_of_c1LogBudget hD0 (hDcoordR.trans hCminlog.le)
+  have hD146 := le_of_c1LogBudget hD0 (hD146.trans hCminlog.le)
+  have hDconst := le_of_c1LogBudget hD0 (hDconst.trans hCminlog.le)
+  have hDlarge := le_of_c1LogBudget hD0 (hDlarge.trans hCminlog.le)
+  have hDsq : Dmin^2 ≤ D := by exact_mod_cast le_of_c1LogBudget hD0 (hDsqR.trans hCminlog.le)
   have herrorD := herrorAt D (by exact_mod_cast hDerrR) S
   have hcoordinateD := hcoordinateAt D (by exact_mod_cast hDcoordR) S
   have hCgap := hCgap.trans hCmin

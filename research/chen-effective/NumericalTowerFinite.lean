@@ -96,16 +96,12 @@ theorem tower_varying_distribution : varyingNumericalThreshold (120*mediumPrimeB
 
 theorem tower_nSquare : nSquare ≤ towerH := by
   change numericalDenominatorThreshold ≤ towerH
-  rw [numericalDenominatorThreshold]
-  unfold towerH
+  rw [numericalDenominatorThreshold,towerH]
   apply Nat.pow_le_pow_right (by norm_num)
-  have hh : 3^numericalDenominatorExponent ≤ towerU := by
-    unfold towerU
-    apply Nat.pow_le_pow_right (by norm_num)
-    rw [towerSeed_eq,numericalDenominatorExponent_eq]
-    norm_num
-  exact hh.trans (by simpa only [pow_one] using Nat.pow_le_pow_right (show 1 ≤ towerU by exact_mod_cast towerU_one) (show 1 ≤ 100 by norm_num))
-
+  rw [towerU,← pow_mul]
+  apply Nat.pow_le_pow_right (by norm_num)
+  rw [towerSeed_eq,numericalDenominatorExponent_eq]
+  norm_num
 theorem tower_prime_sum : mediumPrimeSumThreshold ≤ towerH^20 := by
   have hPair : primePairThreshold ≤ towerH := numerical_prime_pair_threshold_le_denominator.trans tower_nSquare
   have hbase : mediumPrimeBudget+2 ≤ towerH := (by norm_num [mediumPrimeBudget] : mediumPrimeBudget+2 ≤ (10 : ℕ)^100).trans tower_H_large_nat

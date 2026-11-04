@@ -56,7 +56,7 @@ theorem tower_tail_head : claim146TailHead ≤ towerU := by
   · have hh : claim146iiiFixedM hatTailCoefficient (1/2) ≤ (10^100 : ℝ) := by
       norm_num [claim146iiiFixedM,hatTailCoefficient,hatShiftCoefficient]
     exact hh.trans towerU_real_large
-  · exact max_le tower_source_head ((Real.exp_le_exp.mpr (by norm_num : (2309 : ℝ) ≤ 10^18)).trans exp_seed_le_towerU)
+  · exact max_le tower_source_head ((Real.exp_le_exp.mpr (by norm_num : (2309 : ℝ) ≤ 10^12)).trans exp_seed_le_towerU)
 
 theorem tower_tail_head_four : 4 ≤ claim146TailHead := by
   have hh : Real.exp 2309 ≤ claim146TailHead := (le_max_right _ _).trans (le_max_right _ _)
@@ -83,9 +83,9 @@ theorem tower_derivative_cutoff : derivativeCutoff ≤ towerH := by
   have h2 : (derivativeHead : ℝ)+1 ≤ (towerU : ℝ)^2 := by
     have hh := tower_head_add_two hmR
     linarith only [hh]
-  have h3 : 51200000000*(derivativeHead : ℝ) ≤ (towerU : ℝ)^2 := by
-    have hh := mul_le_mul_of_nonneg_left hmR (by norm_num : (0 : ℝ) ≤ 51200000000)
-    have hp := mul_nonneg (show 0 ≤ (towerU : ℝ)-51200000000 by linarith only [hu]) towerU_pos.le
+  have h3 : 51200*(derivativeHead : ℝ) ≤ (towerU : ℝ)^2 := by
+    have hh := mul_le_mul_of_nonneg_left hmR (by norm_num : (0 : ℝ) ≤ 51200)
+    have hp := mul_nonneg (show 0 ≤ (towerU : ℝ)-51200 by linarith only [hu]) towerU_pos.le
     nlinarith only [hh,hp]
   have hp : ((1+(derivativeHead : ℝ)*16)*((derivativeHead : ℝ)+1)^(16 : ℝ))/compactDerivativeFloor derivativeHead ≤ (towerU : ℝ)^36 := by
     unfold compactDerivativeFloor

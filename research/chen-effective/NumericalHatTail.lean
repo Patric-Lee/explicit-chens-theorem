@@ -9,7 +9,7 @@ open BridgeAssembly CutoffCorrectedRatio
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 2400000
 
-noncomputable def hatShiftCoefficient : ℝ := (51200000000 : ℝ)^2 * 2
+noncomputable def hatShiftCoefficient : ℝ := (51200 : ℝ)^2 * 2
 noncomputable def hatTailCoefficient : ℝ := 3 * hatShiftCoefficient^2
 
 theorem numerical_hat_two_step {H : Section13HatLayers}

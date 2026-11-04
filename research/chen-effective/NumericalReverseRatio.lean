@@ -85,9 +85,9 @@ theorem numerical_Qhat_unit_shift {H : Section13HatLayers} (hH : Section13HatSou
   have hm := mul_le_mul_of_nonneg_right hphase (mul_nonneg hs0.le hQ0)
   nlinarith only [henv, hm]
 
-def reverseRatioCap : ℕ := 51200000000 * (800 * 22 ^ 20 + 75)
+def reverseRatioCap : ℕ := 51200 * (800 * 22 ^ 20 + 75)
 
-theorem reverseRatioCap_eq : (reverseRatioCap : ℝ) = 51200000000 * (numericalReverseSlope + 10) := by
+theorem reverseRatioCap_eq : (reverseRatioCap : ℝ) = 51200 * (numericalReverseSlope + 10) := by
   norm_num [reverseRatioCap, numericalReverseSlope, compactHatLower]
 
 theorem numerical_reverse_ratio {H : Section13HatLayers} (hH : Section13HatSourceContract H)

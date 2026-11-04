@@ -692,10 +692,10 @@ uses a single uniform logarithmic formula, with no finite quotient sum.
 
 The new proofs supply:
 
-- Comparison `Qhat <= 51200000000 * T` and reverse-ratio cap
-  `r = 51200000000 * (800 * 22^20 + 75)`.
+- Comparison `Qhat <= 51200 * T` and reverse-ratio cap
+  `r = 51200 * (800 * 22^20 + 75)`.
 - A forward majorant with `cMinus=1152`, `A=2`, cutoff `exp(2309)`.
-- The sharp lower profile with coefficient `60000000000` from `s=20000`,
+- The sharp lower profile with coefficient `100` from `s=20000`,
   and an explicit source-large-log Case-B cutoff.
 - Numerical compact derivative and moving source-range bounds, all three
   clauses of Claim 14.6, and the resulting contraction and error transport.
@@ -899,7 +899,7 @@ fixed-quotient and finite-sum lemmas remain available for compatibility;
 the assembly no longer uses them.
 
 The compact derivative estimate now uses the floor
-`1/(51200000000*m)`. Only the fixed head `[2,4]` uses an absolute hat
+`1/(51200*m)`. Only the fixed head `[2,4]` uses an absolute hat
 minimum. Beyond it, global comparison of the two hats and monotonicity
 between adjacent arguments give the ratio bound directly. The derivative
 cutoff consequently has a polynomial exponent in `m` at fixed `d`, rather
@@ -1059,7 +1059,7 @@ representation-count theorems.
 `NumericalExplicitTower.lean` proves that both detailed thresholds are bounded by
 
 ```
-T = 3^(3^(3^(3^(10^21))))
+T = 3^(3^(3^(3^(10^15))))
 nLower <= T
 N0 <= T.
 ```
@@ -1073,7 +1073,7 @@ The detailed cutoffs remain available and are smaller than this convenient cap.
 The eight tower modules bound the source logarithmic cutoff, Suzuki C1,
 bounded-K coefficient, integer Suzuki caps, BV and normalization cutoffs,
 and final density absorption. The largest absorption cutoff fits within four
-base-three exponential layers with top exponent `10^21`. This is a proved
+base-three exponential layers with top exponent `10^15`. This is a proved
 conservative cap, rather than the earlier rough size estimate.
 
 The threshold-comparison theorems use only Lean's standard axioms. The final
@@ -1102,7 +1102,7 @@ The traversal independently verifies the allowed axioms and rejects unsafe const
 Thus importing the old statements in the audit cannot hide circular reasoning.
 
 Run `./research/chen-effective/audit.ps1` for the compatibility and final audit,
-or add `-Rebuild` to recompile all 149 research modules first. The source audit
+or add `-Rebuild` to recompile all 150 research modules first. The source audit
 covers all research modules and their locally imported project sources,
 ignoring comments/string literals, and rejects proof placeholders,
 `native_decide`, unsafe declarations, compiler bypass attributes/options, and every
@@ -1166,6 +1166,48 @@ audit passed for 672 research/project files. Both proof-dependency audits
 passed their exact axiom whitelists and unsafe-dependency checks. The old and
 new Chen statements remain definitionally identical in the compatibility audit.
 
+## Completed C1 improvements
+
+The two avoidable hat losses are removed:
+
+- `numerical_hat_compact_four` uses two half-steps on `[2,4]` and proves
+  `T(sign,s) >= 1/12800` there. The global comparison is consequently
+  `Qhat <= 51200*T`, replacing `51200000000*T`. The source-ratio coefficient
+  falls from `102400000000` to `102400`, and the compact derivative floor
+  improves to `1/(51200*m)`.
+- Numerical logarithm bounds replace estimates of the form `log(x) <= x` in
+  the sharp-profile constants. The barrier floor has log at least `-1000000`,
+  and the resulting sharp-profile coefficient is `100`, replacing
+  `60000000000`. `caseBSourceC1_eq` certifies `caseBSourceC1 = exp(100000)`.
+
+Case II now uses `c1LogBudget(Dcut) = max(0,log(Dcut))` for conditions that
+only require `D >= Dcut`. The proved conversion `le_of_c1LogBudget` recovers
+every original level threshold from the large-log regime. Thresholds that
+really bound C1 itself (the Case-B and gap constants) remain direct terms.
+The original Case-II endpoint theorem and all of its consumers compile with
+this smaller separator.
+
+`NumericalC1SingleExponential.lean` proves the complete numerical separator bound
+
+```
+numericalSuzukiC1 <= exp(10^40).
+```
+
+This includes all Case-I, even, Case-II and Case-B constituents; it is not
+merely a bound on one subcase. Its axiom report contains only `propext`,
+`Classical.choice`, and `Quot.sound`. The final Chen theorem retains the
+single local Dirichlet axiom and its original existence/count statements.
+
+The previous tower cap also tightens to `3^(3^(3^(3^(10^15))))`. The smaller
+single-exponential C1 does not yet establish a double-exponential N0: the
+uniform bounded-K coefficient and its final absorption remain to be tightened.
+
+Validation: all 55 affected existing research modules and the new C1 cap module
+compiled with warnings treated as errors. The statement, exact-axiom and
+unsafe-dependency audits passed, including the independent traversal of
+81,989 final proof dependencies. The source audit passed for 673 research/project
+files. The elementary Mertens audit still passes.
+No external dependencies or OpenAI imports were added.
 ## Reproduce
 
 From the checkout, in PowerShell:
@@ -1177,7 +1219,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the 149 research modules, in dependency order, treating warnings as errors,
+This checks only the 150 research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is

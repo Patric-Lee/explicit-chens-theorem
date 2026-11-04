@@ -113,7 +113,7 @@ noncomputable def numericalHatBridge {H : Section13HatLayers}
     Section13HatSection10BridgeAtThree H sign where
   Qhat := section13Qhat H
   dde := (section13_bridgeAtThree hH sign).dde
-  K := 51200000000
+  K := 51200
   one_le_K := by norm_num
   hat_le := by
     intro s hs

@@ -60,7 +60,7 @@ theorem legacy_compactDerivativeRatio_lower {H : Section13HatLayers}
 
 /-- Only a fixed short head uses an absolute minimum. At all larger coordinates
 adjacent hats are compared directly, giving a polynomial reciprocal. -/
-noncomputable def compactDerivativeFloor (m : ℕ) : ℝ := 1/(51200000000*(m : ℝ))
+noncomputable def compactDerivativeFloor (m : ℕ) : ℝ := 1/(51200*(m : ℝ))
 
 theorem compactDerivativeFloor_pos {m : ℕ} (hm : 3 ≤ m) : 0 < compactDerivativeFloor m := by
   have hm0 : (0 : ℝ) < m := by exact_mod_cast (show 0 < m by omega)
@@ -75,13 +75,35 @@ theorem numerical_compactDerivativeRatio_lower {H : Section13HatLayers}
   have hm0 : (0 : ℝ) < m := by linarith only [hm3]
   have ht0 : 0 < t := by linarith only [ht.1]
   by_cases ht4 : t ≤ 4
-  · have hh := legacy_compactDerivativeRatio_lower hH.toSection13HatContract
-      (show 3 ≤ (4 : ℕ) by norm_num) sign ⟨ht.1,ht4⟩
-    apply le_trans _ hh
-    unfold compactDerivativeFloor
+  · have hu : 1 ≤ t-1 := by linarith only [ht.1]
+    have hT : (1/12800 : ℝ) ≤ H.T sign.opposite (t-1) := by
+      by_cases hu2 : 2 ≤ t-1
+      · exact numerical_hat_compact_four hH.toSection13HatContract sign.opposite hu2 (by linarith only [ht4])
+      · have hu0 : 0 < t-1 := by linarith only [hu]
+        have hu2' : t-1 ≤ 2 := (lt_of_not_ge hu2).le
+        have heq : 1 ≤ weightedHat H sign.opposite (t-1) := by
+          cases sign <;> simp only [ErrorSign.opposite]
+          · rw [hH.initial_minus _ hu0 hu2']; norm_num
+          · rw [hH.initial_plus _ hu0 (by linarith only [hu2'])]; norm_num
+        have hpos := (hH.positive sign.opposite _ hu0).le
+        have hsq : (t-1)^2 ≤ (4 : ℝ) := by nlinarith only [hu,hu2']
+        have hh := mul_le_mul_of_nonneg_right hsq hpos
+        dsimp [weightedHat] at heq
+        nlinarith only [hh,heq]
+    have hupper := numerical_hat_upper_two hH.toSection13HatContract sign (show 1 ≤ t by linarith only [ht.1])
+    have hcur : t*H.T sign t ≤ 2*(m : ℝ) :=
+      (mul_le_mul_of_nonneg_left hupper ht0.le).trans (by linarith only [ht.2])
+    have hW0 : 0 < weightedHat H sign t :=
+      mul_pos (sq_pos_of_pos ht0) (hH.positive sign t ht0)
+    unfold compactDerivativeRatio
+    apply (le_div_iff₀ hW0).mpr
+    change (1/(51200*(m : ℝ)))*(t^2*H.T sign t) ≤ t*H.T sign.opposite (t-1)
     calc
-      _ ≤ 1/(51200000000*(3 : ℝ)) := one_div_le_one_div_of_le (by norm_num) (by linarith only [hm3])
-      _ ≤ legacyCompactDerivativeFloor 4 := by norm_num [legacyCompactDerivativeFloor,compactHatLower]
+      _ = t*(t*H.T sign t)/(51200*(m : ℝ)) := by ring
+      _ ≤ t*(2*(m : ℝ))/(51200*(m : ℝ)) := div_le_div_of_nonneg_right
+        (mul_le_mul_of_nonneg_left hcur ht0.le) (by positivity)
+      _ = t/25600 := by field_simp; ring
+      _ ≤ _ := by nlinarith only [mul_le_mul_of_nonneg_left hT ht0.le,ht0]
   have h4 : 4 < t := lt_of_not_ge ht4
   have hu0 : 0 < t-1 := by linarith only [h4]
   have hprev0 := (hH.toSection13HatContract.positive sign.opposite (t-1) hu0).le
@@ -98,7 +120,7 @@ theorem numerical_compactDerivativeRatio_lower {H : Section13HatLayers}
     have hp := (hH.toSection13HatContract.positive .plus t ht0).le
     have hn := (hH.toSection13HatContract.positive .minus t ht0).le
     cases sign <;> linarith only [hp,hn]
-  have hcomp : H.T sign t ≤ 51200000000*H.T sign.opposite (t-1) :=
+  have hcomp : H.T sign t ≤ 51200*H.T sign.opposite (t-1) :=
     hsum.trans ((numerical_Qhat_le_hat hH sign.opposite (by linarith only [h4])).trans
       (mul_le_mul_of_nonneg_left hprev (by norm_num)))
   have hW0 : 0 < weightedHat H sign t :=
@@ -107,7 +129,7 @@ theorem numerical_compactDerivativeRatio_lower {H : Section13HatLayers}
   apply (le_div_iff₀ hW0).mpr
   unfold compactDerivativeFloor weightedHat
   rw [div_mul_eq_mul_div]
-  apply (div_le_iff₀ (show (0 : ℝ) < 51200000000*m by positivity)).mpr
+  apply (div_le_iff₀ (show (0 : ℝ) < 51200*m by positivity)).mpr
   have hh := mul_le_mul_of_nonneg_left hcomp (sq_nonneg t)
   have hh' := mul_le_mul_of_nonneg_right ht.2 (mul_nonneg ht0.le hprev0)
   nlinarith only [hh,hh']

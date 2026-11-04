@@ -41,9 +41,46 @@ theorem numerical_caseB_log_payment {x : ℝ} (hx : Real.exp 100000 ≤ x) :
 noncomputable def caseBSourceC1 : ℝ :=
   let C_bound := |Real.log (1 + 1 / Real.log 2)| + 2 * |Real.log (Real.log 2)|
   let C_q0 := max 6 (max (C_bound + 2) (max (C_bound + 9) (Real.exp 1 + 2)))
-  max (Real.exp (max 20000 (max (Real.exp ((60000000000 + 2 + Real.log 2) / (16-4))) C_q0)))
+  max (Real.exp (max 20000 (max (Real.exp ((100 + 2 + Real.log 2) / (16-4))) C_q0)))
     (max (Real.exp 100000) (max 2 (Real.log 27)))
 
+/-- With the sharpened profile, the Case-B separator is a single exponential. -/
+theorem caseBSourceC1_eq : caseBSourceC1 = Real.exp 100000 := by
+  have hl2 : (1/2 : ℝ) ≤ Real.log 2 := by linarith only [Real.log_two_gt_d9]
+  have hl20 : 0 < Real.log (2 : ℝ) := by linarith only [hl2]
+  have hl21 : Real.log (2 : ℝ) ≤ 1 := by linarith only [Real.log_two_lt_d9]
+  have hi : 1/Real.log (2 : ℝ) ≤ 2 := (div_le_iff₀ hl20).mpr (by linarith only [hl2])
+  have hll : |Real.log (Real.log 2)| ≤ 1 := by
+    have h1 := Real.log_le_log (by norm_num : (0 : ℝ)<1/2) hl2
+    have h2 := Real.log_nonpos hl20.le hl21
+    rw [Real.log_div (by norm_num) (by norm_num),Real.log_one] at h1
+    rw [abs_le]
+    constructor <;> linarith only [h1,h2,hl21]
+  have hlg : |Real.log (1+1/Real.log 2)| ≤ 2 := by
+    have h0 : 0 ≤ Real.log (1+1/Real.log 2) := Real.log_nonneg (le_add_of_nonneg_right (by positivity))
+    have hh := Real.log_le_sub_one_of_pos (show 0 < 1+1/Real.log 2 by positivity)
+    rw [abs_of_nonneg h0]
+    linarith only [hh,hi]
+  let B := |Real.log (1+1/Real.log 2)|+2*|Real.log (Real.log 2)|
+  let Q := max 6 (max (B+2) (max (B+9) (Real.exp 1+2)))
+  have hB : B ≤ 4 := by dsimp [B]; linarith only [hll,hlg]
+  have hQ : Q ≤ 20000 := by
+    dsimp [Q]
+    have he := Real.exp_one_lt_d9
+    exact max_le (by norm_num) (max_le (by linarith only [hB]) (max_le (by linarith only [hB]) (by linarith only [he])))
+  have he9 : Real.exp 9 ≤ (3 : ℝ)^9 := by
+    rw [show (9 : ℝ)=(9 : ℕ)*1 by norm_num,Real.exp_nat_mul]
+    exact pow_le_pow_left₀ (Real.exp_pos 1).le (Real.exp_one_lt_d9.le.trans (by norm_num)) 9
+  have hin : Real.exp ((100+2+Real.log 2)/(16-4)) ≤ 20000 :=
+    ((Real.exp_le_exp.mpr (by linarith only [hl21] : (100+2+Real.log 2)/(16-4) ≤ (9 : ℝ))).trans he9).trans (by norm_num)
+  have hrest : max (2 : ℝ) (Real.log 27) ≤ Real.exp 100000 := by
+    have he := Real.add_one_le_exp (100000 : ℝ)
+    have hl := Real.log_le_sub_one_of_pos (by norm_num : (0 : ℝ)<27)
+    exact max_le (by linarith only [he]) (by linarith only [he,hl])
+  change max (Real.exp (max 20000 (max (Real.exp ((100+2+Real.log 2)/(16-4))) Q)))
+    (max (Real.exp 100000) (max 2 (Real.log 27))) = _
+  rw [max_eq_left (max_le hin hQ),max_eq_left hrest]
+  exact max_eq_right (Real.exp_le_exp.mpr (by norm_num))
 theorem numerical_caseB_cutoff
     (H : Section13HatLayers) (hH : Section13HatSourceContract H) :
     ∀ S : BoundingSieve, Claim145CaseBClosed S H 16 (1/2) 7 caseBSourceC1 1 := by
@@ -54,7 +91,7 @@ theorem numerical_caseB_cutoff
   have hΔ1 : Δ < 1 := by norm_num [Δ]
   have hd : 7 / (1 - Δ) < d := by norm_num [Δ, d]
   have hTheta : 1 ≤ Θ := by norm_num [Θ]
-  let C : ℝ := 60000000000
+  let C : ℝ := 100
   let M : ℝ := 20000
   have hM3 : 3 ≤ M := by norm_num [M]
   have hprop : ∀ sign s, M ≤ s → proposition131iiLowerProfile C s ≤ H.T sign s :=

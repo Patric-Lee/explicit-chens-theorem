@@ -25,12 +25,12 @@ theorem tower_source_lower {x : ℝ} (hx : x ≤ (towerU : ℝ)^2) : sourceLower
 theorem tower_source_head : sourceRatioHead ≤ towerU := by
   unfold sourceRatioHead sourceLogM
   apply max_le
-  · exact (Real.exp_le_exp.mpr (by norm_num : (2309 : ℝ) ≤ 10^18)).trans exp_seed_le_towerU
+  · exact (Real.exp_le_exp.mpr (by norm_num : (2309 : ℝ) ≤ 10^12)).trans exp_seed_le_towerU
   · exact (Real.exp_le_exp.mpr (by norm_num)).trans exp_seed_le_towerU
 
-theorem tower_source_log_cutoff : sourceLogCutoff 1 102400000000 16 ≤ towerH := by
-  let rho : ℝ := 1/(16-min (16/2) (1/(4*(2*(16+1)*(1 : ℝ)^2*102400000000))))-1/16
-  have hrho : rho=1/3565158399999984 := by norm_num [rho]
+theorem tower_source_log_cutoff : sourceLogCutoff 1 102400 16 ≤ towerH := by
+  let rho : ℝ := 1/(16-min (16/2) (1/(4*(2*(16+1)*(1 : ℝ)^2*102400))))-1/16
+  have hrho : rho=1/3565158384 := by norm_num [rho]
   have hb0 : 0 < 4/rho := by rw [hrho]; norm_num
   have hb : 4/rho ≤ (3 : ℝ)^40 := by rw [hrho]; norm_num
   have hlog : Real.log (4/rho) ≤ 80 := by
@@ -40,19 +40,19 @@ theorem tower_source_log_cutoff : sourceLogCutoff 1 102400000000 16 ≤ towerH :
     norm_num only [Nat.cast_ofNat] at hh
     linarith only [hh,h3]
   have he : 0 ≤ 1/(rho/2) := by rw [hrho]; norm_num
-  have hecap : 1/(rho/2) ≤ (10^16 : ℝ) := by rw [hrho]; norm_num
-  have hpow : (4/rho)^(1/(rho/2)) ≤ Real.exp (10^18 : ℝ) := by
+  have hecap : 1/(rho/2) ≤ (10^10 : ℝ) := by rw [hrho]; norm_num
+  have hpow : (4/rho)^(1/(rho/2)) ≤ Real.exp (10^12 : ℝ) := by
     rw [Real.rpow_def_of_pos hb0]
     apply Real.exp_le_exp.mpr
     have hh := mul_le_mul hlog hecap he (by norm_num : (0 : ℝ) ≤ 80)
     exact hh.trans (by norm_num)
   have hlog27 : Real.log (27 : ℝ) ≤ towerU :=
     (tower_log_le_self (by norm_num)).trans ((by norm_num : (27 : ℝ) ≤ 10^100).trans towerU_real_large)
-  change max (sourceLowerCutoff (sourceLogM 1 102400000000 16))
+  change max (sourceLowerCutoff (sourceLogM 1 102400 16))
     (Real.exp (max 2 (max (Real.log 27) ((4/rho)^(1/(rho/2)))))) ≤ towerH
   apply max_le
   · apply tower_source_lower
-    have hM : sourceLogM 1 102400000000 16 ≤ towerU := by
+    have hM : sourceLogM 1 102400 16 ≤ towerU := by
       unfold sourceLogM
       exact (Real.exp_le_exp.mpr (by norm_num)).trans exp_seed_le_towerU
     exact hM.trans (by nlinarith only [towerU_one])

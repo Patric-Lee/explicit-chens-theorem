@@ -8,9 +8,9 @@ set_option maxHeartbeats 3000000
 set_option maxRecDepth 3000
 set_option exponentiation.threshold 512
 
-private opaque towerSeedCertificate : {n : ℕ // n=10^18} := ⟨10^18,rfl⟩
+private opaque towerSeedCertificate : {n : ℕ // n=10^12} := ⟨10^12,rfl⟩
 def towerSeed : ℕ := towerSeedCertificate.1
-theorem towerSeed_eq : towerSeed=10^18 := towerSeedCertificate.2
+theorem towerSeed_eq : towerSeed=10^12 := towerSeedCertificate.2
 @[irreducible] def towerU : ℕ := 3^towerSeed
 @[irreducible] def towerH : ℕ := 3^(towerU^100)
 @[irreducible] def towerV : ℕ := 3^(towerH^100)
@@ -33,8 +33,8 @@ theorem exp_le_three_pow {x : ℝ} {n : ℕ} (hx : x ≤ n) : Real.exp x ≤ (3 
     _ = Real.exp 1^n := by rw [← Real.exp_nat_mul,mul_one]
     _ ≤ _ := pow_le_pow_left₀ (Real.exp_pos 1).le (Real.exp_one_lt_d9.le.trans (by norm_num)) n
 
-theorem exp_seed_le_towerU : Real.exp (10^18 : ℝ) ≤ towerU := by
-  have hh := exp_le_three_pow (n := towerSeed) (x := (10^18 : ℝ)) (by rw [towerSeed_eq]; norm_num)
+theorem exp_seed_le_towerU : Real.exp (10^12 : ℝ) ≤ towerU := by
+  have hh := exp_le_three_pow (n := towerSeed) (x := (10^12 : ℝ)) (by rw [towerSeed_eq]; norm_num)
   simpa only [towerU,Nat.cast_pow,Nat.cast_ofNat] using hh
 
 theorem self_le_three_pow (n : ℕ) : n ≤ 3^n := by

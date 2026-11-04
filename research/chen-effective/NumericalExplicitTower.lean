@@ -7,13 +7,13 @@ set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 2000000
 set_option exponentiation.threshold 512
 
-private opaque numericalTowerTopCertificate : {n : ℕ // n=10^21} := ⟨10^21,rfl⟩
+private opaque numericalTowerTopCertificate : {n : ℕ // n=10^15} := ⟨10^15,rfl⟩
 def numericalTowerTop : ℕ := numericalTowerTopCertificate.1
-theorem numericalTowerTop_eq : numericalTowerTop=10^21 := numericalTowerTopCertificate.2
+theorem numericalTowerTop_eq : numericalTowerTop=10^15 := numericalTowerTopCertificate.2
 
-/-- Four base-three exponentials, with the literal top exponent 10^21. -/
+/-- Four base-three exponentials, with the literal top exponent 10^15. -/
 @[irreducible] def numericalTowerCutoff : ℕ := 3^(3^(3^(3^numericalTowerTop)))
-theorem numericalTowerCutoff_eq : numericalTowerCutoff=3^(3^(3^(3^(10^21)))) := by
+theorem numericalTowerCutoff_eq : numericalTowerCutoff=3^(3^(3^(3^(10^15)))) := by
   rw [numericalTowerCutoff,numericalTowerTop_eq]
 
 theorem towerF_le_explicit : towerF ≤ numericalTowerCutoff := by

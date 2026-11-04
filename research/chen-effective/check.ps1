@@ -64,7 +64,7 @@ try {
         'NumericalMediumPrimeGrid', 'NumericalMediumPrimeSum', 'NumericalMediumPrimeShift',
         'NumericalMediumUpperDensity', 'NumericalMediumAggregate', 'NumericalChenCutoff',
         'NumericalTowerTools', 'NumericalTowerSource', 'NumericalTowerHeads',
-        'NumericalTowerC1', 'NumericalTowerCoefficient', 'NumericalTowerFinite',
+        'NumericalTowerC1', 'NumericalC1SingleExponential', 'NumericalTowerCoefficient', 'NumericalTowerFinite',
         'NumericalTowerThresholds', 'NumericalExplicitTower', 'NumericalChenCompatibility')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)

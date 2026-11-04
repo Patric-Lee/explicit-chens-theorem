@@ -39,14 +39,13 @@ theorem numerical_hat_upper_two {H : Section13HatLayers} (hH : Section13HatContr
   norm_num only [one_pow, one_mul] at hh
   exact hh.trans hw
 
-noncomputable def numericalHatEta : ℝ := 1 - 1 / 25600000000
+noncomputable def numericalHatEta : ℝ := 1 - 1 / 25600
 
 theorem numerical_hat_comparison_seed {H : Section13HatLayers} (hH : Section13HatContract H 2)
     {s : ℝ} (hs : s ∈ Icc (3 : ℝ) 4) :
     |section13Phat H s| ≤ numericalHatEta * section13Qhat H s := by
-  have hlp := numerical_hat_compact hH (m := 4) (by norm_num) .plus (by linarith only [hs.1]) hs.2
-  have hlm := numerical_hat_compact hH (m := 4) (by norm_num) .minus (by linarith only [hs.1]) hs.2
-  norm_num [compactHatLower] at hlp hlm
+  have hlp := numerical_hat_compact_four hH .plus (by linarith only [hs.1]) hs.2
+  have hlm := numerical_hat_compact_four hH .minus (by linarith only [hs.1]) hs.2
   have hup := numerical_hat_upper_two hH .plus (by linarith only [hs.1])
   have hum := numerical_hat_upper_two hH .minus (by linarith only [hs.1])
   unfold section13Phat section13Qhat numericalHatEta
@@ -91,7 +90,7 @@ theorem numerical_hat_comparison {H : Section13HatLayers} (hH : Section13HatSour
 
 theorem numerical_Qhat_le_hat {H : Section13HatLayers} (hH : Section13HatSourceContract H)
     (sign : ErrorSign) {s : ℝ} (hs : 3 ≤ s) :
-    section13Qhat H s ≤ 51200000000 * H.T sign s := by
+    section13Qhat H s ≤ 51200 * H.T sign s := by
   have hc := section13_comparison_of_P_abs_le
     (show 0 ≤ numericalHatEta by norm_num [numericalHatEta])
     (show numericalHatEta < 1 by norm_num [numericalHatEta]) (numerical_hat_comparison hH hs)

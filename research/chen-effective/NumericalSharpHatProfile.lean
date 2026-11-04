@@ -22,13 +22,19 @@ theorem compactHatLower_log {m : ℕ} (hm : 3 ≤ m) :
   push_cast
   ring
 
-theorem numerical_barrier_floor_log : -(2000000000 : ℝ) ≤ Real.log numericalBarrierFloor := by
+theorem numerical_barrier_floor_log : -(1000000 : ℝ) ≤ Real.log numericalBarrierFloor := by
   unfold numericalBarrierFloor
   rw [Real.log_mul (by norm_num) (compactHatLower_pos (by norm_num : 3 ≤ (20000 : ℕ))).ne',
     compactHatLower_log (by norm_num : 3 ≤ (20000 : ℕ))]
   norm_num only [Nat.cast_ofNat]
-  have h40002 := Real.log_le_sub_one_of_pos (by norm_num : (0 : ℝ) < 40002)
-  have h20000 := Real.log_le_sub_one_of_pos (by norm_num : (0 : ℝ) < 20000)
+  have hlog3 : Real.log (3 : ℝ) ≤ 2 := by linarith only [Real.log_le_sub_one_of_pos (by norm_num : (0 : ℝ)<3)]
+  have h40002 : Real.log (40002 : ℝ) ≤ 20 := by
+    have h := Real.log_le_log (by norm_num : (0 : ℝ)<40002) (by norm_num : (40002 : ℝ) ≤ 3^10)
+    rw [Real.log_pow] at h
+    norm_num only [Nat.cast_ofNat] at h
+    linarith only [h,hlog3]
+  have h20000 : Real.log (20000 : ℝ) ≤ 20 :=
+    (Real.log_le_log (by norm_num) (by norm_num : (20000 : ℝ) ≤ 40002)).trans h40002
   have h8 : Real.log 8 ≤ (3 : ℝ) := by
     rw [show (8 : ℝ) = 2 ^ 3 by norm_num, Real.log_pow]
     norm_num only [Nat.cast_ofNat]
@@ -67,7 +73,7 @@ theorem numerical_phase_integral {s : ℝ} (hs : 20000 ≤ s) :
 /-- The source-strength leading coefficient one, with numerical C and starting point. -/
 theorem numerical_sharp_hat_profile {H : Section13HatLayers} (hH : Section13HatSourceContract H)
     (sign : ErrorSign) {s : ℝ} (hs : 20000 ≤ s) :
-    proposition131iiLowerProfile 60000000000 s ≤ H.T sign s := by
+    proposition131iiLowerProfile 100 s ≤ H.T sign s := by
   have hs3 : 3 ≤ s := by linarith only [hs]
   have hs0 : 0 < s := by linarith only [hs]
   have hphase := numerical_phase_integral hs
@@ -75,24 +81,29 @@ theorem numerical_sharp_hat_profile {H : Section13HatLayers} (hH : Section13HatS
   have hbar := numerical_Qhat_barrier hH hs
   have hcomp := numerical_Qhat_le_hat hH sign hs3
   have hlogarg := Real.log_le_sub_one_of_pos (show 0 < s + Real.exp 1 by positivity)
-  have hlogK := Real.log_le_sub_one_of_pos (by norm_num : (0 : ℝ) < 51200000000)
-  have hExp : -s * Real.log s - s * Real.log (Real.log (3 * s)) - 60000000000 * s ≤
+  have hlogK : Real.log (51200 : ℝ) ≤ 20 := by
+    have h := Real.log_le_log (by norm_num : (0 : ℝ)<51200) (by norm_num : (51200 : ℝ) ≤ 3^10)
+    rw [Real.log_pow] at h
+    norm_num only [Nat.cast_ofNat] at h
+    have h3 := Real.log_le_sub_one_of_pos (by norm_num : (0 : ℝ)<3)
+    linarith only [h,h3]
+  have hExp : -s * Real.log s - s * Real.log (Real.log (3 * s)) - 100 * s ≤
       Real.log numericalBarrierFloor - (∫ t in (1 : ℝ)..s, xi t) -
-        12 * Real.log (s + Real.exp 1) - Real.log 51200000000 := by
+        12 * Real.log (s + Real.exp 1) - Real.log 51200 := by
     linarith only [hphase, hfloor, hlogarg, hlogK, Real.exp_one_lt_d9, hs]
   unfold proposition131iiLowerProfile
   calc
     _ ≤ Real.exp (Real.log numericalBarrierFloor - (∫ t in (1 : ℝ)..s, xi t) -
-        12 * Real.log (s + Real.exp 1) - Real.log 51200000000) := Real.exp_le_exp.mpr hExp
+        12 * Real.log (s + Real.exp 1) - Real.log 51200) := Real.exp_le_exp.mpr hExp
     _ = (numericalBarrierFloor * Real.exp (-(∫ t in (1 : ℝ)..s, xi t) -
-        12 * Real.log (s + Real.exp 1))) / 51200000000 := by
+        12 * Real.log (s + Real.exp 1))) / 51200 := by
       rw [show Real.log numericalBarrierFloor - (∫ t in (1 : ℝ)..s, xi t) -
-          12 * Real.log (s + Real.exp 1) - Real.log 51200000000 =
+          12 * Real.log (s + Real.exp 1) - Real.log 51200 =
         (Real.log numericalBarrierFloor + (-(∫ t in (1 : ℝ)..s, xi t) -
-          12 * Real.log (s + Real.exp 1))) - Real.log 51200000000 by ring,
-        Real.exp_sub, Real.exp_add, Real.exp_log numericalBarrierFloor_pos, Real.exp_log (by norm_num : (0 : ℝ) < 51200000000)]
-    _ ≤ section13Qhat H s / 51200000000 := div_le_div_of_nonneg_right hbar.le (by norm_num)
-    _ ≤ _ := (div_le_iff₀ (by norm_num : (0 : ℝ) < 51200000000)).mpr (by nlinarith only [hcomp])
+          12 * Real.log (s + Real.exp 1))) - Real.log 51200 by ring,
+        Real.exp_sub, Real.exp_add, Real.exp_log numericalBarrierFloor_pos, Real.exp_log (by norm_num : (0 : ℝ) < 51200)]
+    _ ≤ section13Qhat H s / 51200 := div_le_div_of_nonneg_right hbar.le (by norm_num)
+    _ ≤ _ := (div_le_iff₀ (by norm_num : (0 : ℝ) < 51200)).mpr (by nlinarith only [hcomp])
 
 #print axioms numerical_sharp_hat_profile
 end ChenEffective

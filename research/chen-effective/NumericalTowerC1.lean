@@ -7,7 +7,7 @@ set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 4000000
 attribute [local irreducible] logPowerCutoff
 
-theorem tower_exp_small {x : ℝ} (hx : x ≤ 10^18) : Real.exp x ≤ towerU :=
+theorem tower_exp_small {x : ℝ} (hx : x ≤ 10^12) : Real.exp x ≤ towerU :=
   (Real.exp_le_exp.mpr hx).trans exp_seed_le_towerU
 
 theorem tower_exp_three : Real.exp (3 : ℝ) ≤ 27 := by
@@ -79,11 +79,11 @@ theorem tower_caseB : caseBSourceC1 ≤ towerH := by
     dsimp [Q]
     have he := Real.exp_one_lt_d9
     exact max_le (by norm_num) (max_le (by linarith only [hB]) (max_le (by linarith only [hB]) (by linarith only [he])))
-  have hinner : Real.exp ((60000000000+2+Real.log 2)/(16-4)) ≤ towerU := by
+  have hinner : Real.exp ((100+2+Real.log 2)/(16-4)) ≤ towerU := by
     apply tower_exp_small
     norm_num
     linarith only [hl21]
-  change max (Real.exp (max 20000 (max (Real.exp ((60000000000+2+Real.log 2)/(16-4))) Q)))
+  change max (Real.exp (max 20000 (max (Real.exp ((100+2+Real.log 2)/(16-4))) Q)))
     (max (Real.exp 100000) (max 2 (Real.log 27))) ≤ towerH
   apply max_le
   · apply exp_U_pow_le_H (n := 1) (by norm_num)
@@ -198,15 +198,24 @@ theorem tower_numerical_C1 : numericalSuzukiC1 ≤ (towerH : ℝ)^6 := by
       (max_le (tower_endpoint_caps.2.trans hU4) (max_le hSigma (max_le (one_le_pow₀ hH1) hl))))
   have hGap : max 0 caseIIGapC1 ≤ (towerH : ℝ)^4 := max_le (by positivity) (tower_caseII_gap.trans h14)
   have hB : max 0 caseBSourceC1 ≤ (towerH : ℝ)^4 := max_le (by positivity) (tower_caseB.trans h14)
-  have hRound : max 0 sourceRoundedCutoff ≤ (towerH : ℝ)^4 := max_le (by positivity) (tower_geometry.2.1.trans hU4)
-  have hFull' : max 0 claim146FullCutoff ≤ (towerH : ℝ)^4 := max_le (by positivity) hFull
-  have hExp : max 0 (Real.exp 1) ≤ (towerH : ℝ)^4 := max_le (by positivity) ((tower_exp_small (by norm_num)).trans hU4)
-  have hExp2 : max 0 (Real.exp (max 1 (631360192512 : ℝ))) ≤ (towerH : ℝ)^4 :=
-    max_le (by positivity) ((tower_exp_small (by norm_num)).trans hU4)
+  have hRound : c1LogBudget sourceRoundedCutoff ≤ (towerH : ℝ)^4 :=
+    c1LogBudget_le (by unfold sourceRoundedCutoff; positivity) (one_le_pow₀ hH1) (tower_geometry.2.1.trans hU4)
+  have hFull' : c1LogBudget claim146FullCutoff ≤ (towerH : ℝ)^4 :=
+    c1LogBudget_le (zero_lt_one.trans claim146FullCutoff_gt_one).le (one_le_pow₀ hH1) hFull
+  have hExp : c1LogBudget (Real.exp 1) ≤ (towerH : ℝ)^4 :=
+    c1LogBudget_le (Real.exp_pos _).le (one_le_pow₀ hH1) ((tower_exp_small (by norm_num)).trans hU4)
+  have hExp2 : c1LogBudget (Real.exp (max 1 (631360192512 : ℝ))) ≤ (towerH : ℝ)^4 :=
+    c1LogBudget_le (Real.exp_pos _).le (one_le_pow₀ hH1) ((tower_exp_small (by norm_num)).trans hU4)
+  have hErrLog : c1LogBudget (transportCaseIICutoff : ℝ) ≤ (towerH : ℝ)^4 :=
+    c1LogBudget_le (Nat.cast_nonneg _) (one_le_pow₀ hH1) tower_transport.2
+  have hRecLog : c1LogBudget (recursiveNatCutoff : ℝ) ≤ (towerH : ℝ)^4 :=
+    c1LogBudget_le (Nat.cast_nonneg _) (one_le_pow₀ hH1) hRec
+  have hFourLog : c1LogBudget (4 : ℝ) ≤ (towerH : ℝ)^4 :=
+    c1LogBudget_le (by norm_num) (one_le_pow₀ hH1) h4
   have hII10 : caseIIC1 ≤ 10*(towerH : ℝ)^4 := by
     unfold caseIIC1
     norm_num only [Nat.reducePow,Nat.cast_ofNat]
-    nlinarith only [hGap,hB,hRound,tower_transport.2,hRec,hFull',hExp,hExp2,h4]
+    nlinarith only [hGap,hB,hRound,hErrLog,hRecLog,hFull',hExp,hExp2,hFourLog,h4]
   have hII : caseIIC1 ≤ (towerH : ℝ)^6 := by
     apply hII10.trans
     calc
@@ -218,5 +227,34 @@ theorem tower_numerical_C1 : numericalSuzukiC1 ≤ (towerH : ℝ)^6 := by
     (max_le (hStrict.trans h46) (max_le (hEven.trans h46) hII)))
 
 #print axioms tower_transport
+/-- A logarithmic cap for the common threshold envelope. -/
+theorem towerH_log_six_cap : Real.log ((towerH : ℝ)^6) ≤ Real.exp (10^15 : ℝ) := by
+  have h3 : Real.log (3 : ℝ) ≤ 2 := by linarith only [Real.log_le_sub_one_of_pos (by norm_num : (0 : ℝ)<3)]
+  have hlogU : Real.log (towerU : ℝ) ≤ 2*(10^12 : ℝ) := by
+    rw [towerU,Nat.cast_pow,Nat.cast_ofNat,Real.log_pow,towerSeed_eq]
+    norm_num only [Nat.cast_pow,Nat.cast_ofNat]
+    nlinarith only [h3]
+  have hU100 : (towerU : ℝ)^100 ≤ Real.exp (2*(10^14 : ℝ)) := by
+    apply (Real.log_le_iff_le_exp (pow_pos towerU_pos 100)).mp
+    rw [Real.log_pow]
+    norm_num only [Nat.cast_ofNat]
+    nlinarith only [hlogU]
+  have hlogH : Real.log ((towerH : ℝ)^6) = 6*(towerU : ℝ)^100*Real.log 3 := by
+    rw [Real.log_pow,towerH,Nat.cast_pow,Nat.cast_ofNat,Real.log_pow]
+    push_cast
+    ring
+  have hmain : Real.log ((towerH : ℝ)^6) ≤ Real.exp (10^15 : ℝ) := by
+    calc
+      _ = 6*(towerU : ℝ)^100*Real.log 3 := hlogH
+      _ ≤ 12*(towerU : ℝ)^100 := by
+        have h := mul_le_mul_of_nonneg_left h3 (show (0 : ℝ) ≤ 6*(towerU : ℝ)^100 by positivity)
+        nlinarith only [h]
+      _ ≤ 12*Real.exp (2*(10^14 : ℝ)) := mul_le_mul_of_nonneg_left hU100 (by norm_num)
+      _ ≤ Real.exp 12*Real.exp (2*(10^14 : ℝ)) := mul_le_mul_of_nonneg_right
+        (by linarith only [Real.add_one_le_exp (12 : ℝ)] : (12 : ℝ) ≤ Real.exp 12) (Real.exp_pos _).le
+      _ = Real.exp (12+2*(10^14 : ℝ)) := by rw [Real.exp_add]
+      _ ≤ _ := Real.exp_le_exp.mpr (by norm_num)
+  exact hmain
 #print axioms tower_numerical_C1
+#print axioms towerH_log_six_cap
 end ChenEffective

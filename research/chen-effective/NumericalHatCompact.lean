@@ -78,6 +78,44 @@ theorem numerical_weighted_hat_initial {H : Section13HatLayers}
         norm_num at hb ⊢
         exact hb
 
+/-- Two half-steps suffice on [2,4]; no eight-step compact floor is needed. -/
+theorem numerical_hat_compact_four {H : Section13HatLayers}
+    (hH : Section13HatContract H 2) (sign : ErrorSign) {s : ℝ}
+    (hs2 : 2 ≤ s) (hs4 : s ≤ 4) : (1/12800 : ℝ) ≤ H.T sign s := by
+  have hfirst (sgn : ErrorSign) (u : ℝ) (hu2 : 2 ≤ u) (hu : u ≤ 7/2) :
+      (1/80 : ℝ) ≤ weightedHat H sgn u := by
+    by_cases hu3 : u ≤ 3
+    · exact (by norm_num : (1/80 : ℝ) ≤ 1/8).trans
+        (numerical_weighted_hat_initial hH sgn hu2 hu3)
+    · have hgt : 3 < u := lt_of_not_ge hu3
+      have hthreshold : 2+sgn.epsilon < u := by
+        cases sgn <;> simp only [ErrorSign.epsilon] <;> linarith only [hgt]
+      have hh := numerical_hat_half_step hH sgn (M := 4) (b := 1/8)
+        hthreshold (by linarith only [hgt]) (by linarith only [hu]) (by
+          intro v hv
+          exact numerical_weighted_hat_initial hH sgn.opposite
+            (by linarith only [hv.1,hgt]) (by linarith only [hv.2,hu]))
+      norm_num at hh
+      exact hh
+  have hw : (1/800 : ℝ) ≤ weightedHat H sign s := by
+    by_cases hs : s ≤ 7/2
+    · exact (by norm_num : (1/800 : ℝ) ≤ 1/80).trans (hfirst sign s hs2 hs)
+    · have hgt : 7/2 < s := lt_of_not_ge hs
+      have hthreshold : 2+sign.epsilon < s := by
+        cases sign <;> simp only [ErrorSign.epsilon] <;> linarith only [hgt]
+      have hh := numerical_hat_half_step hH sign (M := 4) (b := 1/80)
+        hthreshold (by linarith only [hgt]) hs4 (by
+          intro u hu
+          exact hfirst sign.opposite u (by linarith only [hu.1,hgt])
+            (by linarith only [hu.2,hs4]))
+      norm_num at hh
+      exact hh
+  have hT0 := (hH.positive sign s (by linarith only [hs2])).le
+  have hsSq : s^2 ≤ (4 : ℝ)^2 := pow_le_pow_left₀ (by linarith only [hs2]) hs4 2
+  have hh := mul_le_mul_of_nonneg_right hsSq hT0
+  dsimp [weightedHat] at hw
+  norm_num only [Nat.reducePow] at hh
+  nlinarith only [hw,hh]
 noncomputable def compactHatLower (m : ℕ) : ℝ :=
   ((1 / 8 : ℝ) * (1 / (2 * ((m : ℝ) + 1))) ^ (2 * m)) / (m : ℝ) ^ (2 : ℕ)
 
