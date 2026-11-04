@@ -1250,6 +1250,53 @@ the proof dependency traversal passes for 82,017 constants. The original
 statement comparisons, exact final four-axiom whitelist, and elementary
 Mertens audit still pass. The new local bounds use only the standard axioms.
 
+## Polynomial correction: verified transport and bounded branch
+
+Eight `NumericalPolynomial*.lean` modules replace the flat local error by a
+profile that retains decay in the internal coordinate. They prove:
+
+- `x^4 * suzukiActualT S n q p <= 256 * R(A,K)^17`, uniformly in depth `n`,
+  for `x >= 2`, `p = ceil(q^(1/x))`, and `log q <= A`. The factorial estimate
+  sums a weighted tail; no compact hat minimum is used.
+- The unperturbed correction is `P(D,s) = (log D)^(-5/8)/s^4`. For actual
+  natural ceiling quotients, its normalized inherited prime sum is at most
+  `(11/12)*P(D,s)` when `s >= 16`. This includes the discrete local-product
+  endpoint error, under the numerical gate `288*K^2 <= log w`.
+- On the cubic Case-II carrier, the actual inherited sum is at most
+  `(log D)^(-5/8)/(10*s)`. This is a depth-independent transfer bound, not a
+  contraction on the odd low strip. The proofs retain the actual ceiling
+  quotient and Euler-product suffix ratios.
+- On the compact Case-I strip the coarse kernel costs at most `3/8`.
+  With `b = exp(-20000)`, the correction can be charged to `1/(100*sigma)`
+  of the hat budget on `[2,16]`, using the fixed floor `exp(-12288)`.
+- The gates are numerical: `log D >= logPowerCutoff 32` implies
+  `sigma(D)*(log D)^(-1/8) <= 1`. With `K >= 2` and `K^7 <= log D`, it also
+  implies `288*K^2 <= log(D^(1/sigma(D)))`. No eventual threshold is selected.
+- The bounded-level mixed Claim-14.5 scale has a polynomial coefficient
+  `1792*R(A,K)^18*max(1,A)^4/b`. For the current Chen separator and local
+  product constant, that coefficient is bounded by `exp(10^45)`.
+
+The mixed scale is the old Claim-14.5 scale plus `b` times the polynomial
+correction scale. The new term is **not** multiplied by the old perturbation
+factor, which would invalidate the polynomial tail integral.
+
+The full mixed-error induction is still unfinished. In particular, the
+Case-I strict and even-endpoint producers and the Case-II final assembly must
+be rethreaded with this invariant and the compact-strip payment, preserving
+enough of their contraction gap. Per-step depth-independent estimates do not
+alone prove a bound on the accumulated stopping tree. Only after that proof
+can the base and medium-prime densities use the single-exponential coefficient.
+The certified `nLower`, `N0`, and four-layer tower cap are unchanged here.
+
+All eight modules are included in the research build and in the standard-axiom
+and unsafe-dependency audit. No new dependency or OpenAI import is added.
+
+Validation: all eight modules compile with warnings treated as errors. The
+source audit passes for 683 research/project files, and the extended proof
+dependency traversal passes for 82,075 constants. The new polynomial bounds
+use only the three standard axioms. The original statement comparisons,
+final exact four-axiom whitelist, and elementary Mertens audit still pass.
+
 ## Reproduce
 
 From the checkout, in PowerShell:
@@ -1261,7 +1308,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the 152 research modules, in dependency order, treating warnings as errors,
+This checks only the 160 research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is

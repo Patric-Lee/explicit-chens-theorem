@@ -65,6 +65,9 @@ try {
         'NumericalMediumUpperDensity', 'NumericalMediumAggregate', 'NumericalChenCutoff',
         'NumericalTowerTools', 'NumericalTowerSource', 'NumericalTowerHeads',
         'NumericalTowerC1', 'NumericalC1SingleExponential', 'NumericalSmallQuotientChen',
+        'NumericalPolynomialTail', 'NumericalPolynomialKernel', 'NumericalPolynomialTransport',
+        'NumericalPolynomialMiddle', 'NumericalPolynomialCompact', 'NumericalPolynomialGate',
+        'NumericalPolynomialSmall', 'NumericalPolynomialChen',
         'NumericalTowerCoefficient', 'NumericalTowerFinite',
         'NumericalTowerThresholds', 'NumericalExplicitTower', 'NumericalChenCompatibility')
     if ($FromModule) {

@@ -1,6 +1,7 @@
 import NumericalChenCompatibility
 import NumericalC1SingleExponential
 import NumericalSmallQuotientChen
+import NumericalPolynomialChen
 -- Only this audit fixture imports the old proofs, to compare declaration types.
 import Goldbach.Theorem
 import Lean.Util.CollectAxioms
@@ -56,7 +57,20 @@ run_elab do
     ``ChenEffective.chenSmallQuotientCoefficient_cap,
     ``ChenEffective.chenSmallQuotientTerminalCoefficient_cap,
     ``ChenEffective.numerical_chen_small_quotient,
-    ``ChenEffective.numerical_chen_small_quotient_sum]
+    ``ChenEffective.numerical_chen_small_quotient_sum,
+    ``ChenEffective.numerical_actualT_polynomial_log_bound,
+    ``ChenEffective.polynomialCorrection_recursive,
+    ``ChenEffective.polynomialInheritedSum_high,
+    ``ChenEffective.polynomialInheritedSum_caseII,
+    ``ChenEffective.polynomial_compact_hat_floor,
+    ``ChenEffective.polynomial_compact_correction_payment,
+    ``ChenEffective.numerical_polynomial_transport_coarse,
+    ``ChenEffective.polynomial_sourceSigma_gate,
+    ``ChenEffective.polynomial_transport_level_gate,
+    ``ChenEffective.numerical_polynomial_terminal_bound,
+    ``ChenEffective.polynomialTerminalConstant_single_exp_cap,
+    ``ChenEffective.polynomialClaimConstant_single_exp_cap,
+    ``ChenEffective.numerical_chen_mixed_bounded]
   for n in #[``ChenEffective.numerical_mertens_all,
       ``ChenEffective.numerical_source_local_product,
       ``ChenEffective.numericalLocalProductK_eq,
@@ -70,6 +84,7 @@ run_elab do
       throwError "Unexpected elementary product axioms for {n}: {axs}"
   logInfo "Elementary Mertens, local-product, and improved C1 bounds use only standard axioms."
   logInfo "Absolute small-quotient and additive terminal bounds use only standard axioms."
+  logInfo "Polynomial correction, natural-ceiling Case-I/II transport, gates, and bounded mixed branch use only standard axioms."
   -- Independently traverse proof/type references: none of the old implicit
   -- theorem proofs may supply the numerical theorem or its compatibility bridges.
   let forbidden := #[``Goldbach.chen_theorem, ``Goldbach.representation_lower_bound,
