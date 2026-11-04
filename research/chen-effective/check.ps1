@@ -59,7 +59,10 @@ try {
         'NumericalPrimePairThreshold', 'NumericalPrimePairInterval', 'NumericalPrimePairGrid',
         'NumericalGenuineLiPointwise', 'NumericalGenuineLiSum',
         'NumericalSquareThresholdCap', 'NumericalNSquare',
-        'NumericalBaseDensity', 'NumericalBaseCandidates')
+        'NumericalBaseDensity', 'NumericalBaseCandidates',
+        'NumericalUniversalTail', 'NumericalSourceUpperMass', 'NumericalUpperFactor',
+        'NumericalMediumPrimeGrid', 'NumericalMediumPrimeSum', 'NumericalMediumPrimeShift',
+        'NumericalMediumUpperDensity', 'NumericalMediumAggregate', 'NumericalChenCutoff')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)
         if ($startIndex -lt 0) { throw "Unknown research module: $FromModule" }
