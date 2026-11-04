@@ -65,7 +65,7 @@ try {
         'NumericalMediumUpperDensity', 'NumericalMediumAggregate', 'NumericalChenCutoff',
         'NumericalTowerTools', 'NumericalTowerSource', 'NumericalTowerHeads',
         'NumericalTowerC1', 'NumericalTowerCoefficient', 'NumericalTowerFinite',
-        'NumericalTowerThresholds', 'NumericalExplicitTower')
+        'NumericalTowerThresholds', 'NumericalExplicitTower', 'NumericalChenCompatibility')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)
         if ($startIndex -lt 0) { throw "Unknown research module: $FromModule" }

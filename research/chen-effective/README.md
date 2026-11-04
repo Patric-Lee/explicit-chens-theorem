@@ -1084,6 +1084,38 @@ no further axiom, OpenAI import, or external dependency is introduced.
 Validation: `check.ps1 -FromModule NumericalTowerTools` checks all eight tower
 modules with warnings treated as errors, then runs the full import and
 local-axiom audit.
+## Original theorem compatibility and final audit
+
+`NumericalChenCompatibility.lean` derives `Goldbach.ChenTheorem`, the original
+internal existential statement using `MathlibNt.ChensTheorem.Semiprime`, and
+the original eventual `0.67` representation-count bound. All three proofs
+use the numerical theorem at the concrete witness `numericalN0`. The bridge
+imports only the independent public statement and almost-prime vocabulary,
+not the old implicit Chen proofs.
+
+The separate fixture `audit/AuditChen.lean` imports the old declarations only
+to check definitional equality of the new and old statement types. It checks
+all final numerical and compatibility theorems against the exact whitelist
+`propext`, `Classical.choice`, `Quot.sound`, `dirichlet_seven_eighths`; the
+threshold caps need only standard Lean axioms. It also traverses proof and
+type dependencies to reject any use of the original implicit theorem proofs.
+The traversal independently verifies the allowed axioms and rejects unsafe constants.
+Thus importing the old statements in the audit cannot hide circular reasoning.
+
+Run `./research/chen-effective/audit.ps1` for the compatibility and final audit,
+or add `-Rebuild` to recompile all 148 research modules first. The source audit
+covers all research modules and their locally imported project sources,
+ignoring comments/string literals, and rejects proof placeholders,
+`native_decide`, unsafe declarations, compiler bypass attributes/options, and every
+axiom declaration except the one existing Dirichlet axiom. The transitive
+axiom whitelist additionally checks proof dependencies in external libraries.
+No external dependencies or OpenAI imports are introduced.
+
+Final validation: all 148 research modules recompiled with warnings treated as
+errors and unchanged source hashes. The source scan passed for 671 files; the
+proof dependency walk passed for 81,818 constants. All four original statement
+comparisons and all seven exact final-theorem axiom checks passed.
+
 ## Reproduce
 
 From the checkout, in PowerShell:
@@ -1095,7 +1127,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the 147 research modules, in dependency order, treating warnings as errors,
+This checks only the 148 research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is
