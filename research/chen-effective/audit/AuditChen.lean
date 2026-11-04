@@ -1,5 +1,6 @@
 import NumericalChenCompatibility
 import NumericalC1SingleExponential
+import NumericalSmallQuotientChen
 -- Only this audit fixture imports the old proofs, to compare declaration types.
 import Goldbach.Theorem
 import Lean.Util.CollectAxioms
@@ -42,6 +43,20 @@ run_elab do
     let axs ← Lean.collectAxioms n
     unless axs.all (fun a => allowed.contains a && a != ``ChenEffective.dirichlet_seven_eighths) do
       throwError "Unexpected threshold axioms for {n}: {axs}"
+  let terminalBounds := #[
+    ``ChenEffective.numerical_actualT_le_exp_sourceL,
+    ``ChenEffective.numerical_actualT_absolute_log_bound,
+    ``ChenEffective.recursiveSmallMass_le_log,
+    ``ChenEffective.numerical_small_quotient_sum_bound,
+    ``ChenEffective.numerical_recursive_sum_split_absolute,
+    ``ChenEffective.recursive_log_half,
+    ``ChenEffective.recursiveSmallMass_eq_zero,
+    ``ChenEffective.smallQuotient_single_exp_cap,
+    ``ChenEffective.smallQuotient_terminal_single_exp_cap,
+    ``ChenEffective.chenSmallQuotientCoefficient_cap,
+    ``ChenEffective.chenSmallQuotientTerminalCoefficient_cap,
+    ``ChenEffective.numerical_chen_small_quotient,
+    ``ChenEffective.numerical_chen_small_quotient_sum]
   for n in #[``ChenEffective.numerical_mertens_all,
       ``ChenEffective.numerical_source_local_product,
       ``ChenEffective.numericalLocalProductK_eq,
@@ -49,11 +64,12 @@ run_elab do
       ``ChenEffective.numerical_Qhat_le_hat,
       ``ChenEffective.numerical_sharp_hat_profile,
       ``ChenEffective.caseBSourceC1_eq,
-      ``ChenEffective.numericalSuzukiC1_single_exp_cap] do
+      ``ChenEffective.numericalSuzukiC1_single_exp_cap] ++ terminalBounds do
     let axs ← Lean.collectAxioms n
     unless axs.all (fun a => allowed.contains a && a != ``ChenEffective.dirichlet_seven_eighths) do
       throwError "Unexpected elementary product axioms for {n}: {axs}"
   logInfo "Elementary Mertens, local-product, and improved C1 bounds use only standard axioms."
+  logInfo "Absolute small-quotient and additive terminal bounds use only standard axioms."
   -- Independently traverse proof/type references: none of the old implicit
   -- theorem proofs may supply the numerical theorem or its compatibility bridges.
   let forbidden := #[``Goldbach.chen_theorem, ``Goldbach.representation_lower_bound,
@@ -64,7 +80,7 @@ run_elab do
     let s := moduleName.toString
     if #["OAI", "ComparatorChallenges", "OpenAI"].any (fun p => s == p || s.startsWith (p ++ ".")) then
       throwError "Forbidden OpenAI import in audit environment: {moduleName}"
-  let mut todo := audited.push ``ChenEffective.numericalSuzukiC1_single_exp_cap
+  let mut todo := (audited ++ terminalBounds).push ``ChenEffective.numericalSuzukiC1_single_exp_cap
   let mut seen : NameSet := {}
   let mut proofAxioms : NameSet := {}
   while !todo.isEmpty do

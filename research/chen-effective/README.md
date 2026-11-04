@@ -1208,6 +1208,48 @@ unsafe-dependency audits passed, including the independent traversal of
 81,989 final proof dependencies. The source audit passed for 673 research/project
 files. The elementary Mertens audit still passes.
 No external dependencies or OpenAI imports were added.
+## Absolute small-quotient errors: verified local estimates
+
+`NumericalSmallQuotient.lean` bounds the entire actual finite parity sum by
+`exp(suzukiSourceL(p,K))`, using the sum of the factorial majorants directly.
+For every depth and `2 <= p <= q` with `log(q) <= A`, this proves
+
+```
+suzukiActualT S n q p <= R(A,K),
+R(A,K) = 2 * max(1,A) * (1+2*K).
+```
+
+No real-coordinate restriction or hat minimum enters this bound. The module
+splits the actual recursive prime sum at the natural quotient `ceil(D/p)`.
+Large quotients retain their induction estimates; the immediate small-quotient
+contribution is at most `R(A,K) * log(R(A+1,K))`. The supported-prime mass is
+estimated using the existing local product bound, without counting primes or
+quotients. For primes with `p^2 <= D`, the immediate small carrier is empty
+when `log(D) > 2*A`; this does not exclude terminals at later depths.
+
+`NumericalSmallQuotientChen.lean` specializes these statements to the literal
+Chen source family and `A = numericalSuzukiC1 * numericalLocalProductK^7`.
+The single terminal coefficient is bounded by `exp(10^42)`, and the entire
+immediate terminal sum is bounded by `exp(10^43)`. Both are kernel-verified
+single-exponential bounds with only the three standard axioms.
+
+These local estimates do **not** yet replace `fixedSuzukiCoefficient` in the
+all-depth induction. What remains is a depth-uniform bound on the propagated
+terminal error, including the odd low strip and Case-II recursion. Bounding
+one terminal sum does not establish that bound: simply paying the same error
+at every depth would lose uniformity. After that theorem, propagate the new
+error through the base lower and medium-prime bounds and final absorption.
+The certified `nLower`, `N0`, and four-layer tower cap are unchanged here.
+
+The new modules are part of the research build and the standard-axiom and
+unsafe-dependency audit. No dependency or OpenAI import is added.
+
+Validation: both new modules and the extended audit compile with warnings
+treated as errors. The source audit passes for 675 research/project files;
+the proof dependency traversal passes for 82,017 constants. The original
+statement comparisons, exact final four-axiom whitelist, and elementary
+Mertens audit still pass. The new local bounds use only the standard axioms.
+
 ## Reproduce
 
 From the checkout, in PowerShell:
@@ -1219,7 +1261,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the 150 research modules, in dependency order, treating warnings as errors,
+This checks only the 152 research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is

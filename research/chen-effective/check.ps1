@@ -31,7 +31,7 @@ try {
         'NumericalSuzukiNormalization', 'NumericalSuzukiLowStripScalar',
         'NumericalSuzukiCaseOne', 'SuzukiCoefficientAssembly',
         'NumericalHatCompact', 'NumericalHatLower', 'NumericalQuotientEnvelope',
-        'NumericalJointEnvelope', 'NumericalLogarithmicScalar',
+        'NumericalJointEnvelope', 'NumericalLogarithmicScalar', 'NumericalSmallQuotient',
         'NumericalCaseABounded', 'SuzukiFixedKAssembly',
         'NumericalRealLogBounds', 'NumericalC1Scalar', 'NumericalFiniteHat', 'NumericalC1Order',
         'NumericalHatComparison', 'NumericalReverseEnvelope', 'NumericalReverseRatio',
@@ -64,7 +64,8 @@ try {
         'NumericalMediumPrimeGrid', 'NumericalMediumPrimeSum', 'NumericalMediumPrimeShift',
         'NumericalMediumUpperDensity', 'NumericalMediumAggregate', 'NumericalChenCutoff',
         'NumericalTowerTools', 'NumericalTowerSource', 'NumericalTowerHeads',
-        'NumericalTowerC1', 'NumericalC1SingleExponential', 'NumericalTowerCoefficient', 'NumericalTowerFinite',
+        'NumericalTowerC1', 'NumericalC1SingleExponential', 'NumericalSmallQuotientChen',
+        'NumericalTowerCoefficient', 'NumericalTowerFinite',
         'NumericalTowerThresholds', 'NumericalExplicitTower', 'NumericalChenCompatibility')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)
