@@ -128,6 +128,33 @@ feasibility assertions are checked separately in Lean.
 
 Both density adapters are proved and audited; no density axiom remains.
 
+`BJSReciprocalIntervalBridge` proves the closed-left finite-interval transfer
+from actual reciprocal-prime prefixes. It approaches the lower endpoint
+from the left, so a prime equal to a is retained. In particular, it proves
+that the two signed half-log-squared Rosser-Schoenfeld prefix estimates
+imply the exact provisional interval statement, with the constant cancelling.
+It does NOT assert or assume those prefix estimates as new axioms.
+
+`BJSReciprocalLargeEndpoint` proves both the half-log-squared prefix error
+and the requested interval estimate for a>=3^8192, using the existing
+Dirichlet axiom only. Its proof retains the existing power-saving Mertens
+error, absorbs log(a)^2 with an explicit real-power bound, and pays the
+remaining scalar constant numerically. No implicit threshold is used.
+
+The last BJS axiom has NOT been removed. The remaining explicit obligations
+are the lower signed prefix estimate for 1<x<3^8192 and the upper signed
+prefix estimate for 286<=x<3^8192, relative to the canonical Mertens constant.
+`bjsStudy_interval_of_middle_prefix` proves that those two estimates would
+close the full statement. Neither premise has been discharged. This is a
+substantial analytic range, not a proposed brute-force computation. It
+includes the current pre-sieving endpoint 3^120, so the large-endpoint
+theorem does not replace the study's product input or improve its cutoff.
+
+The published source is Rosser-Schoenfeld (1962), Theorem 5, (3.17)-(3.18),
+https://denisevellachemla.eu/Rosser-Schoenfeld-1962.pdf. Its range proofs and
+numerical inputs are not supplied by merely citing the result. No external
+Lean modules, RH assumptions, or new dependencies were imported here.
+
 For the reciprocal interval input, derive the explicit prime estimates
 behind Lemma 21 or build a weaker sufficient certified profile. For U=10^9,
 use asymmetric endpoint estimates with explicit range bridges. Finite tables

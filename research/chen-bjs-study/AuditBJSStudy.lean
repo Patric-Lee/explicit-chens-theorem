@@ -4,6 +4,7 @@ import BJSStudyFiniteTail
 import BJSLayerQuadrature
 import BJSLayerTwoSharp
 import BJSSharpRecurrence
+import BJSReciprocalLargeEndpoint
 import Goldbach.Theorem
 import Lean.Util.CollectAxioms
 import Lean.Util.FoldConsts
@@ -44,6 +45,10 @@ run_elab do
       ``ChenEffective.bjsStudy_even_error_coefficient,
       ``ChenEffective.bjsStudy_odd_error_coefficient,
       ``ChenEffective.bjsStudy_profile_forcing_cap,
+      ``ChenEffective.bjsStudy_interval_prefix_disjoint,
+      ``ChenEffective.bjsStudy_interval_of_prefix,
+      ``ChenEffective.bjsStudy_interval_of_half_log_squared_prefix,
+      ``ChenEffective.bjsStudy_power_error_log_squared,
       ``ChenEffective.bjsStudy_mertens_inverse,
       ``ChenEffective.bjsStudyCap_preSieve_base_distribution,
       ``ChenEffective.bjsStudyCap_preSieve_varying_threshold_cap,``ChenEffective.bjsStudy_log_six_sqrt,
@@ -55,6 +60,15 @@ run_elab do
     let axs ← Lean.collectAxioms n
     unless axs.all standard.contains do throwError "Unproved supporting result: {n}: {axs}"
   logInfo "Elementary replacements, H=36 scalar feasibility and finite-tail machinery use only standard axioms."
+  let dirichletOnly := standard ++ #[``ChenEffective.dirichlet_seven_eighths]
+  for n in #[``ChenEffective.bjsStudy_interval_power,
+      ``ChenEffective.bjsStudy_reciprocal_prefix_large,
+      ``ChenEffective.bjsStudy_interval_large_endpoint,
+      ``ChenEffective.bjsStudy_interval_of_middle_prefix] do
+    let axs ← Lean.collectAxioms n
+    unless axs.size == dirichletOnly.size && axs.all dirichletOnly.contains do
+      throwError "Interval-tail result uses a provisional input or wrong axiom ledger: {n}: {axs}"
+  logInfo "Closed-left interval transfer and explicit large-endpoint proof audited independently of bjsStudy_interval. The full middle-range prefix estimates remain unproved."
   logInfo "Ordered-interval regression, exact layer-two grid certificate, sharp hat bounds and recurrence caps use only standard axioms. Both BJS density adapters and their complete analytic/discrete proof chain use only standard axioms. Only the ordered interval estimate remains provisional."
   let forbidden := #[``Goldbach.chen_theorem,
     ``MathlibNt.ChensTheorem.chens_theorem_unconditional,
