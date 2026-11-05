@@ -9,17 +9,23 @@ open scoped Classical
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 3000000
 
-noncomputable def qualitativeSieveError : ℝ := 1/10000000
+noncomputable def qualitativeSieveError : ℝ := 1/100000
 
 theorem qualitative_source_relative (N : ℕ) :
     HasRelativeSieveProduct (preSieveCounting (jurkatRichertSourceBoundingSieve N)
-      powerPresieveStart) qualitativeSieveError :=
-  restricted_source_relative N
+      budgetPresieveStart) qualitativeSieveError :=
+  by
+    apply product_profile_relative optimizedProductProfile
+    · intro p hp
+      exact (prime_dvd_jurkatRichertSourceSiftingProduct (Nat.prime_of_mem_primeFactors hp)).mp
+        (Nat.dvd_of_mem_primeFactors hp) |>.1
+    · intro p hp
+      exact AnalyticNumberTheory.Sieve.goldbachNu_apply_prime (Nat.prime_of_mem_primeFactors hp)
 
 theorem qualitative_conditioned_relative (N q : ℕ) :
     HasRelativeSieveProduct (preSieveCounting (jurkatRichertSourceConditionedBoundingSieve N q)
-      powerPresieveStart) qualitativeSieveError :=
-  restricted_conditioned_relative N q
+      budgetPresieveStart) qualitativeSieveError :=
+  qualitative_source_relative N
 
 /-- Exact rounded geometry for the contracted counting weights. -/
 theorem qualitative_goldbach_geometry (S : BoundingSieve) {X z s : ℝ}
@@ -28,11 +34,11 @@ theorem qualitative_goldbach_geometry (S : BoundingSieve) {X z s : ℝ}
     let D := qualitativeLevel S X
     let Z := ⌈(D : ℝ)^(1/s)⌉₊
     1 < D ∧ Z ≤ D ∧
-      (∀ p ∈ (preSieveCounting S powerPresieveStart).prodPrimes.primeFactors, p < Z) := by
-  let Q := smallSievePrimeProduct S powerPresieveStart
+      (∀ p ∈ (preSieveCounting S budgetPresieveStart).prodPrimes.primeFactors, p < Z) := by
+  let Q := smallSievePrimeProduct S budgetPresieveStart
   have hQ : (0 : ℝ) < Q := by
     exact_mod_cast Nat.pos_of_ne_zero
-      (S.prodPrimes_squarefree.squarefree_of_dvd (smallSievePrimeProduct_dvd S powerPresieveStart)).ne_zero
+      (S.prodPrimes_squarefree.squarefree_of_dvd (smallSievePrimeProduct_dvd S budgetPresieveStart)).ne_zero
   obtain ⟨hD,_,hroot,_⟩ := real_level_to_natCeil_geometry hz
     (div_pos hX (mul_pos (by norm_num) hQ)) hs hslo
   refine ⟨by dsimp [qualitativeLevel, Q] at hD ⊢; omega, ?_, ?_⟩
@@ -40,14 +46,14 @@ theorem qualitative_goldbach_geometry (S : BoundingSieve) {X z s : ℝ}
     exact Real.rpow_le_self_of_one_le (by exact_mod_cast (show 1 ≤ qualitativeLevel S X by dsimp [qualitativeLevel]; omega))
       ((div_le_one (by linarith only [hslo] : 0 < s)).mpr (by linarith only [hslo]))
   · intro p hp
-    have hp' : p ∈ (restrictSievePrimes S powerPresieveStart).prodPrimes.primeFactors := hp
+    have hp' : p ∈ (restrictSievePrimes S budgetPresieveStart).prodPrimes.primeFactors := hp
     rw [restrictSievePrimes_primeFactors] at hp'
     exact Nat.lt_ceil.mpr ((hcut p (mem_filter.mp hp').1).trans_lt hroot)
 
 theorem qualitative_remainder_base {N : ℕ} (hN : qualitativeGeometryThreshold ≤ N)
     (hz : 2 ≤ (N : ℝ)^(1/10 : ℝ)) :
     sieveRemainderBelow (jurkatRichertSourceBoundingSieve N)
-      (smallSievePrimeProduct (jurkatRichertSourceBoundingSieve N) powerPresieveStart *
+      (smallSievePrimeProduct (jurkatRichertSourceBoundingSieve N) budgetPresieveStart *
         qualitativeLevel (jurkatRichertSourceBoundingSieve N) ((N : ℝ)^(1/2-baseCandidateEpsilon))) ≤
     jurkatRichertSourceRemainderSum N baseCandidateEpsilon := by
   let S := jurkatRichertSourceBoundingSieve N
@@ -59,7 +65,7 @@ theorem qualitative_remainder_base {N : ℕ} (hN : qualitativeGeometryThreshold 
   have hshift := qualitative_ratio_shift S hN hX
   have hlogN : log (N : ℝ) ≠ 0 := by
     have hh := qualitative_log_budget hN
-    have hU : 0 < powerPresieveStart := by unfold powerPresieveStart; positivity
+    have hU : 0 < budgetPresieveStart := by unfold budgetPresieveStart; positivity
     nlinarith only [hh,hU]
   have heq : log ((N : ℝ)^(1/2-baseCandidateEpsilon))/log ((N : ℝ)^(1/10 : ℝ)) =
       5-10*baseCandidateEpsilon := by
@@ -73,7 +79,7 @@ theorem qualitative_remainder_base {N : ℕ} (hN : qualitativeGeometryThreshold 
   apply sum_le_sum_of_subset_of_nonneg
   · intro d hd
     refine mem_filter.mpr ⟨(mem_filter.mp hd).1, ?_⟩
-    have hdlt : (d : ℝ) < (smallSievePrimeProduct S powerPresieveStart *
+    have hdlt : (d : ℝ) < (smallSievePrimeProduct S budgetPresieveStart *
         qualitativeLevel S ((N : ℝ)^(1/2-baseCandidateEpsilon)) : ℕ) := by
       exact_mod_cast (mem_filter.mp hd).2
     exact hdlt.le.trans (by simpa only [Nat.cast_mul] using hQD)

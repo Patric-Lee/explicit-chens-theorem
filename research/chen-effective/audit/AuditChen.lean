@@ -35,6 +35,29 @@ run_elab do
   let allowed : Array Name := #[``propext, ``Classical.choice, ``Quot.sound,
     ``ChenEffective.dirichlet_seven_eighths]
   let specializedBounds := #[
+    ``ChenEffective.optimized_principal_prefix_power_bound,
+    ``ChenEffective.optimized_principal_pointwise_through,
+    ``ChenEffective.optimized_theta_power_error,
+    ``ChenEffective.optimized_mertens_power,
+    ``ChenEffective.optimized_goldbach_interval_power,
+    ``ChenEffective.sharp_kernel_even_sum_le,
+    ``ChenEffective.sharp_kernel_odd_sum_le,
+    ``ChenEffective.sharp_actual_source_parity_domination,
+    ``ChenEffective.sharp_sieveHat_lower_window,
+    ``ChenEffective.sharp_relative_lower_rosser_density,
+    ``ChenEffective.sharp_relative_upper_rosser_density,
+    ``ChenEffective.sharp_preSieveCounting_lower_bound,
+    ``ChenEffective.sharp_preSieveCounting_upper_bound,
+    ``ChenEffective.budget_mertens_factor_cap,
+    ``ChenEffective.chen_budget_weighted,
+    ``ChenEffective.chen_budget_count,
+    ``ChenEffective.chen_budget_existence,
+    ``ChenEffective.optimized_chen_budget_positive,
+    ``ChenEffective.budget_interval_product,
+    ``ChenEffective.budget_presieved_product,
+    ``ChenEffective.product_profile_relative,
+    ``ChenEffective.budget_logarithmic_level_ratio,
+    ``ChenEffective.budget_medium_reciprocal,
     ``ChenEffective.qualitative_mertens_product,
     ``ChenEffective.qualitative_mertens_inverse,
     ``ChenEffective.qualitative_ratio_shift,
@@ -97,7 +120,11 @@ run_elab do
     let axs ← Lean.collectAxioms n
     unless axs.all allowed.contains do
       throwError "Unexpected specialized sieve axioms for {n}: {axs}"
-  for n in #[``ChenEffective.presieve_log_cost, ``ChenEffective.specializedSieveError_certified,
+  for n in #[``ChenEffective.sharp_kernel_even_sum_le, ``ChenEffective.sharp_kernel_odd_sum_le,
+      ``ChenEffective.sharp_sieveHat_lower_window, ``ChenEffective.budget_mertens_factor_cap,
+      ``ChenEffective.chen_budget_weighted, ``ChenEffective.chen_budget_count,
+      ``ChenEffective.chen_budget_existence, ``ChenEffective.optimized_chen_budget_positive,
+      ``ChenEffective.budget_logarithmic_level_ratio, ``ChenEffective.presieve_log_cost, ``ChenEffective.specializedSieveError_certified,
       ``ChenEffective.sieveHatTail_contraction, ``ChenEffective.sieveHatTail_compact,
       ``ChenEffective.actual_suzuki_layer_decay, ``ChenEffective.sieve_relative_prime_sum,
       ``ChenEffective.kernelSieveError_sums, ``ChenEffective.actual_source_inner_transport,
@@ -106,6 +133,7 @@ run_elab do
     unless axs.all (fun a => allowed.contains a && a != ``ChenEffective.dirichlet_seven_eighths) do
       throwError "Unexpected scalar or primorial axiom for {n}: {axs}"
   logInfo "Exact pre-sieved counting weights, QD assembly, original Chen coefficients, and reduced cutoffs passed the axiom whitelist."
+  logInfo "Parameterized end-to-end budgets, optimized power 1/68, parity cap 4806, and sharper medium-prime bounds passed the whitelist."
   logInfo "Power-saving Euler products and coarse specialized recurrence passed the axiom whitelist."
   logInfo "Analytic kernels, actual source-layer induction, and uniform parity domination passed the axiom whitelist."
   let audited : Array Name := #[

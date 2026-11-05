@@ -1,4 +1,5 @@
 import QualitativeMedium
+import ChenBudgetMedium
 
 noncomputable section
 namespace ChenEffective
@@ -15,7 +16,7 @@ theorem qualitative_medium_prime_aggregate {N : ℕ}
     (hDist : varyingNumericalThreshold (120*mediumPrimeBudget) mediumPrimeBudget ≤ N)
     (hEven : Even N) :
     jurkatRichertSourceMediumPrimeAggregate N ≤
-      (jurkatRichertQ1MainCoefficient jurkatRichertK+1/2)*
+      (jurkatRichertQ1MainCoefficient jurkatRichertK+123/100)*
         (SingularSeries.liuSingularSeries N*N/log (N : ℝ)^2) := by
   have hr : 0 < mediumPrimeBudget := by norm_num [mediumPrimeBudget]
   have hPair : primePairThreshold ≤ N := (le_max_left _ _).trans hSum
@@ -25,17 +26,17 @@ theorem qualitative_medium_prime_aggregate {N : ℕ}
     AnalyticNumberTheory.Sieve.sieveProductPrimeFactors (jurkatRichertSourceBoundingSieve N)
   let P := ∑ q ∈ Q, jurkatRichertUpperLinearSieveFactor (jurkatRichertSourceUpperSieveRatio N q mediumPrimeEpsilon)/((q : ℝ)-1)
   let R := ∑ q ∈ Q, 1/((q : ℝ)-1)
-  let t : ℝ := 1/1000
+  let t : ℝ := 49/1000
   let u : ℝ := 1/(mediumPrimeBudget : ℝ)
   let B := jurkatRichertMertensFactor
   let J := mediumPrimeIntegral
   let M : ℝ := SingularSeries.liuSingularSeries N*N/Real.log (N : ℝ)^2
-  have ht : t=(1/1000 : ℝ) := rfl
+  have ht : t=(49/1000 : ℝ) := rfl
   have hu : u=(1/1000000000000 : ℝ) := by norm_num [u,mediumPrimeBudget]
   have ht0 : 0 ≤ t := by dsimp [t]; positivity
   have hJ0 : 0 ≤ J := numerical_medium_integral_caps.1
   have hJ120 : J ≤ 120 := numerical_medium_integral_caps.2
-  have hB20 : B ≤ 20 := numerical_base_factor_caps.2.2
+  have hB20 : B ≤ 25/2 := budget_mertens_factor_cap
   have hM0 : 0 ≤ M := by
     dsimp [M]
     exact div_nonneg (mul_nonneg (SingularSeries.liuSingularSeries_pos N).le (Nat.cast_nonneg N)) (sq_nonneg _)
@@ -51,7 +52,7 @@ theorem qualitative_medium_prime_aggregate {N : ℕ}
     have hh := numerical_source_mass_upper hr hMass hEven
     simpa only [D,B,M,u,div_eq_mul_inv,one_mul] using hh
   have hP : P ≤ J+1/10000000 := numerical_medium_prime_shifted hSum
-  have hR : R ≤ 22 := numerical_medium_prime_reciprocal hPair
+  have hR : R ≤ 2 := budget_medium_reciprocal hSum
   have hmain : (∑ q ∈ Q, (jurkatRichertSourceConditionedBoundingSieve N q).totalMass * ((jurkatRichertUpperLinearSieveFactor (jurkatRichertSourceUpperSieveRatio N q mediumPrimeEpsilon)+t)* AnalyticNumberTheory.Sieve.sieveProductPrimeFactors (jurkatRichertSourceConditionedBoundingSieve N q))) ≤ D*(P+t*R) := by
     apply le_of_eq
     rw [show D*(P+t*R)=D*P+(D*t)*R by ring]
@@ -68,20 +69,20 @@ theorem qualitative_medium_prime_aggregate {N : ℕ}
     have hh := preSieve_varying_distribution (120*mediumPrimeBudget) mediumPrimeBudget N
       (by norm_num [mediumPrimeBudget]) hr hDist hEven
     simpa only [mediumPrimeEpsilon,Nat.cast_mul,Nat.cast_ofNat,u,M,mul_div_assoc,mul_assoc] using hh
-  have hPR : P+t*R ≤ J+1/10000000+22*t := by
+  have hPR : P+t*R ≤ J+1/10000000+2*t := by
     have hh := mul_le_mul_of_nonneg_left hR ht0
     simpa only [mul_comm] using add_le_add hP hh
   have hscaled : (∑ q ∈ Q, (jurkatRichertSourceConditionedBoundingSieve N q).totalMass * ((jurkatRichertUpperLinearSieveFactor (jurkatRichertSourceUpperSieveRatio N q mediumPrimeEpsilon)+t)* AnalyticNumberTheory.Sieve.sieveProductPrimeFactors (jurkatRichertSourceConditionedBoundingSieve N q))) ≤
-      ((B+300*u)*(J+1/10000000+22*t))*M := by
+      ((B+300*u)*(J+1/10000000+2*t))*M := by
     calc
       _ ≤ D*(P+t*R) := hmain
-      _ ≤ D*(J+1/10000000+22*t) := mul_le_mul_of_nonneg_left hPR hD0
-      _ ≤ ((B+300*u)*M)*(J+1/10000000+22*t) :=
+      _ ≤ D*(J+1/10000000+2*t) := mul_le_mul_of_nonneg_left hPR hD0
+      _ ≤ ((B+300*u)*M)*(J+1/10000000+2*t) :=
         mul_le_mul_of_nonneg_right hD (by positivity)
       _ = _ := by ring
-  have hcoef : (B+300*u)*(J+1/10000000+22*t)+u ≤ jurkatRichertQ1MainCoefficient jurkatRichertK+1/2 := by
+  have hcoef : (B+300*u)*(J+1/10000000+2*t)+u ≤ jurkatRichertQ1MainCoefficient jurkatRichertK+123/100 := by
     rw [← numerical_medium_integral_coefficient,ht,hu]
-    change _ ≤ B*J+1/2
+    change _ ≤ B*J+123/100
     nlinarith only [hB20,hJ120]
   have hpay := mul_le_mul_of_nonneg_right hcoef hM0
   have hfinite : jurkatRichertSourceMediumPrimeAggregate N ≤

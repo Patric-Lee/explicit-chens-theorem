@@ -29,7 +29,7 @@ theorem qualitative_endpoint {N : ℕ} (hN : qualitativeGeometryThreshold ≤ N)
 accuracy in each individual sieve estimate. -/
 theorem qualitative_weighted_lower {N : ℕ} (hN : qualitativeGeometryThreshold ≤ N)
     (hEven : Even N) :
-    (2.3 : ℝ)*SingularSeries.liuSingularSeries N*N/log (N : ℝ)^2 ≤ jurkatRichertWeightedCount N := by
+    optimizedChenBudget.weighted*SingularSeries.liuSingularSeries N*N/log (N : ℝ)^2 ≤ jurkatRichertWeightedCount N := by
   have h20 : preSieveFiniteCap^20 ≤ N := qualitative_finite_cap.trans hN
   have h1 : preSieveFiniteCap ≤ N :=
     (show preSieveFiniteCap ≤ preSieveFiniteCap^20 from by
@@ -40,18 +40,7 @@ theorem qualitative_weighted_lower {N : ℕ} (hN : qualitativeGeometryThreshold 
   have hUpper := qualitative_medium_prime_aggregate hN (preSieve_prime_sum.trans h20)
     ((preSieve_upper_mass (by norm_num [mediumPrimeBudget])).trans h20)
     (preSieve_varying_threshold_cap.trans h1) hEven
-  have hMain := jurkatRichert_mainCoefficient_ge_twoPoint6408
-    jurkatRichertJ jurkatRichertK jurkatRichert_integralEstimate
   let M := SingularSeries.liuSingularSeries N*N/log (N : ℝ)^2
-  have hM : 0 ≤ M := by
-    dsimp [M]
-    exact div_nonneg (mul_nonneg (SingularSeries.liuSingularSeries_pos N).le (Nat.cast_nonneg N)) (sq_nonneg _)
-  have hMainM := mul_le_mul_of_nonneg_right hMain hM
-  have hSource : (2.30005 : ℝ)*M ≤ jurkatRichertSourceWeightedCount N := by
-    rw [jurkatRichertSourceWeightedCount_eq]
-    change (jurkatRichertBaseMainCoefficient jurkatRichertJ-1/40)*M ≤ _ at hBase
-    change _ ≤ (jurkatRichertQ1MainCoefficient jurkatRichertK+1/2)*M at hUpper
-    nlinarith only [hBase,hUpper,hMainM,hM]
   have hEnd := qualitative_endpoint hN
   have hbig : 2^110 < N := by unfold lowerEndpointThreshold at hEnd; omega
   have hb := jurkatRichertSourceWeightedCount_sub_boundary_le_distinct N hbig hEven
@@ -62,9 +51,13 @@ theorem qualitative_weighted_lower {N : ℕ} (hN : qualitativeGeometryThreshold 
     dsimp [M]
     ring
   have hn : 0 ≤ (N : ℝ)^(9/10 : ℝ) := Real.rpow_nonneg (Nat.cast_nonneg N) _
-  calc
-    _ = (2.3 : ℝ)*M := by dsimp [M]; ring
-    _ ≤ _ := by nlinarith only [hb,hp,he',hSource,hn]
+  have hboundary : jurkatRichertSourceWeightedCount N ≤ jurkatRichertWeightedCount N+
+      optimizedChenBudget.endpointLoss*M := by
+    norm_num only [optimizedChenBudget] at *
+    nlinarith only [hb,hp,he',hn]
+  have hh := chen_budget_weighted optimizedChenBudget hBase hUpper hboundary
+  convert hh using 1
+  ring
 
 #print axioms qualitative_weighted_lower
 end ChenEffective

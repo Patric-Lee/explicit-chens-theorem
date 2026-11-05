@@ -22,19 +22,19 @@ theorem qualitative_power_cap : 3^primePairPowerExponent ≤ qualitativeGeometry
   exact (preSieve_fixed_power hh).trans (hcap.trans qualitative_finite_cap)
 
 theorem qualitative_denominator_cap : qualitativeDenominatorThreshold ≤ qualitativeGeometryThreshold := by
-  have hM : qualitativeMertensEndpoint ≤ (3 : ℕ)^6000 :=
-    (le_of_eq qualitativeMertensEndpoint_eq).trans (qualitative_pow_mono 4096 6000 (by norm_num))
-  have h6 : logPowerCutoff 6 ≤ (3 : ℕ)^6000 := by
+  have hM : qualitativeMertensEndpoint ≤ (3 : ℕ)^2900 :=
+    (le_of_eq qualitativeMertensEndpoint_eq).trans (qualitative_pow_mono 2176 2900 (by norm_num))
+  have h6 : logPowerCutoff 6 ≤ (3 : ℕ)^2900 := by
     unfold logPowerCutoff
     exact qualitative_pow_mono _ _ (by norm_num)
-  have hE : (10 : ℕ)^80 ≤ (3 : ℕ)^6000 :=
-    (by norm_num : (10 : ℕ)^80 ≤ (3 : ℕ)^200).trans (qualitative_pow_mono 200 6000 (by norm_num))
+  have hE : (10 : ℕ)^80 ≤ (3 : ℕ)^2900 :=
+    (by norm_num : (10 : ℕ)^80 ≤ (3 : ℕ)^200).trans (qualitative_pow_mono 200 2900 (by norm_num))
   calc
     qualitativeDenominatorThreshold =
         max (3^(max qualitativeMertensEndpoint (logPowerCutoff 6))) (3^(10^80)) := by
       unfold qualitativeDenominatorThreshold qualitativeDivisorThreshold
       rfl
-    _ ≤ 3^(3^6000) := max_le
+    _ ≤ 3^(3^2900) := max_le
       (qualitative_pow_mono _ _ (max_le hM h6)) (qualitative_pow_mono _ _ hE)
     _ = qualitativeGeometryThreshold := qualitativeGeometryThreshold_eq.symm
 

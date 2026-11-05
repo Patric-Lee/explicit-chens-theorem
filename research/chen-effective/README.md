@@ -1,8 +1,8 @@
 # Effective Chen investigation
 
 Status: `QualitativeChen.lean` proves a separate qualitative Chen theorem at
-`qualitativeN0 = 3^(3^6000)`, corresponding to natural `log log N` about
-`6591.768`. Both original implicit existence statements now follow from this
+`qualitativeN0 = 3^(3^2900)`, corresponding to natural `log log N` about
+`3186.070`. Both original implicit existence statements follow from this
 positive-margin theorem. No analytic estimate remains as a hypothesis.
 
 The established 0.67 counting theorem is preserved at its current cutoff:
@@ -10,45 +10,41 @@ The established 0.67 counting theorem is preserved at its current cutoff:
 The older theorem names in `NumericalChenCutoff.lean` retain these values.
 All numerical results use the same single local Dirichlet seven-eighths axiom.
 
-## Separate qualitative existence branch
+## Parameterized qualitative existence branch
 
-`QualitativeChen.lean` supplies `qualitative_chen` with the exact cutoff
-`qualitativeN0 = 3^(3^6000)`, corresponding to natural `log log N` about
-`6591.768`. The two original implicit existence statements are now recovered
-from this new theorem in `NumericalChenCompatibility.lean`.
-The 0.67 representation-count theorem and its cutoff
-`N0 = 3^(3^4000000000000)` remain unchanged.
+`ChenBudget.lean` proves an end-to-end finite counting theorem with separate
+base, medium, endpoint and triple budgets. `ChenBudgetProducts.lean` exposes
+a proved prime-product profile. The selected parameters are instantiated by
+the actual lower and triple producers; the final theorem has only the
+explicit cutoff and parity hypotheses.
 
-The new proof uses a positive final margin rather than the 0.67 target:
-`W >= 2.3*M`, `T <= 3.94033*M + C*N/log^3 N`, and the final remainder is at
-most `M/2`. Hence the normalized margin is `0.079835 > 0`.
-The finite counting bridge is applied directly; the proof does not use the
-0.67 counting theorem or the old selected square threshold.
+The concrete budget gives `W >= 1.98575*M`,
+`T <= 3.94033*M + C*N/log^3 N`, and remainder at most `M/100`.
+The finite bridge `R >= W - T/2` leaves margin `0.010585 > 0`.
+The proof is independent of the 0.67 counting theorem and its old cutoff.
+`NumericalChenCompatibility.lean` recovers the two original implicit
+existence statements from this qualitative theorem.
 
-`QualitativeGeometry`, `QualitativeGoldbach`, `QualitativeBase`,
-`QualitativeMedium`, `QualitativeAggregate` and `QualitativeLower` use exact
-pre-sieving below `3^5760`, the relative product error `10^-7`, and density
-error budget `1/1000`. The base and medium-prime budgets are respectively
-`1/40` and `1/2`. Every mass, distribution, and endpoint threshold is paid
-by the explicit common cutoff.
+`OptimizedPrincipalPower`, `OptimizedPrincipalPNT`, `OptimizedMertensPower`
+and `OptimizedEulerProductPower` improve the principal power saving to
+`1/68` and propagate it through the actual prime product.
+`SharperSieveParity`, `SharperSieveDensity` and `SharperSieveAssembly`
+certify parity cap 4806 and retain the compensating hat factor.
+`ChenBudgetMedium` sharpens the medium reciprocal-prime sum from 22 to 2.
+The Mertens normalization factor is bounded by `25/2` instead of 20.
 
-`QualitativeMertens.lean` proves the coarse absolute Mertens product bound
-needed for the Selberg divisor estimates already at `3^4096`, by retaining
-the existing principal-PNT power saving. `QualitativeSelbergDivisors`,
-`QualitativeSelbergMoments` and `QualitativeSelbergDenominator` propagate it
-to the actual denominator. `QualitativeTriple` then proves the triple bound
-at the new common cutoff. This removes the old requirement to apply a
-logarithmic-error Mertens theorem at an endpoint comparable to `log N`.
+The qualitative lower bound now permits product error `10^-5`, with exact
+pre-sieving below `3^2788`. The coarse Mertens product needed for Selberg
+normalization holds from `3^2176`. The common cutoff is `3^(3^2900)`.
+An exact logarithmic-level ratio is formalized, but the concrete
+weighted-distribution producer retains its existing fixed power level.
 
-This is a first explicit reduction toward H=36, not a certificate at H=36.
-The remaining numerical obstacles and the exact scalar budget are recorded
-in `QualitativeBudget.md`. The single Dirichlet axiom, zero OpenAI imports,
-and absence of additional dependencies are retained.
-
-Validation: all 13 affected modules compile with warnings treated as errors.
-The extended audit traverses 82,250 proof/type dependencies, recovers all four
-original statement types, and verifies that the qualitative existence proofs
-use neither the 0.67 theorem nor the old selected numerical thresholds.
+This is a further certified reduction toward H=36. The independent
+obstacles and full scalar allocation are recorded in `QualitativeBudget.md`.
+The single local axiom, zero OpenAI imports and no new dependencies are
+retained. All 23 affected modules are checked with warnings as errors.
+The audit checks exact original statement types, transitive proof axioms,
+and independence from the old counting and implicit theorem proofs.
 
 ## Specialized sieve ingredients: power-saving product and coarse recurrence
 
@@ -1601,7 +1597,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the 222 research modules, in dependency order, treating warnings as errors,
+This checks only the 232 research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is

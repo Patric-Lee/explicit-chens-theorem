@@ -13,7 +13,7 @@ theorem qualitative_base_candidates {N : ℕ}
     (hMass : sourceMassThreshold baseCandidateBudget ≤ N)
     (hDist : baseDistributionNumericalThreshold (60*baseCandidateBudget) baseCandidateBudget ≤ N)
     (hEven : Even N) :
-    (jurkatRichertBaseMainCoefficient jurkatRichertJ-1/40)*
+    (jurkatRichertBaseMainCoefficient jurkatRichertJ-1/25)*
         (SingularSeries.liuSingularSeries N*N/log (N : ℝ)^2) ≤
       ((jurkatRichertSourceCandidates N).card : ℝ) := by
   obtain ⟨hN2,hz2⟩ := qualitative_endpoint_parameters hGeom
@@ -47,7 +47,7 @@ theorem qualitative_base_candidates {N : ℕ}
     (by linarith only [hs4] : 3/2 ≤ s) hcut
   have hmass0 : 0 ≤ S.totalMass :=
     LiuWeight.liuLogarithmicIntegral_nonneg (2/log 2) (by positivity) (by exact_mod_cast hN2)
-  have hfinite := preSieveCounting_lower_bound S powerPresieveStart hmass0
+  have hfinite := sharp_preSieveCounting_lower_bound S budgetPresieveStart hmass0
     (by norm_num [qualitativeSieveError]) (by norm_num [qualitativeSieveError])
     (qualitative_source_relative N) D Z hD hs4 hs5 rfl hZD hZcut
   have hrem0 := qualitative_remainder_base hGeom hz2
@@ -58,8 +58,9 @@ theorem qualitative_base_candidates {N : ℕ}
   let t : ℝ := 1/baseCandidateBudget
   let M : ℝ := SingularSeries.liuSingularSeries N*N/log (N : ℝ)^2
   have ht : t=(1/20000000 : ℝ) := by norm_num [t,baseCandidateBudget]
-  obtain ⟨hAlo,hAhi,hBhi⟩ := numerical_base_factor_caps
-  have hAt : 0 ≤ A-1/1000 := by dsimp [A]; linarith only [hAlo]
+  obtain ⟨hAlo,hAhi,_⟩ := numerical_base_factor_caps
+  have hBhi := budget_mertens_factor_cap
+  have hAt : 0 ≤ A-31/10000 := by dsimp [A]; linarith only [hAlo]
   have hM0 : 0 ≤ M := by
     dsimp [M]
     exact div_nonneg (mul_nonneg (SingularSeries.liuSingularSeries_pos N).le (Nat.cast_nonneg N)) (sq_nonneg _)
@@ -67,12 +68,18 @@ theorem qualitative_base_candidates {N : ℕ}
     unfold AnalyticNumberTheory.Sieve.sieveProductPrimeFactors
     exact prod_nonneg (fun p hp => (sub_pos.mpr (S.nu_lt_one_of_prime p
       (Nat.prime_of_mem_primeFactors hp) (Nat.dvd_of_mem_primeFactors hp))).le)
-  have hcoef0 : A-1/1000 ≤ dimensionOneLowerLinearSieveFactor s-6000*qualitativeSieveError := by
+  have hs45 : 9/2 ≤ s := by
+    norm_num [baseCandidateEpsilon,lowerSieveEpsilon,baseCandidateBudget] at hshift
+    linarith only [hshift.2]
+  have hhat := sharp_sieveHat_lower_window hs45
+  have hhatScaled := mul_le_mul_of_nonneg_left hhat
+    (show 0 ≤ 4806*qualitativeSieveError by norm_num [qualitativeSieveError])
+  have hcoef0 : A-31/10000 ≤ dimensionOneLowerLinearSieveFactor s-4806*qualitativeSieveError*exp 2*sieveHat s := by
     norm_num [baseCandidateEpsilon,lowerSieveEpsilon,baseCandidateBudget] at hshift
     dsimp only [A]
     norm_num only [qualitativeSieveError] at *
-    linarith only [hf,hshift.2]
-  have hcount : (A-1/1000)*(S.totalMass*AnalyticNumberTheory.Sieve.sieveProductPrimeFactors S)-
+    linarith only [hf,hshift.2,hhatScaled]
+  have hcount : (A-31/10000)*(S.totalMass*AnalyticNumberTheory.Sieve.sieveProductPrimeFactors S)-
       jurkatRichertSourceRemainderSum N baseCandidateEpsilon ≤ S.siftedSum := by
     have hh := mul_le_mul_of_nonneg_left hcoef0 (mul_nonneg hmass0 hV0)
     dsimp only [D,X,Z,s,z,S] at hfinite hrem0 hh ⊢
@@ -89,12 +96,12 @@ theorem qualitative_base_candidates {N : ℕ}
     ring
   have hpaid := mul_le_mul_of_nonneg_left hmass hAt
   have hab : A*B=jurkatRichertBaseMainCoefficient jurkatRichertJ := jurkatRichert_sieveFactor_mul_mertensFactor
-  have hcoef : jurkatRichertBaseMainCoefficient jurkatRichertJ-1/40 ≤ (A-1/1000)*(B-40*t)-t := by
+  have hcoef : jurkatRichertBaseMainCoefficient jurkatRichertJ-1/25 ≤ (A-31/10000)*(B-40*t)-t := by
     rw [← hab,ht]
     dsimp only [A,B] at *
     nlinarith only [hAhi,hBhi]
   have htarget := mul_le_mul_of_nonneg_right hcoef hM0
-  have hbound : (jurkatRichertBaseMainCoefficient jurkatRichertJ-1/40)*M ≤ S.siftedSum := by
+  have hbound : (jurkatRichertBaseMainCoefficient jurkatRichertJ-1/25)*M ≤ S.siftedSum := by
     nlinarith only [htarget,hpaid,hcount,hrem]
   rw [jurkatRichertSourceBoundingSieve_siftedSum_eq_card N] at hbound
   exact hbound

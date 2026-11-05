@@ -1,4 +1,4 @@
-import NumericalMertensPower
+import OptimizedMertensPower
 import NumericalSelbergDivisorProduct
 
 noncomputable section
@@ -9,9 +9,9 @@ set_option maxHeartbeats 3000000
 set_option maxRecDepth 4000
 set_option exponentiation.threshold 512
 
-private opaque qualitativeMertensCertificate : {n : ℕ // n=3^4096} := ⟨3^4096,rfl⟩
+private opaque qualitativeMertensCertificate : {n : ℕ // n=3^2176} := ⟨3^2176,rfl⟩
 def qualitativeMertensEndpoint : ℕ := qualitativeMertensCertificate.1
-theorem qualitativeMertensEndpoint_eq : qualitativeMertensEndpoint=3^4096 :=
+theorem qualitativeMertensEndpoint_eq : qualitativeMertensEndpoint=3^2176 :=
   qualitativeMertensCertificate.2
 
 private theorem qualitative_power_mono (a b : ℕ) (h : a ≤ b) : (3 : ℕ)^a ≤ 3^b :=
@@ -23,18 +23,18 @@ theorem qualitative_mertens_product {n : ℕ} (hn : qualitativeMertensEndpoint �
     |primeProduct n*log (n : ℝ)*exp eulerMascheroniConstant-1| ≤ 1/2 := by
   have hn' := hn
   rw [qualitativeMertensEndpoint_eq] at hn'
-  have hn32 : 3^32 ≤ n := (qualitative_power_mono 32 4096 (by norm_num)).trans hn'
+  have hn32 : 3^32 ≤ n := (qualitative_power_mono 32 2176 (by norm_num)).trans hn'
   have hn9 : 9 ≤ n := (by norm_num : 9 ≤ (3 : ℕ)^32).trans hn32
   have hn0 : (0 : ℝ) < n := by exact_mod_cast (show 0 < n by omega)
   have hl : 0 < log (n : ℝ) := log_pos (by exact_mod_cast (show 1 < n by omega))
-  have hm := numerical_mertens_power (show (9 : ℝ) ≤ n by exact_mod_cast hn9)
+  have hm := optimized_mertens_power (show (9 : ℝ) ≤ n by exact_mod_cast hn9)
   rw [Nat.floor_natCast] at hm
   have hc := logarithmicCorrection_tail_norm_le_div n (show 1 ≤ n by omega)
   rw [Real.norm_eq_abs] at hc
-  have hnR : (3 : ℝ)^(4096 : ℕ) ≤ n := by exact_mod_cast hn'
-  have hp : (n : ℝ)^(-1/128 : ℝ) ≤ ((3 : ℝ)^32)⁻¹ := by
-    have hh := rpow_le_rpow_of_nonpos (by positivity : (0 : ℝ) < (3 : ℝ)^(4096 : ℕ)) hnR
-      (by norm_num : (-1/128 : ℝ) ≤ 0)
+  have hnR : (3 : ℝ)^(2176 : ℕ) ≤ n := by exact_mod_cast hn'
+  have hp : (n : ℝ)^(-1/68 : ℝ) ≤ ((3 : ℝ)^32)⁻¹ := by
+    have hh := rpow_le_rpow_of_nonpos (by positivity : (0 : ℝ) < (3 : ℝ)^(2176 : ℕ)) hnR
+      (by norm_num : (-1/68 : ℝ) ≤ 0)
     rw [← rpow_natCast, ← rpow_mul (by norm_num : (0 : ℝ) ≤ 3)] at hh
     norm_num [rpow_neg] at hh
     rw [neg_div, rpow_neg (Nat.cast_nonneg n)]
@@ -66,7 +66,7 @@ theorem qualitative_mertens_inverse {n : ℕ} (hn : qualitativeMertensEndpoint �
   have hn' := hn
   rw [qualitativeMertensEndpoint_eq] at hn'
   have hn9 : 9 ≤ n := (show 9 ≤ (3 : ℕ)^2 by norm_num).trans
-    ((qualitative_power_mono 2 4096 (by norm_num)).trans hn')
+    ((qualitative_power_mono 2 2176 (by norm_num)).trans hn')
   have hl : 0 < log (n : ℝ) := log_pos (by exact_mod_cast (show 1 < n by omega))
   have hP := primeProduct_pos n
   have hlo := (abs_le.mp hh).1
