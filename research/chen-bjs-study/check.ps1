@@ -1,4 +1,4 @@
-param([string]$RepoRoot='', [string]$FromModule='BJSStudyInputs')
+param([string]$RepoRoot='', [string]$FromModule='BJSIntervalOrder')
 $ErrorActionPreference='Stop'
 & (Join-Path $PSScriptRoot 'source-audit.ps1')
 if(-not $RepoRoot){$RepoRoot=(Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..\..')).Path}
@@ -7,7 +7,7 @@ $production=Join-Path $RepoRoot '.lake\build\chen-effective'
 $previousLeanPath=$env:LEAN_PATH
 $env:LEAN_PATH=$build+';'+$production
 $lake=Join-Path $env:USERPROFILE '.elan\toolchains\leanprover--lean4---v4.33.0-rc1\bin\lake.exe'
-$modules=@('BJSStudyInputs','BJSStudyProducts','BJSStudyAssembly','BJSStudyFiniteCap','BJSStudyGeometry','BJSStudyGoldbach','BJSStudyBase','BJSStudyMedium','BJSStudyMediumReciprocal','BJSStudyAggregate','BJSStudyLower','BJSStudyElementaryMertens','BJSStudyMertens','BJSStudyLogGate','BJSStudySelbergDivisors','BJSStudySelbergMoments','BJSStudySelbergDenominator','BJSStudyTriple','BJSStudyChen','BJSStudyH36','BJSStudyFiniteTail','BJSStudyCompatibility','AuditBJSStudy')
+$modules=@('BJSIntervalOrder','BJSLayerQuadrature','BJSLayerTwo','BJSLayerTwoSharp','BJSSharpHat','BJSSharpRecurrence','BJSStudyInputs','BJSStudyProducts','BJSStudyAssembly','BJSStudyFiniteCap','BJSStudyGeometry','BJSStudyGoldbach','BJSStudyBase','BJSStudyMedium','BJSStudyMediumReciprocal','BJSStudyAggregate','BJSStudyLower','BJSStudyElementaryMertens','BJSStudyMertens','BJSStudyLogGate','BJSStudySelbergDivisors','BJSStudySelbergMoments','BJSStudySelbergDenominator','BJSStudyTriple','BJSStudyChen','BJSStudyH36','BJSStudyFiniteTail','BJSStudyCompatibility','AuditBJSStudy')
 $index=[Array]::IndexOf($modules,$FromModule)
 if($index -lt 0){throw "Unknown module: $FromModule"}
 New-Item -ItemType Directory -Force -Path $build | Out-Null

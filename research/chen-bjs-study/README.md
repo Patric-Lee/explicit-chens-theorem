@@ -44,7 +44,7 @@ All three declarations are in BJSStudyInputs.lean. Reference:
 https://arxiv.org/html/2207.09452v6
 
 1. `bjsStudy_interval`: the finite-subset consequence of BJS Lemma 21,
-   for a>1 and b>=286, with error 1/log(a)^2. Still unproved in Lean.
+   for 1<a<=b and b>=286, with error 1/log(a)^2. Still unproved in Lean.
 2. `bjsStudy_lower_density`: a project-weight adapter of Theorem 6,
    using Table 1 at epsilon=1/2000 and lower coefficient 110.
 3. `bjsStudy_upper_density`: the analogous upper adapter, rounding 109
@@ -59,6 +59,39 @@ in addition to Lean's three standard axioms. They must not be silently
 added to the production whitelist.
 
 ## Proved supporting results
+
+The original provisional interval declaration omitted a<=b. That version
+was false for reversed endpoints, even with an empty prime set. It has
+been corrected; the product proof already has the required order.
+`BJSIntervalOrder` proves an explicit counterexample to the unordered
+statement using only standard axioms. Earlier provisional axiom-ledger
+checks did not detect this statement error. The production theorem never
+used the provisional input.
+
+`BJSLayerQuadrature` proves upper Riemann sums for the actual normalized
+continuous layers, including the antitonicity needed for the finite-grid
+method. It does not yet certify the numerical layer table or remove either
+density assumption.
+
+The sharp-sieve implementation work is still incomplete:
+
+* `BJSLayerTwo` checks rational quadrature bounds at 2, 5/2 and 3 and a
+  complete second-layer hat envelope with coefficient 0.6.
+* `BJSLayerTwoSharp` refines that coefficient to 0.35 using 64 grid cells.
+  This is a proved bound on the actual continuous layer, not an assumed
+  scalar sequence. It is slightly weaker than BJS's tabulated 0.33.
+* `BJSSharpHat` improves the source boundary multiplier from 4 to 11/3
+  and retains the odd-parity tail multiplier 116/125 rather than 241/250.
+* `BJSSharpRecurrence` checks even/odd error multipliers 1931/2000 and
+  1859/2000, and the separate profile-forcing caps, at product error
+  epsilon<=1/4000. The target 110/2000 allows a parity sum of 220.
+
+Still required: certificates for the remaining early continuous layers,
+their analytic tail, the refined actual discrete source-layer induction
+(including rounded endpoints), both parity-sum certificates, and the two
+Rosser-density adapters. The corrected reciprocal-prime interval estimate
+also remains unproved. The three provisional assumptions are retained
+explicitly until those proofs exist; no improved cutoff is claimed here.
 
 The following use only standard axioms, with no temporary BJS assumption:
 

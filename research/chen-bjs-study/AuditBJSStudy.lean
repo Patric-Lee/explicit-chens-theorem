@@ -1,6 +1,9 @@
 import BJSStudyCompatibility
 import BJSStudyH36
 import BJSStudyFiniteTail
+import BJSLayerQuadrature
+import BJSLayerTwoSharp
+import BJSSharpRecurrence
 import Goldbach.Theorem
 import Lean.Util.CollectAxioms
 import Lean.Util.FoldConsts
@@ -29,6 +32,15 @@ run_elab do
     unless axs.size == allowed.size && axs.all allowed.contains do
       throwError "Wrong provisional axiom ledger for {n}: {axs}"
   for n in #[``ChenEffective.bjsStudy_elementary_constant,
+      ``ChenEffective.bjsStudy_reversed_interval_counterexample,
+      ``ChenEffective.bjsStudy_layer_integral_grid,
+      ``ChenEffective.bjsStudy_layer_successor_grid,
+      ``ChenEffective.bjsStudy_layer_two_hat_sharp,
+      ``ChenEffective.bjsStudy_source_hat_boundary,
+      ``ChenEffective.bjsStudy_hat_tail_odd,
+      ``ChenEffective.bjsStudy_even_error_coefficient,
+      ``ChenEffective.bjsStudy_odd_error_coefficient,
+      ``ChenEffective.bjsStudy_profile_forcing_cap,
       ``ChenEffective.bjsStudy_mertens_inverse,
       ``ChenEffective.bjsStudyCap_preSieve_base_distribution,
       ``ChenEffective.bjsStudyCap_preSieve_varying_threshold_cap,``ChenEffective.bjsStudy_log_six_sqrt,
@@ -40,6 +52,7 @@ run_elab do
     let axs ← Lean.collectAxioms n
     unless axs.all standard.contains do throwError "Unproved supporting result: {n}: {axs}"
   logInfo "Elementary replacements, H=36 scalar feasibility and finite-tail machinery use only standard axioms."
+  logInfo "Ordered-interval regression, exact layer-two grid certificate, sharp hat bounds and recurrence caps use only standard axioms. Three provisional analytic inputs remain unproved."
   let forbidden := #[``Goldbach.chen_theorem,
     ``MathlibNt.ChensTheorem.chens_theorem_unconditional,
     `ChenEffective.qualitative_chen,`ChenEffective.qualitative_weighted_lower,

@@ -70,6 +70,12 @@ Its margin floor is `0.055585 - numericalTripleErrorCap/log(N)`, recovering
 Dirichlet axiom and `bjsStudy_interval`, `bjsStudy_lower_density`,
 `bjsStudy_upper_density`, plus standard axioms.
 
+The provisional interval input now explicitly requires ordered endpoints
+a<=b. Its earlier declaration omitted that condition and was false for
+reversed endpoints; the dependent product proof already had the order.
+The study includes an axiom-free regression counterexample, and its
+dependent modules must be rebuilt with the corrected declaration.
+
 `ChenRouteMixing.lean` supplies an actual mixed route: BJS base/medium and
 the production triple producer. Its numerical margin equals the BJS
 route's margin, but its cutoff retains the production triple threshold.

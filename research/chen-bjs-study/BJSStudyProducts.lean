@@ -64,7 +64,7 @@ theorem bjsStudy_interval_product (s : Finset ℕ)
     rw [bjsStudyPresieveStart,log_pow] at h
     norm_num only [Nat.cast_ofNat] at h
     nlinarith only [h,one_le_log_three]
-  have hr := bjsStudy_interval s u z hu1 (hU.trans (hu.trans huz))
+  have hr := bjsStudy_interval s u z hu1 (hU.trans (hu.trans huz)) huz
     (fun p hp => ⟨(hs p hp).1,(hinterval p hp).1,(hinterval p hp).2.le⟩)
   let k : ℕ := 3^100
   let n : ℕ := s.sup id

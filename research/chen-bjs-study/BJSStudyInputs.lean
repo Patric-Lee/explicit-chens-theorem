@@ -1,4 +1,4 @@
-import ChenBudgetProducts
+import BJSIntervalOrder
 
 /-! PROVISIONAL: user-authorized BJS assumptions, excluded from production.
 The density declarations are adapters of Theorem 6 at epsilon=1/2000,
@@ -15,6 +15,7 @@ open MathlibNt.SieveTheory LinearSieve SwitchingPrinciple
 set_option backward.isDefEq.respectTransparency false
 
 axiom bjsStudy_interval (s : Finset ℕ) (a b : ℝ) (ha : 1 < a) (hb : 286 ≤ b)
+    (hab : a ≤ b)
     (hs : ∀ p ∈ s, p.Prime ∧ a ≤ (p : ℝ) ∧ (p : ℝ) ≤ b) :
     (∑ p ∈ s, 1/(p : ℝ)) ≤ log (log b/log a)+1/(log a)^2
 
