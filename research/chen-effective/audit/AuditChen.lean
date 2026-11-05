@@ -8,6 +8,7 @@ import NumericalEulerProductPower
 import NumericalSieveErrorRecurrence
 import NumericalPresievedSourceLayers
 import NumericalPreSieveCutoff
+import QualitativeChen
 -- Only this audit fixture imports the old proofs, to compare declaration types.
 import Goldbach.Theorem
 import Lean.Util.CollectAxioms
@@ -34,6 +35,19 @@ run_elab do
   let allowed : Array Name := #[``propext, ``Classical.choice, ``Quot.sound,
     ``ChenEffective.dirichlet_seven_eighths]
   let specializedBounds := #[
+    ``ChenEffective.qualitative_mertens_product,
+    ``ChenEffective.qualitative_mertens_inverse,
+    ``ChenEffective.qualitative_ratio_shift,
+    ``ChenEffective.qualitative_base_candidates,
+    ``ChenEffective.qualitative_conditioned_count,
+    ``ChenEffective.qualitative_medium_prime_aggregate,
+    ``ChenEffective.qualitative_weighted_lower,
+    ``ChenEffective.qualitative_selberg_divisor_product,
+    ``ChenEffective.qualitative_selberg_euler_numerator,
+    ``ChenEffective.qualitative_selberg_denominator,
+    ``ChenEffective.qualitative_triple_bound,
+    ``ChenEffective.qualitative_inverse_log_payment,
+    ``ChenEffective.qualitativeN0_eq,
     ``ChenEffective.preSieveCounting_siftedSum,
     ``ChenEffective.preSieveCounting_multSum,
     ``ChenEffective.preSieveCounting_rem,
@@ -95,6 +109,7 @@ run_elab do
   logInfo "Power-saving Euler products and coarse specialized recurrence passed the axiom whitelist."
   logInfo "Analytic kernels, actual source-layer induction, and uniform parity domination passed the axiom whitelist."
   let audited : Array Name := #[
+    ``ChenEffective.qualitative_chen,
     ``ChenEffective.numerical_chen,
     ``ChenEffective.numerical_chen_representation_count,
     ``ChenEffective.numerical_chen_above_tower,
@@ -214,6 +229,27 @@ run_elab do
     if let some value := ci.value? (allowOpaque := true) then
       routeTodo := routeTodo ++ value.getUsedConstants
   logInfo "The active numerical Chen and count proofs use the exact pre-sieved route; no obsolete C1 density or threshold is used."
+  let countRoute := #[``ChenEffective.numerical_chen_representation_count,
+    ``ChenEffective.explicit_representation_count, ``ChenEffective.explicit_chen_of_estimates,
+    ``ChenEffective.numerical_chen, ``ChenEffective.numerical_chen_from_lower,
+    ``ChenEffective.numerical_weighted_lower, ``ChenEffective.numerical_triple_bound,
+    ``ChenEffective.numerical_selberg_denominator_closed]
+  let mut qualitativeTodo := #[``ChenEffective.qualitative_chen,
+    ``ChenEffective.numerical_implies_original_chen,
+    ``ChenEffective.numerical_implies_original_internal_chen]
+  let mut qualitativeSeen : NameSet := {}
+  while !qualitativeTodo.isEmpty do
+    let n := qualitativeTodo.back!
+    qualitativeTodo := qualitativeTodo.pop
+    if qualitativeSeen.contains n then continue
+    qualitativeSeen := qualitativeSeen.insert n
+    if countRoute.contains n then
+      throwError "The qualitative existence route depends on the old counting or threshold route: {n}"
+    let some ci := env.find? n | throwError "Missing qualitative dependency: {n}"
+    qualitativeTodo := qualitativeTodo ++ ci.type.getUsedConstants
+    if let some value := ci.value? (allowOpaque := true) then
+      qualitativeTodo := qualitativeTodo ++ value.getUsedConstants
+  logInfo "Qualitative Chen and both original existence statements use the independent positive-margin proof; no 0.67 counting theorem or old threshold is used."
   for moduleName in env.header.moduleNames do
     let s := moduleName.toString
     if #["OAI", "ComparatorChallenges", "OpenAI"].any (fun p => s == p || s.startsWith (p ++ ".")) then

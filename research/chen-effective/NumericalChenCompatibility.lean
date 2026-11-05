@@ -1,4 +1,5 @@
 import NumericalExplicitTower
+import QualitativeChen
 import Goldbach.Statement
 import MathlibNt.ChensTheorem
 
@@ -13,15 +14,15 @@ open Filter
 
 /-- Recover the exact original public existential specification. -/
 theorem numerical_implies_original_chen : Goldbach.ChenTheorem :=
-  ⟨numericalN0, fun _ hN hEven => numerical_chen_above_tower hN hEven⟩
+  ⟨qualitativeN0, fun _ hN hEven => qualitative_chen hN hEven⟩
 
 /-- Recover the original internal statement, using its existing Semiprime predicate. -/
 theorem numerical_implies_original_internal_chen :
     ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N → Even N →
       ∃ p q : ℕ, p.Prime ∧ MathlibNt.ChensTheorem.Semiprime q ∧ N=p+q := by
-  refine ⟨numericalN0, ?_⟩
+  refine ⟨qualitativeN0, ?_⟩
   intro N hN hEven
-  obtain ⟨p,q,hp,hq,hsum⟩ := numerical_chen_above_tower hN hEven
+  obtain ⟨p,q,hp,hq,hsum⟩ := qualitative_chen hN hEven
   exact ⟨p,q,hp,MathlibNt.ChensTheorem.semiprime_iff.mpr hq,hsum⟩
 
 /-- Recover the original eventual quantitative lower bound for the same count. -/

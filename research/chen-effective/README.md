@@ -1,17 +1,54 @@
 # Effective Chen investigation
 
-Status: the actual medium-prime aggregate upper estimate, the weighted lower
-estimate, and the square/triple estimate are proved at closed numerical
-cutoffs. **A closed numerical Chen threshold is now proved under the single
-local Dirichlet seven-eighths axiom.** `NumericalChenCutoff.lean` supplies
-`numerical_chen` and the quantitative representation-count theorem. There
-are no remaining analytic estimates as hypotheses of these final theorems.
-The active cutoffs are now `nLower = 3^(3^20000)` and
-`N0 = nSquare = 3^(3^4000000000000)`. These are exact equalities,
-proved in `NumericalMediumAggregate.lean` and `NumericalChenCutoff.lean`.
-The earlier common cap in `NumericalDoubleExponential.lean` remains a valid coarse bound.
-The threshold is an explicit formula built from the numerical constants
-below; no unspecified or chosen analytic threshold occurs in it.
+Status: `QualitativeChen.lean` proves a separate qualitative Chen theorem at
+`qualitativeN0 = 3^(3^6000)`, corresponding to natural `log log N` about
+`6591.768`. Both original implicit existence statements now follow from this
+positive-margin theorem. No analytic estimate remains as a hypothesis.
+
+The established 0.67 counting theorem is preserved at its current cutoff:
+`nLower = 3^(3^20000)` and `N0 = nSquare = 3^(3^4000000000000)`.
+The older theorem names in `NumericalChenCutoff.lean` retain these values.
+All numerical results use the same single local Dirichlet seven-eighths axiom.
+
+## Separate qualitative existence branch
+
+`QualitativeChen.lean` supplies `qualitative_chen` with the exact cutoff
+`qualitativeN0 = 3^(3^6000)`, corresponding to natural `log log N` about
+`6591.768`. The two original implicit existence statements are now recovered
+from this new theorem in `NumericalChenCompatibility.lean`.
+The 0.67 representation-count theorem and its cutoff
+`N0 = 3^(3^4000000000000)` remain unchanged.
+
+The new proof uses a positive final margin rather than the 0.67 target:
+`W >= 2.3*M`, `T <= 3.94033*M + C*N/log^3 N`, and the final remainder is at
+most `M/2`. Hence the normalized margin is `0.079835 > 0`.
+The finite counting bridge is applied directly; the proof does not use the
+0.67 counting theorem or the old selected square threshold.
+
+`QualitativeGeometry`, `QualitativeGoldbach`, `QualitativeBase`,
+`QualitativeMedium`, `QualitativeAggregate` and `QualitativeLower` use exact
+pre-sieving below `3^5760`, the relative product error `10^-7`, and density
+error budget `1/1000`. The base and medium-prime budgets are respectively
+`1/40` and `1/2`. Every mass, distribution, and endpoint threshold is paid
+by the explicit common cutoff.
+
+`QualitativeMertens.lean` proves the coarse absolute Mertens product bound
+needed for the Selberg divisor estimates already at `3^4096`, by retaining
+the existing principal-PNT power saving. `QualitativeSelbergDivisors`,
+`QualitativeSelbergMoments` and `QualitativeSelbergDenominator` propagate it
+to the actual denominator. `QualitativeTriple` then proves the triple bound
+at the new common cutoff. This removes the old requirement to apply a
+logarithmic-error Mertens theorem at an endpoint comparable to `log N`.
+
+This is a first explicit reduction toward H=36, not a certificate at H=36.
+The remaining numerical obstacles and the exact scalar budget are recorded
+in `QualitativeBudget.md`. The single Dirichlet axiom, zero OpenAI imports,
+and absence of additional dependencies are retained.
+
+Validation: all 13 affected modules compile with warnings treated as errors.
+The extended audit traverses 82,250 proof/type dependencies, recovers all four
+original statement types, and verifies that the qualitative existence proofs
+use neither the 0.67 theorem nor the old selected numerical thresholds.
 
 ## Specialized sieve ingredients: power-saving product and coarse recurrence
 
@@ -1564,7 +1601,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the 210 research modules, in dependency order, treating warnings as errors,
+This checks only the 222 research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is

@@ -222,6 +222,18 @@ try {
         'NumericalTowerThresholds',
         'NumericalDoubleExponential',
         'NumericalExplicitTower',
+        'QualitativeGeometry',
+        'QualitativeGoldbach',
+        'QualitativeBase',
+        'QualitativeMedium',
+        'QualitativeAggregate',
+        'QualitativeLower',
+        'QualitativeMertens',
+        'QualitativeSelbergDivisors',
+        'QualitativeSelbergMoments',
+        'QualitativeSelbergDenominator',
+        'QualitativeTriple',
+        'QualitativeChen',
         'NumericalChenCompatibility')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)
