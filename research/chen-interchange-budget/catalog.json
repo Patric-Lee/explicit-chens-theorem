@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "model": "jurkat_richert_fixed_counts",
+  "normalization": "liu_singular_series_N_over_log_squared",
+  "mainWeightedFloor": 2.6408,
+  "normalizationFactorCap": 12.5,
+  "baseFactorCap": 6,
+  "baseMassBudget": 20000000,
+  "mediumMassBudget": 1000000000000,
+  "mediumReciprocalCap": 1.6,
+  "boundaryError": 5E-05,
+  "kernels": [
+    {
+      "id": "verified_4806",
+      "upperC": 4806,
+      "lowerC": 4806,
+      "epsilon": 1E-05,
+      "productTolerance": 1E-05,
+      "status": "proved",
+      "obligations": [],
+      "source": "SharperSieveDensity.lean"
+    },
+    {
+      "id": "bjs_110",
+      "upperC": 110,
+      "lowerC": 110,
+      "epsilon": 0.0005,
+      "productTolerance": 0.00025,
+      "status": "temporary_assumptions",
+      "obligations": [
+        "bjsStudy_lower_density",
+        "bjsStudy_upper_density"
+      ],
+      "source": "BJSStudyInputs.lean"
+    }
+  ],
+  "products": [
+    {
+      "id": "proved_power",
+      "kind": "power_profile",
+      "logU": 3062.93106080669,
+      "status": "proved",
+      "obligations": [],
+      "source": "ChenBudgetProducts.lean: U=3^2788"
+    },
+    {
+      "id": "bjs_interval",
+      "kind": "reciprocal_interval",
+      "logU": 131.83347464017316,
+      "status": "temporary_assumption",
+      "obligations": [
+        "bjsStudy_interval"
+      ],
+      "source": "BJSStudyProducts.lean: U=3^120"
+    },
+    {
+      "id": "repo_million_target",
+      "kind": "asymmetric_product_target",
+      "logU": 13.815510557964274,
+      "status": "unproved_all_interval_bridge",
+      "obligations": [
+        "asymmetric_reciprocal_input",
+        "small_and_intermediate_endpoint_bridge"
+      ],
+      "source": "External epsJ profile with an integer-square tail; NOT an imported theorem"
+    },
+    {
+      "id": "repo_1500_target",
+      "kind": "asymmetric_product_target",
+      "logU": 7.313220387090301,
+      "primeSquareBound": 7.964571E-05,
+      "status": "external_certificate_not_ported_and_bridge_missing",
+      "obligations": [
+        "port_prime_square_certificate",
+        "asymmetric_reciprocal_input",
+        "small_and_intermediate_endpoint_bridge"
+      ],
+      "source": "External Cert1575 prime-square bound; no GRH in this numeric certificate"
+    }
+  ],
+  "triples": [
+    {
+      "id": "current_selberg",
+      "model": "jurkat_richert_fixed_counts",
+      "normalization": "liu_singular_series_N_over_log_squared",
+      "main": 3.94033,
+      "errors": [
+        {
+          "name": "inverse_log_remainder",
+          "kind": "inverse_log",
+          "coefficient": 2E+40,
+          "logPower": 1
+        }
+      ],
+      "status": "proved_above_named_cutoff",
+      "proofGateH": 184.30085526714038,
+      "proofGateExact": "max(divisor_gate,3^(10^80)); see BJSStudyDenominatorThreshold",
+      "source": "BJSStudyTriple.lean; its triple estimate uses no temporary BJS assumptions",
+      "proofGates": [
+        {
+          "id": "elementary_mertens_divisor",
+          "H": 33.05241648765999,
+          "exact": "3^(3^30)",
+          "source": "BJSStudyMertens.lean"
+        }
+      ]
+    },
+    {
+      "id": "selberg_moment_research",
+      "model": "jurkat_richert_fixed_counts",
+      "normalization": "liu_singular_series_N_over_log_squared",
+      "main": null,
+      "errors": [],
+      "status": "missing_producer",
+      "obligations": [
+        "sharper_selberg_moments",
+        "derive_full_triple_bound"
+      ],
+      "source": "Research slot; no numerical main term or remainder is assumed"
+    },
+    {
+      "id": "bjs_switched_research",
+      "model": "bjs_switched_counts",
+      "normalization": "BJS_UN",
+      "main": null,
+      "errors": [],
+      "status": "missing_producer_and_adapter",
+      "obligations": [
+        "switched_bilinear_estimate_without_GRH",
+        "counting_model_and_normalization_adapter"
+      ],
+      "source": "Research slot; BJS/GRH coefficients cannot be transplanted to our counts"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "production_components",
+      "product": "proved_power",
+      "kernel": "verified_4806",
+      "triple": "current_selberg"
+    },
+    {
+      "id": "bjs_components",
+      "product": "bjs_interval",
+      "kernel": "bjs_110",
+      "triple": "current_selberg"
+    },
+    {
+      "id": "million_with_verified_sieve",
+      "product": "repo_million_target",
+      "kernel": "verified_4806",
+      "triple": "current_selberg"
+    },
+    {
+      "id": "small_endpoint_with_bjs_sieve",
+      "product": "repo_1500_target",
+      "kernel": "bjs_110",
+      "triple": "current_selberg"
+    },
+    {
+      "id": "improved_selberg_slot",
+      "product": "repo_million_target",
+      "kernel": "verified_4806",
+      "triple": "selberg_moment_research"
+    },
+    {
+      "id": "switched_triple_slot",
+      "product": "repo_1500_target",
+      "kernel": "bjs_110",
+      "triple": "bjs_switched_research"
+    }
+  ],
+  "formalRoutes": [
+    {
+      "id": "productionRoute",
+      "cutoff": "3^(3^2900)",
+      "H": 3186.069684965135,
+      "temporaryAssumptions": [],
+      "marginFloorAfterPayment": 0.010585
+    },
+    {
+      "id": "bjsRoute",
+      "cutoff": "3^(3^171)",
+      "H": 187.95674918986347,
+      "temporaryAssumptions": [
+        "bjsStudy_interval",
+        "bjsStudy_lower_density",
+        "bjsStudy_upper_density"
+      ],
+      "marginFloorAfterPayment": 0.050585
+    }
+  ],
+  "sharedProofGates": [
+    {
+      "id": "current_mass_distribution_cap",
+      "H": 187.29658754069436,
+      "exact": "3^(20*10^80)",
+      "source": "BJSStudyFiniteCap.lean"
+    }
+  ]
+}

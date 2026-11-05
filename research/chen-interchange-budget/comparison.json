@@ -1,0 +1,1551 @@
+{
+  "status": "Numerical exploration. Only the separately listed Lean route certificates prove a cutoff.",
+  "formalRoutes": [
+    {
+      "id": "productionRoute",
+      "cutoff": "3^(3^2900)",
+      "H": 3186.069684965135,
+      "temporaryAssumptions": [],
+      "marginFloorAfterPayment": 0.010585
+    },
+    {
+      "id": "bjsRoute",
+      "cutoff": "3^(3^171)",
+      "H": 187.95674918986347,
+      "temporaryAssumptions": [
+        "bjsStudy_interval",
+        "bjsStudy_lower_density",
+        "bjsStudy_upper_density"
+      ],
+      "marginFloorAfterPayment": 0.050585
+    }
+  ],
+  "rows": [
+    {
+      "H": 29.0,
+      "scenario": "production_components",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "proved_power",
+      "kernel": "verified_4806",
+      "triple": "current_selberg",
+      "productRelativeErrorBound": 7.1285615613073E-06,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": 3036.926793080244,
+        "value": null,
+        "display": "exp(3036.9268)",
+        "overflow": true,
+        "underflow": false
+      },
+      "sieveWindowValid": false,
+      "lowerErrors": {
+        "lowerDensityError": "Infinity",
+        "upperDensityError": "Infinity",
+        "lowerSieveKernel": 0.0030037500000000003,
+        "upperSieveKernel": 0.048060000000000005,
+        "lowerLevelRounding": "Infinity",
+        "upperLevelRounding": "Infinity",
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": "Infinity",
+        "baseCoefficient": "Infinity",
+        "mediumCoefficient": "Infinity",
+        "boundary": 5E-05
+      },
+      "weightedFloor": null,
+      "localMarginBeforeTripleRemainder": null,
+      "maximumTripleRemainder": null,
+      "maximumTripleTotalCoefficient": null,
+      "tripleRemainder": {
+        "logValue": 63.796550900321776,
+        "value": 5.087331294753864E+27,
+        "display": "5.0873313E+27",
+        "overflow": false,
+        "underflow": false
+      },
+      "fullMargin": null,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 46.669226521830026,
+        "value": 1.8543322569377726E+20,
+        "display": "1.8543323E+20",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [],
+      "missingEstimates": [
+        "certify_evaluated_allocations_in_Lean",
+        "current_selberg_moment_payment_fails",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "cutoff_not_paid:elementary_mertens_divisor",
+        "cutoff_not_paid:triple_producer",
+        "sieve_coordinate_outside_proved_window"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 29.0,
+      "scenario": "bjs_components",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "bjs_interval",
+      "kernel": "bjs_110",
+      "triple": "current_selberg",
+      "productRelativeErrorBound": 0.00011507436801253093,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": 105.82920691372715,
+        "value": 9.141986735749629E+45,
+        "display": "9.1419867E+45",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": false,
+      "lowerErrors": {
+        "lowerDensityError": 2.7425960207248885E+46,
+        "upperDensityError": 1.6455576124349332E+47,
+        "lowerSieveKernel": 0.0034375,
+        "upperSieveKernel": 0.055,
+        "lowerLevelRounding": 2.7425960207248885E+46,
+        "upperLevelRounding": 1.6455576124349332E+47,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 7.89867653968768E+37,
+        "baseCoefficient": 3.4282450259061106E+47,
+        "mediumCoefficient": 3.291115224948853E+48,
+        "boundary": 5E-05
+      },
+      "weightedFloor": -1.9883821150650377E+48,
+      "localMarginBeforeTripleRemainder": null,
+      "maximumTripleRemainder": null,
+      "maximumTripleTotalCoefficient": null,
+      "tripleRemainder": {
+        "logValue": 63.796550900321776,
+        "value": 5.087331294753864E+27,
+        "display": "5.0873313E+27",
+        "overflow": false,
+        "underflow": false
+      },
+      "fullMargin": null,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 46.669226521830026,
+        "value": 1.8543322569377726E+20,
+        "display": "1.8543323E+20",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [
+        "bjsStudy_interval",
+        "bjsStudy_lower_density",
+        "bjsStudy_upper_density"
+      ],
+      "missingEstimates": [
+        "certify_evaluated_allocations_in_Lean",
+        "current_selberg_moment_payment_fails",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "cutoff_not_paid:elementary_mertens_divisor",
+        "cutoff_not_paid:triple_producer",
+        "sieve_coordinate_outside_proved_window"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 29.0,
+      "scenario": "million_with_verified_sieve",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "repo_million_target",
+      "kernel": "verified_4806",
+      "triple": "current_selberg",
+      "productRelativeErrorBound": 6.230214004030012E-06,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": -12.188756821908203,
+        "value": 5.087333057888524E-06,
+        "display": "5.0873331E-06",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": true,
+      "lowerErrors": {
+        "lowerDensityError": 0.003019036999173666,
+        "upperDensityError": 0.048151571995042,
+        "lowerSieveKernel": 0.0030037500000000003,
+        "upperSieveKernel": 0.048060000000000005,
+        "lowerLevelRounding": 1.5286999173665575E-05,
+        "upperLevelRounding": 9.157199504199344E-05,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 3.602411278455762E-08,
+        "baseCoefficient": 0.037750012489670824,
+        "mediumCoefficient": 0.9630327259249528,
+        "boundary": 5E-05
+      },
+      "weightedFloor": 2.1214836245478526,
+      "localMarginBeforeTripleRemainder": 0.1513186245478526,
+      "maximumTripleRemainder": 0.3026372490957052,
+      "maximumTripleTotalCoefficient": 4.242967249095705,
+      "tripleRemainder": {
+        "logValue": 63.796550900321776,
+        "value": 5.087331294753864E+27,
+        "display": "5.0873313E+27",
+        "overflow": false,
+        "underflow": false
+      },
+      "fullMargin": -2.543665647376932E+27,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 46.669226521830026,
+        "value": 1.8543322569377726E+20,
+        "display": "1.8543323E+20",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [],
+      "missingEstimates": [
+        "asymmetric_reciprocal_input",
+        "certify_evaluated_allocations_in_Lean",
+        "current_selberg_moment_payment_fails",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "cutoff_not_paid:elementary_mertens_divisor",
+        "cutoff_not_paid:triple_producer",
+        "small_and_intermediate_endpoint_bridge"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 29.0,
+      "scenario": "small_endpoint_with_bjs_sieve",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "repo_1500_target",
+      "kernel": "bjs_110",
+      "triple": "current_selberg",
+      "productRelativeErrorBound": 0.0002395352935428305,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": -18.690816316983245,
+        "value": 7.632760076802531E-09,
+        "display": "7.6327601E-09",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": true,
+      "lowerErrors": {
+        "lowerDensityError": 0.0034375478982802306,
+        "upperDensityError": 0.05500013738968138,
+        "lowerSieveKernel": 0.0034375,
+        "upperSieveKernel": 0.055,
+        "lowerLevelRounding": 4.789828023040759E-08,
+        "upperLevelRounding": 1.3738968138244556E-07,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 3.6027400095947046E-08,
+        "baseCoefficient": 0.04298139872850288,
+        "mediumCoefficient": 1.100004033821028,
+        "boundary": 5E-05
+      },
+      "weightedFloor": 2.0477665843609834,
+      "localMarginBeforeTripleRemainder": 0.07760158436098341,
+      "maximumTripleRemainder": 0.15520316872196682,
+      "maximumTripleTotalCoefficient": 4.095533168721967,
+      "tripleRemainder": {
+        "logValue": 63.796550900321776,
+        "value": 5.087331294753864E+27,
+        "display": "5.0873313E+27",
+        "overflow": false,
+        "underflow": false
+      },
+      "fullMargin": -2.543665647376932E+27,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 46.669226521830026,
+        "value": 1.8543322569377726E+20,
+        "display": "1.8543323E+20",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [
+        "bjsStudy_lower_density",
+        "bjsStudy_upper_density"
+      ],
+      "missingEstimates": [
+        "asymmetric_reciprocal_input",
+        "certify_evaluated_allocations_in_Lean",
+        "current_selberg_moment_payment_fails",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "cutoff_not_paid:elementary_mertens_divisor",
+        "cutoff_not_paid:triple_producer",
+        "port_prime_square_certificate",
+        "small_and_intermediate_endpoint_bridge"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 29.0,
+      "scenario": "improved_selberg_slot",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "repo_million_target",
+      "kernel": "verified_4806",
+      "triple": "selberg_moment_research",
+      "productRelativeErrorBound": 6.230214004030012E-06,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": -12.188756821908203,
+        "value": 5.087333057888524E-06,
+        "display": "5.0873331E-06",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": true,
+      "lowerErrors": {
+        "lowerDensityError": 0.003019036999173666,
+        "upperDensityError": 0.048151571995042,
+        "lowerSieveKernel": 0.0030037500000000003,
+        "upperSieveKernel": 0.048060000000000005,
+        "lowerLevelRounding": 1.5286999173665575E-05,
+        "upperLevelRounding": 9.157199504199344E-05,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 3.602411278455762E-08,
+        "baseCoefficient": 0.037750012489670824,
+        "mediumCoefficient": 0.9630327259249528,
+        "boundary": 5E-05
+      },
+      "weightedFloor": 2.1214836245478526,
+      "localMarginBeforeTripleRemainder": null,
+      "maximumTripleRemainder": null,
+      "maximumTripleTotalCoefficient": 4.242967249095705,
+      "tripleRemainder": null,
+      "fullMargin": null,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 46.669226521830026,
+        "value": 1.8543322569377726E+20,
+        "display": "1.8543323E+20",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [],
+      "missingEstimates": [
+        "asymmetric_reciprocal_input",
+        "certify_evaluated_allocations_in_Lean",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "derive_full_triple_bound",
+        "sharper_selberg_moments",
+        "small_and_intermediate_endpoint_bridge"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 29.0,
+      "scenario": "switched_triple_slot",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "repo_1500_target",
+      "kernel": "bjs_110",
+      "triple": "bjs_switched_research",
+      "productRelativeErrorBound": 0.0002395352935428305,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": -18.690816316983245,
+        "value": 7.632760076802531E-09,
+        "display": "7.6327601E-09",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": true,
+      "lowerErrors": {
+        "lowerDensityError": 0.0034375478982802306,
+        "upperDensityError": 0.05500013738968138,
+        "lowerSieveKernel": 0.0034375,
+        "upperSieveKernel": 0.055,
+        "lowerLevelRounding": 4.789828023040759E-08,
+        "upperLevelRounding": 1.3738968138244556E-07,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 3.6027400095947046E-08,
+        "baseCoefficient": 0.04298139872850288,
+        "mediumCoefficient": 1.100004033821028,
+        "boundary": 5E-05
+      },
+      "weightedFloor": 2.0477665843609834,
+      "localMarginBeforeTripleRemainder": null,
+      "maximumTripleRemainder": null,
+      "maximumTripleTotalCoefficient": 4.095533168721967,
+      "tripleRemainder": null,
+      "fullMargin": null,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 46.669226521830026,
+        "value": 1.8543322569377726E+20,
+        "display": "1.8543323E+20",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [
+        "bjsStudy_lower_density",
+        "bjsStudy_upper_density"
+      ],
+      "missingEstimates": [
+        "asymmetric_reciprocal_input",
+        "certify_evaluated_allocations_in_Lean",
+        "counting_model_and_normalization_adapter",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "incompatible_counting_model_or_normalization",
+        "port_prime_square_certificate",
+        "small_and_intermediate_endpoint_bridge",
+        "switched_bilinear_estimate_without_GRH"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 25.0,
+      "scenario": "production_components",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "proved_power",
+      "kernel": "verified_4806",
+      "triple": "current_selberg",
+      "productRelativeErrorBound": 7.1285615613073E-06,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": 3040.926793080244,
+        "value": null,
+        "display": "exp(3040.9268)",
+        "overflow": true,
+        "underflow": false
+      },
+      "sieveWindowValid": false,
+      "lowerErrors": {
+        "lowerDensityError": "Infinity",
+        "upperDensityError": "Infinity",
+        "lowerSieveKernel": 0.0030037500000000003,
+        "upperSieveKernel": 0.048060000000000005,
+        "lowerLevelRounding": "Infinity",
+        "upperLevelRounding": "Infinity",
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": "Infinity",
+        "baseCoefficient": "Infinity",
+        "mediumCoefficient": "Infinity",
+        "boundary": 5E-05
+      },
+      "weightedFloor": null,
+      "localMarginBeforeTripleRemainder": null,
+      "maximumTripleRemainder": null,
+      "maximumTripleTotalCoefficient": null,
+      "tripleRemainder": {
+        "logValue": 67.79655090032178,
+        "value": 2.7775887729928137E+29,
+        "display": "2.7775888E+29",
+        "overflow": false,
+        "underflow": false
+      },
+      "fullMargin": null,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 49.81062145998598,
+        "value": 4.290204956089767E+21,
+        "display": "4.290205E+21",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [],
+      "missingEstimates": [
+        "certify_evaluated_allocations_in_Lean",
+        "current_selberg_moment_payment_fails",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "cutoff_not_paid:elementary_mertens_divisor",
+        "cutoff_not_paid:triple_producer",
+        "sieve_coordinate_outside_proved_window"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 25.0,
+      "scenario": "bjs_components",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "bjs_interval",
+      "kernel": "bjs_110",
+      "triple": "current_selberg",
+      "productRelativeErrorBound": 0.00011507436801253093,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": 109.82920691372715,
+        "value": 4.991355633994727E+47,
+        "display": "4.9913556E+47",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": false,
+      "lowerErrors": {
+        "lowerDensityError": 1.497406690198418E+48,
+        "upperDensityError": 8.984440141190508E+48,
+        "lowerSieveKernel": 0.0034375,
+        "upperSieveKernel": 0.055,
+        "lowerLevelRounding": 1.497406690198418E+48,
+        "upperLevelRounding": 8.984440141190508E+48,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 4.3125312677714445E+39,
+        "baseCoefficient": 1.8717583627480227E+49,
+        "mediumCoefficient": 1.7968880282812273E+50,
+        "boundary": 5E-05
+      },
+      "weightedFloor": -1.0856198504154159E+50,
+      "localMarginBeforeTripleRemainder": null,
+      "maximumTripleRemainder": null,
+      "maximumTripleTotalCoefficient": null,
+      "tripleRemainder": {
+        "logValue": 67.79655090032178,
+        "value": 2.7775887729928137E+29,
+        "display": "2.7775888E+29",
+        "overflow": false,
+        "underflow": false
+      },
+      "fullMargin": null,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 49.81062145998598,
+        "value": 4.290204956089767E+21,
+        "display": "4.290205E+21",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [
+        "bjsStudy_interval",
+        "bjsStudy_lower_density",
+        "bjsStudy_upper_density"
+      ],
+      "missingEstimates": [
+        "certify_evaluated_allocations_in_Lean",
+        "current_selberg_moment_payment_fails",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "cutoff_not_paid:elementary_mertens_divisor",
+        "cutoff_not_paid:triple_producer",
+        "sieve_coordinate_outside_proved_window"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 25.0,
+      "scenario": "million_with_verified_sieve",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "repo_million_target",
+      "kernel": "verified_4806",
+      "triple": "current_selberg",
+      "productRelativeErrorBound": 6.230214004030012E-06,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": -8.188756821908203,
+        "value": 0.0002777589735631721,
+        "display": "0.00027775897",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": true,
+      "lowerErrors": {
+        "lowerDensityError": 0.0038370519206895166,
+        "upperDensityError": 0.0530596615241371,
+        "lowerSieveKernel": 0.0030037500000000003,
+        "upperSieveKernel": 0.048060000000000005,
+        "lowerLevelRounding": 0.0008333019206895163,
+        "upperLevelRounding": 0.004999661524137098,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 3.602646866753159E-08,
+        "baseCoefficient": 0.047975199008618956,
+        "mediumCoefficient": 1.061194516509211,
+        "boundary": 5E-05
+      },
+      "weightedFloor": 2.0621775427367757,
+      "localMarginBeforeTripleRemainder": 0.09201254273677573,
+      "maximumTripleRemainder": 0.18402508547355145,
+      "maximumTripleTotalCoefficient": 4.124355085473551,
+      "tripleRemainder": {
+        "logValue": 67.79655090032178,
+        "value": 2.7775887729928137E+29,
+        "display": "2.7775888E+29",
+        "overflow": false,
+        "underflow": false
+      },
+      "fullMargin": -1.3887943864964069E+29,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 49.81062145998598,
+        "value": 4.290204956089767E+21,
+        "display": "4.290205E+21",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [],
+      "missingEstimates": [
+        "asymmetric_reciprocal_input",
+        "certify_evaluated_allocations_in_Lean",
+        "current_selberg_moment_payment_fails",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "cutoff_not_paid:elementary_mertens_divisor",
+        "cutoff_not_paid:triple_producer",
+        "small_and_intermediate_endpoint_bridge"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 25.0,
+      "scenario": "small_endpoint_with_bjs_sieve",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "repo_1500_target",
+      "kernel": "bjs_110",
+      "triple": "current_selberg",
+      "productRelativeErrorBound": 0.0002395352935428305,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": -14.690816316983245,
+        "value": 4.1673457984025815E-07,
+        "display": "4.1673458E-07",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": true,
+      "lowerErrors": {
+        "lowerDensityError": 0.0034387752037395207,
+        "upperDensityError": 0.055007501222437125,
+        "lowerSieveKernel": 0.0034375,
+        "upperSieveKernel": 0.055,
+        "lowerLevelRounding": 1.2752037395207745E-06,
+        "upperLevelRounding": 7.501222437124647E-06,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 3.602740363058677E-08,
+        "baseCoefficient": 0.04299674004674401,
+        "mediumCoefficient": 1.1001513104761464,
+        "boundary": 5E-05
+      },
+      "weightedFloor": 2.047677604715183,
+      "localMarginBeforeTripleRemainder": 0.07751260471518306,
+      "maximumTripleRemainder": 0.15502520943036613,
+      "maximumTripleTotalCoefficient": 4.095355209430366,
+      "tripleRemainder": {
+        "logValue": 67.79655090032178,
+        "value": 2.7775887729928137E+29,
+        "display": "2.7775888E+29",
+        "overflow": false,
+        "underflow": false
+      },
+      "fullMargin": -1.3887943864964069E+29,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 49.81062145998598,
+        "value": 4.290204956089767E+21,
+        "display": "4.290205E+21",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [
+        "bjsStudy_lower_density",
+        "bjsStudy_upper_density"
+      ],
+      "missingEstimates": [
+        "asymmetric_reciprocal_input",
+        "certify_evaluated_allocations_in_Lean",
+        "current_selberg_moment_payment_fails",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "cutoff_not_paid:elementary_mertens_divisor",
+        "cutoff_not_paid:triple_producer",
+        "port_prime_square_certificate",
+        "small_and_intermediate_endpoint_bridge"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 25.0,
+      "scenario": "improved_selberg_slot",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "repo_million_target",
+      "kernel": "verified_4806",
+      "triple": "selberg_moment_research",
+      "productRelativeErrorBound": 6.230214004030012E-06,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": -8.188756821908203,
+        "value": 0.0002777589735631721,
+        "display": "0.00027775897",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": true,
+      "lowerErrors": {
+        "lowerDensityError": 0.0038370519206895166,
+        "upperDensityError": 0.0530596615241371,
+        "lowerSieveKernel": 0.0030037500000000003,
+        "upperSieveKernel": 0.048060000000000005,
+        "lowerLevelRounding": 0.0008333019206895163,
+        "upperLevelRounding": 0.004999661524137098,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 3.602646866753159E-08,
+        "baseCoefficient": 0.047975199008618956,
+        "mediumCoefficient": 1.061194516509211,
+        "boundary": 5E-05
+      },
+      "weightedFloor": 2.0621775427367757,
+      "localMarginBeforeTripleRemainder": null,
+      "maximumTripleRemainder": null,
+      "maximumTripleTotalCoefficient": 4.124355085473551,
+      "tripleRemainder": null,
+      "fullMargin": null,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 49.81062145998598,
+        "value": 4.290204956089767E+21,
+        "display": "4.290205E+21",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [],
+      "missingEstimates": [
+        "asymmetric_reciprocal_input",
+        "certify_evaluated_allocations_in_Lean",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "derive_full_triple_bound",
+        "sharper_selberg_moments",
+        "small_and_intermediate_endpoint_bridge"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 25.0,
+      "scenario": "switched_triple_slot",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "repo_1500_target",
+      "kernel": "bjs_110",
+      "triple": "bjs_switched_research",
+      "productRelativeErrorBound": 0.0002395352935428305,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": -14.690816316983245,
+        "value": 4.1673457984025815E-07,
+        "display": "4.1673458E-07",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": true,
+      "lowerErrors": {
+        "lowerDensityError": 0.0034387752037395207,
+        "upperDensityError": 0.055007501222437125,
+        "lowerSieveKernel": 0.0034375,
+        "upperSieveKernel": 0.055,
+        "lowerLevelRounding": 1.2752037395207745E-06,
+        "upperLevelRounding": 7.501222437124647E-06,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 3.602740363058677E-08,
+        "baseCoefficient": 0.04299674004674401,
+        "mediumCoefficient": 1.1001513104761464,
+        "boundary": 5E-05
+      },
+      "weightedFloor": 2.047677604715183,
+      "localMarginBeforeTripleRemainder": null,
+      "maximumTripleRemainder": null,
+      "maximumTripleTotalCoefficient": 4.095355209430366,
+      "tripleRemainder": null,
+      "fullMargin": null,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 49.81062145998598,
+        "value": 4.290204956089767E+21,
+        "display": "4.290205E+21",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [
+        "bjsStudy_lower_density",
+        "bjsStudy_upper_density"
+      ],
+      "missingEstimates": [
+        "asymmetric_reciprocal_input",
+        "certify_evaluated_allocations_in_Lean",
+        "counting_model_and_normalization_adapter",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "incompatible_counting_model_or_normalization",
+        "port_prime_square_certificate",
+        "small_and_intermediate_endpoint_bridge",
+        "switched_bilinear_estimate_without_GRH"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 20.0,
+      "scenario": "production_components",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "proved_power",
+      "kernel": "verified_4806",
+      "triple": "current_selberg",
+      "productRelativeErrorBound": 7.1285615613073E-06,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": 3045.926793080244,
+        "value": null,
+        "display": "exp(3045.9268)",
+        "overflow": true,
+        "underflow": false
+      },
+      "sieveWindowValid": false,
+      "lowerErrors": {
+        "lowerDensityError": "Infinity",
+        "upperDensityError": "Infinity",
+        "lowerSieveKernel": 0.0030037500000000003,
+        "upperSieveKernel": 0.048060000000000005,
+        "lowerLevelRounding": "Infinity",
+        "upperLevelRounding": "Infinity",
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": "Infinity",
+        "baseCoefficient": "Infinity",
+        "mediumCoefficient": "Infinity",
+        "boundary": 5E-05
+      },
+      "weightedFloor": null,
+      "localMarginBeforeTripleRemainder": null,
+      "maximumTripleRemainder": null,
+      "maximumTripleTotalCoefficient": null,
+      "tripleRemainder": {
+        "logValue": 72.79655090032178,
+        "value": 4.12230724487713E+31,
+        "display": "4.1223072E+31",
+        "overflow": false,
+        "underflow": false
+      },
+      "fullMargin": null,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 53.52917685819763,
+        "value": 1.7677715098165288E+23,
+        "display": "1.7677715E+23",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [],
+      "missingEstimates": [
+        "certify_evaluated_allocations_in_Lean",
+        "current_selberg_moment_payment_fails",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "cutoff_not_paid:elementary_mertens_divisor",
+        "cutoff_not_paid:triple_producer",
+        "sieve_coordinate_outside_proved_window"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 20.0,
+      "scenario": "bjs_components",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "bjs_interval",
+      "kernel": "bjs_110",
+      "triple": "current_selberg",
+      "productRelativeErrorBound": 0.00011507436801253093,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": 114.82920691372715,
+        "value": 7.407828578456016E+49,
+        "display": "7.4078286E+49",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": false,
+      "lowerErrors": {
+        "lowerDensityError": 2.222348573536805E+50,
+        "upperDensityError": 1.3334091441220829E+51,
+        "lowerSieveKernel": 0.0034375,
+        "upperSieveKernel": 0.055,
+        "lowerLevelRounding": 2.222348573536805E+50,
+        "upperLevelRounding": 1.3334091441220829E+51,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 6.400363891785999E+41,
+        "baseCoefficient": 2.7779357169210064E+51,
+        "mediumCoefficient": 2.6668182883081695E+52,
+        "boundary": 5E-05
+      },
+      "weightedFloor": -1.6112027158461853E+52,
+      "localMarginBeforeTripleRemainder": null,
+      "maximumTripleRemainder": null,
+      "maximumTripleTotalCoefficient": null,
+      "tripleRemainder": {
+        "logValue": 72.79655090032178,
+        "value": 4.12230724487713E+31,
+        "display": "4.1223072E+31",
+        "overflow": false,
+        "underflow": false
+      },
+      "fullMargin": null,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 53.52917685819763,
+        "value": 1.7677715098165288E+23,
+        "display": "1.7677715E+23",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [
+        "bjsStudy_interval",
+        "bjsStudy_lower_density",
+        "bjsStudy_upper_density"
+      ],
+      "missingEstimates": [
+        "certify_evaluated_allocations_in_Lean",
+        "current_selberg_moment_payment_fails",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "cutoff_not_paid:elementary_mertens_divisor",
+        "cutoff_not_paid:triple_producer",
+        "sieve_coordinate_outside_proved_window"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 20.0,
+      "scenario": "million_with_verified_sieve",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "repo_million_target",
+      "kernel": "verified_4806",
+      "triple": "current_selberg",
+      "productRelativeErrorBound": 6.230214004030012E-06,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": -3.1887568219082034,
+        "value": 0.04122308673559943,
+        "display": "0.041223087",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": true,
+      "lowerErrors": {
+        "lowerDensityError": 0.1266730352067983,
+        "upperDensityError": 0.7900755612407897,
+        "lowerSieveKernel": 0.0030037500000000003,
+        "upperSieveKernel": 0.048060000000000005,
+        "lowerLevelRounding": 0.12366928520679828,
+        "upperLevelRounding": 0.7420155612407897,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 3.6380236299395576E-08,
+        "baseCoefficient": 1.5834249900849784,
+        "mediumCoefficient": 15.801512511196032,
+        "boundary": 5E-05
+      },
+      "weightedFloor": -6.843431245682995,
+      "localMarginBeforeTripleRemainder": -8.813596245682994,
+      "maximumTripleRemainder": -17.62719249136599,
+      "maximumTripleTotalCoefficient": -13.68686249136599,
+      "tripleRemainder": {
+        "logValue": 72.79655090032178,
+        "value": 4.12230724487713E+31,
+        "display": "4.1223072E+31",
+        "overflow": false,
+        "underflow": false
+      },
+      "fullMargin": -2.061153622438565E+31,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 53.52917685819763,
+        "value": 1.7677715098165288E+23,
+        "display": "1.7677715E+23",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [],
+      "missingEstimates": [
+        "asymmetric_reciprocal_input",
+        "certify_evaluated_allocations_in_Lean",
+        "current_selberg_moment_payment_fails",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "cutoff_not_paid:elementary_mertens_divisor",
+        "cutoff_not_paid:triple_producer",
+        "small_and_intermediate_endpoint_bridge"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 20.0,
+      "scenario": "small_endpoint_with_bjs_sieve",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "repo_1500_target",
+      "kernel": "bjs_110",
+      "triple": "current_selberg",
+      "productRelativeErrorBound": 0.0002395352935428305,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": -9.690816316983245,
+        "value": 6.184889550137765E-05,
+        "display": "6.1848896E-05",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": true,
+      "lowerErrors": {
+        "lowerDensityError": 0.003623071686504133,
+        "upperDensityError": 0.0561132801190248,
+        "lowerSieveKernel": 0.0034375,
+        "upperSieveKernel": 0.055,
+        "lowerLevelRounding": 0.00018557168650413294,
+        "upperLevelRounding": 0.0011132801190247977,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 3.602793440445713E-08,
+        "baseCoefficient": 0.04530044608130166,
+        "mediumCoefficient": 1.1222668884084306,
+        "boundary": 5E-05
+      },
+      "weightedFloor": 2.0343161097144833,
+      "localMarginBeforeTripleRemainder": 0.06415110971448335,
+      "maximumTripleRemainder": 0.1283022194289667,
+      "maximumTripleTotalCoefficient": 4.068632219428967,
+      "tripleRemainder": {
+        "logValue": 72.79655090032178,
+        "value": 4.12230724487713E+31,
+        "display": "4.1223072E+31",
+        "overflow": false,
+        "underflow": false
+      },
+      "fullMargin": -2.061153622438565E+31,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 53.52917685819763,
+        "value": 1.7677715098165288E+23,
+        "display": "1.7677715E+23",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [
+        "bjsStudy_lower_density",
+        "bjsStudy_upper_density"
+      ],
+      "missingEstimates": [
+        "asymmetric_reciprocal_input",
+        "certify_evaluated_allocations_in_Lean",
+        "current_selberg_moment_payment_fails",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "cutoff_not_paid:elementary_mertens_divisor",
+        "cutoff_not_paid:triple_producer",
+        "port_prime_square_certificate",
+        "small_and_intermediate_endpoint_bridge"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 20.0,
+      "scenario": "improved_selberg_slot",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "repo_million_target",
+      "kernel": "verified_4806",
+      "triple": "selberg_moment_research",
+      "productRelativeErrorBound": 6.230214004030012E-06,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": -3.1887568219082034,
+        "value": 0.04122308673559943,
+        "display": "0.041223087",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": true,
+      "lowerErrors": {
+        "lowerDensityError": 0.1266730352067983,
+        "upperDensityError": 0.7900755612407897,
+        "lowerSieveKernel": 0.0030037500000000003,
+        "upperSieveKernel": 0.048060000000000005,
+        "lowerLevelRounding": 0.12366928520679828,
+        "upperLevelRounding": 0.7420155612407897,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 3.6380236299395576E-08,
+        "baseCoefficient": 1.5834249900849784,
+        "mediumCoefficient": 15.801512511196032,
+        "boundary": 5E-05
+      },
+      "weightedFloor": -6.843431245682995,
+      "localMarginBeforeTripleRemainder": null,
+      "maximumTripleRemainder": null,
+      "maximumTripleTotalCoefficient": -13.68686249136599,
+      "tripleRemainder": null,
+      "fullMargin": null,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 53.52917685819763,
+        "value": 1.7677715098165288E+23,
+        "display": "1.7677715E+23",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [],
+      "missingEstimates": [
+        "asymmetric_reciprocal_input",
+        "certify_evaluated_allocations_in_Lean",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "derive_full_triple_bound",
+        "sharper_selberg_moments",
+        "small_and_intermediate_endpoint_bridge"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 20.0,
+      "scenario": "switched_triple_slot",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "repo_1500_target",
+      "kernel": "bjs_110",
+      "triple": "bjs_switched_research",
+      "productRelativeErrorBound": 0.0002395352935428305,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": -9.690816316983245,
+        "value": 6.184889550137765E-05,
+        "display": "6.1848896E-05",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": true,
+      "lowerErrors": {
+        "lowerDensityError": 0.003623071686504133,
+        "upperDensityError": 0.0561132801190248,
+        "lowerSieveKernel": 0.0034375,
+        "upperSieveKernel": 0.055,
+        "lowerLevelRounding": 0.00018557168650413294,
+        "upperLevelRounding": 0.0011132801190247977,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 3.602793440445713E-08,
+        "baseCoefficient": 0.04530044608130166,
+        "mediumCoefficient": 1.1222668884084306,
+        "boundary": 5E-05
+      },
+      "weightedFloor": 2.0343161097144833,
+      "localMarginBeforeTripleRemainder": null,
+      "maximumTripleRemainder": null,
+      "maximumTripleTotalCoefficient": 4.068632219428967,
+      "tripleRemainder": null,
+      "fullMargin": null,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 53.52917685819763,
+        "value": 1.7677715098165288E+23,
+        "display": "1.7677715E+23",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [
+        "bjsStudy_lower_density",
+        "bjsStudy_upper_density"
+      ],
+      "missingEstimates": [
+        "asymmetric_reciprocal_input",
+        "certify_evaluated_allocations_in_Lean",
+        "counting_model_and_normalization_adapter",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "incompatible_counting_model_or_normalization",
+        "port_prime_square_certificate",
+        "small_and_intermediate_endpoint_bridge",
+        "switched_bilinear_estimate_without_GRH"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 15.0,
+      "scenario": "production_components",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "proved_power",
+      "kernel": "verified_4806",
+      "triple": "current_selberg",
+      "productRelativeErrorBound": 7.1285615613073E-06,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": 3050.926793080244,
+        "value": null,
+        "display": "exp(3050.9268)",
+        "overflow": true,
+        "underflow": false
+      },
+      "sieveWindowValid": false,
+      "lowerErrors": {
+        "lowerDensityError": "Infinity",
+        "upperDensityError": "Infinity",
+        "lowerSieveKernel": 0.0030037500000000003,
+        "upperSieveKernel": 0.048060000000000005,
+        "lowerLevelRounding": "Infinity",
+        "upperLevelRounding": "Infinity",
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": "Infinity",
+        "baseCoefficient": "Infinity",
+        "mediumCoefficient": "Infinity",
+        "boundary": 5E-05
+      },
+      "weightedFloor": null,
+      "localMarginBeforeTripleRemainder": null,
+      "maximumTripleRemainder": null,
+      "maximumTripleTotalCoefficient": null,
+      "tripleRemainder": {
+        "logValue": 77.79655090032178,
+        "value": 6.118046410036537E+33,
+        "display": "6.1180464E+33",
+        "overflow": false,
+        "underflow": false
+      },
+      "fullMargin": null,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 56.897574565295784,
+        "value": 5.132189305960361E+24,
+        "display": "5.1321893E+24",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [],
+      "missingEstimates": [
+        "certify_evaluated_allocations_in_Lean",
+        "current_selberg_moment_payment_fails",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "cutoff_not_paid:elementary_mertens_divisor",
+        "cutoff_not_paid:triple_producer",
+        "sieve_coordinate_outside_proved_window"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 15.0,
+      "scenario": "bjs_components",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "bjs_interval",
+      "kernel": "bjs_110",
+      "triple": "current_selberg",
+      "productRelativeErrorBound": 0.00011507436801253093,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": 119.82920691372715,
+        "value": 1.0994192414190065E+52,
+        "display": "1.0994192E+52",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": false,
+      "lowerErrors": {
+        "lowerDensityError": 3.2982577242570196E+52,
+        "upperDensityError": 1.978954634554212E+53,
+        "lowerSieveKernel": 0.0034375,
+        "upperSieveKernel": 0.055,
+        "lowerLevelRounding": 3.2982577242570196E+52,
+        "upperLevelRounding": 1.978954634554212E+53,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 9.498982245860218E+43,
+        "baseCoefficient": 4.122822155321275E+53,
+        "mediumCoefficient": 3.957909269203414E+54,
+        "boundary": 5E-05
+      },
+      "weightedFloor": -2.3912368501338343E+54,
+      "localMarginBeforeTripleRemainder": null,
+      "maximumTripleRemainder": null,
+      "maximumTripleTotalCoefficient": null,
+      "tripleRemainder": {
+        "logValue": 77.79655090032178,
+        "value": 6.118046410036537E+33,
+        "display": "6.1180464E+33",
+        "overflow": false,
+        "underflow": false
+      },
+      "fullMargin": null,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 56.897574565295784,
+        "value": 5.132189305960361E+24,
+        "display": "5.1321893E+24",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [
+        "bjsStudy_interval",
+        "bjsStudy_lower_density",
+        "bjsStudy_upper_density"
+      ],
+      "missingEstimates": [
+        "certify_evaluated_allocations_in_Lean",
+        "current_selberg_moment_payment_fails",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "cutoff_not_paid:elementary_mertens_divisor",
+        "cutoff_not_paid:triple_producer",
+        "sieve_coordinate_outside_proved_window"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 15.0,
+      "scenario": "million_with_verified_sieve",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "repo_million_target",
+      "kernel": "verified_4806",
+      "triple": "current_selberg",
+      "productRelativeErrorBound": 6.230214004030012E-06,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": 1.8112431780917966,
+        "value": 6.118048530389833,
+        "display": "6.1180485",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": false,
+      "lowerErrors": {
+        "lowerDensityError": 18.357149366169498,
+        "upperDensityError": 110.17293354701701,
+        "lowerSieveKernel": 0.0030037500000000003,
+        "upperSieveKernel": 0.048060000000000005,
+        "lowerLevelRounding": 18.354145616169497,
+        "upperLevelRounding": 110.124873547017,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 8.888400813256817E-08,
+        "baseCoefficient": 229.46437912711875,
+        "mediumCoefficient": 2203.458672279224,
+        "boundary": 5E-05
+      },
+      "weightedFloor": -1328.552965266731,
+      "localMarginBeforeTripleRemainder": null,
+      "maximumTripleRemainder": null,
+      "maximumTripleTotalCoefficient": null,
+      "tripleRemainder": {
+        "logValue": 77.79655090032178,
+        "value": 6.118046410036537E+33,
+        "display": "6.1180464E+33",
+        "overflow": false,
+        "underflow": false
+      },
+      "fullMargin": null,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 56.897574565295784,
+        "value": 5.132189305960361E+24,
+        "display": "5.1321893E+24",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [],
+      "missingEstimates": [
+        "asymmetric_reciprocal_input",
+        "certify_evaluated_allocations_in_Lean",
+        "current_selberg_moment_payment_fails",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "cutoff_not_paid:elementary_mertens_divisor",
+        "cutoff_not_paid:triple_producer",
+        "sieve_coordinate_outside_proved_window",
+        "small_and_intermediate_endpoint_bridge"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 15.0,
+      "scenario": "small_endpoint_with_bjs_sieve",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "repo_1500_target",
+      "kernel": "bjs_110",
+      "triple": "current_selberg",
+      "productRelativeErrorBound": 0.0002395352935428305,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": -4.690816316983245,
+        "value": 0.009179189968364594,
+        "display": "0.00917919",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": true,
+      "lowerErrors": {
+        "lowerDensityError": 0.030975094905093783,
+        "upperDensityError": 0.22022541943056267,
+        "lowerSieveKernel": 0.0034375,
+        "upperSieveKernel": 0.055,
+        "lowerLevelRounding": 0.027537594905093783,
+        "upperLevelRounding": 0.16522541943056268,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 3.610670823132667E-08,
+        "baseCoefficient": 0.38720073631367224,
+        "mediumCoefficient": 4.404509674717962,
+        "boundary": 5E-05
+      },
+      "weightedFloor": 0.05129442632734659,
+      "localMarginBeforeTripleRemainder": -1.9188705736726535,
+      "maximumTripleRemainder": -3.837741147345307,
+      "maximumTripleTotalCoefficient": 0.10258885265469318,
+      "tripleRemainder": {
+        "logValue": 77.79655090032178,
+        "value": 6.118046410036537E+33,
+        "display": "6.1180464E+33",
+        "overflow": false,
+        "underflow": false
+      },
+      "fullMargin": -3.0590232050182687E+33,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 56.897574565295784,
+        "value": 5.132189305960361E+24,
+        "display": "5.1321893E+24",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [
+        "bjsStudy_lower_density",
+        "bjsStudy_upper_density"
+      ],
+      "missingEstimates": [
+        "asymmetric_reciprocal_input",
+        "certify_evaluated_allocations_in_Lean",
+        "current_selberg_moment_payment_fails",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "cutoff_not_paid:elementary_mertens_divisor",
+        "cutoff_not_paid:triple_producer",
+        "port_prime_square_certificate",
+        "small_and_intermediate_endpoint_bridge"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 15.0,
+      "scenario": "improved_selberg_slot",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "repo_million_target",
+      "kernel": "verified_4806",
+      "triple": "selberg_moment_research",
+      "productRelativeErrorBound": 6.230214004030012E-06,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": 1.8112431780917966,
+        "value": 6.118048530389833,
+        "display": "6.1180485",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": false,
+      "lowerErrors": {
+        "lowerDensityError": 18.357149366169498,
+        "upperDensityError": 110.17293354701701,
+        "lowerSieveKernel": 0.0030037500000000003,
+        "upperSieveKernel": 0.048060000000000005,
+        "lowerLevelRounding": 18.354145616169497,
+        "upperLevelRounding": 110.124873547017,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 8.888400813256817E-08,
+        "baseCoefficient": 229.46437912711875,
+        "mediumCoefficient": 2203.458672279224,
+        "boundary": 5E-05
+      },
+      "weightedFloor": -1328.552965266731,
+      "localMarginBeforeTripleRemainder": null,
+      "maximumTripleRemainder": null,
+      "maximumTripleTotalCoefficient": null,
+      "tripleRemainder": null,
+      "fullMargin": null,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 56.897574565295784,
+        "value": 5.132189305960361E+24,
+        "display": "5.1321893E+24",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [],
+      "missingEstimates": [
+        "asymmetric_reciprocal_input",
+        "certify_evaluated_allocations_in_Lean",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "derive_full_triple_bound",
+        "sharper_selberg_moments",
+        "sieve_coordinate_outside_proved_window",
+        "small_and_intermediate_endpoint_bridge"
+      ],
+      "closedLeanCertificateAtThisH": false
+    },
+    {
+      "H": 15.0,
+      "scenario": "switched_triple_slot",
+      "classification": "numerical_budget_only",
+      "model": "jurkat_richert_fixed_counts",
+      "product": "repo_1500_target",
+      "kernel": "bjs_110",
+      "triple": "bjs_switched_research",
+      "productRelativeErrorBound": 0.0002395352935428305,
+      "productFitsKernel": true,
+      "geometryCharge": {
+        "logValue": -4.690816316983245,
+        "value": 0.009179189968364594,
+        "display": "0.00917919",
+        "overflow": false,
+        "underflow": false
+      },
+      "sieveWindowValid": true,
+      "lowerErrors": {
+        "lowerDensityError": 0.030975094905093783,
+        "upperDensityError": 0.22022541943056267,
+        "lowerSieveKernel": 0.0034375,
+        "upperSieveKernel": 0.055,
+        "lowerLevelRounding": 0.027537594905093783,
+        "upperLevelRounding": 0.16522541943056268,
+        "baseMassAndRemainder": 1.205E-05,
+        "mediumIntegralRounding": 1.2499999999999999E-06,
+        "mediumMassAndDistribution": 3.610670823132667E-08,
+        "baseCoefficient": 0.38720073631367224,
+        "mediumCoefficient": 4.404509674717962,
+        "boundary": 5E-05
+      },
+      "weightedFloor": 0.05129442632734659,
+      "localMarginBeforeTripleRemainder": null,
+      "maximumTripleRemainder": null,
+      "maximumTripleTotalCoefficient": 0.10258885265469318,
+      "tripleRemainder": null,
+      "fullMargin": null,
+      "algebraicallyPositive": false,
+      "currentSelbergMomentEnvelope": {
+        "logValue": 56.897574565295784,
+        "value": 5.132189305960361E+24,
+        "display": "5.1321893E+24",
+        "overflow": false,
+        "underflow": false
+      },
+      "temporaryAssumptions": [
+        "bjsStudy_lower_density",
+        "bjsStudy_upper_density"
+      ],
+      "missingEstimates": [
+        "asymmetric_reciprocal_input",
+        "certify_evaluated_allocations_in_Lean",
+        "counting_model_and_normalization_adapter",
+        "cutoff_not_paid:current_mass_distribution_cap",
+        "incompatible_counting_model_or_normalization",
+        "port_prime_square_certificate",
+        "small_and_intermediate_endpoint_bridge",
+        "switched_bilinear_estimate_without_GRH"
+      ],
+      "closedLeanCertificateAtThisH": false
+    }
+  ]
+}
