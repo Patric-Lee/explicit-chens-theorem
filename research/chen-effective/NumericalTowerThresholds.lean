@@ -91,16 +91,8 @@ theorem tower_base_density {r : ℕ} (hr : r ≤ 10^12) : baseDensityThreshold r
   have hgate : suzukiCoordinateThreshold ≤ towerH := tower_fixed_power (by norm_num)
   exact max_le h2 (max_le (hgate.trans hHF) (tower_suzuki_error hr))
 
-theorem tower_nLower : nLower ≤ towerF := by
-  have hHF : towerH ≤ towerF := tower_HV_nat.trans tower_VF_nat
-  have hH20 : towerH^20 ≤ towerF := (tower_H_pow_nat (by norm_num : 20 ≤ 100)).trans tower_VF_nat
-  have hBase : baseCandidateThreshold ≤ towerF :=
-    max_le (tower_base_density (by norm_num [baseCandidateBudget]))
-      (max_le ((tower_source_mass (by norm_num [baseCandidateBudget])).trans hH20) (tower_base_distribution.trans hHF))
-  have hMedium : mediumPrimeAggregateThreshold ≤ towerF :=
-    max_le (tower_prime_sum.trans hH20) (max_le ((tower_upper_mass (by norm_num [mediumPrimeBudget])).trans hH20)
-      (max_le (tower_upper_density (by norm_num [mediumPrimeBudget])) (tower_varying_distribution.trans hHF)))
-  exact max_le hBase (max_le hMedium (tower_lower_endpoint.trans hHF))
+theorem tower_nLower : nLower ≤ towerF :=
+  nLower_le_nSquare.trans (tower_nSquare.trans (tower_HV_nat.trans tower_VF_nat))
 
 theorem tower_N0 : N0 ≤ towerF := by
   have hHF : towerH ≤ towerF := tower_HV_nat.trans tower_VF_nat

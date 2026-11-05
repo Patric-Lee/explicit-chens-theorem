@@ -151,16 +151,8 @@ theorem double_base_density {r : ℕ} (hr : r ≤ 10 ^ 12) : baseDensityThreshol
   have hg : suzukiCoordinateThreshold ≤ towerH := tower_fixed_power (by norm_num)
   exact max_le h2 (max_le (hg.trans double_H) (double_suzuki_error hr))
 
-theorem numerical_nLower_double_exp : nLower ≤ numericalDoubleExpCutoff := by
-  have hBase : baseCandidateThreshold ≤ numericalDoubleExpCutoff :=
-    max_le (double_base_density (by norm_num [baseCandidateBudget]))
-      (max_le ((tower_source_mass (by norm_num [baseCandidateBudget])).trans double_H_twenty)
-        (tower_base_distribution.trans double_H))
-  have hMedium : mediumPrimeAggregateThreshold ≤ numericalDoubleExpCutoff :=
-    max_le (tower_prime_sum.trans double_H_twenty)
-      (max_le ((tower_upper_mass (by norm_num [mediumPrimeBudget])).trans double_H_twenty)
-        (max_le (double_upper_density (by norm_num [mediumPrimeBudget])) (tower_varying_distribution.trans double_H)))
-  exact max_le hBase (max_le hMedium (tower_lower_endpoint.trans double_H))
+theorem numerical_nLower_double_exp : nLower ≤ numericalDoubleExpCutoff :=
+  nLower_le_nSquare.trans (tower_nSquare.trans double_H)
 
 theorem numerical_N0_double_exp : N0 ≤ numericalDoubleExpCutoff := by
   have h9 : 9 ≤ numericalDoubleExpCutoff :=

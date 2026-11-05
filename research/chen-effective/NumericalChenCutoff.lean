@@ -6,6 +6,21 @@ namespace ChenEffective
 open MathlibNt.SieveTheory SwitchingPrinciple SingularSeries
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 1000000
+set_option maxRecDepth 4000
+set_option exponentiation.threshold 512
+
+private theorem chen_three_power_mono (a b : ℕ) (h : a ≤ b) : (3 : ℕ)^a ≤ 3^b :=
+  Nat.pow_le_pow_right (by norm_num) h
+
+private theorem chen_double_three_power_mono (a b : ℕ) (h : a ≤ b) :
+    (3 : ℕ)^(3^a) ≤ 3^(3^b) :=
+  chen_three_power_mono _ _ (chen_three_power_mono _ _ h)
+
+theorem nLower_le_nSquare : nLower ≤ nSquare :=
+  (le_of_eq nLower_eq).trans
+    ((chen_double_three_power_mono 20000 4000000000000 (by norm_num)).trans_eq nSquare_eq.symm)
+
+#print axioms nLower_le_nSquare
 
 /-- A closed numerical Chen cutoff under the sole local Dirichlet axiom. -/
 def N0 : ℕ := chenCutoff nLower nSquare numericalTripleErrorCap
@@ -13,6 +28,21 @@ def N0 : ℕ := chenCutoff nLower nSquare numericalTripleErrorCap
 theorem N0_formula : N0 = max 9 (max nLower (max (3^(3^4000000000000)) (3^(20000*10^40+1)))) := by
   unfold N0 chenCutoff errorCutoff numericalTripleErrorCap
   rw [nSquare_eq]
+
+theorem N0_eq_nSquare : N0=nSquare := by
+  have h9 : 9 ≤ nSquare :=
+    (by norm_num : 9 ≤ (3 : ℕ)^(3^1)).trans
+      ((chen_double_three_power_mono 1 4000000000000 (by norm_num)).trans_eq nSquare_eq.symm)
+  have herr : 3^(20000*10^40+1) ≤ nSquare :=
+    (chen_three_power_mono (20000*10^40+1) (3^200) (by norm_num)).trans
+      ((chen_double_three_power_mono 200 4000000000000 (by norm_num)).trans_eq nSquare_eq.symm)
+  unfold N0 chenCutoff errorCutoff numericalTripleErrorCap
+  exact le_antisymm (max_le h9 (max_le nLower_le_nSquare (max_le le_rfl herr)))
+    ((le_max_left _ _).trans ((le_max_right _ _).trans (le_max_right _ _)))
+
+theorem N0_closed : N0=3^(3^4000000000000) := N0_eq_nSquare.trans nSquare_eq
+
+#print axioms N0_closed
 
 /-- Every even integer above the displayed cutoff is prime plus a prime or
 the product of two primes. No analytic estimate remains as a hypothesis. -/

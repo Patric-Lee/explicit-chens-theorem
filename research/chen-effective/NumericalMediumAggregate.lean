@@ -1,6 +1,7 @@
 import NumericalMediumUpperDensity
 import NumericalSourceUpperMass
 import NumericalBaseCandidates
+import NumericalPreSieveCutoff
 
 noncomputable section
 namespace ChenEffective
@@ -111,14 +112,13 @@ theorem numerical_medium_prime_aggregate {N : ℕ}
   have hfinite := jurkatRichertSourceMediumPrimeAggregate_le_main_add_remainder N mediumPrimeEpsilon (by omega) numerical_medium_epsilon.2
   nlinarith only [hfinite,hscaled,hrem,hpay]
 
-def nLower : ℕ := max baseCandidateThreshold (max mediumPrimeAggregateThreshold lowerEndpointThreshold)
+def nLower : ℕ := preSieveGeometryThreshold
+
+theorem nLower_eq : nLower=3^(3^20000) := preSieveGeometryThreshold_eq
 
 theorem numerical_weighted_lower {N : ℕ} (hN : nLower ≤ N) (hEven : Even N) :
-    (2.6407 : ℝ)*SingularSeries.liuSingularSeries N*N/Real.log (N : ℝ)^2 ≤ jurkatRichertWeightedCount N := by
-  have hBase : baseCandidateThreshold ≤ N := (le_max_left _ _).trans hN
-  have hUpper : mediumPrimeAggregateThreshold ≤ N := (le_max_left _ _).trans ((le_max_right _ _).trans hN)
-  have hEnd : lowerEndpointThreshold ≤ N := (le_max_right _ _).trans ((le_max_right _ _).trans hN)
-  exact numerical_lower_from_medium_prime_bound (max_le hBase hEnd) hEven (numerical_medium_prime_aggregate hUpper hEven)
+    (2.6407 : ℝ)*SingularSeries.liuSingularSeries N*N/Real.log (N : ℝ)^2 ≤ jurkatRichertWeightedCount N :=
+  preSieve_weighted_lower hN hEven
 
 #print axioms numerical_medium_prime_aggregate
 #print axioms numerical_weighted_lower

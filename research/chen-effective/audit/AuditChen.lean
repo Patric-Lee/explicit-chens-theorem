@@ -7,6 +7,7 @@ import NumericalSeparateCoefficients
 import NumericalEulerProductPower
 import NumericalSieveErrorRecurrence
 import NumericalPresievedSourceLayers
+import NumericalPreSieveCutoff
 -- Only this audit fixture imports the old proofs, to compare declaration types.
 import Goldbach.Theorem
 import Lean.Util.CollectAxioms
@@ -33,6 +34,27 @@ run_elab do
   let allowed : Array Name := #[``propext, ``Classical.choice, ``Quot.sound,
     ``ChenEffective.dirichlet_seven_eighths]
   let specializedBounds := #[
+    ``ChenEffective.preSieveCounting_siftedSum,
+    ``ChenEffective.preSieveCounting_multSum,
+    ``ChenEffective.preSieveCounting_rem,
+    ``ChenEffective.preSieveCounting_errSum_QD,
+    ``ChenEffective.preSieveCounting_goldbach_relative,
+    ``ChenEffective.relative_lower_rosser_density,
+    ``ChenEffective.relative_upper_rosser_density,
+    ``ChenEffective.preSieveCounting_mass_product,
+    ``ChenEffective.preSieveCounting_lower_bound,
+    ``ChenEffective.preSieveCounting_upper_bound,
+    ``ChenEffective.preSieve_varying_distribution,
+    ``ChenEffective.preSieve_ratio_shift,
+    ``ChenEffective.preSieve_level_QD,
+    ``ChenEffective.preSieve_base_candidates,
+    ``ChenEffective.preSieve_conditioned_count,
+    ``ChenEffective.preSieve_medium_prime_aggregate,
+    ``ChenEffective.preSieve_weighted_lower,
+    ``ChenEffective.nLower_eq,
+    ``ChenEffective.nLower_le_nSquare,
+    ``ChenEffective.N0_eq_nSquare,
+    ``ChenEffective.N0_closed,
     ``ChenEffective.numerical_theta_power_error,
     ``ChenEffective.numerical_mertens_power,
     ``ChenEffective.goldbach_interval_power,
@@ -69,6 +91,7 @@ run_elab do
     let axs ← Lean.collectAxioms n
     unless axs.all (fun a => allowed.contains a && a != ``ChenEffective.dirichlet_seven_eighths) do
       throwError "Unexpected scalar or primorial axiom for {n}: {axs}"
+  logInfo "Exact pre-sieved counting weights, QD assembly, original Chen coefficients, and reduced cutoffs passed the axiom whitelist."
   logInfo "Power-saving Euler products and coarse specialized recurrence passed the axiom whitelist."
   logInfo "Analytic kernels, actual source-layer induction, and uniform parity domination passed the axiom whitelist."
   let audited : Array Name := #[
@@ -169,6 +192,28 @@ run_elab do
     ``MathlibNt.ChensTheorem.chens_theorem_unconditional,
     ``MathlibNt.ChensTheorem.chen_good_representations_lower_bound_unconditional]
   let env := (← getEnv).setExporting false
+  let obsoleteSieve := #[``ChenEffective.numerical_base_density,
+    ``ChenEffective.numerical_base_density_near_five,
+    ``ChenEffective.numerical_conditioned_upper_density,
+    ``ChenEffective.numerical_mixed_suzuki_window,
+    ``ChenEffective.numericalEffectiveSuzukiCoefficient,
+    ``ChenEffective.baseCandidateThreshold,
+    ``ChenEffective.mediumPrimeAggregateThreshold]
+  let mut routeTodo := #[``ChenEffective.numerical_chen,
+    ``ChenEffective.numerical_chen_representation_count]
+  let mut routeSeen : NameSet := {}
+  while !routeTodo.isEmpty do
+    let n := routeTodo.back!
+    routeTodo := routeTodo.pop
+    if routeSeen.contains n then continue
+    routeSeen := routeSeen.insert n
+    if obsoleteSieve.contains n then
+      throwError "The improved numerical theorem still uses the obsolete C1 density route: {n}"
+    let some ci := env.find? n | throwError "Missing improved-route dependency: {n}"
+    routeTodo := routeTodo ++ ci.type.getUsedConstants
+    if let some value := ci.value? (allowOpaque := true) then
+      routeTodo := routeTodo ++ value.getUsedConstants
+  logInfo "The active numerical Chen and count proofs use the exact pre-sieved route; no obsolete C1 density or threshold is used."
   for moduleName in env.header.moduleNames do
     let s := moduleName.toString
     if #["OAI", "ComparatorChallenges", "OpenAI"].any (fun p => s == p || s.startsWith (p ++ ".")) then

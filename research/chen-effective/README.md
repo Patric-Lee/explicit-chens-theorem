@@ -6,7 +6,10 @@ cutoffs. **A closed numerical Chen threshold is now proved under the single
 local Dirichlet seven-eighths axiom.** `NumericalChenCutoff.lean` supplies
 `numerical_chen` and the quantitative representation-count theorem. There
 are no remaining analytic estimates as hypotheses of these final theorems.
-A double-exponential common cap, `3^(3^(10^19))`, is now proved for both `nLower` and `N0` in `NumericalDoubleExponential.lean`.
+The active cutoffs are now `nLower = 3^(3^20000)` and
+`N0 = nSquare = 3^(3^4000000000000)`. These are exact equalities,
+proved in `NumericalMediumAggregate.lean` and `NumericalChenCutoff.lean`.
+The earlier common cap in `NumericalDoubleExponential.lean` remains a valid coarse bound.
 The threshold is an explicit formula built from the numerical constants
 below; no unspecified or chosen analytic threshold occurs in it.
 
@@ -54,14 +57,46 @@ carriers. No kernel or layer estimate remains as an input to these two
 instantiated theorems. The analytic layer proofs use only standard Lean
 axioms; the Euler-product instantiations use the single local Dirichlet axiom.
 
-These are ingredients for the specialized sieve theorem. Exact pre-sieving
-of the counting-sequence weights and the remainder assembly at level `QD`
-still remain; restricting a prime carrier alone does not perform that assembly.
-The existing final Chen theorem and its numerical cutoff are unchanged.
-Although substantially sharper than the previous elementary interval bound,
-`log u0 = 5760*log 3` is about `6328`, still far too large for an `H=36`
-presieving budget. A much stronger small-endpoint product estimate is needed
-to reach that target; no literature numerical table is being assumed here.
+Exact pre-sieving and the `QD` assembly are now proved in
+`NumericalPreSieveCounting.lean` and `NumericalPreSieveRemainder.lean`.
+The weights are the original weights times the exact indicator `(Q,n)=1`;
+the mass is multiplied by the small-prime Euler factor. The sifted count
+and mass times the full Euler product are unchanged. The remainder is the
+literal Moebius sum `r_pre(d) = sum_{a|Q} mu(a)*r(ad)`.
+Coprimality makes `(a,d) -> a*d` injective, so its total absolute remainder
+is bounded by the original remainder below `QD`, with no multiplicity loss.
+
+`NumericalPreSieveSharpProduct.lean` strengthens the relative product error
+to `epsilon = 10^(-20)` by pre-sieving below `3^10240`.
+`NumericalPreSieveDensity.lean` converts the actual parity-layer estimates
+to both Rosser densities, with depth-uniform error `6000*epsilon`.
+`NumericalPreSieveAssembly.lean` proves the resulting finite counting
+inequalities. `NumericalPreSieveDistribution.lean` pays the **unweighted**
+conditioned remainders using the same weighted BV constants and corrections;
+it keeps all nonreduced lanes, including primes dividing `N`.
+
+`NumericalPreSieveGeometry.lean` uses the level
+`floor(X/(2*Q))+1`, proves `Q*D <= X` including rounding, and bounds the
+sieve-ratio loss by `10^(-20)` above `3^(3^20000)`.
+`NumericalPreSieveBase.lean` and `NumericalPreSieveAggregate.lean` recover
+the original base and medium-prime coefficients and error budgets.
+`NumericalPreSieveCutoff.lean` bounds every remaining mass, prime-sum,
+distribution and endpoint threshold and proves the original `2.6407`
+weighted lower bound. No Suzuki `C1` or source-cutoff budget enters this
+new lower route. The final `0.67` representation count and the four original
+Chen statement types are retained.
+
+Thus the active lower cutoff has natural `log log` about `21972`, while the
+final cutoff is dominated by the existing Selberg-square bound (natural
+`log log` about `4.39445*10^12`). Reaching `H=36` still requires sharper
+small-endpoint product bounds and improvement of the square denominator.
+No literature table, new axiom, OpenAI module or dependency is added.
+
+Validation: all 43 affected modules rebuilt with warnings treated as errors.
+The extended audit recovered all four original Chen statement types, checked
+the exact final-theorem axiom whitelist, and traversed 82,171 proof/type
+dependencies. A separate traversal confirms that neither active final theorem
+uses the obsolete C1 density estimates or their thresholds.
 
 Base checkout: `9d4c3a4010d42aedd9e7231bf94386019cfffccc`.
 Toolchain: `leanprover/lean4:v4.33.0-rc1`.
@@ -1529,7 +1564,7 @@ From the checkout, in PowerShell:
 After an interrupted check, `-FromModule ModuleName` resumes compilation at
 that module; the full import and local-axiom audit still runs.
 
-This checks only the 184 research modules, in dependency order, treating warnings as errors,
+This checks only the 210 research modules, in dependency order, treating warnings as errors,
 writes `.olean` files and axiom reports under `.lake/build/chen-effective/`,
 and audits local imports and the single added axiom. It does not rebuild the
 Li-Liu development or alter the pinned dependency manifests. `LEAN_PATH` is

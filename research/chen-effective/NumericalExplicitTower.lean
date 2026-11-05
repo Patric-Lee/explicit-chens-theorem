@@ -48,23 +48,23 @@ theorem numerical_nLower_tower : nLower ≤ numericalTowerCutoff := tower_nLower
 theorem numerical_N0_tower : N0 ≤ numericalTowerCutoff := tower_N0.trans towerF_le_explicit
 
 /-- A concrete common integer choice for the lower and final Chen thresholds. -/
-def numericalNLower : ℕ := numericalDoubleExpCutoff
-def numericalN0 : ℕ := numericalDoubleExpCutoff
+def numericalNLower : ℕ := nLower
+def numericalN0 : ℕ := N0
 
-theorem numericalNLower_eq : numericalNLower = 3^(3^(10^19)) := numericalDoubleExpCutoff_eq
-theorem numericalN0_eq : numericalN0 = 3^(3^(10^19)) := numericalDoubleExpCutoff_eq
+theorem numericalNLower_eq : numericalNLower = 3^(3^20000) := nLower_eq
+theorem numericalN0_eq : numericalN0 = 3^(3^4000000000000) := N0_closed
 
 theorem numerical_lower_above_tower {N : ℕ} (hN : numericalNLower ≤ N) (hEven : Even N) :
     (2.6407 : ℝ)*liuSingularSeries N*N/Real.log (N : ℝ)^2 ≤ jurkatRichertWeightedCount N :=
-  numerical_weighted_lower (numerical_nLower_double_exp.trans hN) hEven
+  numerical_weighted_lower hN hEven
 
 theorem numerical_chen_above_tower {N : ℕ} (hN : numericalN0 ≤ N) (hEven : Even N) :
     ∃ p q : ℕ, p.Prime ∧ (q.Prime ∨ ∃ r s : ℕ, r.Prime ∧ s.Prime ∧ q=r*s) ∧ N=p+q :=
-  numerical_chen (numerical_N0_double_exp.trans hN) hEven
+  numerical_chen hN hEven
 
 theorem numerical_count_above_tower {N : ℕ} (hN : numericalN0 ≤ N) (hEven : Even N) :
     (0.67 : ℝ)*liuSingularSeries N*N/Real.log (N : ℝ)^2 ≤ ((chenGoodRepresentations N).card : ℝ) :=
-  numerical_chen_representation_count (numerical_N0_double_exp.trans hN) hEven
+  numerical_chen_representation_count hN hEven
 
 #print axioms numerical_nLower_tower
 #print axioms numerical_N0_tower
