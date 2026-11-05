@@ -1,0 +1,61 @@
+import BJSStudyTriple
+
+noncomputable section
+namespace ChenEffective
+open Real Set Finset
+open MathlibNt.SieveTheory SingularSeries SwitchingPrinciple
+set_option backward.isDefEq.respectTransparency false
+set_option maxHeartbeats 3000000
+set_option maxRecDepth 4000
+set_option exponentiation.threshold 512
+
+/-- Separate existence cutoff. The established 0.67 counting cutoff is untouched. -/
+def bjsStudyN0 : ℕ := bjsStudyGeometryThreshold
+theorem bjsStudyN0_eq : bjsStudyN0=3^(3^171) := bjsStudyGeometryThreshold_eq
+
+theorem bjsStudy_inverse_log_payment {N : ℕ} (hN : bjsStudyN0 ≤ N) :
+    (numericalTripleErrorCap : ℝ)*N/log (N : ℝ)^3 ≤
+      (1/100 : ℝ)*liuSingularSeries N*N/log (N : ℝ)^2 := by
+  obtain ⟨hN2,_⟩ := bjsStudy_endpoint_parameters hN
+  have hl : 0 < log (N : ℝ) := log_pos (by exact_mod_cast (show 1 < N by omega))
+  have hcap : bjsStudyCap_preSieveFiniteCap ≤ bjsStudyCap_preSieveFiniteCap^20 := by
+    simpa only [pow_one] using Nat.pow_le_pow_right bjsStudyCap_preSieve_H_one_nat (show 1 ≤ 20 by norm_num)
+  have h1 : bjsStudyCap_preSieveFiniteCap ≤ N := hcap.trans (bjsStudy_finite_cap.trans hN)
+  have hpow : 3^(200*numericalTripleErrorCap+1) ≤ N :=
+    (bjsStudyCap_preSieve_fixed_power (by norm_num [numericalTripleErrorCap])).trans h1
+  have hlog := log_ge_power_three hpow
+  simp only [Nat.cast_add,Nat.cast_mul,Nat.cast_ofNat,Nat.cast_one] at hlog
+  have hs := half_le_liuSingularSeries N
+  have hpay : (numericalTripleErrorCap : ℝ) ≤ (1/100)*liuSingularSeries N*log (N : ℝ) := by
+    have hh := mul_le_mul_of_nonneg_right hs hl.le
+    nlinarith only [hh,hlog]
+  apply (div_le_div_iff₀ (pow_pos hl 3) (pow_pos hl 2)).mpr
+  nlinarith only [mul_le_mul_of_nonneg_right hpay
+    (mul_nonneg (Nat.cast_nonneg N) (sq_nonneg (log (N : ℝ))))]
+
+/-- Direct positive-margin proof of bjsStudy Chen. Neither the 0.67 count
+theorem nor its tiny error budget is used. -/
+theorem bjsStudy_chen {N : ℕ} (hN : bjsStudyN0 ≤ N) (hEven : Even N) :
+    ∃ p q : ℕ, p.Prime ∧ (q.Prime ∨ ∃ r s : ℕ, r.Prime ∧ s.Prime ∧ q=r*s) ∧ N=p+q := by
+  obtain ⟨hN2,_⟩ := bjsStudy_endpoint_parameters hN
+  have hN9 : 9 ≤ N := by
+    have hEnd := bjsStudy_endpoint hN
+    have hh : 2^110+1 ≤ N := (le_max_left _ _).trans hEnd
+    omega
+  have hl := bjsStudy_weighted_lower hN hEven
+  have ht := bjsStudy_triple_bound hN hEven
+  have he := bjsStudy_inverse_log_payment hN
+  let M := liuSingularSeries N*N/log (N : ℝ)^2
+  have hLower : bjsStudyBudget.weighted*M ≤ jurkatRichertWeightedCount N := by
+    convert hl using 1
+    dsimp [M]
+    ring
+  have hTriple : correctedChenTriplePenalty N ≤
+      (bjsStudyBudget.tripleMain+bjsStudyBudget.tripleRemainder)*M := by
+    dsimp only [bjsStudyBudget,M]
+    simp only [mul_div_assoc,mul_assoc] at ht he ⊢
+    linarith only [ht,he]
+  exact chen_budget_existence bjsStudyBudget hN9 bjsStudy_budget_positive hLower hTriple
+
+#print axioms bjsStudy_chen
+end ChenEffective

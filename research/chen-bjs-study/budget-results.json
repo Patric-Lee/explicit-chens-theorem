@@ -1,0 +1,35 @@
+{
+  "status": "PROVISIONAL; three temporary BJS assumptions remain",
+  "production_commit": "6b412908",
+  "production_H": 3186.069684965135,
+  "provisional_cutoff": "3^(3^171)",
+  "provisional_H": 187.95674918986347,
+  "provisional_weighted_coefficient": 2.0257500000000004,
+  "provisional_margin": 0.05058500000000044,
+  "presieve_log_U": 131.83347464017316,
+  "actual_geometry_sufficient_H": 178.57832368061403,
+  "shared_finite_cap_H": 187.29658754069436,
+  "elementary_mertens_divisor_H": 33.05241648765999,
+  "denominator_and_prime_pair_H": 184.30085526714038,
+  "triple_remainder_H": 97.40172108630988,
+  "temporary_axioms": [
+    "bjsStudy_interval",
+    "bjsStudy_lower_density",
+    "bjsStudy_upper_density"
+  ],
+  "H36": {
+    "status": "Scalar feasibility only; NOT a Chen theorem",
+    "presieve_U": 1000000000.0,
+    "geometry_ratio_bound": 4.6390456628066615E-06,
+    "geometry_budget": 1E-05,
+    "lower_density_error": 0.003467525,
+    "upper_density_error": 0.05518,
+    "final_margin": 0.040585,
+    "missing": [
+      "Uniform small-endpoint product bridge",
+      "Mass and distribution estimates at H=36",
+      "Triple moment and remainder estimates at H=36",
+      "Proof replacements for the BJS density assumptions"
+    ]
+  }
+}
