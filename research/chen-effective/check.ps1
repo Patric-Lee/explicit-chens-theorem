@@ -196,7 +196,10 @@ try {
         'NumericalTowerThresholds',
         'NumericalDoubleExponential',
         'NumericalExplicitTower',
-        'NumericalChenCompatibility')
+        'NumericalChenCompatibility',
+        'NumericalMertensPower',
+        'NumericalEulerProductPower',
+        'NumericalSieveErrorRecurrence')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)
         if ($startIndex -lt 0) { throw "Unknown research module: $FromModule" }

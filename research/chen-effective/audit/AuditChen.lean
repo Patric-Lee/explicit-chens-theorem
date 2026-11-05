@@ -4,6 +4,8 @@ import NumericalSmallQuotientChen
 import NumericalPolynomialChen
 import NumericalDoubleExponential
 import NumericalSeparateCoefficients
+import NumericalEulerProductPower
+import NumericalSieveErrorRecurrence
 -- Only this audit fixture imports the old proofs, to compare declaration types.
 import Goldbach.Theorem
 import Lean.Util.CollectAxioms
@@ -29,6 +31,24 @@ run_elab do
     logInfo m!"Exact original statement recovered: {oldName}"
   let allowed : Array Name := #[``propext, ``Classical.choice, ``Quot.sound,
     ``ChenEffective.dirichlet_seven_eighths]
+  let specializedBounds := #[
+    ``ChenEffective.numerical_theta_power_error,
+    ``ChenEffective.numerical_mertens_power,
+    ``ChenEffective.goldbach_interval_power,
+    ``ChenEffective.goldbach_presieved_small_error,
+    ``ChenEffective.numerical_presieved_source_product,
+    ``ChenEffective.presieve_log_cost,
+    ``ChenEffective.specialized_sieve_error_sums,
+    ``ChenEffective.specializedSieveError_certified]
+  for n in specializedBounds do
+    let axs ← Lean.collectAxioms n
+    unless axs.all allowed.contains do
+      throwError "Unexpected specialized sieve axioms for {n}: {axs}"
+  for n in #[``ChenEffective.presieve_log_cost, ``ChenEffective.specializedSieveError_certified] do
+    let axs ← Lean.collectAxioms n
+    unless axs.all (fun a => allowed.contains a && a != ``ChenEffective.dirichlet_seven_eighths) do
+      throwError "Unexpected scalar or primorial axiom for {n}: {axs}"
+  logInfo "Power-saving Euler products and coarse specialized recurrence passed the axiom whitelist."
   let audited : Array Name := #[
     ``ChenEffective.numerical_chen,
     ``ChenEffective.numerical_chen_representation_count,
@@ -131,7 +151,7 @@ run_elab do
     let s := moduleName.toString
     if #["OAI", "ComparatorChallenges", "OpenAI"].any (fun p => s == p || s.startsWith (p ++ ".")) then
       throwError "Forbidden OpenAI import in audit environment: {moduleName}"
-  let mut todo := (audited ++ terminalBounds).push ``ChenEffective.numericalSuzukiC1_single_exp_cap
+  let mut todo := (audited ++ terminalBounds ++ specializedBounds).push ``ChenEffective.numericalSuzukiC1_single_exp_cap
   let mut seen : NameSet := {}
   let mut proofAxioms : NameSet := {}
   while !todo.isEmpty do

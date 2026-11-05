@@ -10,6 +10,37 @@ A double-exponential common cap, `3^(3^(10^19))`, is now proved for both `nLower
 The threshold is an explicit formula built from the numerical constants
 below; no unspecified or chosen analytic threshold occurs in it.
 
+## Specialized sieve ingredients: power-saving product and coarse recurrence
+
+`NumericalMertensPower.lean` preserves the principal PNT power saving through
+Abel summation, proving, for every real `x >= 9`,
+`|sum_{p <= x} 1/p - log(log x) - M| <= 3*10^13*x^(-1/128)`.
+The constant is canonical and no eventual starting-point witness is used.
+
+`NumericalEulerProductPower.lean` consequently proves, for real `10 <= u <= z`
+and every subset of odd primes in `[u,z)`, the bound
+`product <= (log z/log u)*exp(1.3*10^14*u^(-1/128))`.
+After removing primes below `u0 = 3^5760`, its relative error is at most
+`10^(-7)`, uniformly for **all** `1 < u <= z`, including `u < u0`.
+It also specializes this bound to the literal source sifting product (shared
+by the conditioned sieve) and proves the elementary cost `log Q <= (log 4)*u0`.
+This uses the existing Dirichlet axiom and no external explicit-prime tables.
+
+`NumericalSieveErrorRecurrence.lean` proves both parity sums of the coarse
+specialized error recurrence are at most `6000` for `0 <= epsilon <= 1/200`.
+The proof uses an exact remaining-error potential, so it is uniform in depth
+and needs no finite recursion table. These scalar results use only standard
+Lean axioms.
+
+These are new ingredients, **not an implementation of the specialized sieve
+theorem**: the analytic kernel bounds, domination of the actual Rosser layers,
+and the presieved weight/remainder assembly at level `QD` remain to be proved.
+The existing final Chen theorem and its numerical cutoff are unchanged.
+Although substantially sharper than the previous elementary interval bound,
+`log u0 = 5760*log 3` is about `6328`, still far too large for an `H=36`
+presieving budget. A much stronger small-endpoint product estimate is needed
+to reach that target; no literature numerical table is being assumed here.
+
 Base checkout: `9d4c3a4010d42aedd9e7231bf94386019cfffccc`.
 Toolchain: `leanprover/lean4:v4.33.0-rc1`.
 
