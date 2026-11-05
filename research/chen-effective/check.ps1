@@ -199,7 +199,18 @@ try {
         'NumericalChenCompatibility',
         'NumericalMertensPower',
         'NumericalEulerProductPower',
-        'NumericalSieveErrorRecurrence')
+        'NumericalSieveErrorRecurrence',
+        'NumericalSieveKernel',
+        'NumericalSieveLayerDecay',
+        'NumericalSieveRelativeAbel',
+        'NumericalSieveKernelRecurrence',
+        'NumericalSieveSourceDomination',
+        'NumericalSieveSourceStep',
+        'NumericalSieveSourceGeometry',
+        'NumericalSieveSourceAnalytic',
+        'NumericalSieveSourceInduction',
+        'NumericalSieveSourceParity',
+        'NumericalPresievedSourceLayers')
     if ($FromModule) {
         $startIndex = [Array]::IndexOf($modules, $FromModule)
         if ($startIndex -lt 0) { throw "Unknown research module: $FromModule" }

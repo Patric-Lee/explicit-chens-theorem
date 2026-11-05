@@ -32,9 +32,31 @@ The proof uses an exact remaining-error potential, so it is uniform in depth
 and needs no finite recursion table. These scalar results use only standard
 Lean axioms.
 
-These are new ingredients, **not an implementation of the specialized sieve
-theorem**: the analytic kernel bounds, domination of the actual Rosser layers,
-and the presieved weight/remainder assembly at level `QD` remain to be proved.
+`NumericalSieveKernel.lean` now proves the analytic kernel bounds without
+quadrature: `H(s) <= (241/250)*s*h(s)` for `s >= 2`, and
+`H(3) <= (116/125)*s*h(s)` for `1 <= s <= 3`. A rational differential
+supersolution proves the required exponential-integral estimate. Continuity,
+monotonicity, and the global shift bound `h(s-1) <= 4*h(s)` are proved too.
+
+`NumericalSieveLayerDecay.lean` proves the geometric hat bound for the actual
+source-normalized continuous layers, including both closed parity endpoints.
+`NumericalSieveRelativeAbel.lean` proves relative-product Abel estimates on the
+actual finite prime atoms. `NumericalSieveSourceInduction.lean` then proves
+domination of **every actual `suzukiSourceV` layer**, with exact natural-ceiling
+cutoffs and recursive ceiling division. The compact odd range and the even
+endpoint are included. `NumericalSieveKernelRecurrence.lean` and
+`NumericalSieveSourceParity.lean` give the uniform error constant `6000` for
+`0 <= epsilon <= 1/10000`, matched to these proved analytic bounds.
+
+`NumericalPresievedSourceLayers.lean` instantiates that result at
+`epsilon = 10^(-7)` for the restricted base and conditioned Chen prime
+carriers. No kernel or layer estimate remains as an input to these two
+instantiated theorems. The analytic layer proofs use only standard Lean
+axioms; the Euler-product instantiations use the single local Dirichlet axiom.
+
+These are ingredients for the specialized sieve theorem. Exact pre-sieving
+of the counting-sequence weights and the remainder assembly at level `QD`
+still remain; restricting a prime carrier alone does not perform that assembly.
 The existing final Chen theorem and its numerical cutoff are unchanged.
 Although substantially sharper than the previous elementary interval bound,
 `log u0 = 5760*log 3` is about `6328`, still far too large for an `H=36`

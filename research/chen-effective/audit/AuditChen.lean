@@ -6,6 +6,7 @@ import NumericalDoubleExponential
 import NumericalSeparateCoefficients
 import NumericalEulerProductPower
 import NumericalSieveErrorRecurrence
+import NumericalPresievedSourceLayers
 -- Only this audit fixture imports the old proofs, to compare declaration types.
 import Goldbach.Theorem
 import Lean.Util.CollectAxioms
@@ -39,16 +40,37 @@ run_elab do
     ``ChenEffective.numerical_presieved_source_product,
     ``ChenEffective.presieve_log_cost,
     ``ChenEffective.specialized_sieve_error_sums,
-    ``ChenEffective.specializedSieveError_certified]
+    ``ChenEffective.specializedSieveError_certified,
+    ``ChenEffective.sieveHatTail_contraction,
+    ``ChenEffective.sieveHatTail_compact,
+    ``ChenEffective.sieveHat_shift,
+    ``ChenEffective.actual_suzuki_layer_decay,
+    ``ChenEffective.sieve_relative_prime_sum,
+    ``ChenEffective.sieve_relative_middle_prime_sum,
+    ``ChenEffective.kernelSieveError_sums,
+    ``ChenEffective.actual_source_base_domination,
+    ``ChenEffective.actual_source_inner_transport,
+    ``ChenEffective.source_analytic_successor,
+    ``ChenEffective.actual_source_layer_domination,
+    ``ChenEffective.actual_source_parity_domination,
+    ``ChenEffective.restricted_source_relative,
+    ``ChenEffective.restricted_conditioned_relative,
+    ``ChenEffective.numerical_presieved_source_layers,
+    ``ChenEffective.numerical_presieved_conditioned_layers]
   for n in specializedBounds do
     let axs ← Lean.collectAxioms n
     unless axs.all allowed.contains do
       throwError "Unexpected specialized sieve axioms for {n}: {axs}"
-  for n in #[``ChenEffective.presieve_log_cost, ``ChenEffective.specializedSieveError_certified] do
+  for n in #[``ChenEffective.presieve_log_cost, ``ChenEffective.specializedSieveError_certified,
+      ``ChenEffective.sieveHatTail_contraction, ``ChenEffective.sieveHatTail_compact,
+      ``ChenEffective.actual_suzuki_layer_decay, ``ChenEffective.sieve_relative_prime_sum,
+      ``ChenEffective.kernelSieveError_sums, ``ChenEffective.actual_source_inner_transport,
+      ``ChenEffective.actual_source_layer_domination, ``ChenEffective.actual_source_parity_domination] do
     let axs ← Lean.collectAxioms n
     unless axs.all (fun a => allowed.contains a && a != ``ChenEffective.dirichlet_seven_eighths) do
       throwError "Unexpected scalar or primorial axiom for {n}: {axs}"
   logInfo "Power-saving Euler products and coarse specialized recurrence passed the axiom whitelist."
+  logInfo "Analytic kernels, actual source-layer induction, and uniform parity domination passed the axiom whitelist."
   let audited : Array Name := #[
     ``ChenEffective.numerical_chen,
     ``ChenEffective.numerical_chen_representation_count,
