@@ -24,14 +24,17 @@ run_elab do
     throwError "Original Chen statement mismatch"
   logInfo "Provisional theorem recovers the exact original Chen statement."
   let standard := #[``propext,``Classical.choice,``Quot.sound]
-  let provisional := #[``ChenEffective.bjsStudy_interval,
-    ``ChenEffective.bjsStudy_lower_density,``ChenEffective.bjsStudy_upper_density]
+  let provisional := #[``ChenEffective.bjsStudy_interval]
   let allowed := standard ++ provisional ++ #[``ChenEffective.dirichlet_seven_eighths]
   for n in #[``ChenEffective.bjsStudy_chen,``ChenEffective.bjsStudy_original_chen] do
     let axs ← Lean.collectAxioms n
     unless axs.size == allowed.size && axs.all allowed.contains do
       throwError "Wrong provisional axiom ledger for {n}: {axs}"
-  for n in #[``ChenEffective.bjsStudy_elementary_constant,
+  for n in #[``ChenEffective.bjsStudy_lower_density,``ChenEffective.bjsStudy_upper_density,
+      ``ChenEffective.bjsSharpProfile_bound,``ChenEffective.bjsSharpError_finset_parity,
+      ``ChenEffective.bjs_actual_source_layer_domination,
+      ``ChenEffective.bjs_actual_source_parity_domination,
+      ``ChenEffective.bjsStudy_elementary_constant,
       ``ChenEffective.bjsStudy_reversed_interval_counterexample,
       ``ChenEffective.bjsStudy_layer_integral_grid,
       ``ChenEffective.bjsStudy_layer_successor_grid,
@@ -52,7 +55,7 @@ run_elab do
     let axs ← Lean.collectAxioms n
     unless axs.all standard.contains do throwError "Unproved supporting result: {n}: {axs}"
   logInfo "Elementary replacements, H=36 scalar feasibility and finite-tail machinery use only standard axioms."
-  logInfo "Ordered-interval regression, exact layer-two grid certificate, sharp hat bounds and recurrence caps use only standard axioms. Three provisional analytic inputs remain unproved."
+  logInfo "Ordered-interval regression, exact layer-two grid certificate, sharp hat bounds and recurrence caps use only standard axioms. Both BJS density adapters and their complete analytic/discrete proof chain use only standard axioms. Only the ordered interval estimate remains provisional."
   let forbidden := #[``Goldbach.chen_theorem,
     ``MathlibNt.ChensTheorem.chens_theorem_unconditional,
     `ChenEffective.qualitative_chen,`ChenEffective.qualitative_weighted_lower,
@@ -77,4 +80,4 @@ run_elab do
       unless allowed.contains n do throwError "Unlisted axiom: {n}"
     todo := todo ++ ci.type.getUsedConstants
     if let some v := ci.value? (allowOpaque:=true) then todo := todo ++ v.getUsedConstants
-  logInfo m!"Provisional proof traversal passed: {seen.size} constants; exactly three temporary BJS assumptions plus Dirichlet."
+  logInfo m!"Provisional proof traversal passed: {seen.size} constants; exactly the single temporary interval assumption plus Dirichlet."

@@ -26,12 +26,9 @@
       "lowerC": 110,
       "epsilon": 0.0005,
       "productTolerance": 0.00025,
-      "status": "temporary_assumptions",
-      "obligations": [
-        "bjsStudy_lower_density",
-        "bjsStudy_upper_density"
-      ],
-      "source": "BJSStudyInputs.lean"
+      "status": "proved",
+      "obligations": [],
+      "source": "BJSSharpDensity.lean / BJSStudyInputs.lean: certified layers, tail, discrete induction and parity sums"
     }
   ],
   "products": [
@@ -183,9 +180,7 @@
       "cutoff": "3^(3^171)",
       "H": 187.95674918986347,
       "temporaryAssumptions": [
-        "bjsStudy_interval",
-        "bjsStudy_lower_density",
-        "bjsStudy_upper_density"
+        "bjsStudy_interval"
       ],
       "marginFloorAfterPayment": 0.050585
     }

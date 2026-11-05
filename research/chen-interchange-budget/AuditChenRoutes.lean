@@ -15,8 +15,7 @@ run_elab do
   if debug.skipKernelTC.get (← getOptions) then throwError "Kernel checking is disabled"
   let standard := #[``propext,``Classical.choice,``Quot.sound]
   let dirichlet := standard ++ #[``ChenEffective.dirichlet_seven_eighths]
-  let provisional := dirichlet ++ #[``ChenEffective.bjsStudy_interval,
-    ``ChenEffective.bjsStudy_lower_density,``ChenEffective.bjsStudy_upper_density]
+  let provisional := dirichlet ++ #[``ChenEffective.bjsStudy_interval]
   for n in #[``ChenEffective.chen_route_count,``ChenEffective.chen_route_original,
       ``ChenEffective.chen_route_margin_decomposition,``ChenEffective.chen_route_thresholds_iff,
       ``ChenEffective.chen_route_triple_improvement,``ChenEffective.route_source_triple_error] do
@@ -55,4 +54,4 @@ run_elab do
     todo := todo ++ ci.type.getUsedConstants
     if let some v := ci.value? (allowOpaque:=true) then todo := todo ++ v.getUsedConstants
   logInfo m!"Interchangeable budget audit passed ({seen.size} proof/type dependencies); no old final theorem used."
-  logInfo "Generic budget has no new axioms. Production uses Dirichlet only; BJS/mixed routes retain exactly the three existing temporary BJS assumptions."
+  logInfo "Generic budget has no new axioms. Production uses Dirichlet only; BJS/mixed routes retain only the temporary ordered interval assumption; both density adapters are proved."

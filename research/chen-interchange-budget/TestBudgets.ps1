@@ -19,6 +19,11 @@ Assert-Budget ($row.localMarginBeforeTripleRemainder-gt0-and$row.fullMargin-lt0)
 Assert-Budget ($row.missingEstimates.Count-gt0-and -not$row.closedLeanCertificateAtThisH) 'An unproved target profile must not become a closed theorem.'
 Assert-Budget ('cutoff_not_paid:current_mass_distribution_cap'-in$row.missingEstimates) 'Producer cutoffs must remain visible.'
 
+$provedDensity=@(Get-ChenBudgetRows $catalog @(29) @('small_endpoint_with_bjs_sieve'))[0]
+Assert-Budget ($provedDensity.temporaryAssumptions.Count-eq0) 'Proved BJS density adapters must not remain in the temporary-axiom ledger.'
+$conditionalProduct=@(Get-ChenBudgetRows $catalog @(188) @('bjs_components'))[0]
+Assert-Budget ($conditionalProduct.temporaryAssumptions.Count-eq1-and$conditionalProduct.temporaryAssumptions[0]-eq'bjsStudy_interval') 'The remaining interval assumption must stay explicit.'
+
 $slot=@(Get-ChenBudgetRows $catalog @(29) @('improved_selberg_slot'))[0]
 Assert-Budget ($null-eq$slot.tripleRemainder-and$null-eq$slot.fullMargin-and -not$slot.algebraicallyPositive) 'A missing triple formula was treated as a zero error.'
 $switched=@(Get-ChenBudgetRows $catalog @(29) @('switched_triple_slot'))[0]

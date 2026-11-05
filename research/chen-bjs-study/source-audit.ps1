@@ -32,7 +32,7 @@ function Remove-LeanCommentsAndStrings([string]$text) {
     return $out.ToString()
 }
 
-$expected=@('bjsStudy_interval','bjsStudy_lower_density','bjsStudy_upper_density')
+$expected=@('bjsStudy_interval')
 $count=0
 foreach($p in Get-ChildItem -LiteralPath $PSScriptRoot -Filter '*.lean'){
  $code=Remove-LeanCommentsAndStrings ([IO.File]::ReadAllText($p.FullName))
@@ -46,5 +46,5 @@ foreach($p in Get-ChildItem -LiteralPath $PSScriptRoot -Filter '*.lean'){
   if($m.Groups[1].Value -match '^(OAI|OpenAI|ComparatorChallenges)(\.|$)'){throw "Forbidden import: $p"}
  }
 }
-if($count-ne3){throw "Wrong provisional axiom count: $count"}
-Write-Output 'Study source scan passed: exactly three authorized temporary assumptions; no placeholders, native_decide or unsafe declarations.'
+if($count-ne1){throw "Wrong provisional axiom count: $count"}
+Write-Output 'Study source scan passed: exactly one provisional reciprocal-interval assumption; no placeholders, native_decide or unsafe declarations.'

@@ -3,7 +3,7 @@ $ErrorActionPreference='Stop'
 $log3=[Math]::Log(3)
 $loglog3=[Math]::Log($log3)
 $results=[ordered]@{
- status='PROVISIONAL; three temporary BJS assumptions remain'
+ status='PROVISIONAL; only the ordered interval assumption remains'
  production_commit='6b412908'
  production_H=2900*$log3+$loglog3
  provisional_cutoff='3^(3^171)'
@@ -16,7 +16,7 @@ $results=[ordered]@{
  elementary_mertens_divisor_H=30*$log3+$loglog3
  denominator_and_prime_pair_H=80*[Math]::Log(10)+$loglog3
  triple_remainder_H=[Math]::Log(200)+40*[Math]::Log(10)
- temporary_axioms=@('bjsStudy_interval','bjsStudy_lower_density','bjsStudy_upper_density')
+ temporary_axioms=@('bjsStudy_interval')
  H36=[ordered]@{
   status='Scalar feasibility only; NOT a Chen theorem'
   presieve_U=1e9
@@ -25,7 +25,7 @@ $results=[ordered]@{
   lower_density_error=3e-5+110.0/2000/16+1.0/(2*20000000)
   upper_density_error=18e-5+110.0/2000
   final_margin=.040585
-  missing=@('Uniform small-endpoint product bridge','Mass and distribution estimates at H=36','Triple moment and remainder estimates at H=36','Proof replacements for the BJS density assumptions')
+  missing=@('Uniform small-endpoint product bridge','Mass and distribution estimates at H=36','Triple moment and remainder estimates at H=36')
  }
 }
 $json=$results|ConvertTo-Json -Depth 6

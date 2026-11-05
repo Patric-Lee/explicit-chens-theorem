@@ -13,9 +13,7 @@
       "cutoff": "3^(3^171)",
       "H": 187.95674918986347,
       "temporaryAssumptions": [
-        "bjsStudy_interval",
-        "bjsStudy_lower_density",
-        "bjsStudy_upper_density"
+        "bjsStudy_interval"
       ],
       "marginFloorAfterPayment": 0.050585
     }
@@ -137,9 +135,7 @@
         "underflow": false
       },
       "temporaryAssumptions": [
-        "bjsStudy_interval",
-        "bjsStudy_lower_density",
-        "bjsStudy_upper_density"
+        "bjsStudy_interval"
       ],
       "missingEstimates": [
         "certify_evaluated_allocations_in_Lean",
@@ -267,10 +263,7 @@
         "overflow": false,
         "underflow": false
       },
-      "temporaryAssumptions": [
-        "bjsStudy_lower_density",
-        "bjsStudy_upper_density"
-      ],
+      "temporaryAssumptions": [],
       "missingEstimates": [
         "asymmetric_reciprocal_input",
         "certify_evaluated_allocations_in_Lean",
@@ -386,10 +379,7 @@
         "overflow": false,
         "underflow": false
       },
-      "temporaryAssumptions": [
-        "bjsStudy_lower_density",
-        "bjsStudy_upper_density"
-      ],
+      "temporaryAssumptions": [],
       "missingEstimates": [
         "asymmetric_reciprocal_input",
         "certify_evaluated_allocations_in_Lean",
@@ -518,9 +508,7 @@
         "underflow": false
       },
       "temporaryAssumptions": [
-        "bjsStudy_interval",
-        "bjsStudy_lower_density",
-        "bjsStudy_upper_density"
+        "bjsStudy_interval"
       ],
       "missingEstimates": [
         "certify_evaluated_allocations_in_Lean",
@@ -648,10 +636,7 @@
         "overflow": false,
         "underflow": false
       },
-      "temporaryAssumptions": [
-        "bjsStudy_lower_density",
-        "bjsStudy_upper_density"
-      ],
+      "temporaryAssumptions": [],
       "missingEstimates": [
         "asymmetric_reciprocal_input",
         "certify_evaluated_allocations_in_Lean",
@@ -767,10 +752,7 @@
         "overflow": false,
         "underflow": false
       },
-      "temporaryAssumptions": [
-        "bjsStudy_lower_density",
-        "bjsStudy_upper_density"
-      ],
+      "temporaryAssumptions": [],
       "missingEstimates": [
         "asymmetric_reciprocal_input",
         "certify_evaluated_allocations_in_Lean",
@@ -899,9 +881,7 @@
         "underflow": false
       },
       "temporaryAssumptions": [
-        "bjsStudy_interval",
-        "bjsStudy_lower_density",
-        "bjsStudy_upper_density"
+        "bjsStudy_interval"
       ],
       "missingEstimates": [
         "certify_evaluated_allocations_in_Lean",
@@ -1029,10 +1009,7 @@
         "overflow": false,
         "underflow": false
       },
-      "temporaryAssumptions": [
-        "bjsStudy_lower_density",
-        "bjsStudy_upper_density"
-      ],
+      "temporaryAssumptions": [],
       "missingEstimates": [
         "asymmetric_reciprocal_input",
         "certify_evaluated_allocations_in_Lean",
@@ -1148,10 +1125,7 @@
         "overflow": false,
         "underflow": false
       },
-      "temporaryAssumptions": [
-        "bjsStudy_lower_density",
-        "bjsStudy_upper_density"
-      ],
+      "temporaryAssumptions": [],
       "missingEstimates": [
         "asymmetric_reciprocal_input",
         "certify_evaluated_allocations_in_Lean",
@@ -1280,9 +1254,7 @@
         "underflow": false
       },
       "temporaryAssumptions": [
-        "bjsStudy_interval",
-        "bjsStudy_lower_density",
-        "bjsStudy_upper_density"
+        "bjsStudy_interval"
       ],
       "missingEstimates": [
         "certify_evaluated_allocations_in_Lean",
@@ -1411,10 +1383,7 @@
         "overflow": false,
         "underflow": false
       },
-      "temporaryAssumptions": [
-        "bjsStudy_lower_density",
-        "bjsStudy_upper_density"
-      ],
+      "temporaryAssumptions": [],
       "missingEstimates": [
         "asymmetric_reciprocal_input",
         "certify_evaluated_allocations_in_Lean",
@@ -1531,10 +1500,7 @@
         "overflow": false,
         "underflow": false
       },
-      "temporaryAssumptions": [
-        "bjsStudy_lower_density",
-        "bjsStudy_upper_density"
-      ],
+      "temporaryAssumptions": [],
       "missingEstimates": [
         "asymmetric_reciprocal_input",
         "certify_evaluated_allocations_in_Lean",

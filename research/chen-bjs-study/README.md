@@ -13,8 +13,8 @@ Its natural double-exponential coordinate is H approximately 187.956749.
 The proof recovers the original public Chen specification in
 `BJSStudyCompatibility.lean`, without using its old implicit proof.
 
-This theorem depends on the Dirichlet axiom AND the three temporary BJS
-assumptions below. It is not an unconditional improvement of the verified
+This theorem depends on the Dirichlet axiom AND the single temporary interval
+assumption below. It is not an unconditional improvement of the verified
 production cutoff. No OpenAI modules or new external dependencies are used.
 
 | Component | Selected allocation |
@@ -38,83 +38,57 @@ The finite counting identity and QD remainder assembly remain proved project
 results. All mass/distribution thresholds are actually paid at the selected
 cutoff, rather than left as hypotheses of the provisional final theorem.
 
-## Exact temporary-axiom ledger
+## Axiom ledger
 
-All three declarations are in BJSStudyInputs.lean. Reference:
-https://arxiv.org/html/2207.09452v6
+Only `bjsStudy_interval` remains an axiom in this package. Its statement
+requires 1<a<=b and b>=286, with error 1/log(a)^2. The original provisional
+statement omitted a<=b and was false for reversed endpoints. This was
+corrected before the density assumptions were removed; `BJSIntervalOrder`
+proves an axiom-free regression counterexample. Production never used it.
 
-1. `bjsStudy_interval`: the finite-subset consequence of BJS Lemma 21,
-   for 1<a<=b and b>=286, with error 1/log(a)^2. Still unproved in Lean.
-2. `bjsStudy_lower_density`: a project-weight adapter of Theorem 6,
-   using Table 1 at epsilon=1/2000 and lower coefficient 110.
-3. `bjsStudy_upper_density`: the analogous upper adapter, rounding 109
-   up to 110. Both adapters still need proofs for the exact source weights.
+`bjsStudy_lower_density` and `bjsStudy_upper_density` are now THEOREMS.
+Their exact project-weight statements retain coefficient 110 at epsilon
+1/2000, given relative product error 1/4000. Each proof uses only Lean's
+three standard axioms. The full provisional Chen theorem uses exactly
+those three, Dirichlet, and the single ordered interval assumption.
 
-The product input has error 1/4000, leaving strict slack against the paper's
-1/2000 hypothesis. These assumptions contain no final Chen conclusion,
-no distribution theorem, and no triple estimate.
+## Certified sharp sieve implementation
 
-The audit expects exactly these three plus the original Dirichlet axiom,
-in addition to Lean's three standard axioms. They must not be silently
-added to the production whitelist.
+The density adapters are proved by the following chain:
 
-## Proved supporting results
+* `BJSLayerTableData` supplies integer candidates for mesh 1/32 at precision
+  10^12. `BJSLayerTableChecks` checks their base row, every successor row,
+  and every cell's hat envelope, using kernel-reduced `decide`.
+* `BJSGridCertificate` proves that the integer recurrence bounds the actual
+  normalized continuous layers. `BJSGridProfile` transfers grid certificates
+  to EVERY real coordinate in the closed parity domain.
+* `BJSLayerProfile` certifies layers 1 through 12, ending with coefficient
+  7417/1000000. `BJSAnalyticTail` continues this with factor 241/250 per
+  layer, uniformly in the coordinate and depth.
+* `BJSSharpHat` gives boundary factor 11/3 and the odd-parity tail factor
+  116/125. `BJSSharpRecurrence` caps the corresponding error multipliers
+  by 1931/2000 and 1859/2000 at relative error <=1/4000.
+* `BJSParitySums` proves both error parity sums are <=220 by an exact
+  rational finite prefix and an analytic two-state tail potential.
+* `BJSDiscreteEnvelope`, `BJSDiscreteAnalytic` and `BJSDiscreteInduction`
+  prove the actual discrete source-layer bound, including inherited versus
+  recursive coordinates, natural-ceiling transport, the compact odd case,
+  even endpoint, and zero-support case.
+* `BJSDiscreteParity` sums the actual layers. `BJSSharpDensity` proves the
+  lower and upper Rosser-density statements. The factor-two slack gives
+  220*(1/4000)=110*(1/2000), exactly the former axiom statements.
 
-The original provisional interval declaration omitted a<=b. That version
-was false for reversed endpoints, even with an empty prime set. It has
-been corrected; the product proof already has the required order.
-`BJSIntervalOrder` proves an explicit counterexample to the unordered
-statement using only standard axioms. Earlier provisional axiom-ledger
-checks did not detect this statement error. The production theorem never
-used the provisional input.
+No tabulated BJS constant is assumed. This proves the adapters needed here;
+it does not claim every epsilon-dependent entry of the paper's Table 1.
+All the named results above use standard axioms only. No new external
+modules or dependencies are imported, and no native_decide is used.
+The candidate generator's floating-point selections are NOT trusted: every
+integer row and final coefficient inequality must pass the Lean checker.
 
-`BJSLayerQuadrature` proves upper Riemann sums for the actual normalized
-continuous layers, including the antitonicity needed for the finite-grid
-method. It does not yet certify the numerical layer table or remove either
-density assumption.
-
-The sharp-sieve implementation work is still incomplete:
-
-* `BJSLayerTwo` checks rational quadrature bounds at 2, 5/2 and 3 and a
-  complete second-layer hat envelope with coefficient 0.6.
-* `BJSLayerTwoSharp` refines that coefficient to 0.35 using 64 grid cells.
-  This is a proved bound on the actual continuous layer, not an assumed
-  scalar sequence. It is slightly weaker than BJS's tabulated 0.33.
-* `BJSSharpHat` improves the source boundary multiplier from 4 to 11/3
-  and retains the odd-parity tail multiplier 116/125 rather than 241/250.
-* `BJSSharpRecurrence` checks even/odd error multipliers 1931/2000 and
-  1859/2000, and the separate profile-forcing caps, at product error
-  epsilon<=1/4000. The target 110/2000 allows a parity sum of 220.
-
-Still required: certificates for the remaining early continuous layers,
-their analytic tail, the refined actual discrete source-layer induction
-(including rounded endpoints), both parity-sum certificates, and the two
-Rosser-density adapters. The corrected reciprocal-prime interval estimate
-also remains unproved. The three provisional assumptions are retained
-explicitly until those proofs exist; no improved cutoff is claimed here.
-
-The following use only standard axioms, with no temporary BJS assumption:
-
-* BJSStudyElementaryMertens identifies the elementary reciprocal-prime
-  constant with the project's canonical constant, using uniqueness of the
-  limit. It transfers the already proved elementary 10/log(x) error.
-* BJSStudyMertens proves the one-sided product bound actually needed by
-  the triple divisor normalization, and inverse product <=6 log(n), from
-  n>=3^30. This replaces the old 3^2176 gate. The proof uses exp(E)>=1+E,
-  avoiding the unnecessary two-sided exp-error payment.
-* BJSStudyFiniteCap re-proves the mass/distribution threshold caps with
-  exponent 10^80 instead of 10^100; no new analytic estimate is assumed.
-* BJSStudyLogGate proves log(x)^6<=sqrt(x) for x>=10^80 directly using
-  log(x)<=16*x^(1/16), replacing the generic logPowerCutoff(6) gate.
-* BJSStudyFiniteTail proves a finite-prefix/geometric-tail certificate
-  theorem. It does NOT certify the BJS table or the source induction yet.
-* BJSStudyH36 proves the scalar geometry and payment certificates below.
-
-BJSStudyProducts proves an all-interval Goldbach product bound from the
-single temporary reciprocal-interval assumption. It covers small recursive
-upper endpoints, empty intervals, and subsets of odd primes. It does not
-assume the stronger, range-restricted BJS Lemma 18. No finite computation
-through 10^12 is needed for this coarse bootstrap.
+The earlier independent layer-two certificate (coefficient 0.35), elementary
+Mertens replacement, reduced finite caps and H=36 scalar feasibility
+certificates are retained. The exact counting weights, QD assembly and
+actual mass/distribution/triple estimates are unchanged.
 
 ## What dominates H=188
 
@@ -133,7 +107,7 @@ At log(N)>=exp(36), U=10^9 and log(2Q)<=1+2U, the exact geometry charge
 is approximately 4.63905*10^-6. BJSStudyH36 certifies this using a proved
 lower bound for exp(36), not floating-point arithmetic.
 
-With the same provisional density coefficients, the lower density payment
+With the same proved density coefficients, the lower density payment
 is <=1/250 and upper <=7/125. A base allocation 3/50 instead of 1/20
 leaves final margin 0.040585. The original fixed-power loss is included.
 
@@ -144,7 +118,7 @@ This is scalar feasibility, NOT a Chen theorem at H=36. It requires:
   intermediate ranges need proved bridges.
 * Actual mass and distribution estimates at H=36, replacing the shared cap.
 * Sharper triple absolute moments and remainder estimates at H=36.
-* Proofs replacing all three BJS assumptions.
+* A proof replacing the remaining ordered reciprocal-interval assumption.
 
 `BudgetStudy.ps1` regenerates budget-results.json. Its decimal summaries
 are exploratory output; exact coefficients, cutoff equalities and scalar
@@ -152,12 +126,7 @@ feasibility assertions are checked separately in Lean.
 
 ## Next proof work
 
-For the density adapters, verify finite initial source-layer envelopes,
-region-dependent hat transport, and a geometric tail, then connect the
-resulting parity sums to the existing exact Rosser weights. The generic
-finite-tail certificate is proved; the numerical layer certificates and
-improved actual-layer induction remain unfinished. No external numerical
-C1/C2 table has been presented as a kernel-checked result.
+Both density adapters are proved and audited; no density axiom remains.
 
 For the reciprocal interval input, derive the explicit prime estimates
 behind Lemma 21 or build a weaker sufficient certified profile. For U=10^9,
@@ -169,4 +138,4 @@ must be checked by Lean certificates without native_decide.
 Run `.\check.ps1` from this installed research directory. Build the production
 modules first if their artifacts are absent. For the final dependency audit only,
 use `.\check.ps1 -FromModule AuditBJSStudy`. The audit intentionally accepts
-the three named temporary assumptions and rejects any additional one.
+the single named temporary interval assumption and rejects any additional one.

@@ -1,5 +1,5 @@
 {
-  "status": "PROVISIONAL; three temporary BJS assumptions remain",
+  "status": "PROVISIONAL; only the ordered interval assumption remains",
   "production_commit": "6b412908",
   "production_H": 3186.069684965135,
   "provisional_cutoff": "3^(3^171)",
@@ -13,9 +13,7 @@
   "denominator_and_prime_pair_H": 184.30085526714038,
   "triple_remainder_H": 97.40172108630988,
   "temporary_axioms": [
-    "bjsStudy_interval",
-    "bjsStudy_lower_density",
-    "bjsStudy_upper_density"
+    "bjsStudy_interval"
   ],
   "H36": {
     "status": "Scalar feasibility only; NOT a Chen theorem",
@@ -28,8 +26,7 @@
     "missing": [
       "Uniform small-endpoint product bridge",
       "Mass and distribution estimates at H=36",
-      "Triple moment and remainder estimates at H=36",
-      "Proof replacements for the BJS density assumptions"
+      "Triple moment and remainder estimates at H=36"
     ]
   }
 }

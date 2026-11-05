@@ -1,10 +1,10 @@
 # Interchangeable end-to-end Chen budgets
 
 This package separates actual counting estimates from numerical exploration.
-It introduces no new axioms or external dependencies. The production and BJS
-study sources are unchanged. Their established cutoffs remain respectively
-`3^(3^2900)` (Dirichlet only) and `3^(3^171)` (Dirichlet plus the three existing
-temporary BJS assumptions).
+It introduces no new axioms or external dependencies. The production sources
+are unchanged. The established cutoffs remain respectively
+`3^(3^2900)` (Dirichlet only) and `3^(3^171)` (Dirichlet plus the remaining
+temporary ordered interval assumption).
 
 ## Proved Lean interfaces
 
@@ -66,9 +66,7 @@ variable envelope is at least as informative wherever that payment is valid.
 
 `ChenRouteBJS.lean` independently assembles the provisional BJS study inputs.
 Its margin floor is `0.055585 - numericalTripleErrorCap/log(N)`, recovering
-`0.050585` at its existing cutoff. Its axiom ledger is unchanged: the
-Dirichlet axiom and `bjsStudy_interval`, `bjsStudy_lower_density`,
-`bjsStudy_upper_density`, plus standard axioms.
+`0.050585` at its existing cutoff. Its axiom ledger now contains Dirichlet and `bjsStudy_interval`, plus standard axioms. Both density adapters are proved from the certified layer table, analytic tail, discrete induction and parity sums.
 
 The provisional interval input now explicitly requires ordered endpoints
 a<=b. Its earlier declaration omitted that condition and was false for
