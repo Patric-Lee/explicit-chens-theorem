@@ -5,6 +5,7 @@ import BJSLayerQuadrature
 import BJSLayerTwoSharp
 import BJSSharpRecurrence
 import BJSReciprocalLargeEndpoint
+import BJSReciprocalRemainingRange
 import Goldbach.Theorem
 import Lean.Util.CollectAxioms
 import Lean.Util.FoldConsts
@@ -49,6 +50,12 @@ run_elab do
       ``ChenEffective.bjsStudy_interval_of_prefix,
       ``ChenEffective.bjsStudy_interval_of_half_log_squared_prefix,
       ``ChenEffective.bjsStudy_power_error_log_squared,
+      ``ChenEffective.bjsStudy_canonical_mertens_upper,
+      ``ChenEffective.bjsLogUpper_valid,
+      ``ChenEffective.bjsSmallPrefixCertificates,
+      ``ChenEffective.bjsSmallSignedPrefix_lower,
+      ``ChenEffective.bjsStudy_power_error_log_squared_3300,
+      ``ChenEffective.bjsStudy_log_three_lower,
       ``ChenEffective.bjsStudy_mertens_inverse,
       ``ChenEffective.bjsStudyCap_preSieve_base_distribution,
       ``ChenEffective.bjsStudyCap_preSieve_varying_threshold_cap,``ChenEffective.bjsStudy_log_six_sqrt,
@@ -64,11 +71,15 @@ run_elab do
   for n in #[``ChenEffective.bjsStudy_interval_power,
       ``ChenEffective.bjsStudy_reciprocal_prefix_large,
       ``ChenEffective.bjsStudy_interval_large_endpoint,
-      ``ChenEffective.bjsStudy_interval_of_middle_prefix] do
+      ``ChenEffective.bjsStudy_interval_of_middle_prefix,
+      ``ChenEffective.bjsStudy_reciprocal_prefix_from_3300,
+      ``ChenEffective.bjsStudy_reciprocal_prefix_from_3072,
+      ``ChenEffective.bjsStudy_interval_from_3072,
+      ``ChenEffective.bjsStudy_interval_of_remaining_prefix] do
     let axs ← Lean.collectAxioms n
     unless axs.size == dirichletOnly.size && axs.all dirichletOnly.contains do
       throwError "Interval-tail result uses a provisional input or wrong axiom ledger: {n}: {axs}"
-  logInfo "Closed-left interval transfer and explicit large-endpoint proof audited independently of bjsStudy_interval. The full middle-range prefix estimates remain unproved."
+  logInfo "Finite lower prefix through 286 uses only standard axioms. Signed tail and interval from 3^3072 use Dirichlet only. The intervening signed-prefix range, including 3^120, remains unproved."
   logInfo "Ordered-interval regression, exact layer-two grid certificate, sharp hat bounds and recurrence caps use only standard axioms. Both BJS density adapters and their complete analytic/discrete proof chain use only standard axioms. Only the ordered interval estimate remains provisional."
   let forbidden := #[``Goldbach.chen_theorem,
     ``MathlibNt.ChensTheorem.chens_theorem_unconditional,

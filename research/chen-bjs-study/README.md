@@ -141,14 +141,30 @@ Dirichlet axiom only. Its proof retains the existing power-saving Mertens
 error, absorbs log(a)^2 with an explicit real-power bound, and pays the
 remaining scalar constant numerically. No implicit threshold is used.
 
+`BJSCanonicalMertensUpper` proves that the canonical Mertens constant is
+at most 27/100: a finite harmonic sum bounds Euler's constant, and positive
+Taylor sums for eight actual primes bound the Euler-product correction.
+`BJSFiniteLogBounds` supplies rational logarithm upper certificates.
+`BJSSmallPrefixCertificate` checks all 285 integer prefix endpoints from
+2 through 286 in the Lean kernel. `BJSSmallSignedPrefix` transfers them to
+the actual signed lower-prefix estimate for every real 1<x<=286. These
+proofs use only standard axioms. `GenerateSmallPrefix.ps1` regenerates the
+untrusted candidate table; its approximations are all checked by the theorem.
+
+`BJSReciprocalTail3300` improves the analytic starting point to log(x)>=3300,
+and hence to x>=3^3072, for BOTH signed prefix bounds and the ordered
+interval bound. It preserves exponential decay while paying the logarithmic
+square instead of absorbing that square into a global real-power estimate.
+These results use only the existing Dirichlet axiom plus standard axioms.
+
 The last BJS axiom has NOT been removed. The remaining explicit obligations
-are the lower signed prefix estimate for 1<x<3^8192 and the upper signed
-prefix estimate for 286<=x<3^8192, relative to the canonical Mertens constant.
-`bjsStudy_interval_of_middle_prefix` proves that those two estimates would
-close the full statement. Neither premise has been discharged. This is a
-substantial analytic range, not a proposed brute-force computation. It
-includes the current pre-sieving endpoint 3^120, so the large-endpoint
-theorem does not replace the study's product input or improve its cutoff.
+are now the lower signed prefix estimate for 286<x<3^3072 and the upper
+signed prefix estimate for 286<=x<3^3072, relative to the canonical Mertens
+constant. `bjsStudy_interval_of_remaining_prefix` assembles the proved base
+and tail with those two still-unproved hypotheses. Neither is introduced
+as an axiom. This substantial analytic range includes the current
+pre-sieving endpoint 3^120, so the proved tail does not replace the study's
+product input or improve its final cutoff. No proof at 3^120 is claimed.
 
 The published source is Rosser-Schoenfeld (1962), Theorem 5, (3.17)-(3.18),
 https://denisevellachemla.eu/Rosser-Schoenfeld-1962.pdf. Its range proofs and
