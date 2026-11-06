@@ -25,9 +25,9 @@ theorem bjsStudy_small_prime_product_log (S : BoundingSieve) :
   rw [hc]
   exact hh.trans (mul_le_mul_of_nonneg_right hlog (by unfold bjsStudyPresieveStart; positivity))
 
-private opaque bjsStudyGeometryCertificate : {n : ℕ // n=3^(3^2700)} := ⟨3^(3^2700), rfl⟩
+private opaque bjsStudyGeometryCertificate : {n : ℕ // n=3^(3^171)} := ⟨3^(3^171), rfl⟩
 def bjsStudyGeometryThreshold : ℕ := bjsStudyGeometryCertificate.1
-theorem bjsStudyGeometryThreshold_eq : bjsStudyGeometryThreshold=3^(3^2700) :=
+theorem bjsStudyGeometryThreshold_eq : bjsStudyGeometryThreshold=3^(3^171) :=
   bjsStudyGeometryCertificate.2
 
 theorem bjsStudy_log_budget {N : ℕ} (hN : bjsStudyGeometryThreshold ≤ N) :
@@ -39,7 +39,7 @@ theorem bjsStudy_log_budget {N : ℕ} (hN : bjsStudyGeometryThreshold ≤ N) :
     unfold bjsStudyPresieveStart
     exact one_le_pow₀ (by norm_num)
   have hcoef : (3*10^20 : ℝ) ≤ 3^43 := by norm_num
-  have hexp : (3 : ℝ)^43 * bjsStudyPresieveStart ≤ (3 : ℝ)^2700 := by
+  have hexp : (3 : ℝ)^43 * bjsStudyPresieveStart ≤ (3 : ℝ)^171 := by
     unfold bjsStudyPresieveStart
     rw [← pow_add]
     exact pow_le_pow_right₀ (by norm_num) (by norm_num)
@@ -48,7 +48,7 @@ theorem bjsStudy_log_budget {N : ℕ} (hN : bjsStudyGeometryThreshold ≤ N) :
     _ ≤ (3*10^20)*bjsStudyPresieveStart := by nlinarith only [hU]
     _ ≤ (3 : ℝ)^43*bjsStudyPresieveStart :=
       mul_le_mul_of_nonneg_right hcoef (zero_le_one.trans hU)
-    _ ≤ (3 : ℝ)^2700 := hexp
+    _ ≤ (3 : ℝ)^171 := hexp
     _ ≤ _ := hlog
 
 noncomputable def bjsStudyLevel (S : BoundingSieve) (X : ℝ) : ℕ :=

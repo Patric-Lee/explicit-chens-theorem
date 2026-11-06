@@ -1,3 +1,5 @@
+Current status: the cutoff 3^(3^171) is now proved using the local explicit-formula package, without the archived interval axiom. The snapshot below remains a historical conditional study.
+
 # Preserved conditional low-cutoff study
 
 Annotated tag: `study/bjs-low-cutoff-conditional-927c1eb8`

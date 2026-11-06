@@ -7,6 +7,8 @@ import BJSSharpRecurrence
 import BJSReciprocalLargeEndpoint
 import BJSReciprocalRemainingRange
 import BJSMertensThetaTarget
+import DusartMertens
+import BJSProvedProductProfile
 import Goldbach.Theorem
 import Lean.Util.CollectAxioms
 import Lean.Util.FoldConsts
@@ -14,7 +16,7 @@ import Lean.Util.FoldConsts
 open Lean Meta
 set_option maxHeartbeats 0
 
-example : ChenEffective.bjsStudyN0=3^(3^2700) := ChenEffective.bjsStudyN0_eq
+example : ChenEffective.bjsStudyN0=3^(3^171) := ChenEffective.bjsStudyN0_eq
 
 example : ChenEffective.bjsStudyBudget.margin=(0.050585:ℝ) := by
   norm_num [ChenEffective.bjsStudyBudget,ChenEffective.ChenBudget.margin,
@@ -58,8 +60,14 @@ run_elab do
       ``ChenEffective.bjsSmallSignedPrefix_lower,
       ``ChenEffective.bjsStudy_power_error_log_squared_3300,
       ``ChenEffective.bjsStudy_log_three_lower,
-      ``ChenEffective.bjsStudyProductProfile,
-      ``ChenEffective.bjsStudy_product_error_cap,
+      ``ChenEffective.dusart_theta_tail_scalar,
+      ``ChenEffective.dusart_log_kernel_integrable,
+      ``ChenEffective.dusart_log_kernel_integral,
+      ``ChenEffective.dusart_mertens_of_theta_log_squared,
+      ``ChenEffective.dusart_two_prefix_payment,
+      ``ChenEffective.dusart_small_exp_payment,
+      ``ChenEffective.bjsPowerProductProfile,
+      ``ChenEffective.bjsPower_product_error_cap,
       ``ChenEffective.bjsStudy_mertens_of_theta_target,
       ``ChenEffective.bjsStudy_theta_target_payment,
       ``ChenEffective.bjsStudy_prefix_at_presieve_of_theta_target,
@@ -89,13 +97,17 @@ run_elab do
       ``ChenEffective.bjsStudy_reciprocal_prefix_from_3300,
       ``ChenEffective.bjsStudy_reciprocal_prefix_from_3072,
       ``ChenEffective.bjsStudy_interval_from_3072,
+      ``ChenEffective.dusart_theta_log_squared_tail,
+      ``ChenEffective.dusart_mertens_log_squared_tail,
+      ``ChenEffective.dusart_mertens_of_middle_range,
       ``ChenEffective.bjsStudy_interval_of_remaining_prefix] do
     let axs ← Lean.collectAxioms n
     unless axs.size == dirichletOnly.size && axs.all dirichletOnly.contains do
       throwError "Product, counting or interval result has the wrong axiom ledger: {n}: {axs}"
-  logInfo "The active product profile at 3^2652, lower count, triple bound and Chen theorem use only Dirichlet plus standard axioms. No BJS axiom remains."
-  logInfo "Finite lower prefix through 286 uses only standard axioms. Signed tail and interval from 3^3072 use Dirichlet only. The intervening signed-prefix range, including 3^120, remains unproved."
-  logInfo "The theta-to-prefix and closed-left interval bridges at 3^120 use only standard axioms; the theta hypothesis itself has NOT been proved or added as an axiom."
+  logInfo "The active product theorem at 3^120, lower count, triple bound and Chen theorem use only Dirichlet plus standard axioms. No BJS axiom remains."
+  logInfo "Finite lower prefix through 286 uses only standard axioms. Signed tail and interval from 3^3072 use Dirichlet only. The sharp signed-prefix and interval bounds from 3^120 are now proved by the Dusart application."
+  logInfo "The theta-to-prefix and closed-left interval bridges at 3^120 use only standard axioms; the theta hypothesis is supplied by the proved Dirichlet-conditional explicit formula."
+  logInfo "Dusart log-squared theta and Mertens far tails for log(x)>=3400 use Dirichlet only. The exact Abel bridge and scalar payments use standard axioms. The middle theta range from 3^120 is now proved in DusartPort.Application."
   logInfo "Both BJS density adapters and their complete analytic/discrete proof chain use only standard axioms. The low-endpoint theta studies are retained separately from the active proof."
   let forbidden := #[``Goldbach.chen_theorem,
     ``MathlibNt.ChensTheorem.chens_theorem_unconditional,

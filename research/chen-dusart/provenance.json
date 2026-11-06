@@ -1,0 +1,447 @@
+[
+  {
+    "module": "DusartPort.PNT.Analysis.SpecialFunctions.Complex.LogBounds",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.SpecialFunctions.Complex.LogBounds",
+    "originalHash": "D0400F709FF90FA4D614EDB9AAADAB7F2FDED6AC24A4649B9C7AA258F5E003D2"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.Norm",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.Norm",
+    "originalHash": "B44B8CADEDB91B616299C50C8714E8EF613AFA5A6F96EE0DF9BA7E5A086DE048"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.WeierstrassFactor",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.WeierstrassFactor",
+    "originalHash": "276576DCF1029D12310EBCE70C3833A41693ED75A16DB535599F4E630B15C5B2"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.CanonicalProduct",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.CanonicalProduct",
+    "originalHash": "F5600CB6DE2EF85A11FFA3357749857765D55D295D128A1695FB2C1975B1E6DA"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Meromorphic.DivisorSupport",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Meromorphic.DivisorSupport",
+    "originalHash": "9AF62E515BFF9E1D895A0F75C2914EC9E579CF3712CCEB47C5D0D78B190B048A"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.DivisorIndex",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.DivisorIndex",
+    "originalHash": "78FAA8F7322448B2F333C2CC9DAFF54659A8291713D436069444582C004E2D3B"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.LocallyUniformLimit",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.LocallyUniformLimit",
+    "originalHash": "04C514B4FE245B18F0C44273C6F7429B86A6236D4DB2CE674172D225477E33C1"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.DivisorConvergence",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.DivisorConvergence",
+    "originalHash": "6DD65031B34645AD2BAC07215411A2D1CD0E9E367E54E46A8117A1A41C35C047"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.DivisorUnits",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.DivisorUnits",
+    "originalHash": "05B6DE0E3DCE6049C7E84256947852488A5C160692B98FBD6F1F56FF9D93757F"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.DivisorFiber",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.DivisorFiber",
+    "originalHash": "4D69F2D3B8995B6456BBD83289C4268B808021D78106F05A6D5804E0801EBE58"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.DivisorComplement",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.DivisorComplement",
+    "originalHash": "4A09C1873DCF2FEB91B8CB6127F68F1183B7FAE0CBD2F33541854C299FFA88D7"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.DivisorPartialProductFactor",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.DivisorPartialProductFactor",
+    "originalHash": "FB928E75D5CCB0403B3F81BE660225CEC59694C8C250D0CA17F6EF93F9436E0C"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.DivisorQuotientConvergence",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.DivisorQuotientConvergence",
+    "originalHash": "F3214D99AA6EA7E6ED62E7B944BE35B5C11DDECBDAA8E5FA9E1DB7B848B60608"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.DivisorQuotientRemovable",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.DivisorQuotientRemovable",
+    "originalHash": "85F6B567A91CC6BE3F2E4E87BF40155D49AEA68DE10DFD057BDCE76874A3261E"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.Divisor",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.Divisor",
+    "originalHash": "6706B2D880571F5820119265E09102D8F3A7B58BBE2F6C0D154F6F8EF5E5D19D"
+  },
+  {
+    "module": "DusartPort.PNT.Topology.MetricSpace.Annulus",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Topology.MetricSpace.Annulus",
+    "originalHash": "3665F9B27A3CC7C1B0024090623069E16F304F295712464D8D97559011A67547"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.HadamardFactorization",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.HadamardFactorization",
+    "originalHash": "1285291D26F1D9EEF6D88D03258A116A916393FB8FB5781565CCFCB6EAE6E137"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.ValueDistribution.LogCounting.Basic",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.ValueDistribution.LogCounting.Basic",
+    "originalHash": "21F5185452A9FD32B0AED76FF4AAC196CDDDE52532ED169F5C2F1457050CA4A9"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.SpecialFunctions.Log.PosLog",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.SpecialFunctions.Log.PosLog",
+    "originalHash": "78DE8BC060BDC5444A3B2A38487C988A84B4EEF4E59371CF6C8CF24F999086A8"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.SpecialFunctions.Exp",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.SpecialFunctions.Exp",
+    "originalHash": "42A7D3F7376530F77C7341C322F0D8609B021336CD81CDEE15A970A6CF81ABCD"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.SpecialFunctions.Log.ExpGrowth",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.SpecialFunctions.Log.ExpGrowth",
+    "originalHash": "C2B015A7BF66F881F5E3130FE53DD1E6AAE8148657825063648FC8487E853F05"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.ValueDistribution.LogCounting.Growth",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.ValueDistribution.LogCounting.Growth",
+    "originalHash": "7693CE1DA613EE875F50271410A1439644E40464DEBF99E2A771C79FDA31361F"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Meromorphic.DivisorHolomorphic",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Meromorphic.DivisorHolomorphic",
+    "originalHash": "22D19BBD1EDB63A1FAF723851BB9A2E5FA461FF663D7DAFB3B09F192DEB16302"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.SpecialFunctions.Log.Dyadic",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.SpecialFunctions.Log.Dyadic",
+    "originalHash": "593C1CCEF432D1534575DC1CDFC210C849B306F6AF66E42AF66E239E41959E72"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.HadamardFactorization.Summability",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.HadamardFactorization.Summability",
+    "originalHash": "1C805AEDA121AF045E695A0AFF25C30B5AEADFD8C5E9C96A25AAF44127E7AC3E"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.AbsMax",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.AbsMax",
+    "originalHash": "DA8B5A8FCD63742285C31C124DEE1472AC444A90AE78971F9945310CA68D8B91"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.CartanBound",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.CartanBound",
+    "originalHash": "B6282207A8CF6A681CB2C0CB28A1479C163FBF4707C3041B9471C6DBF07152C7"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.CartanInverseFactorBound",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.CartanInverseFactorBound",
+    "originalHash": "08939B163AC8054624D109298C7A7CAC6FD153483B2672E6EA75BED4A939C506"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.CartanMajorantBound",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.CartanMajorantBound",
+    "originalHash": "4DBC6484CAFDC6AB818ED18B8DC894DC56241216DBDF6F6A5D7544901B46BC77"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.CartanProductBound",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.CartanProductBound",
+    "originalHash": "CB148614AE833521F565EF6723831F5E8D8EAA1937A358CEC133F29E13DED002"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.BorelCaratheodory",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.BorelCaratheodory",
+    "originalHash": "70D2C7084A151E35BAEB07BB07707315DC3424A66FC45C3E684B18ED28314B33"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.ExpPoly",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.ExpPoly",
+    "originalHash": "DFC12D4A88EB75E29F2BFB4B1DDE9CEC1D8049003120AA89F06CB5C8F390EDD5"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.ExpPoly.Growth",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.ExpPoly.Growth",
+    "originalHash": "1911C5A0052DB643CAD01B0E42D4E0B2F8EAE5CEE021AD715C215CA42B6E8BB9"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.HadamardFactorization.Growth",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.HadamardFactorization.Growth",
+    "originalHash": "4333DF458A1BD7E7933DEC983B5495150F7FD7AFED281A9DF30B68E5CD2212D7"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.HadamardFactorization.Order",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.HadamardFactorization.Order",
+    "originalHash": "F00E81721ECB36F1A87B37B098ECEA97B4E7D6FC8E06B2AEF901D1D2D524B4BC"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Calculus.Deriv.Polynomial",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Calculus.Deriv.Polynomial",
+    "originalHash": "8EFF3E21A29594C9A9871C80BE267E8A3A1CBD08ED81A8961C37FA5D3DFE5E84"
+  },
+  {
+    "module": "DusartPort.PNT.NumberTheory.LSeries.ZetaFunctionalEquation",
+    "original": "PrimeNumberTheoremAnd.Mathlib.NumberTheory.LSeries.ZetaFunctionalEquation",
+    "originalHash": "2BB0FFF76D7958E199A57BA5B915AB2384589576F8FE9DF77CA76D633650F9A5"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.SpecialFunctions.CompletedXi",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.SpecialFunctions.CompletedXi",
+    "originalHash": "3EB5E595E742B223CFB7798CEB788E47311D01A1D3F992565231F1C747DD539D"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.Basic",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.Basic",
+    "originalHash": "23A01F0C7FB9481C810059AACD24AE231D30F33113A20E11DF9DB1DEF06017E6"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.Trigonometric",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.Trigonometric",
+    "originalHash": "39E64A7A11C1FBC1E59010F466BFDB0CBFCFE996871EFFE5B53F271657E0ABDD"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.SpecialFunctions.Gamma.IntegralBounds",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.SpecialFunctions.Gamma.IntegralBounds",
+    "originalHash": "55B832DD199A1D573E62BA198B3433F42F5122D0CE1F68D79C67F84374E3E479"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.SpecialFunctions.GammaBounds",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.SpecialFunctions.GammaBounds",
+    "originalHash": "2DD4C206454C6F4FFF261D26D5A2FDCBCC4282AF211A2F361ABF02FACD6B20CA"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.SpecialFunctions.Gamma.GammaStirlingAux",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.SpecialFunctions.Gamma.GammaStirlingAux",
+    "originalHash": "FE3609F543C946196AC5C53A7BFC4A3E8D78533FCDD66B985E1E6EC718F35FF3"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.SpecialFunctions.Gamma.StripBounds",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.SpecialFunctions.Gamma.StripBounds",
+    "originalHash": "D806B8627C51565B5789FABCFD8F4F47B13163A30CE17A1ED27AA43C1A114D8F"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.SpecialFunctions.Pow.Real",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.SpecialFunctions.Pow.Real",
+    "originalHash": "5D12650C550C7B17E59024D68FF7158E20085475E3E6B3306309FA358C071901"
+  },
+  {
+    "module": "DusartPort.PNT.NumberTheory.LSeries.RiemannZeta",
+    "original": "PrimeNumberTheoremAnd.Mathlib.NumberTheory.LSeries.RiemannZeta",
+    "originalHash": "AC1E6701FB67516AAED99FB00B6285FA7403E0508DFEF6D13333754A69C08D03"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.Complex.Convex",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.Complex.Convex",
+    "originalHash": "8D742A9C7174D306912576E0708BE6F1A17660F3BFF421AB7CA97343E48B3199"
+  },
+  {
+    "module": "DusartPort.PNT.MeasureTheory.Integral.IntegrableOn",
+    "original": "PrimeNumberTheoremAnd.Mathlib.MeasureTheory.Integral.IntegrableOn",
+    "originalHash": "509E1697ECC74A648E212A3E4CFF8F1266CE1B54BAE65D87A1981CA57068BFB0"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.SpecialFunctions.ImproperIntegrals",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.SpecialFunctions.ImproperIntegrals",
+    "originalHash": "41E0BBF0A5A166DD11352909A099224D1F8DD1259FAFAD1AC90F4D308C510CEB"
+  },
+  {
+    "module": "DusartPort.PNT.Algebra.Order.Floor.Ring",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Algebra.Order.Floor.Ring",
+    "originalHash": "ED988DE74566299D2C7A6C5FFB355FE0CFC371E1E66FEBA2275344E89AC4AEE1"
+  },
+  {
+    "module": "DusartPort.PNT.Analysis.SpecialFunctions.Pow.Deriv",
+    "original": "PrimeNumberTheoremAnd.Mathlib.Analysis.SpecialFunctions.Pow.Deriv",
+    "originalHash": "A9AB562E01FDCAB3C3E6FA7142675BCDA12746EDDAAF553DC7679ED13A442EC4"
+  },
+  {
+    "module": "DusartPort.PNT.MeasureTheory.Integral.IntervalIntegral.Basic",
+    "original": "PrimeNumberTheoremAnd.Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+    "originalHash": "236FCCABC22D608435822943092FF6A9C46E10CB85ED91D2A7F1CF9273DB2D35"
+  },
+  {
+    "module": "DusartPort.PNT.NumberTheory.LSeries.RiemannZetaAbelKernel",
+    "original": "PrimeNumberTheoremAnd.Mathlib.NumberTheory.LSeries.RiemannZetaAbelKernel",
+    "originalHash": "B89307B0FAE184B195E1EEE8D5110EBA481E1E1BC2A31CB556CB67DAF310AD8D"
+  },
+  {
+    "module": "DusartPort.PNT.NumberTheory.AbelSummation",
+    "original": "PrimeNumberTheoremAnd.Mathlib.NumberTheory.AbelSummation",
+    "originalHash": "17DA4226229AAB82587B90590F9888A88E3DC7EC004236870946BFF4238EAA9B"
+  },
+  {
+    "module": "DusartPort.PNT.NumberTheory.LSeries.RiemannZetaPartialSum",
+    "original": "PrimeNumberTheoremAnd.Mathlib.NumberTheory.LSeries.RiemannZetaPartialSum",
+    "originalHash": "AF2EB26F48105C584BC9871048B3617FFA5F4FFF188212815D6FDB1E4BB34F1E"
+  },
+  {
+    "module": "DusartPort.PNT.NumberTheory.LSeries.RiemannZetaAbelContinuation",
+    "original": "PrimeNumberTheoremAnd.Mathlib.NumberTheory.LSeries.RiemannZetaAbelContinuation",
+    "originalHash": "75D96E818ADEDAC0E1A6C65D7389EA3D0B8B36C3765750FF09068E511A3023D7"
+  },
+  {
+    "module": "DusartPort.PNT.NumberTheory.LSeries.RiemannZetaConvexity",
+    "original": "PrimeNumberTheoremAnd.Mathlib.NumberTheory.LSeries.RiemannZetaConvexity",
+    "originalHash": "F698F7AEBA383BECE9556EBFE08BFBA0539AA2333250C57B64F23F489E57C50A"
+  },
+  {
+    "module": "DusartPort.PNT.NumberTheory.LSeries.RiemannZetaStripBound",
+    "original": "PrimeNumberTheoremAnd.Mathlib.NumberTheory.LSeries.RiemannZetaStripBound",
+    "originalHash": "479C1C2D5393834C723F324021F5AED0FA748C492BC7295382E194A8A716C831"
+  },
+  {
+    "module": "DusartPort.PNT.NumberTheory.LSeries.ZetaFiniteOrder",
+    "original": "PrimeNumberTheoremAnd.Mathlib.NumberTheory.LSeries.ZetaFiniteOrder",
+    "originalHash": "617DBE2D64139530C611CFFF4D692385B93F000B51E410D8BFCF822214BBFDE4"
+  },
+  {
+    "module": "DusartPort.PNT.NumberTheory.LSeries.RiemannZetaValues",
+    "original": "PrimeNumberTheoremAnd.Mathlib.NumberTheory.LSeries.RiemannZetaValues",
+    "originalHash": "E6025A1516B92AFB9EBA7B83E924CF1A551DA53A2B87C8F6B38FC2B6956EB37D"
+  },
+  {
+    "module": "DusartPort.PNT.NumberTheory.LSeries.RiemannZetaHadamard",
+    "original": "PrimeNumberTheoremAnd.Mathlib.NumberTheory.LSeries.RiemannZetaHadamard",
+    "originalHash": "A7BF1278A435BAE113EF4659F8864E6137AFCE631C23796EAB7FBF58587574D8"
+  },
+  {
+    "module": "DusartPort.XiMoment",
+    "original": "local",
+    "originalHash": "local"
+  },
+  {
+    "module": "DusartPort.ZeroMoment",
+    "original": "local",
+    "originalHash": "local"
+  },
+  {
+    "module": "DusartPort.Lab.ExplicitPsi1.Merom",
+    "original": "LeanLab.PNTPort.ExplicitPsi1.Merom",
+    "originalHash": "7C4BBEB0C881D52190CC3614F64523E183BD04FFBABC481C0A91720B02AA672C"
+  },
+  {
+    "module": "DusartPort.Lab.StrongPNT.ResidueCalcOnRectangles",
+    "original": "LeanLab.PNTPort.StrongPNT.ResidueCalcOnRectangles",
+    "originalHash": "4BC1BFA89396B06D26A474F2056CEEACBD460C669C10CB96D682851480355DAF"
+  },
+  {
+    "module": "DusartPort.Lab.ExplicitPsi1.Residues",
+    "original": "LeanLab.PNTPort.ExplicitPsi1.Residues",
+    "originalHash": "74A8D5ECA5B81C516A6CFE13697740A97ABB5C60306EFA7B14F531FEDBCAACCC"
+  },
+  {
+    "module": "DusartPort.Lab.StrongPNT.StrongPNT",
+    "original": "LeanLab.PNTPort.StrongPNT.StrongPNT",
+    "originalHash": "9D1EBB2EECAA85A7081132BBF9653D5C3BAA869DB3EBA318599B502AAC31DF16"
+  },
+  {
+    "module": "DusartPort.Lab.ZetaZeros.Count",
+    "original": "LeanLab.PNTPort.ZetaZeros.Count",
+    "originalHash": "088FC0E39A13F7912BE052BD05D66DF720806A763185EF2ECF4E71BECF0F2FA5"
+  },
+  {
+    "module": "DusartPort.Lab.ZetaZeros.Sym",
+    "original": "LeanLab.PNTPort.ZetaZeros.Sym",
+    "originalHash": "10E7EAA4EDF263E7A0257A4F7E133E6D9CE88FC7DDB696590F9CE85C32232E1A"
+  },
+  {
+    "module": "DusartPort.Lab.ExplicitPsi1.ZeroSum",
+    "original": "LeanLab.PNTPort.ExplicitPsi1.ZeroSum",
+    "originalHash": "3A626EF92AD0841C0C30D1FFB5737462E60AEF8D36ACE79E2AF14618FD043419"
+  },
+  {
+    "module": "DusartPort.ZeroBridge",
+    "original": "local",
+    "originalHash": "local"
+  },
+  {
+    "module": "DusartPort.Unsmoothing",
+    "original": "local",
+    "originalHash": "local"
+  },
+  {
+    "module": "DusartPort.ZetaLogDeriv",
+    "original": "Mathlib-v4.35.0",
+    "originalHash": "FA9C87B0B71CDC52FEA2BB30349BB879F9FC0CEC85D4CD472D8B9F0EF811C778"
+  },
+  {
+    "module": "DusartPort.Lab.ZetaZeros.LocalPF",
+    "original": "LeanLab.PNTPort.ZetaZeros.LocalPF",
+    "originalHash": "E7CA17ED1CF041392B84E397695572508448165D214AD629C7F04A4AF9C6A793"
+  },
+  {
+    "module": "DusartPort.Lab.ZetaZeros.GoodHeight",
+    "original": "LeanLab.PNTPort.ZetaZeros.GoodHeight",
+    "originalHash": "466F787EB68D53F77180FC02F06BD5FF491BEF9E45E81531389F2149CAE6D6AE"
+  },
+  {
+    "module": "DusartPort.Lab.ZetaZeros.GammaBounds",
+    "original": "LeanLab.PNTPort.ZetaZeros.GammaBounds",
+    "originalHash": "E4B768E2093F74EC6941DFEE519390E4ED6DD6B8E2B933CF60A4DC16D2326175"
+  },
+  {
+    "module": "DusartPort.Lab.ZetaZeros.Digamma",
+    "original": "LeanLab.PNTPort.ZetaZeros.Digamma",
+    "originalHash": "F3EB247ECA4DCD3CFD4B418C63788AF65EEFA58BF83790C0538E6C1F95902AD5"
+  },
+  {
+    "module": "DusartPort.Lab.ZetaZeros.Digamma2",
+    "original": "LeanLab.PNTPort.ZetaZeros.Digamma2",
+    "originalHash": "D8209EE9557332B5713C702B177F2C27931CBEBA88A1DE8E4D0E9F2007414C06"
+  },
+  {
+    "module": "DusartPort.Lab.ZetaZeros.LeftHalf",
+    "original": "LeanLab.PNTPort.ZetaZeros.LeftHalf",
+    "originalHash": "A500A72F89C0EF5DD1C17D924056B60FA9C9F02EF0618EB2B304A2E600E9DACC"
+  },
+  {
+    "module": "DusartPort.Lab.ZetaZeros.LeftLine",
+    "original": "LeanLab.PNTPort.ZetaZeros.LeftLine",
+    "originalHash": "71BD1A64023B26D50E24DA0FDA44E6A9F9FDD5D4616C8BADE7F71C6E70E35265"
+  },
+  {
+    "module": "DusartPort.Lab.ZetaZeros.Perron1",
+    "original": "LeanLab.PNTPort.ZetaZeros.Perron1",
+    "originalHash": "2CB399B214726AAD1693CFD2D32D3E3BC1D6003468FCCAA8DF3CF4AFC1272745"
+  },
+  {
+    "module": "DusartPort.Lab.ExplicitPsi1.Edges",
+    "original": "LeanLab.PNTPort.ExplicitPsi1.Edges",
+    "originalHash": "F87015920DA0D53DADC45EFF3355AA17542B13C5D78897E62ACEA22319E98114"
+  },
+  {
+    "module": "DusartPort.Lab.ExplicitPsi1.Final",
+    "original": "LeanLab.PNTPort.ExplicitPsi1.Final",
+    "originalHash": "1F98197AE8446364DC8F9B58003D0300105D5392E249308ECA9D05A2DD782670"
+  },
+  {
+    "module": "DusartPort.Lab.ExplicitPsi1.LeftZeta",
+    "original": "LeanLab.PNTPort.ExplicitPsi1.LeftZeta",
+    "originalHash": "E9B17CF0D83EDE1DA66F0755872A014D62C6F7E5A824DA82BFB0E794846EFDC4"
+  },
+  {
+    "module": "DusartPort.Lab.ExplicitPsi1.TrivialRect",
+    "original": "LeanLab.PNTPort.ExplicitPsi1.TrivialRect",
+    "originalHash": "A6605502212555DA7BAA11D84B5185C634ECB1B482A00440AC9765460FA7FFF6"
+  },
+  {
+    "module": "DusartPort.Lab.ExplicitPsi1.TrivialLimit",
+    "original": "LeanLab.PNTPort.ExplicitPsi1.TrivialLimit",
+    "originalHash": "5ABDD876E4C93F3A268529300EEFFC8780B3ADF86038B37FECDD1FAEFFBBEB05"
+  },
+  {
+    "module": "DusartPort.Psi1Estimate",
+    "original": "local",
+    "originalHash": "local"
+  },
+  {
+    "module": "DusartPort.Application",
+    "original": "local",
+    "originalHash": "local"
+  },
+  {
+    "module": "AuditDusart",
+    "original": "local",
+    "originalHash": "local"
+  }
+]
