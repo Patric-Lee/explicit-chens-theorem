@@ -36,6 +36,203 @@ progression/distribution remainders, and square/triple error estimates, with a
 joint end-to-end budget. The stronger earlier counting theorem retains its
 separate, larger cutoff.
 
+## Approach
+
+The current proof establishes the exact cutoff
+
+$$
+N_0=3^{3^{171}},\qquad
+H=\log\log N_0=171\log3+\log\log3\approx187.956749.
+$$
+
+For every even integer $N\ge N_0$, it proves $N=p+q$, where $p$ is prime
+and $q$ is prime or a product of two primes. The argument bounds a weighted
+candidate count from below and a triple penalty from above, then applies an
+exact finite counting inequality. All logarithms below are natural.
+
+### 1. A single zero-free hypothesis makes the analytic estimates effective
+
+The sole additional axiom says, for every Dirichlet character $\chi$ at any
+positive modulus,
+
+$$
+\Re s>\frac78,\quad (\chi,s)\ne(\mathbf1,1)
+\quad\Longrightarrow\quad L(s,\chi)\ne0.
+$$
+
+For every $\eta>0$ and primitive nonprincipal quadratic character of conductor
+$q$, a proved consequence replaces an ineffective Siegel bound by
+
+$$
+\Re L(1,\chi)\ge c(\eta)q^{-\eta},\qquad
+\varepsilon=\min\left(\frac1{16},\frac{\eta}{8}\right),\qquad
+c(\eta)=\frac{\varepsilon}{4\cdot648^{4\varepsilon}}.
+$$
+
+This feeds the numerical low-conductor, principal prime number theorem, and
+prime-distribution estimates. See [ExplicitSiegel.lean](research/chen-effective/ExplicitSiegel.lean).
+
+### 2. The explicit formula supplies the prime-product input
+
+The analytic development proves a numerical weighted zeta-zero moment bound,
+then the smoothed explicit-formula estimate
+
+$$
+\left|\psi_1(x)-\frac{x^2}{2}\right|\le0.121x^{15/8}
+\quad(x\ge3^{100}),\qquad
+\psi_1(x)=\sum_{n\le x}(x-n)\Lambda(n).
+$$
+
+Unsmoothing and removing prime powers give
+
+$$
+|\theta(x)-x|\le\frac34x^{15/16}\le\frac{4x}{\log^2x}
+\qquad(x\ge3^{120}).
+$$
+
+Partial summation then yields, with $M_P$ the prime reciprocal Mertens constant,
+
+$$
+\left|\sum_{p\le x}\frac1p-\log\log x-M_P\right|
+\le\frac1{2\log^2x}\qquad(x\ge3^{120}),
+$$
+
+and the ordered interval estimate
+
+$$
+\sum_{a\le p\le b}\frac1p
+\le\log\frac{\log b}{\log a}+\frac1{\log^2a}
+\qquad(3^{120}\le a\le b).
+$$
+
+Consequently, with $U=3^{120}$, the Goldbach sieve product satisfies
+
+$$
+\prod_{u\le p<z}\frac{p-1}{p-2}
+\le\left(1+\frac1{4000}\right)\frac{\log z}{\log u}
+\qquad(U\le u\le z).
+$$
+
+Products and sums in these formulas run over primes. The formal product theorem
+also handles subsets of the primes and the required endpoint conventions.
+See [the analytic application](research/chen-dusart/DusartPort/Application.lean)
+and [the product proof](research/chen-bjs-study/BJSStudyProducts.lean).
+
+### 3. Certified BJS-style sieve bounds estimate the counting sets
+
+For sieve level $D$, sifting endpoint $z$, and $s=\log D/\log z$, the proved
+density estimates, in their respective parameter windows, have the form
+
+$$
+\text{lower main sum}\ge V(z)\bigl[f(s)-0.055e^2h(s)\bigr],
+$$
+
+$$
+\text{upper main sum}\le V(z)\bigl[F(s)+0.055e^2h(s)\bigr].
+$$
+
+Here $f,F$ are the linear-sieve functions, $h$ is the error hat function, and
+$V(z)$ is the local sieve product. The coefficient $0.055=220/4000$ comes
+from certified early layers, an analytic tail, discrete induction, and parity
+sums. These statements are for normalized Rosser main sums; the corresponding
+counting estimates also pay source-mass and distribution remainders.
+
+Pre-sieving costs distribution level. For the removed small-prime product $Q$,
+we prove $\log Q\le2U$. Our cutoff ensures
+
+$$
+\log N\ge10^{20}(1+2U),
+$$
+
+which makes the resulting sieve-coordinate shift at most $10^{-7}$.
+See [the density adapters](research/chen-bjs-study/BJSStudyInputs.lean) and
+[the geometry bounds](research/chen-bjs-study/BJSStudyGeometry.lean).
+
+### 4. Base and medium-prime estimates give the weighted lower bound
+
+Use the singular-series normalization
+
+$$
+\mathfrak S(N)=
+\prod_{p>2}\left(1-\frac1{(p-1)^2}\right)
+\prod_{\substack{p\mid N\\p>2}}\frac{p-1}{p-2},
+\qquad M(N)=\mathfrak S(N)\frac{N}{\log^2N}.
+$$
+
+We prove $\mathfrak S(N)\ge1/2$. Let $A(N)$ be the source candidate count
+and $B(N)$ its medium-prime aggregate, over $N^{1/10}<q\le N^{1/3}$. The
+proved estimates are
+
+$$
+A(N)\ge\left(a-\frac1{20}\right)M(N),\qquad
+B(N)\le\left(b+\frac{113}{100}\right)M(N),
+\qquad a-\frac b2\ge2.6408.
+$$
+
+Here $a,b$ are the certified main coefficients. After correcting endpoints
+and repeated-prime-power contributions, at cost at most $M(N)/20000$, the
+actual valuation-weighted count satisfies
+
+$$
+W(N)\ge\left(2.6408-\frac1{20}-\frac{113}{200}-\frac1{20000}\right)M(N)
+=2.02575M(N).
+$$
+
+See [the base bound](research/chen-bjs-study/BJSStudyBase.lean),
+[the medium-prime aggregate](research/chen-bjs-study/BJSStudyAggregate.lean),
+and [the weighted lower bound](research/chen-bjs-study/BJSStudyLower.lean).
+
+### 5. The Selberg-square argument bounds the triple penalty
+
+Our current triple producer proves
+
+$$
+T(N)\le3.94033M(N)+10^{40}\frac{N}{\log^3N}.
+$$
+
+This uses our Selberg-square route rather than BJS's complete switched triple
+argument. A critical denominator estimate is
+
+$$
+\frac{\bigl(2\,\mathrm{AbsLogMoment}(N)+\mathrm{AbsMass}(N)\bigr)
+\mathfrak S(N)}{\log N}\le10^{-12},
+$$
+
+where the two absolute moments belong to the Selberg correction coefficients.
+The cutoff also pays the triple remainder:
+
+$$
+10^{40}\frac{N}{\log^3N}\le0.01M(N),\qquad
+T(N)\le3.95033M(N).
+$$
+
+See [the denominator estimate](research/chen-bjs-study/BJSStudySelbergDenominator.lean)
+and [the triple bound](research/chen-bjs-study/BJSStudyTriple.lean).
+
+### 6. An exact finite counting inequality finishes the proof
+
+If $R(N)$ counts valid Chen representations by their prime first summand,
+the combinatorial bridge proves
+
+$$
+R(N)\ge W(N)-\frac12T(N).
+$$
+
+Therefore
+
+$$
+R(N)\ge\left(2.02575-\frac{3.95033}{2}\right)M(N)
+=0.050585M(N)>0.
+$$
+
+A positive count gives the required representation. The
+[final theorem](research/chen-bjs-study/BJSStudyChen.lean) and
+[compatibility theorem](research/chen-bjs-study/BJSStudyCompatibility.lean)
+also recover the exact original implicit Chen statement. The audited proof
+uses only the stated Dirichlet axiom and Lean's standard axioms, with no BJS
+axioms, placeholders, `native_decide`, unsafe proof declarations, or OpenAI
+imports.
+
 ## References, source provenance, and acknowledgments
 
 This work builds on and was informed by the following projects and papers.
