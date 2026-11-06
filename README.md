@@ -1,3 +1,89 @@
+# Explicit Chen's theorem in Lean
+
+This fork of [subfish-zhou/goldbach-lean](https://github.com/subfish-zhou/goldbach-lean)
+develops an explicit numerical Chen theorem, conditional on the single local
+hypothesis `ChenEffective.dirichlet_seven_eighths`. The original project's
+formalizations and attribution are retained below.
+
+## Current explicit result and trust boundary
+
+The active theorem proves that every even natural number
+
+\[
+N\ge N_0=3^{3^{171}}
+\]
+
+is the sum of a prime and either another prime or a product of two primes.
+Writing `N0 = exp(exp(H))`, the verified cutoff has `H` approximately
+**187.956749**. See [the theorem](research/chen-bjs-study/BJSStudyChen.lean),
+[the exact recovery of the original implicit Chen statement](research/chen-bjs-study/BJSStudyCompatibility.lean),
+and [the explicit development and checking instructions](research/chen-bjs-study/README.md).
+
+This result is conditional: the sole additional axiom is the local Dirichlet
+seven-eighths hypothesis, alongside Lean's standard axioms. The active proof
+has no BJS axioms, OpenAI module imports, `sorry`/`admit`, `native_decide`, or
+unsafe proof declarations. No new external Lake dependencies or toolchain
+changes were introduced. The analytic input and final theorem have separate
+transitive proof audits; see [the analytic package](research/chen-dusart/README.md).
+Historical research files and numerical studies are not all active theorem
+inputs; their status must be read separately.
+
+The current proof combines proved BJS-style sieve ingredients with our own
+explicit distribution and Selberg-square/triple estimates. It is not a full
+formalization of BJS's numerical application, and does not claim their cutoff.
+Reducing the cutoff requires sharper small-endpoint prime products, arithmetic
+progression/distribution remainders, and square/triple error estimates, with a
+joint end-to-end budget. The stronger earlier counting theorem retains its
+separate, larger cutoff.
+
+## References, source provenance, and acknowledgments
+
+This work builds on and was informed by the following projects and papers.
+We distinguish adapted Lean source from mathematical references and studies:
+
+- **Upstream formalization:** [subfish-zhou/goldbach-lean](https://github.com/subfish-zhou/goldbach-lean)
+  supplies the original Chen development and reusable analytic number theory.
+  This fork preserves its history, source attribution, and license.
+- **Adapted analytic source:** [AlexKontorovich/PrimeNumberTheoremAnd (PNT+)](https://github.com/AlexKontorovich/PrimeNumberTheoremAnd)
+  and [sthubbar/lean-lab-preprints](https://github.com/sthubbar/lean-lab-preprints)
+  supply selectively adapted Hadamard factorization, explicit-formula,
+  zero-counting, and related analytic proofs. These are local source ports,
+  checked with this repository's toolchain, rather than new package dependencies.
+  Exact pinned revisions, file provenance, original copyright headers, and
+  Apache-2.0 notices are retained in
+  [the source notice](research/chen-dusart/NOTICE.md) and
+  [the provenance manifest](research/chen-dusart/provenance.json).
+  A Mathlib functional-equation derivative is also locally backported and
+  credited there.
+- **Consulted formalization:** [teorth/IEANTN](https://github.com/teorth/IEANTN)
+  was examined for explicit analytic number theory inputs and proof approaches.
+  This acknowledgment does not claim a complete port of that project.
+- **Explicit sieve reference:** Matteo Bordignon, Daniel R. Johnston, and
+  Valeriia Starichkova (BJS),
+  [An explicit version of Chen's theorem and the linear sieve](https://arxiv.org/abs/2207.09452).
+  Our certified sieve layers, recurrence, induction, and parity bounds draw on
+  this work. The cited paper proves a cutoff `exp(exp(32.7))`; its complete
+  numerical application is not yet reproduced here.
+- **Earlier explicit Chen work:** Tomohiro Yamada,
+  [Explicit Chen's theorem](https://arxiv.org/abs/1511.03409), provided motivation
+  and a comparison point. The threshold claimed there is not assumed as an
+  input to our Lean proofs.
+- **Other mathematical inputs:** Chen's theorem, Jurkat-Richert sieve methods,
+  Suzuki's sieve comparisons, Selberg's upper sieve, and Dusart's explicit
+  prime estimates inform the development. Our local Dusart-related application
+  proves the restricted bounds it needs under the permitted Dirichlet
+  hypothesis; it does not claim to formalize all of Dusart's results.
+- **Hypothesis motivation:** OpenAI's
+  [QuasiRiemannHypothesis challenge](https://github.com/openai/math/blob/main/lean/ComparatorChallenges/QuasiRiemannHypothesis.lean)
+  and [DirichletSevenEighths challenge](https://github.com/openai/math/blob/main/lean/ComparatorChallenges/DirichletSevenEighths.lean)
+  motivated the local hypothesis. No OpenAI repository modules are imported,
+  and the local Dirichlet hypothesis remains explicitly axiomatic here.
+
+The original [Apache-2.0 license](LICENSE) and adapted-source notices are retained.
+The upstream README follows; its broader Li-Liu and Wu developments are distinct
+from this fork's explicit numerical Chen branch.
+
+---
 # goldbach-lean
 
 A Lean 4 project formalizing progress toward **Goldbach's conjecture** and
