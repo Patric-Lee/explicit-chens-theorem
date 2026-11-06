@@ -166,6 +166,24 @@ as an axiom. This substantial analytic range includes the current
 pre-sieving endpoint 3^120, so the proved tail does not replace the study's
 product input or improve its final cutoff. No proof at 3^120 is claimed.
 
+`BJSMertensThetaTarget` proves a concrete sufficient analytic target:
+if |theta(t)-t| <= (3/4)*t^(15/16) for every t>=x, then the canonical
+reciprocal-prefix error is at most
+
+    (3/4)*(17*log(x)+16)/log(x)^2 * x^(-1/16).
+
+It proves that this is <=1/(2*log(x)^2) for every x>=3^120. The resulting
+closed-left interval theorem includes a=3^120 itself: 3^120 is composite,
+so the inclusive prefix at this endpoint is disjoint from the requested
+prime interval. These are conditional theorems using standard axioms only;
+the theta target itself has NOT been proved, assumed, or added as an axiom.
+The existing contour-derived PNT estimate does not meet this target.
+
+The product proof consumes the interval input only for a>=3^120. Thus
+proving this theta target on that range would suffice to replace the BJS
+input used by Chen, without requiring the full sharp prefix statement
+below 3^120. No such replacement or axiom removal is claimed yet.
+
 The published source is Rosser-Schoenfeld (1962), Theorem 5, (3.17)-(3.18),
 https://denisevellachemla.eu/Rosser-Schoenfeld-1962.pdf. Its range proofs and
 numerical inputs are not supplied by merely citing the result. No external

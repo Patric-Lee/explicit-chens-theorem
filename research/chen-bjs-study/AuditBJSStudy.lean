@@ -6,6 +6,7 @@ import BJSLayerTwoSharp
 import BJSSharpRecurrence
 import BJSReciprocalLargeEndpoint
 import BJSReciprocalRemainingRange
+import BJSMertensThetaTarget
 import Goldbach.Theorem
 import Lean.Util.CollectAxioms
 import Lean.Util.FoldConsts
@@ -56,6 +57,11 @@ run_elab do
       ``ChenEffective.bjsSmallSignedPrefix_lower,
       ``ChenEffective.bjsStudy_power_error_log_squared_3300,
       ``ChenEffective.bjsStudy_log_three_lower,
+      ``ChenEffective.bjsStudy_mertens_of_theta_target,
+      ``ChenEffective.bjsStudy_theta_target_payment,
+      ``ChenEffective.bjsStudy_prefix_at_presieve_of_theta_target,
+      ``ChenEffective.bjsStudy_interval_prefix_composite,
+      ``ChenEffective.bjsStudy_presieve_interval_of_theta_target,
       ``ChenEffective.bjsStudy_mertens_inverse,
       ``ChenEffective.bjsStudyCap_preSieve_base_distribution,
       ``ChenEffective.bjsStudyCap_preSieve_varying_threshold_cap,``ChenEffective.bjsStudy_log_six_sqrt,
@@ -80,6 +86,7 @@ run_elab do
     unless axs.size == dirichletOnly.size && axs.all dirichletOnly.contains do
       throwError "Interval-tail result uses a provisional input or wrong axiom ledger: {n}: {axs}"
   logInfo "Finite lower prefix through 286 uses only standard axioms. Signed tail and interval from 3^3072 use Dirichlet only. The intervening signed-prefix range, including 3^120, remains unproved."
+  logInfo "The theta-to-prefix and closed-left interval bridges at 3^120 use only standard axioms; the theta hypothesis itself has NOT been proved or added as an axiom."
   logInfo "Ordered-interval regression, exact layer-two grid certificate, sharp hat bounds and recurrence caps use only standard axioms. Both BJS density adapters and their complete analytic/discrete proof chain use only standard axioms. Only the ordered interval estimate remains provisional."
   let forbidden := #[``Goldbach.chen_theorem,
     ``MathlibNt.ChensTheorem.chens_theorem_unconditional,
