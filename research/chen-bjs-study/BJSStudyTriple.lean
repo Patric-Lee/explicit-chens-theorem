@@ -22,18 +22,19 @@ theorem bjsStudy_power_cap : 3^primePairPowerExponent ≤ bjsStudyGeometryThresh
   exact (bjsStudyCap_preSieve_fixed_power hh).trans (hcap.trans bjsStudy_finite_cap)
 
 theorem bjsStudy_denominator_cap : bjsStudyDenominatorThreshold ≤ bjsStudyGeometryThreshold := by
-  have hM : bjsStudyMertensEndpoint ≤ (3 : ℕ)^171 :=
-    (le_of_eq bjsStudyMertensEndpoint_eq).trans (bjsStudy_pow_mono 30 171 (by norm_num))
-  have hE : (10 : ℕ)^80 ≤ (3 : ℕ)^171 :=
-    by norm_num
+  have hM : bjsStudyMertensEndpoint ≤ (3 : ℕ)^2700 :=
+    (le_of_eq bjsStudyMertensEndpoint_eq).trans (bjsStudy_pow_mono 30 2700 (by norm_num))
+  have hE : (10 : ℕ)^80 ≤ (3 : ℕ)^2700 :=
+    (show (10 : ℕ)^80 ≤ 3^171 by norm_num).trans
+      (bjsStudy_pow_mono 171 2700 (by norm_num))
   calc
     bjsStudyDenominatorThreshold =
         max (3^bjsStudyMertensEndpoint) (3^(10^80)) := by
       unfold bjsStudyDenominatorThreshold bjsStudyDivisorThreshold
       rfl
-    _ ≤ 3^(3^171) := max_le
-      (bjsStudy_pow_mono bjsStudyMertensEndpoint (3^171) hM)
-      (bjsStudy_pow_mono (10^80) (3^171) hE)
+    _ ≤ 3^(3^2700) := max_le
+      (bjsStudy_pow_mono bjsStudyMertensEndpoint (3^2700) hM)
+      (bjsStudy_pow_mono (10^80) (3^2700) hE)
     _ = bjsStudyGeometryThreshold := bjsStudyGeometryThreshold_eq.symm
 
 theorem bjsStudy_triple_bound {N : ℕ} (hN : bjsStudyGeometryThreshold ≤ N) (hEven : Even N) :

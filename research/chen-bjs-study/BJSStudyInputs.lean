@@ -4,7 +4,7 @@ import BJSSharpDensity
 /-! The density adapters are now proved for the exact project Rosser weights.
 Their error is 220*(1/4000)=110*(1/2000), established by certified early
 continuous layers, an analytic tail, discrete induction and parity sums.
-Only the ordered reciprocal-prime interval input remains provisional.
+The product input is supplied by BJSProvedProductProfile. No BJS axiom remains.
 Reference: https://arxiv.org/html/2207.09452v6
 -/
 noncomputable section
@@ -12,11 +12,6 @@ namespace ChenEffective
 open Real Set Finset
 open MathlibNt.SieveTheory LinearSieve SwitchingPrinciple
 set_option backward.isDefEq.respectTransparency false
-
-axiom bjsStudy_interval (s : Finset ℕ) (a b : ℝ) (ha : 1 < a) (hb : 286 ≤ b)
-    (hab : a ≤ b)
-    (hs : ∀ p ∈ s, p.Prime ∧ a ≤ (p : ℝ) ∧ (p : ℝ) ≤ b) :
-    (∑ p ∈ s, 1/(p : ℝ)) ≤ log (log b/log a)+1/(log a)^2
 
 theorem bjsStudy_lower_density {S : BoundingSieve} {s : ℝ}
     (hrel : HasRelativeSieveProduct S (1/4000))

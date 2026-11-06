@@ -1,31 +1,53 @@
-# Provisional BJS Chen budget study
+# Numerical Chen with proved BJS sieve inputs
 
-This is an explicitly conditional research branch, authorized by the user.
-It is not imported by the production theorem in ../chen-effective.
-The production theorem remains at commit 6b412908 with its single local
-Dirichlet axiom and cutoff 3^(3^2900). The 0.67 theorem is untouched.
+This package proves Chen existence at an explicit numerical cutoff, using the
+sharp BJS sieve implementation and the existing power-saving Euler-product
+bound. It introduces no local axioms. Its only nonstandard axiom is the
+permitted production hypothesis `ChenEffective.dirichlet_seven_eighths`.
+No OpenAI modules or new external dependencies are imported.
 
 ## Current result
 
-`BJSStudyChen.lean` proves the exact prime-plus-P2 conclusion for every even
-N >= bjsStudyN0, where `bjsStudyN0_eq` fixes bjsStudyN0 = 3^(3^171).
-Its natural double-exponential coordinate is H approximately 187.956749.
-The proof recovers the original public Chen specification in
-`BJSStudyCompatibility.lean`, without using its old implicit proof.
+`BJSStudyChen.lean` proves that every even N >= bjsStudyN0 is a prime plus
+a prime or a product of two primes, where
 
-This theorem depends on the Dirichlet axiom AND the single temporary interval
-assumption below. It is not an unconditional improvement of the verified
-production cutoff. No OpenAI modules or new external dependencies are used.
+    bjsStudyN0 = 3^(3^2700).
+
+The natural double-exponential coordinate is H = log(log(N0)),
+approximately 2966.347227. `BJSStudyCompatibility.lean` recovers the exact
+original public Chen statement without using the old implicit Chen proof.
+
+The older qualitative production theorem at 3^(3^2900), and the stronger
+0.67 counting theorem, are unchanged.
+
+## Proved product input and cutoff
+
+`BJSProvedProductProfile` selects U=3^2652 and relative error 1/10000.
+Its feasibility is the finite rational inequality
+
+    130000000000000 * U^(-1/68) <= 1/20000.
+
+Because 2652=68*39, this reduces to arithmetic involving 3^39. The actual
+Euler-product theorem is already proved in `OptimizedEulerProductPower`;
+no finite prime table or sharp prefix assumption is needed.
+`BJSStudyProducts` transports this profile to the relative error 1/4000
+required by the sharp density theorems.
+
+The larger pre-sieve product Q costs log(Q)<=2U. The geometry proof pays
+
+    log(N) >= 10^20 * (1+2U).
+
+The exponent 43 pays the fixed scalar, and 2652+43=2695<=2700.
+The selected cutoff also dominates the fixed mass, distribution, divisor,
+prime-pair and triple-remainder thresholds.
 
 | Component | Selected allocation |
 |---|---:|
-| Product endpoint U | 3^120 |
-| Product relative error | 1/4000 |
+| Product endpoint U | 3^2652 |
+| Proved product relative error | 1/10000 |
+| Relative error supplied to density adapters | 1/4000 |
 | Density theorem epsilon | 1/2000 |
-| Both density coefficients (rounded up) | 110 |
-| Lower density error | 7/2000 |
-| Upper density error | 7/125 |
-| Medium reciprocal mass | <= 8/5 |
+| Both density coefficients | 110 |
 | Base coefficient loss | 1/20 |
 | Medium coefficient loss | 113/100 |
 | Endpoint loss | 1/20000 |
@@ -34,23 +56,19 @@ production cutoff. No OpenAI modules or new external dependencies are used.
 | Triple remainder allocation | 1/100 |
 | Positive final margin | 0.050585 |
 
-The finite counting identity and QD remainder assembly remain proved project
-results. All mass/distribution thresholds are actually paid at the selected
-cutoff, rather than left as hypotheses of the provisional final theorem.
+## Audit
 
-## Axiom ledger
+There is no `bjsStudy_interval` axiom in the active package.
+The source audit rejects every local axiom, proof placeholder, native_decide,
+unsafe declaration, compiler-trust bypass and OpenAI import.
+`AuditBJSStudy` checks the exact four-axiom ledger (Lean's three standard
+axioms plus Dirichlet) for the final theorem and its compatibility theorem,
+and traverses the proof to reject use of the old implicit Chen proof or
+the separate production/counting proofs. It also rejects an environment
+that still contains the removed BJS interval axiom.
 
-Only `bjsStudy_interval` remains an axiom in this package. Its statement
-requires 1<a<=b and b>=286, with error 1/log(a)^2. The original provisional
-statement omitted a<=b and was false for reversed endpoints. This was
-corrected before the density assumptions were removed; `BJSIntervalOrder`
-proves an axiom-free regression counterexample. Production never used it.
-
-`bjsStudy_lower_density` and `bjsStudy_upper_density` are now THEOREMS.
-Their exact project-weight statements retain coefficient 110 at epsilon
-1/2000, given relative product error 1/4000. Each proof uses only Lean's
-three standard axioms. The full provisional Chen theorem uses exactly
-those three, Dirichlet, and the single ordered interval assumption.
+Both density adapters and their entire continuous/discrete proof chain
+use only standard axioms. The active product estimate uses Dirichlet.
 
 ## Certified sharp sieve implementation
 
@@ -90,15 +108,16 @@ Mertens replacement, reduced finite caps and H=36 scalar feasibility
 certificates are retained. The exact counting weights, QD assembly and
 actual mass/distribution/triple estimates are unchanged.
 
-## What dominates H=188
+## What dominated the archived H=188 study
 
 The study-specific finite cap^20 = 3^(20*10^80) costs
-H approximately 187.2966. Selecting the simple tower 3^(3^171) covers it.
-The current product geometry alone costs approximately H=178.58.
+H approximately 187.2966. The archived tower 3^(3^171) covered it.
+Its conditional small-endpoint product geometry cost approximately H=178.58.
 The retained prime-pair/denominator threshold costs about H=184.30;
 the retained triple remainder payment about H=97.40.
 The elementary Mertens divisor gate is now only about H=33.05.
 These are sufficient proof thresholds, not mathematical lower bounds.
+The active larger-cutoff result is instead dominated by product geometry.
 
 ## H=36 feasibility result and limitations
 
@@ -118,85 +137,41 @@ This is scalar feasibility, NOT a Chen theorem at H=36. It requires:
   intermediate ranges need proved bridges.
 * Actual mass and distribution estimates at H=36, replacing the shared cap.
 * Sharper triple absolute moments and remainder estimates at H=36.
-* A proof replacing the remaining ordered reciprocal-interval assumption.
+* A proved small-endpoint product estimate; the active package has no
+  reciprocal-interval axiom to reuse at this endpoint.
 
 `BudgetStudy.ps1` regenerates budget-results.json. Its decimal summaries
 are exploratory output; exact coefficients, cutoff equalities and scalar
 feasibility assertions are checked separately in Lean.
 
-## Next proof work
+## Preserved low-cutoff studies
 
-Both density adapters are proved and audited; no density axiom remains.
+The complete earlier conditional study is preserved by the annotated tag
 
-`BJSReciprocalIntervalBridge` proves the closed-left finite-interval transfer
-from actual reciprocal-prime prefixes. It approaches the lower endpoint
-from the left, so a prime equal to a is retained. In particular, it proves
-that the two signed half-log-squared Rosser-Schoenfeld prefix estimates
-imply the exact provisional interval statement, with the constant cancelling.
-It does NOT assert or assume those prefix estimates as new axioms.
+    study/bjs-low-cutoff-conditional-927c1eb8
 
-`BJSReciprocalLargeEndpoint` proves both the half-log-squared prefix error
-and the requested interval estimate for a>=3^8192, using the existing
-Dirichlet axiom only. Its proof retains the existing power-saving Mertens
-error, absorbs log(a)^2 with an explicit real-power bound, and pays the
-remaining scalar constant numerically. No implicit threshold is used.
+at commit 927c1eb8. Its cutoff was 3^(3^171), H approximately 187.956749,
+and it depended on one extra reciprocal-prime interval assumption.
+See `LOW_CUTOFF_STUDY.md` for its exact status and retrieval instructions.
+That assumption is absent from the active source and proof.
 
-`BJSCanonicalMertensUpper` proves that the canonical Mertens constant is
-at most 27/100: a finite harmonic sum bounds Euler's constant, and positive
-Taylor sums for eight actual primes bound the Euler-product correction.
-`BJSFiniteLogBounds` supplies rational logarithm upper certificates.
-`BJSSmallPrefixCertificate` checks all 285 integer prefix endpoints from
-2 through 286 in the Lean kernel. `BJSSmallSignedPrefix` transfers them to
-the actual signed lower-prefix estimate for every real 1<x<=286. These
-proofs use only standard axioms. `GenerateSmallPrefix.ps1` regenerates the
-untrusted candidate table; its approximations are all checked by the theorem.
+The useful axiom-free or explicitly conditional study modules remain here:
+`BJSStudyH36` and `BJSStudyFiniteTail` provide scalar H=36 feasibility and
+finite-tail tools; `BJSMertensThetaTarget` gives the conditional theta-to-prefix
+and exact-composite-endpoint interval bridge at 3^120; the reciprocal-prefix
+modules prove the finite lower base through 286 and the Dirichlet-only tail
+from 3^3072. The unproved theta premise and missing middle range are not
+inputs to the active numerical Chen theorem.
 
-`BJSReciprocalTail3300` improves the analytic starting point to log(x)>=3300,
-and hence to x>=3^3072, for BOTH signed prefix bounds and the ordered
-interval bound. It preserves exponential decay while paying the logarithmic
-square instead of absorbing that square into a global real-power estimate.
-These results use only the existing Dirichlet axiom plus standard axioms.
+Reducing H again requires a stronger proved product profile at smaller U,
+followed by propagation of its geometry and error budget. The preserved
+studies can be reused for that purpose without reintroducing axioms.
 
-The last BJS axiom has NOT been removed. The remaining explicit obligations
-are now the lower signed prefix estimate for 286<x<3^3072 and the upper
-signed prefix estimate for 286<=x<3^3072, relative to the canonical Mertens
-constant. `bjsStudy_interval_of_remaining_prefix` assembles the proved base
-and tail with those two still-unproved hypotheses. Neither is introduced
-as an axiom. This substantial analytic range includes the current
-pre-sieving endpoint 3^120, so the proved tail does not replace the study's
-product input or improve its final cutoff. No proof at 3^120 is claimed.
-
-`BJSMertensThetaTarget` proves a concrete sufficient analytic target:
-if |theta(t)-t| <= (3/4)*t^(15/16) for every t>=x, then the canonical
-reciprocal-prefix error is at most
-
-    (3/4)*(17*log(x)+16)/log(x)^2 * x^(-1/16).
-
-It proves that this is <=1/(2*log(x)^2) for every x>=3^120. The resulting
-closed-left interval theorem includes a=3^120 itself: 3^120 is composite,
-so the inclusive prefix at this endpoint is disjoint from the requested
-prime interval. These are conditional theorems using standard axioms only;
-the theta target itself has NOT been proved, assumed, or added as an axiom.
-The existing contour-derived PNT estimate does not meet this target.
-
-The product proof consumes the interval input only for a>=3^120. Thus
-proving this theta target on that range would suffice to replace the BJS
-input used by Chen, without requiring the full sharp prefix statement
-below 3^120. No such replacement or axiom removal is claimed yet.
-
-The published source is Rosser-Schoenfeld (1962), Theorem 5, (3.17)-(3.18),
-https://denisevellachemla.eu/Rosser-Schoenfeld-1962.pdf. Its range proofs and
-numerical inputs are not supplied by merely citing the result. No external
-Lean modules, RH assumptions, or new dependencies were imported here.
-
-For the reciprocal interval input, derive the explicit prime estimates
-behind Lemma 21 or build a weaker sufficient certified profile. For U=10^9,
-use asymmetric endpoint estimates with explicit range bridges. Finite tables
-must be checked by Lean certificates without native_decide.
+`BudgetStudy.ps1` regenerates `budget-results.json`. Decimal summaries are
+exploratory; the exact cutoff and coefficients are separately checked in Lean.
 
 ## Rebuild
 
-Run `.\check.ps1` from this installed research directory. Build the production
-modules first if their artifacts are absent. For the final dependency audit only,
-use `.\check.ps1 -FromModule AuditBJSStudy`. The audit intentionally accepts
-the single named temporary interval assumption and rejects any additional one.
+Run `.\check.ps1` from this installed research directory after building the
+production dependencies. For a final dependency audit with existing artifacts,
+run `.\check.ps1 -FromModule AuditBJSStudy`.

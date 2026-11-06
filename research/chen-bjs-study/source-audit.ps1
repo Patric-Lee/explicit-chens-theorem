@@ -32,19 +32,15 @@ function Remove-LeanCommentsAndStrings([string]$text) {
     return $out.ToString()
 }
 
-$expected=@('bjsStudy_interval')
-$count=0
 foreach($p in Get-ChildItem -LiteralPath $PSScriptRoot -Filter '*.lean'){
  $code=Remove-LeanCommentsAndStrings ([IO.File]::ReadAllText($p.FullName))
  if($p.Name -eq 'AuditBJSStudy.lean'){$code=$code.Replace('debug.skipKernelTC.get','kernelGuard')}
  if($code -match '\b(sorry|admit|sorryAx|native_decide|unsafe|implemented_by|extern|ofReduceBool|trustCompiler|skipKernelTC|trustLevel)\b'){throw "Forbidden proof token: $p"}
  foreach($m in [regex]::Matches($code,'\baxiom\s+(\w+)')){
-  if($p.Name -ne 'BJSStudyInputs.lean' -or $m.Groups[1].Value -notin $expected){throw "Unlisted axiom: $p"}
-  $count++
+  throw "Local axiom in the BJS package: $p : $($m.Groups[1].Value)"
  }
  foreach($m in [regex]::Matches($code,'(?m)^import\s+([A-Za-z0-9_.]+)')){
   if($m.Groups[1].Value -match '^(OAI|OpenAI|ComparatorChallenges)(\.|$)'){throw "Forbidden import: $p"}
  }
 }
-if($count-ne1){throw "Wrong provisional axiom count: $count"}
-Write-Output 'Study source scan passed: exactly one provisional reciprocal-interval assumption; no placeholders, native_decide or unsafe declarations.'
+Write-Output 'BJS source scan passed: no local axioms, placeholders, native_decide or unsafe declarations; no OpenAI imports.'

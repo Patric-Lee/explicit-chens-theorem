@@ -11,7 +11,7 @@ set_option exponentiation.threshold 512
 
 /-- Separate existence cutoff. The established 0.67 counting cutoff is untouched. -/
 def bjsStudyN0 : ℕ := bjsStudyGeometryThreshold
-theorem bjsStudyN0_eq : bjsStudyN0=3^(3^171) := bjsStudyGeometryThreshold_eq
+theorem bjsStudyN0_eq : bjsStudyN0=3^(3^2700) := bjsStudyGeometryThreshold_eq
 
 theorem bjsStudy_inverse_log_payment {N : ℕ} (hN : bjsStudyN0 ≤ N) :
     (numericalTripleErrorCap : ℝ)*N/log (N : ℝ)^3 ≤
