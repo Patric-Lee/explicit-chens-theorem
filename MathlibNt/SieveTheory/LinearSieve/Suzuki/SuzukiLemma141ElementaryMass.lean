@@ -104,7 +104,7 @@ private theorem elementaryMass_nonneg (S : BoundingSieve) (n z : ℕ) :
 private theorem sourceDiscreteEuler_le_one (S : BoundingSieve) (z : ℕ) :
     sourceDiscreteEuler S z ≤ 1 := by
   unfold sourceDiscreteEuler
-  apply prod_le_one
+  apply prod_le_one₀
   · intro p hp
     have hpP := (mem_filter.mp hp).1
     have hlt := S.nu_lt_one_of_prime p (Nat.prime_of_mem_primeFactors hpP)

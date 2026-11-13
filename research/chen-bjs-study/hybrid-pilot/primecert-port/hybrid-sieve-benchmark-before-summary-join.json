@@ -1,0 +1,94 @@
+[
+  {
+    "module": "BJSHybridSieveData1000",
+    "seconds": 14.3452523,
+    "observedPeakLeanWorkingSetBytes": 1784233984,
+    "observedLeanCpuSeconds": 10.84375,
+    "exitCode": 0,
+    "status": "kernel_checked",
+    "sourceSha256": "ee463775e13396aa313a0369cea3baccd7d1917d180fd1a8ae8b70d5df88971e",
+    "maxSeconds": 180,
+    "maxWorkingSetBytes": 4294967296
+  },
+  {
+    "module": "BJSHybridSieveSum1000",
+    "seconds": 16.3065375,
+    "observedPeakLeanWorkingSetBytes": 2235265024,
+    "observedLeanCpuSeconds": 17.296875,
+    "exitCode": 0,
+    "status": "kernel_checked",
+    "sourceSha256": "b87b520c59dc9ef6b673abbea8237793b0777a9cfdc310a0e1e05d106db7645e",
+    "maxSeconds": 180,
+    "maxWorkingSetBytes": 4294967296
+  },
+  {
+    "module": "BJSHybridSieveData10000",
+    "seconds": 14.0431762,
+    "observedPeakLeanWorkingSetBytes": 1782112256,
+    "observedLeanCpuSeconds": 10.609375,
+    "exitCode": 0,
+    "status": "kernel_checked",
+    "sourceSha256": "70a6bdf23d4e02e995716c4993e88dc0be030abbede23ea93a5d3655e86aae9b",
+    "maxSeconds": 180,
+    "maxWorkingSetBytes": 4294967296
+  },
+  {
+    "module": "BJSHybridSieveSum10000",
+    "seconds": 28.2776715,
+    "observedPeakLeanWorkingSetBytes": 4356177920,
+    "observedLeanCpuSeconds": 225.53125,
+    "exitCode": -1,
+    "status": "memory_limit",
+    "sourceSha256": "e7f7cdcc179811e070d06e900d3e60a7228c198bd15801df4215cafd5ff12cd1",
+    "maxSeconds": 180,
+    "maxWorkingSetBytes": 4294967296
+  },
+  {
+    "module": "BJSHybridSievePackedBench1000",
+    "seconds": 16.3580435,
+    "observedPeakLeanWorkingSetBytes": 2009989120,
+    "observedLeanCpuSeconds": 14.390625,
+    "exitCode": 0,
+    "status": "kernel_checked",
+    "threads": 2,
+    "sourceSha256": "456fca5bc9f0e4e7c33ccc391d5b0226bbd1976b658f08cba257261e435ff276",
+    "maxSeconds": 180,
+    "maxWorkingSetBytes": 4294967296
+  },
+  {
+    "module": "BJSHybridSievePackedBench10000",
+    "seconds": 180.4308272,
+    "observedPeakLeanWorkingSetBytes": 3873546240,
+    "observedLeanCpuSeconds": 301.609375,
+    "exitCode": -1,
+    "status": "wall_time_limit",
+    "threads": 2,
+    "sourceSha256": "8df8a0c62e8617c8fd6dc62651b61e0e02e1b181b7b3de309a2df3f62b79018e",
+    "maxSeconds": 180,
+    "maxWorkingSetBytes": 4294967296
+  },
+  {
+    "module": "BJSHybridSieveBoolBench1000",
+    "seconds": 16.5298442,
+    "observedPeakLeanWorkingSetBytes": 2006917120,
+    "observedLeanCpuSeconds": 14.484375,
+    "exitCode": 0,
+    "status": "kernel_checked",
+    "threads": 2,
+    "sourceSha256": "125f0e79da2d240d878f0cb42929ca72c6c04835c9797f907929196830127024",
+    "maxSeconds": 180,
+    "maxWorkingSetBytes": 4294967296
+  },
+  {
+    "module": "BJSHybridSieveBoolBench10000",
+    "seconds": 109.5259248,
+    "observedPeakLeanWorkingSetBytes": 2530246656,
+    "observedLeanCpuSeconds": 201.015625,
+    "exitCode": -1,
+    "status": "failed",
+    "threads": 2,
+    "sourceSha256": "fd4f5d3b8561b9b8cb126760010cbb3e5690c2b562ffdf61e377b97b5c7c13f9",
+    "maxSeconds": 180,
+    "maxWorkingSetBytes": 4294967296
+  }
+]

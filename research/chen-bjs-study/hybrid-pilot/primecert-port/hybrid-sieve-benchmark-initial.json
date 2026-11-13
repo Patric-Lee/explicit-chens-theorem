@@ -1,0 +1,24 @@
+[
+  {
+    "module": "BJSHybridSieveData1000",
+    "seconds": 24.0276632,
+    "observedPeakLeanWorkingSetBytes": 3342475264,
+    "observedLeanCpuSeconds": 20.328125,
+    "exitCode": 0,
+    "status": "kernel_checked",
+    "sourceSha256": "ee463775e13396aa313a0369cea3baccd7d1917d180fd1a8ae8b70d5df88971e",
+    "maxSeconds": 180,
+    "maxWorkingSetBytes": 4294967296
+  },
+  {
+    "module": "BJSHybridSieveSum1000",
+    "seconds": 25.5668805,
+    "observedPeakLeanWorkingSetBytes": 3787268096,
+    "observedLeanCpuSeconds": 25.6875,
+    "exitCode": 0,
+    "status": "kernel_checked",
+    "sourceSha256": "b87b520c59dc9ef6b673abbea8237793b0777a9cfdc310a0e1e05d106db7645e",
+    "maxSeconds": 180,
+    "maxWorkingSetBytes": 4294967296
+  }
+]

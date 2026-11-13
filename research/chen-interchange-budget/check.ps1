@@ -3,10 +3,11 @@ $ErrorActionPreference='Stop'
 if(-not$RepoRoot){$RepoRoot=(Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..\..')).Path}
 & (Join-Path $PSScriptRoot 'source-audit.ps1')
 & (Join-Path $PSScriptRoot 'TestBudgets.ps1')
-$build=Join-Path $RepoRoot '.lake\build\chen-interchange-budget'
+& (Join-Path $PSScriptRoot 'TestJointBudget.ps1')
+$build=Join-Path $RepoRoot '.lake\build-434\chen-interchange-budget'
 $previousLeanPath=$env:LEAN_PATH
-$env:LEAN_PATH=$build+';'+"$RepoRoot\.lake\build\chen-bjs-study;$RepoRoot\.lake\build\chen-effective"
-$lake=Join-Path $env:USERPROFILE '.elan\toolchains\leanprover--lean4---v4.33.0-rc1\bin\lake.exe'
+$env:LEAN_PATH=$build+';'+"$RepoRoot\.lake\build-434\chen-bjs-study;$RepoRoot\.lake\build-434\chen-effective"
+$lake=Join-Path $env:USERPROFILE '.elan\toolchains\leanprover--lean4---v4.34.1\bin\lake.exe'
 $modules=@('ChenRouteBudget','ChenRouteSource','ChenRouteProduction','ChenRouteBJS','ChenRouteMixing','AuditChenRoutes')
 $index=[Array]::IndexOf($modules,$FromModule)
 if($index-lt0){throw "Unknown module: $FromModule"}

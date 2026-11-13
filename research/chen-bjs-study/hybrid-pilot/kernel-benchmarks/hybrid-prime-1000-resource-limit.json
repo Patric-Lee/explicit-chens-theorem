@@ -1,0 +1,9 @@
+{
+  "module": "BJSHybridPrimeBatch1000",
+  "N": 1000,
+  "status": "stopped_after_small_batch_resource_limit",
+  "elapsedSeconds": 206.0557734,
+  "cpuSeconds": 130.015625,
+  "workingSetBytes": 6490669056,
+  "peakWorkingSetBytes": 7430676480
+}

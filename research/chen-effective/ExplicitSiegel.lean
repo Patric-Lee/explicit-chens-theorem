@@ -1,22 +1,17 @@
+import OAI.ChenDirichlet
 import MathlibNt.AnalyticNumberTheory.Siegel.Bombieri1965Theorem4QuadraticSmallValueRealZero
 import MathlibNt.AnalyticNumberTheory.LargeSieve.LandauSiegelToStandardBVCanonicalSmoothing
 
 /-!
-One local hypothesis, matching the statement (not the `sorry` proof) in
-OpenAI's ComparatorChallenges/DirichletSevenEighths.lean.
-No OpenAI modules or additional packages are imported.
+The local Dirichlet seven-eighths theorem is supplied by the audited,
+vendored OpenAI proof. No additional external Lake package is imported.
 -/
 namespace ChenEffective
 
 open Complex DirichletCharacter
 open AnalyticNumberTheory.LargeSieve.Bombieri1965Theorem4
 
-axiom dirichlet_seven_eighths
-    {q : ℕ} [NeZero q] (χ : DirichletCharacter ℂ q) {s : ℂ}
-    (hs : (7 / 8 : ℝ) < s.re) (hpole : ¬ (χ = 1 ∧ s = 1)) :
-    χ.LFunction s ≠ 0
-
-/-- The zeta statement follows from the same axiom at modulus one, away from
+/-- The zeta statement follows from the proved Dirichlet theorem at modulus one, away from
 the pole; no second axiom is needed. -/
 theorem zeta_ne_zero {s : ℂ} (hs : (7 / 8 : ℝ) < s.re) (hne : s ≠ 1) :
     riemannZeta s ≠ 0 := by

@@ -8,7 +8,7 @@ set_option maxHeartbeats 0
 run_elab do
   if debug.skipKernelTC.get (← getOptions) then throwError "Kernel checking is disabled"
   let standard := #[``propext, ``Classical.choice, ``Quot.sound]
-  let allowed := standard ++ #[``ChenEffective.dirichlet_seven_eighths]
+  let allowed := standard
   for n in #[``ChenEffective.dusart_xi_zero_moment_identity,
       ``ChenEffective.dusart_zeta_zero_multiplicity,
       ``ChenEffective.Dusart.numerical_unsmoothing,
@@ -27,11 +27,10 @@ run_elab do
   for n in roots do
     let axs ← Lean.collectAxioms n
     unless axs.size == allowed.size && axs.all allowed.contains do
-      throwError "Wrong single-axiom ledger: {n}: {axs}"
+      throwError "Wrong standard-only axiom ledger: {n}: {axs}"
   let env := (← getEnv).setExporting false
   for m in env.header.moduleNames do
-    if #["OpenAI", "OAI", "ComparatorChallenges"].any
-        (fun s => m.toString == s || m.toString.startsWith (s ++ ".")) then
+    if m.toString == "ComparatorChallenges" || m.toString.startsWith "ComparatorChallenges." then
       throwError "Forbidden import: {m}"
   let mut todo := roots
   let mut seen : NameSet := {}
@@ -46,5 +45,7 @@ run_elab do
       unless allowed.contains n do throwError "Unlisted axiom: {n}"
     todo := todo ++ ci.type.getUsedConstants
     if let some v := ci.value? (allowOpaque := true) then todo := todo ++ v.getUsedConstants
-  logInfo m!"Dusart proof traversal passed: {seen.size} constants; exactly Dirichlet plus standard axioms."
+  unless seen.contains ``OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re do
+    throwError "Actual proved Dirichlet theorem absent"
+  logInfo m!"Dusart proof traversal passed: {seen.size} constants; standard axioms only; Dirichlet is proved."
   logInfo "The theta estimate and sharp signed prefix and closed-left prime interval bounds are proved from 3^120, without finite-height RH or a numerical zero table."

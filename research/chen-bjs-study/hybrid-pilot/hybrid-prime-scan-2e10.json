@@ -1,0 +1,33 @@
+{
+  "classification": "EXPLORATORY_NOT_LEAN_VERIFIED",
+  "X": 20000000000,
+  "U": 4000000,
+  "primeCount": 882206716,
+  "scale": 281474976710656,
+  "integerReciprocalSum": 964832096031544,
+  "reciprocalRoundingWidth": 3.1342278674628687E-06,
+  "b1Reference": 0.26149721284764277,
+  "b1ReferenceFormallyCertified": false,
+  "finiteErrorLower": -1.3976379438784825E-06,
+  "finiteErrorUpper": 4.356825902246397E-05,
+  "minAt": {
+    "x": 19027111871,
+    "side": "left_limit"
+  },
+  "maxAt": {
+    "x": 4991687,
+    "side": "inclusive"
+  },
+  "atU": {
+    "lower": 2.2450366102766406E-05,
+    "upper": 2.2451372039433704E-05
+  },
+  "seconds": 84.09,
+  "unresolved": [
+    "sieve completeness proof",
+    "log-log interval certificates",
+    "B1 enclosure proof",
+    "kernel checking of the fixed-point certificate"
+  ],
+  "blockDetailsOmittedFromSummary": true
+}

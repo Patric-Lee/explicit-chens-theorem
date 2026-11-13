@@ -12,15 +12,17 @@ Locally adapted source from these pinned Apache-2.0 projects:
   unsmoothing proofs. Its copies of earlier PNT+ modules retain their original
   attribution. Existing repository modules are reused where possible.
 - Mathlib v4.35.0, `Mathlib/NumberTheory/LSeries/RiemannZetaLogDeriv.lean`,
-  copyright 2026 Terence Tao: the functional-equation derivative is backported
-  locally in `DusartPort/ZetaLogDeriv.lean`.
+  copyright 2026 Terence Tao: the former functional-equation derivative
+  backport is now a compatibility import of the identical theorem in pinned
+  Mathlib `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 
 Original headers and attributions are retained in the copied files. Changes
 include local import names, compatibility proofs for the existing Mathlib,
 removal of unrelated source sections, and numerical arguments specific to the
-single permitted Dirichlet hypothesis. New local arguments are in
+proved OpenAI Dirichlet theorem. New local arguments are in
 `XiMoment`, `ZeroMoment`, `ZeroBridge`, `Unsmoothing`, `Psi1Estimate`, and
 `Application`. No upstream theorem is accepted as an axiom.
 
-All files are checked against the repository's existing Lean v4.33.0-rc1;
-neither upstream toolchains nor upstream Lake dependencies are installed.
+The repository now uses Lean v4.34.1 and the exact Mathlib revision required
+by the vendored OpenAI proof. The active Chen closure and final integration audits passed on
+these pins. No new external Lake package names were introduced.

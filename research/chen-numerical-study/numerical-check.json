@@ -1,0 +1,38 @@
+{
+  "classification": "NUMERICAL_SUPPORT_FOR_TEMPORARY_ASSUMPTION_NOT_KERNEL_CERTIFIED",
+  "positiveZeroCandidates": 500000,
+  "moment": 0.046179618674126274,
+  "derivative": 18.654457377046544,
+  "completedMoment": 0.04619141793224202,
+  "finiteGrid": {
+    "lower": -0.000025242596784380567,
+    "upper": 0.00006620137817492378
+  },
+  "actualBridgeAtX": {
+    "X": 20000000000,
+    "delta": 0.001999464948642982,
+    "theta": 0.00009428297629140529,
+    "raw": 8.03359493022297e-8,
+    "integral": 8.563007480256927e-7,
+    "primePowers": 0.000010563360527901665,
+    "terminal": 4.242677248451116e-9,
+    "total": 0.00010578721619388333,
+    "target": 0.00011111111111111112
+  },
+  "tailSampling": {
+    "points": 10001,
+    "from": 20000000000,
+    "to": "3^120",
+    "decreasing": true
+  },
+  "cutoff": {
+    "base": 3,
+    "exponent": "10^13",
+    "H": 30.027654036539293
+  },
+  "qualifications": [
+    "Zero ordinates are trusted numerical table data, not certified zero boxes.",
+    "The all-real window and scalar monotonicity are assumed, not proved by this script.",
+    "No claim that the new Chen theorem has only the Dirichlet axiom."
+  ]
+}

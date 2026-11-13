@@ -1,7 +1,7 @@
 param([switch]$Rebuild)
 $ErrorActionPreference = 'Stop'
 $repoRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..\..')).Path
-$artifactDir = Join-Path $repoRoot '.lake\build\chen-effective'
+$artifactDir = Join-Path $repoRoot '.lake\build-434\chen-effective'
 
 # Full rebuild is optional; by default rebuild the compatibility bridge and audit.
 if ($Rebuild) { & (Join-Path $PSScriptRoot 'check.ps1') }
@@ -57,18 +57,12 @@ while ($queue.Count -gt 0) {
     if ($text -match $bad) {
         $code = Remove-LeanCommentsAndStrings $text
         foreach ($match in [regex]::Matches($code, $bad)) {
-            if ($match.Value -ne 'axiom') { throw "Forbidden proof token '$($match.Value)' in $path" }
-            $tail = $code.Substring($match.Index)
-            if ($path -ne (Join-Path $PSScriptRoot 'ExplicitSiegel.lean') -or
-                $tail -notmatch '^axiom\s+dirichlet_seven_eighths\b') {
-                throw "Unexpected axiom declaration in $path"
-            }
-            $axiomCount++
+            throw "Forbidden proof token '$($match.Value)' in $path"
         }
     }
     foreach ($match in [regex]::Matches($text, '(?m)^\s*(?:(?:public|private|meta)\s+)*import\s+([A-Za-z0-9_.]+)')) {
         $module = $match.Groups[1].Value
-        if ($module -match '^(OAI|ComparatorChallenges|OpenAI)(\.|$)' -or
+        if ($module -match '^ComparatorChallenges(\.|$)' -or
             $module -match 'LiLiuGoldbach|Goldbach\.(OnePlusOneNine|All)') {
             throw "Forbidden import in source audit: $module"
         }
@@ -77,9 +71,15 @@ while ($queue.Count -gt 0) {
         $project = Join-Path $repoRoot $relative
         if (Test-Path -LiteralPath $local) { $queue.Enqueue($local) }
         elseif (Test-Path -LiteralPath $project) { $queue.Enqueue($project) }
+        else {
+            foreach ($vendorRoot in @('OpenAI\wrappers','OpenAI\grouped')) {
+                $vendor = Join-Path (Join-Path $repoRoot $vendorRoot) $relative
+                if (Test-Path -LiteralPath $vendor) { $queue.Enqueue($vendor); break }
+            }
+        }
     }
 }
-if ($axiomCount -ne 1) { throw "Expected exactly one local/project axiom, found $axiomCount" }
+if ($axiomCount -ne 0) { throw "Expected zero local/project axioms, found $axiomCount" }
 Write-Output "Source audit passed: $($seenFiles.Count) research/project files; no proof placeholders, native_decide, unsafe declarations, compiler bypasses, or extra axioms."
 
 $lakeCommand = Get-Command lake -ErrorAction SilentlyContinue

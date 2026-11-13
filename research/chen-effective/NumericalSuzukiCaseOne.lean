@@ -450,10 +450,9 @@ theorem numerical_caseB_coefficient_one
         C145 * (claim14_5VProduct S D_real * (Real.exp (Real.sqrt K) / x)) *
           x ^ (-Δ) * (b ^ s * proposition131iiLowerProfile C s) := by
       positivity
-    convert hscalarCore.trans (le_mul_of_one_le_right holdnonneg hu1) using 1
-    · rfl
-    · dsimp [C145, b, x, u]
-      field_simp [ne_of_gt hx, ne_of_gt hσpos]
+    convert hscalarCore.trans (le_mul_of_one_le_right holdnonneg hu1) using 1 <;>
+      dsimp [C145, b, x, u] <;>
+      field_simp [ne_of_gt hx, ne_of_gt hσpos] <;> ring
   exact suzukiLemma14_3_le_claim145Scale_of_scalar_at S H hlocal hD h_cond1 hs h_cond2 hKpos hC145 hprop h_cond3 h_cond4
 
 

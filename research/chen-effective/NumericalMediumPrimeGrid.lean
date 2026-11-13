@@ -135,7 +135,7 @@ theorem numerical_medium_grid_partition {N n : ℕ} (hN : 1 ≤ N) (hn : 0 < n) 
   induction k with
   | zero => simp [MertensTheorem.weightedPrimeReciprocalLogSum]
   | succ k ih =>
-    rw [sum_range_succ,← ih]
+    rw [Finset.sum_range_succ,← ih]
     exact (weightedPrimeLogSum_add hN (mediumPrimeGridPoint_mono hn (Nat.zero_le k))
       (mediumPrimeGridPoint_mono hn (Nat.le_succ k))).symm
 

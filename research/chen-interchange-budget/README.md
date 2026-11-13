@@ -1,5 +1,10 @@
 # Interchangeable end-to-end Chen budgets
 
+The historical budget snapshots below predate the proved Dirichlet integration.
+The active H approximately 147.308095 theorem now uses standard Lean axioms
+only; the H approximately 30.027654 numerical study retains one temporary
+reciprocal-prime window. See [the current audit report](../chen-effective/UPGRADE_434_AUDIT.md).
+
 This package separates actual counting estimates from numerical exploration.
 It introduces no new axioms or external dependencies. The production sources
 are unchanged. The established cutoffs remain respectively
@@ -64,15 +69,15 @@ last term and recovers the former margin floor `0.010585`.
 alternative producer. `production_route_dominates_paid` proves that the
 variable envelope is at least as informative wherever that payment is valid.
 
-`ChenRouteBJS.lean` independently assembles the provisional BJS study inputs.
+`ChenRouteBJS.lean` independently assembles the proved BJS study inputs.
 Its margin floor is `0.055585 - numericalTripleErrorCap/log(N)`, recovering
-`0.050585` at its existing cutoff. Its axiom ledger now contains Dirichlet and `bjsStudy_interval`, plus standard axioms. Both density adapters are proved from the certified layer table, analytic tail, discrete induction and parity sums.
+`0.050585` at its existing cutoff. Its axiom ledger now contains only Dirichlet plus standard axioms; the interval input is proved by `DusartPort.Application`. Both density adapters are proved from the certified layer table, analytic tail, discrete induction and parity sums.
 
-The provisional interval input now explicitly requires ordered endpoints
+The historical interval input explicitly required ordered endpoints
 a<=b. Its earlier declaration omitted that condition and was false for
 reversed endpoints; the dependent product proof already had the order.
 The study includes an axiom-free regression counterexample, and its
-dependent modules must be rebuilt with the corrected declaration.
+current interval theorem is proved with ordered endpoints and the exact closed-left convention.
 
 `ChenRouteMixing.lean` supplies an actual mixed route: BJS base/medium and
 the production triple producer. Its numerical margin equals the BJS
@@ -134,7 +139,7 @@ new Selberg moments, a switched triple method, and different counting models.
 
 There are six Lean modules, compiled with warnings as errors, plus fourteen
 numerical/contract checks. `AuditChenRoutes.lean` checks the exact original
-Chen statement, the separate production/provisional axiom ledgers, and
+Chen statement, the separate production/BJS axiom ledgers, and
 transitive proof dependencies. It forbids using the old final Chen proofs
 to supply the new adapters. `source-audit.ps1` rejects new axioms,
 placeholders, native_decide, unsafe declarations and compiler bypasses in
@@ -154,3 +159,19 @@ For just the final audit, with matching compiled artifacts already present:
 
 The explicit prime-product research profiles are labelled obligations.
 No source from the external LeanLab repository is imported by this package.
+
+## Joint denominator and end-to-end budgets
+
+`JointBudget.psm1` and `StudyJointBudget.ps1` expose the denominator coefficient
+K, its actual cost in the triple main coefficient, the normalized denominator
+error, product error, geometry, source allocations, and the triple remainder.
+Run `TestJointBudget.ps1` to check normalization, failed current inputs at H=30,
+and the distinction between feasible candidate rows and proved cutoffs.
+Every numerical study row retains `provedChenCutoff=false` and lists missing
+analytic estimates and producer thresholds.
+
+The Lean branch proves coefficient K=8.1 for the actual denominator from
+`3^(3^83)` (H approximately 91.278868), propagates it through the actual square
+and triple counts, and proves Chen at the unchanged `3^(3^171)` cutoff.
+See [the joint proof status](../chen-bjs-study/JOINT_BUDGET.md).
+The stronger published square-root remainder is not yet formalized.

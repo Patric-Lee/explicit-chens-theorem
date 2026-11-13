@@ -385,7 +385,7 @@ theorem panMainTotientWeightedSum_le_polylog :
       _ ≤ rexp (∑ p ∈ primesUpTo Q, (3 : ℝ) / ((p : ℝ) - 1)) := by
             -- Nonnegativity is needed only for primes in the product.
             rw [Real.exp_sum]
-            apply Finset.prod_le_prod
+            apply Finset.prod_le_prod₀
             · intro p hp
               have hp1 : (1 : ℝ) ≤ p := by
                 exact_mod_cast (mem_primesUpTo.mp hp).1.one_lt.le

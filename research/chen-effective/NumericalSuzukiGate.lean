@@ -1,3 +1,4 @@
+import Mathlib.Tactic.IrreducibleDef
 import ExplicitLogBounds
 import MathlibNt.SieveTheory.LinearSieve.Suzuki.SuzukiChenParameterBridge
 
@@ -7,16 +8,26 @@ open MathlibNt.SieveTheory.SwitchingPrinciple.SuzukiLemma144KappaOne
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 1000000
 
-def suzukiCoordinateThreshold : ℕ := 3 ^ 381469726563
+/-- A kernel-checked power with an explicit equation, kept opaque to prevent
+accidental evaluation of enormous numerical cutoffs. -/
+irreducible_def symbolicNatPower (a b : ℕ) : ℕ := a ^ b
 
-theorem numerical_suzuki_coordinate_gate {N : ℕ} {ε : ℝ}
-    (hN : suzukiCoordinateThreshold ≤ N) (hε0 : 0 ≤ ε) (hε : ε < 1 / 10) :
+def suzukiCoordinateThreshold : ℕ := symbolicNatPower 3 381469726563
+
+theorem suzukiCoordinateThreshold_eq :
+    suzukiCoordinateThreshold = 3 ^ 381469726563 :=
+  symbolicNatPower_def _ _
+
+private theorem numerical_suzuki_coordinate_gate_symbolic {b N : ℕ} {ε : ℝ}
+    (hb : 381469726563 ≤ b) (hN : symbolicNatPower 3 b ≤ N) (hε0 : 0 ≤ ε) (hε : ε < 1 / 10) :
     chenS ε ≤ sourceSigma (chenLevel N ε : ℝ) 16 := by
+  have hNpow : 3 ^ b ≤ N := by simpa only [symbolicNatPower_def] using hN
   have hlog : (381469726563 : ℝ) ≤ Real.log (N : ℝ) :=
-    log_ge_power_three (b := 381469726563) hN
+    (show (381469726563 : ℝ) ≤ (b : ℝ) by exact_mod_cast hb).trans
+      (log_ge_power_three (b := b) hNpow)
   have hNpos : 0 < N := by
-    have hh : 0 < suzukiCoordinateThreshold := by unfold suzukiCoordinateThreshold; positivity
-    omega
+    have hh : 0 < (3 : ℕ) ^ b := pow_pos (by norm_num) b
+    exact lt_of_lt_of_le hh hNpow
   have hN0 : (0 : ℝ) < N := by exact_mod_cast hNpos
   have hN1 : (1 : ℝ) ≤ N := by exact_mod_cast hNpos
   have hB : max ((5 : ℝ) ^ (16 : ℕ)) (Real.exp 1) = (5 : ℝ) ^ (16 : ℕ) := by
@@ -34,6 +45,13 @@ theorem numerical_suzuki_coordinate_gate {N : ℕ} {ε : ℝ}
   unfold chenSigmaThreshold
   rw [hB]
   exact hpow.trans (lt_cast_floor_add_one ((N : ℝ) ^ (1 / 2 - ε))).le
+
+/-- The same numerical cutoff, obtained by instantiating a proof that keeps
+its exponent symbolic during kernel checking. -/
+theorem numerical_suzuki_coordinate_gate {N : ℕ} {ε : ℝ}
+    (hN : suzukiCoordinateThreshold ≤ N) (hε0 : 0 ≤ ε) (hε : ε < 1 / 10) :
+    chenS ε ≤ sourceSigma (chenLevel N ε : ℝ) 16 :=
+  numerical_suzuki_coordinate_gate_symbolic (b := 381469726563) (le_refl _) hN hε0 hε
 
 #print axioms numerical_suzuki_coordinate_gate
 end ChenEffective

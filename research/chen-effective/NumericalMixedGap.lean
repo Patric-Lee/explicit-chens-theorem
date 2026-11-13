@@ -21,7 +21,7 @@ omit profile in
 theorem mixedEndpointC1_gate : logPowerCutoff 32 ≤ mixedEndpointC1 := by
   unfold logPowerCutoff mixedEndpointC1 caseIOrderC1
   apply Nat.pow_le_pow_right (by norm_num : 0 < 3)
-  norm_num [reverseRatioCap]
+  norm_num [reverseRatioCap_nat_eq]
 
 omit profile in
 theorem mixedEndpointC1_eq : mixedEndpointC1 = 3 ^ (2400 * reverseRatioCap + 9) := by
@@ -31,7 +31,7 @@ theorem mixedEndpointC1_eq : mixedEndpointC1 = 3 ^ (2400 * reverseRatioCap + 9) 
 
 omit profile in
 theorem mixedEndpointC1_budget : (mixedEndpointC1 : ℝ) ≤ Real.exp (10 ^ 15 : ℝ) := by
-  have hn : 2400 * reverseRatioCap + 9 ≤ 10 ^ 13 := by norm_num [reverseRatioCap]
+  have hn : 2400 * reverseRatioCap + 9 ≤ 10 ^ 13 := by norm_num [reverseRatioCap_nat_eq]
   have hnR : ((2400 * reverseRatioCap + 9 : ℕ) : ℝ) ≤ 10 ^ 13 := by exact_mod_cast hn
   have h3 : Real.log (3 : ℝ) ≤ 2 := by
     linarith only [Real.log_le_sub_one_of_pos (by norm_num : (0 : ℝ) < 3)]

@@ -1,0 +1,144 @@
+{
+  "N": 100000,
+  "shardSize": 8192,
+  "chunk": 128,
+  "scale": "281474976710656",
+  "packingBase": "18446744073709551616",
+  "Q": "761466423588538",
+  "primeCount": 9592,
+  "parts": [
+    {
+      "start": 0,
+      "len": 8192,
+      "Q": "692677500530396",
+      "C": 1028,
+      "packed": "12777644577901027209211091338920964",
+      "module": "BJSHybridSieveShard100000P0",
+      "name": "Shard100000P0.checked"
+    },
+    {
+      "start": 8192,
+      "len": 8192,
+      "Q": "20853844710439",
+      "C": 872,
+      "packed": "384685536326349903692152044520296",
+      "module": "BJSHybridSieveShard100000P1",
+      "name": "Shard100000P1.checked"
+    },
+    {
+      "start": 16384,
+      "len": 8192,
+      "Q": "11487917413371",
+      "C": 825,
+      "packed": "211914672464366255565214933058361",
+      "module": "BJSHybridSieveShard100000P2",
+      "name": "Shard100000P2.checked"
+    },
+    {
+      "start": 24576,
+      "len": 8192,
+      "Q": "7777369287278",
+      "C": 787,
+      "packed": "143467140809146125749310873142035",
+      "module": "BJSHybridSieveShard100000P3",
+      "name": "Shard100000P3.checked"
+    },
+    {
+      "start": 32768,
+      "len": 8192,
+      "Q": "5960590593792",
+      "C": 776,
+      "packed": "109953489211841473282955513168648",
+      "module": "BJSHybridSieveShard100000P4",
+      "name": "Shard100000P4.checked"
+    },
+    {
+      "start": 40960,
+      "len": 8192,
+      "Q": "4785990727292",
+      "C": 763,
+      "packed": "88285946085502567795027053904635",
+      "module": "BJSHybridSieveShard100000P5",
+      "name": "Shard100000P5.checked"
+    },
+    {
+      "start": 49152,
+      "len": 8192,
+      "Q": "4039798435381",
+      "C": 763,
+      "packed": "74521127846845580754951860126459",
+      "module": "BJSHybridSieveShard100000P6",
+      "name": "Shard100000P6.checked"
+    },
+    {
+      "start": 57344,
+      "len": 8192,
+      "Q": "3342679199378",
+      "C": 728,
+      "packed": "61661547711438310214282246095576",
+      "module": "BJSHybridSieveShard100000P7",
+      "name": "Shard100000P7.checked"
+    },
+    {
+      "start": 65536,
+      "len": 8192,
+      "Q": "2990947159045",
+      "C": 739,
+      "packed": "55173236780891773480355988767459",
+      "module": "BJSHybridSieveShard100000P8",
+      "name": "Shard100000P8.checked"
+    },
+    {
+      "start": 73728,
+      "len": 8192,
+      "Q": "2634786937205",
+      "C": 728,
+      "packed": "48603240319373674265074498274008",
+      "module": "BJSHybridSieveShard100000P9",
+      "name": "Shard100000P9.checked"
+    },
+    {
+      "start": 81920,
+      "len": 8192,
+      "Q": "2350844873464",
+      "C": 718,
+      "packed": "43365433737782522757803696718542",
+      "module": "BJSHybridSieveShard100000P10",
+      "name": "Shard100000P10.checked"
+    },
+    {
+      "start": 90112,
+      "len": 8192,
+      "Q": "2129746758324",
+      "C": 712,
+      "packed": "39286893392615375667691555652296",
+      "module": "BJSHybridSieveShard100000P11",
+      "name": "Shard100000P11.checked"
+    },
+    {
+      "start": 98304,
+      "len": 1697,
+      "Q": "434406963173",
+      "C": 153,
+      "packed": "8013394073489701186350054637721",
+      "module": "BJSHybridSieveShard100000P12",
+      "name": "Shard100000P12.checked"
+    }
+  ],
+  "modules": [
+    "BJSHybridSieveShard100000P0",
+    "BJSHybridSieveShard100000P1",
+    "BJSHybridSieveShard100000P2",
+    "BJSHybridSieveShard100000P3",
+    "BJSHybridSieveShard100000P4",
+    "BJSHybridSieveShard100000P5",
+    "BJSHybridSieveShard100000P6",
+    "BJSHybridSieveShard100000P7",
+    "BJSHybridSieveShard100000P8",
+    "BJSHybridSieveShard100000P9",
+    "BJSHybridSieveShard100000P10",
+    "BJSHybridSieveShard100000P11",
+    "BJSHybridSieveShard100000P12",
+    "BJSHybridSieveShardedBench100000"
+  ]
+}

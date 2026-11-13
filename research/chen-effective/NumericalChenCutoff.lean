@@ -25,9 +25,19 @@ theorem nLower_le_nSquare : nLower ≤ nSquare :=
 /-- A closed numerical Chen cutoff under the sole local Dirichlet axiom. -/
 def N0 : ℕ := chenCutoff nLower nSquare numericalTripleErrorCap
 
+private theorem chen_cutoff_formula_symbolic {a b b' c : ℕ} (hb : b=b') :
+    chenCutoff a b c = max 9 (max a (max b' (3^(20000*c+1)))) := by
+  exact congrArg (fun k : ℕ => max 9 (max a (max k (3^(20000*c+1))))) hb
+
+private theorem chen_cutoff_eq_symbolic {a b c : ℕ}
+    (h9 : 9 ≤ b) (ha : a ≤ b) (hc : 3^(20000*c+1) ≤ b) :
+    chenCutoff a b c = b := by
+  unfold chenCutoff errorCutoff
+  exact le_antisymm (max_le h9 (max_le ha (max_le le_rfl hc)))
+    ((le_max_left _ _).trans ((le_max_right _ _).trans (le_max_right _ _)))
+
 theorem N0_formula : N0 = max 9 (max nLower (max (3^(3^4000000000000)) (3^(20000*10^40+1)))) := by
-  unfold N0 chenCutoff errorCutoff numericalTripleErrorCap
-  rw [nSquare_eq]
+  exact chen_cutoff_formula_symbolic (a:=nLower) (c:=10^40) nSquare_eq
 
 theorem N0_eq_nSquare : N0=nSquare := by
   have h9 : 9 ≤ nSquare :=
@@ -36,9 +46,7 @@ theorem N0_eq_nSquare : N0=nSquare := by
   have herr : 3^(20000*10^40+1) ≤ nSquare :=
     (chen_three_power_mono (20000*10^40+1) (3^200) (by norm_num)).trans
       ((chen_double_three_power_mono 200 4000000000000 (by norm_num)).trans_eq nSquare_eq.symm)
-  unfold N0 chenCutoff errorCutoff numericalTripleErrorCap
-  exact le_antisymm (max_le h9 (max_le nLower_le_nSquare (max_le le_rfl herr)))
-    ((le_max_left _ _).trans ((le_max_right _ _).trans (le_max_right _ _)))
+  exact chen_cutoff_eq_symbolic (c:=10^40) h9 nLower_le_nSquare herr
 
 theorem N0_closed : N0=3^(3^4000000000000) := N0_eq_nSquare.trans nSquare_eq
 

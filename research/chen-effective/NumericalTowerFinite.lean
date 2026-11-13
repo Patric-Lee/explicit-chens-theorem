@@ -112,9 +112,13 @@ theorem tower_lower_endpoint : lowerEndpointThreshold ≤ towerH :=
   max_le ((by norm_num : 2^110+1 ≤ (10 : ℕ)^100).trans tower_H_large_nat)
     (max_le (tower_log_power (by norm_num : 30 ≤ 10^30)) (tower_fixed_power (by norm_num)))
 
-theorem tower_final_error : errorCutoff numericalTripleErrorCap ≤ towerH := by
-  unfold errorCutoff numericalTripleErrorCap
-  exact tower_fixed_power (by norm_num)
+private theorem tower_error_cutoff_symbolic {B : ℕ} (hB : 20000*B+1 ≤ 10^100) :
+    errorCutoff B ≤ towerH := by
+  unfold errorCutoff
+  exact tower_fixed_power hB
+
+theorem tower_final_error : errorCutoff numericalTripleErrorCap ≤ towerH :=
+  tower_error_cutoff_symbolic (by norm_num [numericalTripleErrorCap])
 
 #print axioms tower_varying_distribution
 end ChenEffective

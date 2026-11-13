@@ -151,7 +151,7 @@ theorem tower_endpoint_caps : (caseIEndpointC1 : ℝ) ≤ towerH ∧ (caseIScala
   constructor
   · rw [caseIEndpointC1_eq]
     have hn : 1200*reverseRatioCap+5 ≤ towerU := by
-      have hh : 1200*reverseRatioCap+5 ≤ 10^100 := by norm_num [reverseRatioCap]
+      have hh : 1200*reverseRatioCap+5 ≤ 10^100 := by norm_num [reverseRatioCap_nat_eq]
       exact hh.trans towerU_large
     have hp := Nat.pow_le_pow_right (show 1 ≤ (3 : ℕ) by norm_num)
       (hn.trans (by exact_mod_cast (show (towerU : ℝ) ≤ (towerU : ℝ)^100 by simpa only [pow_one] using pow_le_pow_right₀ towerU_one (show 1 ≤ 100 by norm_num))))

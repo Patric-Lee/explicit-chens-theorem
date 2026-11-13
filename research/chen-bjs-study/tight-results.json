@@ -1,0 +1,51 @@
+{
+  "classification": "kernel_verified",
+  "theorem": "ChenEffective.TightBudget.chen",
+  "originalStatement": "ChenEffective.TightBudget.original_chen",
+  "cutoff": "3^(3^134)",
+  "H": 147.308094509143,
+  "denominatorK": "8.2",
+  "squareEpsilon": "1/100",
+  "primePairEta": "1/10000",
+  "tripleErrorCap": "10^40",
+  "normalizedTripleAllocationAtFinalCutoff": "1/10^20",
+  "finalMargin": "0.005926 - 1/(2*10^20)",
+  "auditConstants": 133656,
+  "allowedAxioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "completeH30ChenProved": false,
+  "components": {
+    "primePairMainLogThreshold": "10^12",
+    "squareAnalyticCap": "3^(5*10^12)",
+    "squareAnalyticH": 29.3345068559793,
+    "distributionCutoff": "3^(10^13)",
+    "distributionH": 30.027654036539293,
+    "geometrySmallEndpointCap": 4000000,
+    "geometryShift": "1/10^5",
+    "massAccuracyParameterCap": "10^10",
+    "targetJointMargin": "0.000926",
+    "completeTriple": {
+      "theorem": "ChenEffective.H30.fifth_triple_closed",
+      "cutoff": "3^(5*10^12)",
+      "H": 29.3345068559793,
+      "squareDecayOrder": 5,
+      "squareConstantCap": "10^34",
+      "complementConstant": 19,
+      "normalizedError": "1/1000",
+      "marginWithLowerBound": "0.005426",
+      "auditConstants": 131480
+    },
+    "smallEndpointProduct": {
+      "classification": "conditional_reduction_only",
+      "endpoint": 4000000,
+      "remainingProposition": "ChenEffective.H30.SmallEndpointPrefixWindow",
+      "reciprocalPrefixError": "1/20000",
+      "finiteRangeUpperEndpoint": "3^120",
+      "remainingPropositionProved": false
+    }
+  },
+  "upgradeAudit": "../chen-effective/UPGRADE_434_AUDIT.json"
+}

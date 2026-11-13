@@ -58,7 +58,7 @@ theorem c1_caseI_Dcuts : caseIStrictDcut ≤ (towerH : ℝ)^4 ∧ caseIEvenDcut 
   · exact max_le h4 (max_le hf (max_le hf (max_le hp (max_le he (max_le hr hq)))))
 
 theorem c1_endpoint_budget : (caseIEndpointC1 : ℝ) ≤ c1SingleBudget := by
-  have hn : 1200*reverseRatioCap+5 ≤ 10^13 := by norm_num [reverseRatioCap]
+  have hn : 1200*reverseRatioCap+5 ≤ 10^13 := by norm_num [reverseRatioCap_nat_eq]
   have hnR : ((1200*reverseRatioCap+5 : ℕ) : ℝ) ≤ 10^13 := by exact_mod_cast hn
   have h3 : Real.log (3 : ℝ) ≤ 2 := by
     linarith only [Real.log_le_sub_one_of_pos (by norm_num : (0 : ℝ)<3)]

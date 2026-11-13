@@ -1,0 +1,13 @@
+{
+  "classification": "NUMERICAL_RECHECK_NOT_LEAN_CERTIFICATE",
+  "limit": 20000000000,
+  "primeCount": 882206716,
+  "fixedPointSum": 964832096031544,
+  "scale": 281474976710656,
+  "seconds": 100.775,
+  "finiteErrorLower": -0.0000013976379438784825,
+  "finiteErrorUpper": 0.00004356825902246397,
+  "allBlockCountsAndSumsReproduced": true,
+  "originalSha256": "e898918cd97ca302b51a074d402942ed907beaa2793411c616da61bba24312b6",
+  "recheckSha256": "56a2000652d90067144eb92e4e976fc7a19491d1095ae01f6a3c6bb02a915591"
+}

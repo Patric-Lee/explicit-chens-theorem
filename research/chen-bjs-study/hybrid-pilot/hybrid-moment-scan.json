@@ -1,0 +1,132 @@
+{
+  "classification": "NUMERICAL_PILOT_NOT_A_PROOF",
+  "source": "https://www-users.cse.umn.edu/~odlyzko/zeta_tables/zeros6.gz",
+  "compressedSha256": "6acacb4707c429bf368f32823a8eef0e0737b6318d3e144c78975a4986d155da",
+  "advertisedSourceAccuracy": 4e-9,
+  "proposedBoxRadius": 0.000001,
+  "positiveZeroRows": 2001052,
+  "minAdjacentGap": 0.0029586540767922997,
+  "momentConstantReference": 0.04619141793224202,
+  "momentConstantCap": 0.04619142,
+  "momentConstantCapProved": false,
+  "snapshots": [
+    {
+      "positiveZeros": 29,
+      "lastOrdinate": 98.831194218,
+      "proposedBoxRadius": 0.000001,
+      "headMomentLower": 0.0342005342617783,
+      "headDerivativeCap": 1.1844870565432437,
+      "residualCap": 0.023981771476443398,
+      "sharperResidualCap": 0.017986328607332548,
+      "momentConstantCap": 0.04619142,
+      "classification": "UNPROVED_ZERO_BOX_CANDIDATES_AND_UNPROVED_CONSTANT_CAP"
+    },
+    {
+      "positiveZeros": 100,
+      "lastOrdinate": 236.524229666,
+      "proposedBoxRadius": 0.000001,
+      "headMomentLower": 0.03996970191703419,
+      "headDerivativeCap": 2.0623463305894303,
+      "residualCap": 0.012443436165931618,
+      "sharperResidualCap": 0.009332577124448713,
+      "momentConstantCap": 0.04619142,
+      "classification": "UNPROVED_ZERO_BOX_CANDIDATES_AND_UNPROVED_CONSTANT_CAP"
+    },
+    {
+      "positiveZeros": 1000,
+      "lastOrdinate": 1419.422480946,
+      "proposedBoxRadius": 0.000001,
+      "headMomentLower": 0.04475225879425545,
+      "headDerivativeCap": 4.642121783238805,
+      "residualCap": 0.0028783224114890954,
+      "sharperResidualCap": 0.0021587418086168216,
+      "momentConstantCap": 0.04619142,
+      "classification": "UNPROVED_ZERO_BOX_CANDIDATES_AND_UNPROVED_CONSTANT_CAP"
+    },
+    {
+      "positiveZeros": 10000,
+      "lastOrdinate": 9877.782654004,
+      "proposedBoxRadius": 0.000001,
+      "headMomentLower": 0.04592201663907581,
+      "headDerivativeCap": 8.587495319917176,
+      "residualCap": 0.0005388067218483755,
+      "sharperResidualCap": 0.00040410504138628164,
+      "momentConstantCap": 0.04619142,
+      "classification": "UNPROVED_ZERO_BOX_CANDIDATES_AND_UNPROVED_CONSTANT_CAP"
+    },
+    {
+      "positiveZeros": 100000,
+      "lastOrdinate": 74920.827498994,
+      "proposedBoxRadius": 0.000001,
+      "headMomentLower": 0.04614728777827096,
+      "headDerivativeCap": 13.987696096442619,
+      "residualCap": 0.00008826444345808038,
+      "sharperResidualCap": 0.00006619833259356028,
+      "momentConstantCap": 0.04619142,
+      "classification": "UNPROVED_ZERO_BOX_CANDIDATES_AND_UNPROVED_CONSTANT_CAP"
+    },
+    {
+      "positiveZeros": 250000,
+      "lastOrdinate": 170570.224854177,
+      "proposedBoxRadius": 0.000001,
+      "headMomentLower": 0.04617049733640323,
+      "headDerivativeCap": 16.55348738767729,
+      "residualCap": 0.00004184532719353484,
+      "sharperResidualCap": 0.00003138399539515113,
+      "momentConstantCap": 0.04619142,
+      "classification": "UNPROVED_ZERO_BOX_CANDIDATES_AND_UNPROVED_CONSTANT_CAP"
+    },
+    {
+      "positiveZeros": 500000,
+      "lastOrdinate": 319387.21930923,
+      "proposedBoxRadius": 0.000001,
+      "headMomentLower": 0.046179618674126274,
+      "headDerivativeCap": 18.654457377046537,
+      "residualCap": 0.000023602651747445247,
+      "sharperResidualCap": 0.000017701988810583935,
+      "momentConstantCap": 0.04619142,
+      "classification": "UNPROVED_ZERO_BOX_CANDIDATES_AND_UNPROVED_CONSTANT_CAP"
+    },
+    {
+      "positiveZeros": 1000000,
+      "lastOrdinate": 600269.677012445,
+      "proposedBoxRadius": 0.000001,
+      "headMomentLower": 0.04618480390643749,
+      "headDerivativeCap": 20.894237517636572,
+      "residualCap": 0.00001323218712501184,
+      "sharperResidualCap": 0.00000992414034375888,
+      "momentConstantCap": 0.04619142,
+      "classification": "UNPROVED_ZERO_BOX_CANDIDATES_AND_UNPROVED_CONSTANT_CAP"
+    },
+    {
+      "positiveZeros": 1500000,
+      "lastOrdinate": 869610.285310522,
+      "proposedBoxRadius": 0.000001,
+      "headMomentLower": 0.04618671585911715,
+      "headDerivativeCap": 22.269087789851127,
+      "residualCap": 0.000009408281765696525,
+      "sharperResidualCap": 0.000007056211324272393,
+      "momentConstantCap": 0.04619142,
+      "classification": "UNPROVED_ZERO_BOX_CANDIDATES_AND_UNPROVED_CONSTANT_CAP"
+    },
+    {
+      "positiveZeros": 2001052,
+      "lastOrdinate": 1132490.658714411,
+      "proposedBoxRadius": 0.000001,
+      "headMomentLower": 0.04618773241645938,
+      "headDerivativeCap": 23.27546477059099,
+      "residualCap": 0.0000073751670812277625,
+      "sharperResidualCap": 0.000005531375310920822,
+      "momentConstantCap": 0.04619142,
+      "classification": "UNPROVED_ZERO_BOX_CANDIDATES_AND_UNPROVED_CONSTANT_CAP"
+    }
+  ],
+  "proofObligations": [
+    "actual critical-line zero in every selected interval",
+    "distinctness and embedding into divisor-zero indices",
+    "rational interval certification of the scalar head sums",
+    "precise upper enclosure of 2+gamma-log(4*pi)",
+    "head/remaining decomposition in the psi1 explicit formula",
+    "finite-difference and integrated psi1-to-Mertens analytic bridges"
+  ]
+}

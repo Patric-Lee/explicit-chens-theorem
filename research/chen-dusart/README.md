@@ -1,4 +1,4 @@
-# Explicit theta and reciprocal-prime bounds from the Dirichlet 7/8 hypothesis
+# Explicit theta and reciprocal-prime bounds from the proved Dirichlet 7/8 theorem
 
 This package proves, for every real x >= 3^120,
 
@@ -10,7 +10,7 @@ It also proves the ordered, closed-left reciprocal-prime interval bound
 needed by the BJS sieve, including the exact endpoint 3^120.
 Public statements are in `DusartPort/Application.lean`.
 
-These are restricted, Dirichlet-conditional replacements for the Dusart input
+These are restricted replacements for the Dusart input, derived from the proved Dirichlet theorem,
 needed by Chen. This does not claim Dusart's unconditional Theorem 5.2, its
 sharper coefficients, or its full small-x range has been formalized.
 
@@ -24,16 +24,24 @@ formula, including trivial zeros, then gives an error at most
 abs(psi(x)-x)<=0.7*x^(15/16), and the prime-power correction gives theta.
 
 `AuditDusart.lean` checks exact axiom ledgers and traverses all dependencies
-of the numerical results. Its only nonstandard axiom is the existing
-`ChenEffective.dirichlet_seven_eighths`. There is no numerical zero table,
-finite-height RH premise, local axiom, placeholder, native_decide, OpenAI
-import or new package dependency. The existing Lean/Mathlib version is retained.
+of the numerical results. Its allowlist now contains standard Lean axioms
+only: the former Dirichlet axiom is replaced by the compiled and audited
+OpenAI proof. The full upgraded Chen and combined integration audits passed. No numerical
+zero table, finite-height RH premise, placeholder, native_decide proof, or
+new external Lake package is used. Lean and Mathlib have been upgraded to
+the exact versions required by that proof.
 
 The supporting analytic proofs are selectively copied and backported as
 local source; see `NOTICE.md` and `LICENSE-APACHE`. Upstream packages are not
 added to Lake's dependency graph.
 
 ## Checking
+
+The current pinned-version validation is
+`node OpenAI/tools/build-source.mjs OAI.AuditChenIntegration` from the repository
+root. See [the complete audit report](../chen-effective/UPGRADE_434_AUDIT.md).
+The older commands below retain their strict warning policy and separate
+artifact directories.
 
 The coordinated full build is `research/chen-bjs-study/check.ps1`. It builds
 the required reciprocal-prime foundations before this package, then builds

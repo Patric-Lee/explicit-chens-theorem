@@ -1,0 +1,1189 @@
+{
+  "repository": "https://github.com/calr3/ternary-goldbach",
+  "pin": "ab016043e852c126492310d8fc44ea7849c381b2",
+  "roots": [
+    "TernaryGoldbach.Explicit.PsiRanges1e8",
+    "TernaryGoldbach.Explicit.PsiPlateau1e8",
+    "RSBounds.PsiFinite.BaseCert"
+  ],
+  "modules": [
+    {
+      "module": "RSBounds.PsiFinite.BaseCert",
+      "source": "vendor/rsbounds/RSBounds/PsiFinite/BaseCert.lean",
+      "blob": "0d311e21a0827a6c3f92f2a6d0c5d97387540c1f",
+      "hash": "004b2ca40f3f19db80a4b0a3716632e54f1b2369eb31dfe5e2cc2116f9520e9d",
+      "imports": [
+        "TernaryGoldbach.Prelim.LogWalk",
+        "RSBounds.PsiFinite.Segment"
+      ],
+      "adaptedPath": "Calr3/RSBounds/PsiFinite/BaseCert.lean",
+      "adaptedHash": "004b2ca40f3f19db80a4b0a3716632e54f1b2369eb31dfe5e2cc2116f9520e9d",
+      "changes": []
+    },
+    {
+      "module": "RSBounds.PsiFinite.BasePrimes",
+      "source": "vendor/rsbounds/RSBounds/PsiFinite/BasePrimes.lean",
+      "blob": "dda4ca35c3167e261c10706fea9c3dc6c7b3cc20",
+      "hash": "7aa30ea353a5cea67a4108f82a3fa2bbc84a351c6052bbac6d0c1b9c65d09eb3",
+      "imports": [],
+      "adaptedPath": "Calr3/RSBounds/PsiFinite/BasePrimes.lean",
+      "adaptedHash": "7aa30ea353a5cea67a4108f82a3fa2bbc84a351c6052bbac6d0c1b9c65d09eb3",
+      "changes": []
+    },
+    {
+      "module": "RSBounds.PsiFinite.Bits",
+      "source": "vendor/rsbounds/RSBounds/PsiFinite/Bits.lean",
+      "blob": "12c2eeab7ca9b762893f929cdb2e22d40104c2e6",
+      "hash": "2ca168a4b2a95cacb55b1f8c3e62ab2251578566546c92bdb9976830176fd918",
+      "imports": [
+        "Mathlib.Tactic",
+        "Mathlib.Data.ZMod.Basic",
+        "Mathlib.Data.Nat.Prime.Basic",
+        "RSBounds.PsiFinite.Kernel"
+      ],
+      "adaptedPath": "Calr3/RSBounds/PsiFinite/Bits.lean",
+      "adaptedHash": "2ca168a4b2a95cacb55b1f8c3e62ab2251578566546c92bdb9976830176fd918",
+      "changes": []
+    },
+    {
+      "module": "RSBounds.PsiFinite.Block",
+      "source": "vendor/rsbounds/RSBounds/PsiFinite/Block.lean",
+      "blob": "56384d8eeab16862c35b21057ab0e642ce1b6530",
+      "hash": "2c8cc2601c7034aaf38b0b96b2e7d0e305742bada3875266d20804f5595399fa",
+      "imports": [
+        "RSBounds.PsiSieveBlockReduction",
+        "RSBounds.PsiFinite.LogBounds"
+      ],
+      "adaptedPath": "Calr3/RSBounds/PsiFinite/Block.lean",
+      "adaptedHash": "2c8cc2601c7034aaf38b0b96b2e7d0e305742bada3875266d20804f5595399fa",
+      "changes": []
+    },
+    {
+      "module": "RSBounds.PsiFinite.Kernel",
+      "source": "vendor/rsbounds/RSBounds/PsiFinite/Kernel.lean",
+      "blob": "9c4df2fa87cda9d0e7e2af4419a7f38b25fe056c",
+      "hash": "1abe2097cdde675816c76a197e5e1b23240f6ea85a504a41a9b73996e6ec6a24",
+      "imports": [
+        "RSBounds.PsiFinite.BasePrimes"
+      ],
+      "adaptedPath": "Calr3/RSBounds/PsiFinite/Kernel.lean",
+      "adaptedHash": "1abe2097cdde675816c76a197e5e1b23240f6ea85a504a41a9b73996e6ec6a24",
+      "changes": []
+    },
+    {
+      "module": "RSBounds.PsiFinite.LogBounds",
+      "source": "vendor/rsbounds/RSBounds/PsiFinite/LogBounds.lean",
+      "blob": "ee495a8d250ced609939c8315e8a581fe86e2528",
+      "hash": "54c915d0441f02ab197f2af452d2c260729f248bc3150ba8f587b04ca5ab6bf6",
+      "imports": [
+        "TernaryGoldbach.Prelim.RamareHarm",
+        "RSBounds.PsiFinite.Kernel"
+      ],
+      "adaptedPath": "Calr3/RSBounds/PsiFinite/LogBounds.lean",
+      "adaptedHash": "54c915d0441f02ab197f2af452d2c260729f248bc3150ba8f587b04ca5ab6bf6",
+      "changes": []
+    },
+    {
+      "module": "RSBounds.PsiFinite.Pows",
+      "source": "vendor/rsbounds/RSBounds/PsiFinite/Pows.lean",
+      "blob": "d851c66fbe5201c5c8eabfb761652a0c63ee708e",
+      "hash": "2d322b1edad5544c18eaf0271db3789373af57051e0afd07ca47375aeb03bbc9",
+      "imports": [
+        "RSBounds.PsiFinite.Bits"
+      ],
+      "adaptedPath": "Calr3/RSBounds/PsiFinite/Pows.lean",
+      "adaptedHash": "2d322b1edad5544c18eaf0271db3789373af57051e0afd07ca47375aeb03bbc9",
+      "changes": []
+    },
+    {
+      "module": "RSBounds.PsiFinite.Segment",
+      "source": "vendor/rsbounds/RSBounds/PsiFinite/Segment.lean",
+      "blob": "e9bdd3a3ab7aec150de9706efadcdf622331b39d",
+      "hash": "0d3d1f8ba0f4cd91018348186f58c0e58b8222b6c81bd228356bf3a35e620552",
+      "imports": [
+        "RSBounds.PsiFinite.Swar",
+        "RSBounds.PsiFinite.Pows",
+        "RSBounds.PsiFinite.Block"
+      ],
+      "adaptedPath": "Calr3/RSBounds/PsiFinite/Segment.lean",
+      "adaptedHash": "0d3d1f8ba0f4cd91018348186f58c0e58b8222b6c81bd228356bf3a35e620552",
+      "changes": []
+    },
+    {
+      "module": "RSBounds.PsiFinite.Swar",
+      "source": "vendor/rsbounds/RSBounds/PsiFinite/Swar.lean",
+      "blob": "9648865e2fa389a678f69572a2a7f4f41a826ead",
+      "hash": "87eeb9448d094e72c36694430a8cf5161d6e49360dc07faaa671d4bdec647ebc",
+      "imports": [
+        "RSBounds.PsiFinite.Bits"
+      ],
+      "adaptedPath": "Calr3/RSBounds/PsiFinite/Swar.lean",
+      "adaptedHash": "87eeb9448d094e72c36694430a8cf5161d6e49360dc07faaa671d4bdec647ebc",
+      "changes": []
+    },
+    {
+      "module": "RSBounds.PsiSieveBlockReduction",
+      "source": "vendor/rsbounds/RSBounds/PsiSieveBlockReduction.lean",
+      "blob": "257751798ccedae7f14815f7cb9f5ffaa4566375",
+      "hash": "28b08dd5135caafa1b2c0d1d81c3359e02c0d5d24718dc847272b2feaa562031",
+      "imports": [
+        "RSBounds.PsiSieveEndpointReduction"
+      ],
+      "adaptedPath": "Calr3/RSBounds/PsiSieveBlockReduction.lean",
+      "adaptedHash": "28b08dd5135caafa1b2c0d1d81c3359e02c0d5d24718dc847272b2feaa562031",
+      "changes": []
+    },
+    {
+      "module": "RSBounds.PsiSieveEndpointReduction",
+      "source": "vendor/rsbounds/RSBounds/PsiSieveEndpointReduction.lean",
+      "blob": "4b22733e869c70e8f8c59266a2626b99cdf07e0b",
+      "hash": "82a4b68b286af10511fdf65362d792f0bd0295ef8dcbaeded70015a499e159bf",
+      "imports": [
+        "Mathlib.NumberTheory.Chebyshev",
+        "Mathlib.Analysis.Real.Sqrt",
+        "Mathlib.Tactic"
+      ],
+      "adaptedPath": "Calr3/RSBounds/PsiSieveEndpointReduction.lean",
+      "adaptedHash": "82a4b68b286af10511fdf65362d792f0bd0295ef8dcbaeded70015a499e159bf",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.CircleMethod",
+      "source": "TernaryGoldbach/CircleMethod.lean",
+      "blob": "29de3b11bc7a83786de77474de08117f75b49584",
+      "hash": "82f0ee32cac525bb2bf16933945dd48a6d28d377c441963b4d594ef201d842d0",
+      "imports": [
+        "TernaryGoldbach.Statement"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/CircleMethod.lean",
+      "adaptedHash": "82f0ee32cac525bb2bf16933945dd48a6d28d377c441963b4d594ef201d842d0",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.Datum",
+      "source": "TernaryGoldbach/Explicit/Datum.lean",
+      "blob": "d812e7e45a48d4ce000e7d690c6e52fdd2390344",
+      "hash": "356bf41e4c33a6e6ccef57847caf40aebdfb7c2a0aec1e7b677a0c27c0ba18e4",
+      "imports": [
+        "TernaryGoldbach.Explicit.ExplicitFormula"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/Datum.lean",
+      "adaptedHash": "356bf41e4c33a6e6ccef57847caf40aebdfb7c2a0aec1e7b677a0c27c0ba18e4",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.Digamma",
+      "source": "TernaryGoldbach/Explicit/Digamma.lean",
+      "blob": "1247bd897deb475752ce3592b5454b252ba4310f",
+      "hash": "eaaab1415167e813d1e322a23c2ad7e07425b003e49859add10326d3fe081ea1",
+      "imports": [
+        "Mathlib.Analysis.SpecialFunctions.Gamma.Digamma",
+        "Mathlib.Analysis.SpecialFunctions.ImproperIntegrals",
+        "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+        "Mathlib.MeasureTheory.Integral.Prod"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/Digamma.lean",
+      "adaptedHash": "80eeb4728873b5ca6dd0d986b0403f165f613e9120c73466bdc47cc9c4398d63",
+      "changes": [
+        "Port Gamma derivative through the existing GammaIntegral derivative on Re(s)>0; close the final logarithm quotient with its positive denominator.",
+        "Use add_div and div_self directly for the final positive square denominator, avoiding expanded rational normalization."
+      ]
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.ExplicitBound",
+      "source": "TernaryGoldbach/Explicit/ExplicitBound.lean",
+      "blob": "241362185ff9027b03fb30fa0d09c1e8068f2903",
+      "hash": "1f34497cf5452f113fbe3a27b7935591c0853efc8bdf4514724197f7374a5967",
+      "imports": [
+        "TernaryGoldbach.Explicit.ZeroSumBound"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/ExplicitBound.lean",
+      "adaptedHash": "1f34497cf5452f113fbe3a27b7935591c0853efc8bdf4514724197f7374a5967",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.ExplicitBoundGen",
+      "source": "TernaryGoldbach/Explicit/ExplicitBoundGen.lean",
+      "blob": "5f1a582fa2358bcd5b713e5e73eb5bc572de0f5a",
+      "hash": "a96e7d4b3b0992fe7f73b8905111afce62c0b4ffd5884c0cde934bd9c09ef274",
+      "imports": [
+        "TernaryGoldbach.Explicit.ZetaBound",
+        "TernaryGoldbach.Explicit.ZeroSumGen"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/ExplicitBoundGen.lean",
+      "adaptedHash": "a96e7d4b3b0992fe7f73b8905111afce62c0b4ffd5884c0cde934bd9c09ef274",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.ExplicitFormula",
+      "source": "TernaryGoldbach/Explicit/ExplicitFormula.lean",
+      "blob": "9f2930af6c31a29a7861a45dbdeab0c49de583ca",
+      "hash": "dcc4b53bfd727d8dd1b959da2ebbb2f0e7a5c9e0242ad8d4cf1a2c1db8544ad5",
+      "imports": [
+        "TernaryGoldbach.Explicit.GMellin",
+        "TernaryGoldbach.Explicit.RectResidue",
+        "TernaryGoldbach.Explicit.LogDerivL"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/ExplicitFormula.lean",
+      "adaptedHash": "dcc4b53bfd727d8dd1b959da2ebbb2f0e7a5c9e0242ad8d4cf1a2c1db8544ad5",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.GammaBounds",
+      "source": "TernaryGoldbach/Explicit/GammaBounds.lean",
+      "blob": "7b62694a0a4de0af3c1d5c914b790af6478ffefb",
+      "hash": "dd6a63daa1382043a92e61e3cf2f31b63e49be989090165b8e2493334844830f",
+      "imports": [
+        "TernaryGoldbach.Explicit.GMellin",
+        "Mathlib.Analysis.SpecialFunctions.Gamma.Deriv"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/GammaBounds.lean",
+      "adaptedHash": "dd6a63daa1382043a92e61e3cf2f31b63e49be989090165b8e2493334844830f",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.GaussSmooth",
+      "source": "TernaryGoldbach/Explicit/GaussSmooth.lean",
+      "blob": "a99af1c01713a862a9707179ee563cf5a5c060b8",
+      "hash": "bfb2049c3f18533c82853da9616a3824eab3ad408a02790bf053d95600e01078",
+      "imports": [
+        "TernaryGoldbach.Explicit.ExplicitFormula"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/GaussSmooth.lean",
+      "adaptedHash": "bfb2049c3f18533c82853da9616a3824eab3ad408a02790bf053d95600e01078",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.GMellin",
+      "source": "TernaryGoldbach/Explicit/GMellin.lean",
+      "blob": "070168077b8f0cd8afdd28ea9160447878f5b34b",
+      "hash": "cb9c596c81c545a147588c9252333c7cf74e7118372ec470d0ff7a7f928720b6",
+      "imports": [
+        "TernaryGoldbach.Explicit.MellinRotate",
+        "Mathlib.Analysis.MellinInversion"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/GMellin.lean",
+      "adaptedHash": "cb9c596c81c545a147588c9252333c7cf74e7118372ec470d0ff7a7f928720b6",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.GrExtend",
+      "source": "TernaryGoldbach/Explicit/GrExtend.lean",
+      "blob": "faa3c45f159b4222f6726fb17207a2767933e009",
+      "hash": "073e43b8a9913cfee44d672eac306ec21ae7c9f80ad7f25e564dd48dc4a04cc4",
+      "imports": [
+        "TernaryGoldbach.Explicit.ZeroSumBound"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/GrExtend.lean",
+      "adaptedHash": "073e43b8a9913cfee44d672eac306ec21ae7c9f80ad7f25e564dd48dc4a04cc4",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.Landau",
+      "source": "TernaryGoldbach/Explicit/Landau.lean",
+      "blob": "9d2ebaba4f7812051fccaa4ab143802542037cf7",
+      "hash": "7943d64e3b96b46eeb97239730d101543651eebe83ae0ba8fb0d8ce92df66e66",
+      "imports": [
+        "Mathlib.Analysis.Complex.JensenFormula",
+        "Mathlib.Analysis.Complex.BorelCaratheodory",
+        "Mathlib.Analysis.Complex.HasPrimitives",
+        "Mathlib.Analysis.Complex.Liouville",
+        "Mathlib.Analysis.Complex.AbsMax",
+        "Mathlib.Analysis.Calculus.LogDeriv"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/Landau.lean",
+      "adaptedHash": "7943d64e3b96b46eeb97239730d101543651eebe83ae0ba8fb0d8ce92df66e66",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.LGrowth",
+      "source": "TernaryGoldbach/Explicit/LGrowth.lean",
+      "blob": "b63874ccade930ee46588808132dd1a9c5bfdfbe",
+      "hash": "a55eb46c3f606068d943d1675a7396b0ed25dc843fcf0778880e155e6dd3b95b",
+      "imports": [
+        "TernaryGoldbach.Prelim.GaussInduced",
+        "Mathlib.NumberTheory.LSeries.SumCoeff",
+        "Mathlib.NumberTheory.LSeries.DirichletContinuation",
+        "Mathlib.Analysis.SpecialFunctions.ImproperIntegrals",
+        "Mathlib.MeasureTheory.Function.Floor"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/LGrowth.lean",
+      "adaptedHash": "a55eb46c3f606068d943d1675a7396b0ed25dc843fcf0778880e155e6dd3b95b",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.LGrowthLeft",
+      "source": "TernaryGoldbach/Explicit/LGrowthLeft.lean",
+      "blob": "6f9419c4c2cb02170617091e23401a23cd3c4c5a",
+      "hash": "1467ec39d5adcbd9070b8d6ca0bed16f8019820c2a5743beca2d5d1b2a891f1d",
+      "imports": [
+        "TernaryGoldbach.Explicit.LGrowth",
+        "Mathlib.Analysis.SpecialFunctions.Gamma.BohrMollerup",
+        "Mathlib.Analysis.SpecialFunctions.Gamma.Deligne",
+        "Mathlib.Analysis.Real.Pi.Bounds"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/LGrowthLeft.lean",
+      "adaptedHash": "1467ec39d5adcbd9070b8d6ca0bed16f8019820c2a5743beca2d5d1b2a891f1d",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.LGrowthPoly",
+      "source": "TernaryGoldbach/Explicit/LGrowthPoly.lean",
+      "blob": "512e02890b2a64d33503420f30094d14a6e138ea",
+      "hash": "6be578484fc0762cf810bc2133265172590c892576ea11c58d5cb9fbba6eb604",
+      "imports": [
+        "TernaryGoldbach.Explicit.GammaBounds",
+        "TernaryGoldbach.Explicit.LGrowthLeft"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/LGrowthPoly.lean",
+      "adaptedHash": "6be578484fc0762cf810bc2133265172590c892576ea11c58d5cb9fbba6eb604",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.LineZeros",
+      "source": "TernaryGoldbach/Explicit/LineZeros.lean",
+      "blob": "4717da9ba702ea994c9c0117823025d580303304",
+      "hash": "1908185f4c63d261eeb94c752117aa09b33480c517b7cb4c1312410ff6949925",
+      "imports": [
+        "TernaryGoldbach.Explicit.MellinPlancherel"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/LineZeros.lean",
+      "adaptedHash": "1908185f4c63d261eeb94c752117aa09b33480c517b7cb4c1312410ff6949925",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.LogDerivL",
+      "source": "TernaryGoldbach/Explicit/LogDerivL.lean",
+      "blob": "72ed5e08e963c5d2bd5ca24ec24e3d58700fe7b5",
+      "hash": "1d8b1b7d4d728757b1fc1b2a5a3db6e26d1ef3e9538184a213d129bbbc64697f",
+      "imports": [
+        "TernaryGoldbach.Explicit.LGrowthLeft",
+        "TernaryGoldbach.Explicit.ZeroCount",
+        "TernaryGoldbach.Explicit.Landau"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/LogDerivL.lean",
+      "adaptedHash": "1d8b1b7d4d728757b1fc1b2a5a3db6e26d1ef3e9538184a213d129bbbc64697f",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.LogNumerics",
+      "source": "TernaryGoldbach/Explicit/LogNumerics.lean",
+      "blob": "31a2928580ea102d8b64be14f62603c1d05695c3",
+      "hash": "85781ff025dd0bc44234e623109450aef61d428256b478361742679bd8386a47",
+      "imports": [
+        "Mathlib"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/LogNumerics.lean",
+      "adaptedHash": "ab733ef79e3e6aff3dfebcfb87aaa547be80a01313b74161f7f990e60d32a368",
+      "changes": [
+        "Replace umbrella Mathlib import by required numerical-analysis imports"
+      ]
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.MellinPlancherel",
+      "source": "TernaryGoldbach/Explicit/MellinPlancherel.lean",
+      "blob": "5d97947c0d571d024e6cd2bdb4af588c27e3e5c3",
+      "hash": "b2981a810378cab85a6c6432cf44f3c7d3e54a9268c0b6d65c12af3c438aa624",
+      "imports": [
+        "TernaryGoldbach.Explicit.ExplicitFormula",
+        "TernaryGoldbach.Prelim.PlancherelReal"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/MellinPlancherel.lean",
+      "adaptedHash": "b2981a810378cab85a6c6432cf44f3c7d3e54a9268c0b6d65c12af3c438aa624",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.MellinRotate",
+      "source": "TernaryGoldbach/Explicit/MellinRotate.lean",
+      "blob": "8730b99bf3dd05e7f02a599abc6f41e2db0635ce",
+      "hash": "b3c94fed8319e2a6282f2dc1a2c2a7514e6992964137b3cd25257cef094a71dc",
+      "imports": [
+        "Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral",
+        "Mathlib.Analysis.SpecialFunctions.Pow.Deriv",
+        "Mathlib.Analysis.Calculus.ParametricIntegral",
+        "Mathlib.MeasureTheory.Integral.IntegralEqImproper",
+        "Mathlib.MeasureTheory.Integral.Gamma",
+        "Mathlib.Analysis.Complex.RealDeriv",
+        "Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds",
+        "Mathlib.Analysis.Real.Pi.Bounds"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/MellinRotate.lean",
+      "adaptedHash": "b3c94fed8319e2a6282f2dc1a2c2a7514e6992964137b3cd25257cef094a71dc",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.PsiExplicit",
+      "source": "TernaryGoldbach/Explicit/PsiExplicit.lean",
+      "blob": "ca62f4511ec1c81833b2a34a78aea5ae208ad261",
+      "hash": "ee0a483ccdce1245e88cb09a6fa908d36a5cbc9e970915916c49a82369feb437",
+      "imports": [
+        "TernaryGoldbach.Explicit.ZetaZeroSums",
+        "TernaryGoldbach.Explicit.PsiSandwich",
+        "TernaryGoldbach.Explicit.ExplicitBoundGen"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/PsiExplicit.lean",
+      "adaptedHash": "03d058d100ff21116cfb5d03d357a26ed9dc9db740d6ff1281655d4d967e9350",
+      "changes": [
+        "Extract the general summable_SsumG proof verbatim from pinned EtaPlusSq (renamed privately), avoiding its unrelated specialized smoothing imports."
+      ]
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.PsiLarge",
+      "source": "TernaryGoldbach/Explicit/PsiLarge.lean",
+      "blob": "bca8e4c2fc11e02d998ca5deb6c2567cd293f950",
+      "hash": "d8389f9cdf393bf1ead8c8c2ded87ce67f5daa79c7f206cfbc6120a0d61b1dc8",
+      "imports": [
+        "TernaryGoldbach.Explicit.PsiPlateau"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/PsiLarge.lean",
+      "adaptedHash": "d8389f9cdf393bf1ead8c8c2ded87ce67f5daa79c7f206cfbc6120a0d61b1dc8",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.PsiPlateau",
+      "source": "TernaryGoldbach/Explicit/PsiPlateau.lean",
+      "blob": "d3eff9be7b0ee8595b929a9c3cdf89668895519a",
+      "hash": "059b67423cfe2ae04a03e1931c725023adba0cc3acf88780bf3d3d735439f25c",
+      "imports": [
+        "TernaryGoldbach.Explicit.PsiExplicit",
+        "TernaryGoldbach.Explicit.LogNumerics"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/PsiPlateau.lean",
+      "adaptedHash": "059b67423cfe2ae04a03e1931c725023adba0cc3acf88780bf3d3d735439f25c",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.PsiPlateau1e8",
+      "source": "TernaryGoldbach/Explicit/PsiPlateau1e8.lean",
+      "blob": "0391125a877a7e6307f9a1c897bb9f5a4eee42ba",
+      "hash": "36ef2535eb9cad19bfa74a29a16f74e66875da411af4bf41e7f17f73dfe118e9",
+      "imports": [
+        "TernaryGoldbach.Explicit.PsiRange"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/PsiPlateau1e8.lean",
+      "adaptedHash": "40b04f304d52b539f65b1f8f1425207eb95d6ac8092fbdb93d78945a313770cd",
+      "changes": [
+        "Replace full Dirichlet Platt parameter by modulus-one finite-RH parameter"
+      ]
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.PsiRange",
+      "source": "TernaryGoldbach/Explicit/PsiRange.lean",
+      "blob": "da3fdf6a668f7226e83052ad0de40b6426b3616e",
+      "hash": "5e9707fcf9f7f7aa1550b304cafb035d68918898e5c9d6a236e7f8d20ec7ea7c",
+      "imports": [
+        "TernaryGoldbach.Explicit.PsiWeil",
+        "TernaryGoldbach.Explicit.PsiPlateau"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/PsiRange.lean",
+      "adaptedHash": "5e9707fcf9f7f7aa1550b304cafb035d68918898e5c9d6a236e7f8d20ec7ea7c",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.PsiRangeCert",
+      "source": "TernaryGoldbach/Explicit/PsiRangeCert.lean",
+      "blob": "a5c85611e8f32a17366ec17d62eb9b9805c94c16",
+      "hash": "11fdb3dc52579ae8ed58eb951e58c8977d421136c2f93faac0125712d68bce36",
+      "imports": [
+        "TernaryGoldbach.Explicit.PsiRange",
+        "TernaryGoldbach.Explicit.WeilNumC"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/PsiRangeCert.lean",
+      "adaptedHash": "11fdb3dc52579ae8ed58eb951e58c8977d421136c2f93faac0125712d68bce36",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.PsiRanges1e8",
+      "source": "TernaryGoldbach/Explicit/PsiRanges1e8.lean",
+      "blob": "0805c364781fc531ec503192f125ff1b91fbc57b",
+      "hash": "2e28188cf827e38b5e0128ece09fbb3b5a9d108a26585551437dbfe66eed9179",
+      "imports": [
+        "TernaryGoldbach.Explicit.PsiRangeCert"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/PsiRanges1e8.lean",
+      "adaptedHash": "4428738c085f82a17b2c97b84bd719b66275a0dd9167832f1f2a31c8943046ff",
+      "changes": [
+        "Replace full Dirichlet Platt parameter by modulus-one finite-RH parameter"
+      ]
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.PsiSandwich",
+      "source": "TernaryGoldbach/Explicit/PsiSandwich.lean",
+      "blob": "69436f2f0ff563477f306ae83af63a47c7b996eb",
+      "hash": "864209abee80941c1d640949ed10ebaa26ec458e59c417aff4cb50c42f55a756",
+      "imports": [
+        "TernaryGoldbach.Explicit.GaussSmooth",
+        "TernaryGoldbach.Explicit.EtaPlusSq",
+        "TernaryGoldbach.Helfgott.Chebyshev"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/PsiSandwich.lean",
+      "adaptedHash": "fa4e145020795d4dde93e497d04749546dd6a1b9fdc65570dffa503fe169dde6",
+      "changes": [
+        "Drop the unrelated eta-plus-square import from the Gaussian interval sandwich; validate actual required prerequisites directly."
+      ]
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.PsiWeil",
+      "source": "TernaryGoldbach/Explicit/PsiWeil.lean",
+      "blob": "dd98bef53ef56a486897cf38f46da4cfca317cb4",
+      "hash": "c537700d06eefe56337cf2ece9b5b7d7f22fe50285a87fbda524b553589255e6",
+      "imports": [
+        "TernaryGoldbach.Explicit.PsiLarge",
+        "TernaryGoldbach.Explicit.WeilNumC"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/PsiWeil.lean",
+      "adaptedHash": "c537700d06eefe56337cf2ece9b5b7d7f22fe50285a87fbda524b553589255e6",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.RectResidue",
+      "source": "TernaryGoldbach/Explicit/RectResidue.lean",
+      "blob": "67f024d258884e2cd8e7d58bf1a5b20f09e8cd49",
+      "hash": "72b5e290f49ba18642104fc8d16bc00f4155890ca21c79bc68ec13d17098c809",
+      "imports": [
+        "Mathlib.Analysis.Complex.CauchyIntegral",
+        "Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv",
+        "Mathlib.Analysis.Calculus.DSlope",
+        "TernaryGoldbach.Explicit.Landau"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/RectResidue.lean",
+      "adaptedHash": "72b5e290f49ba18642104fc8d16bc00f4155890ca21c79bc68ec13d17098c809",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.RectResidue2",
+      "source": "TernaryGoldbach/Explicit/RectResidue2.lean",
+      "blob": "0058145e6ee75906d7fe8bbdbfd2f61b531ed5c5",
+      "hash": "08f892964e52a08a7a5ce6dc75356b6628fa817aa278bd620f7a97fe986b012e",
+      "imports": [
+        "TernaryGoldbach.Explicit.RectResidue"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/RectResidue2.lean",
+      "adaptedHash": "08f892964e52a08a7a5ce6dc75356b6628fa817aa278bd620f7a97fe986b012e",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.WeilArch",
+      "source": "TernaryGoldbach/Explicit/WeilArch.lean",
+      "blob": "c06b30d080376734734cbe22427ce3153c5ae0c2",
+      "hash": "4881cffbe4bfe49db30c6b10c209ae9d19e8843a5c66bad4ab426590efcca5bb",
+      "imports": [
+        "TernaryGoldbach.Explicit.WeilWeights",
+        "TernaryGoldbach.Explicit.Digamma"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/WeilArch.lean",
+      "adaptedHash": "4881cffbe4bfe49db30c6b10c209ae9d19e8843a5c66bad4ab426590efcca5bb",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.WeilBridge",
+      "source": "TernaryGoldbach/Explicit/WeilBridge.lean",
+      "blob": "ed26726321f815b6c274984dc565d9ea210c616f",
+      "hash": "fc18e818946e6a14e900ef6e18ecb4c5a44631bc463375f898bdfbc59f3acdf5",
+      "imports": [
+        "TernaryGoldbach.Explicit.WeilFormula",
+        "TernaryGoldbach.Explicit.ZetaPoly"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/WeilBridge.lean",
+      "adaptedHash": "fc18e818946e6a14e900ef6e18ecb4c5a44631bc463375f898bdfbc59f3acdf5",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.WeilFormula",
+      "source": "TernaryGoldbach/Explicit/WeilFormula.lean",
+      "blob": "b9af0ee776f56b89d0cc0662b325cdc2105df78a",
+      "hash": "b6d30057cc1999b86f228969ff27a04786b3f49c8d6977cb7a84dda91938ae40",
+      "imports": [
+        "TernaryGoldbach.Explicit.WeilLines"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/WeilFormula.lean",
+      "adaptedHash": "b6d30057cc1999b86f228969ff27a04786b3f49c8d6977cb7a84dda91938ae40",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.WeilLines",
+      "source": "TernaryGoldbach/Explicit/WeilLines.lean",
+      "blob": "1529f6a6a1a43e81c3e2869d7f61f14ef2514d8e",
+      "hash": "b4d9a5762ba6a7f145727a4b77887761d9bcbecc052f1c26e1d7e3d551d9db5f",
+      "imports": [
+        "TernaryGoldbach.Explicit.WeilSplit"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/WeilLines.lean",
+      "adaptedHash": "b4d9a5762ba6a7f145727a4b77887761d9bcbecc052f1c26e1d7e3d551d9db5f",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.WeilLineSum",
+      "source": "TernaryGoldbach/Explicit/WeilLineSum.lean",
+      "blob": "9b9cc275bef5d825e13665d256e064c0727fde34",
+      "hash": "eaab8334ce8148babe2b3fefcb8636d75a5b3547a2e822fe17af7601078755fd",
+      "imports": [
+        "TernaryGoldbach.Explicit.WeilPhiBound",
+        "TernaryGoldbach.Explicit.ZetaLowZeroFree"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/WeilLineSum.lean",
+      "adaptedHash": "eaab8334ce8148babe2b3fefcb8636d75a5b3547a2e822fe17af7601078755fd",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.WeilNumA",
+      "source": "TernaryGoldbach/Explicit/WeilNumA.lean",
+      "blob": "ddea2f4337cf82a264103fcac5f62fea11b2f76b",
+      "hash": "98d6bb9c50476fe853643ab10c041b49553ce0e94697d0aa1724bd975ada106f",
+      "imports": [
+        "TernaryGoldbach.Explicit.WeilPhiBound"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/WeilNumA.lean",
+      "adaptedHash": "98d6bb9c50476fe853643ab10c041b49553ce0e94697d0aa1724bd975ada106f",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.WeilNumB",
+      "source": "TernaryGoldbach/Explicit/WeilNumB.lean",
+      "blob": "0e7ed1017414ea8042971b1652dab96fac29bbc1",
+      "hash": "4d1539d2213d9c51cfa77689cb1d531322e898f8f3b4df81217a88de27141968",
+      "imports": [
+        "TernaryGoldbach.Explicit.WeilNumA",
+        "TernaryGoldbach.Explicit.WeilLineSum"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/WeilNumB.lean",
+      "adaptedHash": "4d1539d2213d9c51cfa77689cb1d531322e898f8f3b4df81217a88de27141968",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.WeilNumC",
+      "source": "TernaryGoldbach/Explicit/WeilNumC.lean",
+      "blob": "ac2b91e2614270c65ad6ded45a51251f53e8fb82",
+      "hash": "5a0c06a95234ee7de610131afde097f5c4dddefd331d74bc24564179642974ac",
+      "imports": [
+        "TernaryGoldbach.Explicit.WeilNumB",
+        "TernaryGoldbach.Prelim.SmallMertens"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/WeilNumC.lean",
+      "adaptedHash": "5a0c06a95234ee7de610131afde097f5c4dddefd331d74bc24564179642974ac",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.WeilPhiBound",
+      "source": "TernaryGoldbach/Explicit/WeilPhiBound.lean",
+      "blob": "0e92b999ca88b1634028dcae928e92ab612a3bb4",
+      "hash": "c5c250a8c3376682855421b525531db93c9b1b1304b1e42e8c0c6f0a12cce15b",
+      "imports": [
+        "TernaryGoldbach.Explicit.WeilArch"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/WeilPhiBound.lean",
+      "adaptedHash": "c5c250a8c3376682855421b525531db93c9b1b1304b1e42e8c0c6f0a12cce15b",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.WeilPrime",
+      "source": "TernaryGoldbach/Explicit/WeilPrime.lean",
+      "blob": "cae9199d30e4f05820a88ce981195cb6244a1545",
+      "hash": "3d4c7a9d514b88d8f954b3b81058935d133e74a4bdb4bf7b73e7997d2293fb03",
+      "imports": [
+        "TernaryGoldbach.Explicit.WeilTest",
+        "Mathlib.Analysis.SpecialFunctions.ImproperIntegrals",
+        "Mathlib.Analysis.SpecialFunctions.Pow.Complex",
+        "Mathlib.MeasureTheory.Integral.IntegralEqImproper"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/WeilPrime.lean",
+      "adaptedHash": "3d4c7a9d514b88d8f954b3b81058935d133e74a4bdb4bf7b73e7997d2293fb03",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.WeilRect",
+      "source": "TernaryGoldbach/Explicit/WeilRect.lean",
+      "blob": "0b94569d2fcca9b34ea188ac845934bc643fc987",
+      "hash": "ea3f2bd57f3ca1451d0061e494a6ea4c40ca969f7ec6e081236bb1db3bdbc2ea",
+      "imports": [
+        "TernaryGoldbach.Explicit.WeilPrime",
+        "TernaryGoldbach.Explicit.XiPartial",
+        "TernaryGoldbach.Explicit.ExplicitFormula"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/WeilRect.lean",
+      "adaptedHash": "ea3f2bd57f3ca1451d0061e494a6ea4c40ca969f7ec6e081236bb1db3bdbc2ea",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.WeilSplit",
+      "source": "TernaryGoldbach/Explicit/WeilSplit.lean",
+      "blob": "05925abb9e9cc8bd388e17076aab38d60699bdb9",
+      "hash": "a7dc282a58221278e0e7cf9918121e18b4092d91b9c2a765b16cc56568bd018e",
+      "imports": [
+        "TernaryGoldbach.Explicit.WeilRect",
+        "Mathlib.NumberTheory.LSeries.Dirichlet",
+        "Mathlib.Analysis.Normed.Module.FiniteDimension"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/WeilSplit.lean",
+      "adaptedHash": "a7dc282a58221278e0e7cf9918121e18b4092d91b9c2a765b16cc56568bd018e",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.WeilTest",
+      "source": "TernaryGoldbach/Explicit/WeilTest.lean",
+      "blob": "e7cded833eeb70b32205e3419777d42ba9f19cb7",
+      "hash": "64f1e4b6a0ea0bffdfe47acb6eec1979d72b1edbf870391e4d95bcf0ed78d00d",
+      "imports": [
+        "Mathlib.Analysis.Complex.RemovableSingularity",
+        "Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/WeilTest.lean",
+      "adaptedHash": "64f1e4b6a0ea0bffdfe47acb6eec1979d72b1edbf870391e4d95bcf0ed78d00d",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.WeilWeights",
+      "source": "TernaryGoldbach/Explicit/WeilWeights.lean",
+      "blob": "9d473492565876e83725de3d265dc265e47477e0",
+      "hash": "6ea1b62692b836a0a3f0b3eb177e5173116a8152c469074e3a83dc1e0b904210",
+      "imports": [
+        "TernaryGoldbach.Explicit.WeilWindow"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/WeilWeights.lean",
+      "adaptedHash": "6ea1b62692b836a0a3f0b3eb177e5173116a8152c469074e3a83dc1e0b904210",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.WeilWindow",
+      "source": "TernaryGoldbach/Explicit/WeilWindow.lean",
+      "blob": "1002486ce5236a58920ca864b2f294d4b371a0f1",
+      "hash": "9d2588e8c841133b2b8a098e3546ea91c829245ca00d30bf3bd5c4f58b181b4f",
+      "imports": [
+        "TernaryGoldbach.Explicit.WeilBridge",
+        "TernaryGoldbach.Explicit.PsiPlateau"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/WeilWindow.lean",
+      "adaptedHash": "9d2588e8c841133b2b8a098e3546ea91c829245ca00d30bf3bd5c4f58b181b4f",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.Xi",
+      "source": "TernaryGoldbach/Explicit/Xi.lean",
+      "blob": "d47febd9d77a63cedf3cbcb0c1bc72ecc3cec9b7",
+      "hash": "4639c36632c643b27aad190f64c4ccfde92065bd5150b089f94b455fbfa2671c",
+      "imports": [
+        "TernaryGoldbach.Explicit.ZetaPoly",
+        "TernaryGoldbach.Explicit.Digamma"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/Xi.lean",
+      "adaptedHash": "4639c36632c643b27aad190f64c4ccfde92065bd5150b089f94b455fbfa2671c",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.XiPartial",
+      "source": "TernaryGoldbach/Explicit/XiPartial.lean",
+      "blob": "35fe2f1f10662ca2f4ad5bf65635bce226fb5cc8",
+      "hash": "d5c7c512e06b21a1d07d150cd8174138df2cd80bb0de6aaa05a9508a0ebe6207",
+      "imports": [
+        "TernaryGoldbach.Explicit.Xi",
+        "TernaryGoldbach.Explicit.RectResidue2",
+        "TernaryGoldbach.Explicit.ZetaPoly",
+        "TernaryGoldbach.Explicit.LogNumerics"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/XiPartial.lean",
+      "adaptedHash": "724140445c9bd5e376d411483dbb119ee5ecfc9801cb887683809a258b65cfcd",
+      "changes": [
+        "Prove the missing completed-zeta conjugation identity directly from its Mellin integral of the real modified theta kernel.",
+        "Discharge conjugation of real indicator terms by cases; qualify the set integral API and simplify conjugation of numeral2.",
+        "Use the nonnegative real argument lemma and separate nested closing brackets for the pinned Lean parser."
+      ]
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.ZeroCount",
+      "source": "TernaryGoldbach/Explicit/ZeroCount.lean",
+      "blob": "e885657b0079dcd62c45f8864bf0cbb0343464f8",
+      "hash": "de1002825bc21ad311f3f17fe7077f5260058a17171a1fda4b475e28e41fe4c7",
+      "imports": [
+        "TernaryGoldbach.Explicit.LGrowth",
+        "Mathlib.Analysis.Complex.JensenFormula",
+        "Mathlib.NumberTheory.ZetaValues",
+        "Mathlib.Analysis.Real.Pi.Bounds"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/ZeroCount.lean",
+      "adaptedHash": "de1002825bc21ad311f3f17fe7077f5260058a17171a1fda4b475e28e41fe4c7",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.ZeroFree",
+      "source": "TernaryGoldbach/Explicit/ZeroFree.lean",
+      "blob": "0fa100abeb329cb92af34d5374e7a5ead0eaf5ce",
+      "hash": "9a692113f718dd9f2851228ebc84695d34e545fb6c643023b895152bafbcf6f2",
+      "imports": [
+        "TernaryGoldbach.Explicit.XiPartial"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/ZeroFree.lean",
+      "adaptedHash": "9a692113f718dd9f2851228ebc84695d34e545fb6c643023b895152bafbcf6f2",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.ZeroFreeRegion",
+      "source": "TernaryGoldbach/Explicit/ZeroFreeRegion.lean",
+      "blob": "80f71bc04814d7f4d134f9fbe96a13573978d603",
+      "hash": "f1ad0a2479d1d7f4bea4423c5969944ae46da0c7efc5ec826ff0c98737a875a4",
+      "imports": [
+        "TernaryGoldbach.Explicit.ZeroFree",
+        "TernaryGoldbach.Explicit.Digamma"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/ZeroFreeRegion.lean",
+      "adaptedHash": "f1ad0a2479d1d7f4bea4423c5969944ae46da0c7efc5ec826ff0c98737a875a4",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.ZeroSumBound",
+      "source": "TernaryGoldbach/Explicit/ZeroSumBound.lean",
+      "blob": "dee1d9dc4de94d7a27db468c53db8e3de40a1099",
+      "hash": "b2f34f170ff801fff922e1948bd7c35f969f5800799c2623189107f7c7f6d23c",
+      "imports": [
+        "TernaryGoldbach.Explicit.LineZeros",
+        "TernaryGoldbach.Explicit.ZeroSums"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/ZeroSumBound.lean",
+      "adaptedHash": "b2f34f170ff801fff922e1948bd7c35f969f5800799c2623189107f7c7f6d23c",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.ZeroSumGen",
+      "source": "TernaryGoldbach/Explicit/ZeroSumGen.lean",
+      "blob": "a9453ec1992980485c82f078db0bb6d554b07104",
+      "hash": "dd3ae091e9e27de87080db65e09aba0528920568055c3a10c87a0da54d51ba64",
+      "imports": [
+        "TernaryGoldbach.Explicit.ZeroSumBound",
+        "TernaryGoldbach.Explicit.Datum"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/ZeroSumGen.lean",
+      "adaptedHash": "dd3ae091e9e27de87080db65e09aba0528920568055c3a10c87a0da54d51ba64",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.ZeroSums",
+      "source": "TernaryGoldbach/Explicit/ZeroSums.lean",
+      "blob": "f36abcdaee24f561145e3054c5d13870ab2adcfe",
+      "hash": "e71e6a9652a4f937330a909a0b7b091abdf3052dac6c9910c64c78c739e1f708",
+      "imports": [
+        "TernaryGoldbach.Explicit.LGrowthPoly",
+        "TernaryGoldbach.Explicit.ExplicitFormula"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/ZeroSums.lean",
+      "adaptedHash": "e71e6a9652a4f937330a909a0b7b091abdf3052dac6c9910c64c78c739e1f708",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.ZetaBound",
+      "source": "TernaryGoldbach/Explicit/ZetaBound.lean",
+      "blob": "5761a03f8af1b3463e50207adedf2510ce8a113e",
+      "hash": "cc60d2b0ba6a6ba8bd25cf876b25a8c8fef1a6df620e030f6f4103267325a8c8",
+      "imports": [
+        "TernaryGoldbach.Explicit.ZetaPoly",
+        "TernaryGoldbach.Explicit.ExplicitBound"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/ZetaBound.lean",
+      "adaptedHash": "cc60d2b0ba6a6ba8bd25cf876b25a8c8fef1a6df620e030f6f4103267325a8c8",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.ZetaDatum",
+      "source": "TernaryGoldbach/Explicit/ZetaDatum.lean",
+      "blob": "f0f0ac77961c85dffc014983de97be1be6bf7ee8",
+      "hash": "7aec9ff69ec824fdfb1157202babec3288cd33484d63202e05bfa7e4804299e7",
+      "imports": [
+        "TernaryGoldbach.Explicit.ZetaGrowth"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/ZetaDatum.lean",
+      "adaptedHash": "7aec9ff69ec824fdfb1157202babec3288cd33484d63202e05bfa7e4804299e7",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.ZetaExplicit",
+      "source": "TernaryGoldbach/Explicit/ZetaExplicit.lean",
+      "blob": "44ef992c2c71bfc4227b4bdff5a7d5c87a1917b9",
+      "hash": "f9d9c2495e3a72b699cfc38cd848c2a0c7ae1163aeda800038ef557124022ed2",
+      "imports": [
+        "TernaryGoldbach.Explicit.ZetaDatum",
+        "TernaryGoldbach.Explicit.ZeroSums"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/ZetaExplicit.lean",
+      "adaptedHash": "f9d9c2495e3a72b699cfc38cd848c2a0c7ae1163aeda800038ef557124022ed2",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.ZetaGrowth",
+      "source": "TernaryGoldbach/Explicit/ZetaGrowth.lean",
+      "blob": "ba28b11e8de54dacde18be572f8ed39375f4d295",
+      "hash": "8571d868425ed604cd5860097ada7e89ab0978a2e144ecd605b5f5328fec4a66",
+      "imports": [
+        "TernaryGoldbach.Explicit.Datum"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/ZetaGrowth.lean",
+      "adaptedHash": "8571d868425ed604cd5860097ada7e89ab0978a2e144ecd605b5f5328fec4a66",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.ZetaLowZeroFree",
+      "source": "TernaryGoldbach/Explicit/ZetaLowZeroFree.lean",
+      "blob": "22e56fe0174406072646cea47c140da8360ef338",
+      "hash": "ba7a922603fe0244d96e0dee419db07abf158965125275cb0de286180466db41",
+      "imports": [
+        "TernaryGoldbach.Explicit.ZetaGrowth",
+        "TernaryGoldbach.Explicit.ZetaZeroSums"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/ZetaLowZeroFree.lean",
+      "adaptedHash": "ba7a922603fe0244d96e0dee419db07abf158965125275cb0de286180466db41",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.ZetaPoly",
+      "source": "TernaryGoldbach/Explicit/ZetaPoly.lean",
+      "blob": "019ee419ba5954b1ee572e573d7fea1e27755485",
+      "hash": "dab7d7ec237094fb81921a2bf602263d373bdad30633f36aa818a662c3126da1",
+      "imports": [
+        "TernaryGoldbach.Explicit.ZetaExplicit",
+        "TernaryGoldbach.Explicit.ZeroSumGen",
+        "TernaryGoldbach.Explicit.LGrowthPoly"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/ZetaPoly.lean",
+      "adaptedHash": "dab7d7ec237094fb81921a2bf602263d373bdad30633f36aa818a662c3126da1",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Explicit.ZetaZeroSums",
+      "source": "TernaryGoldbach/Explicit/ZetaZeroSums.lean",
+      "blob": "20b22a22d09ea1d56545b62efaf474859ffaf5cc",
+      "hash": "3eeee68b174fd16431c7223a74cef8b515181414fb1616f9de8f55d302bd10ad",
+      "imports": [
+        "TernaryGoldbach.Explicit.GaussSmooth",
+        "TernaryGoldbach.Explicit.ZetaPoly",
+        "TernaryGoldbach.Explicit.ZeroFreeRegion",
+        "TernaryGoldbach.Explicit.XiPartial"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Explicit/ZetaZeroSums.lean",
+      "adaptedHash": "0c594650a7c17c15863d185e132cd236f17e1e85bd7ad88e74d0ba1496ea9d9f",
+      "changes": [
+        "Replace full Dirichlet Platt parameter by modulus-one finite-RH parameter",
+        "Use literal modulus-one hypothesis directly for RHBelow 10^8",
+        "Normalize scientific notation at the explicit modulus-one RH boundary instead of relying on definitional equality of real numerals."
+      ]
+    },
+    {
+      "module": "TernaryGoldbach.Helfgott.Chebyshev",
+      "source": "TernaryGoldbach/Helfgott/Chebyshev.lean",
+      "blob": "0fd5c0d404a16c98aa38569b9628f6da6c78dd45",
+      "hash": "64ebfc0a0a731ea40ffd05213b5bb46aa7b21b3a7d3bc8ed72e6335da4622942",
+      "imports": [
+        "TernaryGoldbach.Helfgott.NonPrime"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Helfgott/Chebyshev.lean",
+      "adaptedHash": "64ebfc0a0a731ea40ffd05213b5bb46aa7b21b3a7d3bc8ed72e6335da4622942",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Helfgott.Defs",
+      "source": "TernaryGoldbach/Helfgott/Defs.lean",
+      "blob": "864983fe4c015dd3ee5102a65afbb31c35b3bbfe",
+      "hash": "f4f800ff5a8adae0d11342182ba4d9901f90b679dbfa084e196acbc4199a59ff",
+      "imports": [
+        "TernaryGoldbach.CircleMethod"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Helfgott/Defs.lean",
+      "adaptedHash": "f4f800ff5a8adae0d11342182ba4d9901f90b679dbfa084e196acbc4199a59ff",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Helfgott.NonPrime",
+      "source": "TernaryGoldbach/Helfgott/NonPrime.lean",
+      "blob": "125ec3abeca4edd7cd8e45775cd001193e9e281e",
+      "hash": "8eb0140131a911f4ceff327f3ca66f1881250355256c7c146875a320605cd39e",
+      "imports": [
+        "TernaryGoldbach.Helfgott.Numerics"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Helfgott/NonPrime.lean",
+      "adaptedHash": "8eb0140131a911f4ceff327f3ca66f1881250355256c7c146875a320605cd39e",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Helfgott.Numerics",
+      "source": "TernaryGoldbach/Helfgott/Numerics.lean",
+      "blob": "50b225a1fc39ce682b1d15219320da52443e93b3",
+      "hash": "84bc0da59f784afb826e47300251f8dd20f1ae4ad4bff1c00b46e9c79c206ed5",
+      "imports": [
+        "TernaryGoldbach.Helfgott.Defs"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Helfgott/Numerics.lean",
+      "adaptedHash": "84bc0da59f784afb826e47300251f8dd20f1ae4ad4bff1c00b46e9c79c206ed5",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.MinorArcs.Montgomery",
+      "source": "TernaryGoldbach/MinorArcs/Montgomery.lean",
+      "blob": "d9741a71273cfdcf5d6b4dc76c397133a6a3c17c",
+      "hash": "318fb7021f7723e37e781e066d1068994f6cebefbeaf8591c80f9ed0eb22e9d5",
+      "imports": [
+        "TernaryGoldbach.CircleMethod"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/MinorArcs/Montgomery.lean",
+      "adaptedHash": "6e752d7ea9b8d4052909893b57f57ebcb5879820d8669b66e0c2cb645eb24f63",
+      "changes": [
+        "Explicitly import the existing Cauchy-Schwarz sum-square inequality after removing umbrella Mathlib imports"
+      ]
+    },
+    {
+      "module": "TernaryGoldbach.Prelim.GaussInduced",
+      "source": "TernaryGoldbach/Prelim/GaussInduced.lean",
+      "blob": "512a26364e0bdcd19af8b9463cd15bdd54382f2a",
+      "hash": "fec1c910a5c2c3907a33c4fe2b5b645a1d16d1e3350894d3991c737127e7b54f",
+      "imports": [
+        "TernaryGoldbach.MinorArcs.Montgomery"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Prelim/GaussInduced.lean",
+      "adaptedHash": "fec1c910a5c2c3907a33c4fe2b5b645a1d16d1e3350894d3991c737127e7b54f",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Prelim.LogWalk",
+      "source": "TernaryGoldbach/Prelim/LogWalk.lean",
+      "blob": "7b6ed2f364ce153e6404fbd89d4530d329ff7b14",
+      "hash": "f84dab3f3bf02aea3d31e529fbcaa39611dc2e108b5e06bd8c7684f525a7f87d",
+      "imports": [
+        "TernaryGoldbach.Prelim.RamareHarm"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Prelim/LogWalk.lean",
+      "adaptedHash": "f84dab3f3bf02aea3d31e529fbcaa39611dc2e108b5e06bd8c7684f525a7f87d",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Prelim.PlancherelReal",
+      "source": "TernaryGoldbach/Prelim/PlancherelReal.lean",
+      "blob": "eff1e351418c2971afd3b09fe1de28e4d351d5b0",
+      "hash": "dbbaf5ebba80315278e9e287dd363877d76272d89db3ef330c8fd7fd691a0823",
+      "imports": [
+        "Mathlib.Analysis.Fourier.LpSpace",
+        "Mathlib.Analysis.Distribution.TemperedDistribution",
+        "Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Prelim/PlancherelReal.lean",
+      "adaptedHash": "3c5f9c01221d9d091410e16be659ee767595695a29fff7251aa975931c4c189f",
+      "changes": [
+        "Lean4.34 Mathlib: use the general Fourier integral norm bound in place of the later Real specialization."
+      ]
+    },
+    {
+      "module": "TernaryGoldbach.Prelim.RamareHarm",
+      "source": "TernaryGoldbach/Prelim/RamareHarm.lean",
+      "blob": "56ed38feb5deff207151ee37dda7e9dbce39549a",
+      "hash": "e52e430c9ae1009222e32488cda7f131005179cedc28908868ac4854a48e6d20",
+      "imports": [
+        "Mathlib"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Prelim/RamareHarm.lean",
+      "adaptedHash": "e52e430c9ae1009222e32488cda7f131005179cedc28908868ac4854a48e6d20",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Prelim.SmallMertens",
+      "source": "TernaryGoldbach/Prelim/SmallMertens.lean",
+      "blob": "7d402c326600edc971ddba9ac7d8ef9c6ba3861b",
+      "hash": "cabdbdf6090cc858900f5f5dcdd93dd5295e608e34e3f19e205e029b102055db",
+      "imports": [
+        "TernaryGoldbach.Prelim.SmallPsi"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Prelim/SmallMertens.lean",
+      "adaptedHash": "cabdbdf6090cc858900f5f5dcdd93dd5295e608e34e3f19e205e029b102055db",
+      "changes": []
+    },
+    {
+      "module": "TernaryGoldbach.Prelim.SmallPsi",
+      "source": "TernaryGoldbach/Prelim/SmallPsi.lean",
+      "blob": "bfe23a5741b7e69f580943cf173e53b0bcf8b82f",
+      "hash": "3fde8abb5f92cd1a2f25d9f09b052beabc8cbe96e3af3c92a757e951dbb10edb",
+      "imports": [
+        "Mathlib"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Prelim/SmallPsi.lean",
+      "adaptedHash": "52653a63cea075898a9a39c78d58f50251d12f2711d2fd7167fd0c503cd1bb81",
+      "changes": [
+        "Replace umbrella Mathlib import by required Chebyshev/numerical imports"
+      ]
+    },
+    {
+      "module": "TernaryGoldbach.Statement",
+      "source": "TernaryGoldbach/Statement.lean",
+      "blob": "dbc29947f1af2914f04df9f16c11c132bb7bb981",
+      "hash": "32b5bf8dc67cb407bbfde3be1b9b487c5ad408e742c0c2a8efd83be3de4a0ff1",
+      "imports": [
+        "Mathlib"
+      ],
+      "adaptedPath": "Calr3/TernaryGoldbach/Statement.lean",
+      "adaptedHash": "0d03a139875c02c4cfa2debeb243f3adf814ead2e3e497ea21fe5731cc8476e4",
+      "changes": [
+        "Define exactly the modulus-one finite RH proposition, with no axiom declaration",
+        "Correct port documentation and select analytic Mathlib imports through a local prelude"
+      ]
+    }
+  ],
+  "external": [
+    "Mathlib",
+    "Mathlib.Analysis.Calculus.DSlope",
+    "Mathlib.Analysis.Calculus.LogDeriv",
+    "Mathlib.Analysis.Calculus.ParametricIntegral",
+    "Mathlib.Analysis.Complex.AbsMax",
+    "Mathlib.Analysis.Complex.BorelCaratheodory",
+    "Mathlib.Analysis.Complex.CauchyIntegral",
+    "Mathlib.Analysis.Complex.HasPrimitives",
+    "Mathlib.Analysis.Complex.JensenFormula",
+    "Mathlib.Analysis.Complex.Liouville",
+    "Mathlib.Analysis.Complex.RealDeriv",
+    "Mathlib.Analysis.Complex.RemovableSingularity",
+    "Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff",
+    "Mathlib.Analysis.Distribution.TemperedDistribution",
+    "Mathlib.Analysis.Fourier.LpSpace",
+    "Mathlib.Analysis.MellinInversion",
+    "Mathlib.Analysis.Normed.Module.FiniteDimension",
+    "Mathlib.Analysis.Real.Pi.Bounds",
+    "Mathlib.Analysis.Real.Sqrt",
+    "Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv",
+    "Mathlib.Analysis.SpecialFunctions.Gamma.BohrMollerup",
+    "Mathlib.Analysis.SpecialFunctions.Gamma.Deligne",
+    "Mathlib.Analysis.SpecialFunctions.Gamma.Deriv",
+    "Mathlib.Analysis.SpecialFunctions.Gamma.Digamma",
+    "Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral",
+    "Mathlib.Analysis.SpecialFunctions.ImproperIntegrals",
+    "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+    "Mathlib.Analysis.SpecialFunctions.Pow.Complex",
+    "Mathlib.Analysis.SpecialFunctions.Pow.Deriv",
+    "Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds",
+    "Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv",
+    "Mathlib.Data.Nat.Prime.Basic",
+    "Mathlib.Data.ZMod.Basic",
+    "Mathlib.MeasureTheory.Function.Floor",
+    "Mathlib.MeasureTheory.Integral.Gamma",
+    "Mathlib.MeasureTheory.Integral.IntegralEqImproper",
+    "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+    "Mathlib.MeasureTheory.Integral.Prod",
+    "Mathlib.NumberTheory.Chebyshev",
+    "Mathlib.NumberTheory.LSeries.Dirichlet",
+    "Mathlib.NumberTheory.LSeries.DirichletContinuation",
+    "Mathlib.NumberTheory.LSeries.SumCoeff",
+    "Mathlib.NumberTheory.ZetaValues",
+    "Mathlib.Tactic"
+  ],
+  "missingMathlib": [],
+  "activation": "Development-only conditional theorems; no Platt axiom installed yet",
+  "generated": [
+    {
+      "path": "Calr3/Calr3MathlibPrelude.lean",
+      "hash": "0205b065a400c605f9605877a164628940fcf581ea8eaac18a1992d26a6086b7",
+      "purpose": "Only import declarations from the pinned existing Mathlib; avoid unrelated umbrella modules"
+    }
+  ],
+  "checkedSnapshot": true,
+  "scopeNote": "Only source modules with recorded successful Lean checks are committed. Local unverified experiments are excluded.",
+  "extractedSourceReferences": [
+    {
+      "module": "TernaryGoldbach.Explicit.EtaPlusSq",
+      "source": "TernaryGoldbach/Explicit/EtaPlusSq.lean",
+      "blob": "72ad51e3dac72adc8ccce790b6c6fd337d6490e0",
+      "sha256": "cd5ef999ebd1f2b3ad67b4d1cda771995cabe2a046f9f7fd311f851227906e2b",
+      "scope": "Only summable_SsumG is extracted privately into PsiExplicit; the full source module is not part of the checked snapshot."
+    }
+  ]
+}

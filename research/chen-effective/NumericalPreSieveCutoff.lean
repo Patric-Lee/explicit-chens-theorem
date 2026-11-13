@@ -117,14 +117,18 @@ theorem preSieve_lower_endpoint : lowerEndpointThreshold ≤ preSieveFiniteCap :
   max_le ((by norm_num : 2^110+1 ≤ (10 : ℕ)^100).trans preSieve_H_large_nat)
     (max_le (preSieve_log_power (by norm_num : 30 ≤ 10^30)) (preSieve_fixed_power (by norm_num)))
 
-theorem preSieve_finite_cap_geometry : preSieveFiniteCap^20 ≤ preSieveGeometryThreshold := by
-  rw [preSieveGeometryThreshold_eq]
+private theorem finite_cap_symbolic_bound {j : ℕ} (hj : 10^100*20 ≤ j) :
+    preSieveFiniteCap^20 ≤ 3^j := by
   unfold preSieveFiniteCap
   rw [← pow_mul]
   apply Nat.pow_le_pow_right (by norm_num)
-  calc
-    _ ≤ (3 : ℕ)^400 := by rw [preSieveFiniteExponent_eq]; norm_num
-    _ ≤ _ := Nat.pow_le_pow_right (by norm_num) (by norm_num)
+  simpa only [preSieveFiniteExponent_eq] using hj
+
+theorem preSieve_finite_cap_geometry : preSieveFiniteCap^20 ≤ preSieveGeometryThreshold := by
+  rw [preSieveGeometryThreshold_eq]
+  apply finite_cap_symbolic_bound
+  exact (by norm_num : 10^100*20 ≤ (3 : ℕ)^400).trans
+    (Nat.pow_le_pow_right (by norm_num) (by norm_num : 400 ≤ 20000))
 
 /-- Both original Chen coefficients now hold above a fixed double exponential;
 no density coefficient, source cutoff or eventual estimate remains. -/

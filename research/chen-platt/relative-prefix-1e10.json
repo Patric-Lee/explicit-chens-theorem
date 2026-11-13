@@ -1,0 +1,32 @@
+{
+  "classification": "UNTRUSTED_FEASIBILITY_SCAN_NOT_A_LEAN_PROOF",
+  "X": 10000000000,
+  "U": 4000000,
+  "anchor": 10000000000,
+  "spacing": 32000,
+  "gridPoints": 250503,
+  "primeCount": 455052511,
+  "scale": "281474976710656",
+  "logSeriesTerms": 16,
+  "lower": -0.000002375652574215792,
+  "upper": 0.00004564165315557034,
+  "minWitness": {
+    "a": 905033406,
+    "b": 905061688,
+    "units": "-668686753"
+  },
+  "maxWitness": {
+    "a": 4991544,
+    "b": 4991699,
+    "units": "12846983259"
+  },
+  "finiteAllowance": "1/20000",
+  "pass": true,
+  "certificateSha256": "cd216fede1a8c426566df3361306021285bcf72707abbc0e1ea4fae2f664ccfa",
+  "seconds": 39.982,
+  "unresolved": [
+    "Lean verification of sieve completeness and reciprocal sums",
+    "Lean verification of rational logarithm bounds",
+    "kernel checking all rows"
+  ]
+}

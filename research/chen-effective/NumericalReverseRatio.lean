@@ -85,10 +85,16 @@ theorem numerical_Qhat_unit_shift {H : Section13HatLayers} (hH : Section13HatSou
   have hm := mul_le_mul_of_nonneg_right hphase (mul_nonneg hs0.le hQ0)
   nlinarith only [henv, hm]
 
-def reverseRatioCap : ℕ := 51200 * 10075
+private opaque reverseRatioCapCertificate : {r : ℕ // r = 51200 * 10075} :=
+  ⟨51200 * 10075, rfl⟩
+
+def reverseRatioCap : ℕ := reverseRatioCapCertificate.1
+
+theorem reverseRatioCap_nat_eq : reverseRatioCap = 51200 * 10075 :=
+  reverseRatioCapCertificate.2
 
 theorem reverseRatioCap_eq : (reverseRatioCap : ℝ) = 51200 * (numericalReverseSlope + 10) := by
-  norm_num [reverseRatioCap, numericalReverseSlope, compactHatLower]
+  norm_num [reverseRatioCap_nat_eq, numericalReverseSlope, compactHatLower]
 
 theorem numerical_reverse_ratio {H : Section13HatLayers} (hH : Section13HatSourceContract H)
     (sign : ErrorSign) {s σ : ℝ} (hs : 2 ≤ s) (hsσ : s ≤ σ) :
@@ -130,7 +136,7 @@ theorem numerical_reverse_ratio {H : Section13HatLayers} (hH : Section13HatSourc
         have hshift := relative_Qhat_unit_step hH.toSection13HatContract hs4 (le_of_not_ge hlarge)
         have hcomp := numerical_Qhat_le_hat hH sign (by linarith only [hs4])
         have hh := mul_le_mul_of_nonneg_left hcomp (by norm_num : (0 : ℝ) ≤ 968)
-        have hc : (968 : ℝ) * 51200 ≤ reverseRatioCap := by norm_num [reverseRatioCap]
+        have hc : (968 : ℝ) * 51200 ≤ reverseRatioCap := by norm_num [reverseRatioCap_nat_eq]
         have hh' := mul_le_mul_of_nonneg_right hc hT0.le
         unfold proposition131iiiReverseRatio
         apply (div_le_iff₀ hT0).mpr
@@ -142,7 +148,7 @@ theorem numerical_reverse_ratio {H : Section13HatLayers} (hH : Section13HatSourc
           unfold proposition131iiiReverseRatio
           apply (div_le_iff₀ hT0).mpr
           linarith only [hbound, hn]
-        exact hh.trans (by norm_num [reverseRatioCap])
+        exact hh.trans (by norm_num [reverseRatioCap_nat_eq])
     have hfactor : 1 ≤ σ * Real.log (Real.exp 1 * σ) := by
       have hh := mul_le_mul (show (1 : ℝ) ≤ σ by linarith only [hs, hsσ]) (hlogs.trans hlogσ)
         (by norm_num : (0 : ℝ) ≤ 1) hσ0.le

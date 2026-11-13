@@ -1,0 +1,40 @@
+{
+  "genericModules": [
+    "BJSHybridPrimeCertificate",
+    "BJSHybridSieveCore",
+    "BJSHybridSieveHelpers",
+    "BJSHybridSieveCorrect",
+    "BJSHybridSieveSums",
+    "BJSHybridSieveBlocks",
+    "BJSHybridSievePacked",
+    "AuditBJSHybridSieve"
+  ],
+  "benchmarkModules": [
+    "BJSHybridSieveData1000",
+    "BJSHybridSieveData10000",
+    "BJSHybridSieveData100000",
+    "BJSHybridSieveBoolBench1000",
+    "BJSHybridSieveBoolBench10000",
+    "BJSHybridSieveSerialBench100000",
+    "BJSHybridSieveInterval1000",
+    "BJSHybridSieveShard100000P0",
+    "BJSHybridSieveShard100000P1",
+    "BJSHybridSieveShard100000P2",
+    "BJSHybridSieveShard100000P3",
+    "BJSHybridSieveShard100000P4",
+    "BJSHybridSieveShard100000P5",
+    "BJSHybridSieveShard100000P6",
+    "BJSHybridSieveShard100000P7",
+    "BJSHybridSieveShard100000P8",
+    "BJSHybridSieveShard100000P9",
+    "BJSHybridSieveShard100000P10",
+    "BJSHybridSieveShard100000P11",
+    "BJSHybridSieveShard100000P12",
+    "BJSHybridSieveShardedBench100000"
+  ],
+  "negativeModules": [
+    "BJSHybridSieveBadData1000",
+    "BJSHybridSieveBadPacked1000"
+  ],
+  "concreteAudit": "AuditBJSHybridSieveBench"
+}

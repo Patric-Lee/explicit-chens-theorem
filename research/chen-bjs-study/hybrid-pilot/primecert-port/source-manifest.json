@@ -1,0 +1,200 @@
+{
+  "upstream": "https://github.com/b-mehta/PrimeCert",
+  "revision": "d84a15cacfdc45ae1e96e56dd58158f871787870",
+  "lean": "leanprover/lean4:v4.33.0-rc1",
+  "newPackages": [],
+  "modules": [
+    {
+      "sha256": "89a8a5b8b1166a6fe0458eac4c9680740947524051d2bff54f77b86f61e50b5c",
+      "status": "kernel_checked",
+      "path": "BJSHybridPrimeCertificate.lean",
+      "module": "BJSHybridPrimeCertificate"
+    },
+    {
+      "sha256": "e1f016b7c17e6527ce3ad97189b07677fe0446dcd03fd7694fb703b5186dbcc2",
+      "status": "kernel_checked",
+      "path": "BJSHybridSieveCore.lean",
+      "module": "BJSHybridSieveCore"
+    },
+    {
+      "sha256": "937df80e5c424aa575e1c32ad6004ccb9dae43417d3a6eb3a3e8e0cf23018973",
+      "status": "kernel_checked",
+      "path": "BJSHybridSieveHelpers.lean",
+      "module": "BJSHybridSieveHelpers"
+    },
+    {
+      "sha256": "54453e7f790ee6d5d1787a0c279f648aca96bdbbc91c5ec4d6b9607e58892813",
+      "status": "kernel_checked",
+      "path": "BJSHybridSieveCorrect.lean",
+      "module": "BJSHybridSieveCorrect"
+    },
+    {
+      "sha256": "47ebc51d1defe107e3cccf755eef865bc266408ff88f37e27b24df4c5f20ff1c",
+      "status": "kernel_checked",
+      "path": "BJSHybridSieveSums.lean",
+      "module": "BJSHybridSieveSums"
+    },
+    {
+      "sha256": "d7c55c12bf883a5fe312ec7dc0b8aa29c2af48ddb85f1ea263112cacea9028ef",
+      "status": "kernel_checked",
+      "path": "BJSHybridSieveBlocks.lean",
+      "module": "BJSHybridSieveBlocks"
+    },
+    {
+      "sha256": "098c2c4968d8e7807b15148f11a048cafdb298ba1e9ffbe89e822e6a24555e84",
+      "status": "kernel_checked",
+      "path": "BJSHybridSievePacked.lean",
+      "module": "BJSHybridSievePacked"
+    },
+    {
+      "sha256": "c6048ac83bfac6b1ee90843d8af7bc89150a1746cba46c94df5507962bb7f1d3",
+      "status": "kernel_checked",
+      "path": "AuditBJSHybridSieve.lean",
+      "module": "AuditBJSHybridSieve"
+    },
+    {
+      "sha256": "ee463775e13396aa313a0369cea3baccd7d1917d180fd1a8ae8b70d5df88971e",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveData1000.lean",
+      "module": "BJSHybridSieveData1000"
+    },
+    {
+      "sha256": "70a6bdf23d4e02e995716c4993e88dc0be030abbede23ea93a5d3655e86aae9b",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveData10000.lean",
+      "module": "BJSHybridSieveData10000"
+    },
+    {
+      "sha256": "3131a436cb57536d83080a43a7175ece32a2b5fb39acaf0abe657d0cf9a5572e",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveData100000.lean",
+      "module": "BJSHybridSieveData100000"
+    },
+    {
+      "sha256": "a69f3f9c8780f3194e52b84543c5ad9bef0415f5766d4e72ab75b2073323ae2c",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveBoolBench1000.lean",
+      "module": "BJSHybridSieveBoolBench1000"
+    },
+    {
+      "sha256": "47c7edbc90a49abc54b5fc39a869cf46f65b404da61e90917f1fbaae346d44f3",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveBoolBench10000.lean",
+      "module": "BJSHybridSieveBoolBench10000"
+    },
+    {
+      "sha256": "66b46810214031834561970bc654e28cf16bbc9f3b6dcf2e67d60fc922e682e2",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveSerialBench100000.lean",
+      "module": "BJSHybridSieveSerialBench100000"
+    },
+    {
+      "sha256": "7a3cfee544ed2543be10a1ca5666488058bdd7c3c297513d3c565af16d151fb6",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveInterval1000.lean",
+      "module": "BJSHybridSieveInterval1000"
+    },
+    {
+      "sha256": "a72afd9522655e4dd00f55233c89012274afee53b2e72de41f81f968402d424b",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveShard100000P0.lean",
+      "module": "BJSHybridSieveShard100000P0"
+    },
+    {
+      "sha256": "3a9205552857dcc5a351acf58543251f19f50d62ab5d7e894a01dc420213f425",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveShard100000P1.lean",
+      "module": "BJSHybridSieveShard100000P1"
+    },
+    {
+      "sha256": "ba87f0902c50779ee1af45ef6847a7b79774998c46d63bc2602c25a956bc6b29",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveShard100000P2.lean",
+      "module": "BJSHybridSieveShard100000P2"
+    },
+    {
+      "sha256": "1809f4a5457061da1620943fa3077937b6785392115cfdcd1f9503a8956dca1c",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveShard100000P3.lean",
+      "module": "BJSHybridSieveShard100000P3"
+    },
+    {
+      "sha256": "636f243abc2eb9ef30fccb47b4cc3b48a9d2cfc98b50473543c856aad8fdd217",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveShard100000P4.lean",
+      "module": "BJSHybridSieveShard100000P4"
+    },
+    {
+      "sha256": "69f3d0c95d28b39c87fc2ca993cbf725aa1b3bfc90c7ecb32add3565fd756c41",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveShard100000P5.lean",
+      "module": "BJSHybridSieveShard100000P5"
+    },
+    {
+      "sha256": "b97903f00d815f47586cfc8232195d15e4d8c6754c9056ae78e411fc30201cae",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveShard100000P6.lean",
+      "module": "BJSHybridSieveShard100000P6"
+    },
+    {
+      "sha256": "3356951bb17948cf8bbe3b121f0251c7c8c060fc69ad1b0d947632b7e5ecf4d5",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveShard100000P7.lean",
+      "module": "BJSHybridSieveShard100000P7"
+    },
+    {
+      "sha256": "4715e794e1c4d2b05d48819528e9de34b02faf127c97022a33348f0e076e81ff",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveShard100000P8.lean",
+      "module": "BJSHybridSieveShard100000P8"
+    },
+    {
+      "sha256": "77fef809046315f3f8d76a41c13572287499e83600bcfa967b3f60f69f128195",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveShard100000P9.lean",
+      "module": "BJSHybridSieveShard100000P9"
+    },
+    {
+      "sha256": "c6e5567c0e254212f141fac0f2b35ffb3207d35939dad524515c62746ddfdfd4",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveShard100000P10.lean",
+      "module": "BJSHybridSieveShard100000P10"
+    },
+    {
+      "sha256": "6b8cbe355874d7506dcc62023a325ce962600fdd6d1abb1760727fc0b2960284",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveShard100000P11.lean",
+      "module": "BJSHybridSieveShard100000P11"
+    },
+    {
+      "sha256": "f457ba6bf5dd80200aedc2595363e8e10aaad0e09e0897f1c6dab491ab99db29",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveShard100000P12.lean",
+      "module": "BJSHybridSieveShard100000P12"
+    },
+    {
+      "sha256": "91a7ff2f9a138dd6a7ae6ff566159d9898640df7928fca72840d04998fed6df2",
+      "status": "kernel_checked",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveShardedBench100000.lean",
+      "module": "BJSHybridSieveShardedBench100000"
+    },
+    {
+      "sha256": "a9794744e552f5f8fbafd4688231bc1b7b441fd6da9c1f690fd575846a2ca5bd",
+      "status": "rejected_corrupt_certificate",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveBadData1000.lean",
+      "module": "BJSHybridSieveBadData1000"
+    },
+    {
+      "sha256": "1244b81468cb725e4fbe7a71e122de8e6cf3ca3fb5933d440b484a73c1a0312d",
+      "status": "rejected_corrupt_certificate",
+      "path": "hybrid-pilot/primecert-port/benchmarks/BJSHybridSieveBadPacked1000.lean",
+      "module": "BJSHybridSieveBadPacked1000"
+    },
+    {
+      "sha256": "e7bf510fcbe02cf14b4fce857f15d1aea972bd4590ec4e17847ce5d42b335df4",
+      "status": "kernel_audited",
+      "path": "hybrid-pilot/primecert-port/benchmarks/AuditBJSHybridSieveBench.lean",
+      "module": "AuditBJSHybridSieveBench"
+    }
+  ]
+}

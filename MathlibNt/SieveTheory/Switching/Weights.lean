@@ -566,7 +566,7 @@ theorem chenZ_tail_prime_count_le (N n : ℕ) (hNbig : 2 ^ 110 < N)
       (correctedChenZ N : ℝ) ^ s.card = ∏ p ∈ s, (correctedChenZ N : ℝ) := by
         rw [Finset.prod_const]
       _ ≤ ∏ p ∈ s, (p : ℝ) := by
-        apply Finset.prod_le_prod
+        apply Finset.prod_le_prod₀
         · intro p hp
           exact hz_nonneg
         · intro p hp
@@ -692,7 +692,7 @@ theorem chenZ_tail_prod_le_vanishing (N : ℕ)
           (fun p => SingularSeries.localFactor p N) ≤
         ((Finset.Ico (correctedChenZ N) (N + 1)).filter Nat.Prime).prod
           (fun p => if p ∣ N then B else 1) := by
-    apply Finset.prod_le_prod
+    apply Finset.prod_le_prod₀
     · intro p hp
       exact (SingularSeries.localFactor_pos
         ((Finset.mem_filter.mp hp).2)).le

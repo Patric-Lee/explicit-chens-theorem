@@ -1,0 +1,46 @@
+{
+  "classification": "NUMERICAL_SUPPORT_FOR_TEMPORARY_ASSUMPTION_NOT_KERNEL_CERTIFIED",
+  "positiveZeroCandidates": 400000,
+  "lastOrdinate": 260876.634035043,
+  "caps": {
+    "A": 18,
+    "W": 0.0000222,
+    "momentCap": 0.046192,
+    "headMomentLower": 0.0461772,
+    "primePowerCoefficient": 2
+  },
+  "moment": 0.046177219838734414,
+  "derivative": 17.96298551584258,
+  "completedMoment": 0.04619141793224202,
+  "finiteGrid": {
+    "lower": -0.000025242596784380567,
+    "upper": 0.00006620137817492378
+  },
+  "actualBridgeAtX": {
+    "X": 10000000000,
+    "delta": 0.0022569807589212796,
+    "theta": 0.00010585021671112565,
+    "raw": 1.1096004368145352e-7,
+    "integral": 0.0000011480763169185021,
+    "primePowers": 0.000001812622606417653,
+    "terminal": 4.242677248451116e-9,
+    "total": 0.00010892611835539171,
+    "target": 0.00011111111111111112
+  },
+  "tailSampling": {
+    "points": 10001,
+    "from": 10000000000,
+    "to": "3^120",
+    "decreasing": true
+  },
+  "cutoff": {
+    "base": 3,
+    "exponent": "10^13",
+    "H": 30.027654036539293
+  },
+  "qualifications": [
+    "Zero ordinates are trusted numerical table data, not certified zero boxes.",
+    "The all-real window and scalar monotonicity are assumed, not proved by this script.",
+    "No claim that the new Chen theorem has only the Dirichlet axiom."
+  ]
+}

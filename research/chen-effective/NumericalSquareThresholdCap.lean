@@ -26,6 +26,13 @@ theorem numerical_quotient_cutoff_cap (b M E : ℕ) (hM : M ≤ 3^(E/4))
       _ ≤ _ := Nat.pow_le_pow_right (by norm_num) (Nat.div_mul_le_self E 4)
   · exact Nat.pow_le_pow_right (by norm_num) hb
 
+private theorem mertens_power_cap_symbolic {r E : ℕ}
+    (hlog : 16*(128*(1+1)+1)^2 ≤ E) (hpow : 1800000000004*r ≤ E) :
+    mertensProductThreshold r ≤ 3^E := by
+  unfold mertensProductThreshold principalNumericalThreshold
+  exact max_le (numerical_log_cutoff_cap _ _ hlog)
+    (Nat.pow_le_pow_right (by norm_num) hpow)
+
 theorem numerical_square_analytic_cap : squareAnalyticThreshold ≤ 3^primePairPowerExponent := by
   have hprefix : panPrimePrefixThreshold 64 ≤ 3^(primePairPowerExponent/4) := by
     unfold panPrimePrefixThreshold primitiveNumericalThreshold
@@ -99,15 +106,10 @@ theorem numerical_square_analytic_cap : squareAnalyticThreshold ≤ 3^primePairP
     · apply numerical_log_cutoff_cap
       rw [primePairPowerExponent_eq]
       norm_num [squareEpsilonDenominator,panWeightedCutoff,panWeightedSaving]
-  have hMertens : mertensProductThreshold 2 ≤ 3^primePairPowerExponent := by
-    unfold mertensProductThreshold principalNumericalThreshold
-    apply max_le
-    · apply numerical_log_cutoff_cap
-      rw [primePairPowerExponent_eq]
-      norm_num
-    · apply Nat.pow_le_pow_right (by norm_num)
-      rw [primePairPowerExponent_eq]
-      norm_num
+  have hMertens : mertensProductThreshold 2 ≤ 3^primePairPowerExponent :=
+    mertens_power_cap_symbolic
+      (by rw [primePairPowerExponent_eq]; norm_num)
+      (by rw [primePairPowerExponent_eq]; norm_num)
   unfold squareAnalyticThreshold selbergRemainderThreshold panCanonicalThreshold
   apply max_le
   · apply max_le hsource

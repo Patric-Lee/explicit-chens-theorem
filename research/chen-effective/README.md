@@ -8,7 +8,14 @@ positive-margin theorem. No analytic estimate remains as a hypothesis.
 The established 0.67 counting theorem is preserved at its current cutoff:
 `nLower = 3^(3^20000)` and `N0 = nSquare = 3^(3^4000000000000)`.
 The older theorem names in `NumericalChenCutoff.lean` retain these values.
-All numerical results use the same single local Dirichlet seven-eighths axiom.
+The Dirichlet input is now the proved, vendored OpenAI seven-eighths theorem.
+Its audit and the final upgraded Chen closure passed with standard Lean
+axioms only. See [the final integration report](UPGRADE_434_AUDIT.md).
+
+The dated research notes below retain their original descriptions of the
+former Dirichlet axiom and earlier import policy. These are historical: the
+active declaration is now a proved theorem, its axiom declaration is deleted,
+and the current final theorem audits permit only standard Lean axioms.
 
 ## Parameterized qualitative existence branch
 

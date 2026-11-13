@@ -1113,6 +1113,7 @@ lemma MellinOfSmooth1a {ν : ℝ → ℝ} (diffν : ContDiff ℝ 1 ν)
       · apply MeasureTheory.Measure.restrict_mono' SsubT.eventuallyLE le_rfl
       have : volume.restrict (Tx ×ˢ Ty) = (volume.restrict Tx).prod (volume.restrict Ty) := by
         rw [Measure.prod_restrict, MeasureTheory.Measure.volume_eq_prod]
+      change Integrable _ (volume.restrict (Tx ×ˢ Ty))
       conv => rw [this]; lhs; intro; rw [mul_comm]
       apply MeasureTheory.Integrable.mul_prod (f := fun x ↦ (x : ℂ) ^ (s - 1))
         (μ := Measure.restrict volume Tx)

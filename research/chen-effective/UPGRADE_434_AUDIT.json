@@ -1,0 +1,100 @@
+{
+  "verifiedAt": "2026-11-13T07:36:32.097Z",
+  "lean": "leanprover/lean4:v4.34.1",
+  "mathlibRevision": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+  "newExternalPackages": [],
+  "finalModuleCount": 1084,
+  "integrationModuleCount": 1086,
+  "sourceAudit": {
+    "files": 3513,
+    "axioms": [
+      {
+        "file": "research\\chen-numerical-study\\BJSH30ConditionalProducts.lean",
+        "name": "temporary_reciprocal_prefix_window"
+      }
+    ],
+    "failures": [],
+    "passed": true
+  },
+  "provenance": {
+    "verified": true,
+    "pinnedRevision": "4eaee87548250b2682affda7d05d947c05554bae",
+    "pinnedOAIModules": 2924,
+    "retainedProofBodies": 2939,
+    "generatedUnits": 74,
+    "doesNotReplaceKernelAudit": true
+  },
+  "checked": [
+    {
+      "module": "OAI.AuditChenDirichlet",
+      "source": "OpenAI/wrappers/OAI/AuditChenDirichlet.lean",
+      "sourceHash": "8dec60775b7b4b1d57c9c072d84b8e49463573612ddcd877d754fc8b7e2274a8",
+      "objectHash": "48d1b36a1806c2eb4c1441abfcc3bfc657c8302dc39a18d33766c862e8196da9",
+      "output": "OpenAI Dirichlet proof audit passed: 122474 constants; standard Lean axioms only.\n'ChenEffective.dirichlet_seven_eighths' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "AuditBJSTightBudget",
+      "source": "research/chen-bjs-study/AuditBJSTightBudget.lean",
+      "sourceHash": "2f7f2060c515d3cbf3942d5cd40c6edfea69f583756e074ea4c884d58c25b162",
+      "objectHash": "2dd60385e8eb7c64077a81e831e9a373c5fc4b52222ec160b2d7e71ae96a3e68",
+      "output": "Tight-budget final proof audit passed: 133656 constants; standard axioms only; Dirichlet is proved.\nFinal cutoff 3^(3^134), K=8.2, epsilon=1/100; original literal Chen statement recovered.\nNear-H=30 source mass, base/varying distribution, prime-pair main term, square analytic cap and scalar geometry are checked separately; no full H=30 Chen theorem is asserted.\n"
+    },
+    {
+      "module": "AuditBJSH30Conditional",
+      "source": "research/chen-numerical-study/AuditBJSH30Conditional.lean",
+      "sourceHash": "99f1f760e99e9fee62e8b4676bccc170b78049add831e01a1e11cb6230696b7b",
+      "objectHash": "50fd90ddc1a97b3f519947fdaab9a3f2bc5c3d9fd920c5cf96ed421c5cc6b12f",
+      "output": "Conditional H30 Chen audit passed: 133625 transitive constants.\nExactly temporary_reciprocal_prefix_window and standard Lean axioms; Dirichlet is proved.\nActual lower/triple counts used; literal original implicit Chen statement recovered.\n"
+    },
+    {
+      "module": "AuditBJSH30Triple",
+      "source": "research/chen-bjs-study/AuditBJSH30Triple.lean",
+      "sourceHash": "fa0646f6ca76d00625ec629d68d984df88e55e7e897463a3e61c92d208a8a519",
+      "objectHash": "6b469290536913caf3ef32b75fffb53758aeea1b48058e0d312d3469fe0f1438",
+      "output": "H30 complete triple audit passed: 131480 constants; standard axioms only; Dirichlet is proved.\nSquare error C5/log^5 plus the actual 19/log^3 complement is paid by 0.001*S/log^2.\nSmall-endpoint product theorem is conditional on SmallEndpointPrefixWindow; that proposition has NOT been proved.\n"
+    },
+    {
+      "module": "AuditBJSHybridSharpBridge",
+      "source": "research/chen-bjs-study/AuditBJSHybridSharpBridge.lean",
+      "sourceHash": "f35fba6d06766e9c3d0d3e4e5d8eeddebda1120fa7591568d5afd8823278e3da",
+      "objectHash": "514e0c110ed244eaf4d5620b6da255a6c17c7b3fc11c99eac87dab79775ee0db",
+      "output": "Sharp hybrid bridge audit passed: 127428 constants; prime-power bound 2*sqrt(x) at x>=3^16.\nElementary prime-power inputs use standard axioms only; the analytic bridge retains standard axioms only; Dirichlet is proved.\n"
+    },
+    {
+      "module": "AuditDusart",
+      "source": "research/chen-dusart/AuditDusart.lean",
+      "sourceHash": "fd2495154bcddb7b5e2c66506c429d535691d095f86a0492b73ffb7e6758bdf3",
+      "objectHash": "ce71b2534cc0df97f0ce0f6291ec1669a728932320c14f97202856ec97f93280",
+      "output": "Dusart proof traversal passed: 127257 constants; standard axioms only; Dirichlet is proved.\nThe theta estimate and sharp signed prefix and closed-left prime interval bounds are proved from 3^120, without finite-height RH or a numerical zero table.\n"
+    },
+    {
+      "module": "audit.AuditChen",
+      "source": "research/chen-effective/audit/AuditChen.lean",
+      "sourceHash": "c0a996343e61e0ce3e943681b448c6f986feacaa65c3d20a33f8538e2fd103ba",
+      "objectHash": "d28224a01252e89aeb41d087af3b62fba362c5206d0ca6fff6a4f4ef71f48aa7",
+      "output": "Exact original statement recovered: Goldbach.chen_theorem\nExact original statement recovered: MathlibNt.ChensTheorem.chens_theorem_unconditional\nExact original statement recovered: MathlibNt.ChensTheorem.chen_good_representations_lower_bound_unconditional\nExact original statement recovered: Goldbach.representation_lower_bound\nExact pre-sieved counting weights, QD assembly, original Chen coefficients, and reduced cutoffs passed the axiom whitelist.\nParameterized end-to-end budgets, optimized power 1/68, parity cap 4806, and sharper medium-prime bounds passed the whitelist.\nPower-saving Euler products and coarse specialized recurrence passed the axiom whitelist.\nAnalytic kernels, actual source-layer induction, and uniform parity domination passed the axiom whitelist.\nExact standard-only axiom whitelist passed: ChenEffective.qualitative_chen\nExact standard-only axiom whitelist passed: ChenEffective.numerical_chen\nExact standard-only axiom whitelist passed: ChenEffective.numerical_chen_representation_count\nExact standard-only axiom whitelist passed: ChenEffective.numerical_chen_above_tower\nExact standard-only axiom whitelist passed: ChenEffective.numerical_count_above_tower\nExact standard-only axiom whitelist passed: ChenEffective.numerical_chen_above_double_exp\nExact standard-only axiom whitelist passed: ChenEffective.numerical_count_above_double_exp\nExact standard-only axiom whitelist passed: ChenEffective.numerical_implies_original_chen\nExact standard-only axiom whitelist passed: ChenEffective.numerical_implies_original_internal_chen\nExact standard-only axiom whitelist passed: ChenEffective.numerical_implies_original_representation_bound\nElementary Mertens, local-product, and improved C1 bounds use only standard axioms.\nAbsolute small-quotient and additive terminal bounds use only standard axioms.\nPolynomial correction, natural-ceiling Case-I/II transport, gates, and bounded mixed branch use only standard axioms.\nAll-depth mixed induction, compact Case I, even endpoint, Case II, coefficient cap, and double-exponential cutoffs use only standard axioms.\nFixed-endpoint Euler-product split, K=10^12, square-root absorption, and sharp coefficient budgets use only standard axioms.\nSeparate hat/polynomial coefficients, the unweighted active profile, and its numerical gates use only standard axioms.\nThe active numerical Chen and count proofs use the exact pre-sieved route; no obsolete C1 density or threshold is used.\nQualitative Chen and both original existence statements use the independent positive-margin proof; no 0.67 counting theorem or old threshold is used.\nProof dependency traversal passed (132039 constants); no original implicit theorem used.\n"
+    },
+    {
+      "module": "AuditBJSStudy",
+      "source": "research/chen-bjs-study/AuditBJSStudy.lean",
+      "sourceHash": "aea038d37a3b77428f041ef5a76235aad4f7cc0bfc2881a9a19d89a8d279c1a6",
+      "objectHash": "c48f9cdb3eda3675f60e4afa2efe1c8e15241f6ccac845d4be5fd1fa4a0c92e6",
+      "output": "The proved BJS theorem recovers the exact original Chen statement.\nElementary replacements, H=36 scalar feasibility and finite-tail machinery use only standard axioms.\nThe active product theorem at 3^120, lower count, triple bound and Chen theorem use only Dirichlet plus standard axioms. No BJS axiom remains.\nFinite lower prefix through 286 uses only standard axioms. Signed tail and interval from 3^3072 use Dirichlet only. The sharp signed-prefix and interval bounds from 3^120 are now proved by the Dusart application.\nThe theta-to-prefix and closed-left interval bridges at 3^120 use only standard axioms; the theta hypothesis is supplied by the proved Dirichlet-conditional explicit formula.\nDusart log-squared theta and Mertens far tails for log(x)>=3400 use Dirichlet only. The exact Abel bridge and scalar payments use standard axioms. The middle theta range from 3^120 is now proved in DusartPort.Application.\nBoth BJS density adapters and their complete analytic/discrete proof chain use only standard axioms. The low-endpoint theta studies are retained separately from the active proof.\nBJS proof traversal passed: 133632 constants; standard axioms only; Dirichlet is proved, with no original implicit Chen proof.\n"
+    },
+    {
+      "module": "audit.AuditElementaryMertens",
+      "source": "research/chen-effective/audit/AuditElementaryMertens.lean",
+      "sourceHash": "901c18a67b7406f338b5847f055038a0143287ffe572c5e91d72f52ca67224cb",
+      "objectHash": "e9c7efda0f209a30109ffd60c696bdeab5881083957621394615b965cf7e9d76",
+      "output": "Elementary Mertens audit passed: 43702 proof dependencies, exactly standard axioms, no unsafe dependencies or project inputs.\nChenEffective.ElementaryMertens.prime_reciprocal_error_ten {x : ℝ} (hx : 2 ≤ x) :\n  |∑ p ∈ Finset.Ioc 0 ⌊x⌋₊ with Nat.Prime p, 1 / ↑p - Real.log (Real.log x) - ChenEffective.ElementaryMertens.M| ≤\n    10 / Real.log x\n"
+    },
+    {
+      "module": "OAI.AuditChenIntegration",
+      "source": "OpenAI/wrappers/OAI/AuditChenIntegration.lean",
+      "sourceHash": "bd7b6f5fcf3c956540d762fea8d5f4787dbf98f3cd4694e07936f085a1970c0d",
+      "objectHash": "924184647af555d178db20a3aae7b5ebc7427eefc27714d4caed05898861a8e1",
+      "output": "Standard-only proof: ChenEffective.dirichlet_seven_eighths; axioms [propext, Classical.choice, Quot.sound]\nStandard-only proof: ChenEffective.TightBudget.chen; axioms [propext, Classical.choice, Quot.sound]\nStandard-only proof: ChenEffective.TightBudget.original_chen; axioms [propext, Classical.choice, Quot.sound]\nStandard-only proof: ChenEffective.bjsStudy_chen; axioms [propext, Classical.choice, Quot.sound]\nStandard-only proof: ChenEffective.joint_chen_81; axioms [propext, Classical.choice, Quot.sound]\nStandard-only proof: ChenEffective.expanded_chen; axioms [propext, Classical.choice, Quot.sound]\nConditional proof: ChenEffective.H30Conditional.chen; axioms [propext,\n Classical.choice,\n Quot.sound,\n ChenEffective.H30Conditional.temporary_reciprocal_prefix_window]\nConditional proof: ChenEffective.H30Conditional.original_chen; axioms [propext,\n Classical.choice,\n Quot.sound,\n ChenEffective.H30Conditional.temporary_reciprocal_prefix_window]\nRecovery dependency audit: ChenEffective.TightBudget.original_chen; 133656 constants; numerical producer and actual Dirichlet proof present.\nRecovery dependency audit: ChenEffective.H30Conditional.original_chen; 133625 constants; numerical producer and actual Dirichlet proof present.\nChen integration audit passed: Dirichlet is proved; both literal old Chen statements recovered.\n'ChenEffective.TightBudget.chen' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ChenEffective.TightBudget.original_chen' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ChenEffective.H30Conditional.chen' depends on axioms: [propext,\n Classical.choice,\n Quot.sound,\n ChenEffective.H30Conditional.temporary_reciprocal_prefix_window]\n'ChenEffective.H30Conditional.original_chen' depends on axioms: [propext,\n Classical.choice,\n Quot.sound,\n ChenEffective.H30Conditional.temporary_reciprocal_prefix_window]\n"
+    }
+  ]
+}

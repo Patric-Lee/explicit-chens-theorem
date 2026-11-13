@@ -11,7 +11,7 @@ set_option maxHeartbeats 1600000
 @[irreducible] def caseIEndpointC1 : ℕ := caseIOrderC1 (1 + 300 * reverseRatioCap)
 
 theorem reverseRatioCap_one : (1 : ℝ) ≤ reverseRatioCap := by
-  norm_num [reverseRatioCap]
+  norm_num [reverseRatioCap_nat_eq]
 
 theorem caseIEndpointC1_eq : caseIEndpointC1 = 3 ^ (1200 * reverseRatioCap + 5) := by
   unfold caseIEndpointC1

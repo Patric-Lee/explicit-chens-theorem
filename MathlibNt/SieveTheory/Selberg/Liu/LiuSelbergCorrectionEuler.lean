@@ -266,7 +266,7 @@ private theorem summable_norm_of_summable_prime_deviation
       rw [hprod]
       exact ge_of_tendsto hmult.hasProd (Filter.eventually_atTop.mpr
         ⟨S, fun T hST =>
-          Finset.prod_le_prod_of_subset_of_one_le hST
+          Finset.prod_le_prod_of_subset_of_one_le₀ hST
             (fun p _ => by linarith [hdev_nonneg p])
             (fun p _ _ => by linarith [hdev_nonneg p])⟩)
 

@@ -88,7 +88,9 @@ theorem tower_upper_density {r : ℕ} (hr : r ≤ 10^12) : mediumUpperDensityThr
 theorem tower_base_density {r : ℕ} (hr : r ≤ 10^12) : baseDensityThreshold r ≤ towerF := by
   have hHF : towerH ≤ towerF := tower_HV_nat.trans tower_VF_nat
   have h2 : 2 ≤ towerF := (show 2 ≤ towerH by have hh := tower_H_large_nat; omega).trans hHF
-  have hgate : suzukiCoordinateThreshold ≤ towerH := tower_fixed_power (by norm_num)
+  have hgate : suzukiCoordinateThreshold ≤ towerH := by
+    rw [suzukiCoordinateThreshold_eq]
+    exact tower_fixed_power (by norm_num)
   exact max_le h2 (max_le (hgate.trans hHF) (tower_suzuki_error hr))
 
 theorem tower_nLower : nLower ≤ towerF :=

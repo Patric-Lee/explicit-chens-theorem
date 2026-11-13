@@ -32,8 +32,7 @@ run_elab do
     unless ← isDefEq (← getConstInfo newName).type (← getConstInfo oldName).type do
       throwError "Statement mismatch: {newName} versus {oldName}"
     logInfo m!"Exact original statement recovered: {oldName}"
-  let allowed : Array Name := #[``propext, ``Classical.choice, ``Quot.sound,
-    ``ChenEffective.dirichlet_seven_eighths]
+  let allowed : Array Name := #[``propext, ``Classical.choice, ``Quot.sound]
   let specializedBounds := #[
     ``ChenEffective.optimized_principal_prefix_power_bound,
     ``ChenEffective.optimized_principal_pointwise_through,
@@ -130,7 +129,7 @@ run_elab do
       ``ChenEffective.kernelSieveError_sums, ``ChenEffective.actual_source_inner_transport,
       ``ChenEffective.actual_source_layer_domination, ``ChenEffective.actual_source_parity_domination] do
     let axs ← Lean.collectAxioms n
-    unless axs.all (fun a => allowed.contains a && a != ``ChenEffective.dirichlet_seven_eighths) do
+    unless axs.all (fun a => allowed.contains a) do
       throwError "Unexpected scalar or primorial axiom for {n}: {axs}"
   logInfo "Exact pre-sieved counting weights, QD assembly, original Chen coefficients, and reduced cutoffs passed the axiom whitelist."
   logInfo "Parameterized end-to-end budgets, optimized power 1/68, parity cap 4806, and sharper medium-prime bounds passed the whitelist."
@@ -151,11 +150,11 @@ run_elab do
     let axs ← Lean.collectAxioms n
     unless axs.size == allowed.size && axs.all allowed.contains do
       throwError "Unexpected axioms for {n}: {axs}"
-    logInfo m!"Exact four-axiom whitelist passed: {n}"
+    logInfo m!"Exact standard-only axiom whitelist passed: {n}"
   for n in #[``ChenEffective.numerical_nLower_tower, ``ChenEffective.numerical_N0_tower,
       ``ChenEffective.numerical_nLower_double_exp, ``ChenEffective.numerical_N0_double_exp] do
     let axs ← Lean.collectAxioms n
-    unless axs.all (fun a => allowed.contains a && a != ``ChenEffective.dirichlet_seven_eighths) do
+    unless axs.all (fun a => allowed.contains a) do
       throwError "Unexpected threshold axioms for {n}: {axs}"
   let terminalBounds := #[
     ``ChenEffective.numerical_actualT_le_exp_sourceL,
@@ -221,7 +220,7 @@ run_elab do
       ``ChenEffective.caseBSourceC1_eq,
       ``ChenEffective.numericalSuzukiC1_single_exp_cap] ++ terminalBounds do
     let axs ← Lean.collectAxioms n
-    unless axs.all (fun a => allowed.contains a && a != ``ChenEffective.dirichlet_seven_eighths) do
+    unless axs.all (fun a => allowed.contains a) do
       throwError "Unexpected elementary product axioms for {n}: {axs}"
   logInfo "Elementary Mertens, local-product, and improved C1 bounds use only standard axioms."
   logInfo "Absolute small-quotient and additive terminal bounds use only standard axioms."
@@ -279,9 +278,10 @@ run_elab do
       qualitativeTodo := qualitativeTodo ++ value.getUsedConstants
   logInfo "Qualitative Chen and both original existence statements use the independent positive-margin proof; no 0.67 counting theorem or old threshold is used."
   for moduleName in env.header.moduleNames do
-    let s := moduleName.toString
-    if #["OAI", "ComparatorChallenges", "OpenAI"].any (fun p => s == p || s.startsWith (p ++ ".")) then
-      throwError "Forbidden OpenAI import in audit environment: {moduleName}"
+    if moduleName.toString.startsWith "ComparatorChallenges." then
+      throwError "Challenge placeholder imported: {moduleName}"
+  unless env.contains ``OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re do
+    throwError "Actual proved Dirichlet theorem is missing"
   let mut todo := (audited ++ terminalBounds ++ specializedBounds).push ``ChenEffective.numericalSuzukiC1_single_exp_cap
   let mut seen : NameSet := {}
   let mut proofAxioms : NameSet := {}

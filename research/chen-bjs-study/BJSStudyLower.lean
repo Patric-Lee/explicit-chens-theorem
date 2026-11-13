@@ -10,14 +10,16 @@ set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 3000000
 set_option exponentiation.threshold 512
 
-theorem bjsStudy_finite_cap : bjsStudyCap_preSieveFiniteCap^20 ≤ bjsStudyGeometryThreshold := by
-  rw [bjsStudyGeometryThreshold_eq]
+private theorem finite_cap_power_bound {j : ℕ}
+    (hj : 10^80*20 ≤ j) : bjsStudyCap_preSieveFiniteCap^20 ≤ 3^j := by
   unfold bjsStudyCap_preSieveFiniteCap
   rw [← pow_mul]
   apply Nat.pow_le_pow_right (by norm_num)
-  calc
-    _ ≤ (3 : ℕ)^171 := by rw [bjsStudyCap_preSieveFiniteExponent_eq]; norm_num
-    _ ≤ _ := Nat.pow_le_pow_right (by norm_num) (by norm_num)
+  simpa only [bjsStudyCap_preSieveFiniteExponent_eq] using hj
+
+theorem bjsStudy_finite_cap : bjsStudyCap_preSieveFiniteCap^20 ≤ bjsStudyGeometryThreshold := by
+  rw [bjsStudyGeometryThreshold_eq]
+  exact finite_cap_power_bound (by norm_num : 10^80*20 ≤ (3 : ℕ)^171)
 
 theorem bjsStudy_endpoint {N : ℕ} (hN : bjsStudyGeometryThreshold ≤ N) :
     lowerEndpointThreshold ≤ N := by

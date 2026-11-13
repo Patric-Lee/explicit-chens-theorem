@@ -1,0 +1,348 @@
+{
+  "scope": "CHECKED_COMPONENTS_NOT_A_COMPLETED_PREFIX_THEOREM",
+  "timestamp": "2026-11-13T10:00:27.095Z",
+  "lean": "4.34.1",
+  "analyticBuild": {
+    "roots": [
+      "TernaryGoldbach.Explicit.PsiRanges1e8",
+      "TernaryGoldbach.Explicit.PsiPlateau1e8"
+    ],
+    "total": 70,
+    "complete": 26,
+    "cached": 44,
+    "running": 0,
+    "failed": false,
+    "remaining": 0,
+    "at": "2026-11-13T09:54:05.060Z"
+  },
+  "components": [
+    {
+      "module": "PlattWindowBudget",
+      "sourceHash": "66975160733a01e861ce26ecce70c95e61f0188439f12fdb1f915b68e670df0f",
+      "objectHash": "a1930827123f78c3c851508c66d16a34063be9a6822e4dae3fbf962bf4a9f19f",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "66975160733a01e861ce26ecce70c95e61f0188439f12fdb1f915b68e670df0f",
+        "objectHash": "a1930827123f78c3c851508c66d16a34063be9a6822e4dae3fbf962bf4a9f19f",
+        "dependencies": {},
+        "seconds": 15.398
+      }
+    },
+    {
+      "module": "PlattPrefixBridge",
+      "sourceHash": "d0ad442732b2320d93b8efbdb4f76602a5b385c7e328afb36487a2eaed1c5479",
+      "objectHash": "fbcacd7de930e0ae049a72f8ca0896292a87115a249e4519a043959c8aa0c1b6",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "d0ad442732b2320d93b8efbdb4f76602a5b385c7e328afb36487a2eaed1c5479",
+        "objectHash": "fbcacd7de930e0ae049a72f8ca0896292a87115a249e4519a043959c8aa0c1b6",
+        "dependencies": {
+          "AnalyticNumberTheory.Mertens.PartialSummation": "b33394d74b03cd4cab73d7e533bf0512abc445527b10d9814bba4fedd5135f86",
+          "PlattWindowBudget": "a1930827123f78c3c851508c66d16a34063be9a6822e4dae3fbf962bf4a9f19f"
+        },
+        "seconds": 136.196
+      }
+    },
+    {
+      "module": "PlattFarAnchor",
+      "sourceHash": "f06604f52c36f67f68dde8b0efa2f2f6bf0b5d88b7688086c4d27185388dab55",
+      "objectHash": "13e01d9d1ea7f828ddbce69e7ae7b348f069ae0bb769a2d374e9d8bddebe1623",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "f06604f52c36f67f68dde8b0efa2f2f6bf0b5d88b7688086c4d27185388dab55",
+        "objectHash": "13e01d9d1ea7f828ddbce69e7ae7b348f069ae0bb769a2d374e9d8bddebe1623",
+        "dependencies": {
+          "PlattPrefixBridge": "fbcacd7de930e0ae049a72f8ca0896292a87115a249e4519a043959c8aa0c1b6",
+          "DusartPort.Psi1Estimate": "8aeb8238d20399fa71292155f708a4bcb62a6f2d77d208b64640276beeb68d78",
+          "BJSMertensThetaTarget": "d35222ff763595a578c15e3b9f8cbf176aa6b231667263deac636c3788571ac2"
+        },
+        "seconds": 36.09
+      }
+    },
+    {
+      "module": "PlattKernelBounds",
+      "sourceHash": "7a4d78171d76413e4d52087f9ce39217b20c206b2bfb68cb909b774e66609535",
+      "objectHash": "7222fdf4ff322cf9e51c35877b543ed948bf54cdc2678edc72385e3ced5e529a",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "7a4d78171d76413e4d52087f9ce39217b20c206b2bfb68cb909b774e66609535",
+        "objectHash": "7222fdf4ff322cf9e51c35877b543ed948bf54cdc2678edc72385e3ced5e529a",
+        "dependencies": {
+          "PlattPrefixBridge": "fbcacd7de930e0ae049a72f8ca0896292a87115a249e4519a043959c8aa0c1b6"
+        },
+        "seconds": 21.528
+      }
+    },
+    {
+      "module": "PlattPlateauKernels",
+      "sourceHash": "800044b013cbb1e446f206df4c58065ed7f3af91a0e45671aef75c920205da7d",
+      "objectHash": "cab29de4c03331f8f168ef286d67ad0261896b3d9076f38618c1bc86fe9f4142",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "800044b013cbb1e446f206df4c58065ed7f3af91a0e45671aef75c920205da7d",
+        "objectHash": "cab29de4c03331f8f168ef286d67ad0261896b3d9076f38618c1bc86fe9f4142",
+        "dependencies": {
+          "PlattKernelBounds": "a0459d7500d201e6194130f4bdb21f9b6608de9023750c29af5c28f0ce497b18"
+        },
+        "seconds": 20.664
+      }
+    },
+    {
+      "module": "PlattPlateauNorm",
+      "sourceHash": "661f4300215ad97769fb413ae855895c244ca185d398b62a0bf06a6e73641672",
+      "objectHash": "4d3fd0cdf9bf0cec12582dd994a1335d5380d3c4622bdc5d081b11b051572811",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "661f4300215ad97769fb413ae855895c244ca185d398b62a0bf06a6e73641672",
+        "objectHash": "4d3fd0cdf9bf0cec12582dd994a1335d5380d3c4622bdc5d081b11b051572811",
+        "dependencies": {
+          "PlattPlateauKernels": "cab29de4c03331f8f168ef286d67ad0261896b3d9076f38618c1bc86fe9f4142"
+        },
+        "seconds": 23.39
+      }
+    },
+    {
+      "module": "PlattLogBounds",
+      "sourceHash": "be97dd76d0d679fc7f20ed93658a3ab73e57872d126c146668942f83b092dbe6",
+      "objectHash": "5de36e52669ee279b60af31dce4b5c308bde9646cf4eb2716e25c39341dd117e",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "be97dd76d0d679fc7f20ed93658a3ab73e57872d126c146668942f83b092dbe6",
+        "objectHash": "5de36e52669ee279b60af31dce4b5c308bde9646cf4eb2716e25c39341dd117e",
+        "dependencies": {},
+        "seconds": 17.411
+      }
+    },
+    {
+      "module": "PlattRelativeGrid",
+      "sourceHash": "c0961c38d39d0938a6c83c7c4424de0a17bb7672cdd4c548221cd3a6fc762c7c",
+      "objectHash": "ce9eecaa4ff54125ba199d78eb043fcc5bdd3d855deae5c20f02bdb78c886f20",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "c0961c38d39d0938a6c83c7c4424de0a17bb7672cdd4c548221cd3a6fc762c7c",
+        "objectHash": "ce9eecaa4ff54125ba199d78eb043fcc5bdd3d855deae5c20f02bdb78c886f20",
+        "dependencies": {
+          "PlattPrefixBridge": "fbcacd7de930e0ae049a72f8ca0896292a87115a249e4519a043959c8aa0c1b6"
+        },
+        "seconds": 19.734
+      }
+    },
+    {
+      "module": "PlattReciprocalKernel",
+      "sourceHash": "aef61faa6b242bb4a989bbe7a55a97d562c261fed28dce42076dd71ce366c598",
+      "objectHash": "55597c4af025d2a47718e11ea01062ce976079cbab6efb316bf6ab003e79de9b",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "aef61faa6b242bb4a989bbe7a55a97d562c261fed28dce42076dd71ce366c598",
+        "objectHash": "55597c4af025d2a47718e11ea01062ce976079cbab6efb316bf6ab003e79de9b",
+        "dependencies": {
+          "RSBounds.PsiFinite.Kernel": "7bb042f347a3db602186a1cf9232796c6095ce6f492e0cfe3f037a62405c34cd"
+        },
+        "seconds": 1.383
+      }
+    },
+    {
+      "module": "PlattCountSoundness",
+      "sourceHash": "2d7b29e25d32dcc0765ad99baad9b73acb8270cf15013b29af6722a96acc7957",
+      "objectHash": "8139ba6eba174378247d57167ca3ed6f9fee3d31abd001dfa88c2dfcc132b128",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "2d7b29e25d32dcc0765ad99baad9b73acb8270cf15013b29af6722a96acc7957",
+        "objectHash": "8139ba6eba174378247d57167ca3ed6f9fee3d31abd001dfa88c2dfcc132b128",
+        "dependencies": {
+          "PlattReciprocalKernel": "55597c4af025d2a47718e11ea01062ce976079cbab6efb316bf6ab003e79de9b",
+          "RSBounds.PsiFinite.BaseCert": "4b1f65c042777a8952ca562dc0a47e2c1b301c56d8441395e4f1d74bbd5cc979",
+          "AnalyticNumberTheory.Mertens.Basic": "879b790c6ebed4fe66824441e309f7334121274aa0beabc5fa70bfb611fd0d73"
+        },
+        "seconds": 30.342
+      }
+    },
+    {
+      "module": "PlattReciprocalBlocks",
+      "sourceHash": "1166e409f3eaec03dbf5271a58fb6059009fda92e02accd4a2bdced241171314",
+      "objectHash": "bcf2a0e276683c7b4d9de1e31d2362f68588584e2f75155ff7a05809de818679",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "1166e409f3eaec03dbf5271a58fb6059009fda92e02accd4a2bdced241171314",
+        "objectHash": "bcf2a0e276683c7b4d9de1e31d2362f68588584e2f75155ff7a05809de818679",
+        "dependencies": {
+          "PlattCountSoundness": "8139ba6eba174378247d57167ca3ed6f9fee3d31abd001dfa88c2dfcc132b128"
+        },
+        "seconds": 30.2
+      }
+    },
+    {
+      "module": "PlattSegmentArithmetic",
+      "sourceHash": "19ab4ce520007372206e56d0ecba8a04ff46894e02101c3bbb007eb69cf87a17",
+      "objectHash": "d8862a28fb416715a233097adf92f0059a88373f8061b8c4533cc35939e5d56b",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "19ab4ce520007372206e56d0ecba8a04ff46894e02101c3bbb007eb69cf87a17",
+        "objectHash": "d8862a28fb416715a233097adf92f0059a88373f8061b8c4533cc35939e5d56b",
+        "dependencies": {
+          "PlattReciprocalBlocks": "bcf2a0e276683c7b4d9de1e31d2362f68588584e2f75155ff7a05809de818679"
+        },
+        "seconds": 30.248
+      }
+    },
+    {
+      "module": "PlattSegmentPilotData",
+      "sourceHash": "771869d88c5602a88c977bd7f33d2cbaa398121bbecebb56fa294e7edc096318",
+      "objectHash": "9d62f09601f19b3b694d58c6990a7ba88201f0a7037ef4ff63804207f150a200",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "771869d88c5602a88c977bd7f33d2cbaa398121bbecebb56fa294e7edc096318",
+        "objectHash": "9d62f09601f19b3b694d58c6990a7ba88201f0a7037ef4ff63804207f150a200",
+        "dependencies": {
+          "PlattReciprocalKernel": "55597c4af025d2a47718e11ea01062ce976079cbab6efb316bf6ab003e79de9b",
+          "PlattCountBenchLow128": "98b934bd3e74ff3d4f93be5826bc64e2227342ef34422bc3c64e79507addd865"
+        },
+        "seconds": 1.357
+      }
+    },
+    {
+      "module": "PlattSegmentPilot",
+      "sourceHash": "1d17718e61cd4b0cf0a1aa1ece1ae6f18fce814648de826f6602e3b5c193daeb",
+      "objectHash": "e879103ec4543aeb1f0de13da99542b08b9ecaec41a7df747299fb267e35d53b",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "1d17718e61cd4b0cf0a1aa1ece1ae6f18fce814648de826f6602e3b5c193daeb",
+        "objectHash": "e879103ec4543aeb1f0de13da99542b08b9ecaec41a7df747299fb267e35d53b",
+        "dependencies": {
+          "PlattSegmentArithmetic": "d8862a28fb416715a233097adf92f0059a88373f8061b8c4533cc35939e5d56b",
+          "PlattSegmentPilotData": "9d62f09601f19b3b694d58c6990a7ba88201f0a7037ef4ff63804207f150a200"
+        },
+        "seconds": 29.002
+      }
+    },
+    {
+      "module": "PlattThetaInputs",
+      "sourceHash": "46cd780467a180c2ec726c125d78d3b6a175658a2dde083e408d5c467522a175",
+      "objectHash": "21d9d38c156d4e277164907cca1edea41dd0d986ba56bfb9d90b018420337b7d",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "46cd780467a180c2ec726c125d78d3b6a175658a2dde083e408d5c467522a175",
+        "objectHash": "21d9d38c156d4e277164907cca1edea41dd0d986ba56bfb9d90b018420337b7d",
+        "dependencies": {
+          "TernaryGoldbach.Explicit.PsiRanges1e8": "42f89794f8b2c1fe619b0ee138fbf494037d148682ad0b1d26b14b9ff5b6922f",
+          "TernaryGoldbach.Explicit.PsiPlateau1e8": "95353086a19e0a7eab904119d7a28ef7d40837e5f1d44d3e6f74952913e614e5",
+          "BJSHybridSharpPrimePowers": "33d2cd2361e78c23e0f4c5f0a68518b215337709676ba9c0ac9bf04e536279ae"
+        },
+        "seconds": 21.026
+      }
+    },
+    {
+      "module": "PlattCountBenchLow16",
+      "sourceHash": "f92c9d434b4e04c52bf454f21933383fac6abdbb1e02587a74f78e2665f4e516",
+      "objectHash": "22b5d1216c27a2d3f64c4f4698dd868cff3267fdb49f2ae3faf833086f578a2d",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "f92c9d434b4e04c52bf454f21933383fac6abdbb1e02587a74f78e2665f4e516",
+        "objectHash": "22b5d1216c27a2d3f64c4f4698dd868cff3267fdb49f2ae3faf833086f578a2d",
+        "dependencies": {
+          "PlattReciprocalKernel": "55597c4af025d2a47718e11ea01062ce976079cbab6efb316bf6ab003e79de9b"
+        },
+        "seconds": 1.422
+      }
+    },
+    {
+      "module": "PlattCountBenchLow128",
+      "sourceHash": "a0d83eb3af476c2bb959ccf363435d265e259f67039f140a53142f487a098140",
+      "objectHash": "98b934bd3e74ff3d4f93be5826bc64e2227342ef34422bc3c64e79507addd865",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "a0d83eb3af476c2bb959ccf363435d265e259f67039f140a53142f487a098140",
+        "objectHash": "98b934bd3e74ff3d4f93be5826bc64e2227342ef34422bc3c64e79507addd865",
+        "dependencies": {
+          "PlattReciprocalKernel": "55597c4af025d2a47718e11ea01062ce976079cbab6efb316bf6ab003e79de9b"
+        },
+        "seconds": 1.391
+      }
+    },
+    {
+      "module": "PlattCountBenchHigh16",
+      "sourceHash": "48a277632def40537be52b3fb8dfc3dcda5290cc2b8bd0e9aa1ef7fb3188cb1e",
+      "objectHash": "c364af747623b0146b2fc7812baa3483edd7b8d8456eba0e6211fd6a64f4b895",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "48a277632def40537be52b3fb8dfc3dcda5290cc2b8bd0e9aa1ef7fb3188cb1e",
+        "objectHash": "c364af747623b0146b2fc7812baa3483edd7b8d8456eba0e6211fd6a64f4b895",
+        "dependencies": {
+          "PlattReciprocalKernel": "55597c4af025d2a47718e11ea01062ce976079cbab6efb316bf6ab003e79de9b"
+        },
+        "seconds": 2.225
+      }
+    },
+    {
+      "module": "PlattCountBenchHigh128",
+      "sourceHash": "65e34134d59df463899816517426b9ed54f87472eea51b14ab238302450489e3",
+      "objectHash": "d377112b4491299a67460bc64390851ea0e1f0e5128c5ae47b56966e72f141ca",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "65e34134d59df463899816517426b9ed54f87472eea51b14ab238302450489e3",
+        "objectHash": "d377112b4491299a67460bc64390851ea0e1f0e5128c5ae47b56966e72f141ca",
+        "dependencies": {
+          "PlattReciprocalKernel": "55597c4af025d2a47718e11ea01062ce976079cbab6efb316bf6ab003e79de9b"
+        },
+        "seconds": 2.491
+      }
+    },
+    {
+      "module": "PlattCountBenchLow4096",
+      "sourceHash": "3522bbd39b8aeed96ad64702b8acc6e8e6cc39a50c5173099a24b55803510fd6",
+      "objectHash": "5a48cfc91dde54193d29f7fad4ddf2c2177c78e4f31b290279697fe534b7b0b1",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "3522bbd39b8aeed96ad64702b8acc6e8e6cc39a50c5173099a24b55803510fd6",
+        "objectHash": "5a48cfc91dde54193d29f7fad4ddf2c2177c78e4f31b290279697fe534b7b0b1",
+        "dependencies": {
+          "PlattReciprocalKernel": "55597c4af025d2a47718e11ea01062ce976079cbab6efb316bf6ab003e79de9b"
+        },
+        "seconds": 1.701
+      }
+    },
+    {
+      "module": "PlattCountBenchHighWide512",
+      "sourceHash": "1e3471baffcdfde9020125eb53673795199817a7db0b42ae947cdb0bda439a29",
+      "objectHash": "22ddb9dcc268b732c1e101ba759deea783a1f2ec69f83b25af34387ceb6378b2",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "1e3471baffcdfde9020125eb53673795199817a7db0b42ae947cdb0bda439a29",
+        "objectHash": "22ddb9dcc268b732c1e101ba759deea783a1f2ec69f83b25af34387ceb6378b2",
+        "dependencies": {
+          "PlattReciprocalKernel": "55597c4af025d2a47718e11ea01062ce976079cbab6efb316bf6ab003e79de9b"
+        },
+        "seconds": 5.975
+      }
+    }
+  ],
+  "finiteScan": {
+    "classification": "UNTRUSTED_BLOCK_SCAN_NOT_LEAN_VERIFIED",
+    "U": 4000000,
+    "R": 10000000000,
+    "blocks": 8886581,
+    "groups": 8,
+    "points": 239866,
+    "lower": -0.0000018402959440777522,
+    "upper": 0.00004572215541642777,
+    "minWitness": {
+      "a": 7711961088,
+      "b": 7712202752
+    },
+    "maxWitness": {
+      "a": 4992000,
+      "b": 4992192
+    },
+    "totalReciprocalUncertainty": 0.000001386014528037549,
+    "pass": true,
+    "seconds": 33.548,
+    "countSha256": "830c57ac60dc3801b3d9169baffa7f3b09537803c6192f4230c6fbbdfc28af4b"
+  },
+  "complete": false,
+  "remaining": [
+    "Numerical analytic envelope assembly at and above reference1e10",
+    "Formal fixed-point logarithm certificate producer",
+    "Full finite count/arithmetic/logarithm replay and grid coverage",
+    "Replace the temporary prefix axiom and rerun final Chen audits"
+  ]
+}

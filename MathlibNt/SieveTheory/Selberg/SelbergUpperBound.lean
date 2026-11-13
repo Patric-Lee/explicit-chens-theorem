@@ -189,7 +189,7 @@ theorem divisor_sum_bound_squarefree (A : ℝ) (hA : 0 < A) :
     calc
       n.primeFactors.prod (fun p => 1 + chenDivisorWeight A p)
           ≤ n.primeFactors.prod (fun p => exp (A * (1 / ((p : ℝ) - 1)))) := by
-            apply Finset.prod_le_prod
+            apply Finset.prod_le_prod₀
             · intro p hp
               have hnonneg : 0 ≤ chenDivisorWeight A p := by
                 unfold chenDivisorWeight

@@ -27,7 +27,7 @@ theorem primeFactors_card_cast_le_log {n : ℕ} (hn : 2 ≤ n) :
      2 ^ n.primeFactors.card = ∏ _p ∈ n.primeFactors, (2 : ℕ) := by
        rw [prod_const]
      _ ≤ ∏ p ∈ n.primeFactors, p := by
-       exact prod_le_prod (fun _ _ => by omega)
+       exact prod_le_prod₀ (fun _ _ => by omega)
          (fun p hp => (Nat.prime_of_mem_primeFactors hp).two_le)
   have hpow_le : 2 ^ n.primeFactors.card ≤ n :=
    hpow.trans (Nat.le_of_dvd (by omega) (Nat.prod_primeFactors_dvd n))

@@ -362,7 +362,13 @@
   {
     "module": "DusartPort.ZetaLogDeriv",
     "original": "Mathlib-v4.35.0",
-    "originalHash": "FA9C87B0B71CDC52FEA2BB30349BB879F9FC0CEC85D4CD472D8B9F0EF811C778"
+    "originalHash": "FA9C87B0B71CDC52FEA2BB30349BB879F9FC0CEC85D4CD472D8B9F0EF811C778",
+    "currentImplementation": {
+      "kind": "compatibility import",
+      "module": "Mathlib.NumberTheory.LSeries.RiemannZetaLogDeriv",
+      "mathlibRevision": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "reason": "The same proved theorem is now in pinned Mathlib; the local duplicate was retired."
+    }
   },
   {
     "module": "DusartPort.Lab.ZetaZeros.LocalPF",

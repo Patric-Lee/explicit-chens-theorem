@@ -1,284 +1,225 @@
 # Explicit Chen's theorem in Lean
 
 This fork of [subfish-zhou/goldbach-lean](https://github.com/subfish-zhou/goldbach-lean)
-develops an explicit numerical Chen theorem, conditional on the single local
-hypothesis `ChenEffective.dirichlet_seven_eighths`. The original project's
-formalizations and attribution are retained below.
+develops explicit cutoffs for Chen's theorem. The original formalization,
+history, licenses, and attribution are retained. The earlier local Dirichlet
+seven-eighths axiom has been replaced by the checked OpenAI proof.
 
-## Current explicit result and trust boundary
+## Results and assumptions
 
-The active theorem proves that every even natural number
+| Route | Exact cutoff | Approximate H, where N₀ = exp(exp(H)) | Additional axiom beyond standard Lean |
+| --- | --- | --- | --- |
+| [Checked numerical theorem](research/chen-bjs-study/BJSTightChen.lean) | 3^(3^134) | 147.308095 | None |
+| [Checked conditional H≈30 theorem](research/chen-numerical-study/BJSH30ConditionalChen.lean) | 3^(10^13) | 30.02765403654 | Temporary reciprocal-prefix window |
+| [Platt replacement development](research/chen-platt/README.md) | Target: the same H≈30 cutoff | Work in progress | Planned: modulus-one finite RH only |
 
-\[
-N\ge N_0=3^{3^{171}}
-\]
+The H≈30 result is **conditional**, not an unconditional or H<30 theorem.
+For every even natural number N at or above its cutoff, its statement is
 
-is the sum of a prime and either another prime or a product of two primes.
-Writing `N0 = exp(exp(H))`, the verified cutoff has `H` approximately
-**187.956749**. See [the theorem](research/chen-bjs-study/BJSStudyChen.lean),
-[the exact recovery of the original implicit Chen statement](research/chen-bjs-study/BJSStudyCompatibility.lean),
-and [the explicit development and checking instructions](research/chen-bjs-study/README.md).
+$$
+N\ge N_0=3^{10^{13}}
+\quad\Longrightarrow\quad
+\exists p,q\in\mathbb N,\quad
+N=p+q,\quad p\text{ prime},\quad
+q\text{ prime or a product of two primes}.
+$$
 
-This result is conditional: the sole additional axiom is the local Dirichlet
-seven-eighths hypothesis, alongside Lean's standard axioms. The active proof
-has no BJS axioms, OpenAI module imports, `sorry`/`admit`, `native_decide`, or
-unsafe proof declarations. No new external Lake dependencies or toolchain
-changes were introduced. The analytic input and final theorem have separate
-transitive proof audits; see [the analytic package](research/chen-dusart/README.md).
-Historical research files and numerical studies are not all active theorem
-inputs; their status must be read separately.
+The declaration is `ChenEffective.H30Conditional.chen`.
+Its `original_chen` corollary has exactly the original
+`Goldbach.ChenTheorem` type. This checks that the numerical route proves
+the original existence statement. The standard-only H≈147 theorem has its
+own literal recovery theorem and remains separate from the conditional route.
 
-The current proof combines proved BJS-style sieve ingredients with our own
-explicit distribution and Selberg-square/triple estimates. It is not a full
-formalization of BJS's numerical application, and does not claim their cutoff.
-Reducing the cutoff requires sharper small-endpoint prime products, arithmetic
-progression/distribution remainders, and square/triple error estimates, with a
-joint end-to-end budget. The stronger earlier counting theorem retains its
-separate, larger cutoff.
+The single temporary input currently used by H≈30 is
+`temporary_reciprocal_prefix_window`. Writing
+
+$$
+P(x)=\sum_{p\le x}\frac{1}{p},\qquad
+E(x)=P(x)-\log\log x-B_1,
+$$
+
+where B₁ is the canonical Mertens second constant, it asserts
+
+$$
+|E(x)|\le\frac{1}{9000}
+\qquad\left(4{,}000{,}000\le x\le3^{120}\right).
+$$
+
+This all-real window has numerical evidence but is not yet fully kernel
+certified. There are no extra sieve-density, AP-distribution, lower-count,
+triple-count, or final-existence axioms in the H≈30 route. Its checked axiom
+ledger is the temporary window plus `propext`, `Classical.choice`, and
+`Quot.sound`. See the [exact H≈30 statement and audit](research/chen-numerical-study/NUMERICAL_H30.md).
 
 ## Approach
 
-The current proof establishes the exact cutoff
+Let the singular-series main scale be
 
 $$
-N_0=3^{3^{171}},\qquad
-H=\log\log N_0=171\log3+\log\log3\approx187.956749.
+M(N)=\mathfrak S(N)\frac{N}{(\log N)^2}.
 $$
 
-For every even integer $N\ge N_0$, it proves $N=p+q$, where $p$ is prime
-and $q$ is prime or a product of two primes. The argument bounds a weighted
-candidate count from below and a triple penalty from above, then applies an
-exact finite counting inequality. All logarithms below are natural.
+The proof combines actual finite candidate counts, explicit AP-distribution
+estimates, a linear lower sieve, a Selberg-square/triple upper estimate, and
+the exact counting implication below.
 
-### 1. A single zero-free hypothesis makes the analytic estimates effective
+1. **Prime products and pre-sieving.** The reciprocal-prefix window and the
+   proved infinite tail supply the relative Goldbach sieve product bound
 
-The sole additional axiom says, for every Dirichlet character $\chi$ at any
-positive modulus,
+   $$
+   \prod_{u\le p<z}\frac{p-1}{p-2}
+   \le\left(1+\frac{1}{4000}\right)\frac{\log z}{\log u},
+   \qquad 4{,}000{,}000\le u\le z.
+   $$
 
-$$
-\Re s>\frac78,\quad (\chi,s)\ne(\mathbf1,1)
-\quad\Longrightarrow\quad L(s,\chi)\ne0.
-$$
+   The product is over primes; the formal adapter also handles the subsets
+   and endpoint conventions used by the sieve. The standard-only route uses
+   the larger start U=3^120, which explains much of its larger cutoff.
 
-For every $\eta>0$ and primitive nonprincipal quadratic character of conductor
-$q$, a proved consequence replaces an ineffective Siegel bound by
+2. **Distribution and the lower count.** The proved Dirichlet seven-eighths
+   theorem makes the Siegel and low-conductor inputs effective. Numerical
+   weighted distribution estimates pay the actual QD remainders in the
+   pre-sieved counting problem. The base and medium-prime estimates yield
 
-$$
-\Re L(1,\chi)\ge c(\eta)q^{-\eta},\qquad
-\varepsilon=\min\left(\frac1{16},\frac{\eta}{8}\right),\qquad
-c(\eta)=\frac{\varepsilon}{4\cdot648^{4\varepsilon}}.
-$$
+   $$
+   W(N)\ge2.02575\,M(N)
+   \qquad\left(N\ge3^{10^{13}},\ N\text{ even}\right).
+   $$
 
-This feeds the numerical low-conductor, principal prime number theorem, and
-prime-distribution estimates. See [ExplicitSiegel.lean](research/chen-effective/ExplicitSiegel.lean).
+3. **The complete triple estimate.** The two-term Selberg denominator
+   expansion, prime-pair main term, fifth-order square remainder, Q residual,
+   and complementary triples are assembled into
 
-### 2. The explicit formula supplies the prime-product input
+   $$
+   T(N)\le
+   \left[8.2\left(0.49254+\frac{1}{10000}\right)
+     +\frac{1}{1000}\right]M(N)
+   =4.040648\,M(N),
+   \qquad N\ge3^{5\cdot10^{12}}.
+   $$
 
-The analytic development proves a numerical weighted zeta-zero moment bound,
-then the smoothed explicit-formula estimate
+   This upper estimate is proved independently of the temporary prefix
+   input. See the [complete triple result](research/chen-bjs-study/H30_TRIPLE.md).
 
-$$
-\left|\psi_1(x)-\frac{x^2}{2}\right|\le0.121x^{15/8}
-\quad(x\ge3^{100}),\qquad
-\psi_1(x)=\sum_{n\le x}(x-n)\Lambda(n).
-$$
+4. **Exact finite counting.** The representation count satisfies
 
-Unsmoothing and removing prime powers give
+   $$
+   R(N)\ge W(N)-\frac{1}{2}T(N)
+   \ge0.005426\,M(N)>0.
+   $$
 
-$$
-|\theta(x)-x|\le\frac34x^{15/16}\le\frac{4x}{\log^2x}
-\qquad(x\ge3^{120}).
-$$
+   Positivity supplies a prime plus a prime or semiprime. The exact bridges
+   use the actual candidate and penalty counts, rather than assumed
+   surrogates. The earlier 0.67 counting theorem retains its separate cutoff.
 
-Partial summation then yields, with $M_P$ the prime reciprocal Mertens constant,
+## Replacing the temporary window by Platt's result
 
-$$
-\left|\sum_{p\le x}\frac1p-\log\log x-M_P\right|
-\le\frac1{2\log^2x}\qquad(x\ge3^{120}),
-$$
-
-and the ordered interval estimate
-
-$$
-\sum_{a\le p\le b}\frac1p
-\le\log\frac{\log b}{\log a}+\frac1{\log^2a}
-\qquad(3^{120}\le a\le b).
-$$
-
-Consequently, with $U=3^{120}$, the Goldbach sieve product satisfies
+The intended sole additional axiom is the modulus-one finite-RH statement
 
 $$
-\prod_{u\le p<z}\frac{p-1}{p-2}
-\le\left(1+\frac1{4000}\right)\frac{\log z}{\log u}
-\qquad(U\le u\le z).
+\zeta(\rho)=0,\quad 0<\Re\rho<1,\quad
+|\Im\rho|\le10^8
+\quad\Longrightarrow\quad \Re\rho=\frac{1}{2}.
 $$
 
-Products and sums in these formulas run over primes. The formal product theorem
-also handles subsets of the primes and the required endpoint conventions.
-See [the analytic application](research/chen-dusart/DusartPort/Application.lean)
-and [the product proof](research/chen-bjs-study/BJSStudyProducts.lean).
+It is not full GRH. At present it is an **explicit hypothesis** of the local
+analytic development; the final axiom replacement has not been completed.
+The old Dirichlet axiom is already gone and is not being replaced by Platt.
 
-### 3. Certified BJS-style sieve bounds estimate the counting sets
-
-For sieve level $D$, sifting endpoint $z$, and $s=\log D/\log z$, the proved
-density estimates, in their respective parameter windows, have the form
-
-$$
-\text{lower main sum}\ge V(z)\bigl[f(s)-0.055e^2h(s)\bigr],
-$$
+The pinned calr3 analytic estimates and their conversion to theta have
+compiled. The development also checks the theta-to-Mertens transfer,
+square-root and plateau integrals, a far anchor at 3^512 with error at most
+10^-8, the finite sieve/counting soundness lemmas, and a complete small
+reciprocal-sum certificate. The finite comparison uses
 
 $$
-\text{upper main sum}\le V(z)\bigl[F(s)+0.055e^2h(s)\bigr].
+E(x)-E(R)=P(x)-P(R)
+-\left(\log\log x-\log\log R\right),\qquad R=10^{10},
 $$
 
-Here $f,F$ are the linear-sieve functions, $h$ is the error hat function, and
-$V(z)$ is the local sieve product. The coefficient $0.055=220/4000$ comes
-from certified early layers, an analytic tail, discrete induction, and parity
-sums. These statements are for normalized Rosser main sums; the corresponding
-counting estimates also pay source-mass and distribution remainders.
-
-Pre-sieving costs distribution level. For the removed small-prime product $Q$,
-we prove $\log Q\le2U$. Our cutoff ensures
+so B₁ cancels and no numerical enclosure of that constant is needed.
+The proposed allowances are
 
 $$
-\log N\ge10^{20}(1+2U),
+\frac{59}{10^6}+\frac{1}{20000}\le\frac{1}{9000}.
 $$
 
-which makes the resulting sieve-coordinate shift at most $10^{-7}$.
-See [the density adapters](research/chen-bjs-study/BJSStudyInputs.lean) and
-[the geometry bounds](research/chen-bjs-study/BJSStudyGeometry.lean).
+The scalar allowance is checked; its complete numerical analytic assembly
+and the full finite certificate remain unfinished. The large JavaScript
+scans are feasibility evidence, not Lean proofs. The planned replacement
+also avoids treating unverified numerical zero ordinates as proved zero boxes.
+See the [checked components and open obligations](research/chen-platt/README.md).
+No `native_decide` or new external Lake package has been introduced.
 
-### 4. Base and medium-prime estimates give the weighted lower bound
+## Verification and scope
 
-Use the singular-series normalization
+The checked upgrade uses Lean 4.34.1 and Mathlib revision
+`d13f23b723b8a846827a245b89c10fc7d3f11612`.
+The [upgrade audit report](research/chen-effective/UPGRADE_434_AUDIT.md)
+records the actual OpenAI proof, the standard-only numerical theorem, the
+conditional H≈30 theorem, and literal recovery of the old Chen statement.
+The [OpenAI provenance and build guide](OpenAI/README.md) records the pins,
+licenses, source mapping, and transitive proof audits.
 
-$$
-\mathfrak S(N)=
-\prod_{p>2}\left(1-\frac1{(p-1)^2}\right)
-\prod_{\substack{p\mid N\\p>2}}\frac{p-1}{p-2},
-\qquad M(N)=\mathfrak S(N)\frac{N}{\log^2N}.
-$$
+From a configured checkout, the focused source builder can check selected
+roots without rebuilding the unrelated Li–Liu or Wu developments:
 
-We prove $\mathfrak S(N)\ge1/2$. Let $A(N)$ be the source candidate count
-and $B(N)$ its medium-prime aggregate, over $N^{1/10}<q\le N^{1/3}$. The
-proved estimates are
+```sh
+node OpenAI/tools/verify-sources.mjs
+node OpenAI/tools/audit-sources.mjs --dirichlet-proved
+node OpenAI/tools/build-source.mjs AuditBJSTightBudget AuditBJSH30Conditional
+node OpenAI/tools/build-source.mjs PlattThetaInputs PlattSegmentPilot
+```
 
-$$
-A(N)\ge\left(a-\frac1{20}\right)M(N),\qquad
-B(N)\le\left(b+\frac{113}{100}\right)M(N),
-\qquad a-\frac b2\ge2.6408.
-$$
+Standard-only routes reject custom axioms, placeholders, unsafe proof
+dependencies, and native compiler trust. The conditional H≈30 audit permits
+its named temporary window only. Historical studies, unfinished experiments,
+and untrusted numerical scans are not silently promoted to theorem inputs.
 
-Here $a,b$ are the certified main coefficients. After correcting endpoints
-and repeated-prime-power contributions, at cost at most $M(N)/20000$, the
-actual valuation-weighted count satisfies
+## References, provenance, and acknowledgments
 
-$$
-W(N)\ge\left(2.6408-\frac1{20}-\frac{113}{200}-\frac1{20000}\right)M(N)
-=2.02575M(N).
-$$
+- [subfish-zhou/goldbach-lean](https://github.com/subfish-zhou/goldbach-lean):
+  upstream Chen formalization and reusable analytic number theory. Its
+  history, copyright notices, and Apache-2.0 license are retained.
+- [OpenAI/math](https://github.com/openai/math/tree/4eaee87548250b2682affda7d05d947c05554bae):
+  the proved Dirichlet seven-eighths input. The actual proof closure, rather
+  than a challenge placeholder, is vendored under [OpenAI/](OpenAI/README.md),
+  with 2,924 OAI files and 15 Rellich files, pinned manifests, and licenses.
+- [calr3/ternary-goldbach](https://github.com/calr3/ternary-goldbach/tree/ab016043e852c126492310d8fc44ea7849c381b2):
+  adapted finite-RH analytic estimates and minimal kernel sieve. The local
+  port restricts the RH input to modulus one. Its selected checked closure,
+  changes, source hashes, Apache-2.0/MIT licenses, and RSBounds provenance are
+  documented in [chen-platt](research/chen-platt/README.md).
+- [AlexKontorovich/PrimeNumberTheoremAnd](https://github.com/AlexKontorovich/PrimeNumberTheoremAnd)
+  and [sthubbar/lean-lab-preprints](https://github.com/sthubbar/lean-lab-preprints):
+  selectively adapted Hadamard-factorization, explicit-formula, and
+  zero-counting proofs. See [source notices](research/chen-dusart/NOTICE.md)
+  and the [pinned provenance manifest](research/chen-dusart/provenance.json).
+- [teorth/IEANTN](https://github.com/teorth/IEANTN): consulted for explicit
+  analytic-number-theory methods and available formal results; no complete
+  port of that project is claimed.
+- [gersh/ternary-goldbach-lean](https://github.com/gersh/ternary-goldbach-lean):
+  consulted for finite-computation and finite-RH certificate approaches;
+  its numerical assumptions are not imported as additional axioms here.
+- [b-mehta/PrimeCert](https://github.com/b-mehta/PrimeCert): Bhavik Mehta and
+  contributors' minimal sieve informed the earlier local certificate port.
+  Its [source notices and license](research/chen-bjs-study/hybrid-pilot/primecert-port/NOTICE.md)
+  are retained.
+- Matteo Bordignon, Daniel R. Johnston, and Valeriia Starichkova (BJS),
+  [An explicit version of Chen's theorem and the linear sieve](https://arxiv.org/abs/2207.09452):
+  reference for the sharp sieve layers, recurrence, discrete induction, and
+  parity bounds. This repository does not claim to reproduce their complete
+  numerical application merely by using those ingredients.
+- Tomohiro Yamada, [Explicit Chen's theorem](https://arxiv.org/abs/1511.03409):
+  motivation and a comparison point; its claimed threshold is not assumed
+  as a Lean input.
+- Chen, Jurkat–Richert, Suzuki, Selberg, and Dusart supply the mathematical
+  methods behind the local estimates. The Dusart-related branch proves the
+  restricted conclusions it uses; it does not formalize all of Dusart's work.
 
-See [the base bound](research/chen-bjs-study/BJSStudyBase.lean),
-[the medium-prime aggregate](research/chen-bjs-study/BJSStudyAggregate.lean),
-and [the weighted lower bound](research/chen-bjs-study/BJSStudyLower.lean).
-
-### 5. The Selberg-square argument bounds the triple penalty
-
-Our current triple producer proves
-
-$$
-T(N)\le3.94033M(N)+10^{40}\frac{N}{\log^3N}.
-$$
-
-This uses our Selberg-square route rather than BJS's complete switched triple
-argument. A critical denominator estimate is
-
-$$
-\frac{\bigl(2\,\mathrm{AbsLogMoment}(N)+\mathrm{AbsMass}(N)\bigr)
-\mathfrak S(N)}{\log N}\le10^{-12},
-$$
-
-where the two absolute moments belong to the Selberg correction coefficients.
-The cutoff also pays the triple remainder:
-
-$$
-10^{40}\frac{N}{\log^3N}\le0.01M(N),\qquad
-T(N)\le3.95033M(N).
-$$
-
-See [the denominator estimate](research/chen-bjs-study/BJSStudySelbergDenominator.lean)
-and [the triple bound](research/chen-bjs-study/BJSStudyTriple.lean).
-
-### 6. An exact finite counting inequality finishes the proof
-
-If $R(N)$ counts valid Chen representations by their prime first summand,
-the combinatorial bridge proves
-
-$$
-R(N)\ge W(N)-\frac12T(N).
-$$
-
-Therefore
-
-$$
-R(N)\ge\left(2.02575-\frac{3.95033}{2}\right)M(N)
-=0.050585M(N)>0.
-$$
-
-A positive count gives the required representation. The
-[final theorem](research/chen-bjs-study/BJSStudyChen.lean) and
-[compatibility theorem](research/chen-bjs-study/BJSStudyCompatibility.lean)
-also recover the exact original implicit Chen statement. The audited proof
-uses only the stated Dirichlet axiom and Lean's standard axioms, with no BJS
-axioms, placeholders, `native_decide`, unsafe proof declarations, or OpenAI
-imports.
-
-## References, source provenance, and acknowledgments
-
-This work builds on and was informed by the following projects and papers.
-We distinguish adapted Lean source from mathematical references and studies:
-
-- **Upstream formalization:** [subfish-zhou/goldbach-lean](https://github.com/subfish-zhou/goldbach-lean)
-  supplies the original Chen development and reusable analytic number theory.
-  This fork preserves its history, source attribution, and license.
-- **Adapted analytic source:** [AlexKontorovich/PrimeNumberTheoremAnd (PNT+)](https://github.com/AlexKontorovich/PrimeNumberTheoremAnd)
-  and [sthubbar/lean-lab-preprints](https://github.com/sthubbar/lean-lab-preprints)
-  supply selectively adapted Hadamard factorization, explicit-formula,
-  zero-counting, and related analytic proofs. These are local source ports,
-  checked with this repository's toolchain, rather than new package dependencies.
-  Exact pinned revisions, file provenance, original copyright headers, and
-  Apache-2.0 notices are retained in
-  [the source notice](research/chen-dusart/NOTICE.md) and
-  [the provenance manifest](research/chen-dusart/provenance.json).
-  A Mathlib functional-equation derivative is also locally backported and
-  credited there.
-- **Consulted formalization:** [teorth/IEANTN](https://github.com/teorth/IEANTN)
-  was examined for explicit analytic number theory inputs and proof approaches.
-  This acknowledgment does not claim a complete port of that project.
-- **Explicit sieve reference:** Matteo Bordignon, Daniel R. Johnston, and
-  Valeriia Starichkova (BJS),
-  [An explicit version of Chen's theorem and the linear sieve](https://arxiv.org/abs/2207.09452).
-  Our certified sieve layers, recurrence, induction, and parity bounds draw on
-  this work. The cited paper proves a cutoff `exp(exp(32.7))`; its complete
-  numerical application is not yet reproduced here.
-- **Earlier explicit Chen work:** Tomohiro Yamada,
-  [Explicit Chen's theorem](https://arxiv.org/abs/1511.03409), provided motivation
-  and a comparison point. The threshold claimed there is not assumed as an
-  input to our Lean proofs.
-- **Other mathematical inputs:** Chen's theorem, Jurkat-Richert sieve methods,
-  Suzuki's sieve comparisons, Selberg's upper sieve, and Dusart's explicit
-  prime estimates inform the development. Our local Dusart-related application
-  proves the restricted bounds it needs under the permitted Dirichlet
-  hypothesis; it does not claim to formalize all of Dusart's results.
-- **Hypothesis motivation:** OpenAI's
-  [QuasiRiemannHypothesis challenge](https://github.com/openai/math/blob/main/lean/ComparatorChallenges/QuasiRiemannHypothesis.lean)
-  and [DirichletSevenEighths challenge](https://github.com/openai/math/blob/main/lean/ComparatorChallenges/DirichletSevenEighths.lean)
-  motivated the local hypothesis. No OpenAI repository modules are imported,
-  and the local Dirichlet hypothesis remains explicitly axiomatic here.
-
-The original [Apache-2.0 license](LICENSE) and adapted-source notices are retained.
-The upstream README follows; its broader Li-Liu and Wu developments are distinct
-from this fork's explicit numerical Chen branch.
+The original [license](LICENSE) and adapted-source notices are retained.
+The upstream README below describes its broader project; those Li–Liu and
+Wu scopes are separate from the focused numerical branch and upgrade audits.
 
 ---
 # goldbach-lean

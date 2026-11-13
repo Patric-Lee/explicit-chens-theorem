@@ -1,0 +1,39 @@
+{
+  "classification": "EXACT_INTEGER_PILOT_NOT_LEAN_VERIFIED",
+  "X": 100000000,
+  "U": 4000000,
+  "primeCount": 5761455,
+  "integerReciprocalSum": 893676076018156,
+  "reciprocalRoundingWidth": 2.046879998829354e-8,
+  "gridPoints": 12881,
+  "scale": "281474976710656",
+  "logSeriesTerms": 16,
+  "B1Enclosure": {
+    "lower": "26149/100000",
+    "upper": "26151/100000",
+    "proved": false
+  },
+  "errorLowerUnits": "-7105159342",
+  "errorUpperUnits": "18634031380",
+  "errorLower": -0.000025242596784380567,
+  "errorUpper": 0.00006620137817492378,
+  "minWitness": {
+    "a": 36913328,
+    "b": 36922556,
+    "units": "-7105159342"
+  },
+  "maxWitness": {
+    "a": 4991163,
+    "b": 4992410,
+    "units": "18634031380"
+  },
+  "scalarPrefixBudgetPass": true,
+  "certificateSha256": "1d1cdea25cfa11a43d4f4d920f39edf65e498b4bde13ff2a8a99acfae5ef7b76",
+  "seconds": 0.461,
+  "unresolved": [
+    "verified segmented sieve / reciprocal-sum checker",
+    "Lean proof of the rational log interval algorithm",
+    "B1 enclosure theorem",
+    "kernel checking of these grid rows"
+  ]
+}

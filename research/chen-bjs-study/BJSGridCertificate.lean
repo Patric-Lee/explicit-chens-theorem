@@ -28,7 +28,7 @@ theorem bjsStudy_integer_tail_sum (prev tail : Array ℕ) (start last a m : ℕ)
   | succ m ih =>
     have hp := ih (by omega)
     have hs := hstep (a+m) (by omega) (by omega)
-    rw [sum_range_succ]
+    rw [Finset.sum_range_succ]
     have hid : a+(m+1)=a+m+1 := by omega
     rw [hid]
     omega

@@ -1,0 +1,68 @@
+[
+  {
+    "localChange": "none",
+    "module": "HardyFirstZero.Boxes",
+    "sha256": "fe6334f2eaebcf706c519962dfa36919dacbe8abaa256ec4cd84168581ca05bc",
+    "url": "https://github.com/teorth/IEANTN/blob/d60421f10c16f5f6c2cb75f1067a72e24e616391/Solutions/RosserSchoenfeld.v2/Proof/HardyFirstZero/Boxes.lean"
+  },
+  {
+    "localChange": "none",
+    "module": "HardyFirstZero.BoxSupport",
+    "sha256": "b92b761c27449deb2b96d8a845dd6d53d6f1bd22985a480d583a22620701f1dd",
+    "url": "https://github.com/teorth/IEANTN/blob/d60421f10c16f5f6c2cb75f1067a72e24e616391/Solutions/RosserSchoenfeld.v2/Proof/HardyFirstZero/BoxSupport.lean"
+  },
+  {
+    "localChange": "none",
+    "module": "HardyFirstZero.EulerMaclaurin",
+    "sha256": "99c6b0a2d8b65e9b1054351c5f9252c837aa608265d14ae60c7baea63f135d1a",
+    "url": "https://github.com/teorth/IEANTN/blob/d60421f10c16f5f6c2cb75f1067a72e24e616391/Solutions/RosserSchoenfeld.v2/Proof/HardyFirstZero/EulerMaclaurin.lean"
+  },
+  {
+    "localChange": "none",
+    "module": "HardyFirstZero.FirstZero",
+    "sha256": "277985ab298d1a6b9fe1acd74e3fe1b5eee8a4d88140c00088759c209bd9817c",
+    "url": "https://github.com/teorth/IEANTN/blob/d60421f10c16f5f6c2cb75f1067a72e24e616391/Solutions/RosserSchoenfeld.v2/Proof/HardyFirstZero/FirstZero.lean"
+  },
+  {
+    "localChange": "none",
+    "module": "HardyFirstZero.Phase",
+    "sha256": "036c40987e6187881aa99c32fb75295e89ec750b8d4f681571c0c3ee4c00af49",
+    "url": "https://github.com/teorth/IEANTN/blob/d60421f10c16f5f6c2cb75f1067a72e24e616391/Solutions/RosserSchoenfeld.v2/Proof/HardyFirstZero/Phase.lean"
+  },
+  {
+    "localChange": "none",
+    "module": "HardyFirstZero.Spine",
+    "sha256": "3d6c33798fbb87b252912d55b3917105a013f94c52271b9302a38b26a9cc66a2",
+    "url": "https://github.com/teorth/IEANTN/blob/d60421f10c16f5f6c2cb75f1067a72e24e616391/Solutions/RosserSchoenfeld.v2/Proof/HardyFirstZero/Spine.lean"
+  },
+  {
+    "localChange": "none",
+    "module": "RSBoundsCompat.Arctan",
+    "sha256": "af721841fc0c47555514ff953953eae0980d4cf4f1173f78926df95786de2330",
+    "url": "https://github.com/teorth/IEANTN/blob/d60421f10c16f5f6c2cb75f1067a72e24e616391/Solutions/RosserSchoenfeld.v2/RSBoundsCompat/Arctan.lean"
+  },
+  {
+    "localChange": "none",
+    "module": "ZetaLean.HardyZ",
+    "sha256": "9e95b6e9a66e9ad9e459673dc92cfdb23fc2b3228c567b60d350b420146959ef",
+    "url": "https://github.com/teorth/IEANTN/blob/d60421f10c16f5f6c2cb75f1067a72e24e616391/Solutions/RosserSchoenfeld.v2/Proof/ZetaLean/HardyZ.lean"
+  },
+  {
+    "localChange": "Renamed unused hnL binder to _hnL for warning-as-error compatibility.",
+    "module": "ZetaLean.IntervalCExp",
+    "sha256": "0e1572524912d84e7661ddadb22d23545c376957580f1c3c0a55321cccb460cd",
+    "url": "https://github.com/teorth/IEANTN/blob/d60421f10c16f5f6c2cb75f1067a72e24e616391/Solutions/RosserSchoenfeld.v2/Proof/ZetaLean/IntervalCExp.lean"
+  },
+  {
+    "localChange": "none",
+    "module": "ZetaLean.IntervalExp",
+    "sha256": "63dd29aa3810992ae9f705fdf52f04684d96c89d368aa74981217ae64bf80d83",
+    "url": "https://github.com/teorth/IEANTN/blob/d60421f10c16f5f6c2cb75f1067a72e24e616391/Solutions/RosserSchoenfeld.v2/Proof/ZetaLean/IntervalExp.lean"
+  },
+  {
+    "localChange": "none",
+    "module": "ZetaLean.Rigor",
+    "sha256": "ed0337e17a0a02d5390ee565850ba6ff2a58cbcbb9fd1355561bf527bf38ced6",
+    "url": "https://github.com/teorth/IEANTN/blob/d60421f10c16f5f6c2cb75f1067a72e24e616391/Solutions/RosserSchoenfeld.v2/Proof/ZetaLean/Rigor.lean"
+  }
+]

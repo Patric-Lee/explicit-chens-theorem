@@ -1,7 +1,7 @@
 param([string]$FromModule = '')
 $ErrorActionPreference = 'Stop'
 $repoRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..\..')).Path
-$artifactDir = Join-Path $repoRoot '.lake\build\chen-effective'
+$artifactDir = Join-Path $repoRoot '.lake\build-434\chen-effective'
 New-Item -ItemType Directory -Path $artifactDir -Force | Out-Null
 $lakeCommand = Get-Command lake -ErrorAction SilentlyContinue
 $lakePath = if ($lakeCommand) { $lakeCommand.Source } else {

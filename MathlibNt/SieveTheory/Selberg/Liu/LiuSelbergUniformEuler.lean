@@ -208,13 +208,13 @@ theorem tprod_liuAbsoluteEulerFactor_le_uniform
   intro s
   calc
     ∏ p ∈ s, liuAbsoluteEulerFactor N p ≤ ∏ p ∈ s, h p :=
-      Finset.prod_le_prod
+      Finset.prod_le_prod₀
         (fun p _ => by linarith [liuAbsoluteEulerFactor_one_le (N := N) p])
         (fun p _ => liuAbsoluteEulerFactor_le_universal_mul_kernel hNeven p)
     _ ≤ ∏' p : Nat.Primes, h p :=
       ge_of_tendsto hmult.hasProd (Filter.eventually_atTop.mpr
         ⟨s, fun t hst =>
-          Finset.prod_le_prod_of_subset_of_one_le hst
+          Finset.prod_le_prod_of_subset_of_one_le₀ hst
             (fun p _ => by linarith [hone p])
             (fun p _ _ => hone p)⟩)
     _ = liuUniversalAbsEuler * liuPrimeDivisorProduct N := by
@@ -293,7 +293,7 @@ theorem tsum_abs_liuSelbergCorrection_le_tprod_liuAbsoluteEulerFactor
         rw [hprod]
         exact ge_of_tendsto hmult.hasProd (Filter.eventually_atTop.mpr
           ⟨S, fun T hST =>
-            Finset.prod_le_prod_of_subset_of_one_le hST
+            Finset.prod_le_prod_of_subset_of_one_le₀ hST
               (fun p _ => by
                 linarith [liuAbsoluteEulerFactor_one_le (N := N) p])
               (fun p _ _ => liuAbsoluteEulerFactor_one_le (N := N) p)⟩)
@@ -345,7 +345,7 @@ theorem liuUniversalProduct_le_one : liuUniversalProduct ≤ 1 := by
   intro s
   calc
     ∏ p ∈ s, (1 + liuBaseDeviation p) ≤ ∏ _p ∈ s, (1 : ℝ) :=
-      Finset.prod_le_prod (fun p _ => (one_add_liuBaseDeviation_pos p).le)
+      Finset.prod_le_prod₀ (fun p _ => (one_add_liuBaseDeviation_pos p).le)
         (fun p _ => one_add_liuBaseDeviation_le_one p)
     _ = 1 := by simp
 
@@ -373,12 +373,12 @@ theorem liuCorrection_le_liuPrimeDivisorProduct_cube (N : ℕ) :
     (N.primeFactors.filter fun p => 2 < p).prod liuCorrectionFactor ≤
         (N.primeFactors.filter fun p => 2 < p).prod
           (fun p => (1 + ((p : ℝ)⁻¹)) ^ 3) :=
-      Finset.prod_le_prod
+      Finset.prod_le_prod₀
         (fun p hp => (liuCorrectionFactor_pos (Finset.mem_filter.mp hp).2).le)
         (fun p hp => liuCorrectionFactor_le_primeCube
           (Finset.mem_filter.mp hp).2)
     _ ≤ N.primeFactors.prod (fun p => (1 + ((p : ℝ)⁻¹)) ^ 3) :=
-      Finset.prod_le_prod_of_subset_of_one_le
+      Finset.prod_le_prod_of_subset_of_one_le₀
         (by intro p hp; exact (Finset.mem_filter.mp hp).1)
         (fun p hp => by
           have hpR : 0 ≤ (p : ℝ) := by positivity
@@ -818,7 +818,7 @@ theorem liuSelbergCorrectionAbsFunction_le_convolution
       (liuSelbergAbsKernelConvolution_isMultiplicative hN) hn,
     Nat.prod_factorization_eq_prod_primeFactors,
     Nat.prod_factorization_eq_prod_primeFactors]
-  apply Finset.prod_le_prod
+  apply Finset.prod_le_prod₀
   · intro p hpN
     exact abs_nonneg _
   intro p hpN

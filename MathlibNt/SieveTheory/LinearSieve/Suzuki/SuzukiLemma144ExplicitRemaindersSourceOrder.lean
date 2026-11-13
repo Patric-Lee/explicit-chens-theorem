@@ -35,7 +35,7 @@ theorem suzukiVProduct_mono_antitone
   classical
   unfold suzukiVProduct
   simp only [Finset.prod_filter]
-  apply Finset.prod_le_prod
+  apply Finset.prod_le_prod₀
   · intro p hp
     split_ifs
     · have hpprime : p.Prime := Nat.prime_of_mem_primeFactors hp

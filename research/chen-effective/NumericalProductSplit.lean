@@ -38,7 +38,7 @@ theorem goldbach_small_product (s : Finset ℕ)
     have hh := hs p hp
     simp only [Finset.mem_Icc]
     omega
-  have hh := Finset.prod_le_prod_of_subset_of_one_le hsub
+  have hh := Finset.prod_le_prod_of_subset_of_one_le₀ hsub
     (fun p hp => inv_nonneg.mpr (goldbach_factor_positive (hs p hp).1).le)
     (fun p hp _ => goldbach_factor_one (by have hh := (Finset.mem_Icc.mp hp).1; omega))
   have ht := goldbach_integer_product 1023

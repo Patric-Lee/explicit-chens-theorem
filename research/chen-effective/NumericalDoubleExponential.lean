@@ -148,7 +148,9 @@ theorem double_upper_density {r : ℕ} (hr : r ≤ 10 ^ 12) :
 theorem double_base_density {r : ℕ} (hr : r ≤ 10 ^ 12) : baseDensityThreshold r ≤ numericalDoubleExpCutoff := by
   have h2 : 2 ≤ numericalDoubleExpCutoff :=
     (show 2 ≤ towerH by have hh := tower_H_large_nat; omega).trans double_H
-  have hg : suzukiCoordinateThreshold ≤ towerH := tower_fixed_power (by norm_num)
+  have hg : suzukiCoordinateThreshold ≤ towerH := by
+    rw [suzukiCoordinateThreshold_eq]
+    exact tower_fixed_power (by norm_num)
   exact max_le h2 (max_le (hg.trans double_H) (double_suzuki_error hr))
 
 theorem numerical_nLower_double_exp : nLower ≤ numericalDoubleExpCutoff :=

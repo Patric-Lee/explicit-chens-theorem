@@ -1,0 +1,4228 @@
+{
+  "classification": "NUMERICAL_PILOT_NOT_A_PROOF",
+  "targets": {
+    "U": 4000000,
+    "strictTarget": 0.00005882352941176471,
+    "directTarget": 0.0001219843768536783,
+    "productLogBudget": 0.0002439687537073566
+  },
+  "notes": [
+    "Head/tail caps are explicit proposed hypotheses; no finite RH or zero-count theorem is established by this script.",
+    "Integrated bound is derived from the existing psi1 formula by integration by parts, not the sharper incomplete-gamma formula.",
+    "Low zero finite-difference bound uses critical-line information; high zero terms use the existing 7/8 strip.",
+    "For x>=X each displayed positive envelope term decreases; delta also decreases.",
+    "Direct target requires a sharper exponential conversion than the existing factor-two estimate.",
+    "No computed cutoff is a proved Chen cutoff."
+  ],
+  "rows": [
+    {
+      "inputs": {
+        "T": 0,
+        "A": 0,
+        "a": 0,
+        "b": 0.12,
+        "status": "global_moment_proved; endpoint_unsmoothing_and_integrated_bridge_to_be_proved"
+      },
+      "primePowerGap": 17,
+      "primePowerStatus": "kernel_checked_BJSHybridPrimePowers",
+      "strict": {
+        "L": 80.2850167205572,
+        "x": 7.367832452160336e+34,
+        "delta": 0.004631623605029928,
+        "pieces": {
+          "pointLow": 0,
+          "pointHigh": 0.000057689763223826894,
+          "pointResidue": 3.3810823783587027e-37,
+          "integralLow": 0,
+          "integralHigh": 0.000001133766187935455,
+          "integralLinear": 1.031275020118405e-36,
+          "integralConstant": 4.6607825844115147e-63,
+          "primePowers": 2.3597021350444786e-18
+        },
+        "total": 0.00005882352941176471,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 70.86022650768601,
+        "x": 5.945732396116828e+30,
+        "delta": 0.008347456365470683,
+        "pieces": {
+          "pointLow": 0,
+          "pointHigh": 0.0001178017172237695,
+          "pointResidue": 4.7470313593736765e-33,
+          "integralLow": 0,
+          "integralHigh": 0.000004182659629610763,
+          "integralLinear": 1.4510950799408124e-32,
+          "integralConstant": 8.125564837970173e-55,
+          "primePowers": 2.9794203915243625e-16
+        },
+        "total": 0.0001219843768536782,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 0,
+        "A": 0,
+        "a": 0,
+        "b": 0.12,
+        "status": "global_moment_proved; endpoint_unsmoothing_and_integrated_bridge_to_be_proved"
+      },
+      "primePowerGap": 2,
+      "primePowerStatus": "unproved_sharpened_target",
+      "strict": {
+        "L": 80.28501672055674,
+        "x": 7.367832452156985e+34,
+        "delta": 0.0046316236050300595,
+        "pieces": {
+          "pointLow": 0,
+          "pointHigh": 0.00005768976322382886,
+          "pointResidue": 3.381082378360259e-37,
+          "integralLow": 0,
+          "integralHigh": 0.0000011337661879355262,
+          "integralLinear": 1.0312750201188803e-36,
+          "integralConstant": 4.6607825844157815e-63,
+          "primePowers": 2.776120158876505e-19
+        },
+        "total": 0.00005882352941176467,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 70.86022650765864,
+        "x": 5.945732395954092e+30,
+        "delta": 0.008347456365484961,
+        "pieces": {
+          "pointLow": 0,
+          "pointHigh": 0.0001178017172240165,
+          "pointResidue": 4.7470313595054375e-33,
+          "integralLow": 0,
+          "integralHigh": 0.000004182659629626722,
+          "integralLinear": 1.4510950799810997e-32,
+          "integralConstant": 8.125564838418161e-55,
+          "primePowers": 3.505200460666232e-17
+        },
+        "total": 0.00012198437685367827,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 0,
+        "A": 0,
+        "a": 0,
+        "b": 0.12,
+        "status": "global_moment_proved; endpoint_unsmoothing_and_integrated_bridge_to_be_proved"
+      },
+      "primePowerGap": "log",
+      "primePowerStatus": "existing_mathlib_log_gap",
+      "strict": {
+        "L": 80.28501672056164,
+        "x": 7.367832452193109e+34,
+        "delta": 0.00463162360502864,
+        "pieces": {
+          "pointLow": 0,
+          "pointHigh": 0.000057689763223807657,
+          "pointResidue": 3.381082378343476e-37,
+          "integralLow": 0,
+          "integralHigh": 0.0000011337661879347605,
+          "integralLinear": 1.0312750201137598e-36,
+          "integralConstant": 4.6607825843697896e-63,
+          "primePowers": 2.228808533731283e-17
+        },
+        "total": 0.00005882352941176471,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 70.86022650791351,
+        "x": 5.94573239746949e+30,
+        "delta": 0.008347456365351991,
+        "pieces": {
+          "pointLow": 0,
+          "pointHigh": 0.00011780171722171628,
+          "pointResidue": 4.7470313582784796e-33,
+          "integralLow": 0,
+          "integralHigh": 0.000004182659629478112,
+          "integralLinear": 1.4510950796059398e-32,
+          "integralConstant": 8.12556483424647e-55,
+          "primePowers": 2.4837929856589784e-15
+        },
+        "total": 0.00012198437685367819,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 100,
+        "A": 5.841164365967724,
+        "a": 0.12,
+        "b": 0.035683621678852924,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 17,
+      "primePowerStatus": "kernel_checked_BJSHybridPrimePowers",
+      "strict": {
+        "L": 72.24180450206514,
+        "x": 2.367102466613014e+31,
+        "delta": 0.004175392112404433,
+        "pieces": {
+          "pointLow": 1.6701995962797565e-17,
+          "pointHigh": 0.000057797450398474934,
+          "pointResidue": 1.1695649700966504e-33,
+          "integralLow": 1.740424845612708e-18,
+          "integralHigh": 0.0000010260790131248645,
+          "integralLinear": 3.573901463290781e-33,
+          "integralConstant": 5.026880001390745e-56,
+          "primePowers": 1.4644092639154184e-16
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 62.9848339957718,
+        "x": 2.259258099725435e+27,
+        "delta": 0.007446684722635129,
+        "pieces": {
+          "pointLow": 1.9608599481014063e-15,
+          "pointHigh": 0.00011822980629170236,
+          "pointResidue": 1.4054912902355516e-29,
+          "integralLow": 2.0491115215873135e-16,
+          "integralHigh": 0.000003754570542594482,
+          "integralLinear": 4.3064414758624354e-29,
+          "integralConstant": 6.345277155574594e-48,
+          "primePowers": 1.7215669678233408e-14
+        },
+        "total": 0.00012198437685367828,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 100,
+        "A": 5.841164365967724,
+        "a": 0.12,
+        "b": 0.035683621678852924,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 2,
+      "primePowerStatus": "unproved_sharpened_target",
+      "strict": {
+        "L": 72.24180450203677,
+        "x": 2.3671024665458716e+31,
+        "delta": 0.004175392112411835,
+        "pieces": {
+          "pointLow": 1.6701995963041e-17,
+          "pointHigh": 0.00005779745039860009,
+          "pointResidue": 1.169564970130284e-33,
+          "integralLow": 1.7404248456380883e-18,
+          "integralHigh": 0.000001026079013128914,
+          "integralLinear": 3.573901463393583e-33,
+          "integralConstant": 5.026880001677927e-56,
+          "primePowers": 1.7228344281609035e-17
+        },
+        "total": 0.000058823529411764674,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 62.98483399422127,
+        "x": 2.2592580962223826e+27,
+        "delta": 0.007446684723356775,
+        "pieces": {
+          "pointLow": 1.960859949669866e-15,
+          "pointHigh": 0.00011822980630607033,
+          "pointResidue": 1.405491292449411e-29,
+          "integralLow": 2.0491115232274818e-16,
+          "integralHigh": 0.000003754570543416762,
+          "integralLinear": 4.3064414826479576e-29,
+          "integralConstant": 6.345277175410991e-48,
+          "primePowers": 2.025372904942162e-15
+        },
+        "total": 0.00012198437685367823,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 100,
+        "A": 5.841164365967724,
+        "a": 0.12,
+        "b": 0.035683621678852924,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": "log",
+      "primePowerStatus": "existing_mathlib_log_gap",
+      "strict": {
+        "L": 72.24180450230622,
+        "x": 2.367102467183692e+31,
+        "delta": 0.004175392112341518,
+        "pieces": {
+          "pointLow": 1.670199596072851e-17,
+          "pointHigh": 0.000057797450397411155,
+          "pointResidue": 1.1695649698107802e-33,
+          "integralLow": 1.7404248453969907e-18,
+          "integralHigh": 0.0000010260790130904491,
+          "integralLinear": 3.573901462417013e-33,
+          "integralConstant": 5.026879998949849e-56,
+          "primePowers": 1.2446066793180597e-15
+        },
+        "total": 0.00005882352941176466,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 62.9848340070359,
+        "x": 2.2592581251739422e+27,
+        "delta": 0.007446684717392618,
+        "pieces": {
+          "pointLow": 1.960859936707069e-15,
+          "pointHigh": 0.00011822980618732383,
+          "pointResidue": 1.405491274152603e-29,
+          "integralLow": 2.049111509672046e-16,
+          "integralHigh": 0.000003754570536620914,
+          "integralLinear": 4.30644142656788e-29,
+          "integralConstant": 6.345277011469798e-48,
+          "primePowers": 1.2756777537653693e-13
+        },
+        "total": 0.00012198437685367828,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1000,
+        "A": 10.793216425108234,
+        "a": 0.12,
+        "b": 0.005034233365644149,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 17,
+      "primePowerStatus": "kernel_checked_BJSHybridPrimePowers",
+      "strict": {
+        "L": 59.60390689653517,
+        "x": 7.685070661544175e+25,
+        "delta": 0.003455135229335526,
+        "pieces": {
+          "pointLow": 2.075956682592814e-14,
+          "pointHigh": 0.000057968267673010145,
+          "pointResidue": 4.3662379790360265e-28,
+          "integralLow": 1.1755227922533231e-15,
+          "integralHigh": 8.552616181228757e-7,
+          "integralLinear": 1.3394188869578322e-27,
+          "integralConstant": 5.801404391240575e-45,
+          "primePowers": 9.869658199759729e-14
+        },
+        "total": 0.000058823529411764694,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 50.69778215054017,
+        "x": 1.0417584521174206e+22,
+        "delta": 0.00602847690900278,
+        "pieces": {
+          "pointLow": 2.0962567309440386e-12,
+          "pointHigh": 0.00011891007166944773,
+          "pointResidue": 3.786814244185711e-24,
+          "integralLow": 1.1919020595350423e-13,
+          "integralHigh": 0.000003074292983247879,
+          "integralLinear": 1.166216490057499e-23,
+          "integralConstant": 3.7253532709323694e-37,
+          "primePowers": 9.985535732267961e-12
+        },
+        "total": 0.00012198437685367828,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1000,
+        "A": 10.793216425108234,
+        "a": 0.12,
+        "b": 0.005034233365644149,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 2,
+      "primePowerStatus": "unproved_sharpened_target",
+      "strict": {
+        "L": 59.6039068780739,
+        "x": 7.685070519668e+25,
+        "delta": 0.003455135233322163,
+        "pieces": {
+          "pointLow": 2.0759567023982057e-14,
+          "pointHigh": 0.0000579682677578503,
+          "pointResidue": 4.3662380609946985e-28,
+          "integralLow": 1.1755228034767582e-15,
+          "integralHigh": 8.552616203679439e-7,
+          "integralLinear": 1.3394189121092986e-27,
+          "integralConstant": 5.801404607277467e-45,
+          "primePowers": 1.1611362698769079e-14
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 50.69778128876962,
+        "x": 1.0417575543610513e+22,
+        "delta": 0.00602847723370053,
+        "pieces": {
+          "pointLow": 2.0962576698229803e-12,
+          "pointHigh": 0.00011891008009527896,
+          "pointResidue": 3.786817571921164e-24,
+          "integralLow": 1.1919025939249352e-13,
+          "integralHigh": 0.0000030742933681819694,
+          "integralLinear": 1.1662175154104296e-23,
+          "integralConstant": 3.7253597566092655e-37,
+          "primePowers": 1.174769436097453e-12
+        },
+        "total": 0.0001219843768536783,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1000,
+        "A": 10.793216425108234,
+        "a": 0.12,
+        "b": 0.005034233365644149,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": "log",
+      "primePowerStatus": "existing_mathlib_log_gap",
+      "strict": {
+        "L": 59.60390702232757,
+        "x": 7.685071628267695e+25,
+        "delta": 0.0034551352021711676,
+        "pieces": {
+          "pointLow": 2.0759565476417856e-14,
+          "pointHigh": 0.000057968267094921766,
+          "pointResidue": 4.366237420581697e-28,
+          "integralLow": 1.1755227157784885e-15,
+          "integralHigh": 8.5526160282531e-7,
+          "integralLinear": 1.3394187155794467e-27,
+          "integralConstant": 5.801402919197092e-45,
+          "primePowers": 6.920825310887219e-13
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 50.697786999168365,
+        "x": 1.0417635032290684e+22,
+        "delta": 0.006028475082137863,
+        "pieces": {
+          "pointLow": 2.0962514484844194e-12,
+          "pointHigh": 0.00011891002426273068,
+          "pointResidue": 3.786795521214833e-24,
+          "integralLow": 1.1918990528715615e-13,
+          "integralHigh": 0.000003074290817472442,
+          "integralLinear": 1.166210721073364e-23,
+          "integralConstant": 3.7253167804136472e-37,
+          "primePowers": 5.955803379862706e-11
+        },
+        "total": 0.00012198437685367828,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 10000,
+        "A": 17.432915068353186,
+        "a": 0.12,
+        "b": 0.0006500104563403004,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 17,
+      "primePowerStatus": "kernel_checked_BJSHybridPrimePowers",
+      "strict": {
+        "L": 46.98607214324431,
+        "x": 254560993998157450000,
+        "delta": 0.0027318040829309225,
+        "pieces": {
+          "pointLow": 2.3370661537195714e-11,
+          "pointHigh": 0.00005814072039481392,
+          "pointResidue": 1.6721259867803615e-22,
+          "integralLow": 8.244991311792278e-13,
+          "integralHigh": 6.827158258031902e-7,
+          "integralLinear": 5.160243557698351e-22,
+          "integralConstant": 6.744903383693017e-34,
+          "primePowers": 6.89959869178815e-11
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 38.59480738895106,
+        "x": 57744666724153900,
+        "delta": 0.004615481860541134,
+        "pieces": {
+          "pointLow": 1.8890839518647222e-9,
+          "pointHigh": 0.00011958815635552198,
+          "pointResidue": 8.974065574357744e-19,
+          "integralLow": 6.707585062348034e-11,
+          "integralHigh": 0.000002388670330367968,
+          "integralLinear": 2.7864326113194214e-18,
+          "integralConstant": 1.6049495916878604e-26,
+          "primePowers": 5.594007982148418e-9
+        },
+        "total": 0.00012198437685367827,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 10000,
+        "A": 17.432915068353186,
+        "a": 0.12,
+        "b": 0.0006500104563403004,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 2,
+      "primePowerStatus": "unproved_sharpened_target",
+      "strict": {
+        "L": 46.98605989778163,
+        "x": 254557876800092050000,
+        "delta": 0.0027318061736945312,
+        "pieces": {
+          "pointLow": 2.3370810720792666e-11,
+          "pointHigh": 0.00005814078004492369,
+          "pointResidue": 1.6721468986553307e-22,
+          "integralLow": 8.245044006292125e-13,
+          "integralHigh": 6.827170542991108e-7,
+          "integralLinear": 5.160308130418805e-22,
+          "integralConstant": 6.745070378854413e-34,
+          "primePowers": 8.117226776048509e-12
+        },
+        "total": 0.000058823529411764694,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 38.594356097443175,
+        "x": 57718612925806730,
+        "delta": 0.004615612045362632,
+        "pieces": {
+          "pointLow": 1.8895323581538176e-9,
+          "pointHigh": 0.00011959292788067554,
+          "pointResidue": 8.978221390834175e-19,
+          "integralLow": 6.709180048064107e-11,
+          "integralHigh": 0.0000023888340739079187,
+          "integralLinear": 2.7877241017619995e-18,
+          "integralConstant": 1.6064182311213904e-26,
+          "primePowers": 6.58274932506076e-10
+        },
+        "total": 0.00012198437685367827,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 10000,
+        "A": 17.432915068353186,
+        "a": 0.12,
+        "b": 0.0006500104563403004,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": "log",
+      "primePowerStatus": "existing_mathlib_log_gap",
+      "strict": {
+        "L": 46.986134978400834,
+        "x": 254576989880607570000,
+        "delta": 0.002731793354618417,
+        "pieces": {
+          "pointLow": 2.3369896046240534e-11,
+          "pointHigh": 0.000058140414313162834,
+          "pointResidue": 1.6720186857683055e-22,
+          "integralLow": 8.244720925752435e-13,
+          "integralHigh": 6.827095220562281e-7,
+          "integralLinear": 5.159912228341049e-22,
+          "integralConstant": 6.744046546275935e-34,
+          "primePowers": 3.813821775033265e-10
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 38.59661641602741,
+        "x": 57849222933765650,
+        "delta": 0.004614960044312547,
+        "pieces": {
+          "pointLow": 1.8872875609012376e-9,
+          "pointHigh": 0.0001195690315070252,
+          "pointResidue": 8.957426066978276e-19,
+          "integralLow": 6.701195288863133e-11,
+          "integralHigh": 0.0000023880140714816498,
+          "integralLinear": 2.7812616076767548e-18,
+          "integralConstant": 1.59907593744369e-26,
+          "primePowers": 2.5376975653913665e-8
+        },
+        "total": 0.00012198437685367823,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 100000,
+        "A": 25.76026029570256,
+        "a": 0.12,
+        "b": 0.0000796597576116186,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 17,
+      "primePowerStatus": "kernel_checked_BJSHybridPrimePowers",
+      "strict": {
+        "L": 34.91378335249873,
+        "x": 1455001537884293.8,
+        "delta": 0.002033723439016022,
+        "pieces": {
+          "pointLow": 1.943961546699528e-8,
+          "pointHigh": 0.00005824987279330389,
+          "pointResidue": 3.937038217790168e-17,
+          "integralLow": 4.688901888320386e-10,
+          "integralHigh": 5.147219310317286e-7,
+          "integralLinear": 1.2268632587636604e-16,
+          "integralConstant": 2.8038519141482586e-23,
+          "primePowers": 3.902618161120262e-8
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 27.521119696310567,
+        "x": 895922451320.8535,
+        "delta": 0.0032281518727964816,
+        "pieces": {
+          "pointLow": 9.938366302441331e-7,
+          "pointHigh": 0.00011729725783029249,
+          "pointResidue": 8.11135626360197e-14,
+          "integralLow": 2.422898575595875e-8,
+          "integralHigh": 0.0000016638251686766083,
+          "integralLinear": 2.553441562600741e-13,
+          "integralConstant": 9.470826379918232e-17,
+          "primePowers": 0.0000020052279021566804
+        },
+        "total": 0.0001219843768536783,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 100000,
+        "A": 25.76026029570256,
+        "a": 0.12,
+        "b": 0.0000796597576116186,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 2,
+      "primePowerStatus": "unproved_sharpened_target",
+      "strict": {
+        "L": 34.9074105626218,
+        "x": 1445758601739193,
+        "delta": 0.002034533631113852,
+        "pieces": {
+          "pointLow": 1.950521682490842e-8,
+          "pointHigh": 0.00005828371679027927,
+          "pointResidue": 3.962931602868199e-17,
+          "integralLow": 4.704759336504494e-10,
+          "integralHigh": 5.152301033665997e-7,
+          "integralLinear": 1.234940704072986e-16,
+          "integralConstant": 2.840354116976202e-23,
+          "primePowers": 4.6068251971345645e-9
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 27.38134489624018,
+        "x": 779052984258.3325,
+        "delta": 0.003256476305384854,
+        "pieces": {
+          "pointLow": 0.0000010712184285265228,
+          "pointHigh": 0.00011893047320082554,
+          "pointResidue": 9.375797625760165e-14,
+          "integralLow": 2.612221077261979e-8,
+          "integralHigh": 0.0000017022544741470595,
+          "integralLinear": 2.952206583369993e-13,
+          "integralConstant": 1.2592301093413788e-16,
+          "primePowers": 2.543081503019483e-7
+        },
+        "total": 0.00012198437685367824,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 100000,
+        "A": 25.76026029570256,
+        "a": 0.12,
+        "b": 0.0000796597576116186,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": "log",
+      "primePowerStatus": "existing_mathlib_log_gap",
+      "strict": {
+        "L": 34.93594220234237,
+        "x": 1487602565164468.2,
+        "delta": 0.0020309088277137705,
+        "pieces": {
+          "pointLow": 1.9213230328237935e-8,
+          "pointHigh": 0.000058132361679302385,
+          "pointResidue": 3.848315027560436e-17,
+          "integralLow": 4.6341800600967785e-10,
+          "integralHigh": 5.129590054115944e-7,
+          "integralLinear": 1.1991864960962844e-16,
+          "integralConstant": 2.680543484083698e-23,
+          "primePowers": 1.5853207855805455e-7
+        },
+        "total": 0.00005882352941176468,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 27.81641155150674,
+        "x": 1203688311136.2673,
+        "delta": 0.0031691203489145996,
+        "pieces": {
+          "pointLow": 8.483170269351018e-7,
+          "pointHigh": 0.00011392987708160857,
+          "pointResidue": 5.973307183699687e-14,
+          "integralLow": 2.0670272193525942e-8,
+          "integralHigh": 0.0000015856151085174267,
+          "integralLinear": 1.879432295766615e-13,
+          "integralConstant": 5.188712539384237e-17,
+          "primePowers": 0.00000559989711669544
+        },
+        "total": 0.00012198437685367827,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 200000,
+        "A": 28.597523587420145,
+        "a": 0.12,
+        "b": 0.000042036234807335815,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 17,
+      "primePowerStatus": "kernel_checked_BJSHybridPrimePowers",
+      "strict": {
+        "L": 31.511832134597157,
+        "x": 48463503943631.664,
+        "delta": 0.001827363089348375,
+        "pieces": {
+          "pointLow": 1.310127096547082e-7,
+          "pointHigh": 0.00005798974434565151,
+          "pointResidue": 1.3096086370848847e-15,
+          "integralLow": 2.8587979991219303e-9,
+          "integralHigh": 4.6251326499732154e-7,
+          "integralLinear": 4.09770067098387e-15,
+          "integralConstant": 2.810810265147733e-20,
+          "primePowers": 2.3740028805469263e-7
+        },
+        "total": 0.000058823529411764694,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 25.07494935654912,
+        "x": 77609009294.23557,
+        "delta": 0.0027323967830888895,
+        "pieces": {
+          "pointLow": 0.000004114322723158279,
+          "pointHigh": 0.0001089691845130382,
+          "pointResidue": 1.027727064670616e-12,
+          "integralLow": 9.07973623902924e-8,
+          "integralHigh": 0.0000013150999270082448,
+          "integralLinear": 3.2503951025507903e-12,
+          "integralConstant": 1.3913037959291623e-14,
+          "primePowers": 0.000007494968036048047
+        },
+        "total": 0.00012198437685367826,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 200000,
+        "A": 28.597523587420145,
+        "a": 0.12,
+        "b": 0.000042036234807335815,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 2,
+      "primePowerStatus": "unproved_sharpened_target",
+      "strict": {
+        "L": 31.47466289951089,
+        "x": 46695219047723.49,
+        "delta": 0.0018316131295387453,
+        "pieces": {
+          "pointLow": 1.3362791516955243e-7,
+          "pointHigh": 0.0000581932564420637,
+          "pointResidue": 1.3608068640310024e-15,
+          "integralLow": 2.9160154672776885e-9,
+          "integralHigh": 4.6524137819593044e-7,
+          "integralLinear": 4.258107857127913e-15,
+          "integralConstant": 3.031439744094844e-20,
+          "primePowers": 2.8487655249289995e-8
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 24.62796695501055,
+        "x": 49635242617.587425,
+        "delta": 0.0028098063507590023,
+        "pieces": {
+          "pointLow": 0.000005238064620692756,
+          "pointHigh": 0.00011409006500178645,
+          "pointResidue": 1.6361054357193865e-12,
+          "integralLow": 1.1571268416478395e-7,
+          "integralHigh": 0.0000014174043770339763,
+          "integralLinear": 5.179442482202081e-12,
+          "integralConstant": 3.4662773709104487e-14,
+          "primePowers": 0.0000011231233197896355
+        },
+        "total": 0.0001219843768536783,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 200000,
+        "A": 28.597523587420145,
+        "a": 0.12,
+        "b": 0.000042036234807335815,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": "log",
+      "primePowerStatus": "existing_mathlib_log_gap",
+      "strict": {
+        "L": 31.618864198326662,
+        "x": 53938423070242.555,
+        "delta": 0.001815179732424146,
+        "pieces": {
+          "pointLow": 1.2376535749751017e-7,
+          "pointHigh": 0.00005740812576437231,
+          "pointResidue": 1.1726961112038422e-15,
+          "integralLow": 2.700252559333958e-9,
+          "integralHigh": 4.547503089107504e-7,
+          "integralLinear": 3.668788289349693e-15,
+          "integralConstant": 2.2611770138154202e-20,
+          "primePowers": 8.341877235832827e-7
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 25.730377537643438,
+        "x": 149472391075.6638,
+        "delta": 0.0026227277581417343,
+        "pieces": {
+          "pointLow": 0.000002889135023907914,
+          "pointHigh": 0.00010193118053960515,
+          "pointResidue": 5.200233638981245e-13,
+          "integralLow": 6.366953820537871e-8,
+          "integralHigh": 0.000001179039183913909,
+          "integralLinear": 1.6424829638397622e-12,
+          "integralConstant": 3.650702303430086e-15,
+          "primePowers": 0.00001592135040188888
+        },
+        "total": 0.00012198437685367828,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 300000,
+        "A": 30.328111620097868,
+        "a": 0.12,
+        "b": 0.00002888458022097993,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 17,
+      "primePowerStatus": "kernel_checked_BJSHybridPrimePowers",
+      "strict": {
+        "L": 29.65326835116728,
+        "x": 7555284371880.2705,
+        "delta": 0.0017013502281171041,
+        "pieces": {
+          "pointLow": 3.7394992986088844e-7,
+          "pointHigh": 0.00005737479619342303,
+          "pointResidue": 8.927022154584274e-15,
+          "integralLow": 7.715519376318355e-9,
+          "integralHigh": 4.272917989090561e-7,
+          "integralLinear": 2.800555820492388e-14,
+          "integralConstant": 1.2320392372612002e-18,
+          "primePowers": 6.397759332615915e-7
+        },
+        "total": 0.00005882352941176471,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 24.064205006883295,
+        "x": 28245641709.954082,
+        "delta": 0.0024126811672928942,
+        "pieces": {
+          "pointLow": 0.000007536404320492165,
+          "pointHigh": 0.00010026016511257172,
+          "pointResidue": 2.9424360812383077e-12,
+          "integralLow": 1.571915616707246e-7,
+          "integralHigh": 0.000001071026087078573,
+          "integralLinear": 9.326568028772453e-12,
+          "integralConstant": 1.0967425157263091e-13,
+          "primePowers": 0.00001295957739318669
+        },
+        "total": 0.00012198437685367822,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 300000,
+        "A": 30.328111620097868,
+        "a": 0.12,
+        "b": 0.00002888458022097993,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 2,
+      "primePowerStatus": "unproved_sharpened_target",
+      "strict": {
+        "L": 29.55708381455858,
+        "x": 6862437495223.612,
+        "delta": 0.001711608755921366,
+        "pieces": {
+          "pointLow": 3.936503550982254e-7,
+          "pointHigh": 0.00005790858011094786,
+          "pointResidue": 9.860297325511981e-15,
+          "integralLow": 8.123224780479111e-9,
+          "integralHigh": 4.3393699900600705e-7,
+          "integralLinear": 3.0937872696993544e-14,
+          "integralConstant": 1.4984388521870302e-18,
+          "primePowers": 7.923868113245241e-8
+        },
+        "total": 0.000058823529411764694,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 23.3950207981757,
+        "x": 14465333028.652836,
+        "delta": 0.0025157290938907944,
+        "pieces": {
+          "pointLow": 0.000010832377280111634,
+          "pointHigh": 0.0001075326718276295,
+          "pointResidue": 5.909872824406617e-12,
+          "integralLow": 2.2630970021921733e-7,
+          "integralHigh": 0.0000011998535172325287,
+          "integralLinear": 1.8761663038804224e-11,
+          "integralConstant": 4.307565554263002e-13,
+          "primePowers": 0.000002193139426192973
+        },
+        "total": 0.00012198437685367827,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 300000,
+        "A": 30.328111620097868,
+        "a": 0.12,
+        "b": 0.00002888458022097993,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": "log",
+      "primePowerStatus": "existing_mathlib_log_gap",
+      "strict": {
+        "L": 29.88865184983198,
+        "x": 9560411154232.727,
+        "delta": 0.0016765040773434863,
+        "pieces": {
+          "pointLow": 3.298122788456162e-7,
+          "pointHigh": 0.00005609165932831831,
+          "pointResidue": 6.999178983755711e-15,
+          "integralLow": 6.802342953632293e-9,
+          "integralHigh": 4.1147567519878874e-7,
+          "integralLinear": 2.194990731245102e-14,
+          "integralConstant": 7.631277817625881e-19,
+          "primePowers": 0.000001983779757498491
+        },
+        "total": 0.000058823529411764694,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 24.89755690364833,
+        "x": 64993747093.18789,
+        "delta": 0.002290234360397502,
+        "pieces": {
+          "pointLow": 0.000004801964110717489,
+          "pointHigh": 0.00009198630890816062,
+          "pointResidue": 1.2359522396396863e-12,
+          "integralLow": 9.996494176598074e-8,
+          "integralHigh": 9.308813220113724e-7,
+          "integralLinear": 3.910410380611417e-12,
+          "integralConstant": 1.998655390239439e-14,
+          "primePowers": 0.00002416525240467364
+        },
+        "total": 0.00012198437685367827,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 500000,
+        "A": 32.58288951572046,
+        "a": 0.12,
+        "b": 0.000017981151517230823,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 17,
+      "primePowerStatus": "kernel_checked_BJSHybridPrimePowers",
+      "strict": {
+        "L": 27.599084874798454,
+        "x": 968568334932.9921,
+        "delta": 0.001526254572593437,
+        "pieces": {
+          "pointLow": 0.0000012055794656559481,
+          "pointHigh": 0.000055300912313476937,
+          "pointResidue": 7.481781954992612e-14,
+          "integralLow": 2.3233515829666872e-8,
+          "integralHigh": 3.7081739303079346e-7,
+          "integralLinear": 2.354934274052604e-13,
+          "integralConstant": 8.079505494356202e-17,
+          "primePowers": 0.000001922986413379317
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 23.175277601773097,
+        "x": 11611683213.451075,
+        "delta": 0.0020123530257663176,
+        "pieces": {
+          "pointLow": 0.000013112428197304797,
+          "pointHigh": 0.00008683188440480024,
+          "pointResidue": 7.432071690293972e-12,
+          "integralLow": 2.5513016199309524e-7,
+          "integralHigh": 7.754677695032125e-7,
+          "integralLinear": 2.3606647816165374e-11,
+          "integralConstant": 6.751693154515046e-13,
+          "primePowers": 0.000021009434606188045
+        },
+        "total": 0.00012198437685367823,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 500000,
+        "A": 32.58288951572046,
+        "a": 0.12,
+        "b": 0.000017981151517230823,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 2,
+      "primePowerStatus": "unproved_sharpened_target",
+      "strict": {
+        "L": 27.335696154138766,
+        "x": 744289682455.7686,
+        "delta": 0.0015515874023967144,
+        "pieces": {
+          "pointLow": 0.0000013885276095157332,
+          "pointHigh": 0.0000567604861294815,
+          "pointResidue": 9.830098256462877e-14,
+          "integralLow": 2.6772182537546956e-8,
+          "integralHigh": 3.871189343323854e-7,
+          "integralLinear": 3.0955031770318765e-13,
+          "integralConstant": 1.3820135372969187e-16,
+          "primePowers": 2.6062414790801225e-7
+        },
+        "total": 0.000058823529411764694,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 22.289121187464296,
+        "x": 4786767549.438599,
+        "delta": 0.002126950944809159,
+        "pieces": {
+          "pointLow": 0.00002123447573077761,
+          "pointHigh": 0.00009542551843656291,
+          "pointResidue": 1.8745401836179857e-11,
+          "integralLow": 4.1414331152399324e-7,
+          "integralHigh": 9.029994962137646e-7,
+          "integralLinear": 5.967570850959365e-11,
+          "integralConstant": 4.1396474165896e-12,
+          "primePowers": 0.000004007157317842196
+        },
+        "total": 0.00012198437685367826,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 500000,
+        "A": 32.58288951572046,
+        "a": 0.12,
+        "b": 0.000017981151517230823,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": "log",
+      "primePowerStatus": "existing_mathlib_log_gap",
+      "strict": {
+        "L": 28.094753608667894,
+        "x": 1589997577648.3018,
+        "delta": 0.0014796971619548626,
+        "pieces": {
+          "pointLow": 9.243409606761092e-7,
+          "pointHigh": 0.0000526680953520924,
+          "pointResidue": 4.477218663741142e-14,
+          "integralLow": 1.779780376878634e-8,
+          "integralHigh": 3.420708982673769e-7,
+          "integralLinear": 1.408044606419291e-13,
+          "integralConstant": 2.942933116311491e-17,
+          "primePowers": 0.000004871224211353948
+        },
+        "total": 0.000058823529411764694,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 24.15332359171646,
+        "x": 30878426074.576225,
+        "delta": 0.001893026408234506,
+        "pieces": {
+          "pointLow": 0.000007715270904874962,
+          "pointHigh": 0.00007837540043076025,
+          "pointResidue": 2.681624394892017e-12,
+          "integralLow": 1.4975448137182134e-7,
+          "integralHigh": 6.567666581448516e-7,
+          "integralLinear": 8.49816666880341e-12,
+          "integralConstant": 9.141346823085894e-14,
+          "primePowers": 0.00003508717310732185
+        },
+        "total": 0.00012198437685367827,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1000000,
+        "A": 35.77525210715637,
+        "a": 0.12,
+        "b": 0.000009431846958920715,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 17,
+      "primePowerStatus": "kernel_checked_BJSHybridPrimePowers",
+      "strict": {
+        "L": 25.59623414515058,
+        "x": 130708324230.99287,
+        "delta": 0.0012527972435596969,
+        "pieces": {
+          "pointLow": 0.000003885268767997676,
+          "pointHigh": 0.00004894459225741416,
+          "pointResidue": 5.977927963246831e-13,
+          "integralLow": 6.846256615207578e-8,
+          "integralHigh": 2.705094686304542e-7,
+          "integralLinear": 1.8886220998107106e-12,
+          "integralConstant": 4.800324737884661e-15,
+          "primePowers": 0.0000056546938603550944
+        },
+        "total": 0.00005882352941176468,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 22.431890555395963,
+        "x": 5521362825.251572,
+        "delta": 0.00152676378244179,
+        "pieces": {
+          "pointLow": 0.000021570476743769393,
+          "pointHigh": 0.00006806219826507351,
+          "pointResidue": 1.61479681051153e-11,
+          "integralLow": 3.830048444930135e-7,
+          "integralHigh": 4.621284815699001e-7,
+          "integralLinear": 5.138754692333526e-11,
+          "integralConstant": 3.0905132372834335e-12,
+          "primePowers": 0.0000315064978927442
+        },
+        "total": 0.00012198437685367828,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1000000,
+        "A": 35.77525210715637,
+        "a": 0.12,
+        "b": 0.000009431846958920715,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 2,
+      "primePowerStatus": "unproved_sharpened_target",
+      "strict": {
+        "L": 24.984411540058698,
+        "x": 70891157164.30792,
+        "delta": 0.0013016305644308614,
+        "pieces": {
+          "pointLow": 0.0000054048495204265425,
+          "pointHigh": 0.00005209770749828929,
+          "pointResidue": 1.1291946452110661e-12,
+          "integralLow": 9.536546217825005e-8,
+          "integralHigh": 2.995774665650842e-7,
+          "integralLinear": 3.571985699139001e-12,
+          "integralConstant": 1.6738252303638484e-14,
+          "primePowers": 9.260247463869452e-7
+        },
+        "total": 0.00005882352941176471,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 21.392023680688958,
+        "x": 1951811359.542867,
+        "delta": 0.0016292861922791967,
+        "pieces": {
+          "pointLow": 0.0000380432817209105,
+          "pointHigh": 0.00007616325676331354,
+          "pointResidue": 4.790054120097311e-11,
+          "integralLow": 6.775221243636408e-7,
+          "integralHigh": 5.536024314557925e-7,
+          "integralLinear": 1.5286763307873455e-10,
+          "integralConstant": 2.600242784285502e-11,
+          "primePowers": 0.000006546487043032714
+        },
+        "total": 0.00012198437685367828,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1000000,
+        "A": 35.77525210715637,
+        "a": 0.12,
+        "b": 0.000009431846958920715,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": "log",
+      "primePowerStatus": "existing_mathlib_log_gap",
+      "strict": {
+        "L": 26.44249103480281,
+        "x": 304668773465.38684,
+        "delta": 0.0011882573124096147,
+        "pieces": {
+          "pointLow": 0.00000246338576112546,
+          "pointHigh": 0.000044937419505812304,
+          "pointResidue": 2.4825596187720033e-13,
+          "integralLow": 4.3332355162859016e-8,
+          "integralHigh": 2.3513843773912147e-7,
+          "integralLinear": 7.830320883875902e-13,
+          "integralConstant": 8.539409550598765e-16,
+          "primePowers": 0.000011144252319782945
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 23.503643739799536,
+        "x": 16125113523.161636,
+        "delta": 0.0014278441886329026,
+        "pieces": {
+          "pointLow": 0.000012046535884301121,
+          "pointHigh": 0.000060749907735160425,
+          "pointResidue": 5.277060072707188e-12,
+          "integralLow": 2.1329738653952156e-7,
+          "integralHigh": 3.846142424047221e-7,
+          "integralLinear": 1.674836843381637e-11,
+          "integralConstant": 3.449580241838421e-13,
+          "primePowers": 0.000048589999234885914
+        },
+        "total": 0.00012198437685367823,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1894438.5122,
+        "A": 38.853332244830206,
+        "a": 0.12,
+        "b": 0.000005193410917740267,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 17,
+      "primePowerStatus": "kernel_checked_BJSHybridPrimePowers",
+      "strict": {
+        "L": 24.498036606281516,
+        "x": 43587515575.269554,
+        "delta": 0.000995674949056373,
+        "pieces": {
+          "pointLow": 0.000007634524560806025,
+          "pointHigh": 0.00004064305091294839,
+          "pointResidue": 1.8729949690664522e-12,
+          "integralLow": 1.2417144800082794e-7,
+          "integralHigh": 1.7898216848526092e-7,
+          "integralLinear": 5.9310460920857286e-12,
+          "integralConstant": 4.519927216231562e-14,
+          "primePowers": 0.000010242792472283822
+        },
+        "total": 0.00005882352941176465,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 22.02780271300728,
+        "x": 3685981632.019356,
+        "delta": 0.0011618983629891927,
+        "pieces": {
+          "pointLow": 0.00002919756084286194,
+          "pointHigh": 0.00005274690254525927,
+          "pointResidue": 2.4632344633310472e-11,
+          "integralLow": 4.778995153710925e-7,
+          "integralHigh": 2.7287715878118557e-7,
+          "integralLinear": 7.84715007191328e-11,
+          "integralConstant": 7.068814266331565e-12,
+          "primePowers": 0.00003928902661874517
+        },
+        "total": 0.00012198437685367827,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1894438.5122,
+        "A": 38.853332244830206,
+        "a": 0.12,
+        "b": 0.000005193410917740267,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 2,
+      "primePowerStatus": "unproved_sharpened_target",
+      "strict": {
+        "L": 23.64724381679246,
+        "x": 18615191223.967464,
+        "delta": 0.001050052453158336,
+        "pieces": {
+          "pointLow": 0.000012102638281778011,
+          "pointHigh": 0.00004440485585946677,
+          "pointResidue": 4.543410598754069e-12,
+          "integralLow": 1.9724344420467967e-7,
+          "integralHigh": 2.0666973593803843e-7,
+          "integralLinear": 1.4415012071373017e-11,
+          "integralConstant": 2.57189880209009e-13,
+          "primePowers": 0.000001912102874764643
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 20.937710237468032,
+        "x": 1239173221.6743774,
+        "delta": 0.0012438183553033862,
+        "pieces": {
+          "pointLow": 0.00005297843665601526,
+          "pointHigh": 0.00005940565330193429,
+          "pointResidue": 7.708485723723508e-11,
+          "integralLow": 8.699769529192225e-7,
+          "integralHigh": 3.3012692138659416e-7,
+          "integralLinear": 2.463325976658572e-10,
+          "integralConstant": 6.599138535191399e-11,
+          "primePowers": 0.000008399793612582557
+        },
+        "total": 0.0001219843768536782,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1894438.5122,
+        "A": 38.853332244830206,
+        "a": 0.12,
+        "b": 0.000005193410917740267,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": "log",
+      "primePowerStatus": "existing_mathlib_log_gap",
+      "strict": {
+        "L": 25.525843871545366,
+        "x": 121824079721.51375,
+        "delta": 0.0009337258698061258,
+        "pieces": {
+          "pointLow": 0.000004382759657664334,
+          "pointHigh": 0.00003657962786675922,
+          "pointResidue": 6.431566309737437e-13,
+          "integralLow": 7.112118714083683e-8,
+          "integralHigh": 1.507036845786046e-7,
+          "integralLinear": 2.0322292244540794e-12,
+          "integralConstant": 5.541971152835089e-15,
+          "primePowers": 0.000017639314334693882
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 23.130338057979674,
+        "x": 11101411040.814936,
+        "delta": 0.0010845300160693867,
+        "pieces": {
+          "pointLow": 0.000016022241071963193,
+          "pointHigh": 0.00004688777195347724,
+          "pointResidue": 7.788787736510556e-12,
+          "integralLow": 2.614650440474142e-7,
+          "integralHigh": 2.2570156356098385e-7,
+          "integralLinear": 2.4742416285682495e-11,
+          "integralConstant": 7.401747836150623e-13,
+          "primePowers": 0.0000585871639492506
+        },
+        "total": 0.00012198437685367823,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 10000000,
+        "A": 47.477890502714615,
+        "a": 0.12,
+        "b": 0.000001089771815667957,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 17,
+      "primePowerStatus": "kernel_checked_BJSHybridPrimePowers",
+      "strict": {
+        "L": 23.301937797227527,
+        "x": 13179623468.683578,
+        "delta": 0.0004915019187864178,
+        "pieces": {
+          "pointLow": 0.000017836676519791864,
+          "pointHigh": 0.00002109274872602642,
+          "pointResidue": 6.5123093309766624e-12,
+          "integralLow": 2.380947828198618e-7,
+          "integralHigh": 4.5992853479134745e-8,
+          "integralLinear": 2.067881212258954e-11,
+          "integralConstant": 5.210808086010067e-13,
+          "primePowers": 0.000019609988817445145
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 21.576576280923888,
+        "x": 2347404956.0558057,
+        "delta": 0.0005474663169734177,
+        "pieces": {
+          "pointLow": 0.000045643709713710384,
+          "pointHigh": 0.00002537317829508657,
+          "pointResidue": 3.9487513139082255e-11,
+          "integralLow": 6.121780394931554e-7,
+          "integralHigh": 6.193478278613412e-8,
+          "integralLinear": 1.259525209717933e-10,
+          "integralConstant": 1.7814364727109233e-11,
+          "primePowers": 0.0000502931927682031
+        },
+        "total": 0.00012198437685367818,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 10000000,
+        "A": 47.477890502714615,
+        "a": 0.12,
+        "b": 0.000001089771815667957,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 2,
+      "primePowerStatus": "unproved_sharpened_target",
+      "strict": {
+        "L": 22.293088065319537,
+        "x": 4805793784.053114,
+        "delta": 0.000523490535966231,
+        "pieces": {
+          "pointLow": 0.000030874837389600637,
+          "pointHigh": 0.000023482190283929492,
+          "pointResidue": 1.8667871608994385e-11,
+          "integralLow": 4.1324458846153177e-7,
+          "integralHigh": 5.468999642852475e-8,
+          "integralLinear": 5.942825152490986e-11,
+          "integralConstant": 4.106163454155741e-12,
+          "primePowers": 0.000003998484951057879
+        },
+        "total": 0.00005882352941176465,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 20.51363871009724,
+        "x": 810886547.4285402,
+        "delta": 0.0005850717776045015,
+        "pieces": {
+          "pointLow": 0.00008168357294826908,
+          "pointHigh": 0.00002852111153329989,
+          "pointResidue": 1.2023422632093892e-10,
+          "integralLow": 0.000001099189312490688,
+          "integralHigh": 7.466132485673213e-8,
+          "integralLinear": 3.847180497607789e-10,
+          "integralConstant": 1.574860246062781e-10,
+          "primePowers": 0.000010605179296461046
+        },
+        "total": 0.00012198437685367812,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 10000000,
+        "A": 47.477890502714615,
+        "a": 0.12,
+        "b": 0.000001089771815667957,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": "log",
+      "primePowerStatus": "existing_mathlib_log_gap",
+      "strict": {
+        "L": 24.444064052432164,
+        "x": 41297345136.259224,
+        "delta": 0.00045764004747391953,
+        "pieces": {
+          "pointLow": 0.000009605566800217147,
+          "pointHigh": 0.00001872192964689866,
+          "pointResidue": 1.9812280695089713e-12,
+          "integralLow": 1.2786562029254936e-7,
+          "integralHigh": 3.789985690038802e-8,
+          "integralLinear": 6.274521468088449e-12,
+          "integralConstant": 5.046814087843048e-14,
+          "primePowers": 0.000030330259181238214
+        },
+        "total": 0.00005882352941176463,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 22.6680497950719,
+        "x": 6992121100.896332,
+        "delta": 0.0005113651138895781,
+        "pieces": {
+          "pointLow": 0.000025173224416896864,
+          "pointHigh": 0.0000225588490634404,
+          "pointResidue": 1.2618479242379269e-11,
+          "integralLow": 3.3658574762923934e-7,
+          "integralHigh": 5.126715217043088e-8,
+          "integralLinear": 4.013119547006663e-11,
+          "integralConstant": 1.9059429143258872e-12,
+          "primePowers": 0.0000738643958179237
+        },
+        "total": 0.00012198437685367826,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 100000000,
+        "A": 60.86817548237732,
+        "a": 0.12,
+        "b": 1.2363589354438428e-7,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 17,
+      "primePowerStatus": "kernel_checked_BJSHybridPrimePowers",
+      "strict": {
+        "L": 22.95974513683031,
+        "x": 9360318333.344704,
+        "delta": 0.00016912896521869186,
+        "pieces": {
+          "pointLow": 0.000027538734145688668,
+          "pointHigh": 0.00000736632589825171,
+          "pointResidue": 9.306204425562414e-12,
+          "integralLow": 2.8698904288214534e-7,
+          "integralHigh": 5.532297672197819e-9,
+          "integralLinear": 2.9575210182664347e-11,
+          "integralConstant": 1.0492895130883865e-12,
+          "primePowers": 0.000023625908096565817
+        },
+        "total": 0.00005882352941176466,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 21.5117838707311,
+        "x": 2200133485.574395,
+        "delta": 0.00018514866756890285,
+        "pieces": {
+          "pointLow": 0.00006062550991327172,
+          "pointHigh": 0.000008606848631498936,
+          "pointResidue": 4.225767561379894e-11,
+          "integralLow": 6.343619627746306e-7,
+          "integralHigh": 7.106493244981014e-9,
+          "integralLinear": 1.3481291685823776e-10,
+          "integralConstant": 2.034363843266342e-11,
+          "primePowers": 0.00005211035243865705
+        },
+        "total": 0.00012198437685367823,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 100000000,
+        "A": 60.86817548237732,
+        "a": 0.12,
+        "b": 1.2363589354438428e-7,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 2,
+      "primePowerStatus": "unproved_sharpened_target",
+      "strict": {
+        "L": 22.03350747054549,
+        "x": 3707069356.507614,
+        "delta": 0.00017920876046154276,
+        "pieces": {
+          "pointLow": 0.00004559921359937251,
+          "pointHigh": 0.000008133464937487143,
+          "pointResidue": 2.448591292876421e-11,
+          "integralLow": 4.764071837909327e-7,
+          "integralHigh": 6.489772687138974e-9,
+          "integralLinear": 7.800370913077613e-11,
+          "integralConstant": 6.9867108636752765e-12,
+          "primePowers": 0.000004607844442094039
+        },
+        "total": 0.000058823529411764694,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 20.577159005154094,
+        "x": 864065388.5995209,
+        "delta": 0.00019628607568927676,
+        "pieces": {
+          "pointLow": 0.00010113410318592414,
+          "pointHigh": 0.000009539027017291925,
+          "pointResidue": 1.1248653357503096e-10,
+          "integralLow": 0.0000010613197999367967,
+          "integralHigh": 8.375651310789323e-9,
+          "integralLinear": 3.5985509371137033e-10,
+          "integralConstant": 1.3824402375431133e-10,
+          "primePowers": 0.000010240940613563413
+        },
+        "total": 0.0001219843768536781,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 100000000,
+        "A": 60.86817548237732,
+        "a": 0.12,
+        "b": 1.2363589354438428e-7,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": "log",
+      "primePowerStatus": "existing_mathlib_log_gap",
+      "strict": {
+        "L": 24.053731377523157,
+        "x": 27951351162.92707,
+        "delta": 0.00015795140014069242,
+        "pieces": {
+          "pointLow": 0.000015211515556484081,
+          "pointHigh": 0.000006566606970937117,
+          "pointResidue": 2.9747113530884532e-12,
+          "integralLow": 1.5808966774848664e-7,
+          "integralHigh": 4.5924840350210275e-9,
+          "integralLinear": 9.429092425950245e-12,
+          "integralConstant": 1.1204711033966677e-13,
+          "primePowers": 0.000036882712216709075
+        },
+        "total": 0.000058823529411764674,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 22.53073292237786,
+        "x": 6094989775.6352005,
+        "delta": 0.0001737252094968679,
+        "pieces": {
+          "pointLow": 0.00003477719380351264,
+          "pointHigh": 0.00000771058847021889,
+          "pointResidue": 1.456404811001772e-11,
+          "integralLow": 3.6283905262998487e-7,
+          "integralHigh": 5.955408945884286e-9,
+          "integralLinear": 4.633511306496521e-11,
+          "integralConstant": 2.5244322455365145e-12,
+          "primePowers": 0.0000791277366947773
+        },
+        "total": 0.00012198437685367812,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1000000000,
+        "A": 75.94610704614442,
+        "a": 0.12,
+        "b": 1.3829460552197281e-8,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 17,
+      "primePowerStatus": "kernel_checked_BJSHybridPrimePowers",
+      "strict": {
+        "L": 23.02062378233625,
+        "x": 9947864901.592846,
+        "delta": 0.00005635025321873372,
+        "pieces": {
+          "pointLow": 0.0000332421842360836,
+          "pointHigh": 0.00000244781608663321,
+          "pointResidue": 8.733409100850767e-12,
+          "integralLow": 2.7760447779951894e-7,
+          "integralHigh": 6.124045495945868e-10,
+          "integralLinear": 2.7750630264298814e-11,
+          "integralConstant": 9.26414781810315e-13,
+          "primePowers": 0.000022855274796244628
+        },
+        "total": 0.00005882352941176471,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 21.648360803088003,
+        "x": 2522107763.8286185,
+        "delta": 0.00006139652088005073,
+        "pieces": {
+          "pointLow": 0.00007020446624712735,
+          "pointHigh": 0.0000028360817448724754,
+          "pointResidue": 3.6630609396735955e-11,
+          "integralLow": 5.885118373579157e-7,
+          "integralHigh": 7.761893714088223e-10,
+          "integralLinear": 1.168156897224131e-10,
+          "integralConstant": 1.537782474845451e-11,
+          "primePowers": 0.00004835437201082521
+        },
+        "total": 0.00012198437685367822,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1000000000,
+        "A": 75.94610704614442,
+        "a": 0.12,
+        "b": 1.3829460552197281e-8,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": 2,
+      "primePowerStatus": "unproved_sharpened_target",
+      "strict": {
+        "L": 22.214466583581483,
+        "x": 4442426546.483737,
+        "delta": 0.000059262193663876435,
+        "pieces": {
+          "pointLow": 0.000051549631088594825,
+          "pointHigh": 0.000002667729762535761,
+          "pointResidue": 2.0266348207895946e-11,
+          "integralLow": 4.3142895359936904e-7,
+          "integralHigh": 7.035264256722705e-10,
+          "integralLinear": 6.453015181095648e-11,
+          "integralConstant": 4.823305615972742e-12,
+          "primePowers": 0.000004173946460803395
+        },
+        "total": 0.00005882352941176466,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 20.842254833793497,
+        "x": 1126357524.7360883,
+        "delta": 0.00006456902414797604,
+        "pieces": {
+          "pointLow": 0.0001091160773136346,
+          "pointHigh": 0.000003097986502078664,
+          "pointResidue": 8.519517528047839e-11,
+          "integralLow": 9.169620142151545e-7,
+          "integralHigh": 8.940013624115213e-10,
+          "integralLinear": 2.723244966187327e-10,
+          "integralConstant": 8.026005382615336e-11,
+          "primePowers": 0.000008852019242661666
+        },
+        "total": 0.00012198437685367823,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1000000000,
+        "A": 75.94610704614442,
+        "a": 0.12,
+        "b": 1.3829460552197281e-8,
+        "status": "MISSING: finite_RH_through_T; head_sum_cap; explicit_zero_count_tail_cap"
+      },
+      "primePowerGap": "log",
+      "primePowerStatus": "existing_mathlib_log_gap",
+      "strict": {
+        "L": 24.032987662557026,
+        "x": 27377508690.79268,
+        "delta": 0.00005289527374295304,
+        "pieces": {
+          "pointLow": 0.000019194060199851786,
+          "pointHigh": 0.000002200944571921158,
+          "pointResidue": 3.039685183283269e-12,
+          "integralLow": 1.5988369971330884e-7,
+          "integralHigh": 5.155037609352783e-10,
+          "integralLinear": 9.635493223292184e-12,
+          "integralConstant": 1.1689938691576952e-13,
+          "primePowers": 0.00003726811264443968
+        },
+        "total": 0.00005882352941176466,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 22.58606039602429,
+        "x": 6441713389.999825,
+        "delta": 0.000057901711619870297,
+        "pieces": {
+          "pointLow": 0.00004210468230069357,
+          "pointHigh": 0.0000025636038602846576,
+          "pointResidue": 1.374640949229771e-11,
+          "integralLow": 3.520216312932441e-7,
+          "integralHigh": 6.598341225985862e-10,
+          "integralLinear": 4.372749939658634e-11,
+          "integralConstant": 2.254155474264295e-12,
+          "primePowers": 0.00007696334949921971
+        },
+        "total": 0.00012198437685367815,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 98.831194218,
+        "A": 1.1844870565432437,
+        "a": 0.12,
+        "b": 0.023981771476443398,
+        "positiveZeroCandidates": 29,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 69.63984601829077,
+        "x": 1.754691799138215e+30,
+        "delta": 0.004027443408654526,
+        "pieces": {
+          "pointLow": 1.2904410080746425e-17,
+          "pointHigh": 0.00005783245711940153,
+          "pointResidue": 1.6367085350224349e-32,
+          "integralLow": 6.636016501465051e-18,
+          "integralHigh": 9.910722917854705e-7,
+          "integralLinear": 5.004810465261707e-32,
+          "integralConstant": 9.496000203017777e-54,
+          "primePowers": 5.581484272941208e-16
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 60.445289425060686,
+        "x": 1.7826071919160233e+26,
+        "delta": 0.007154858037655306,
+        "pieces": {
+          "pointLow": 1.4750477943391659e-15,
+          "pointHigh": 0.00011836915838620989,
+          "pointResidue": 1.8561449148760644e-28,
+          "integralLow": 7.608482696362256e-16,
+          "integralHigh": 0.0000036152184013409154,
+          "integralLinear": 5.692282201259374e-28,
+          "integralConstant": 1.062928361484903e-45,
+          "primePowers": 6.38915774941898e-14
+        },
+        "total": 0.00012198437685367827,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 98.831194218,
+        "A": 1.1844870565432437,
+        "a": 0.12,
+        "b": 0.023981771476443398,
+        "positiveZeroCandidates": 29,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 69.63984601818332,
+        "x": 1.7546917989496765e+30,
+        "delta": 0.004027443408681573,
+        "pieces": {
+          "pointLow": 1.2904410081459612e-17,
+          "pointHigh": 0.000057832457119879145,
+          "pointResidue": 1.6367085352008215e-32,
+          "integralLow": 6.6360165018320104e-18,
+          "integralHigh": 9.91072291800343e-7,
+          "integralLinear": 5.004810465807333e-32,
+          "integralConstant": 9.496000205073348e-54,
+          "primePowers": 6.56645208617619e-17
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 60.44528941934866,
+        "x": 1.782607181733727e+26,
+        "delta": 0.007154858040209601,
+        "pieces": {
+          "pointLow": 1.4750477986913113e-15,
+          "pointHigh": 0.00011836915843965364,
+          "pointResidue": 1.8561449256538139e-28,
+          "integralLow": 7.608482718827752e-16,
+          "integralHigh": 0.0000036152184042721106,
+          "integralLinear": 5.692282234323545e-28,
+          "integralConstant": 1.0629283737303565e-45,
+          "primePowers": 7.516656197972765e-15
+        },
+        "total": 0.0001219843768536783,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 98.831194218,
+        "A": 1.1844870565432437,
+        "a": 0.12,
+        "b": 0.023981771476443398,
+        "positiveZeroCandidates": 29,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": "log",
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 69.6398460191667,
+        "x": 1.7546918006751997e+30,
+        "delta": 0.004027443408434042,
+        "pieces": {
+          "pointLow": 1.290441007493244e-17,
+          "pointHigh": 0.000057832457115508055,
+          "pointResidue": 1.6367085335682086e-32,
+          "integralLow": 6.6360164984735746e-18,
+          "integralHigh": 9.91072291664229e-7,
+          "integralLinear": 5.004810460813701e-32,
+          "integralConstant": 9.49600018626057e-54,
+          "primePowers": 4.572867119421847e-15
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 60.44528946462237,
+        "x": 1.7826072624389664e+26,
+        "delta": 0.007154858019964166,
+        "pieces": {
+          "pointLow": 1.4750477641960543e-15,
+          "pointHigh": 0.00011836915801605658,
+          "pointResidue": 1.8561448402289936e-28,
+          "integralLow": 7.608482540765447e-16,
+          "integralHigh": 0.000003615218381039349,
+          "integralLinear": 5.692281972255765e-28,
+          "integralConstant": 1.0629282766724642e-45,
+          "primePowers": 4.5434644906351775e-13
+        },
+        "total": 0.00012198437685367828,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 236.524229666,
+        "A": 2.0623463305894303,
+        "a": 0.12,
+        "b": 0.012443436165931618,
+        "positiveZeroCandidates": 100,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 65.38408540713438,
+        "x": 2.4885564497359956e+28,
+        "delta": 0.0037850778212206566,
+        "pieces": {
+          "pointLow": 2.0094715347489468e-16,
+          "pointHigh": 0.00005788989472976016,
+          "pointResidue": 1.2291657371675934e-30,
+          "integralLow": 5.9427291567094e-17,
+          "integralHigh": 9.336346767491786e-7,
+          "integralLinear": 3.7632688803019954e-30,
+          "integralConstant": 5.034277779564212e-50,
+          "primePowers": 4.994937844596031e-15
+        },
+        "total": 0.00005882352941176465,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 56.30178947844536,
+        "x": 2.828502010462275e+24,
+        "delta": 0.006677274816109433,
+        "pieces": {
+          "pointLow": 2.1889065238083954e-14,
+          "pointHigh": 0.00011859791452393834,
+          "pointResidue": 1.2558891410083618e-26,
+          "integralLow": 6.4956829891807144e-15,
+          "integralHigh": 0.0000033864617563734097,
+          "integralLinear": 3.857685331373227e-26,
+          "integralConstant": 4.539400037476902e-42,
+          "primePowers": 5.449817802802089e-13
+        },
+        "total": 0.00012198437685367828,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 236.524229666,
+        "A": 2.0623463305894303,
+        "a": 0.12,
+        "b": 0.012443436165931618,
+        "positiveZeroCandidates": 100,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 65.38408540618346,
+        "x": 2.488556447369579e+28,
+        "delta": 0.003785077821445613,
+        "pieces": {
+          "pointLow": 2.0094715357335944e-16,
+          "pointHigh": 0.00005788989473404262,
+          "pointResidue": 1.2291657383543075e-30,
+          "integralLow": 5.942729159623201e-17,
+          "integralHigh": 9.336346768740378e-7,
+          "integralLinear": 3.763268883936401e-30,
+          "integralConstant": 5.034277789213203e-50,
+          "primePowers": 5.87639746711094e-16
+        },
+        "total": 0.000058823529411764674,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 56.301789430377276,
+        "x": 2.828501874501614e+24,
+        "delta": 0.0066772748361696695,
+        "pieces": {
+          "pointLow": 2.18890657828546e-14,
+          "pointHigh": 0.00011859791498149059,
+          "pointResidue": 1.2558892024487692e-26,
+          "integralLow": 6.4956831509812145e-15,
+          "integralHigh": 0.000003386461779687463,
+          "integralLinear": 3.85768552017582e-26,
+          "integralConstant": 4.539400477838326e-42,
+          "primePowers": 6.411550515871181e-14
+        },
+        "total": 0.0001219843768536783,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 236.524229666,
+        "A": 2.0623463305894303,
+        "a": 0.12,
+        "b": 0.012443436165931618,
+        "positiveZeroCandidates": 100,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": "log",
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 65.38408541434661,
+        "x": 2.488556467684052e+28,
+        "delta": 0.003785077819514477,
+        "pieces": {
+          "pointLow": 2.0094715272808992e-16,
+          "pointHigh": 0.00005788989469727985,
+          "pointResidue": 1.2291657281669761e-30,
+          "integralLow": 5.942729134609722e-17,
+          "integralHigh": 9.33634675802185e-7,
+          "integralLinear": 3.7632688527368795e-30,
+          "integralConstant": 5.034277706381559e-50,
+          "primePowers": 3.842228723015422e-14
+        },
+        "total": 0.00005882352941176471,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 56.30178978481066,
+        "x": 2.828502877017278e+24,
+        "delta": 0.006677274688254102,
+        "pieces": {
+          "pointLow": 2.1889061765950195e-14,
+          "pointHigh": 0.0001185979116076968,
+          "pointResidue": 1.255888749413667e-26,
+          "integralLow": 6.495681957933917e-15,
+          "integralHigh": 0.000003386461607779646,
+          "integralLinear": 3.857684128026809e-26,
+          "integralConstant": 4.539397230803341e-42,
+          "primePowers": 3.6098170306822412e-12
+        },
+        "total": 0.00012198437685367823,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1419.422480946,
+        "A": 4.642121783238805,
+        "a": 0.12,
+        "b": 0.0028783224114890954,
+        "positiveZeroCandidates": 1000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 56.09038526312384,
+        "x": 2.2895219292834128e+24,
+        "delta": 0.0032541460342462637,
+        "pieces": {
+          "pointLow": 5.4969497214709726e-14,
+          "pointHigh": 0.00005801611129930453,
+          "pointResidue": 1.5573877884186639e-26,
+          "integralLow": 7.247779121306861e-15,
+          "integralHigh": 8.074174421908341e-7,
+          "integralLinear": 4.7842161259521605e-26,
+          "integralConstant": 6.954912196614588e-42,
+          "primePowers": 6.080520479491866e-13
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 47.30725242413822,
+        "x": 350977019651922500000,
+        "delta": 0.0056343156207402595,
+        "pieces": {
+          "pointLow": 5.263995693969859e-12,
+          "pointHigh": 0.00011910046202271908,
+          "pointResidue": 1.204546551533532e-22,
+          "integralLow": 6.97269787512145e-13,
+          "integralHigh": 0.0000028838505143565203,
+          "integralLinear": 3.7165649007181325e-22,
+          "integralConstant": 3.5234312872818134e-34,
+          "primePowers": 5.835533722183862e-11
+        },
+        "total": 0.0001219843768536783,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1419.422480946,
+        "A": 4.642121783238805,
+        "a": 0.12,
+        "b": 0.0028783224114890954,
+        "positiveZeroCandidates": 1000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 56.09038515078878,
+        "x": 2.289521672089831e+24,
+        "delta": 0.003254146057093433,
+        "pieces": {
+          "pointLow": 5.4969500412301074e-14,
+          "pointHigh": 0.00005801611182282408,
+          "pointResidue": 1.557387966486993e-26,
+          "integralLow": 7.247779543272834e-15,
+          "integralHigh": 8.074174551877952e-7,
+          "integralLinear": 4.784216673195415e-26,
+          "integralConstant": 6.954913773412689e-42,
+          "primePowers": 7.153553921577079e-14
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 47.307247465886874,
+        "x": 350975279423956840000,
+        "delta": 0.005634317366762593,
+        "pieces": {
+          "pointLow": 5.264009295811293e-12,
+          "pointHigh": 0.00011910051141372121,
+          "pointResidue": 1.204552650241507e-22,
+          "integralLow": 6.972715913650026e-13,
+          "integralHigh": 0.0000028838526133246474,
+          "integralLinear": 3.716583728860593e-22,
+          "integralConstant": 3.5234666065291065e-34,
+          "primePowers": 6.86535154040447e-12
+        },
+        "total": 0.00012198437685367827,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1419.422480946,
+        "A": 4.642121783238805,
+        "a": 0.12,
+        "b": 0.0028783224114890954,
+        "positiveZeroCandidates": 1000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": "log",
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 56.090385975932776,
+        "x": 2.2895235612756794e+24,
+        "delta": 0.003254145889272244,
+        "pieces": {
+          "pointLow": 5.496947692477469e-14,
+          "pointHigh": 0.000058016107977372996,
+          "pointResidue": 1.5573866585075187e-26,
+          "integralLow": 7.247776443772036e-15,
+          "integralHigh": 8.074173597201528e-7,
+          "integralLinear": 4.784212653485984e-26,
+          "integralConstant": 6.954902191236211e-42,
+          "primePowers": 4.012454290461975e-12
+        },
+        "total": 0.000058823529411764694,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 47.307278079263135,
+        "x": 350986024126709000000,
+        "delta": 0.005634306586430561,
+        "pieces": {
+          "pointLow": 5.2639253154979815e-12,
+          "pointHigh": 0.00011910020646274142,
+          "pointResidue": 1.2045149959189748e-22,
+          "integralLow": 6.972604540401342e-13,
+          "integralHigh": 0.0000028838396538409694,
+          "integralLinear": 3.7164674811330124e-22,
+          "integralConstant": 3.523248543085289e-34,
+          "primePowers": 3.247759100599723e-10
+        },
+        "total": 0.00012198437685367822,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 9877.782654004,
+        "A": 8.587495319917176,
+        "a": 0.12,
+        "b": 0.0005388067218483755,
+        "positiveZeroCandidates": 10000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 45.86661464774679,
+        "x": 83103180463443400000,
+        "delta": 0.0026674222482024647,
+        "pieces": {
+          "pointLow": 2.0640825674642443e-11,
+          "pointHigh": 0.000058156074275115535,
+          "pointResidue": 5.247055572743177e-22,
+          "integralLow": 1.4793256325942873e-12,
+          "integralHigh": 6.673092703585548e-7,
+          "integralLinear": 1.6203747589769435e-21,
+          "integralConstant": 6.487477731277203e-33,
+          "primePowers": 1.237461392719596e-10
+        },
+        "total": 0.000058823529411764674,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 37.532635434495766,
+        "x": 19962570388776456,
+        "delta": 0.004490599702119687,
+        "pieces": {
+          "pointLow": 1.6274785918633205e-9,
+          "pointHigh": 0.00011964520077352293,
+          "pointResidue": 2.669343567190345e-18,
+          "integralLow": 1.1742928166674714e-10,
+          "integralHigh": 0.000002327643052982119,
+          "integralLinear": 8.296302903731399e-18,
+          "integralConstant": 1.3821826118068556e-25,
+          "primePowers": 9.788119288755852e-9
+        },
+        "total": 0.00012198437685367828,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 9877.782654004,
+        "A": 8.587495319917176,
+        "a": 0.12,
+        "b": 0.0005388067218483755,
+        "positiveZeroCandidates": 10000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 45.8665928151917,
+        "x": 83101366128483470000,
+        "delta": 0.002667425887995147,
+        "pieces": {
+          "pointLow": 2.0641060822020008e-11,
+          "pointHigh": 0.00005815618131355194,
+          "pointResidue": 5.247172628283073e-22,
+          "integralLow": 1.479342506948874e-12,
+          "integralHigh": 6.673114192741462e-7,
+          "integralLinear": 1.6204109298584081e-21,
+          "integralConstant": 6.487764185413172e-33,
+          "primePowers": 1.4558535279340082e-11
+        },
+        "total": 0.000058823529411764694,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 37.53185192463708,
+        "x": 19946935643860372,
+        "delta": 0.004490819609325127,
+        "pieces": {
+          "pointLow": 1.6281502778617292e-9,
+          "pointHigh": 0.0001196535576859508,
+          "pointResidue": 2.6714916122770168e-18,
+          "integralLow": 1.174778374018582e-10,
+          "integralHigh": 0.0000023279215204757105,
+          "integralLinear": 8.302985116213523e-18,
+          "integralConstant": 1.3843800676217368e-25,
+          "primePowers": 1.1520191255357354e-9
+        },
+        "total": 0.0001219843768536783,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 9877.782654004,
+        "A": 8.587495319917176,
+        "a": 0.12,
+        "b": 0.0005388067218483755,
+        "positiveZeroCandidates": 10000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": "log",
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 45.866723415783554,
+        "x": 83112219924824260000,
+        "delta": 0.0026674041151215273,
+        "pieces": {
+          "pointLow": 2.06396542292708e-11,
+          "pointHigh": 0.000058155541021350266,
+          "pointResidue": 5.246472450367559e-22,
+          "integralLow": 1.4792415687877441e-12,
+          "integralHigh": 6.672985647391026e-7,
+          "integralLinear": 1.620194570585658e-21,
+          "integralConstant": 6.48605082824166e-33,
+          "primePowers": 6.677067795291903e-10
+        },
+        "total": 0.000058823529411764694,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 37.53566321681648,
+        "x": 20023104301986510,
+        "delta": 0.0044897499976205135,
+        "pieces": {
+          "pointLow": 1.6248855498672642e-9,
+          "pointHigh": 0.00011961291243707252,
+          "pointResidue": 2.661058929778637e-18,
+          "integralLow": 1.1724183276846844e-10,
+          "integralHigh": 0.00000232656727119918,
+          "integralLinear": 8.270530817326476e-18,
+          "integralConstant": 1.3737235409324992e-25,
+          "primePowers": 4.3155018012992814e-8
+        },
+        "total": 0.00012198437685367824,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 74920.827498994,
+        "A": 13.987696096442619,
+        "a": 0.12,
+        "b": 0.00008826444345808038,
+        "positiveZeroCandidates": 100000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 35.47534108823224,
+        "x": 2551202185378871,
+        "delta": 0.002066915433594724,
+        "pieces": {
+          "pointLow": 7.845366395254307e-9,
+          "pointHigh": 0.00005826344075040772,
+          "pointResidue": 2.2098283334407875e-17,
+          "integralLow": 3.482789340440292e-10,
+          "integralHigh": 5.228977633150112e-7,
+          "integralLinear": 6.882164663653874e-17,
+          "integralConstant": 8.970560040352967e-24,
+          "primePowers": 2.8997252621755303e-8
+        },
+        "total": 0.00005882352941176471,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 27.960417339317953,
+        "x": 1390128547926.7812,
+        "delta": 0.0033060036436816384,
+        "pieces": {
+          "pointLow": 4.264234890357324e-7,
+          "pointHigh": 0.00011823870879898258,
+          "pointResidue": 5.1455450414809924e-14,
+          "integralLow": 1.9130296933068047e-8,
+          "integralHigh": 0.0000017161967325384,
+          "integralLinear": 1.6185917191936675e-13,
+          "integralConstant": 3.869334941472937e-17,
+          "primePowers": 0.0000015839173228351806
+        },
+        "total": 0.00012198437685367828,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 74920.827498994,
+        "A": 13.987696096442619,
+        "a": 0.12,
+        "b": 0.00008826444345808038,
+        "positiveZeroCandidates": 100000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 35.47057824432761,
+        "x": 2539080098320456.5,
+        "delta": 0.0020675307999039995,
+        "pieces": {
+          "pointLow": 7.865127742223142e-9,
+          "pointHigh": 0.000058288612766966523,
+          "pointResidue": 2.2206766486435755e-17,
+          "integralLow": 3.4915803465286223e-10,
+          "integralHigh": 5.232823160448708e-7,
+          "integralLinear": 6.915984613648882e-17,
+          "integralConstant": 9.057677450799878e-24,
+          "primePowers": 3.420042885034206e-9
+        },
+        "total": 0.000058823529411764674,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 27.847010263934063,
+        "x": 1241088910637.5789,
+        "delta": 0.003329519648047553,
+        "pieces": {
+          "pointLow": 4.531398195148366e-7,
+          "pointHigh": 0.0001195647078982754,
+          "pointResidue": 5.786933953154191e-14,
+          "integralLow": 2.0332955711519567e-8,
+          "integralHigh": 0.0000017481591504450937,
+          "integralLinear": 1.8206973812007317e-13,
+          "integralConstant": 4.8750978344695944e-17,
+          "primePowers": 1.9803678974359783e-7
+        },
+        "total": 0.00012198437685367828,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 74920.827498994,
+        "A": 13.987696096442619,
+        "a": 0.12,
+        "b": 0.00008826444345808038,
+        "positiveZeroCandidates": 100000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": "log",
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 35.49230543087521,
+        "x": 2594850841991514,
+        "delta": 0.002064725103620201,
+        "pieces": {
+          "pointLow": 7.775383887183025e-9,
+          "pointHigh": 0.00005817387962135787,
+          "pointResidue": 2.1716177702159005e-17,
+          "integralLow": 3.4516574279305775e-10,
+          "integralHigh": 5.21530436840714e-7,
+          "integralLinear": 6.763043507389013e-17,
+          "integralConstant": 8.667017315084626e-24,
+          "primePowers": 1.1999880384676946e-7
+        },
+        "total": 0.00005882352941176468,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 28.212143111754933,
+        "x": 1788043483034.9438,
+        "delta": 0.0032543977671272016,
+        "pieces": {
+          "pointLow": 3.726379942074075e-7,
+          "pointHigh": 0.00011535450370557694,
+          "pointResidue": 3.964750307020509e-14,
+          "integralLow": 1.6709966407697807e-8,
+          "integralHigh": 0.0000016474300645196764,
+          "integralLinear": 1.2466347412966108e-13,
+          "integralConstant": 2.3170061780327604e-17,
+          "primePowers": 0.000004593094958632386
+        },
+        "total": 0.00012198437685367826,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 170570.224854177,
+        "A": 16.55348738767729,
+        "a": 0.12,
+        "b": 0.00004184532719353484,
+        "positiveZeroCandidates": 250000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 31.478681325782,
+        "x": 46883237859539.84,
+        "delta": 0.001826990350674517,
+        "pieces": {
+          "pointLow": 7.718452473054372e-8,
+          "pointHigh": 0.00005803897348070156,
+          "pointResidue": 1.3551765164614134e-15,
+          "integralLow": 2.909774574173365e-9,
+          "integralHigh": 4.6283407804633333e-7,
+          "integralLinear": 4.240467223316447e-15,
+          "integralConstant": 3.0067752409208294e-20,
+          "primePowers": 2.416275481164032e-7
+        },
+        "total": 0.000058823529411764694,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 24.958052412223196,
+        "x": 69046940836.62144,
+        "delta": 0.0027461757375953867,
+        "pieces": {
+          "pointLow": 0.000002536720688023089,
+          "pointHigh": 0.00011003165199903372,
+          "pointResidue": 1.1605794165519793e-12,
+          "integralLow": 9.6738373819761e-8,
+          "integralHigh": 0.0000013349823286399334,
+          "integralLinear": 3.671469383605067e-12,
+          "integralConstant": 1.7663889000258246e-14,
+          "primePowers": 0.000007984278614449085
+        },
+        "total": 0.00012198437685367827,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 170570.224854177,
+        "A": 16.55348738767729,
+        "a": 0.12,
+        "b": 0.00004184532719353484,
+        "positiveZeroCandidates": 250000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 31.440704043797467,
+        "x": 45136125189802.01,
+        "delta": 0.00183133200925657,
+        "pieces": {
+          "pointLow": 7.875917618579043e-8,
+          "pointHigh": 0.000058247169233408117,
+          "pointResidue": 1.4093324761552772e-15,
+          "integralLow": 2.9692953992783145e-9,
+          "integralHigh": 4.656242657302781e-7,
+          "integralLinear": 4.410149204728426e-15,
+          "integralConstant": 3.2481226229524534e-20,
+          "primePowers": 2.9007435221709722e-8
+        },
+        "total": 0.000058823529411764694,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 24.45770388851735,
+        "x": 41864493265.52919,
+        "delta": 0.002833410431844815,
+        "pieces": {
+          "pointLow": 0.0000033244282331769025,
+          "pointHigh": 0.00011584940453772821,
+          "pointResidue": 1.953297876210319e-12,
+          "integralLow": 1.2692172061560088e-7,
+          "integralHigh": 0.0000014519504346215723,
+          "integralLinear": 6.1858816651459485e-12,
+          "integralConstant": 4.908123329912097e-14,
+          "primePowers": 0.0000012316637392752134
+        },
+        "total": 0.00012198437685367827,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 170570.224854177,
+        "A": 16.55348738767729,
+        "a": 0.12,
+        "b": 0.00004184532719353484,
+        "positiveZeroCandidates": 250000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": "log",
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 31.587731882934044,
+        "x": 52285065040224.68,
+        "delta": 0.0018145805444945106,
+        "pieces": {
+          "pointLow": 7.28363702100001e-8,
+          "pointHigh": 0.00005744573720010828,
+          "pointResidue": 1.2109714380752056e-15,
+          "integralLow": 2.7454358164800226e-9,
+          "integralHigh": 4.5491874571396836e-7,
+          "integralLinear": 3.788688692020832e-15,
+          "integralConstant": 2.408908208634875e-20,
+          "primePowers": 8.47291654916285e-7
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 25.656315519699938,
+        "x": 138802170110.66257,
+        "delta": 0.0026289061805527406,
+        "pieces": {
+          "pointLow": 0.0000017404563990513863,
+          "pointHigh": 0.00010246623988289208,
+          "pointResidue": 5.616159751628022e-13,
+          "integralLow": 6.627251034243073e-8,
+          "integralHigh": 0.000001188214677026777,
+          "integralLinear": 1.7741142004532174e-12,
+          "integralConstant": 4.246367585723316e-15,
+          "primePowers": 0.000016523191044389083
+        },
+        "total": 0.0001219843768536783,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 319387.21930923,
+        "A": 18.654457377046537,
+        "a": 0.12,
+        "b": 0.000023602651747445247,
+        "positiveZeroCandidates": 500000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 28.68768549410174,
+        "x": 2876759186777.0195,
+        "delta": 0.0016336172077030323,
+        "pieces": {
+          "pointLow": 3.8530213646861617e-7,
+          "pointHigh": 0.00005694489393502686,
+          "pointResidue": 2.4234327693082897e-14,
+          "integralLow": 1.2944926553458386e-8,
+          "integralHigh": 4.0788189513718367e-7,
+          "integralLinear": 7.614093343564315e-14,
+          "integralConstant": 8.796358913110176e-18,
+          "primePowers": 0.0000010725064181945142
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 23.467299661158243,
+        "x": 15549583041.461735,
+        "delta": 0.0022638588580352233,
+        "pieces": {
+          "pointLow": 0.000006406579054027951,
+          "pointHigh": 0.00009646865599037095,
+          "pointResidue": 5.4808528335331e-12,
+          "integralLow": 2.175650958732675e-7,
+          "integralHigh": 9.684477427660336e-7,
+          "integralLinear": 1.7396673613945743e-11,
+          "integralConstant": 3.715707198263093e-13,
+          "primePowers": 0.000017923105721542846
+        },
+        "total": 0.00012198437685367822,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 319387.21930923,
+        "A": 18.654457377046537,
+        "a": 0.12,
+        "b": 0.000023602651747445247,
+        "positiveZeroCandidates": 500000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 28.52870701873812,
+        "x": 2453917931074.5166,
+        "delta": 0.001649929989970892,
+        "pieces": {
+          "pointLow": 4.1950445428500925e-7,
+          "pointHigh": 0.00005783402622793914,
+          "pointResidue": 2.8568528585657794e-14,
+          "integralLow": 1.4097812665255714e-8,
+          "integralHigh": 4.185057461943518e-7,
+          "integralLinear": 8.978137178252304e-14,
+          "integralConstant": 1.2159259147533624e-17,
+          "primePowers": 1.3739505231885975e-7
+        },
+        "total": 0.00005882352941176468,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 22.542112289443914,
+        "x": 6164743022.763538,
+        "delta": 0.0023986234907010613,
+        "pieces": {
+          "pointLow": 0.000010592453955218623,
+          "pointHigh": 0.00010640633228609618,
+          "pointResidue": 1.4391976409701541e-11,
+          "integralLow": 3.6058717868385693e-7,
+          "integralHigh": 0.0000011346883749622183,
+          "integralLinear": 4.578636484232953e-11,
+          "integralConstant": 2.4663148346286673e-12,
+          "primePowers": 0.0000034902524140613267
+        },
+        "total": 0.00012198437685367828,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 319387.21930923,
+        "A": 18.654457377046537,
+        "a": 0.12,
+        "b": 0.000023602651747445247,
+        "positiveZeroCandidates": 500000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": "log",
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 29.033632641025022,
+        "x": 4065804063735.171,
+        "delta": 0.0015986747508271637,
+        "pieces": {
+          "pointLow": 3.202388977363988e-7,
+          "pointHigh": 0.00005506285660472981,
+          "pointResidue": 1.6942682511163342e-14,
+          "integralLow": 1.0752813018525393e-8,
+          "integralHigh": 3.857312946486847e-7,
+          "integralLinear": 5.3202460614136225e-14,
+          "integralConstant": 4.34899811151281e-18,
+          "primePowers": 0.000003043949731481768
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 24.451551111465598,
+        "x": 41607701174.43154,
+        "delta": 0.002128792890277174,
+        "pieces": {
+          "pointLow": 0.0000037588535676009474,
+          "pointHigh": 0.00008706167067163932,
+          "pointResidue": 1.9658476812776078e-12,
+          "integralLow": 1.2734663197417656e-7,
+          "integralHigh": 8.198141641778076e-7,
+          "integralLinear": 6.225709723537531e-12,
+          "integralConstant": 4.970206726121224e-14,
+          "primePowers": 0.00003021668357702652
+        },
+        "total": 0.00012198437685367823,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 600269.677012445,
+        "A": 20.894237517636572,
+        "a": 0.12,
+        "b": 0.00001323218712501184,
+        "positiveZeroCandidates": 1000000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 26.417570578340833,
+        "x": 297170111668.2845,
+        "delta": 0.0014096275073221722,
+        "pieces": {
+          "pointLow": 0.0000014581330337444184,
+          "pointHigh": 0.0000533594678262313,
+          "pointResidue": 2.5476044150795676e-13,
+          "integralLow": 4.3919224071484905e-8,
+          "integralHigh": 3.3124052046479136e-7,
+          "integralLinear": 8.035858059517229e-13,
+          "integralConstant": 8.98466739503559e-16,
+          "primePowers": 0.0000036307677480079815
+        },
+        "total": 0.000058823529411764694,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 22.54896422301206,
+        "x": 6207128477.7517185,
+        "delta": 0.0017951945267061435,
+        "pieces": {
+          "pointLow": 0.000011820085667564455,
+          "pointHigh": 0.00007961317020823867,
+          "pointResidue": 1.4289357519523781e-11,
+          "integralLow": 3.592380392578361e-7,
+          "integralHigh": 6.353820717141444e-7,
+          "integralLinear": 4.545908935680047e-11,
+          "integralConstant": 2.4319679080347698e-12,
+          "primePowers": 0.000029556438686488407
+        },
+        "total": 0.0001219843768536783,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 600269.677012445,
+        "A": 20.894237517636572,
+        "a": 0.12,
+        "b": 0.00001323218712501184,
+        "positiveZeroCandidates": 1000000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 25.942570659536784,
+        "x": 184805666680.0188,
+        "delta": 0.0014521031955748872,
+        "pieces": {
+          "pointLow": 0.0000018828769498476643,
+          "pointHigh": 0.00005597375890893363,
+          "pointResidue": 4.171590840075742e-13,
+          "integralLow": 5.676706786003619e-8,
+          "integralHigh": 3.5830146782143715e-7,
+          "integralLinear": 1.3170373087900042e-12,
+          "integralConstant": 2.3677256775126315e-15,
+          "primePowers": 5.518232807378183e-7
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 21.33320807590897,
+        "x": 1840325096.6247966,
+        "delta": 0.001936918187228531,
+        "pieces": {
+          "pointLow": 0.00002294505723719676,
+          "pointHigh": 0.00009079357311551476,
+          "pointResidue": 5.0942399755119645e-11,
+          "integralLow": 6.997907171912663e-7,
+          "integralHigh": 7.846987441997728e-7,
+          "integralLinear": 1.6260278028205666e-10,
+          "integralConstant": 2.933355422923666e-11,
+          "primePowers": 0.000006761014160841472
+        },
+        "total": 0.0001219843768536783,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 600269.677012445,
+        "A": 20.894237517636572,
+        "a": 0.12,
+        "b": 0.00001323218712501184,
+        "positiveZeroCandidates": 1000000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": "log",
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 27.139318980123928,
+        "x": 611584507831.604,
+        "delta": 0.0013474530961901196,
+        "pieces": {
+          "pointLow": 9.893851912185262e-7,
+          "pointHigh": 0.00004964948078383825,
+          "pointResidue": 1.204965395770665e-13,
+          "integralLow": 2.9758913233826033e-8,
+          "integralHigh": 2.9418340107641275e-7,
+          "integralLinear": 3.79576513102994e-13,
+          "integralConstant": 2.0623191522268974e-16,
+          "primePowers": 0.000007860720622118385
+        },
+        "total": 0.00005882352941176468,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 23.687305135232066,
+        "x": 19376079664.101784,
+        "delta": 0.0016719106604316995,
+        "pieces": {
+          "pointLow": 0.0000063686000918145195,
+          "pointHigh": 0.00007058256103371296,
+          "pointResidue": 4.357610844816849e-12,
+          "integralLow": 1.929857607160546e-7,
+          "integralHigh": 5.229987435396544e-7,
+          "integralLinear": 1.3824220719908437e-11,
+          "integralConstant": 2.369648004059387e-13,
+          "primePowers": 0.00004431721280509865
+        },
+        "total": 0.0001219843768536782,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 869610.285310522,
+        "A": 22.269087789851127,
+        "a": 0.12,
+        "b": 0.000009408281765696525,
+        "positiveZeroCandidates": 1500000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 25.43775719601299,
+        "x": 111552056798.83716,
+        "delta": 0.00126368601221528,
+        "pieces": {
+          "pointLow": 0.0000026342129494301796,
+          "pointHigh": 0.00004967757190533075,
+          "pointResidue": 7.048125017673409e-13,
+          "integralLow": 7.459499087739426e-8,
+          "integralHigh": 2.7704521029249943e-7,
+          "integralLinear": 2.22744527781251e-12,
+          "integralConstant": 6.633595999830316e-15,
+          "primePowers": 0.000006160101416942487
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 22.18924437702934,
+        "x": 4331779987.39737,
+        "delta": 0.001548156561533878,
+        "pieces": {
+          "pointLow": 0.000015324728201642474,
+          "pointHigh": 0.00006977058502886895,
+          "pointResidue": 2.080756005011767e-11,
+          "integralLow": 4.3743176974025325e-7,
+          "integralHigh": 4.807070136568029e-7,
+          "integralLinear": 6.625811875846399e-11,
+          "integralConstant": 5.0789402751971646e-12,
+          "primePowers": 0.0000359708326951507
+        },
+        "total": 0.00012198437685367827,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 869610.285310522,
+        "A": 22.269087789851127,
+        "a": 0.12,
+        "b": 0.000009408281765696525,
+        "positiveZeroCandidates": 1500000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 24.72166888308829,
+        "x": 54511028889.54096,
+        "delta": 0.0013215276477928834,
+        "pieces": {
+          "pointLow": 0.000003877470605329672,
+          "pointHigh": 0.00005345624739343224,
+          "pointResidue": 1.4841159654395523e-12,
+          "integralLow": 1.0997452471286398e-7,
+          "integralHigh": 3.1228191986499774e-7,
+          "integralLinear": 4.697336544932645e-12,
+          "integralConstant": 2.86248747124528e-14,
+          "primePowers": 0.0000010675487583475173
+        },
+        "total": 0.000058823529411764674,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 20.879894476628706,
+        "x": 1169561204.6241982,
+        "delta": 0.0016801772213833437,
+        "pieces": {
+          "pointLow": 0.00003134214479724653,
+          "pointHigh": 0.00008046866440172868,
+          "pointResidue": 8.189906869484008e-11,
+          "integralLow": 8.981368419573717e-7,
+          "integralHigh": 6.041734893273414e-7,
+          "integralLinear": 2.6176233858890894e-10,
+          "integralConstant": 7.429789720481385e-11,
+          "primePowers": 0.000008670839364113814
+        },
+        "total": 0.00012198437685367822,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 869610.285310522,
+        "A": 22.269087789851127,
+        "a": 0.12,
+        "b": 0.000009408281765696525,
+        "positiveZeroCandidates": 1500000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": "log",
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 26.353922943920242,
+        "x": 278845288628.75757,
+        "delta": 0.0011933595700336639,
+        "pieces": {
+          "pointLow": 0.0000016082055695128758,
+          "pointHigh": 0.00004528204672120618,
+          "pointResidue": 2.721581938637115e-13,
+          "integralLow": 4.545463575845152e-8,
+          "integralHigh": 2.3800324885301672e-7,
+          "integralLinear": 8.585664858319938e-13,
+          "integralConstant": 1.023015066160802e-15,
+          "primePowers": 0.000011649818104686485
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 23.375101690706323,
+        "x": 14180047257.139841,
+        "delta": 0.0014375622913885971,
+        "pieces": {
+          "pointLow": 0.000008040371974397118,
+          "pointHigh": 0.00006149972352677104,
+          "pointResidue": 6.0339100248720795e-12,
+          "integralLow": 2.2878121485539634e-7,
+          "integralHigh": 3.921451093355258e-7,
+          "integralLinear": 1.9156351636892426e-11,
+          "integralConstant": 4.486655607852102e-13,
+          "primePowers": 0.00005182332938939197
+        },
+        "total": 0.00012198437685367826,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1132490.658714411,
+        "A": 23.27546477059099,
+        "a": 0.12,
+        "b": 0.0000073751670812277625,
+        "positiveZeroCandidates": 2001052,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 24.891422978346544,
+        "x": 64596300503.442795,
+        "delta": 0.0011577087702618154,
+        "pieces": {
+          "pointLow": 0.0000036975229278768566,
+          "pointHigh": 0.000046510349017367355,
+          "pointResidue": 1.2438632319165732e-12,
+          "integralLow": 1.0029808541358711e-7,
+          "integralHigh": 2.379284559426519e-7,
+          "integralLinear": 3.935491045293881e-12,
+          "integralConstant": 2.0238488036294776e-14,
+          "primePowers": 0.000008277425725571463
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 21.989308809147655,
+        "x": 3546790011.081526,
+        "delta": 0.0013879460457164696,
+        "pieces": {
+          "pointLow": 0.000017862206543884527,
+          "pointHigh": 0.00006311913019926655,
+          "pointResidue": 2.564383824674391e-11,
+          "integralLow": 4.880931912634579e-7,
+          "integralHigh": 3.90108959412556e-7,
+          "integralLinear": 8.170235044145622e-11,
+          "integralConstant": 7.648632893579392e-12,
+          "primePowers": 0.00004012472296502952
+        },
+        "total": 0.00012198437685367818,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1132490.658714411,
+        "A": 23.27546477059099,
+        "a": 0.12,
+        "b": 0.0000073751670812277625,
+        "positiveZeroCandidates": 2001052,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 24.019392016222742,
+        "x": 27007812588.43232,
+        "delta": 0.001222557271258378,
+        "pieces": {
+          "pointLow": 0.0000059259462459156784,
+          "pointHigh": 0.000050898760069891045,
+          "pointResidue": 3.083035938372418e-12,
+          "integralLow": 1.6107062959229486e-7,
+          "integralHigh": 2.7554795101209625e-7,
+          "integralLinear": 9.77321970243413e-12,
+          "integralConstant": 1.2019310727188003e-13,
+          "primePowers": 0.000001562191538904821
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 20.638654372919397,
+        "x": 918869228.8039571,
+        "delta": 0.001510198186619315,
+        "pieces": {
+          "pointLow": 0.000037390062526378815,
+          "pointHigh": 0.00007317328733412444,
+          "pointResidue": 1.0546181041772036e-10,
+          "integralLow": 0.0000010259114872396763,
+          "integralHigh": 4.942196801275903e-7,
+          "integralLinear": 3.373200353663203e-10,
+          "integralConstant": 1.2185947386263518e-10,
+          "primePowers": 0.000009900331184488057
+        },
+        "total": 0.00012198437685367822,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1132490.658714411,
+        "A": 23.27546477059099,
+        "a": 0.12,
+        "b": 0.0000073751670812277625,
+        "positiveZeroCandidates": 2001052,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": "log",
+      "headSource": "finite_positive_moment_subtraction",
+      "strict": {
+        "L": 25.91368391525283,
+        "x": 179543600527.29007,
+        "delta": 0.0010860546529389483,
+        "pieces": {
+          "pointLow": 0.0000021303467668161465,
+          "pointHigh": 0.0000419104692521041,
+          "pointResidue": 4.298638366834948e-13,
+          "integralLow": 5.766055805612326e-8,
+          "integralHigh": 2.0066334769714315e-7,
+          "integralLinear": 1.3572249566247782e-12,
+          "integralConstant": 2.5114750412313283e-15,
+          "primePowers": 0.000014524387697490895
+        },
+        "total": 0.000058823529411764674,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 23.196661508642602,
+        "x": 11862660236.88694,
+        "delta": 0.0012870663041312273,
+        "pieces": {
+          "pointLow": 0.000009258654807629177,
+          "pointHigh": 0.00005548498018353601,
+          "pointResidue": 7.26812599172845e-12,
+          "integralLow": 2.52170285146539e-7,
+          "integralHigh": 3.1690678962309887e-7,
+          "integralLinear": 2.3084696767805038e-11,
+          "integralConstant": 6.462746979001024e-13,
+          "primePowers": 0.000056671633788645955
+        },
+        "total": 0.00012198437685367823,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 98.831194218,
+        "A": 1.1844870565432437,
+        "a": 0.12,
+        "b": 0.017986328607332548,
+        "positiveZeroCandidates": 29,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 67.76747905435636,
+        "x": 2.6980016181083633e+29,
+        "delta": 0.003920870454048673,
+        "pieces": {
+          "pointLow": 3.3818469410623724e-17,
+          "pointHigh": 0.000057857699722070804,
+          "pointResidue": 1.0938718838145575e-31,
+          "integralLow": 1.740057303301522e-17,
+          "integralHigh": 9.658296881795558e-7,
+          "integralLinear": 3.3466582159431102e-31,
+          "integralConstant": 4.129604311479114e-52,
+          "primePowers": 1.4631176959416617e-15
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 58.620671342349695,
+        "x": 2.8749751119492875e+25,
+        "delta": 0.006944772135164744,
+        "pieces": {
+          "pointLow": 3.787289890276577e-15,
+          "pointHigh": 0.000118469679315112,
+          "pointResidue": 1.1867114110036241e-27,
+          "integralLow": 1.9549345151244392e-15,
+          "integralHigh": 0.000003514697368722187,
+          "integralLinear": 3.6418005351551374e-27,
+          "integralConstant": 4.216345937109664e-44,
+          "primePowers": 1.6410186122343395e-13
+        },
+        "total": 0.00012198437685367827,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 98.831194218,
+        "A": 1.1844870565432437,
+        "a": 0.12,
+        "b": 0.017986328607332548,
+        "positiveZeroCandidates": 29,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 67.76747905407602,
+        "x": 2.698001617352012e+29,
+        "delta": 0.00392087045411737,
+        "pieces": {
+          "pointLow": 3.3818469415503914e-17,
+          "pointHigh": 0.00005785769972332387,
+          "pointResidue": 1.0938718841257362e-31,
+          "integralLow": 1.74005730355277e-17,
+          "integralHigh": 9.658296882174825e-7,
+          "integralLinear": 3.346658216895419e-31,
+          "integralConstant": 4.129604313811877e-52,
+          "primePowers": 1.7213149366504197e-16
+        },
+        "total": 0.00005882352941176471,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 58.620671327762324,
+        "x": 2.8749750700109586e+25,
+        "delta": 0.006944772141496367,
+        "pieces": {
+          "pointLow": 3.7872899188423214e-15,
+          "pointHigh": 0.00011846967945260246,
+          "pointResidue": 1.1867114286099294e-27,
+          "integralLow": 1.9549345298811557e-15,
+          "integralHigh": 0.0000035146973760274365,
+          "integralLinear": 3.641800589206167e-27,
+          "integralConstant": 4.216346061191885e-44,
+          "primePowers": 1.9306101466074844e-14
+        },
+        "total": 0.00012198437685367824,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 236.524229666,
+        "A": 2.0623463305894303,
+        "a": 0.12,
+        "b": 0.009332577124448713,
+        "positiveZeroCandidates": 100,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 63.53477615770471,
+        "x": 3.915639439924338e+27,
+        "delta": 0.003679611731867045,
+        "pieces": {
+          "pointLow": 5.2133251075745e-16,
+          "pointHigh": 0.000057914923989557916,
+          "pointResidue": 8.039254866982254e-30,
+          "integralLow": 1.542724756237338e-16,
+          "integralHigh": 9.086054085686265e-7,
+          "integralLinear": 2.4627880284236578e-29,
+          "integralConstant": 2.093762002130659e-48,
+          "primePowers": 1.2962554903263812e-14
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 54.505641475975125,
+        "x": 4.693527054900589e+23,
+        "delta": 0.0064696897584188345,
+        "pieces": {
+          "pointLow": 5.550556682477877e-14,
+          "pointHigh": 0.00011869761703970643,
+          "pointResidue": 7.817883867807211e-26,
+          "integralLow": 1.6484975887008695e-14,
+          "integralHigh": 0.0000032867583595016403,
+          "integralLinear": 2.4032644891879933e-25,
+          "integralConstant": 1.7041534515881448e-40,
+          "primePowers": 1.3824796778286158e-12
+        },
+        "total": 0.0001219843768536783,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 236.524229666,
+        "A": 2.0623463305894303,
+        "a": 0.12,
+        "b": 0.009332577124448713,
+        "positiveZeroCandidates": 100,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 63.53477615525001,
+        "x": 3.915639430312599e+27,
+        "delta": 0.0036796117324315683,
+        "pieces": {
+          "pointLow": 5.213325114174508e-16,
+          "pointHigh": 0.00005791492400068076,
+          "pointResidue": 8.039254887026852e-30,
+          "integralLow": 1.5427247581917172e-16,
+          "integralHigh": 9.086054088833359e-7,
+          "integralLinear": 2.4627880345662138e-29,
+          "integralConstant": 2.093762012492269e-48,
+          "primePowers": 1.525006461138759e-15
+        },
+        "total": 0.00005882352941176471,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 54.50564135482852,
+        "x": 4.693526486295752e+23,
+        "delta": 0.006469689807405143,
+        "pieces": {
+          "pointLow": 5.550557031030348e-14,
+          "pointHigh": 0.00011869761820226724,
+          "pointResidue": 7.817884832293733e-26,
+          "integralLow": 1.6484976923134933e-14,
+          "integralHigh": 0.0000032867584167757534,
+          "integralLinear": 2.403264785806806e-25,
+          "integralConstant": 1.7041538683668838e-40,
+          "primePowers": 1.6264467819763145e-13
+        },
+        "total": 0.00012198437685367822,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1419.422480946,
+        "A": 4.642121783238805,
+        "a": 0.12,
+        "b": 0.0021587418086168216,
+        "positiveZeroCandidates": 1000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 54.300955329723166,
+        "x": 3.8247694496481265e+23,
+        "delta": 0.003151656604477867,
+        "pieces": {
+          "pointLow": 1.3892246806595762e-13,
+          "pointHigh": 0.00005804053695447083,
+          "pointResidue": 9.629799915115513e-26,
+          "integralLow": 1.8332056070114858e-14,
+          "integralHigh": 7.829907627360572e-7,
+          "integralLinear": 2.9605296582654053e-25,
+          "integralConstant": 2.5761315994371296e-40,
+          "primePowers": 1.537303279214036e-12
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 45.585829504092196,
+        "x": 62758738683190640000,
+        "delta": 0.0054337178407819825,
+        "pieces": {
+          "pointLow": 1.2918605204836078e-11,
+          "pointHigh": 0.00011919752036746864,
+          "pointResidue": 6.9907847019816705e-22,
+          "integralLow": 1.713103101990952e-12,
+          "integralHigh": 0.0000027866985669288983,
+          "integralLinear": 2.159249961588296e-21,
+          "integralConstant": 1.1447265854419621e-32,
+          "primePowers": 1.4328757242535511e-10
+        },
+        "total": 0.00012198437685367827,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1419.422480946,
+        "A": 4.642121783238805,
+        "a": 0.12,
+        "b": 0.0021587418086168216,
+        "positiveZeroCandidates": 1000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 54.30095504766444,
+        "x": 3.824768370838672e+23,
+        "delta": 0.003151656660037383,
+        "pieces": {
+          "pointLow": 1.389224883797198e-13,
+          "pointHigh": 0.0000580405382791318,
+          "pointResidue": 9.629802681305678e-26,
+          "integralLow": 1.833205875313966e-14,
+          "integralHigh": 7.829907945191028e-7,
+          "integralLinear": 2.9605305090620714e-25,
+          "integralConstant": 2.5761330663651993e-40,
+          "primePowers": 1.8085923577660144e-13
+        },
+        "total": 0.00005882352941176468,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 45.58581743564036,
+        "x": 62757981286945750000,
+        "delta": 0.0054337219393186574,
+        "pieces": {
+          "pointLow": 1.2918686578963535e-11,
+          "pointHigh": 0.00011919764183213726,
+          "pointResidue": 6.990870921211518e-22,
+          "integralLow": 1.713113906652443e-12,
+          "integralHigh": 0.0000027867035322728014,
+          "integralLinear": 2.159276608795549e-21,
+          "integralConstant": 1.14475452722303e-32,
+          "primePowers": 1.6857467710434947e-11
+        },
+        "total": 0.00012198437685367824,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 9877.782654004,
+        "A": 8.587495319917176,
+        "a": 0.12,
+        "b": 0.00040410504138628164,
+        "positiveZeroCandidates": 10000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 44.16400106394581,
+        "x": 15141955336796785000,
+        "delta": 0.00256943201518009,
+        "pieces": {
+          "pointLow": 5.021959234733652e-11,
+          "pointHigh": 0.00005817933052441886,
+          "pointResidue": 2.9907466376587784e-21,
+          "integralLow": 3.603445206120431e-12,
+          "integralHigh": 6.438438208810717e-7,
+          "integralLinear": 9.246183044706602e-21,
+          "integralConstant": 2.0315488511817435e-31,
+          "primePowers": 3.012434271953139e-10
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 35.92239814863044,
+        "x": 3989323843341941.5,
+        "delta": 0.004300731183517828,
+        "pieces": {
+          "pointLow": 3.8037994097591044e-9,
+          "pointHigh": 0.00011972283046703538,
+          "pointResidue": 1.395614204055259e-17,
+          "integralLow": 2.7491571561260397e-10,
+          "integralHigh": 0.0000022345726426156763,
+          "integralLinear": 4.3444088862599405e-17,
+          "integralConstant": 3.6214620105718396e-24,
+          "primePowers": 2.289502884441515e-8
+        },
+        "total": 0.00012198437685367824,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 9877.782654004,
+        "A": 8.587495319917176,
+        "a": 0.12,
+        "b": 0.00040410504138628164,
+        "positiveZeroCandidates": 10000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 44.163948420891735,
+        "x": 15141158239004190000,
+        "delta": 0.0025694404691157797,
+        "pieces": {
+          "pointLow": 5.022097408399734e-11,
+          "pointHigh": 0.00005817959129533598,
+          "pointResidue": 2.9909076489723846e-21,
+          "integralLow": 3.603544486280361e-12,
+          "integralHigh": 6.438488505312227e-7,
+          "integralLinear": 9.246681156996382e-21,
+          "integralConstant": 2.031765246009138e-31,
+          "primePowers": 3.5441378931258555e-11
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 35.92058865160747,
+        "x": 3982111700866779,
+        "delta": 0.0043012175960394465,
+        "pieces": {
+          "pointLow": 3.8074342384800674e-9,
+          "pointHigh": 0.00011974240282520995,
+          "pointResidue": 1.3982122812902505e-17,
+          "integralLow": 2.751789553485719e-10,
+          "integralHigh": 0.000002235195306055206,
+          "integralLinear": 4.3525045048848295e-17,
+          "integralConstant": 3.634781188256154e-24,
+          "primePowers": 2.6961091617343385e-9
+        },
+        "total": 0.00012198437685367823,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 74920.827498994,
+        "A": 13.987696096442619,
+        "a": 0.12,
+        "b": 0.00006619833259356028,
+        "positiveZeroCandidates": 100000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 33.905210779098496,
+        "x": 530696164823325.4,
+        "delta": 0.001974567674350414,
+        "pieces": {
+          "pointLow": 1.7997941117303635e-8,
+          "pointHigh": 0.0000582378822893994,
+          "pointResidue": 1.1115208097788757e-16,
+          "integralLow": 8.004318073556592e-10,
+          "integralHigh": 5.002697487926987e-7,
+          "integralLinear": 3.4676289847733724e-16,
+          "integralConstant": 2.172586352423794e-22,
+          "primePowers": 6.657900019002494e-8
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 26.672419116606903,
+        "x": 383428544827.92114,
+        "delta": 0.003103091753242335,
+        "pieces": {
+          "pointLow": 8.511529766676555e-7,
+          "pointHigh": 0.00011634084406353204,
+          "pointResidue": 1.9556140459103413e-13,
+          "integralLow": 3.827611251973571e-8,
+          "integralHigh": 0.000001589005121529668,
+          "integralLinear": 6.165618766556154e-13,
+          "integralConstant": 5.342946314066071e-16,
+          "primePowers": 0.0000031650977667715828
+        },
+        "total": 0.00012198437685367826,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 74920.827498994,
+        "A": 13.987696096442619,
+        "a": 0.12,
+        "b": 0.00006619833259356028,
+        "positiveZeroCandidates": 100000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 33.894436811919626,
+        "x": 525009152614493.5,
+        "delta": 0.0019758977425733816,
+        "pieces": {
+          "pointLow": 1.810090922375952e-8,
+          "pointHigh": 0.000058295635756913345,
+          "pointResidue": 1.1239181870154018e-16,
+          "integralLow": 8.050216436674479e-10,
+          "integralHigh": 5.011100392782315e-7,
+          "integralLinear": 3.506348669046745e-16,
+          "integralConstant": 2.2206404418402e-22,
+          "primePowers": 7.877684242666563e-9
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 26.453665470697523,
+        "x": 308092367887.08075,
+        "delta": 0.003145808894066105,
+        "pieces": {
+          "pointLow": 9.573834651463872e-7,
+          "pointHigh": 0.00011891769394115488,
+          "pointResidue": 2.453935813285295e-13,
+          "integralLow": 4.3071767303305206e-8,
+          "integralHigh": 0.0000016473037901540677,
+          "integralLinear": 7.739874900674458e-13,
+          "integralConstant": 8.346988865595928e-16,
+          "primePowers": 4.1892286970386386e-7
+        },
+        "total": 0.00012198437685367828,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 170570.224854177,
+        "A": 16.55348738767729,
+        "a": 0.12,
+        "b": 0.00003138399539515113,
+        "positiveZeroCandidates": 250000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 30.02850321910289,
+        "x": 10995456072906.66,
+        "delta": 0.0017323261336871273,
+        "pieces": {
+          "pointLow": 1.670764561524e-7,
+          "pointHigh": 0.00005768939334229264,
+          "pointResidue": 6.0573554989244855e-15,
+          "integralLow": 6.312028363054951e-9,
+          "integralHigh": 4.371878442510655e-7,
+          "integralLinear": 1.899238252032921e-14,
+          "integralConstant": 5.741339432768134e-19,
+          "primePowers": 5.235597156552137e-7
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 24.109466739670683,
+        "x": 29553462247.485016,
+        "delta": 0.0025077974834239983,
+        "pieces": {
+          "pointLow": 0.000004013874375961182,
+          "pointHigh": 0.00010401712781550525,
+          "pointResidue": 2.8069458220247047e-12,
+          "integralLow": 1.5336907158682379e-7,
+          "integralHigh": 0.0000011548342116046672,
+          "integralLinear": 8.89619557390226e-12,
+          "integralConstant": 9.998461690789032e-14,
+          "primePowers": 0.000012645159575894323
+        },
+        "total": 0.00012198437685367827,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 170570.224854177,
+        "A": 16.55348738767729,
+        "a": 0.12,
+        "b": 0.00003138399539515113,
+        "positiveZeroCandidates": 250000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 29.948149847270233,
+        "x": 10146499116308.873,
+        "delta": 0.0017410479064734897,
+        "pieces": {
+          "pointLow": 1.7439236028293749e-7,
+          "pointHigh": 0.000058135407875027235,
+          "pointResidue": 6.581786284600489e-15,
+          "integralLow": 6.58923472106499e-9,
+          "integralHigh": 4.428437886634638e-7,
+          "integralLinear": 2.063912660491431e-14,
+          "integralConstant": 6.761121568228738e-19,
+          "primePowers": 6.42961258483956e-8
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 23.37932580014332,
+        "x": 14240072014.896347,
+        "delta": 0.0026248891852109655,
+        "pieces": {
+          "pointLow": 0.000005963036780819634,
+          "pointHigh": 0.000112273946975617,
+          "pointResidue": 6.007390156559126e-12,
+          "integralLow": 2.2825483698909574e-7,
+          "integralHigh": 0.0000013071699051853892,
+          "integralLinear": 1.9071963568925814e-11,
+          "integralConstant": 4.448065049778072e-13,
+          "primePowers": 0.000002211942830906932
+        },
+        "total": 0.00012198437685367828,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 319387.21930923,
+        "A": 18.654457377046537,
+        "a": 0.12,
+        "b": 0.000017701988810583935,
+        "positiveZeroCandidates": 500000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 27.462842173177247,
+        "x": 845202578277.1797,
+        "delta": 0.0015273105425591567,
+        "pieces": {
+          "pointLow": 7.42545028712026e-7,
+          "pointHigh": 0.000055613710078808575,
+          "pointResidue": 8.616357338221109e-14,
+          "integralLow": 2.5000982357948968e-8,
+          "integralHigh": 3.7327074482866356e-7,
+          "integralLinear": 2.712690482555088e-13,
+          "integralConstant": 1.0665197048682467e-16,
+          "primePowers": 0.0000020690022195182225
+        },
+        "total": 0.0000588235294117647,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 22.934189821537704,
+        "x": 9124143066.984987,
+        "delta": 0.0020269843472033987,
+        "pieces": {
+          "pointLow": 0.00000855793998511641,
+          "pointHigh": 0.00008838264455715978,
+          "pointResidue": 9.557724986095931e-12,
+          "integralLow": 2.910230561148685e-7,
+          "integralHigh": 7.955815609686384e-7,
+          "integralLinear": 3.0376498859389104e-11,
+          "integralConstant": 1.1056098284986425e-12,
+          "primePowers": 0.000023957146654484917
+        },
+        "total": 0.00012198437685367828,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 319387.21930923,
+        "A": 18.654457377046537,
+        "a": 0.12,
+        "b": 0.000017701988810583935,
+        "positiveZeroCandidates": 500000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 27.170402929779076,
+        "x": 630893515299.8547,
+        "delta": 0.0015554825608741318,
+        "pieces": {
+          "pointLow": 8.687095018978691e-7,
+          "pointHigh": 0.00005724915323833144,
+          "pointResidue": 1.166750118535983e-13,
+          "integralLow": 2.926474650231992e-8,
+          "integralHigh": 3.915590802276894e-7,
+          "integralLinear": 3.675179092852247e-13,
+          "integralConstant": 1.9356955821227576e-16,
+          "primePowers": 2.8484236041887906e-7
+        },
+        "total": 0.000058823529411764694,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 21.819602742007728,
+        "x": 2993181609.348555,
+        "delta": 0.002173221953921056,
+        "pieces": {
+          "pointLow": 0.000015704904833739402,
+          "pointHigh": 0.00009959951973539402,
+          "pointResidue": 3.06231706778872e-11,
+          "integralLow": 5.357115905787306e-7,
+          "integralHigh": 9.64355827248193e-7,
+          "integralLinear": 9.761202246989925e-11,
+          "integralConstant": 1.0827831028262601e-11,
+          "primePowers": 0.000005179745803693738
+        },
+        "total": 0.00012198437685367826,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 600269.677012445,
+        "A": 20.894237517636572,
+        "a": 0.12,
+        "b": 0.00000992414034375888,
+        "positiveZeroCandidates": 1000000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 25.56040104437483,
+        "x": 126107561744.81232,
+        "delta": 0.0012879573965617068,
+        "pieces": {
+          "pointLow": 0.0000023134193350266,
+          "pointHigh": 0.000050388778889881784,
+          "pointResidue": 6.2047059700715e-13,
+          "integralLow": 6.980324110417942e-8,
+          "integralHigh": 2.8633008666710006e-7,
+          "integralLinear": 1.96040990291846e-12,
+          "integralConstant": 5.16454989200237e-15,
+          "primePowers": 0.000005765195273039982
+        },
+        "total": 0.000058823529411764694,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 22.216647848147833,
+        "x": 4452127230.130694,
+        "delta": 0.0015873121668591999,
+        "pieces": {
+          "pointLow": 0.000014165446704598629,
+          "pointHigh": 0.00007144696975477925,
+          "pointResidue": 2.0220130729630395e-11,
+          "integralLow": 4.3091373428492624e-7,
+          "integralHigh": 5.046662032649259e-7,
+          "integralLinear": 6.43828524562605e-11,
+          "integralConstant": 4.801812142982418e-12,
+          "primePowers": 0.00003543629105195511
+        },
+        "total": 0.00012198437685367818,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 600269.677012445,
+        "A": 20.894237517636572,
+        "a": 0.12,
+        "b": 0.00000992414034375888,
+        "positiveZeroCandidates": 1000000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 24.871679615941247,
+        "x": 63333459715.281845,
+        "delta": 0.0013446081592669843,
+        "pieces": {
+          "pointLow": 0.0000033548327031260493,
+          "pointHigh": 0.0000540618156887632,
+          "pointResidue": 1.269672382849473e-12,
+          "integralLow": 1.0137798304170332e-7,
+          "integralHigh": 3.2122107090891117e-7,
+          "integralLinear": 4.017317765076061e-12,
+          "integralConstant": 2.107116473823127e-14,
+          "primePowers": 9.842766578635293e-7
+        },
+        "total": 0.00005882352941176471,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 20.888888282226922,
+        "x": 1180127454.9103415,
+        "delta": 0.0017246551156985597,
+        "pieces": {
+          "pointLow": 0.000029262592855555652,
+          "pointHigh": 0.00008256327921318643,
+          "pointResidue": 8.113083910986462e-11,
+          "integralLow": 8.936966547546343e-7,
+          "integralHigh": 6.362912378818718e-7,
+          "integralLinear": 2.592999479796957e-10,
+          "integralConstant": 7.294014454725568e-11,
+          "primePowers": 0.000008628103521368042
+        },
+        "total": 0.00012198437685367827,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 869610.285310522,
+        "A": 22.269087789851127,
+        "a": 0.12,
+        "b": 0.000007056211324272393,
+        "positiveZeroCandidates": 1500000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 24.787028813058058,
+        "x": 58192877999.78079,
+        "delta": 0.0011398108692972065,
+        "pieces": {
+          "pointLow": 0.0000037429075432553094,
+          "pointHigh": 0.000045984166875892064,
+          "pointResidue": 1.3865505080958857e-12,
+          "integralLow": 1.0614231219767558e-7,
+          "integralHigh": 2.3165714891140806e-7,
+          "integralLinear": 4.387919201706116e-12,
+          "integralConstant": 2.504777406092375e-14,
+          "primePowers": 0.000008758649731990747
+        },
+        "total": 0.00005882352941176469,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 21.93336908397626,
+        "x": 3353830907.753645,
+        "delta": 0.0013623567134505717,
+        "pieces": {
+          "pointLow": 0.000017619458658297576,
+          "pointHigh": 0.00006211342672594067,
+          "pointResidue": 2.718839564967668e-11,
+          "integralLow": 5.032986595808341e-7,
+          "integralHigh": 3.7687905336993585e-7,
+          "integralLinear": 8.663656231590803e-11,
+          "integralConstant": 8.57709775738318e-12,
+          "primePowers": 0.00004137119135443349
+        },
+        "total": 0.00012198437685367823,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 869610.285310522,
+        "A": 22.269087789851127,
+        "a": 0.12,
+        "b": 0.000007056211324272393,
+        "positiveZeroCandidates": 1500000,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 23.873202471816587,
+        "x": 23334585935.02874,
+        "delta": 0.0012068051440470807,
+        "pieces": {
+          "pointLow": 0.000006137023104663019,
+          "pointHigh": 0.00005055061822860882,
+          "pointResidue": 3.5902048630520095e-12,
+          "integralLow": 1.744076681035577e-7,
+          "integralHigh": 2.7023758304691253e-7,
+          "integralLinear": 1.138475852767801e-11,
+          "integralConstant": 1.6204861846779809e-13,
+          "primePowers": 0.0000016912276903303654
+        },
+        "total": 0.000058823529411764674,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 20.54449515397297,
+        "x": 836297654.701312,
+        "delta": 0.001485900072705368,
+        "pieces": {
+          "pointLow": 0.00003766973595258746,
+          "pointHigh": 0.0000723259472461663,
+          "pointResidue": 1.1640563187187687e-10,
+          "integralLow": 0.000001080626013017547,
+          "integralHigh": 4.807923741065535e-7,
+          "integralLinear": 3.724322833598057e-10,
+          "integralConstant": 1.4782531065392824e-10,
+          "primePowers": 0.000010426638604574525
+        },
+        "total": 0.00012198437685367826,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1132490.658714411,
+        "A": 23.27546477059099,
+        "a": 0.12,
+        "b": 0.000005531375310920822,
+        "positiveZeroCandidates": 2001052,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 17,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 24.361512794488664,
+        "x": 38025118615.25201,
+        "delta": 0.0010363668713312413,
+        "pieces": {
+          "pointLow": 0.000004924077519340794,
+          "pointHigh": 0.000042541154158772104,
+          "pointResidue": 2.1590125942377993e-12,
+          "integralLow": 1.3373099255409168e-7,
+          "integralHigh": 1.9506236378412037e-7,
+          "integralLinear": 6.8388089933087695e-12,
+          "integralConstant": 5.973975739304136e-14,
+          "primePowers": 0.00001102949531975224
+        },
+        "total": 0.000058823529411764694,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 21.77517752620306,
+        "x": 2863119284.056595,
+        "delta": 0.0012181912276573886,
+        "pieces": {
+          "pointLow": 0.00002007626863368391,
+          "pointHigh": 0.000055944031969038316,
+          "pointResidue": 3.207960216362796e-11,
+          "integralLow": 5.489327248824855e-7,
+          "integralHigh": 3.0367170671279984e-7,
+          "integralLinear": 1.0226696436650705e-10,
+          "integralConstant": 1.1859423437601849e-11,
+          "primePowers": 0.00004511132561337078
+        },
+        "total": 0.00012198437685367826,
+        "smoothingGate": true
+      }
+    },
+    {
+      "inputs": {
+        "T": 1132490.658714411,
+        "A": 23.27546477059099,
+        "a": 0.12,
+        "b": 0.000005531375310920822,
+        "positiveZeroCandidates": 2001052,
+        "status": "MISSING: certified selected critical-line zeros and scalar moment enclosure; NO completeness premise"
+      },
+      "primePowerGap": 2,
+      "headSource": "improved_finite_positive_moment_subtraction",
+      "strict": {
+        "L": 23.321674383116385,
+        "x": 13442328158.473192,
+        "delta": 0.0011059570898770145,
+        "pieces": {
+          "pointLow": 0.000008651022658157688,
+          "pointHigh": 0.000047421856240204904,
+          "pointResidue": 6.37963459003242e-12,
+          "integralLow": 2.355453979770166e-7,
+          "integralHigh": 2.3266218674137817e-7,
+          "integralLinear": 2.0256559618713673e-11,
+          "integralConstant": 5.004665679805308e-13,
+          "primePowers": 0.0000022824157920228987
+        },
+        "total": 0.000058823529411764674,
+        "smoothingGate": true
+      },
+      "direct": {
+        "L": 20.36202182914042,
+        "x": 696808950.8979462,
+        "delta": 0.001330679068019273,
+        "pieces": {
+          "pointLow": 0.00004351977731939857,
+          "pointHigh": 0.00006535102845803438,
+          "pointResidue": 1.409599849038134e-10,
+          "integralLow": 0.0000011951851708774884,
+          "integralHigh": 3.8929172623546756e-7,
+          "integralLinear": 4.512501930374231e-10,
+          "integralConstant": 2.1495587444129986e-10,
+          "primePowers": 0.000011528287013079968
+        },
+        "total": 0.00012198437685367827,
+        "smoothingGate": true
+      }
+    }
+  ],
+  "roundedCandidates": [
+    {
+      "name": "half_million_improved_kernel",
+      "positiveZeroCandidates": 500000,
+      "A": 19,
+      "a": 0.12,
+      "b": 0.000019,
+      "proposedMomentConstantCap": 0.046192,
+      "proposedHeadMomentLower": 0.0461796,
+      "X": 10000000000,
+      "gap": 17,
+      "envelope": {
+        "L": 23.025850929940457,
+        "x": 10000000000.000004,
+        "delta": 0.0020879888247504414,
+        "pieces": {
+          "pointLow": 0.000008292853131942593,
+          "pointHigh": 0.00009068020248647726,
+          "pointResidue": 8.685890054058144e-12,
+          "integralLow": 2.768132541832525e-7,
+          "integralHigh": 8.406169918933219e-7,
+          "integralLinear": 2.759932769798183e-11,
+          "integralConstant": 9.16561018251752e-13,
+          "primePowers": 0.000022790298346905324
+        },
+        "total": 0.00012288082141318055,
+        "smoothingGate": true
+      },
+      "productExcess": 0.0002517933389489127,
+      "scalarProductBudgetPass": false,
+      "classification": "CONDITIONAL_NUMERICAL_CANDIDATE_NOT_A_THEOREM"
+    },
+    {
+      "name": "half_million_improved_kernel_margin",
+      "positiveZeroCandidates": 500000,
+      "A": 19,
+      "a": 0.12,
+      "b": 0.000019,
+      "proposedMomentConstantCap": 0.046192,
+      "proposedHeadMomentLower": 0.0461796,
+      "X": 20000000000,
+      "gap": 17,
+      "envelope": {
+        "L": 23.7189981105004,
+        "x": 19999999999.999973,
+        "delta": 0.001999464948642982,
+        "pieces": {
+          "pointLow": 0.0000056925692745764445,
+          "pointHigh": 0.00008429803566440772,
+          "pointResidue": 4.216029784849939e-12,
+          "integralLow": 1.8968309943714048e-7,
+          "integralHigh": 7.469400017194378e-7,
+          "integralLinear": 1.337407319503965e-11,
+          "integralConstant": 2.2209814921297814e-13,
+          "primePowers": 0.000015631371927105626
+        },
+        "total": 0.0001065586177794475,
+        "smoothingGate": true
+      },
+      "productExcess": 0.000219141244994169,
+      "scalarProductBudgetPass": true,
+      "classification": "CONDITIONAL_NUMERICAL_CANDIDATE_NOT_A_THEOREM"
+    },
+    {
+      "name": "one_million_head_coarse_gap",
+      "positiveZeroCandidates": 1000000,
+      "A": 21,
+      "a": 0.12,
+      "b": 0.000015384615384615384,
+      "proposedMomentConstantCap": 0.046192,
+      "X": 10000000000,
+      "gap": 17,
+      "envelope": {
+        "L": 23.025850929940457,
+        "x": 10000000000.000004,
+        "delta": 0.0018788611703356166,
+        "pieces": {
+          "pointLow": 0.000009165785040568128,
+          "pointHigh": 0.0000815979038539044,
+          "pointResidue": 8.68589010036048e-12,
+          "integralLow": 2.768132541832525e-7,
+          "integralHigh": 6.806615318974265e-7,
+          "integralLinear": 2.759932769798183e-11,
+          "integralConstant": 9.16561018251752e-13,
+          "primePowers": 0.000022790298346905324
+        },
+        "total": 0.00011451149922923735,
+        "smoothingGate": true
+      },
+      "productExcess": 0.00023505062002747128,
+      "scalarProductBudgetPass": true,
+      "classification": "CONDITIONAL_NUMERICAL_CANDIDATE_NOT_A_THEOREM"
+    },
+    {
+      "name": "half_million_head_sharper_gap",
+      "positiveZeroCandidates": 500000,
+      "A": 19,
+      "a": 0.12,
+      "b": 0.000025,
+      "proposedMomentConstantCap": 0.04619142,
+      "X": 10000000000,
+      "gap": 2,
+      "envelope": {
+        "L": 23.025850929940457,
+        "x": 10000000000.000004,
+        "delta": 0.0023950874427182715,
+        "pieces": {
+          "pointLow": 0.000008292853131942593,
+          "pointHigh": 0.0001040173260048316,
+          "pointResidue": 8.685890000719418e-12,
+          "integralLow": 2.768132541832525e-7,
+          "integralHigh": 0.0000011060749893333182,
+          "integralLinear": 2.759932769798183e-11,
+          "integralConstant": 9.16561018251752e-13,
+          "primePowers": 0.000002681211570224156
+        },
+        "total": 0.00011637431615229366,
+        "smoothingGate": true
+      },
+      "productExcess": 0.0002387771365279431,
+      "scalarProductBudgetPass": true,
+      "classification": "CONDITIONAL_NUMERICAL_CANDIDATE_NOT_A_THEOREM"
+    },
+    {
+      "name": "two_million_head_coarse_gap",
+      "positiveZeroCandidates": 2001052,
+      "A": 24,
+      "a": 0.12,
+      "b": 0.000007692307692307692,
+      "proposedMomentConstantCap": 0.04619142,
+      "X": 10000000000,
+      "gap": 17,
+      "envelope": {
+        "L": 23.025850929940457,
+        "x": 10000000000.000004,
+        "delta": 0.0013285554744524074,
+        "pieces": {
+          "pointLow": 0.000010475182903506431,
+          "pointHigh": 0.000057698431145703715,
+          "pointResidue": 8.685890291849523e-12,
+          "integralLow": 2.768132541832525e-7,
+          "integralHigh": 3.4033076594871327e-7,
+          "integralLinear": 2.759932769798183e-11,
+          "integralConstant": 9.16561018251752e-13,
+          "primePowers": 0.000022790298346905324
+        },
+        "total": 0.00009158109361802645,
+        "smoothingGate": true
+      },
+      "productExcess": 0.0001891800810310411,
+      "scalarProductBudgetPass": true,
+      "classification": "CONDITIONAL_NUMERICAL_CANDIDATE_NOT_A_THEOREM"
+    }
+  ]
+}

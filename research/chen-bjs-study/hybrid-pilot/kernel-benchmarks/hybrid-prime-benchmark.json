@@ -1,0 +1,20 @@
+[
+  {
+    "module": "BJSHybridPrimeBatch0",
+    "exitCode": 0,
+    "N": 0,
+    "seconds": 40.2855826
+  },
+  {
+    "module": "BJSHybridPrimeBatch100",
+    "exitCode": 0,
+    "N": 100,
+    "seconds": 37.1557552
+  },
+  {
+    "module": "BJSHybridPrimeBatch1000",
+    "exitCode": -1,
+    "N": 1000,
+    "seconds": 210.2676665
+  }
+]

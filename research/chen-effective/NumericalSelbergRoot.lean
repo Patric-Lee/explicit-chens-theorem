@@ -69,7 +69,8 @@ theorem selbergRootWeight_nonneg (n : ℕ) : 0 ≤ selbergRootWeight n := by
 theorem selbergRootWeight_local_sum (p : ℕ) (hp : p.Prime) :
     (∑' e, selbergRootWeight (p^e)) = 1+selbergRootWeight p+selbergRootWeight (p^2) := by
   rw [tsum_eq_sum (s := range 3)]
-  · simp [sum_range_succ, selbergRootWeight, liuSelbergCorrection_one]
+  · rw [Finset.sum_range_succ (n := 2), Finset.sum_range_succ (n := 1), Finset.sum_range_succ (n := 0)]
+    simp [selbergRootWeight, liuSelbergCorrection_one]
   · intro e he
     have he3 : 3 ≤ e := by simpa only [mem_range, not_lt] using he
     unfold selbergRootWeight

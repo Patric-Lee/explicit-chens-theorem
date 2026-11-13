@@ -1,0 +1,68 @@
+[
+  {
+    "status": "kernel_compiled",
+    "exitCode": 0,
+    "seconds": 17.8482085,
+    "module": "ZetaLean.Rigor"
+  },
+  {
+    "status": "kernel_compiled",
+    "exitCode": 0,
+    "seconds": 17.1780456,
+    "module": "ZetaLean.IntervalExp"
+  },
+  {
+    "module": "ZetaLean.IntervalCExp",
+    "status": "kernel_compiled",
+    "seconds": 17.9327263,
+    "exitCode": 0
+  },
+  {
+    "status": "kernel_compiled",
+    "seconds": 10.8682165,
+    "module": "ZetaLean.HardyZ",
+    "exitCode": 0
+  },
+  {
+    "status": "kernel_compiled",
+    "seconds": 9.257004,
+    "module": "RSBoundsCompat.Arctan",
+    "exitCode": 0
+  },
+  {
+    "status": "kernel_compiled",
+    "seconds": 10.5422691,
+    "module": "HardyFirstZero.Spine",
+    "exitCode": 0
+  },
+  {
+    "status": "kernel_compiled",
+    "seconds": 12.0390973,
+    "module": "HardyFirstZero.Phase",
+    "exitCode": 0
+  },
+  {
+    "status": "kernel_compiled",
+    "seconds": 12.5096085,
+    "module": "HardyFirstZero.EulerMaclaurin",
+    "exitCode": 0
+  },
+  {
+    "status": "kernel_compiled",
+    "seconds": 19.2405168,
+    "module": "HardyFirstZero.BoxSupport",
+    "exitCode": 0
+  },
+  {
+    "status": "kernel_compiled",
+    "seconds": 76.443987,
+    "module": "HardyFirstZero.Boxes",
+    "exitCode": 0
+  },
+  {
+    "status": "kernel_compiled",
+    "seconds": 15.6563446,
+    "module": "HardyFirstZero.FirstZero",
+    "exitCode": 0
+  }
+]

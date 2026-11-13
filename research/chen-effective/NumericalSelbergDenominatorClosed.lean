@@ -18,16 +18,22 @@ theorem numericalDenominatorExponent_eq : numericalDenominatorExponent=400000000
 theorem numericalDenominatorThreshold_eq : numericalDenominatorThreshold=3^(3^4000000000000) := by
   rw [numericalDenominatorThreshold,numericalDenominatorExponent_eq]
 
+private theorem mertens_threshold_power_bound {r k : ℕ}
+    (hprincipal : 16 * (128 * (1 + 1) + 1) ^ 2 ≤ k)
+    (hr : 1800000000004 * r ≤ k) :
+    mertensProductThreshold r ≤ 3 ^ k := by
+  unfold mertensProductThreshold
+  apply max_le
+  · unfold principalNumericalThreshold logPowerCutoff
+    exact Nat.pow_le_pow_right (by norm_num) hprincipal
+  · exact Nat.pow_le_pow_right (by norm_num) hr
+
 theorem selbergDenominatorThreshold_le_closed : selbergDenominatorThreshold ≤ numericalDenominatorThreshold := by
   have hM : mertensProductThreshold 2 ≤ 3^numericalDenominatorExponent := by
-    unfold mertensProductThreshold
-    apply max_le
-    · unfold principalNumericalThreshold logPowerCutoff
-      apply Nat.pow_le_pow_right (by norm_num : 1 ≤ (3 : ℕ))
-      rw [numericalDenominatorExponent_eq]
+    apply mertens_threshold_power_bound
+    · rw [numericalDenominatorExponent_eq]
       norm_num
-    · apply Nat.pow_le_pow_right (by norm_num : 1 ≤ (3 : ℕ))
-      rw [numericalDenominatorExponent_eq]
+    · rw [numericalDenominatorExponent_eq]
       norm_num
   have hE : selbergMertensEndpoint ≤ 3^numericalDenominatorExponent := by
     simpa only [selbergMertensEndpoint_eq] using hM
@@ -36,7 +42,8 @@ theorem selbergDenominatorThreshold_le_closed : selbergDenominatorThreshold ≤ 
     apply Nat.pow_le_pow_right (by norm_num : 1 ≤ (3 : ℕ))
     rw [numericalDenominatorExponent_eq]
     norm_num
-  have h80 : 10^80 ≤ (3 : ℕ)^numericalDenominatorExponent := by
+  have h80 : selbergEulerExponent ≤ (3 : ℕ)^numericalDenominatorExponent := by
+    rw [selbergEulerExponent_eq]
     calc
       _ ≤ ((3 : ℕ)^4)^80 := Nat.pow_le_pow_left (by norm_num : (10 : ℕ) ≤ 3^4) 80
       _ = 3^(4*80) := (pow_mul _ _ _).symm

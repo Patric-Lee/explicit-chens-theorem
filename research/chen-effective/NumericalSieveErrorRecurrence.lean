@@ -38,7 +38,7 @@ theorem coarseSieveError_even_partial (m : ℕ) :
   induction m with
   | zero => simp
   | succ m ih =>
-    rw [sum_range_succ]
+    rw [Finset.sum_range_succ]
     have h := evenPotential_step (2 * m)
     rw [show 2 * (m + 1) = 2 * m + 2 by omega]
     linarith
@@ -61,7 +61,7 @@ theorem coarseSieveError_odd_partial (m : ℕ) :
   induction m with
   | zero => simp
   | succ m ih =>
-    rw [sum_range_succ]
+    rw [Finset.sum_range_succ]
     have h := evenPotential_step (2 * m + 1)
     rw [show 2 * (m + 1) + 1 = (2 * m + 1) + 2 by omega]
     linarith

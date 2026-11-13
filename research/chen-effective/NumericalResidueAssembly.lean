@@ -20,8 +20,7 @@ theorem numerical_residue_assembly (F : ℂ → ℂ) (A : ℂ)
     dsimp [n]
     rw [norm_div, norm_one, norm_mul, norm_mul, Complex.norm_ofNat,
       Complex.norm_real, norm_I]
-    norm_num
-    rw [abs_of_pos Real.pi_pos]
+    norm_num [abs_of_pos Real.pi_pos]
     have hh := (inv_le_one₀ Real.pi_pos).2 (by linarith [Real.pi_gt_three])
     nlinarith [inv_nonneg.mpr Real.pi_pos.le]
   have hsplit := verticalIntegral_split_three (f := F) (σ := b) (-T) T hf

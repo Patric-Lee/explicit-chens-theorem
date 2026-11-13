@@ -1,0 +1,44 @@
+[
+  {
+    "N": 1000,
+    "scale": "281474976710656",
+    "sqrtBound": 32,
+    "wheelBits": 334,
+    "sieveChunk": 8,
+    "sieveBatches": 2,
+    "sumChunk": 128,
+    "sumBatches": 8,
+    "Q": "618704552604687",
+    "primeCount": 168,
+    "dataModule": "BJSHybridSieveData1000",
+    "sumModule": "BJSHybridSieveSum1000"
+  },
+  {
+    "N": 10000,
+    "scale": "281474976710656",
+    "sqrtBound": 100,
+    "wheelBits": 3334,
+    "sieveChunk": 8,
+    "sieveBatches": 5,
+    "sumChunk": 128,
+    "sumBatches": 79,
+    "Q": "698919240818128",
+    "primeCount": 1229,
+    "dataModule": "BJSHybridSieveData10000",
+    "sumModule": "BJSHybridSieveSum10000"
+  },
+  {
+    "N": 100000,
+    "scale": "281474976710656",
+    "sqrtBound": 317,
+    "wheelBits": 33334,
+    "sieveChunk": 8,
+    "sieveBatches": 14,
+    "sumChunk": 128,
+    "sumBatches": 782,
+    "Q": "761466423588538",
+    "primeCount": 9592,
+    "dataModule": "BJSHybridSieveData100000",
+    "sumModule": "BJSHybridSieveSum100000"
+  }
+]

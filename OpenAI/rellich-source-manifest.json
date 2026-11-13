@@ -1,0 +1,205 @@
+{
+  "revision": "70f85d4c1bf99c6e7d61e8be4daa6f3664d08d23",
+  "root": "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.Rellich",
+  "complete": true,
+  "modules": {
+    "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.Rellich": {
+      "path": "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/Rellich.lean",
+      "sha256": "621f33e678287fb38207ce2f713a68124d84b92c4465e41b4177850194563854",
+      "imports": [
+        "Mathlib.Analysis.Normed.Operator.Compact",
+        "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+        "Mathlib.MeasureTheory.Function.LpSpace.Complete",
+        "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.TranslationEstimateH1",
+        "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.FrechetKolmogorov",
+        "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.Kernels",
+        "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.TranslationIntegral"
+      ]
+    },
+    "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.TranslationEstimateH1": {
+      "path": "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/TranslationEstimateH1.lean",
+      "sha256": "36e4891989e3eb73b37a71a8800d761cce792f0484abe11e73b56e101bed7a28",
+      "imports": [
+        "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.TranslationEstimateL2",
+        "Mathlib.Topology.Order.OrderClosed"
+      ]
+    },
+    "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.TranslationIntegral": {
+      "path": "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/TranslationIntegral.lean",
+      "sha256": "df0b0d20011ca3ea0fc8be5b0563334939456526bf57a4c5ae2a79f95b2a03eb",
+      "imports": [
+        "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.Approximation",
+        "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.Translation",
+        "Mathlib.MeasureTheory.Integral.Bochner.Basic"
+      ]
+    },
+    "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.FrechetKolmogorov": {
+      "path": "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/FrechetKolmogorov.lean",
+      "sha256": "3a5b30eb10b6ba165ede5bf5b39b8b27ee86da2f0b0cc4a6eb7f7c13c056ce6b",
+      "imports": [
+        "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.Approximation",
+        "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.Transfer",
+        "Mathlib.Topology.UniformSpace.Cauchy"
+      ]
+    },
+    "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.Kernels": {
+      "path": "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Kernels.lean",
+      "sha256": "0bef517a870d2c6c5420975a24533900036eefaea321b432b85ab2a69bd3ecd0",
+      "imports": [
+        "Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension",
+        "Mathlib.MeasureTheory.Integral.Bochner.Set",
+        "Mathlib.Topology.Algebra.Support"
+      ]
+    },
+    "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.Approximation": {
+      "path": "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Approximation.lean",
+      "sha256": "0e3b898176ee5633607e1a3d23bc812ecf841b1a14718f9b3ddce52e70e3351c",
+      "imports": [
+        "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.Translation",
+        "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.Smoothing",
+        "Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap",
+        "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+        "Mathlib.MeasureTheory.Integral.MeanInequalities",
+        "Mathlib.MeasureTheory.Integral.Prod",
+        "Mathlib.MeasureTheory.Group.Prod",
+        "Mathlib.MeasureTheory.Measure.WithDensity",
+        "Mathlib.MeasureTheory.Measure.Haar.Unique",
+        "Mathlib.MeasureTheory.Function.L2Space",
+        "Mathlib.Probability.Moments.Variance"
+      ]
+    },
+    "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.TranslationEstimateL2": {
+      "path": "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/TranslationEstimateL2.lean",
+      "sha256": "f649d2d2daa167e1514231812c8543f2f6c25039abd2bd1bc945ce6a1b7b1a92",
+      "imports": [
+        "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.Translation",
+        "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.TranslationEstimate",
+        "Mathlib.MeasureTheory.Integral.MeanInequalities",
+        "Mathlib.MeasureTheory.Measure.Prod"
+      ]
+    },
+    "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.Translation": {
+      "path": "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/Translation.lean",
+      "sha256": "41d04c2c2da0652c8e1ae17136b23e8bac75bde1ed70d30a9bd1f00e72b8ddc6",
+      "imports": [
+        "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.H1",
+        "Mathlib.Analysis.Calculus.FDeriv.Add",
+        "Mathlib.MeasureTheory.Group.Measure",
+        "Mathlib.MeasureTheory.Function.LpSpace.Basic",
+        "Mathlib.Topology.Algebra.Group.Basic"
+      ]
+    },
+    "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.Transfer": {
+      "path": "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Transfer.lean",
+      "sha256": "1bc8a93b2edb28a6c5230e04cc2b3e95145ab3ad32f400d308299aad36c6b215",
+      "imports": [
+        "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.ArzelaAscoli",
+        "Mathlib.MeasureTheory.Function.LpSpace.Basic",
+        "Mathlib.Topology.MetricSpace.Pseudo.Basic"
+      ]
+    },
+    "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.TranslationEstimate": {
+      "path": "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/TranslationEstimate.lean",
+      "sha256": "73f5d42d54e24111474f6dc2dee006bc7036da64dd851d2c52eb52e9c67085ec",
+      "imports": [
+        "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.H1",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.ContDiff",
+        "Mathlib.Analysis.Calculus.Deriv.Comp",
+        "Mathlib.Analysis.Calculus.Deriv.Mul",
+        "Mathlib.Analysis.Calculus.Deriv.Add"
+      ]
+    },
+    "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.ArzelaAscoli": {
+      "path": "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/ArzelaAscoli.lean",
+      "sha256": "c2115a4f81a7e03529a6642e2c0a06edc18884597e90a845b7951ff8090c32d0",
+      "imports": [
+        "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.Compactness",
+        "Mathlib.Analysis.Normed.Group.Bounded",
+        "Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli",
+        "Mathlib.MeasureTheory.Function.L2Space",
+        "Mathlib.MeasureTheory.Integral.Bochner.Set"
+      ]
+    },
+    "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.H1": {
+      "path": "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/H1.lean",
+      "sha256": "ee3947364efb12d300786f62e49324a58e893bbd1cd3acd3b5fc09019e84b0da",
+      "imports": [
+        "Mathlib.Analysis.Calculus.ContDiff.Operations",
+        "Mathlib.Analysis.Calculus.FDeriv.Const",
+        "Mathlib.Analysis.InnerProductSpace.Dual",
+        "Mathlib.MeasureTheory.Function.LpSpace.Complete",
+        "Mathlib.MeasureTheory.Function.LpSpace.Indicator",
+        "Mathlib.Topology.Algebra.Support"
+      ]
+    },
+    "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.Smoothing": {
+      "path": "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Smoothing.lean",
+      "sha256": "f45960682fd99fee8696ee53c728ef230be650bb0f170bc8c219df82be14d96d",
+      "imports": [
+        "RellichKondrachov.MeasureTheory.Function.LpSpace.Restrict",
+        "Mathlib.Analysis.Convolution",
+        "Mathlib.Topology.Algebra.Support"
+      ]
+    },
+    "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.Compactness": {
+      "path": "RellichKondrachov/Analysis/FunctionalSpaces/Sobolev/Euclidean/L2Compactness/Compactness.lean",
+      "sha256": "2de58437e3e0fd6cd613533f414eeaf36a1e2e97c73176796e60ef4008c36ef5",
+      "imports": [
+        "RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.L2Compactness.Smoothing",
+        "Mathlib.MeasureTheory.Function.LpSeminorm.CompareExp",
+        "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+        "Mathlib.Topology.Algebra.Monoid",
+        "Mathlib.Topology.UniformSpace.HeineCantor"
+      ]
+    },
+    "RellichKondrachov.MeasureTheory.Function.LpSpace.Restrict": {
+      "path": "RellichKondrachov/MeasureTheory/Function/LpSpace/Restrict.lean",
+      "sha256": "29a904809138432e4b29ad8ba385d1d993e3862432e5329a59445240bb2f5bee",
+      "imports": [
+        "Mathlib.MeasureTheory.Function.LpSeminorm.Basic",
+        "Mathlib.MeasureTheory.Function.LpSpace.Basic"
+      ]
+    }
+  },
+  "externalImports": [
+    "Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension",
+    "Mathlib.Analysis.Calculus.ContDiff.Operations",
+    "Mathlib.Analysis.Calculus.Deriv.Add",
+    "Mathlib.Analysis.Calculus.Deriv.Comp",
+    "Mathlib.Analysis.Calculus.Deriv.Mul",
+    "Mathlib.Analysis.Calculus.FDeriv.Add",
+    "Mathlib.Analysis.Calculus.FDeriv.Const",
+    "Mathlib.Analysis.Convolution",
+    "Mathlib.Analysis.InnerProductSpace.Dual",
+    "Mathlib.Analysis.Normed.Group.Bounded",
+    "Mathlib.Analysis.Normed.Operator.Compact",
+    "Mathlib.MeasureTheory.Function.L2Space",
+    "Mathlib.MeasureTheory.Function.LpSeminorm.Basic",
+    "Mathlib.MeasureTheory.Function.LpSeminorm.CompareExp",
+    "Mathlib.MeasureTheory.Function.LpSpace.Basic",
+    "Mathlib.MeasureTheory.Function.LpSpace.Complete",
+    "Mathlib.MeasureTheory.Function.LpSpace.Indicator",
+    "Mathlib.MeasureTheory.Group.Measure",
+    "Mathlib.MeasureTheory.Group.Prod",
+    "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+    "Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap",
+    "Mathlib.MeasureTheory.Integral.Bochner.Set",
+    "Mathlib.MeasureTheory.Integral.IntervalIntegral.ContDiff",
+    "Mathlib.MeasureTheory.Integral.MeanInequalities",
+    "Mathlib.MeasureTheory.Integral.Prod",
+    "Mathlib.MeasureTheory.Measure.Haar.Unique",
+    "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+    "Mathlib.MeasureTheory.Measure.Prod",
+    "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+    "Mathlib.MeasureTheory.Measure.WithDensity",
+    "Mathlib.Probability.Moments.Variance",
+    "Mathlib.Topology.Algebra.Group.Basic",
+    "Mathlib.Topology.Algebra.Monoid",
+    "Mathlib.Topology.Algebra.Support",
+    "Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli",
+    "Mathlib.Topology.MetricSpace.Pseudo.Basic",
+    "Mathlib.Topology.Order.OrderClosed",
+    "Mathlib.Topology.UniformSpace.Cauchy",
+    "Mathlib.Topology.UniformSpace.HeineCantor"
+  ]
+}

@@ -29,13 +29,13 @@ run_elab do
     throwError "Original Chen statement mismatch"
   logInfo "The proved BJS theorem recovers the exact original Chen statement."
   let standard := #[``propext,``Classical.choice,``Quot.sound]
-  let allowed := standard ++ #[``ChenEffective.dirichlet_seven_eighths]
+  let allowed := standard
   if ((← getEnv).find? `ChenEffective.bjsStudy_interval).isSome then
     throwError "The removed BJS interval axiom is still present in the environment"
   for n in #[``ChenEffective.bjsStudy_chen,``ChenEffective.bjsStudy_original_chen] do
     let axs ← Lean.collectAxioms n
     unless axs.size == allowed.size && axs.all allowed.contains do
-      throwError "Wrong Dirichlet-only axiom ledger for {n}: {axs}"
+      throwError "Wrong standard-axiom ledger for {n}: {axs}"
   for n in #[``ChenEffective.bjsStudy_lower_density,``ChenEffective.bjsStudy_upper_density,
       ``ChenEffective.bjsSharpProfile_bound,``ChenEffective.bjsSharpError_finset_parity,
       ``ChenEffective.bjs_actual_source_layer_domination,
@@ -84,7 +84,7 @@ run_elab do
     let axs ← Lean.collectAxioms n
     unless axs.all standard.contains do throwError "Unproved supporting result: {n}: {axs}"
   logInfo "Elementary replacements, H=36 scalar feasibility and finite-tail machinery use only standard axioms."
-  let dirichletOnly := standard ++ #[``ChenEffective.dirichlet_seven_eighths]
+  let dirichletOnly := standard
   for n in #[``ChenEffective.bjsStudy_interval_product,
       ``ChenEffective.bjsStudy_presieved_product,
       ``ChenEffective.bjsStudy_product_relative,
@@ -116,8 +116,7 @@ run_elab do
     `ChenEffective.numerical_chen_representation_count]
   let env := (← getEnv).setExporting false
   for m in env.header.moduleNames do
-    if #["OpenAI","OAI","ComparatorChallenges"].any
-        (fun s => m.toString == s || m.toString.startsWith (s++".")) then
+    if m.toString == "ComparatorChallenges" || m.toString.startsWith "ComparatorChallenges." then
       throwError "Forbidden import: {m}"
   let mut todo := #[``ChenEffective.bjsStudy_original_chen]
   let mut seen : NameSet := {}
@@ -133,4 +132,6 @@ run_elab do
       unless allowed.contains n do throwError "Unlisted axiom: {n}"
     todo := todo ++ ci.type.getUsedConstants
     if let some v := ci.value? (allowOpaque:=true) then todo := todo ++ v.getUsedConstants
-  logInfo m!"BJS proof traversal passed: {seen.size} constants; exactly Dirichlet plus standard axioms, with no original implicit Chen proof."
+  unless seen.contains ``OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re do
+    throwError "Actual proved Dirichlet theorem absent"
+  logInfo m!"BJS proof traversal passed: {seen.size} constants; standard axioms only; Dirichlet is proved, with no original implicit Chen proof."

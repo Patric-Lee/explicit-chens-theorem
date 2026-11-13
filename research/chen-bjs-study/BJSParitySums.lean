@@ -68,7 +68,7 @@ theorem bjsParityPotential_tail (b m : ℕ) (hb : b≤1) :
   induction m with
   | zero => simp
   | succ m ih =>
-    rw [sum_range_succ]
+    rw [Finset.sum_range_succ]
     have hs := bjsParityPotential_step b (11+m) hb (by omega)
     have hid : 11+(m+1)=11+m+1 := by omega
     rw [hid]

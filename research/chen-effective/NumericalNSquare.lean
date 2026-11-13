@@ -20,18 +20,19 @@ theorem numerical_pair_power_le_denominator : 3^primePairPowerExponent ≤ numer
   unfold numericalDenominatorThreshold
   exact Nat.pow_le_pow_right (by norm_num) hE
 
+private theorem mertens_threshold_cap_for_pair {r k : ℕ}
+    (hlog : 16*(128*(1+1)+1)^2 ≤ k) (hpow : 1800000000004*r ≤ k) :
+    mertensProductThreshold r ≤ 3^k := by
+  unfold mertensProductThreshold principalNumericalThreshold
+  exact max_le (numerical_log_cutoff_cap _ _ hlog)
+    (Nat.pow_le_pow_right (by norm_num) hpow)
+
 theorem numerical_prime_pair_threshold_le_denominator : primePairThreshold ≤ numericalDenominatorThreshold := by
   have hM : selbergMertensEndpoint ≤ 3^numericalDenominatorExponent := by
     rw [selbergMertensEndpoint_eq]
-    unfold mertensProductThreshold
-    apply max_le
-    · unfold principalNumericalThreshold
-      apply numerical_log_cutoff_cap
-      rw [numericalDenominatorExponent_eq]
-      norm_num
-    · apply Nat.pow_le_pow_right (by norm_num)
-      rw [numericalDenominatorExponent_eq]
-      norm_num
+    exact mertens_threshold_cap_for_pair
+      (by rw [numericalDenominatorExponent_eq]; norm_num)
+      (by rw [numericalDenominatorExponent_eq]; norm_num)
   have hK : numericalDenominatorExponent*10 ≤ 3^numericalDenominatorExponent := by
     calc
       _ ≤ (3 : ℕ)^100 := by rw [numericalDenominatorExponent_eq]; norm_num

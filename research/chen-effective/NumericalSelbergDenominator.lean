@@ -10,8 +10,19 @@ set_option maxHeartbeats 3000000
 set_option maxRecDepth 4000
 attribute [local irreducible] logPowerCutoff mertensProductThreshold
 
+private opaque selbergEulerExponentCertificate : {k : ℕ // k = 10^80} := ⟨10^80, rfl⟩
+
+def selbergEulerExponent : ℕ := selbergEulerExponentCertificate.1
+
+theorem selbergEulerExponent_eq : selbergEulerExponent = 10^80 :=
+  selbergEulerExponentCertificate.2
+
 @[irreducible] def selbergDenominatorThreshold : ℕ :=
-  max selbergDivisorThreshold (3^(10^80))
+  max selbergDivisorThreshold (3^selbergEulerExponent)
+
+theorem selbergDenominatorThreshold_eq :
+    selbergDenominatorThreshold = max selbergDivisorThreshold (3^(10^80)) := by
+  rw [selbergDenominatorThreshold, selbergEulerExponent_eq]
 
 theorem numerical_selberg_euler_error {N : ℕ} (hN : selbergDenominatorThreshold ≤ N)
     (hEven : Even N) :
@@ -21,6 +32,7 @@ theorem numerical_selberg_euler_error {N : ℕ} (hN : selbergDenominatorThreshol
   unfold selbergDenominatorThreshold at hn
   obtain ⟨hDiv,hPow⟩ := max_le_iff.mp hn
   have hX := log_ge_power_three hPow
+  rw [selbergEulerExponent_eq] at hX
   norm_num only [Nat.cast_pow,Nat.cast_ofNat] at hX
   have hX0 : 0 < Real.log (N : ℝ) := by linarith only [hX]
   obtain ⟨_,hcut,_⟩ := numerical_selberg_divisor_logs hDiv
@@ -69,6 +81,7 @@ theorem numerical_selberg_denominator {N : ℕ} (hN : selbergDenominatorThreshol
   have hn := hN
   unfold selbergDenominatorThreshold at hn
   have hX := log_ge_power_three ((le_max_right _ _).trans hn)
+  rw [selbergEulerExponent_eq] at hX
   norm_num only [Nat.cast_pow,Nat.cast_ofNat] at hX
   have hNpos : 0 < N := by
     by_contra hh

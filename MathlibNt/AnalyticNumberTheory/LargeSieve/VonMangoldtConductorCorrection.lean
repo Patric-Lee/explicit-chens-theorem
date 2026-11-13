@@ -93,7 +93,7 @@ theorem card_primeFactors_le_log2 {q : ℕ} (hq : 0 < q) :
   calc
     2 ^ q.primeFactors.card = ∏ _p ∈ q.primeFactors, 2 := by simp
     _ ≤ ∏ p ∈ q.primeFactors, p := by
-      exact Finset.prod_le_prod (fun _ _ => Nat.zero_le _)
+      exact Finset.prod_le_prod₀ (fun _ _ => Nat.zero_le _)
         (fun p hp => (Nat.mem_primeFactors.mp hp).1.two_le)
     _ ≤ q := Nat.le_of_dvd hq (Nat.prod_primeFactors_dvd q)
 

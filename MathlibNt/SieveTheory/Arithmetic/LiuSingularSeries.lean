@@ -212,7 +212,7 @@ theorem liuUniversalProduct_le_truncated (z : ℕ) :
   have hmono : Antitone liuUniversalProductTruncated := by
     intro m n hmn
     unfold liuUniversalProductTruncated
-    apply Finset.prod_le_prod_of_subset_of_le_one
+    apply Finset.prod_le_prod_of_subset_of_le_one₀
     · intro p hp
       simp only [mem_range] at hp ⊢
       omega
@@ -254,7 +254,7 @@ theorem liuCorrection_pos (N : ℕ) : 0 < liuCorrection N := by
 
 theorem one_le_liuCorrection (N : ℕ) : 1 ≤ liuCorrection N := by
   unfold liuCorrection
-  exact Finset.one_le_prod fun p hp => one_le_liuCorrectionFactor (mem_filter.mp hp).2
+  exact Finset.one_le_prod₀ fun p hp => one_le_liuCorrectionFactor (mem_filter.mp hp).2
 
 /-- The correction product through `z`, written on the same index set as the
 finite universal product. -/
@@ -340,7 +340,7 @@ theorem liuCorrectionTruncated_le_liuCorrection
   classical
   unfold liuCorrectionTruncated liuCorrection
   rw [← Finset.prod_filter]
-  apply Finset.prod_le_prod_of_subset_of_one_le
+  apply Finset.prod_le_prod_of_subset_of_one_le₀
   · intro p hp
     rcases Finset.mem_filter.mp hp with ⟨hpbase, hpdvd⟩
     rcases Finset.mem_filter.mp hpbase with ⟨_, hpprime, hp2⟩

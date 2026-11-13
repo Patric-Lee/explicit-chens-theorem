@@ -1,0 +1,13 @@
+[
+  "HardyFirstZero.Boxes",
+  "HardyFirstZero.BoxSupport",
+  "HardyFirstZero.EulerMaclaurin",
+  "HardyFirstZero.FirstZero",
+  "HardyFirstZero.Phase",
+  "HardyFirstZero.Spine",
+  "RSBoundsCompat.Arctan",
+  "ZetaLean.HardyZ",
+  "ZetaLean.IntervalCExp",
+  "ZetaLean.IntervalExp",
+  "ZetaLean.Rigor"
+]

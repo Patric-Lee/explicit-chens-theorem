@@ -10,14 +10,18 @@ set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 3000000
 set_option exponentiation.threshold 512
 
-theorem qualitative_finite_cap : preSieveFiniteCap^20 ≤ qualitativeGeometryThreshold := by
-  rw [qualitativeGeometryThreshold_eq]
+private theorem finite_cap_symbolic_bound {j : ℕ} (hj : 10^100*20 ≤ j) :
+    preSieveFiniteCap^20 ≤ 3^j := by
   unfold preSieveFiniteCap
   rw [← pow_mul]
   apply Nat.pow_le_pow_right (by norm_num)
-  calc
-    _ ≤ (3 : ℕ)^400 := by rw [preSieveFiniteExponent_eq]; norm_num
-    _ ≤ _ := Nat.pow_le_pow_right (by norm_num) (by norm_num)
+  simpa only [preSieveFiniteExponent_eq] using hj
+
+theorem qualitative_finite_cap : preSieveFiniteCap^20 ≤ qualitativeGeometryThreshold := by
+  rw [qualitativeGeometryThreshold_eq]
+  apply finite_cap_symbolic_bound
+  exact (by norm_num : 10^100*20 ≤ (3 : ℕ)^400).trans
+    (Nat.pow_le_pow_right (by norm_num) (by norm_num : 400 ≤ 2900))
 
 theorem qualitative_endpoint {N : ℕ} (hN : qualitativeGeometryThreshold ≤ N) :
     lowerEndpointThreshold ≤ N := by

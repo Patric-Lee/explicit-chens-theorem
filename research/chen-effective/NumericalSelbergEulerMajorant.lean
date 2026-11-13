@@ -41,7 +41,7 @@ theorem numerical_multiplicative_mass (f b : ℕ → ℝ) (C : ℝ)
         by_cases hn : n ∈ z.smoothNumbers <;> simp [Set.indicator, hn, hf n])
       _ = ∑' n : z.smoothNumbers, f n := (_root_.tsum_subtype _ _).symm
       _ = ∏ p ∈ z.primesBelow, ∑' e, f (p^e) := hsmooth.2.tsum_eq
-      _ ≤ ∏ p ∈ z.primesBelow, Real.exp (b p) := prod_le_prod
+      _ ≤ ∏ p ∈ z.primesBelow, Real.exp (b p) := prod_le_prod₀
         (fun p _ => tsum_nonneg (fun e => hf _)) (fun p hp => hfactor p (Nat.prime_of_mem_primesBelow hp))
       _ = Real.exp (∑ p ∈ z.primesBelow, b p) := (Real.exp_sum _ _).symm
       _ ≤ Real.exp C := Real.exp_le_exp.mpr ((hb.sum_le_tsum _ (fun n _ => hb0 n)).trans hC)

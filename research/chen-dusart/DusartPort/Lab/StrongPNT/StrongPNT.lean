@@ -438,7 +438,7 @@ lemma norm_fOfZero_le_norm_BlaschkeOfZero {r R : ℝ} {f : ℂ → ℂ}
   rw [BlaschkeOfZero r_pos r_lt_one r_lt_R finiteZeros hf_neq_zero_at_zero, ← mul_one ‖f 0‖]
   refine mul_le_mul (by rw[mul_one]) ?_ (zero_le_one) (mul_nonneg (norm_nonneg (f 0)) zero_le_one)
   rw [← Finset.prod_const_one (s := (finiteSetOfZeros_mono r_lt_one finiteZeros).toFinset)]
-  apply Finset.prod_le_prod
+  apply Finset.prod_le_prod₀
   · intro ρ hρ
     exact zero_le_one
   · intro ρ hρ
@@ -557,7 +557,7 @@ theorem ZerosBound {B r R : ℝ} {f : ℂ → ℂ}
         rw [Finset.prod_pow_eq_pow_sum]
     _ ≤ ∏ ρ ∈ (finiteSetOfZeros_mono r_lt_one finiteZeros).toFinset,
         (R / ‖ρ‖) ^ analyticOrderNatAt f ρ := by
-      apply Finset.prod_le_prod
+      apply Finset.prod_le_prod₀
       · intro ρ _
         exact pow_nonneg (div_nonneg (le_of_lt R_pos) (le_of_lt r_pos)) _
       · intro ρ hρ
@@ -781,12 +781,12 @@ theorem FinalBound {B r' r R' R : ℝ} {f : ℂ → ℂ} {z : ℂ}
       · simp only [differentiableAt_fun_id, differentiableAt_const, DifferentiableAt.fun_sub]
     unfold BlaschkeB Cf
     simp only [rFiniteZeros, ↓reduceDIte, dite_eq_ite, ite_mul, ← logDeriv_apply, ← sum1, ← sum2]
-    rw [← logDeriv_prod blaschke_prod_ne hDiff_blaschke,
-      ← logDeriv_prod ?_ hDiff_sub,
-      ← logDeriv_mul _ fz_ne (Finset.prod_ne_zero_iff.mpr blaschke_prod_ne)
+    rw [← logDeriv_fun_prod blaschke_prod_ne hDiff_blaschke,
+      ← logDeriv_fun_prod ?_ hDiff_sub,
+      ← logDeriv_fun_mul _ fz_ne (Finset.prod_ne_zero_iff.mpr blaschke_prod_ne)
         ((hfAnalytic z (Metric.closedBall_subset_closedBall r'_lt_one.le hz.1)).differentiableAt)
         (DifferentiableAt.fun_finsetProd hDiff_blaschke),
-      ← logDeriv_div _ ?_ ?_ ?_ (DifferentiableAt.fun_finsetProd hDiff_sub)]
+      ← logDeriv_fun_div _ ?_ ?_ ?_ (DifferentiableAt.fun_finsetProd hDiff_sub)]
     · have h_eq : ∀ᶠ w in nhds z, (if w ∈ SetOfZeros r f then
         (ZeroFactor f w / ∏ ρ ∈ rFiniteZeros.toFinset \ {w}, (w - ρ) ^ analyticOrderNatAt f ρ) *
         ∏ ρ ∈ rFiniteZeros.toFinset, (R - w * (starRingEnd ℂ) ρ / R) ^ analyticOrderNatAt f ρ

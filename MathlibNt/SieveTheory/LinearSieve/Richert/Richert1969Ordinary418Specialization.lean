@@ -60,7 +60,7 @@ private theorem primeProduct_le_totient_ratio
   have hprodS0 : 0 ≤ ∏ p ∈ S, f p :=
     Finset.prod_nonneg fun p hp => hf0 p (hST hp)
   have hdiff : ∏ p ∈ T \ S, f p ≤ 1 :=
-    Finset.prod_le_one
+    Finset.prod_le_one₀
       (fun p hp => hf0 p (Finset.sdiff_subset hp))
       (fun p hp => hf1 p (Finset.sdiff_subset hp))
   have hprod : (∏ p ∈ T, f p) ≤ ∏ p ∈ S, f p := by

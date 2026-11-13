@@ -1,0 +1,22 @@
+{
+  "classification": "UNTRUSTED_BLOCK_SCAN_NOT_LEAN_VERIFIED",
+  "U": 4000000,
+  "R": 10000000000,
+  "blocks": 8886581,
+  "groups": 8,
+  "points": 239866,
+  "lower": -0.0000018402959440777522,
+  "upper": 0.00004572215541642777,
+  "minWitness": {
+    "a": 7711961088,
+    "b": 7712202752
+  },
+  "maxWitness": {
+    "a": 4992000,
+    "b": 4992192
+  },
+  "totalReciprocalUncertainty": 0.000001386014528037549,
+  "pass": true,
+  "seconds": 33.548,
+  "countSha256": "830c57ac60dc3801b3d9169baffa7f3b09537803c6192f4230c6fbbdfc28af4b"
+}

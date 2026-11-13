@@ -44,11 +44,9 @@
       "id": "bjs_interval",
       "kind": "reciprocal_interval",
       "logU": 131.83347464017316,
-      "status": "temporary_assumption",
-      "obligations": [
-        "bjsStudy_interval"
-      ],
-      "source": "BJSStudyProducts.lean: U=3^120"
+      "status": "proved",
+      "obligations": [],
+      "source": "BJSStudyProducts.lean and DusartPort.Application: proved from U=3^120 with Dirichlet only"
     },
     {
       "id": "repo_million_target",
@@ -179,9 +177,7 @@
       "id": "bjsRoute",
       "cutoff": "3^(3^171)",
       "H": 187.95674918986347,
-      "temporaryAssumptions": [
-        "bjsStudy_interval"
-      ],
+      "temporaryAssumptions": [],
       "marginFloorAfterPayment": 0.050585
     }
   ],
