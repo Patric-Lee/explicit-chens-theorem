@@ -1,0 +1,21 @@
+{
+  "kind": "counts",
+  "variant": "Count131072",
+  "index": 26840,
+  "module": "PlattCertificates.Count131072.C026840",
+  "sourceHash": "f83f53addb3212a50753e70b6e81ee9a9d209e1447878d9d76e0911a0d0ed3e9",
+  "gridInputHash": "6598e557ab45ade1dce712191609ce37fbcaf233ed316a8ebeae27d7c12939af",
+  "driverHash": "22b1d688675a38ab2e4ebf9e1a4269dd6828c8f62f634031c1c384afb0c1f8e5",
+  "metadata": {
+    "offset": 5345976,
+    "w": 9,
+    "W": 512,
+    "B": 128,
+    "lo": 3521904641,
+    "hi": 3522035712,
+    "lower": "473124758",
+    "upper": "473125016",
+    "countSha256": "830c57ac60dc3801b3d9169baffa7f3b09537803c6192f4230c6fbbdfc28af4b"
+  },
+  "classification": "GENERATED_NOT_CHECKED"
+}

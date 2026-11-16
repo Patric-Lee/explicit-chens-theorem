@@ -1,0 +1,19 @@
+import PlattPointSubsetKernel
+import PlattPointPackets.S4B000064
+import PlattPointPackets.S4B000065
+import PlattPointPackets.S4B000066
+import PlattPointPackets.S4B000067
+import PlattPointPackets.S4B000068
+import PlattPointPackets.S4B000069
+import PlattPointPackets.S4B000070
+import PlattPointPackets.S4B000071
+import PlattPointPackets.S4B000072
+import PlattGlobalGrid.S8B000009
+namespace ChenEffective.PlattWindow.PointCovers.S8B000009
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+def sourcePoints : List PrimePoint := ((((((((ChenEffective.PlattWindow.PointPackets.S4B000064.points ++ ChenEffective.PlattWindow.PointPackets.S4B000065.points) ++ ChenEffective.PlattWindow.PointPackets.S4B000066.points) ++ ChenEffective.PlattWindow.PointPackets.S4B000067.points) ++ ChenEffective.PlattWindow.PointPackets.S4B000068.points) ++ ChenEffective.PlattWindow.PointPackets.S4B000069.points) ++ ChenEffective.PlattWindow.PointPackets.S4B000070.points) ++ ChenEffective.PlattWindow.PointPackets.S4B000071.points) ++ ChenEffective.PlattWindow.PointPackets.S4B000072.points)
+theorem checked : checkPointCoverAux 1000000 sourcePoints ChenEffective.PlattWindow.GlobalGrid.S8B000009.points=true := by decide +kernel
+theorem covered : PointSubset ChenEffective.PlattWindow.GlobalGrid.S8B000009.points sourcePoints := .checked checked
+#print axioms covered
+end ChenEffective.PlattWindow.PointCovers.S8B000009

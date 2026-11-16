@@ -1,0 +1,18 @@
+{
+  "classification": "LOG_RECEIPT_AND_GRID_ALIGNMENT_VERIFIED_NOT_FINAL_H30",
+  "checkedAt": "2026-11-14T02:42:54.266Z",
+  "inputHash": "6598e557ab45ade1dce712191609ce37fbcaf233ed316a8ebeae27d7c12939af",
+  "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+  "chunks": 937,
+  "points": 239866,
+  "firstX": 4000000,
+  "lastX": 10000000000,
+  "summedRecordedLeanSeconds": 2458.1299999999974,
+  "certificateManifestHash": "e974d0ab348aef4e1b5f810a85b18f58136efc218226b3890ffb1367111df05d",
+  "remaining": [
+    "Kernel-level full grid coverage and seam assembly",
+    "Completed prime-count certificates and global reciprocal-sum bounds",
+    "Analytic source theorem for the proposed 2e9 reduction",
+    "Final H30 theorem replacement and axiom audit"
+  ]
+}

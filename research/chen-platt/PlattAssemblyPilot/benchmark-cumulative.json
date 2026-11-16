@@ -1,0 +1,27 @@
+{
+  "exitCode": 0,
+  "wallSeconds": 40.0681306,
+  "minimumFreeMiB": 3932.3828125,
+  "batches": [
+    {
+      "module": "PlattAssemblyPilot.Totals0N8",
+      "seconds": 7.152,
+      "sampledPeakLeanMiB": 612.3359375
+    },
+    {
+      "module": "PlattAssemblyPilot.Totals0N32",
+      "seconds": 23.167,
+      "sampledPeakLeanMiB": 1496.64453125
+    },
+    {
+      "module": "PlattAssemblyPilot.Totals10000N32",
+      "seconds": 2.758,
+      "sampledPeakLeanMiB": 358.76171875
+    },
+    {
+      "module": "PlattAssemblyPilot.Totals9992N16",
+      "seconds": 1.964,
+      "sampledPeakLeanMiB": 297.63671875
+    }
+  ]
+}

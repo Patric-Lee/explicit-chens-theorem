@@ -1,0 +1,32 @@
+{
+  "scope": "LOGARITHM_PILOT_AND_ARITHMETIC_BENCHMARK_NOT_FULL_FINITE_CERTIFICATE",
+  "timestamp": "2026-11-14T00:19:32.277Z",
+  "lean": "4.34.1",
+  "threads": 1,
+  "memoryCapMiB": 4096,
+  "gridPoint": 9999935488,
+  "scale": "281474976710656",
+  "lower": "882879269665140",
+  "upper": "882879269665353",
+  "widthUnits": 213,
+  "width": 7.567280135845067e-13,
+  "onePoint": {
+    "wholeFileSeconds": 1.332,
+    "proofSeconds": 0.011458
+  },
+  "batch32": {
+    "wholeFileSeconds": 1.923,
+    "proofSeconds": 0.132933,
+    "secondsPerPoint": 0.00415415625
+  },
+  "fullAnalyticPilotFileSeconds": 15.343,
+  "reusableSoundnessFileSeconds": 20.393,
+  "nativeDecide": false,
+  "axioms": "Integer data: none. Generic real soundness/pilot: standard three only.",
+  "fullGridCertified": false,
+  "notes": [
+    "Whole-file times include startup/imports; profiler proof time is not a total campaign measurement.",
+    "New uniform +33-unit tail uses outward rounding; full-grid logarithm data must be regenerated.",
+    "Prime-count replay, global reciprocal accumulation, seams/coverage and final H30 axiom replacement remain."
+  ]
+}

@@ -10,8 +10,7 @@ seven-eighths axiom has been replaced by the checked OpenAI proof.
 | Route | Exact cutoff | Approximate H, where N₀ = exp(exp(H)) | Additional axiom beyond standard Lean |
 | --- | --- | --- | --- |
 | [Checked numerical theorem](research/chen-bjs-study/BJSTightChen.lean) | 3^(3^134) | 147.308095 | None |
-| [Checked conditional H≈30 theorem](research/chen-numerical-study/BJSH30ConditionalChen.lean) | 3^(10^13) | 30.02765403654 | Temporary reciprocal-prefix window |
-| [Platt replacement development](research/chen-platt/README.md) | Target: the same H≈30 cutoff | Work in progress | Planned: modulus-one finite RH only |
+| [Checked Platt-based H≈30 theorem](research/chen-numerical-study/BJSH30ConditionalChen.lean) | 3^(10^13) | 30.02765403654 | Modulus-one finite RH through height 10^8 |
 
 The H≈30 result is **conditional**, not an unconditional or H<30 theorem.
 For every even natural number N at or above its cutoff, its statement is
@@ -30,26 +29,20 @@ Its `original_chen` corollary has exactly the original
 the original existence statement. The standard-only H≈147 theorem has its
 own literal recovery theorem and remains separate from the conditional route.
 
-The single temporary input currently used by H≈30 is
-`temporary_reciprocal_prefix_window`. Writing
+The sole additional axiom is the published modulus-one Platt finite-RH
+statement through height 100,000,000. The former temporary reciprocal-prefix
+axiom has been removed. The all-real prefix bound
 
 $$
-P(x)=\sum_{p\le x}\frac{1}{p},\qquad
-E(x)=P(x)-\log\log x-B_1,
+\left|\sum_{p\le x}\frac1p-\log\log x-B_1\right|
+\le\frac1{9000}\qquad(4{,}000{,}000\le x\le3^{120})
 $$
 
-where B₁ is the canonical Mertens second constant, it asserts
-
-$$
-|E(x)|\le\frac{1}{9000}
-\qquad\left(4{,}000{,}000\le x\le3^{120}\right).
-$$
-
-This all-real window has numerical evidence but is not yet fully kernel
-certified. There are no extra sieve-density, AP-distribution, lower-count,
-triple-count, or final-existence axioms in the H≈30 route. Its checked axiom
-ledger is the temporary window plus `propext`, `Classical.choice`, and
-`Quot.sound`. See the [exact H≈30 statement and audit](research/chen-numerical-study/NUMERICAL_H30.md).
+is now proved from the completed kernel-checked finite certificates and
+the Platt analytic tail. There are no extra sieve-density, AP-distribution,
+lower-count, triple-count or existence axioms. The final Chen audit permits
+exactly the named Platt input and `propext`, `Classical.choice`, `Quot.sound`.
+See the [proof assembly and audit](research/chen-platt/README.md).
 
 ## Approach
 
@@ -98,7 +91,7 @@ the exact counting implication below.
    \qquad N\ge3^{5\cdot10^{12}}.
    $$
 
-   This upper estimate is proved independently of the temporary prefix
+   This upper estimate is proved independently of the Platt
    input. See the [complete triple result](research/chen-bjs-study/H30_TRIPLE.md).
 
 4. **Exact finite counting.** The representation count satisfies
@@ -112,44 +105,58 @@ the exact counting implication below.
    use the actual candidate and penalty counts, rather than assumed
    surrogates. The earlier 0.67 counting theorem retains its separate cutoff.
 
-## Replacing the temporary window by Platt's result
+## Platt finite-RH input and certified prefix window
 
-The intended sole additional axiom is the modulus-one finite-RH statement
-
-$$
-\zeta(\rho)=0,\quad 0<\Re\rho<1,\quad
-|\Im\rho|\le10^8
-\quad\Longrightarrow\quad \Re\rho=\frac{1}{2}.
-$$
-
-It is not full GRH. At present it is an **explicit hypothesis** of the local
-analytic development; the final axiom replacement has not been completed.
-The old Dirichlet axiom is already gone and is not being replaced by Platt.
-
-The pinned calr3 analytic estimates and their conversion to theta have
-compiled. The development also checks the theta-to-Mertens transfer,
-square-root and plateau integrals, a far anchor at 3^512 with error at most
-10^-8, the finite sieve/counting soundness lemmas, and a complete small
-reciprocal-sum certificate. The finite comparison uses
+The sole additional axiom is
 
 $$
-E(x)-E(R)=P(x)-P(R)
--\left(\log\log x-\log\log R\right),\qquad R=10^{10},
+\zeta(\rho)=0,\quad0<\Re\rho<1,\quad|\Im\rho|\le10^8
+\quad\Longrightarrow\quad\Re\rho=\tfrac12.
 $$
 
-so B₁ cancels and no numerical enclosure of that constant is needed.
-The proposed allowances are
+This is a finite modulus-one statement. The Dirichlet seven-eighths input is
+proved separately by the vendored OpenAI development.
+
+Writing P(x) for the reciprocal-prime sum, E(x)=P(x)−log log x−B₁ and
+R=10¹⁰, the finite proof establishes
 
 $$
-\frac{59}{10^6}+\frac{1}{20000}\le\frac{1}{9000}.
+|E(x)-E(R)|=|P(x)-P(R)-(\log\log x-\log\log R)|
+\le\frac1{20000}\qquad(4\cdot10^6\le x\le R).
 $$
 
-The scalar allowance is checked; its complete numerical analytic assembly
-and the full finite certificate remain unfinished. The large JavaScript
-scans are feasibility evidence, not Lean proofs. The planned replacement
-also avoids treating unverified numerical zero ordinates as proved zero boxes.
-See the [checked components and open obligations](research/chen-platt/README.md).
-No `native_decide` or new external Lake package has been introduced.
+It uses 76,265 checked count chunks, 937 log chunks and 239,866 grid points.
+The cumulative-prefix, point/grid alignment and all-real coverage proofs
+include the section boundaries. The analytic proof gives |E(x)| ≤ 59/10⁶ on
+[R,3⁵¹²], and the exact budget 59/10⁶ + 1/20000 ≤ 1/9000 closes the window.
+No numerical enclosure of B₁ or unverified zero table is assumed.
+See [the completed integration and final audit](research/chen-platt/README.md).
+No `native_decide` or new external Lake package was introduced.
+
+## Build time and memory
+
+A first build of the full finite certificates and their assembly takes
+**15+ hours** on the development machine; allow longer on slower hardware or
+with fewer workers. This is a planning estimate, not a guaranteed runtime.
+The count campaign alone recorded about 65 hours of accumulated Lean process
+time across its parallel workers. Generating the proposed data and checking
+it in Lean are separate steps: committed certificate sources still have to
+be kernel-checked on a source-only checkout.
+
+The development machine had about **14 GiB usable physical RAM**. The largest
+serial import/audit processes reached roughly **20–22 GiB of private committed
+memory**, requiring substantial paging. These figures are not resident-RAM
+measurements. **32 GiB RAM is recommended** for a smoother build; a 16 GiB
+machine needs ample swap/pagefile space and can be much slower. Keep the
+largest global joins and final audits serial, and reduce chunk-worker
+parallelism if memory is tight. Leave room in the system commit limit for
+Lean and other running applications; disabling swap on a 16 GiB machine is
+not a suitable configuration for these checks.
+
+Unchanged, locally checked artifacts can be reused by the hash-aware runners.
+The Git repository does not distribute the local Lean object cache, and JSON
+receipts or JavaScript results do not replace kernel checking. See the
+[certificate build notes](research/chen-platt/README.md#build-time-and-memory).
 
 ## Verification and scope
 
@@ -173,7 +180,7 @@ node OpenAI/tools/build-source.mjs PlattThetaInputs PlattSegmentPilot
 
 Standard-only routes reject custom axioms, placeholders, unsafe proof
 dependencies, and native compiler trust. The conditional H≈30 audit permits
-its named temporary window only. Historical studies, unfinished experiments,
+only the published modulus-one Platt input. Historical studies, unfinished experiments,
 and untrusted numerical scans are not silently promoted to theorem inputs.
 
 ## References, provenance, and acknowledgments

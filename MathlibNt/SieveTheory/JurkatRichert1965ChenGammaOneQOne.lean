@@ -3654,7 +3654,7 @@ theorem selbergEulerProduct_le_exp_four_mul
         (1 - (p : ℝ) ^ (-sigma))⁻¹) ≤
         ∏ p ∈ siftingPrimes 1 z,
           Real.exp (4 * (p : ℝ) ^ (-sigma)) := by
-      apply Finset.prod_le_prod
+      apply Finset.prod_le_prod₀
       · intro p hp
         exact inv_nonneg.mpr (sub_nonneg.mpr (by
           have := hsmall p hp

@@ -1,0 +1,40 @@
+import PlattPointPacketKernel
+import PlattPointPackets.S2B000151
+import PlattPointPackets.S2B000152
+import PlattPointPackets.S2B000153
+import PlattPointPackets.S2B000154
+import PlattPointPackets.S2B000155
+import PlattPointPackets.S2B000156
+import PlattPointPackets.S2B000157
+import PlattPointPackets.S2B000158
+import PlattPointPackets.S2B000159
+import PlattPointPackets.S2B000160
+import PlattPointPackets.S2B000161
+import PlattPointPackets.S2B000162
+import PlattPointPackets.S2B000163
+import PlattPointPackets.S2B000164
+import PlattPointPackets.S2B000165
+import PlattPointPackets.S2B000166
+import PlattPointPackets.S2B000167
+import PlattPointPackets.S2B000168
+import PlattPointPackets.S2B000169
+import PlattPointPackets.S2B000170
+import PlattPointPackets.S2B000171
+import PlattPointPackets.S2B000172
+import PlattPointPackets.S2B000173
+import PlattPointPackets.S2B000174
+import PlattPointPackets.S2B000175
+import PlattPointPackets.S2B000176
+import PlattPointPackets.S2B000177
+import PlattPointPackets.S2B000178
+import PlattPointPackets.S2B000179
+import PlattPointPackets.S2B000180
+import PlattPointPackets.S2B000181
+import PlattPointPackets.S2B000182
+namespace ChenEffective.PlattWindow.PointPackets.L0B0025
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+def points : List PrimePoint := (((((((((((((((((((((((((((((((ChenEffective.PlattWindow.PointPackets.S2B000151.points ++ ChenEffective.PlattWindow.PointPackets.S2B000152.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000153.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000154.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000155.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000156.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000157.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000158.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000159.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000160.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000161.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000162.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000163.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000164.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000165.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000166.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000167.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000168.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000169.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000170.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000171.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000172.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000173.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000174.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000175.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000176.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000177.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000178.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000179.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000180.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000181.points) ++ ChenEffective.PlattWindow.PointPackets.S2B000182.points)
+theorem certified : PointChainCertificate 1947992064 96120883945224 96121261880411 2082209792 96996364501860 96996743013420 points := PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (PointChainCertificate.append (ChenEffective.PlattWindow.PointPackets.S2B000151.certified) ChenEffective.PlattWindow.PointPackets.S2B000152.certified) ChenEffective.PlattWindow.PointPackets.S2B000153.certified) ChenEffective.PlattWindow.PointPackets.S2B000154.certified) ChenEffective.PlattWindow.PointPackets.S2B000155.certified) ChenEffective.PlattWindow.PointPackets.S2B000156.certified) ChenEffective.PlattWindow.PointPackets.S2B000157.certified) ChenEffective.PlattWindow.PointPackets.S2B000158.certified) ChenEffective.PlattWindow.PointPackets.S2B000159.certified) ChenEffective.PlattWindow.PointPackets.S2B000160.certified) ChenEffective.PlattWindow.PointPackets.S2B000161.certified) ChenEffective.PlattWindow.PointPackets.S2B000162.certified) ChenEffective.PlattWindow.PointPackets.S2B000163.certified) ChenEffective.PlattWindow.PointPackets.S2B000164.certified) ChenEffective.PlattWindow.PointPackets.S2B000165.certified) ChenEffective.PlattWindow.PointPackets.S2B000166.certified) ChenEffective.PlattWindow.PointPackets.S2B000167.certified) ChenEffective.PlattWindow.PointPackets.S2B000168.certified) ChenEffective.PlattWindow.PointPackets.S2B000169.certified) ChenEffective.PlattWindow.PointPackets.S2B000170.certified) ChenEffective.PlattWindow.PointPackets.S2B000171.certified) ChenEffective.PlattWindow.PointPackets.S2B000172.certified) ChenEffective.PlattWindow.PointPackets.S2B000173.certified) ChenEffective.PlattWindow.PointPackets.S2B000174.certified) ChenEffective.PlattWindow.PointPackets.S2B000175.certified) ChenEffective.PlattWindow.PointPackets.S2B000176.certified) ChenEffective.PlattWindow.PointPackets.S2B000177.certified) ChenEffective.PlattWindow.PointPackets.S2B000178.certified) ChenEffective.PlattWindow.PointPackets.S2B000179.certified) ChenEffective.PlattWindow.PointPackets.S2B000180.certified) ChenEffective.PlattWindow.PointPackets.S2B000181.certified) ChenEffective.PlattWindow.PointPackets.S2B000182.certified
+#print axioms certified
+end ChenEffective.PlattWindow.PointPackets.L0B0025

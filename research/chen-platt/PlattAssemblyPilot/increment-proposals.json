@@ -1,0 +1,42 @@
+[
+  {
+    "module": "PlattAssemblyPilot.Totals0N8",
+    "start": 0,
+    "chunks": 8,
+    "lower": "4035733554828",
+    "upper": "4035784694748",
+    "crossesSectionBoundary": false
+  },
+  {
+    "module": "PlattAssemblyPilot.Totals0N32",
+    "start": 0,
+    "chunks": 32,
+    "lower": "12826933549621",
+    "upper": "12827074168142",
+    "crossesSectionBoundary": false
+  },
+  {
+    "module": "PlattAssemblyPilot.Totals10000N32",
+    "start": 10000,
+    "chunks": 32,
+    "lower": "42627903759",
+    "upper": "42627940999",
+    "crossesSectionBoundary": false
+  },
+  {
+    "module": "PlattAssemblyPilot.Totals9992N16",
+    "start": 9992,
+    "chunks": 16,
+    "lower": "21363104411",
+    "upper": "21363123070",
+    "crossesSectionBoundary": true
+  },
+  {
+    "module": "PlattAssemblyPilot.Totals0N256",
+    "start": 0,
+    "chunks": 256,
+    "lower": "38647850676753",
+    "upper": "38648131877502",
+    "crossesSectionBoundary": false
+  }
+]

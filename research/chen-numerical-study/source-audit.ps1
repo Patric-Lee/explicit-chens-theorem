@@ -32,17 +32,24 @@ function Remove-LeanCommentsAndStrings([string]$text) {
     return $out.ToString()
 }
 
-$temporaryCount=0
+$localAxiomCount=0
 foreach($p in Get-ChildItem -LiteralPath $PSScriptRoot -Filter '*.lean'){
  $code=Remove-LeanCommentsAndStrings ([IO.File]::ReadAllText($p.FullName))
  if($p.Name -eq 'AuditBJSStudy.lean'){$code=$code.Replace('debug.skipKernelTC.get','kernelGuard')}
  if($code -match '\b(sorry|admit|sorryAx|native_decide|unsafe|implemented_by|extern|ofReduceBool|trustCompiler|skipKernelTC|trustLevel)\b'){throw "Forbidden proof token: $p"}
  foreach($m in [regex]::Matches($code,'\baxiom\s+(\w+)')){
-  if($p.Name -ne 'BJSH30ConditionalProducts.lean' -or $m.Groups[1].Value -ne 'temporary_reciprocal_prefix_window'){throw "Unlisted local axiom: $p"}; $temporaryCount++
+  throw "Unexpected numerical-study axiom: $p ($($m.Groups[1].Value))"
  }
  foreach($m in [regex]::Matches($code,'(?m)^import\s+([A-Za-z0-9_.]+)')){
   if($m.Groups[1].Value -match '^(OAI|OpenAI|ComparatorChallenges)(\.|$)'){throw "Forbidden import: $p"}
  }
 }
-if($temporaryCount -ne 1){throw "Expected exactly one temporary numerical axiom"}
-Write-Output 'Conditional study source scan passed: exactly the authorized prefix axiom; no placeholders, native_decide, unsafe declarations or OpenAI imports.'
+$plattAxiomFile=Join-Path $PSScriptRoot '..\chen-platt\PlattAssumption.lean'
+$plattCode=Remove-LeanCommentsAndStrings ([IO.File]::ReadAllText($plattAxiomFile))
+if($plattCode -match '\b(sorry|admit|sorryAx|native_decide|unsafe|implemented_by|extern|ofReduceBool|trustCompiler|skipKernelTC|trustLevel)\b'){throw 'Forbidden proof token in PlattAssumption.lean'}
+foreach($m in [regex]::Matches($plattCode,'\baxiom\s+(\w+)')){
+ if($m.Groups[1].Value -ne 'platt_modulus_one_finite_RH'){throw 'Unexpected Platt axiom'}
+ $localAxiomCount++
+}
+if($localAxiomCount -ne 1){throw 'Expected exactly the published modulus-one Platt input'}
+Write-Output 'Platt study source scan passed: zero numerical-study axioms; exactly the modulus-one finite-RH axiom in PlattAssumption; no placeholders or native compiler trust.'

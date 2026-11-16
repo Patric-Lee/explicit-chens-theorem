@@ -1,0 +1,68 @@
+{
+  "exitCode": 0,
+  "workers": 8,
+  "cells": 2048,
+  "batches": 8,
+  "wallSeconds": 9.7637733,
+  "peakSampledLeanProcesses": 8,
+  "aggregatePeakLeanMiB": 2308.65625,
+  "minimumFreeMiB": 4396.94140625,
+  "verified": [
+    {
+      "verified": "PlattAssemblyPilot.Grid0N256",
+      "seconds": 2.395,
+      "completed": 1,
+      "cached": 4,
+      "total": 12
+    },
+    {
+      "verified": "PlattAssemblyPilot.Grid256N256",
+      "seconds": 2.731,
+      "completed": 2,
+      "cached": 4,
+      "total": 12
+    },
+    {
+      "verified": "PlattAssemblyPilot.Grid512N256",
+      "seconds": 3.028,
+      "completed": 3,
+      "cached": 4,
+      "total": 12
+    },
+    {
+      "verified": "PlattAssemblyPilot.Grid768N256",
+      "seconds": 3.357,
+      "completed": 4,
+      "cached": 4,
+      "total": 12
+    },
+    {
+      "verified": "PlattAssemblyPilot.Grid1024N256",
+      "seconds": 3.706,
+      "completed": 5,
+      "cached": 4,
+      "total": 12
+    },
+    {
+      "verified": "PlattAssemblyPilot.Grid1280N256",
+      "seconds": 4.016,
+      "completed": 6,
+      "cached": 4,
+      "total": 12
+    },
+    {
+      "verified": "PlattAssemblyPilot.Grid1536N256",
+      "seconds": 4.27,
+      "completed": 7,
+      "cached": 4,
+      "total": 12
+    },
+    {
+      "verified": "PlattAssemblyPilot.Grid1792N256",
+      "seconds": 4.618,
+      "completed": 8,
+      "cached": 4,
+      "total": 12
+    }
+  ]
+}

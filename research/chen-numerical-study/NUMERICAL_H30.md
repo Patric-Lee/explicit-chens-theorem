@@ -1,10 +1,11 @@
 # Conditional numerical Chen theorem near H = 30
 
-This is a separate experimental route using a temporary numerical assumption
-authorized by the user. It does not replace the existing theorem with only
-standard Lean axioms. The former Dirichlet axiom is now supplied by
-the compiled, audited OpenAI proof. The upgraded final Chen and combined
-integration audits passed; see [the report](../chen-effective/UPGRADE_434_AUDIT.md).
+This route now uses the published Platt modulus-one finite-RH result through
+height 100,000,000 as its sole external axiom. The temporary reciprocal-prefix
+axiom has been removed. The finite window, analytic assembly and final Chen
+audits are complete; see [the proof and audit](../chen-platt/README.md).
+The existing standard-only theorem remains separate. The former Dirichlet
+axiom is supplied by the checked OpenAI proof.
 
 The theorem is `ChenEffective.H30Conditional.chen` in
 `BJSH30ConditionalChen.lean`. Its exact cutoff is
@@ -27,39 +28,23 @@ The cutoff is slightly above H=30; it is not an H<30 result.
 
 ## Exact additional assumption
 
-The one temporary declaration is
+The sole declaration is in `PlattAssumption.lean`:
 
 ```lean
-axiom temporary_reciprocal_prefix_window : HybridProduct.HybridPrefixWindow
+axiom platt_modulus_one_finite_RH : TernaryGoldbach.PlattZetaRH
 ```
 
-Writing B1 for the canonical Mertens second constant, this means
+It states that every zeta zero with 0 < Re ρ < 1 and |Im ρ| ≤ 10⁸ has real
+part 1/2. It is the modulus-one finite statement, rather than full RH or GRH.
+The all-real reciprocal-prefix window through 3¹²⁰ and the relative product
+bound with tolerance 1/4000 from starting point 4,000,000 are now proved.
+The only other axioms are `propext`, `Classical.choice`, and `Quot.sound`.
 
-\[
-\left|\sum_{p\le x}\frac1p-\log\log x-B_1\right|\le\frac1{9000}
-\quad(4{,}000{,}000\le x\le3^{120}).
-\]
+## Historical numerical pilot studies
 
-This is an all-real window assertion, not merely a finite table entry. Its
-numerical support combines a finite prime scan and an analytic tail evaluated
-with numerical zero data. It has **not** been fully kernel certified, and
-JavaScript checks are not presented as a proof of the universal statement.
-In particular, the numerical zero ordinates are not proved zero boxes.
-
-The existing proved product adapter and Dusart tail turn this assumption into
-
-\[
-\prod_{u\le p<z}\left(1-\frac1{p-1}\right)^{-1}
-\le\left(1+\frac1{4000}\right)\frac{\log z}{\log u}
-\quad(z\ge u\ge4{,}000{,}000).
-\]
-
-There are no temporary sieve-density, distribution, lower-count, triple-count,
-or final-existence axioms. The transitive audit permits exactly this temporary
-prefix input and Lean's standard
-`propext`, `Classical.choice`, and `Quot.sound` axioms.
-
-## Numerical checks supporting the input
+These scans and zero-table studies are retained as historical feasibility
+work; the final theorem uses the kernel-checked finite window and Platt tail.
+They are not theorem inputs.
 
 The saved and rerun scans enumerate 882,206,716 primes through 20,000,000,000.
 The fixed-point reciprocal sum is 964832096031544 at scale 2^48; all saved
@@ -99,9 +84,9 @@ remainders; no additional Q factor is inserted.
 
 The medium-prime profile sum is bounded by its integral plus 1/10000,
 and the reciprocal mass by 8/5. These bounds are proved in Lean without
-the temporary prefix axiom. They close the aggregate loss at 113/100.
+the Platt input. They close the aggregate loss at 113/100.
 
-Independently of the new temporary input, the complete corrected triple bound
+Independently of the Platt input, the complete corrected triple bound
 already holds at N>=3^(5*10^12):
 
 \[
@@ -118,26 +103,22 @@ and the existing exact finite counting implication produces the representation.
 The proof uses the actual base candidates, medium-prime conditioned counts,
 Selberg square, Q residual, and complementary triple counts.
 
-## Removing the temporary input
+## Completed axiom replacement
 
-The current replacement route uses Platt's modulus-one finite RH result
-through height 100,000,000 as its planned sole additional axiom. The imported
-analytic estimates and their theta conversion have compiled with that result
-as an explicit hypothesis. The numerical analytic assembly and complete
-finite reciprocal-sum/logarithm certificate are still unfinished.
+The complete finite reciprocal-sum/logarithm certificate and the global
+coverage proof are checked. The reference R=10¹⁰ cancels the canonical
+Mertens constant. The proof needs neither the earlier numerical B₁ enclosure
+nor the 500,000 unverified zero ordinates. The old pilot results above remain
+available for future studies.
 
-The new relative comparison to R=10^10 cancels the canonical Mertens constant,
-so this route does not need a numerical B1 enclosure or the earlier 500,000
-unverified zero ordinates. The old computations above remain historical
-feasibility evidence. See [the checked Platt components and remaining work](../chen-platt/README.md).
-The temporary prefix axiom has NOT been removed yet, and no Platt axiom has
-been installed alongside it. There are no new external Lake dependencies.
+The final audit proves literal recovery of old Chen, requires the actual
+lower/triple counts and proved Dirichlet theorem, and rejects placeholders,
+unsafe proof dependencies and native compiler trust. Its exact axiom ledger
+is the one Platt input and standard Lean axioms. See
+[FINAL_CHEN_AUDIT.json](../chen-platt/FINAL_CHEN_AUDIT.json).
 
-To rebuild the Lean proof after building the existing BJS and Dusart packages,
-run `./check.ps1` from this directory. `-FromModule AuditBJSH30Conditional`
-reruns the final transitive audit against existing build artifacts.
-
-The Dirichlet input is supplied by the vendored OpenAI proof, on its exact
-Lean/Mathlib versions. No new external Lake package names are added.
-The modules are kept outside `research/chen-bjs-study` so its existing
-no-local-axiom source audit and theorem remain intact.
+From a configured checkout, run
+`node OpenAI/tools/build-source.mjs AuditBJSH30Conditional AuditBJSTightBudget OAI.AuditChenIntegration`.
+There are no new external Lake packages, and the pinned Lean/Mathlib versions
+are unchanged. The numerical theorem remains in its existing namespace so
+that previous users can continue to refer to it.

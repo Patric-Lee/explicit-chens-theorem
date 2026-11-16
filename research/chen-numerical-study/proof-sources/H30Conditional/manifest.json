@@ -1,0 +1,140 @@
+{
+  "format": 2,
+  "reason": "Fresh kernel checking of the complete downstream chain after replacing the prefix axiom; bounded repeated imports.",
+  "target": "BJSH30ConditionalChen",
+  "externalImports": [
+    "NumericalPreSieveDistribution",
+    "BJSH30ConditionalProducts",
+    "BJSH30Budget",
+    "NumericalBaseCandidates",
+    "NumericalUpperFactor",
+    "BJSH30PrimeIntervals",
+    "MathlibNt.SieveTheory.Switching.SourceSieve",
+    "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+    "NumericalGoldbachProduct",
+    "BJSH30SourceMass",
+    "BJSH30SourceUpperMass",
+    "BJSStudyAssembly",
+    "NumericalSourceUpperMass",
+    "BJSH30FifthTriple",
+    "NumericalLowerEndpoint",
+    "Goldbach.Statement"
+  ],
+  "preflightModules": 88070,
+  "groupHash": "085f377faebb37f25e30129f9ee2e9328cb76c18a165dbf57e96c1043a38c4a8",
+  "sources": [
+    {
+      "module": "BJSH30ConditionalGeometry",
+      "sourceHash": "74134b8ba860aafb3297e69766da7f0fcb3e43efb31e001077cc805b19f062e2",
+      "bodyHash": "3319ffab94aa8139b2ffe999788c9c47ab5f344e50a53c740b92c6f4b1dbe0c5",
+      "closedScopes": 1,
+      "section": "H30ProofUnit0",
+      "normalizedSourceHash": "74134b8ba860aafb3297e69766da7f0fcb3e43efb31e001077cc805b19f062e2",
+      "normalizedBodyHash": "3319ffab94aa8139b2ffe999788c9c47ab5f344e50a53c740b92c6f4b1dbe0c5"
+    },
+    {
+      "module": "BJSH30ConditionalGoldbach",
+      "sourceHash": "eb9aa4045c514dc85aa7d711923e4feac2e687f8efc4a5149e78a42bdc388728",
+      "bodyHash": "5f27127c5e16f83547e44a25305d675a7a93b63ee2a4e5e0bea2e06a547195e6",
+      "closedScopes": 1,
+      "section": "H30ProofUnit1",
+      "normalizedSourceHash": "eb9aa4045c514dc85aa7d711923e4feac2e687f8efc4a5149e78a42bdc388728",
+      "normalizedBodyHash": "5f27127c5e16f83547e44a25305d675a7a93b63ee2a4e5e0bea2e06a547195e6"
+    },
+    {
+      "module": "BJSH30ConditionalMediumPrimeGrid",
+      "sourceHash": "815b4478ef748c7af13490010170aa1d1504830566d9e882b0f417ded10c7159",
+      "bodyHash": "35741950b7a754acee48e943f30f01c0bb13c52a2b692803978c9d0494af7703",
+      "closedScopes": 1,
+      "section": "H30ProofUnit2",
+      "normalizedSourceHash": "815b4478ef748c7af13490010170aa1d1504830566d9e882b0f417ded10c7159",
+      "normalizedBodyHash": "35741950b7a754acee48e943f30f01c0bb13c52a2b692803978c9d0494af7703"
+    },
+    {
+      "module": "BJSH30ConditionalMediumPrimeSum",
+      "sourceHash": "8b369c6df78c95ae474a488b99fb2eb1ad7fefa9be18bb0c6901d9af48a0c9f3",
+      "bodyHash": "309f12c542babf37cf5e721c7a7f782e5c01b13edef58d08a4dda63c650e74e9",
+      "closedScopes": 1,
+      "section": "H30ProofUnit3",
+      "normalizedSourceHash": "8b369c6df78c95ae474a488b99fb2eb1ad7fefa9be18bb0c6901d9af48a0c9f3",
+      "normalizedBodyHash": "309f12c542babf37cf5e721c7a7f782e5c01b13edef58d08a4dda63c650e74e9"
+    },
+    {
+      "module": "BJSH30ConditionalMediumPrimeShift",
+      "sourceHash": "b870b929704dcf5c2f43888d04f07ce02cd891d371c4903103b9d041d1f2543a",
+      "bodyHash": "d4905cac0910199ce6fcbd68b6c984528bb738b88318912d405b2337d7d17f5b",
+      "closedScopes": 1,
+      "section": "H30ProofUnit4",
+      "normalizedSourceHash": "b870b929704dcf5c2f43888d04f07ce02cd891d371c4903103b9d041d1f2543a",
+      "normalizedBodyHash": "d4905cac0910199ce6fcbd68b6c984528bb738b88318912d405b2337d7d17f5b"
+    },
+    {
+      "module": "BJSH30ConditionalMediumReciprocal",
+      "sourceHash": "262a6ce0755f108167b7d409ce512c387946bf6ef265f2e4c5d8c89716728e7b",
+      "bodyHash": "5caf9358def6f632336b1f94a6dd22c5d1b6fa9e5db14a52683312686dc8d9bc",
+      "closedScopes": 1,
+      "section": "H30ProofUnit5",
+      "normalizedSourceHash": "262a6ce0755f108167b7d409ce512c387946bf6ef265f2e4c5d8c89716728e7b",
+      "normalizedBodyHash": "5caf9358def6f632336b1f94a6dd22c5d1b6fa9e5db14a52683312686dc8d9bc"
+    },
+    {
+      "module": "BJSH30ConditionalBase",
+      "sourceHash": "6c02757da8db45a0d76264cc9eaea2b61adf3d19a81b51a740e49434ef362f8d",
+      "bodyHash": "4098ebb78343ddf8c416f60e95dafa4c78c37c66538fd446a81de1544dfccd3d",
+      "closedScopes": 1,
+      "section": "H30ProofUnit6",
+      "normalizedSourceHash": "6c02757da8db45a0d76264cc9eaea2b61adf3d19a81b51a740e49434ef362f8d",
+      "normalizedBodyHash": "4098ebb78343ddf8c416f60e95dafa4c78c37c66538fd446a81de1544dfccd3d"
+    },
+    {
+      "module": "BJSH30ConditionalMedium",
+      "sourceHash": "f2fb888d002165e4e282e6d2d5874d7816578e222f5917b7259abd7bb616e255",
+      "bodyHash": "7783f3efd933596f22523b5a8f4183c5abaa89184fc60f7e535df07b9d6203ad",
+      "closedScopes": 1,
+      "section": "H30ProofUnit7",
+      "normalizedSourceHash": "f2fb888d002165e4e282e6d2d5874d7816578e222f5917b7259abd7bb616e255",
+      "normalizedBodyHash": "7783f3efd933596f22523b5a8f4183c5abaa89184fc60f7e535df07b9d6203ad"
+    },
+    {
+      "module": "BJSH30ConditionalAggregate",
+      "sourceHash": "e421f1823ca74e44b8f4706d264025cad4272cb7265fb3385338a39ee7ff1935",
+      "bodyHash": "253849d67b8d2fe28801588a1d2ecef2a67451e7ef2115c911a107f23c9cb00d",
+      "closedScopes": 1,
+      "section": "H30ProofUnit8",
+      "normalizedSourceHash": "e421f1823ca74e44b8f4706d264025cad4272cb7265fb3385338a39ee7ff1935",
+      "normalizedBodyHash": "253849d67b8d2fe28801588a1d2ecef2a67451e7ef2115c911a107f23c9cb00d"
+    },
+    {
+      "module": "BJSH30ConditionalChen",
+      "sourceHash": "38af9fadf2cf62eae71b8e792c7e29d6f9281dd919f3d20806d8cb51f09fd9c7",
+      "bodyHash": "c30acbb8e8d44fa9c5bbcda57081901224e3e225215ad00e1f0908cc4460f37d",
+      "closedScopes": 1,
+      "section": "H30ProofUnit9",
+      "normalizedSourceHash": "38af9fadf2cf62eae71b8e792c7e29d6f9281dd919f3d20806d8cb51f09fd9c7",
+      "normalizedBodyHash": "c30acbb8e8d44fa9c5bbcda57081901224e3e225215ad00e1f0908cc4460f37d"
+    }
+  ],
+  "wrappers": {
+    "BJSH30ConditionalGeometry": "4e81ce94b108d7d1983275c52d99e7451ed446281cb78511d41e0b6f30d7baf9",
+    "BJSH30ConditionalGoldbach": "30b4b2d8f24cdc40158d8e1026f45105f3dda8f8d9b948acd6b31afb4e0711b1",
+    "BJSH30ConditionalMediumPrimeGrid": "77eaab6c8613e9dc938e7bc20426f666db7744efe49da4a599ff4f266873d1a6",
+    "BJSH30ConditionalMediumPrimeSum": "9fd7720f07c5613ece968a9c685ad7aa0191dee13a70693ff3be10566a77dd4d",
+    "BJSH30ConditionalMediumPrimeShift": "e6f805f84814324c45128a6412ec4d0f5ce0a5e1705002f5c5da386dfe528918",
+    "BJSH30ConditionalMediumReciprocal": "813a44f531c01948eee0eb835e207bfb618a8ce2945e24c0b8ecf6a7c98441ee",
+    "BJSH30ConditionalBase": "d20837f9ab04ec31f5d503dc937a470f7de99acdf477cdc327fbee4702597496",
+    "BJSH30ConditionalMedium": "64c8083e70593a5f39e3b433c43e019b375108692a72eb92dc9f0eac56f692e8",
+    "BJSH30ConditionalAggregate": "94566414be2f799e832555a4b6774ff08580d12d1e9113a0fea2e1f92d3d21a1"
+  },
+  "normalizedGroupHash": "085f377faebb37f25e30129f9ee2e9328cb76c18a165dbf57e96c1043a38c4a8",
+  "normalizedWrappers": {
+    "BJSH30ConditionalGeometry": "4e81ce94b108d7d1983275c52d99e7451ed446281cb78511d41e0b6f30d7baf9",
+    "BJSH30ConditionalGoldbach": "30b4b2d8f24cdc40158d8e1026f45105f3dda8f8d9b948acd6b31afb4e0711b1",
+    "BJSH30ConditionalMediumPrimeGrid": "77eaab6c8613e9dc938e7bc20426f666db7744efe49da4a599ff4f266873d1a6",
+    "BJSH30ConditionalMediumPrimeSum": "9fd7720f07c5613ece968a9c685ad7aa0191dee13a70693ff3be10566a77dd4d",
+    "BJSH30ConditionalMediumPrimeShift": "e6f805f84814324c45128a6412ec4d0f5ce0a5e1705002f5c5da386dfe528918",
+    "BJSH30ConditionalMediumReciprocal": "813a44f531c01948eee0eb835e207bfb618a8ce2945e24c0b8ecf6a7c98441ee",
+    "BJSH30ConditionalBase": "d20837f9ab04ec31f5d503dc937a470f7de99acdf477cdc327fbee4702597496",
+    "BJSH30ConditionalMedium": "64c8083e70593a5f39e3b433c43e019b375108692a72eb92dc9f0eac56f692e8",
+    "BJSH30ConditionalAggregate": "94566414be2f799e832555a4b6774ff08580d12d1e9113a0fea2e1f92d3d21a1"
+  }
+}

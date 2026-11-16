@@ -1,71 +1,138 @@
-# Platt modulus-one reciprocal-prefix development
+# Platt-only explicit Chen theorem near H = 30
 
-Work in progress. The temporary prefix-window axiom is **still present** in
-BJSH30ConditionalProducts.lean. No completed replacement theorem is claimed.
-No Platt axiom has been installed yet: analytic estimates currently take its
-modulus-one statement as an explicit hypothesis. The final aim is to replace
-the old temporary axiom by that sole local Platt axiom and keep cutoff
-3^(10^13), H approximately30.027654.
+The temporary reciprocal-prefix axiom has been removed. The checked theorem
+`ChenEffective.H30Conditional.chen` proves Chen's conclusion for every even
+`N ≥ 3^(10^13)`, corresponding to H = 30.02765403654. The literal original
+`Goldbach.ChenTheorem` follows as `original_chen`.
 
-## Checked components
+The sole external axiom is `PlattWindow.platt_modulus_one_finite_RH`, declared
+in [PlattAssumption.lean](PlattAssumption.lean): every nontrivial zeta zero
+with imaginary part of absolute value at most 100,000,000 has real part 1/2.
+It has exactly the `TernaryGoldbach.PlattZetaRH` predicate used by the local
+calr3 port. It asserts neither full RH nor Dirichlet GRH. The Dirichlet
+seven-eighths theorem is supplied by the existing checked OpenAI proof.
 
-The pinned calr3 analytic closure (70 local modules) compiles on Lean4.34.1:
-PsiRanges1e8 and PsiPlateau1e8 use only the modulus-one finite-RH hypothesis
-through height100,000,000. The theta conversion is checked in PlattThetaInputs.
-No full Dirichlet GRH or binary-Goldbach input is assumed by those bounds.
+## Finite certificate and analytic tail
 
-PlattPrefixBridge proves the direct theta Abel transfer and cancellation of
-the canonical Mertens constant in relative reciprocal sums. PlattFarAnchor
-proves error at most1e-8 at3^512 from the existing proved theta estimate.
-PlattKernelBounds, PlattPlateauKernels, and PlattPlateauNorm give checked
-square-root and plateau integrals, including the finite endpoint differences.
-PlattLogBounds supplies the elementary logarithm inequalities needed for
-the numerical allocations. PlattWindowBudget checks the scalar allocation
-59/1e6 + 1/20000 <=1/9000. Its analytic producers still need assembly.
+Write P(x) for the reciprocal sum over primes up to x and
+E(x) = P(x) − log log x − B₁, with the canonical Mertens constant B₁.
 
-PlattCountSoundness and PlattReciprocalBlocks connect packed sieve counts to
-the actual complete reciprocal-prime sum. PlattSegmentArithmetic proves
-the integer rounding and segment summation bridge. PlattSegmentPilot gives
-a fully kernel-checked reciprocal-sum bound on[4000000,4004096]. The integer
-checker is isolated in an Init-only core; each data batch can be checked
-without loading the analytic library. PlattRelativeGrid controls every real
-point of a cell from certified endpoint data.
+[PlattFiniteWindow.lean](PlattFiniteWindow.lean) proves, with only standard
+Lean axioms,
 
-The six current count benchmarks pass, including wrong-count rejection and
-a262144-integer segment near1e10. The larger1048576-integer stress test
-exceeded a4GiB kernel limit; its failed source is excluded from this checked
-set. Its measurements are not evidence of a theorem.
+\[
+|P(x)-P(10^{10})-(\log\log x-\log\log 10^{10})|
+\le \frac1{20000}\qquad(4\cdot10^6\le x\le10^{10}).
+\]
 
-The checked proof leaves report only propext, Classical.choice, Quot.sound
-(the purely integer leaves use fewer). COMPONENT_STATUS.json records checked
-source/object pairs. DEVELOPMENT_AUDIT.json is a static/provenance scan,
-**not** a final Chen axiom audit.
+The finite computation consists of 76,265 sieve/count certificates over
+8,886,581 blocks, 937 logarithm chunks, and 239,866 grid points. The completed
+assembly has 2,723 prefix, 2,399 totals, and 943 grid batches. All are kernel
+checked using `decide +kernel`. No prime-count or logarithm computation is
+accepted as an axiom.
 
-## Remaining obligations
+`PlattPointPacketSoundness` proves the cumulative prefix carry induction.
+`PlattGlobalGridSoundness` matches the actual prime bounds and certified log
+rows to each integer cell budget and proves all-real coverage, including
+section seams. `PlattGlobalPointCover` assembles 943 bounded point-stream
+checks using proved structural inclusions into the global prefix tree.
+Each merge accepts repeated seam points but rejects altered bounds.
 
-The full scan from4e6 through1e10 is untrusted feasibility data. With block
-reciprocal enclosures it gives upper error0.00004572215541642777, below the
-finite allowance0.00005. There are8,886,581 blocks and239,866 grid points.
-The compressed count data and integer log bounds still require complete
-kernel replay, a proved logarithm producer, seam and coverage proofs.
-The Mertens constant cancels; no numerical enclosure of it is assumed.
+The ten downstream H≈30 proof modules are checked together in
+`BJSH30ConditionalChen.lean` to avoid repeatedly importing the large
+certificate closure. Their original proof bodies are retained unchanged in
+`../chen-numerical-study/proof-sources/H30Conditional/`, with a source/hash
+manifest and thin compatibility import modules. The final audit checks
+body preservation as well as the resulting Lean proof and axiom closure.
+`PlattGlobalGridNegativeControls` checks missing-point and mismatched-row
+rejection. No numerical sieve is replayed by these proof joins.
 
-The piecewise analytic estimates and exact integral lemmas must also be
-assembled into the uniform numerical error bound. Only after both producers
-are checked can the temporary axiom be deleted, the single local Platt
-axiom activated, and the final H30/old-Chen dependency audits rerun.
+Under the Platt hypothesis, [PlattAnalyticWindow.lean](PlattAnalyticWindow.lean)
+proves |E(x)| ≤ 59/10⁶ on [10¹⁰, 3⁵¹²]. This includes the reference anchor
+and the tail through 3¹²⁰. The exact allocation
+
+\[
+\frac{59}{10^6}+\frac1{20000}\le\frac1{9000}
+\]
+
+gives the full prefix window in
+[PlattCertifiedPrefixWindow.lean](PlattCertifiedPrefixWindow.lean).
+The canonical B₁ cancels in the finite comparison. No numerical enclosure of
+B₁, unverified zero ordinates, or additional Büthe/Schoenfeld assumption is used.
+
+## Audits and reproduction
+
+[FINAL_CHEN_AUDIT.json](FINAL_CHEN_AUDIT.json) records the final source/object
+manifest and transitive audit. The final numerical theorem and its recovery
+of old Chen have exactly `propext`, `Classical.choice`, `Quot.sound`, and the
+one published Platt input as axioms. The audit rejects placeholders, unsafe
+proof dependencies and native compiler trust, and requires the actual lower
+and triple counts, proved Dirichlet theorem, finite window and analytic tail.
+The independent H≈147 route retains its standard-only audit.
+
+For a fresh Windows checkout, preserve the vendored-source checksum line
+endings by cloning with a repository-local Git setting:
+
+```sh
+git clone -c core.autocrlf=false https://github.com/Patric-Lee/explicit-chens-theorem.git
+```
+
+From a configured checkout, use:
+
+```sh
+node OpenAI/tools/build-source.mjs AuditBJSH30Conditional AuditBJSTightBudget OAI.AuditChenIntegration
+```
+
+The checked artifacts are reusable. A source-only checkout still needs to
+check the finite certificate sources; it does not gain trust from the JSON
+receipts or the JavaScript feasibility scans. Existing completed counting,
+logarithm and assembly campaigns do not need to be rerun locally.
+
+## Build time and memory
+
+Budget **15+ hours for a first full certificate build and assembly** on hardware
+comparable to the development machine, plus time for dependency setup and
+final global proof/audit checks. Runtime varies with CPU, storage, available
+memory, paging and worker count. This estimate is not a fresh end-to-end
+benchmark: the completed counting report records 234,443.952 seconds (about
+65.1 hours) of summed Lean process time across workers, which is distinct
+from elapsed wall time. Other stages add work.
+
+Observed resource use on Windows:
+
+| Item | Observation or guidance |
+| --- | --- |
+| Physical RAM on the development machine | About 14 GiB usable |
+| Largest serial Lean import/audit process | About 20–22 GiB private committed memory; not resident RAM |
+| Recommended physical RAM | 32 GiB for less paging; this is guidance, not a formally measured minimum |
+| Smaller machines | A 16 GiB machine needs substantial available swap/pagefile capacity and may be much slower |
+| Parallelism | Chunk workers can run concurrently; keep large global joins and final audits serial |
+
+Allow commit headroom beyond the Lean process for the operating system and
+other applications. The development build succeeded with paging; do not
+interpret its physical RAM size as a no-swap memory bound. Kernel-checked
+objects and dependency caches also consume disk space separately from RAM.
+
+For scale, the last fresh downstream Chen check took about 20.7 minutes,
+the focused H≈30 audit 8.7 minutes, and the combined integration audit 16.6
+minutes on this machine, with heavy import/paging costs. These are observed
+individual runs, not reliable forecasts for other hardware.
+
+A fresh clone contains proof/certificate sources, not this machine's
+`.lake/build-434` object cache. It must check those sources. Once checked,
+unchanged local artifacts can be reused; there is no need to repeat completed
+local campaigns just to rerun an unchanged final theorem. The saved JSON
+receipts and untrusted numerical scans do not substitute for Lean checking.
 
 ## Sources and constraints
 
-Selected sources are from calr3/ternary-goldbach commit
-ab016043e852c126492310d8fc44ea7849c381b2. Source-manifest.json records original
-hashes, adapted hashes, and compatibility changes. Original Apache2/MIT
-licenses and RSBounds provenance are retained. The unrelated eta-plus-square
-import was removed from PsiSandwich; its one needed general summability
-proof was extracted privately from the same pinned source. Some other
-downloaded modules are outside the validated closure.
+The analytic port is from calr3/ternary-goldbach commit
+ab016043e852c126492310d8fc44ea7849c381b2. source-manifest.json records the
+selected original files, adaptations, and hashes. Apache-2.0/MIT licenses and
+RSBounds provenance are retained. Selected calr3 modulus-one estimates are
+used; unrelated downloaded studies remain outside the final proof closure.
+The optional lower-endpoint Büthe route remains a separate study.
 
-No native_decide, unproved analytic axiom, or kernel trust bypass was added
-to this development. No new external Lake package was added. The existing
-prime-power module now uses narrow Mathlib imports; its theorems recompile.
-No commit or push was requested or performed in this phase.
+No `native_decide`, proof placeholder, additional unproved analytic input,
+or new external Lake package is used. Lean 4.34.1 and the existing pinned
+Mathlib/LeanArchitect dependencies are unchanged.

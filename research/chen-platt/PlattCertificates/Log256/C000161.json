@@ -1,0 +1,16 @@
+{
+  "kind": "logs",
+  "variant": "Log256",
+  "index": 161,
+  "module": "PlattCertificates.Log256.C000161",
+  "sourceHash": "3fa3fe47fc7c69b66c4b63fde07de9a2d84c9a330f113f71ab9481d0d4800d13",
+  "gridInputHash": "6598e557ab45ade1dce712191609ce37fbcaf233ed316a8ebeae27d7c12939af",
+  "driverHash": "a94cb52ce4474a5599eb78dde017a89e0407cba16456b26f875f3921bea019d5",
+  "metadata": {
+    "rowStart": 41216,
+    "rowEndExclusive": 41472,
+    "firstX": 17128064,
+    "lastX": 17291264
+  },
+  "classification": "GENERATED_NOT_CHECKED"
+}

@@ -1,0 +1,129 @@
+{
+  "classification": "NUMERICAL_STUDY_NOT_LEAN_CHECKED",
+  "validations": [
+    {
+      "route": "checked-profile",
+      "quadratureIntegral": 0.00007633079949979224,
+      "budgetedIntegral": 0.00007787387381504535,
+      "pass": true
+    },
+    {
+      "route": "schoenfeld-100000000",
+      "quadratureIntegral": 0.000045010060043866754,
+      "budgetedIntegral": 0.000045019942029047715,
+      "pass": true
+    },
+    {
+      "route": "buthe-sharp-100000000",
+      "quadratureIntegral": 0.00004129992887759191,
+      "budgetedIntegral": 0.000041462720861392744,
+      "pass": true
+    },
+    {
+      "route": "schoenfeld-3000000000000",
+      "quadratureIntegral": 0.000044594521697497783,
+      "budgetedIntegral": 0.00004459452262172003,
+      "pass": true
+    },
+    {
+      "route": "buthe-sharp-3000000000000",
+      "quadratureIntegral": 0.000040882757957787984,
+      "budgetedIntegral": 0.000041035709954963365,
+      "pass": true
+    },
+    {
+      "directFiniteScan": 1000000000,
+      "reference": 1000015872,
+      "difference": 0,
+      "pass": true
+    },
+    {
+      "directFiniteScan": 1750000000,
+      "reference": 1750034432,
+      "difference": 0,
+      "pass": true
+    },
+    {
+      "directFiniteScan": 2500000000,
+      "reference": 2500026368,
+      "difference": 0,
+      "pass": true
+    },
+    {
+      "directFiniteScan": 3000000000,
+      "reference": 3000057856,
+      "difference": 0,
+      "pass": true
+    },
+    {
+      "directFiniteScan": 5000000000,
+      "reference": 5000130560,
+      "difference": 0,
+      "pass": true
+    },
+    {
+      "directFiniteScan": 10000000000,
+      "reference": 10000000000,
+      "difference": 0,
+      "pass": true
+    },
+    {
+      "height": 100000000,
+      "safeX": 10000000000000000,
+      "requiredHeight": 81058258.16481808,
+      "pass": true
+    },
+    {
+      "height": 3000000000000,
+      "safeX": 1e+25,
+      "requiredHeight": 2050629751734.1228,
+      "pass": true
+    }
+  ],
+  "recommendation": "Keep RH height1e8. First retarget existing bounds near6.4e9; study/formalize coarse finite-RH Schoenfeld bridge toward2e9. Stronger axiom not justified by this model alone.",
+  "practicalExistingInputs": {
+    "countingEnd": 6400000000,
+    "gridPoints": 225644,
+    "blocks": 7128768,
+    "physicalCountChunksLowerEstimate": 48798,
+    "countRangeReduction": 1.5628517823639776,
+    "analytic": 0.00006369335384838165,
+    "endpoint": 0.000019984885600587737,
+    "integral": 0.00004214323365557471,
+    "farTail": 0.0000015652345922192053,
+    "finite": 0.00004576532423428148,
+    "total": 0.00010945867808266313,
+    "slack": 0.0000016524330284479826,
+    "fixedAllocationPass": false,
+    "plannedCountChunks": 48799,
+    "plannedLogChunks": 882
+  },
+  "proposedAfterBridge": {
+    "countingEnd": 2000000000,
+    "gridPoints": 188640,
+    "blocks": 3859741,
+    "physicalCountChunksLowerEstimate": 15229,
+    "countRangeReduction": 5.008016032064128,
+    "analytic": 0.00006409444277931404,
+    "endpoint": 0.00001905450075026633,
+    "integral": 0.00004347470743682851,
+    "farTail": 0.0000015652345922192053,
+    "finite": 0.00004562034754584943,
+    "total": 0.00010971479032516347,
+    "slack": 0.0000013963207859476486,
+    "fixedAllocationPass": false,
+    "plannedCountChunks": 15229,
+    "plannedLogChunks": 737
+  },
+  "additionalEndpointSavingFromHeight": {
+    "fixed": 0.016013720458414316,
+    "joint": 0.025754725141646118
+  },
+  "proposedExactAllocation": {
+    "analyticNumerator": 65,
+    "finiteNumerator": 46,
+    "denominator": 1000000,
+    "totalBelowOneOver9000": true
+  },
+  "formalizationCaution": "Buthe sharp theta proof uses separate numerical theta bound through1e11; not an available sole-RH-height theorem in this repo. Coarse theta can instead follow from psi log(log-3) + checked2sqrt prime-power gap on our entire candidate range."
+}

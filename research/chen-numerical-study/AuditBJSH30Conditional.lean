@@ -10,6 +10,12 @@ example : ChenEffective.H30Conditional.chenCutoff = 3^(10^13) :=
 
 example : Goldbach.ChenTheorem := ChenEffective.H30Conditional.original_chen
 
+-- Verify the permitted axiom is exactly modulus-one finite RH, without an
+-- extra analytic estimate or a hypothesis about other Dirichlet L-functions.
+example : ∀ ρ : ℂ, riemannZeta ρ=0 → 0<ρ.re → ρ.re<1 →
+    |ρ.im|≤(100000000:ℝ) → ρ.re=1/2 :=
+  ChenEffective.PlattWindow.platt_modulus_one_finite_RH
+
 example : (ChenEffective.jointSelbergBudget (82/10) (1/10000) 0 (1/1000)).margin =
     (0.005426:ℝ) := by
   rw [ChenEffective.joint_selberg_margin]
@@ -18,7 +24,7 @@ example : (ChenEffective.jointSelbergBudget (82/10) (1/10000) 0 (1/1000)).margin
 run_elab do
   let standard := #[``propext, ``Classical.choice, ``Quot.sound]
   let allowed := standard ++ #[
-    ``ChenEffective.H30Conditional.temporary_reciprocal_prefix_window]
+    ``ChenEffective.PlattWindow.platt_modulus_one_finite_RH]
   for n in #[``ChenEffective.H30Conditional.chen,
       ``ChenEffective.H30Conditional.original_chen] do
     let axs ← Lean.collectAxioms n
@@ -40,6 +46,7 @@ run_elab do
     if seen.contains n then continue
     seen := seen.insert n
     if #["ChenEffective.TightBudget.chen", "ChenEffective.bjsStudy_chen",
+        "ChenEffective.H30Conditional.temporary_reciprocal_prefix_window",
         "sorryAx", "Lean.ofReduceBool", "Lean.trustCompiler"].contains n.toString then
       throwError "Forbidden proof dependency: {n}"
     let some ci := env.find? n | throwError "Missing dependency: {n}"
@@ -58,10 +65,17 @@ run_elab do
       ``ChenEffective.bjsStudy_preSieveCounting_lower_bound,
       ``ChenEffective.bjsStudy_preSieveCounting_upper_bound,
       ``ChenEffective.H30.fifth_triple_closed,
-      ``ChenEffective.joint_selberg_existence] do
+      ``ChenEffective.joint_selberg_existence,
+      ``ChenEffective.PlattWindow.pointChainCertificate_sound,
+      ``ChenEffective.PlattWindow.gridWindowCertificate_sound,
+      ``ChenEffective.PlattWindow.global_grid_points_covered,
+      ``ChenEffective.PlattWindow.PointSubset.sound,
+      ``ChenEffective.PlattWindow.certified_finite_relative_window,
+      ``ChenEffective.PlattWindow.numerical_prefix_window_of_finite,
+      ``ChenEffective.PlattWindow.certified_prefix_window] do
     unless seen.contains n do throwError "Required actual counting producer missing: {n}"
   unless seen.contains ``OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re do
     throwError "The actual proved OpenAI Dirichlet theorem is absent"
-  logInfo m!"Conditional H30 Chen audit passed: {seen.size} transitive constants."
-  logInfo "Exactly temporary_reciprocal_prefix_window and standard Lean axioms; Dirichlet is proved."
+  logInfo m!"Platt H30 Chen audit passed: {seen.size} transitive constants."
+  logInfo "Exactly Platt modulus-one finite RH through 1e8 and standard Lean axioms; Dirichlet is proved."
   logInfo "Actual lower/triple counts used; literal original implicit Chen statement recovered."

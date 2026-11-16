@@ -1,0 +1,187 @@
+{
+  "classification": "ASSEMBLY_LEAVES_AND_TRANSITIVE_LOCAL_ARTIFACTS_VERIFIED_NOT_FINAL_CHEN",
+  "checkedAt": "2026-11-15T12:14:52.790Z",
+  "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+  "manifestHash": "482117bacb5268f0bcf8d012f65b47466cb3719d13d3e4f7e5f17863fb0040b9",
+  "batches": 6065,
+  "stages": [
+    {
+      "kind": "prefix",
+      "batches": 2723,
+      "recordedLeanSeconds": 10810.500999999977,
+      "sections": [
+        {
+          "section": 1,
+          "batches": 649,
+          "first": 0,
+          "lastExclusive": 10000
+        },
+        {
+          "section": 2,
+          "batches": 313,
+          "first": 10000,
+          "lastExclusive": 20000
+        },
+        {
+          "section": 3,
+          "batches": 313,
+          "first": 20000,
+          "lastExclusive": 30000
+        },
+        {
+          "section": 4,
+          "batches": 313,
+          "first": 30000,
+          "lastExclusive": 40000
+        },
+        {
+          "section": 5,
+          "batches": 313,
+          "first": 40000,
+          "lastExclusive": 50000
+        },
+        {
+          "section": 6,
+          "batches": 313,
+          "first": 50000,
+          "lastExclusive": 60000
+        },
+        {
+          "section": 7,
+          "batches": 313,
+          "first": 60000,
+          "lastExclusive": 70000
+        },
+        {
+          "section": 8,
+          "batches": 196,
+          "first": 70000,
+          "lastExclusive": 76265
+        }
+      ]
+    },
+    {
+      "kind": "totals",
+      "batches": 2399,
+      "recordedLeanSeconds": 8300.264999999987,
+      "sections": [
+        {
+          "section": 1,
+          "batches": 325,
+          "first": 0,
+          "lastExclusive": 10000
+        },
+        {
+          "section": 2,
+          "batches": 313,
+          "first": 10000,
+          "lastExclusive": 20000
+        },
+        {
+          "section": 3,
+          "batches": 313,
+          "first": 20000,
+          "lastExclusive": 30000
+        },
+        {
+          "section": 4,
+          "batches": 313,
+          "first": 30000,
+          "lastExclusive": 40000
+        },
+        {
+          "section": 5,
+          "batches": 313,
+          "first": 40000,
+          "lastExclusive": 50000
+        },
+        {
+          "section": 6,
+          "batches": 313,
+          "first": 50000,
+          "lastExclusive": 60000
+        },
+        {
+          "section": 7,
+          "batches": 313,
+          "first": 60000,
+          "lastExclusive": 70000
+        },
+        {
+          "section": 8,
+          "batches": 196,
+          "first": 70000,
+          "lastExclusive": 76265
+        }
+      ]
+    },
+    {
+      "kind": "grid",
+      "batches": 943,
+      "recordedLeanSeconds": 3264.425000000002,
+      "sections": [
+        {
+          "section": 1,
+          "batches": 118,
+          "first": 0,
+          "lastExclusive": 30000
+        },
+        {
+          "section": 2,
+          "batches": 118,
+          "first": 30000,
+          "lastExclusive": 60000
+        },
+        {
+          "section": 3,
+          "batches": 118,
+          "first": 60000,
+          "lastExclusive": 90000
+        },
+        {
+          "section": 4,
+          "batches": 118,
+          "first": 90000,
+          "lastExclusive": 120000
+        },
+        {
+          "section": 5,
+          "batches": 118,
+          "first": 120000,
+          "lastExclusive": 150000
+        },
+        {
+          "section": 6,
+          "batches": 118,
+          "first": 150000,
+          "lastExclusive": 180000
+        },
+        {
+          "section": 7,
+          "batches": 118,
+          "first": 180000,
+          "lastExclusive": 210000
+        },
+        {
+          "section": 8,
+          "batches": 117,
+          "first": 210000,
+          "lastExclusive": 239865
+        }
+      ]
+    }
+  ],
+  "dependenciesChecked": 77210,
+  "countChunks": 76265,
+  "logChunks": 937,
+  "points": 239866,
+  "cells": 239865,
+  "sourceObjectManifestHash": "5e93e785833ff2c8fc62deea281a43f45bf8b02c6945dcdd4f4a1838e97bf273",
+  "verificationSeconds": 207.85,
+  "remaining": [
+    "Kernel-level global cumulative offsets/tree",
+    "Global point/grid/log joins and section coverage",
+    "Platt analytic-window integration",
+    "Temporary prefix axiom replacement and final Chen audit"
+  ]
+}

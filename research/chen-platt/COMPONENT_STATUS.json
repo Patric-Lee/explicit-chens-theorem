@@ -1,19 +1,18 @@
 {
   "scope": "CHECKED_COMPONENTS_NOT_A_COMPLETED_PREFIX_THEOREM",
-  "timestamp": "2026-11-13T10:00:27.095Z",
+  "timestamp": "2026-11-14T00:19:32.159Z",
   "lean": "4.34.1",
   "analyticBuild": {
     "roots": [
-      "TernaryGoldbach.Explicit.PsiRanges1e8",
-      "TernaryGoldbach.Explicit.PsiPlateau1e8"
+      "PlattAnalyticWindow"
     ],
-    "total": 70,
-    "complete": 26,
-    "cached": 44,
+    "total": 582,
+    "complete": 3,
+    "cached": 579,
     "running": 0,
     "failed": false,
     "remaining": 0,
-    "at": "2026-11-13T09:54:05.060Z"
+    "at": "2026-11-13T19:02:52.479Z"
   },
   "components": [
     {
@@ -232,6 +231,194 @@
       }
     },
     {
+      "module": "PlattNumericalAux",
+      "sourceHash": "f1c86f933088e9bce7953b5250fcc3f502bbad8133fd8bd653c080b9920da290",
+      "objectHash": "224d19b09d3d5ab21f98e3e3d86083203db12de6f837f3f73942fc7c7974513d",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "f1c86f933088e9bce7953b5250fcc3f502bbad8133fd8bd653c080b9920da290",
+        "objectHash": "224d19b09d3d5ab21f98e3e3d86083203db12de6f837f3f73942fc7c7974513d",
+        "dependencies": {
+          "PlattPrefixBridge": "fbcacd7de930e0ae049a72f8ca0896292a87115a249e4519a043959c8aa0c1b6",
+          "PlattPlateauNorm": "4d3fd0cdf9bf0cec12582dd994a1335d5380d3c4622bdc5d081b11b051572811",
+          "PlattLogBounds": "5de36e52669ee279b60af31dce4b5c308bde9646cf4eb2716e25c39341dd117e"
+        },
+        "seconds": 22.523
+      }
+    },
+    {
+      "module": "PlattNumericalPieces",
+      "sourceHash": "6166728c0705eef10d5039ff66d8795e3228717fe1a40e3846e7fe1c2d51fd47",
+      "objectHash": "25cb222f26173d6029f3675b304e1741f88a2b89c10f9f25a7c4baacb350cb86",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "6166728c0705eef10d5039ff66d8795e3228717fe1a40e3846e7fe1c2d51fd47",
+        "objectHash": "25cb222f26173d6029f3675b304e1741f88a2b89c10f9f25a7c4baacb350cb86",
+        "dependencies": {
+          "PlattNumericalAux": "224d19b09d3d5ab21f98e3e3d86083203db12de6f837f3f73942fc7c7974513d",
+          "PlattThetaInputs": "21d9d38c156d4e277164907cca1edea41dd0d986ba56bfb9d90b018420337b7d"
+        },
+        "seconds": 25.625
+      }
+    },
+    {
+      "module": "PlattUniformEndpoint",
+      "sourceHash": "0d22d7eb3668576154ec1beadb9c37ae56113648d2a7f1ed397b3d596ecebed3",
+      "objectHash": "c14aaf18d7dca40d403644aeeddd068fbf3161b14ee77818513dbbf0caa1f1dd",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "0d22d7eb3668576154ec1beadb9c37ae56113648d2a7f1ed397b3d596ecebed3",
+        "objectHash": "c14aaf18d7dca40d403644aeeddd068fbf3161b14ee77818513dbbf0caa1f1dd",
+        "dependencies": {
+          "PlattNumericalAux": "224d19b09d3d5ab21f98e3e3d86083203db12de6f837f3f73942fc7c7974513d",
+          "PlattThetaInputs": "21d9d38c156d4e277164907cca1edea41dd0d986ba56bfb9d90b018420337b7d"
+        },
+        "seconds": 22.936
+      }
+    },
+    {
+      "module": "PlattAnalyticEnvelope",
+      "sourceHash": "2f8e36456c6877408fda5d798d256a2cc2f95054584fe099aed86d919ae5e4eb",
+      "objectHash": "38ad08f5584ca6bf9b66484ac78186145990359853848dd440090f161db27a0f",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "2f8e36456c6877408fda5d798d256a2cc2f95054584fe099aed86d919ae5e4eb",
+        "objectHash": "38ad08f5584ca6bf9b66484ac78186145990359853848dd440090f161db27a0f",
+        "dependencies": {
+          "PlattNumericalPieces": "25cb222f26173d6029f3675b304e1741f88a2b89c10f9f25a7c4baacb350cb86",
+          "PlattUniformEndpoint": "c14aaf18d7dca40d403644aeeddd068fbf3161b14ee77818513dbbf0caa1f1dd"
+        },
+        "seconds": 22.368
+      }
+    },
+    {
+      "module": "PlattAnalyticWindow",
+      "sourceHash": "09535343a706952f38dc8d74b234e635ad2150ba604d0a82adb607acf51ad024",
+      "objectHash": "ee14a8a5924484dbd84a6e372040447e89c1808e8aa65643dbc6e7840ba13bcb",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "09535343a706952f38dc8d74b234e635ad2150ba604d0a82adb607acf51ad024",
+        "objectHash": "ee14a8a5924484dbd84a6e372040447e89c1808e8aa65643dbc6e7840ba13bcb",
+        "dependencies": {
+          "PlattAnalyticEnvelope": "38ad08f5584ca6bf9b66484ac78186145990359853848dd440090f161db27a0f",
+          "PlattFarAnchor": "13e01d9d1ea7f828ddbce69e7ae7b348f069ae0bb769a2d374e9d8bddebe1623"
+        },
+        "seconds": 230.687
+      }
+    },
+    {
+      "module": "PlattLogKernel",
+      "sourceHash": "54b5b1446d0454b610f7a0021e34f75772b8ff07340f66b93795487d9229ea30",
+      "objectHash": "e27a53fc50e5ef483747a0f324b9b604c6d4682e30a48f22b2f8a631993afa91",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "54b5b1446d0454b610f7a0021e34f75772b8ff07340f66b93795487d9229ea30",
+        "objectHash": "e27a53fc50e5ef483747a0f324b9b604c6d4682e30a48f22b2f8a631993afa91",
+        "dependencies": {},
+        "seconds": 1.432
+      }
+    },
+    {
+      "module": "PlattLogSoundness",
+      "sourceHash": "f6bb1ec692dc253b50b804b12f28a325998f19aece41ab920237d9b6fbdf2fb3",
+      "objectHash": "1823ec544b2a6028c44fe383e4dfbf9cfbf429185f24d1a94b4da7949f8162c2",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "f6bb1ec692dc253b50b804b12f28a325998f19aece41ab920237d9b6fbdf2fb3",
+        "objectHash": "1823ec544b2a6028c44fe383e4dfbf9cfbf429185f24d1a94b4da7949f8162c2",
+        "dependencies": {
+          "PlattLogKernel": "e27a53fc50e5ef483747a0f324b9b604c6d4682e30a48f22b2f8a631993afa91"
+        },
+        "seconds": 20.393
+      }
+    },
+    {
+      "module": "PlattLogPilotData",
+      "sourceHash": "62c26592293d14ff00edcb4edf29a450f6e35bace6f1c7dfc9d94a7be4db0845",
+      "objectHash": "93b53093dc8eb6ed584b9c6095155f35cab28f0fd6f8564a683ad6d9e4c149b1",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "62c26592293d14ff00edcb4edf29a450f6e35bace6f1c7dfc9d94a7be4db0845",
+        "objectHash": "93b53093dc8eb6ed584b9c6095155f35cab28f0fd6f8564a683ad6d9e4c149b1",
+        "dependencies": {
+          "PlattLogKernel": "e27a53fc50e5ef483747a0f324b9b604c6d4682e30a48f22b2f8a631993afa91"
+        },
+        "seconds": 1.305
+      }
+    },
+    {
+      "module": "PlattLogPilot",
+      "sourceHash": "d82df545f2b85626725f97e9937ef8a4b9f7f9c81d4a86613661d11457fd65ed",
+      "objectHash": "9fed71f126cd7633e9ad19af63a38cdaadffedae9320bd55ce2a6e2a928be0c8",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "d82df545f2b85626725f97e9937ef8a4b9f7f9c81d4a86613661d11457fd65ed",
+        "objectHash": "9fed71f126cd7633e9ad19af63a38cdaadffedae9320bd55ce2a6e2a928be0c8",
+        "dependencies": {
+          "PlattLogSoundness": "1823ec544b2a6028c44fe383e4dfbf9cfbf429185f24d1a94b4da7949f8162c2",
+          "PlattLogPilotData": "93b53093dc8eb6ed584b9c6095155f35cab28f0fd6f8564a683ad6d9e4c149b1"
+        },
+        "seconds": 15.343
+      }
+    },
+    {
+      "module": "PlattLogBench1",
+      "sourceHash": "3be3dd013d1044ef1e25d1a1a1f8924bee55bc562fdfa14ad80bc25205a914fb",
+      "objectHash": "6ff9dda2583d5c4239374f861511f18824bc2d846790bfbc78cf67eafa3fb294",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "3be3dd013d1044ef1e25d1a1a1f8924bee55bc562fdfa14ad80bc25205a914fb",
+        "objectHash": "6ff9dda2583d5c4239374f861511f18824bc2d846790bfbc78cf67eafa3fb294",
+        "dependencies": {
+          "PlattLogKernel": "e27a53fc50e5ef483747a0f324b9b604c6d4682e30a48f22b2f8a631993afa91"
+        },
+        "seconds": 1.332
+      }
+    },
+    {
+      "module": "PlattLogBench32",
+      "sourceHash": "8a7cf117b5afdf393922a244232e7020cd4fa612f9f8f7625655b910499a99dc",
+      "objectHash": "e08eacbb9c5cf30151548af43e76a4d542d4d929ad29564cfba95fb829ca99b7",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "8a7cf117b5afdf393922a244232e7020cd4fa612f9f8f7625655b910499a99dc",
+        "objectHash": "e08eacbb9c5cf30151548af43e76a4d542d4d929ad29564cfba95fb829ca99b7",
+        "dependencies": {
+          "PlattLogKernel": "e27a53fc50e5ef483747a0f324b9b604c6d4682e30a48f22b2f8a631993afa91"
+        },
+        "seconds": 1.923
+      }
+    },
+    {
+      "module": "PlattLogRows",
+      "sourceHash": "5e7798974bcf59768488213d423b694c30358624675474bf1bae97470456423e",
+      "objectHash": "ef0969d5427f94be5719eed5a2d392206a296ede7c39ce8d4e4bcf3048612f42",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "5e7798974bcf59768488213d423b694c30358624675474bf1bae97470456423e",
+        "objectHash": "ef0969d5427f94be5719eed5a2d392206a296ede7c39ce8d4e4bcf3048612f42",
+        "dependencies": {
+          "PlattLogKernel": "e27a53fc50e5ef483747a0f324b9b604c6d4682e30a48f22b2f8a631993afa91"
+        },
+        "seconds": 1.86
+      }
+    },
+    {
+      "module": "PlattLogRowSoundness",
+      "sourceHash": "5a187708ea7d8f8218f7b2b18466e6415c396e125823c93661ff4337930ab70c",
+      "objectHash": "94bdd6836365d7519794c5d2a032d9a69974365f03874a65151b22743b0d8f74",
+      "record": {
+        "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+        "sourceHash": "5a187708ea7d8f8218f7b2b18466e6415c396e125823c93661ff4337930ab70c",
+        "objectHash": "94bdd6836365d7519794c5d2a032d9a69974365f03874a65151b22743b0d8f74",
+        "dependencies": {
+          "PlattLogRows": "ef0969d5427f94be5719eed5a2d392206a296ede7c39ce8d4e4bcf3048612f42",
+          "PlattLogSoundness": "1823ec544b2a6028c44fe383e4dfbf9cfbf429185f24d1a94b4da7949f8162c2"
+        },
+        "seconds": 214.358
+      }
+    },
+    {
       "module": "PlattCountBenchLow16",
       "sourceHash": "f92c9d434b4e04c52bf454f21933383fac6abdbb1e02587a74f78e2665f4e516",
       "objectHash": "22b5d1216c27a2d3f64c4f4698dd868cff3267fdb49f2ae3faf833086f578a2d",
@@ -338,10 +525,12 @@
     "seconds": 33.548,
     "countSha256": "830c57ac60dc3801b3d9169baffa7f3b09537803c6192f4230c6fbbdfc28af4b"
   },
+  "analyticAssemblyComplete": true,
+  "logarithmProducerComplete": true,
+  "logarithmPilotOnly": true,
   "complete": false,
   "remaining": [
-    "Numerical analytic envelope assembly at and above reference1e10",
-    "Formal fixed-point logarithm certificate producer",
+    "Full-grid logarithm data regeneration with certified outward rounding and kernel replay",
     "Full finite count/arithmetic/logarithm replay and grid coverage",
     "Replace the temporary prefix axiom and rerun final Chen audits"
   ]

@@ -1,0 +1,322 @@
+import PlattAssemblyKernel
+import PlattCertificates.Count131072.C010736
+import PlattCertificates.Count131072.C010737
+import PlattCertificates.Count131072.C010738
+import PlattCertificates.Count131072.C010739
+import PlattCertificates.Count131072.C010740
+import PlattCertificates.Count131072.C010741
+import PlattCertificates.Count131072.C010742
+import PlattCertificates.Count131072.C010743
+import PlattCertificates.Count131072.C010744
+import PlattCertificates.Count131072.C010745
+import PlattCertificates.Count131072.C010746
+import PlattCertificates.Count131072.C010747
+import PlattCertificates.Count131072.C010748
+import PlattCertificates.Count131072.C010749
+import PlattCertificates.Count131072.C010750
+import PlattCertificates.Count131072.C010751
+import PlattCertificates.Count131072.C010752
+import PlattCertificates.Count131072.C010753
+import PlattCertificates.Count131072.C010754
+import PlattCertificates.Count131072.C010755
+import PlattCertificates.Count131072.C010756
+import PlattCertificates.Count131072.C010757
+import PlattCertificates.Count131072.C010758
+import PlattCertificates.Count131072.C010759
+import PlattCertificates.Count131072.C010760
+import PlattCertificates.Count131072.C010761
+import PlattCertificates.Count131072.C010762
+import PlattCertificates.Count131072.C010763
+import PlattCertificates.Count131072.C010764
+import PlattCertificates.Count131072.C010765
+import PlattCertificates.Count131072.C010766
+import PlattCertificates.Count131072.C010767
+namespace ChenEffective.PlattWindow.Assembly.Prefix.S2.B000023
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+def cuts10736 : List PrefixCut := [⟨43,425660095,425660447⟩,
+⟨87,847915964,847916664⟩,
+⟨128,1240240826,1240241851⟩]
+theorem checked10736 : checkPrefixCuts (2^48) 1411121153 9 Manual.Count131072.C010736.packed 128 cuts10736 = true := by
+ decide +kernel
+def pointBounds10736 : List (Nat × Nat × Nat) := [(1411165184,91846343033541,91846717792000),(1411210240,91846765289410,91847140048217)]
+theorem point_links_checked10736 : (cuts10736.take 2).map (fun c => (1411121153-1+2*2^9*c.k,91845917373446+c.lower,91846292131553+c.upper)) = pointBounds10736 := by
+ decide +kernel
+def cuts10737 : List PrefixCut := [⟨3,32510384,32510411⟩,
+⟨47,463714422,463714800⟩,
+⟨91,891514156,891514892⟩,
+⟨128,1240724043,1240725068⟩]
+theorem checked10737 : checkPrefixCuts (2^48) 1411252225 9 Manual.Count131072.C010737.packed 128 cuts10737 = true := by
+ decide +kernel
+def pointBounds10737 : List (Nat × Nat × Nat) := [(1411255296,91847190124656,91847564883815),(1411300352,91847621328694,91847996088204),(1411345408,91848049128428,91848423888296)]
+theorem point_links_checked10737 : (cuts10737.take 3).map (fun c => (1411252225-1+2*2^9*c.k,91847157614272+c.lower,91847532373404+c.upper)) = pointBounds10737 := by
+ decide +kernel
+def cuts10738 : List PrefixCut := [⟨7,70399281,70399340⟩,
+⟨51,494382719,494383132⟩,
+⟨95,917953598,917954359⟩,
+⟨128,1242801932,1242802961⟩]
+theorem checked10738 : checkPrefixCuts (2^48) 1411383297 9 Manual.Count131072.C010738.packed 128 cuts10738 = true := by
+ decide +kernel
+def pointBounds10738 : List (Nat × Nat × Nat) := [(1411390464,91848468737596,91848843497812),(1411435520,91848892721034,91849267481604),(1411480576,91849316291913,91849691052831)]
+theorem point_links_checked10738 : (cuts10738.take 3).map (fun c => (1411383297-1+2*2^9*c.k,91848398338315+c.lower,91848773098472+c.upper)) = pointBounds10738 := by
+ decide +kernel
+def cuts10739 : List PrefixCut := [⟨11,105489263,105489349⟩,
+⟨55,536411425,536411866⟩,
+⟨99,970510141,970510940⟩,
+⟨128,1246276198,1246277229⟩]
+theorem checked10739 : checkPrefixCuts (2^48) 1411514369 9 Manual.Count131072.C010739.packed 128 cuts10739 = true := by
+ decide +kernel
+def pointBounds10739 : List (Nat × Nat × Nat) := [(1411525632,91849746629510,91850121390782),(1411570688,91850177551672,91850552313299),(1411615744,91850611650388,91850986412373)]
+theorem point_links_checked10739 : (cuts10739.take 3).map (fun c => (1411514369-1+2*2^9*c.k,91849641140247+c.lower,91850015901433+c.upper)) = pointBounds10739 := by
+ decide +kernel
+def cuts10740 : List PrefixCut := [⟨15,151140487,151140613⟩,
+⟨59,583217664,583218147⟩,
+⟨103,1012090851,1012091686⟩,
+⟨128,1243170139,1243171164⟩]
+theorem checked10740 : checkPrefixCuts (2^48) 1411645441 9 Manual.Count131072.C010740.packed 128 cuts10740 = true := by
+ decide +kernel
+def pointBounds10740 : List (Nat × Nat × Nat) := [(1411660800,91851038556932,91851413319275),(1411705856,91851470634109,91851845396809),(1411750912,91851899507296,91852274270348)]
+theorem point_links_checked10740 : (cuts10740.take 3).map (fun c => (1411645441-1+2*2^9*c.k,91850887416445+c.lower,91851262178662+c.upper)) = pointBounds10740 := by
+ decide +kernel
+def cuts10741 : List PrefixCut := [⟨19,178440600,178440752⟩,
+⟨63,603697748,603698249⟩,
+⟨107,1027745108,1027745964⟩,
+⟨128,1223316664,1223317682⟩]
+theorem checked10741 : checkPrefixCuts (2^48) 1411776513 9 Manual.Count131072.C010741.packed 128 cuts10741 = true := by
+ decide +kernel
+def pointBounds10741 : List (Nat × Nat × Nat) := [(1411795968,91852309027184,91852683790578),(1411841024,91852734284332,91853109048075),(1411886080,91853158331692,91853533095790)]
+theorem point_links_checked10741 : (cuts10741.take 3).map (fun c => (1411776513-1+2*2^9*c.k,91852130586584+c.lower,91852505349826+c.upper)) = pointBounds10741 := by
+ decide +kernel
+def cuts10742 : List PrefixCut := [⟨23,219491197,219491379⟩,
+⟨67,643312303,643312840⟩,
+⟨111,1086854856,1086855756⟩,
+⟨128,1246925323,1246926355⟩]
+theorem checked10742 : checkPrefixCuts (2^48) 1411907585 9 Manual.Count131072.C010742.packed 128 cuts10742 = true := by
+ decide +kernel
+def pointBounds10742 : List (Nat × Nat × Nat) := [(1411931136,91853573394445,91853948158887),(1411976192,91853997215551,91854371980348),(1412021248,91854440758104,91854815523264)]
+theorem point_links_checked10742 : (cuts10742.take 3).map (fun c => (1411907585-1+2*2^9*c.k,91853353903248+c.lower,91853728667508+c.upper)) = pointBounds10742 := by
+ decide +kernel
+def cuts10743 : List PrefixCut := [⟨27,261929324,261929541⟩,
+⟨71,687902350,687902920⟩,
+⟨115,1106685996,1106686917⟩,
+⟨128,1240032267,1240033297⟩]
+theorem checked10743 : checkPrefixCuts (2^48) 1412038657 9 Manual.Count131072.C010743.packed 128 cuts10743 = true := by
+ decide +kernel
+def pointBounds10743 : List (Nat × Nat × Nat) := [(1412066304,91854862757895,91855237523404),(1412111360,91855288730921,91855663496783),(1412156416,91855707514567,91856082280780)]
+theorem point_links_checked10743 : (cuts10743.take 3).map (fun c => (1412038657-1+2*2^9*c.k,91854600828571+c.lower,91854975593863+c.upper)) = pointBounds10743 := by
+ decide +kernel
+def cuts10744 : List PrefixCut := [⟨31,289410587,289410828⟩,
+⟨75,707768877,707769464⟩,
+⟨119,1131893830,1131894770⟩,
+⟨128,1221978777,1221979790⟩]
+theorem checked10744 : checkPrefixCuts (2^48) 1412169729 9 Manual.Count131072.C010744.packed 128 cuts10744 = true := by
+ decide +kernel
+def pointBounds10744 : List (Nat × Nat × Nat) := [(1412201472,91856130271425,91856505037988),(1412246528,91856548629715,91856923396624),(1412291584,91856972754668,91857347521930)]
+theorem point_links_checked10744 : (cuts10744.take 3).map (fun c => (1412169729-1+2*2^9*c.k,91855840860838+c.lower,91856215627160+c.upper)) = pointBounds10744 := by
+ decide +kernel
+def cuts10745 : List PrefixCut := [⟨35,341201266,341201548⟩,
+⟨79,771078712,771079352⟩,
+⟨123,1194166656,1194167647⟩,
+⟨128,1240400594,1240401625⟩]
+theorem checked10745 : checkPrefixCuts (2^48) 1412300801 9 Manual.Count131072.C010745.packed 128 cuts10745 = true := by
+ decide +kernel
+def pointBounds10745 : List (Nat × Nat × Nat) := [(1412336640,91857404040881,91857778808498),(1412381696,91857833918327,91858208686302),(1412426752,91858257006271,91858631774597)]
+theorem point_links_checked10745 : (cuts10745.take 3).map (fun c => (1412300801-1+2*2^9*c.k,91857062839615+c.lower,91857437606950+c.upper)) = pointBounds10745 := by
+ decide +kernel
+def cuts10746 : List PrefixCut := [⟨39,378036070,378036385⟩,
+⟨83,813053499,813054172⟩,
+⟨127,1237894300,1237895328⟩,
+⟨128,1248654633,1248655670⟩]
+theorem checked10746 : checkPrefixCuts (2^48) 1412431873 9 Manual.Count131072.C010746.packed 128 cuts10746 = true := by
+ decide +kernel
+def pointBounds10746 : List (Nat × Nat × Nat) := [(1412471808,91858681276279,91859056044960),(1412516864,91859116293708,91859491062747),(1412561920,91859541134509,91859915903903)]
+theorem point_links_checked10746 : (cuts10746.take 3).map (fun c => (1412431873-1+2*2^9*c.k,91858303240209+c.lower,91858678008575+c.upper)) = pointBounds10746 := by
+ decide +kernel
+def cuts10747 : List PrefixCut := [⟨43,418650059,418650404⟩,
+⟨87,840275696,840276391⟩,
+⟨128,1249734111,1249735141⟩]
+theorem checked10747 : checkPrefixCuts (2^48) 1412562945 9 Manual.Count131072.C010747.packed 128 cuts10747 = true := by
+ decide +kernel
+def pointBounds10747 : List (Nat × Nat × Nat) := [(1412606976,91859970544901,91860345314649),(1412652032,91860392170538,91860766940636)]
+theorem point_links_checked10747 : (cuts10747.take 2).map (fun c => (1412562945-1+2*2^9*c.k,91859551894842+c.lower,91859926664245+c.upper)) = pointBounds10747 := by
+ decide +kernel
+def cuts10748 : List PrefixCut := [⟨3,30086246,30086271⟩,
+⟨47,445109973,445110346⟩,
+⟨91,865499815,865500535⟩,
+⟨128,1227502662,1227503683⟩]
+theorem checked10748 : checkPrefixCuts (2^48) 1412694017 9 Manual.Count131072.C010748.packed 128 cuts10748 = true := by
+ decide +kernel
+def pointBounds10748 : List (Nat × Nat × Nat) := [(1412697088,91860831715199,91861206485657),(1412742144,91861246738926,91861621509732),(1412787200,91861667128768,91862041899921)]
+theorem point_links_checked10748 : (cuts10748.take 3).map (fun c => (1412694017-1+2*2^9*c.k,91860801628953+c.lower,91861176399386+c.upper)) = pointBounds10748 := by
+ decide +kernel
+def cuts10749 : List PrefixCut := [⟨7,70925126,70925185⟩,
+⟨51,505233952,505234368⟩,
+⟨95,939927297,939928077⟩,
+⟨128,1260659072,1260660117⟩]
+theorem checked10749 : checkPrefixCuts (2^48) 1412825089 9 Manual.Count131072.C010749.packed 128 cuts10749 = true := by
+ decide +kernel
+def pointBounds10749 : List (Nat × Nat × Nat) := [(1412832256,91862100056741,91862474828254),(1412877312,91862534365567,91862909137437),(1412922368,91862969058912,91863343831146)]
+theorem point_links_checked10749 : (cuts10749.take 3).map (fun c => (1412825089-1+2*2^9*c.k,91862029131615+c.lower,91862403903069+c.upper)) = pointBounds10749 := by
+ decide +kernel
+def cuts10750 : List PrefixCut := [⟨11,102194273,102194359⟩,
+⟨55,530286111,530286554⟩,
+⟨99,953782708,953783493⟩,
+⟨128,1222893110,1222894120⟩]
+theorem checked10750 : checkPrefixCuts (2^48) 1412956161 9 Manual.Count131072.C010750.packed 128 cuts10750 = true := by
+ decide +kernel
+def pointBounds10750 : List (Nat × Nat × Nat) := [(1412967424,91863391984960,91863766757545),(1413012480,91863820076798,91864194849740),(1413057536,91864243573395,91864618346679)]
+theorem point_links_checked10750 : (cuts10750.take 3).map (fun c => (1412956161-1+2*2^9*c.k,91863289790687+c.lower,91863664563186+c.upper)) = pointBounds10750 := by
+ decide +kernel
+def cuts10751 : List PrefixCut := [⟨15,149791135,149791259⟩,
+⟨59,579634676,579635154⟩,
+⟨103,1008468701,1008469536⟩,
+⟨128,1256839661,1256840699⟩]
+theorem checked10751 : checkPrefixCuts (2^48) 1413087233 9 Manual.Count131072.C010751.packed 128 cuts10751 = true := by
+ decide +kernel
+def pointBounds10751 : List (Nat × Nat × Nat) := [(1413102592,91864662474932,91865037248565),(1413147648,91865092318473,91865467092460),(1413192704,91865521152498,91865895926842)]
+theorem point_links_checked10751 : (cuts10751.take 3).map (fun c => (1413087233-1+2*2^9*c.k,91864512683797+c.lower,91864887457306+c.upper)) = pointBounds10751 := by
+ decide +kernel
+def cuts10752 : List PrefixCut := [⟨19,183237870,183238025⟩,
+⟨63,614832865,614833373⟩,
+⟨107,1038646888,1038647750⟩,
+⟨128,1243379232,1243380263⟩]
+theorem checked10752 : checkPrefixCuts (2^48) 1413218305 9 Manual.Count131072.C010752.packed 128 cuts10752 = true := by
+ decide +kernel
+def pointBounds10752 : List (Nat × Nat × Nat) := [(1413237760,91865952761328,91866327536030),(1413282816,91866384356323,91866759131378),(1413327872,91866808170346,91867182945755)]
+theorem point_links_checked10752 : (cuts10752.take 3).map (fun c => (1413218305-1+2*2^9*c.k,91865769523458+c.lower,91866144298005+c.upper)) = pointBounds10752 := by
+ decide +kernel
+def cuts10753 : List PrefixCut := [⟨23,224246082,224246266⟩,
+⟨67,653609064,653609598⟩,
+⟨111,1088136136,1088137028⟩,
+⟨128,1254017448,1254018478⟩]
+theorem checked10753 : checkPrefixCuts (2^48) 1413349377 9 Manual.Count131072.C010753.packed 128 cuts10753 = true := by
+ decide +kernel
+def pointBounds10753 : List (Nat × Nat × Nat) := [(1413372928,91867237148772,91867611924534),(1413417984,91867666511754,91868041287866),(1413463040,91868101038826,91868475815296)]
+theorem point_links_checked10753 : (cuts10753.take 3).map (fun c => (1413349377-1+2*2^9*c.k,91867012902690+c.lower,91867387678268+c.upper)) = pointBounds10753 := by
+ decide +kernel
+def cuts10754 : List PrefixCut := [⟨27,251705412,251705619⟩,
+⟨71,676646683,676647240⟩,
+⟨115,1097392677,1097393584⟩,
+⟨128,1224629384,1224630395⟩]
+theorem checked10754 : checkPrefixCuts (2^48) 1413480449 9 Manual.Count131072.C010754.packed 128 cuts10754 = true := by
+ decide +kernel
+def pointBounds10754 : List (Nat × Nat × Nat) := [(1413508096,91868518625550,91868893402365),(1413553152,91868943566821,91869318343986),(1413598208,91869364312815,91869739090330)]
+theorem point_links_checked10754 : (cuts10754.take 3).map (fun c => (1413480449-1+2*2^9*c.k,91868266920138+c.lower,91868641696746+c.upper)) = pointBounds10754 := by
+ decide +kernel
+def cuts10755 : List PrefixCut := [⟨31,291703889,291704129⟩,
+⟨75,715409830,715410426⟩,
+⟨119,1140694982,1140695928⟩,
+⟨128,1227104264,1227105281⟩]
+theorem checked10755 : checkPrefixCuts (2^48) 1413611521 9 Manual.Count131072.C010755.packed 128 cuts10755 = true := by
+ decide +kernel
+def pointBounds10755 : List (Nat × Nat × Nat) := [(1413643264,91869783253411,91870158031270),(1413688320,91870206959352,91870581737567),(1413733376,91870632244504,91871007023069)]
+theorem point_links_checked10755 : (cuts10755.take 3).map (fun c => (1413611521-1+2*2^9*c.k,91869491549522+c.lower,91869866327141+c.upper)) = pointBounds10755 := by
+ decide +kernel
+def cuts10756 : List PrefixCut := [⟨35,338265112,338265390⟩,
+⟨79,761532159,761532786⟩,
+⟨123,1198323624,1198324611⟩,
+⟨128,1252473659,1252474691⟩]
+theorem checked10756 : checkPrefixCuts (2^48) 1413742593 9 Manual.Count131072.C010756.packed 128 cuts10756 = true := by
+ decide +kernel
+def pointBounds10756 : List (Nat × Nat × Nat) := [(1413778432,91871056918898,91871431697812),(1413823488,91871480185945,91871854965208),(1413868544,91871916977410,91872291757033)]
+theorem point_links_checked10756 : (cuts10756.take 3).map (fun c => (1413742593-1+2*2^9*c.k,91870718653786+c.lower,91871093432422+c.upper)) = pointBounds10756 := by
+ decide +kernel
+def cuts10757 : List PrefixCut := [⟨39,372673691,372673995⟩,
+⟨83,805654939,805655602⟩,
+⟨127,1225683167,1225684172⟩,
+⟨128,1237228778,1237229792⟩]
+theorem checked10757 : checkPrefixCuts (2^48) 1413873665 9 Manual.Count131072.C010757.packed 128 cuts10757 = true := by
+ decide +kernel
+def pointBounds10757 : List (Nat × Nat × Nat) := [(1413913600,91872343801136,91872718581108),(1413958656,91872776782384,91873151562715),(1414003712,91873196810612,91873571591285)]
+theorem point_links_checked10757 : (cuts10757.take 3).map (fun c => (1413873665-1+2*2^9*c.k,91871971127445+c.lower,91872345907113+c.upper)) = pointBounds10757 := by
+ decide +kernel
+def cuts10758 : List PrefixCut := [⟨43,419417555,419417901⟩,
+⟨87,842404687,842405385⟩,
+⟨128,1237114242,1237115265⟩]
+theorem checked10758 : checkPrefixCuts (2^48) 1414004737 9 Manual.Count131072.C010758.packed 128 cuts10758 = true := by
+ decide +kernel
+def pointBounds10758 : List (Nat × Nat × Nat) := [(1414048768,91873627773778,91874002554806),(1414093824,91874050760910,91874425542290)]
+theorem point_links_checked10758 : (cuts10758.take 2).map (fun c => (1414004737-1+2*2^9*c.k,91873208356223+c.lower,91873583136905+c.upper)) = pointBounds10758 := by
+ decide +kernel
+def cuts10759 : List PrefixCut := [⟨3,25676611,25676633⟩,
+⟨47,452816773,452817151⟩,
+⟨91,879943305,879944033⟩,
+⟨128,1243368308,1243369336⟩]
+theorem checked10759 : checkPrefixCuts (2^48) 1414135809 9 Manual.Count131072.C010759.packed 128 cuts10759 = true := by
+ decide +kernel
+def pointBounds10759 : List (Nat × Nat × Nat) := [(1414138880,91874471147076,91874845928803),(1414183936,91874898287238,91875273069321),(1414228992,91875325413770,91875700196203)]
+theorem point_links_checked10759 : (cuts10759.take 3).map (fun c => (1414135809-1+2*2^9*c.k,91874445470465+c.lower,91874820252170+c.upper)) = pointBounds10759 := by
+ decide +kernel
+def cuts10760 : List PrefixCut := [⟨7,71449899,71449956⟩,
+⟨51,491384422,491384830⟩,
+⟨95,924639511,924640278⟩,
+⟨128,1244845285,1244846317⟩]
+theorem checked10760 : checkPrefixCuts (2^48) 1414266881 9 Manual.Count131072.C010760.packed 128 cuts10760 = true := by
+ decide +kernel
+def pointBounds10760 : List (Nat × Nat × Nat) := [(1414274048,91875760288672,91876135071462),(1414319104,91876180223195,91876555006336),(1414364160,91876613478284,91876988261784)]
+theorem point_links_checked10760 : (cuts10760.take 3).map (fun c => (1414266881-1+2*2^9*c.k,91875688838773+c.lower,91876063621506+c.upper)) = pointBounds10760 := by
+ decide +kernel
+def cuts10761 : List PrefixCut := [⟨11,112836424,112836517⟩,
+⟨55,527357722,527358161⟩,
+⟨99,955198623,955199417⟩,
+⟨128,1233387336,1233388361⟩]
+theorem checked10761 : checkPrefixCuts (2^48) 1414397953 9 Manual.Count131072.C010761.packed 128 cuts10761 = true := by
+ decide +kernel
+def pointBounds10761 : List (Nat × Nat × Nat) := [(1414409216,91877046520482,91877421304340),(1414454272,91877461041780,91877835825984),(1414499328,91877888882681,91878263667240)]
+theorem point_links_checked10761 : (cuts10761.take 3).map (fun c => (1414397953-1+2*2^9*c.k,91876933684058+c.lower,91877308467823+c.upper)) = pointBounds10761 := by
+ decide +kernel
+def cuts10762 : List PrefixCut := [⟨15,148444529,148444650⟩,
+⟨59,576059171,576059642⟩,
+⟨103,1016593670,1016594506⟩,
+⟨128,1260930971,1260932007⟩]
+theorem checked10762 : checkPrefixCuts (2^48) 1414529025 9 Manual.Count131072.C010762.packed 128 cuts10762 = true := by
+ decide +kernel
+def pointBounds10762 : List (Nat × Nat × Nat) := [(1414544384,91878315515923,91878690300834),(1414589440,91878743130565,91879117915826),(1414634496,91879183665064,91879558450690)]
+theorem point_links_checked10762 : (cuts10762.take 3).map (fun c => (1414529025-1+2*2^9*c.k,91878167071394+c.lower,91878541856184+c.upper)) = pointBounds10762 := by
+ decide +kernel
+def cuts10763 : List PrefixCut := [⟨19,181260354,181260505⟩,
+⟨63,601273366,601273868⟩,
+⟨107,1026247032,1026247887⟩,
+⟨128,1232163406,1232164432⟩]
+theorem checked10763 : checkPrefixCuts (2^48) 1414660097 9 Manual.Count131072.C010763.packed 128 cuts10763 = true := by
+ decide +kernel
+def pointBounds10763 : List (Nat × Nat × Nat) := [(1414679552,91879609262719,91879984048696),(1414724608,91880029275731,91880404062059),(1414769664,91880454249397,91880829036078)]
+theorem point_links_checked10763 : (cuts10763.take 3).map (fun c => (1414660097-1+2*2^9*c.k,91879428002365+c.lower,91879802788191+c.upper)) = pointBounds10763 := by
+ decide +kernel
+def cuts10764 : List PrefixCut := [⟨23,223420709,223420893⟩,
+⟨67,646178793,646179328⟩,
+⟨111,1073499256,1073500145⟩,
+⟨128,1234636074,1234637096⟩]
+theorem checked10764 : checkPrefixCuts (2^48) 1414791169 9 Manual.Count131072.C010764.packed 128 cuts10764 = true := by
+ decide +kernel
+def pointBounds10764 : List (Nat × Nat × Nat) := [(1414814720,91880883586480,91881258373516),(1414859776,91881306344564,91881681131951),(1414904832,91881733665027,91882108452768)]
+theorem point_links_checked10764 : (cuts10764.take 3).map (fun c => (1414791169-1+2*2^9*c.k,91880660165771+c.lower,91881034952623+c.upper)) = pointBounds10764 := by
+ decide +kernel
+def cuts10765 : List PrefixCut := [⟨27,269153890,269154114⟩,
+⟨71,694258869,694259443⟩,
+⟨115,1117957807,1117958731⟩,
+⟨128,1245860520,1245861549⟩]
+theorem checked10765 : checkPrefixCuts (2^48) 1414922241 9 Manual.Count131072.C010765.packed 128 cuts10765 = true := by
+ decide +kernel
+def pointBounds10765 : List (Nat × Nat × Nat) := [(1414949888,91882163955735,91882538743833),(1414994944,91882589060714,91882963849162),(1415040000,91883012759652,91883387548450)]
+theorem point_links_checked10765 : (cuts10765.take 3).map (fun c => (1414922241-1+2*2^9*c.k,91881894801845+c.lower,91882269589719+c.upper)) = pointBounds10765 := by
+ decide +kernel
+def cuts10766 : List PrefixCut := [⟨31,293992589,293992832⟩,
+⟨75,712692012,712692608⟩,
+⟨119,1131974769,1131975714⟩,
+⟨128,1220881684,1220882703⟩]
+theorem checked10766 : checkPrefixCuts (2^48) 1415053313 9 Manual.Count131072.C010766.packed 128 cuts10766 = true := by
+ decide +kernel
+def pointBounds10766 : List (Nat × Nat × Nat) := [(1415085056,91883434654954,91883809444100),(1415130112,91883853354377,91884228143876),(1415175168,91884272637134,91884647426982)]
+theorem point_links_checked10766 : (cuts10766.take 3).map (fun c => (1415053313-1+2*2^9*c.k,91883140662365+c.lower,91883515451268+c.upper)) = pointBounds10766 := by
+ decide +kernel
+def cuts10767 : List PrefixCut := [⟨35,342494948,342495231⟩,
+⟨79,765529693,765530325⟩,
+⟨123,1195114201,1195115189⟩,
+⟨128,1241452818,1241453845⟩]
+theorem checked10767 : checkPrefixCuts (2^48) 1415184385 9 Manual.Count131072.C010767.packed 128 cuts10767 = true := by
+ decide +kernel
+def pointBounds10767 : List (Nat × Nat × Nat) := [(1415220224,91884704038997,91885078829202),(1415265280,91885127073742,91885501864296),(1415310336,91885556658250,91885931449160)]
+theorem point_links_checked10767 : (cuts10767.take 3).map (fun c => (1415184385-1+2*2^9*c.k,91884361544049+c.lower,91884736333971+c.upper)) = pointBounds10767 := by
+ decide +kernel
+end ChenEffective.PlattWindow.Assembly.Prefix.S2.B000023

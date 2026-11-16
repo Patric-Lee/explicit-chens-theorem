@@ -34,8 +34,12 @@ numerical recovery theorems have exactly the original Chen statement type,
 and their proof dependencies include the actual OpenAI theorem. See the
 [final audit report](../research/chen-effective/UPGRADE_434_AUDIT.md).
 
-The temporary reciprocal-prime window is a separate remaining input. Proving
-the Dirichlet theorem does not certify the finite prime or zero tables.
+The former temporary reciprocal-prime window has now been proved from the
+kernel-checked finite certificates and the Platt analytic tail. The H≈30
+route has exactly Platt's modulus-one finite RH through height 10⁸ as its
+external axiom; Dirichlet remains proved by this OpenAI development. The
+combined old/new Chen integration audit passes with that updated ledger.
+See [the completed prefix proof and audit](../research/chen-platt/README.md).
 
 ## Grouped compilation
 

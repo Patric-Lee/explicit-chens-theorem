@@ -1,4 +1,6 @@
 import BJSHybridProductBridge
+import PlattCertifiedPrefixWindow
+import PlattAssumption
 
 noncomputable section
 namespace ChenEffective.H30Conditional
@@ -7,10 +9,11 @@ open MathlibNt.SieveTheory.SwitchingPrinciple
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 2000000
 
-/-- TEMPORARY numerical-study input, backed by the JavaScript hybrid pilot.
-This includes the analytic extension above the finite prime scan; it is not
-claimed to be a kernel-checked finite certificate. See NUMERICAL_H30.md. -/
-axiom temporary_reciprocal_prefix_window : HybridProduct.HybridPrefixWindow
+/-- The numerical reciprocal-prefix window, proved from the completed finite
+certificates and the analytic tail. Its sole external input is Platt's
+modulus-one finite RH statement through height 100,000,000. -/
+theorem platt_reciprocal_prefix_window : HybridProduct.HybridPrefixWindow :=
+  PlattWindow.certified_prefix_window
 
 noncomputable def bjsStudyPresieveStart : ℝ := 4000000
 
@@ -19,7 +22,7 @@ theorem bjsStudy_interval_product (s : Finset ℕ)
     (hu : bjsStudyPresieveStart ≤ u) (huz : u ≤ z)
     (hinterval : ∀ p ∈ s, u ≤ (p : ℝ) ∧ (p : ℝ) < z) :
     (∏ p ∈ s, (1-1/((p : ℝ)-1))⁻¹) ≤ (1+(1/4000:ℝ))*(log z/log u) :=
-  HybridProduct.hybrid_interval_product temporary_reciprocal_prefix_window s hs u z hu huz hinterval
+  HybridProduct.hybrid_interval_product platt_reciprocal_prefix_window s hs u z hu huz hinterval
 
 theorem bjsStudy_presieved_product (s : Finset ℕ)
     (hs : ∀ p ∈ s, p.Prime ∧ 2 < p)

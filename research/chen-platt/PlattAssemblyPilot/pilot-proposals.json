@@ -1,0 +1,149 @@
+{
+  "classification": "ASSEMBLY_PILOT_PROPOSALS_NOT_FULL_WINDOW_PROOF",
+  "points": 239866,
+  "cells": 239865,
+  "independentPrefixBudget": {
+    "lower": -0.000003219692807476804,
+    "upper": 0.00004590581306729291,
+    "allowance": 0.00005
+  },
+  "reference": {
+    "x": 10000000000,
+    "lower": "116863011702975",
+    "upper": "116863401833309",
+    "logLower": "882879348526828",
+    "logUpper": "882879348527041"
+  },
+  "batches": [
+    {
+      "module": "PlattAssemblyPilot.C000000",
+      "kind": "prefix-arithmetic",
+      "index": 0,
+      "blocks": 4096,
+      "checkpoints": 1021,
+      "offset": 0,
+      "w": 4,
+      "W": 16,
+      "B": 4096,
+      "lo": 4000001,
+      "hi": 4131072,
+      "lower": "598080220703",
+      "upper": "598084933579",
+      "countSha256": "830c57ac60dc3801b3d9169baffa7f3b09537803c6192f4230c6fbbdfc28af4b"
+    },
+    {
+      "module": "PlattAssemblyPilot.C000001",
+      "kind": "prefix-arithmetic",
+      "index": 1,
+      "blocks": 1976,
+      "checkpoints": 396,
+      "offset": 4096,
+      "w": 4,
+      "W": 16,
+      "B": 1976,
+      "lo": 4131073,
+      "hi": 4194304,
+      "lower": "281556403798",
+      "upper": "281558570197",
+      "countSha256": "830c57ac60dc3801b3d9169baffa7f3b09537803c6192f4230c6fbbdfc28af4b"
+    },
+    {
+      "module": "PlattAssemblyPilot.C010000",
+      "kind": "prefix-arithmetic",
+      "index": 10000,
+      "blocks": 128,
+      "checkpoints": 4,
+      "offset": 3190456,
+      "w": 9,
+      "W": 512,
+      "B": 128,
+      "lo": 1314652161,
+      "hi": 1314783232,
+      "lower": "1333170282",
+      "upper": "1333171445",
+      "countSha256": "830c57ac60dc3801b3d9169baffa7f3b09537803c6192f4230c6fbbdfc28af4b"
+    },
+    {
+      "module": "PlattAssemblyPilot.C070000",
+      "kind": "prefix-arithmetic",
+      "index": 70000,
+      "blocks": 64,
+      "checkpoints": 1,
+      "offset": 8485688,
+      "w": 10,
+      "W": 1024,
+      "B": 64,
+      "lo": 9178972161,
+      "hi": 9179103232,
+      "lower": "175127620",
+      "upper": "175127725",
+      "countSha256": "830c57ac60dc3801b3d9169baffa7f3b09537803c6192f4230c6fbbdfc28af4b"
+    },
+    {
+      "module": "PlattAssemblyPilot.Grid0N16",
+      "kind": "grid-budget-and-seams",
+      "cells": 16,
+      "start": 0
+    },
+    {
+      "module": "PlattAssemblyPilot.Grid0N256",
+      "kind": "grid-budget-and-seams",
+      "cells": 256,
+      "start": 0
+    },
+    {
+      "module": "PlattAssemblyPilot.Grid256N256",
+      "kind": "grid-budget-and-seams",
+      "cells": 256,
+      "start": 256
+    },
+    {
+      "module": "PlattAssemblyPilot.Grid512N256",
+      "kind": "grid-budget-and-seams",
+      "cells": 256,
+      "start": 512
+    },
+    {
+      "module": "PlattAssemblyPilot.Grid768N256",
+      "kind": "grid-budget-and-seams",
+      "cells": 256,
+      "start": 768
+    },
+    {
+      "module": "PlattAssemblyPilot.Grid1024N256",
+      "kind": "grid-budget-and-seams",
+      "cells": 256,
+      "start": 1024
+    },
+    {
+      "module": "PlattAssemblyPilot.Grid1280N256",
+      "kind": "grid-budget-and-seams",
+      "cells": 256,
+      "start": 1280
+    },
+    {
+      "module": "PlattAssemblyPilot.Grid1536N256",
+      "kind": "grid-budget-and-seams",
+      "cells": 256,
+      "start": 1536
+    },
+    {
+      "module": "PlattAssemblyPilot.Grid1792N256",
+      "kind": "grid-budget-and-seams",
+      "cells": 256,
+      "start": 1792
+    },
+    {
+      "module": "PlattAssemblyPilot.Grid10000N256",
+      "kind": "grid-budget-and-seams",
+      "cells": 256,
+      "start": 10000
+    },
+    {
+      "module": "PlattAssemblyPilot.Grid239500N256",
+      "kind": "grid-budget-and-seams",
+      "cells": 256,
+      "start": 239500
+    }
+  ]
+}

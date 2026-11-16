@@ -1,0 +1,169 @@
+import PlattSegmentPacket
+import PlattCertificates.Count131072.C042784
+import PlattCertificates.Count131072.C042785
+import PlattCertificates.Count131072.C042786
+import PlattCertificates.Count131072.C042787
+import PlattCertificates.Count131072.C042788
+import PlattCertificates.Count131072.C042789
+import PlattCertificates.Count131072.C042790
+import PlattCertificates.Count131072.C042791
+import PlattCertificates.Count131072.C042792
+import PlattCertificates.Count131072.C042793
+import PlattCertificates.Count131072.C042794
+import PlattCertificates.Count131072.C042795
+import PlattCertificates.Count131072.C042796
+import PlattCertificates.Count131072.C042797
+import PlattCertificates.Count131072.C042798
+import PlattCertificates.Count131072.C042799
+import PlattCertificates.Count131072.C042800
+import PlattCertificates.Count131072.C042801
+import PlattCertificates.Count131072.C042802
+import PlattCertificates.Count131072.C042803
+import PlattCertificates.Count131072.C042804
+import PlattCertificates.Count131072.C042805
+import PlattCertificates.Count131072.C042806
+import PlattCertificates.Count131072.C042807
+import PlattCertificates.Count131072.C042808
+import PlattCertificates.Count131072.C042809
+import PlattCertificates.Count131072.C042810
+import PlattCertificates.Count131072.C042811
+import PlattCertificates.Count131072.C042812
+import PlattCertificates.Count131072.C042813
+import PlattCertificates.Count131072.C042814
+import PlattCertificates.Count131072.C042815
+namespace ChenEffective.PlattWindow.Assembly.Totals.S5.B000087
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+def row0 : IncrementRow := ⟨5611716608,5611847680,292520546,292520715⟩
+opaque packet0 : SegmentPacket 5611716609 10 64 292520546 292520715 := ⟨Manual.Count131072.C042784.packed,Manual.Count131072.C042784.count_checked,Manual.Count131072.C042784.arithmetic_checked⟩
+theorem certified0 : IncrementCertified row0 := certifyIncrement 5611716609 10 64 packet0.packed 292520546 292520715
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet0.counts packet0.arithmetic
+def row1 : IncrementRow := ⟨5611847680,5611978752,291059158,291059324⟩
+opaque packet1 : SegmentPacket 5611847681 10 64 291059158 291059324 := ⟨Manual.Count131072.C042785.packed,Manual.Count131072.C042785.count_checked,Manual.Count131072.C042785.arithmetic_checked⟩
+theorem certified1 : IncrementCertified row1 := certifyIncrement 5611847681 10 64 packet1.packed 291059158 291059324
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet1.counts packet1.arithmetic
+def row2 : IncrementRow := ⟨5611978752,5612109824,292557028,292557192⟩
+opaque packet2 : SegmentPacket 5611978753 10 64 292557028 292557192 := ⟨Manual.Count131072.C042786.packed,Manual.Count131072.C042786.count_checked,Manual.Count131072.C042786.arithmetic_checked⟩
+theorem certified2 : IncrementCertified row2 := certifyIncrement 5611978753 10 64 packet2.packed 292557028 292557192
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet2.counts packet2.arithmetic
+def row3 : IncrementRow := ⟨5612109824,5612240896,291346483,291346655⟩
+opaque packet3 : SegmentPacket 5612109825 10 64 291346483 291346655 := ⟨Manual.Count131072.C042787.packed,Manual.Count131072.C042787.count_checked,Manual.Count131072.C042787.arithmetic_checked⟩
+theorem certified3 : IncrementCertified row3 := certifyIncrement 5612109825 10 64 packet3.packed 291346483 291346655
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet3.counts packet3.arithmetic
+def row4 : IncrementRow := ⟨5612240896,5612371968,296655934,296656102⟩
+opaque packet4 : SegmentPacket 5612240897 10 64 296655934 296656102 := ⟨Manual.Count131072.C042788.packed,Manual.Count131072.C042788.count_checked,Manual.Count131072.C042788.arithmetic_checked⟩
+theorem certified4 : IncrementCertified row4 := certifyIncrement 5612240897 10 64 packet4.packed 296655934 296656102
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet4.counts packet4.arithmetic
+def row5 : IncrementRow := ⟨5612371968,5612503040,290179405,290179575⟩
+opaque packet5 : SegmentPacket 5612371969 10 64 290179405 290179575 := ⟨Manual.Count131072.C042789.packed,Manual.Count131072.C042789.count_checked,Manual.Count131072.C042789.arithmetic_checked⟩
+theorem certified5 : IncrementCertified row5 := certifyIncrement 5612371969 10 64 packet5.packed 290179405 290179575
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet5.counts packet5.arithmetic
+def row6 : IncrementRow := ⟨5612503040,5612634112,292629997,292630164⟩
+opaque packet6 : SegmentPacket 5612503041 10 64 292629997 292630164 := ⟨Manual.Count131072.C042790.packed,Manual.Count131072.C042790.count_checked,Manual.Count131072.C042790.arithmetic_checked⟩
+theorem certified6 : IncrementCertified row6 := certifyIncrement 5612503041 10 64 packet6.packed 292629997 292630164
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet6.counts packet6.arithmetic
+def row7 : IncrementRow := ⟨5612634112,5612765184,291469739,291469906⟩
+opaque packet7 : SegmentPacket 5612634113 10 64 291469739 291469906 := ⟨Manual.Count131072.C042791.packed,Manual.Count131072.C042791.count_checked,Manual.Count131072.C042791.arithmetic_checked⟩
+theorem certified7 : IncrementCertified row7 := certifyIncrement 5612634113 10 64 packet7.packed 291469739 291469906
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet7.counts packet7.arithmetic
+def row8 : IncrementRow := ⟨5612765184,5612896256,293067689,293067857⟩
+opaque packet8 : SegmentPacket 5612765185 10 64 293067689 293067857 := ⟨Manual.Count131072.C042792.packed,Manual.Count131072.C042792.count_checked,Manual.Count131072.C042792.arithmetic_checked⟩
+theorem certified8 : IncrementCertified row8 := certifyIncrement 5612765185 10 64 packet8.packed 293067689 293067857
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet8.counts packet8.arithmetic
+def row9 : IncrementRow := ⟨5612896256,5613027328,295969409,295969577⟩
+opaque packet9 : SegmentPacket 5612896257 10 64 295969409 295969577 := ⟨Manual.Count131072.C042793.packed,Manual.Count131072.C042793.count_checked,Manual.Count131072.C042793.arithmetic_checked⟩
+theorem certified9 : IncrementCertified row9 := certifyIncrement 5612896257 10 64 packet9.packed 295969409 295969577
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet9.counts packet9.arithmetic
+def row10 : IncrementRow := ⟨5613027328,5613158400,295160145,295160323⟩
+opaque packet10 : SegmentPacket 5613027329 10 64 295160145 295160323 := ⟨Manual.Count131072.C042794.packed,Manual.Count131072.C042794.count_checked,Manual.Count131072.C042794.arithmetic_checked⟩
+theorem certified10 : IncrementCertified row10 := certifyIncrement 5613027329 10 64 packet10.packed 295160145 295160323
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet10.counts packet10.arithmetic
+def row11 : IncrementRow := ⟨5613158400,5613289472,292946866,292947037⟩
+opaque packet11 : SegmentPacket 5613158401 10 64 292946866 292947037 := ⟨Manual.Count131072.C042795.packed,Manual.Count131072.C042795.count_checked,Manual.Count131072.C042795.arithmetic_checked⟩
+theorem certified11 : IncrementCertified row11 := certifyIncrement 5613158401 10 64 packet11.packed 292946866 292947037
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet11.counts packet11.arithmetic
+def row12 : IncrementRow := ⟨5613289472,5613420544,289129102,289129270⟩
+opaque packet12 : SegmentPacket 5613289473 10 64 289129102 289129270 := ⟨Manual.Count131072.C042796.packed,Manual.Count131072.C042796.count_checked,Manual.Count131072.C042796.arithmetic_checked⟩
+theorem certified12 : IncrementCertified row12 := certifyIncrement 5613289473 10 64 packet12.packed 289129102 289129270
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet12.counts packet12.arithmetic
+def row13 : IncrementRow := ⟨5613420544,5613551616,299301270,299301446⟩
+opaque packet13 : SegmentPacket 5613420545 10 64 299301270 299301446 := ⟨Manual.Count131072.C042797.packed,Manual.Count131072.C042797.count_checked,Manual.Count131072.C042797.arithmetic_checked⟩
+theorem certified13 : IncrementCertified row13 := certifyIncrement 5613420545 10 64 packet13.packed 299301270 299301446
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet13.counts packet13.arithmetic
+def row14 : IncrementRow := ⟨5613551616,5613682688,297639648,297639819⟩
+opaque packet14 : SegmentPacket 5613551617 10 64 297639648 297639819 := ⟨Manual.Count131072.C042798.packed,Manual.Count131072.C042798.count_checked,Manual.Count131072.C042798.arithmetic_checked⟩
+theorem certified14 : IncrementCertified row14 := certifyIncrement 5613551617 10 64 packet14.packed 297639648 297639819
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet14.counts packet14.arithmetic
+def row15 : IncrementRow := ⟨5613682688,5613813760,294824844,294825015⟩
+opaque packet15 : SegmentPacket 5613682689 10 64 294824844 294825015 := ⟨Manual.Count131072.C042799.packed,Manual.Count131072.C042799.count_checked,Manual.Count131072.C042799.arithmetic_checked⟩
+theorem certified15 : IncrementCertified row15 := certifyIncrement 5613682689 10 64 packet15.packed 294824844 294825015
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet15.counts packet15.arithmetic
+def row16 : IncrementRow := ⟨5613813760,5613944832,290054722,290054894⟩
+opaque packet16 : SegmentPacket 5613813761 10 64 290054722 290054894 := ⟨Manual.Count131072.C042800.packed,Manual.Count131072.C042800.count_checked,Manual.Count131072.C042800.arithmetic_checked⟩
+theorem certified16 : IncrementCertified row16 := certifyIncrement 5613813761 10 64 packet16.packed 290054722 290054894
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet16.counts packet16.arithmetic
+def row17 : IncrementRow := ⟨5613944832,5614075904,293206651,293206823⟩
+opaque packet17 : SegmentPacket 5613944833 10 64 293206651 293206823 := ⟨Manual.Count131072.C042801.packed,Manual.Count131072.C042801.count_checked,Manual.Count131072.C042801.arithmetic_checked⟩
+theorem certified17 : IncrementCertified row17 := certifyIncrement 5613944833 10 64 packet17.packed 293206651 293206823
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet17.counts packet17.arithmetic
+def row18 : IncrementRow := ⟨5614075904,5614206976,295756801,295756975⟩
+opaque packet18 : SegmentPacket 5614075905 10 64 295756801 295756975 := ⟨Manual.Count131072.C042802.packed,Manual.Count131072.C042802.count_checked,Manual.Count131072.C042802.arithmetic_checked⟩
+theorem certified18 : IncrementCertified row18 := certifyIncrement 5614075905 10 64 packet18.packed 295756801 295756975
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet18.counts packet18.arithmetic
+def row19 : IncrementRow := ⟨5614206976,5614338048,293443641,293443809⟩
+opaque packet19 : SegmentPacket 5614206977 10 64 293443641 293443809 := ⟨Manual.Count131072.C042803.packed,Manual.Count131072.C042803.count_checked,Manual.Count131072.C042803.arithmetic_checked⟩
+theorem certified19 : IncrementCertified row19 := certifyIncrement 5614206977 10 64 packet19.packed 293443641 293443809
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet19.counts packet19.arithmetic
+def row20 : IncrementRow := ⟨5614338048,5614469120,296144080,296144255⟩
+opaque packet20 : SegmentPacket 5614338049 10 64 296144080 296144255 := ⟨Manual.Count131072.C042804.packed,Manual.Count131072.C042804.count_checked,Manual.Count131072.C042804.arithmetic_checked⟩
+theorem certified20 : IncrementCertified row20 := certifyIncrement 5614338049 10 64 packet20.packed 296144080 296144255
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet20.counts packet20.arithmetic
+def row21 : IncrementRow := ⟨5614469120,5614600192,287413972,287414142⟩
+opaque packet21 : SegmentPacket 5614469121 10 64 287413972 287414142 := ⟨Manual.Count131072.C042805.packed,Manual.Count131072.C042805.count_checked,Manual.Count131072.C042805.arithmetic_checked⟩
+theorem certified21 : IncrementCertified row21 := certifyIncrement 5614469121 10 64 packet21.packed 287413972 287414142
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet21.counts packet21.arithmetic
+def row22 : IncrementRow := ⟨5614600192,5614731264,290866338,290866512⟩
+opaque packet22 : SegmentPacket 5614600193 10 64 290866338 290866512 := ⟨Manual.Count131072.C042806.packed,Manual.Count131072.C042806.count_checked,Manual.Count131072.C042806.arithmetic_checked⟩
+theorem certified22 : IncrementCertified row22 := certifyIncrement 5614600193 10 64 packet22.packed 290866338 290866512
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet22.counts packet22.arithmetic
+def row23 : IncrementRow := ⟨5614731264,5614862336,294970281,294970455⟩
+opaque packet23 : SegmentPacket 5614731265 10 64 294970281 294970455 := ⟨Manual.Count131072.C042807.packed,Manual.Count131072.C042807.count_checked,Manual.Count131072.C042807.arithmetic_checked⟩
+theorem certified23 : IncrementCertified row23 := certifyIncrement 5614731265 10 64 packet23.packed 294970281 294970455
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet23.counts packet23.arithmetic
+def row24 : IncrementRow := ⟨5614862336,5614993408,290802620,290802791⟩
+opaque packet24 : SegmentPacket 5614862337 10 64 290802620 290802791 := ⟨Manual.Count131072.C042808.packed,Manual.Count131072.C042808.count_checked,Manual.Count131072.C042808.arithmetic_checked⟩
+theorem certified24 : IncrementCertified row24 := certifyIncrement 5614862337 10 64 packet24.packed 290802620 290802791
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet24.counts packet24.arithmetic
+def row25 : IncrementRow := ⟨5614993408,5615124480,296761161,296761339⟩
+opaque packet25 : SegmentPacket 5614993409 10 64 296761161 296761339 := ⟨Manual.Count131072.C042809.packed,Manual.Count131072.C042809.count_checked,Manual.Count131072.C042809.arithmetic_checked⟩
+theorem certified25 : IncrementCertified row25 := certifyIncrement 5614993409 10 64 packet25.packed 296761161 296761339
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet25.counts packet25.arithmetic
+def row26 : IncrementRow := ⟨5615124480,5615255552,292744047,292744218⟩
+opaque packet26 : SegmentPacket 5615124481 10 64 292744047 292744218 := ⟨Manual.Count131072.C042810.packed,Manual.Count131072.C042810.count_checked,Manual.Count131072.C042810.arithmetic_checked⟩
+theorem certified26 : IncrementCertified row26 := certifyIncrement 5615124481 10 64 packet26.packed 292744047 292744218
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet26.counts packet26.arithmetic
+def row27 : IncrementRow := ⟨5615255552,5615386624,292135708,292135877⟩
+opaque packet27 : SegmentPacket 5615255553 10 64 292135708 292135877 := ⟨Manual.Count131072.C042811.packed,Manual.Count131072.C042811.count_checked,Manual.Count131072.C042811.arithmetic_checked⟩
+theorem certified27 : IncrementCertified row27 := certifyIncrement 5615255553 10 64 packet27.packed 292135708 292135877
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet27.counts packet27.arithmetic
+def row28 : IncrementRow := ⟨5615386624,5615517696,295537418,295537583⟩
+opaque packet28 : SegmentPacket 5615386625 10 64 295537418 295537583 := ⟨Manual.Count131072.C042812.packed,Manual.Count131072.C042812.count_checked,Manual.Count131072.C042812.arithmetic_checked⟩
+theorem certified28 : IncrementCertified row28 := certifyIncrement 5615386625 10 64 packet28.packed 295537418 295537583
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet28.counts packet28.arithmetic
+def row29 : IncrementRow := ⟨5615517696,5615648768,296382552,296382722⟩
+opaque packet29 : SegmentPacket 5615517697 10 64 296382552 296382722 := ⟨Manual.Count131072.C042813.packed,Manual.Count131072.C042813.count_checked,Manual.Count131072.C042813.arithmetic_checked⟩
+theorem certified29 : IncrementCertified row29 := certifyIncrement 5615517697 10 64 packet29.packed 296382552 296382722
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet29.counts packet29.arithmetic
+def row30 : IncrementRow := ⟨5615648768,5615779840,296375636,296375811⟩
+opaque packet30 : SegmentPacket 5615648769 10 64 296375636 296375811 := ⟨Manual.Count131072.C042814.packed,Manual.Count131072.C042814.count_checked,Manual.Count131072.C042814.arithmetic_checked⟩
+theorem certified30 : IncrementCertified row30 := certifyIncrement 5615648769 10 64 packet30.packed 296375636 296375811
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet30.counts packet30.arithmetic
+def row31 : IncrementRow := ⟨5615779840,5615910912,289351753,289351916⟩
+opaque packet31 : SegmentPacket 5615779841 10 64 289351753 289351916 := ⟨Manual.Count131072.C042815.packed,Manual.Count131072.C042815.count_checked,Manual.Count131072.C042815.arithmetic_checked⟩
+theorem certified31 : IncrementCertified row31 := certifyIncrement 5615779841 10 64 packet31.packed 289351753 289351916
+ (by decide +kernel) (by decide +kernel) (by decide +kernel) packet31.counts packet31.arithmetic
+def rows : List IncrementRow := [row0,row1,row2,row3,row4,row5,row6,row7,row8,row9,row10,row11,row12,row13,row14,row15,row16,row17,row18,row19,row20,row21,row22,row23,row24,row25,row26,row27,row28,row29,row30,row31]
+theorem all_certified : CertifiedIncrements rows := CertifiedIncrements.cons certified0 (CertifiedIncrements.cons certified1 (CertifiedIncrements.cons certified2 (CertifiedIncrements.cons certified3 (CertifiedIncrements.cons certified4 (CertifiedIncrements.cons certified5 (CertifiedIncrements.cons certified6 (CertifiedIncrements.cons certified7 (CertifiedIncrements.cons certified8 (CertifiedIncrements.cons certified9 (CertifiedIncrements.cons certified10 (CertifiedIncrements.cons certified11 (CertifiedIncrements.cons certified12 (CertifiedIncrements.cons certified13 (CertifiedIncrements.cons certified14 (CertifiedIncrements.cons certified15 (CertifiedIncrements.cons certified16 (CertifiedIncrements.cons certified17 (CertifiedIncrements.cons certified18 (CertifiedIncrements.cons certified19 (CertifiedIncrements.cons certified20 (CertifiedIncrements.cons certified21 (CertifiedIncrements.cons certified22 (CertifiedIncrements.cons certified23 (CertifiedIncrements.cons certified24 (CertifiedIncrements.cons certified25 (CertifiedIncrements.cons certified26 (CertifiedIncrements.cons certified27 (CertifiedIncrements.cons certified28 (CertifiedIncrements.cons certified29 (CertifiedIncrements.cons certified30 (CertifiedIncrements.cons certified31 (CertifiedIncrements.nil))))))))))))))))))))))))))))))))
+theorem checked : checkIncrementSummary 5611716608 5615910912 9388404644 9388410099 rows = true := by
+ decide +kernel
+end ChenEffective.PlattWindow.Assembly.Totals.S5.B000087

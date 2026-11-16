@@ -1,0 +1,169 @@
+{
+  "schema": 1,
+  "classification": "ASSEMBLY_PROPOSALS_NOT_FINAL_PROOF",
+  "gridInputHash": "6598e557ab45ade1dce712191609ce37fbcaf233ed316a8ebeae27d7c12939af",
+  "countInputHash": "830c57ac60dc3801b3d9169baffa7f3b09537803c6192f4230c6fbbdfc28af4b",
+  "countVerificationManifest": "6cec1299625bea8dabad35f495cc664085f121c5da55867b499bb14e04e6e46d",
+  "logSourcesHash": "1d25e09c0b76be2d6b801dcf69a7f3395a4cb10b3dae8f453488736b0c4bbcc2",
+  "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+  "counts": 76265,
+  "points": 239866,
+  "cells": 239865,
+  "reference": {
+    "x": 10000000000,
+    "lower": "116863011702975",
+    "upper": "116863401833309",
+    "logLower": "882879348526828",
+    "logUpper": "882879348527041",
+    "logChunk": 936,
+    "logRow": 249
+  },
+  "lower": -0.000003219692807476804,
+  "upper": 0.00004590581306729291,
+  "files": [
+    {
+      "kind": "prefix",
+      "section": 1,
+      "file": "prefix-s1.json.gz",
+      "hash": "80626c766a53afc0f7d775401b0a2b6d3c0d5b4b6186b4ad9cfcd75ed0d54113"
+    },
+    {
+      "kind": "totals",
+      "section": 1,
+      "file": "totals-s1.json.gz",
+      "hash": "11f75c95ab31448b4b2383d0cf9353895c53b750f357aaf2a89e5b6c046e0840"
+    },
+    {
+      "kind": "grid",
+      "section": 1,
+      "file": "grid-s1.json.gz",
+      "hash": "47ef2899b658e9b1d9df6a4cd5064e9202941c2b86eec6fe7323206cb32cfd60"
+    },
+    {
+      "kind": "prefix",
+      "section": 2,
+      "file": "prefix-s2.json.gz",
+      "hash": "86562009de13c7e374cf87ddb55144f8c592aa266fc59b60333576aecba28906"
+    },
+    {
+      "kind": "totals",
+      "section": 2,
+      "file": "totals-s2.json.gz",
+      "hash": "0bcb0bdf3d17eba1c005eb4d8f294557e6bbd1cc2a4d0717f8441cdb54d0bff0"
+    },
+    {
+      "kind": "grid",
+      "section": 2,
+      "file": "grid-s2.json.gz",
+      "hash": "4d6173b0eb2fae2027f01e5d085a3e0705804ecbb8882f99d68720e7257754a1"
+    },
+    {
+      "kind": "prefix",
+      "section": 3,
+      "file": "prefix-s3.json.gz",
+      "hash": "188fe9f33b8c00475874ccce83e13c5721fe1fb37ffffae0b9f3ea2154a0b6cd"
+    },
+    {
+      "kind": "totals",
+      "section": 3,
+      "file": "totals-s3.json.gz",
+      "hash": "23bef9c4f5f735d356f5ec1bb95f7966a6764eb98a46689f84a656c72d7cbf14"
+    },
+    {
+      "kind": "grid",
+      "section": 3,
+      "file": "grid-s3.json.gz",
+      "hash": "554a2c239b001a199760d2fc035223b56b184655c3ad2df5f61fbc6271029c45"
+    },
+    {
+      "kind": "prefix",
+      "section": 4,
+      "file": "prefix-s4.json.gz",
+      "hash": "86f1d5f5d9f671a15b57a70462099836c5ac895845dd1980c620977e03139a47"
+    },
+    {
+      "kind": "totals",
+      "section": 4,
+      "file": "totals-s4.json.gz",
+      "hash": "5b739640c9dd35db4425c4d1c01ef2789c2fad55eaffacac18800628204342f4"
+    },
+    {
+      "kind": "grid",
+      "section": 4,
+      "file": "grid-s4.json.gz",
+      "hash": "c0461ef4a35f76d29ff99c43bc8e8317281cedfd673bd6b892566a202095513d"
+    },
+    {
+      "kind": "prefix",
+      "section": 5,
+      "file": "prefix-s5.json.gz",
+      "hash": "6f202e5dc2f4442c4948c59b00109b7989a30d5c35929a11697c4c9bc4b048ac"
+    },
+    {
+      "kind": "totals",
+      "section": 5,
+      "file": "totals-s5.json.gz",
+      "hash": "1f754579cdb5061f2e823bbba12e437f432c600e950a7760a9cb3e81a6d08b9a"
+    },
+    {
+      "kind": "grid",
+      "section": 5,
+      "file": "grid-s5.json.gz",
+      "hash": "eb407720d247d99facfb88fa810937d3a09d68fe50fd662cc1d7ff6f621c450f"
+    },
+    {
+      "kind": "prefix",
+      "section": 6,
+      "file": "prefix-s6.json.gz",
+      "hash": "a1c7220061142baa14bf0e7cc352c2d5d52ddb7bbe7e6fed7087efb609c1ec61"
+    },
+    {
+      "kind": "totals",
+      "section": 6,
+      "file": "totals-s6.json.gz",
+      "hash": "2bb21aadd1ae72cc314eeefcd6cdc2f89d5dc96fd5913a491a32ec0141312ff3"
+    },
+    {
+      "kind": "grid",
+      "section": 6,
+      "file": "grid-s6.json.gz",
+      "hash": "53a78cfb19590e523da8e051bd4491965d2c1a3c80af0dd9ad9ccdd82bd9238e"
+    },
+    {
+      "kind": "prefix",
+      "section": 7,
+      "file": "prefix-s7.json.gz",
+      "hash": "b7774d5b7be86562b56d088e1f17cc8281ec570882cee5543d8e7c19633105dd"
+    },
+    {
+      "kind": "totals",
+      "section": 7,
+      "file": "totals-s7.json.gz",
+      "hash": "eaa47468a102631ff7053c2999f83aa062486b5d863bd3b3d84e7fa2b83c1a83"
+    },
+    {
+      "kind": "grid",
+      "section": 7,
+      "file": "grid-s7.json.gz",
+      "hash": "70b2bcc22ca574ba9b82bfb0f050befc8b3e68291fc5af0ac37049d2290ea909"
+    },
+    {
+      "kind": "prefix",
+      "section": 8,
+      "file": "prefix-s8.json.gz",
+      "hash": "1334a3a13ed888e52efadbe07e0d2b061cfa533ea34971e2b1dc85e495b8d743"
+    },
+    {
+      "kind": "totals",
+      "section": 8,
+      "file": "totals-s8.json.gz",
+      "hash": "abeb6bf1cd854767ac41fc1e01d2ff51ae366e0b065b1256c484aa1adb1fc213"
+    },
+    {
+      "kind": "grid",
+      "section": 8,
+      "file": "grid-s8.json.gz",
+      "hash": "6c8e7e5d837f60bd6190489c74530bda990a4a1d281f2dc6337eb41b90edac7b"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "classification": "COUNT_RECEIPTS_SOURCES_OBJECTS_AND_PLAN_VERIFIED_NOT_FINAL_CHEN",
+  "checkedAt": "2026-11-15T05:52:31.456Z",
+  "chunks": 76265,
+  "blocks": 8886581,
+  "first": 4000000,
+  "last": 10000000000,
+  "gridInputHash": "6598e557ab45ade1dce712191609ce37fbcaf233ed316a8ebeae27d7c12939af",
+  "countInputHash": "830c57ac60dc3801b3d9169baffa7f3b09537803c6192f4230c6fbbdfc28af4b",
+  "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+  "sourceObjectManifestHash": "6cec1299625bea8dabad35f495cc664085f121c5da55867b499bb14e04e6e46d",
+  "summedRecordedLeanSeconds": 234443.9520000021,
+  "verificationSeconds": 257.729,
+  "remaining": "Kernel-level cumulative/grid assembly and final Chen axiom replacement/audit"
+}
