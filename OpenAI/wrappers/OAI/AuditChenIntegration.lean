@@ -1,6 +1,7 @@
 import OAI.AuditChenDirichlet
 import AuditBJSTightBudget
 import AuditBJSH30Conditional
+import AuditBJSH29Conditional
 import AuditBJSH30Triple
 import AuditBJSHybridSharpBridge
 import AuditDusart
@@ -29,19 +30,24 @@ run_elab do
       throwError "Wrong standard-only axiom ledger for {n}: {axs}"
     logInfo m!"Standard-only proof: {n}; axioms {axs}"
   for n in #[``ChenEffective.H30Conditional.chen,
-      ``ChenEffective.H30Conditional.original_chen] do
+      ``ChenEffective.H30Conditional.original_chen,
+      ``ChenEffective.H29Conditional.chen,
+      ``ChenEffective.H29Conditional.original_chen] do
     let axs ← Lean.collectAxioms n
     unless axs.size == conditional.size && axs.all conditional.contains do
       throwError "Wrong conditional axiom ledger for {n}: {axs}"
     logInfo m!"Conditional proof: {n}; axioms {axs}"
   for n in #[``ChenEffective.TightBudget.original_chen,
-      ``ChenEffective.H30Conditional.original_chen] do
+      ``ChenEffective.H30Conditional.original_chen,
+      ``ChenEffective.H29Conditional.original_chen] do
     unless ← isDefEq (← getConstInfo n).type (← getConstInfo ``Goldbach.chen_theorem).type do
       throwError "Literal old Chen statement mismatch: {n}"
   let pairs := #[( ``ChenEffective.TightBudget.original_chen,
       ``ChenEffective.TightBudget.chen),
     (``ChenEffective.H30Conditional.original_chen,
-      ``ChenEffective.H30Conditional.chen)]
+      ``ChenEffective.H30Conditional.chen),
+    (``ChenEffective.H29Conditional.original_chen,
+      ``ChenEffective.H29Conditional.chen)]
   let env ← getEnv
   for (bridge, producer) in pairs do
     let mut todo := #[bridge]
@@ -68,9 +74,13 @@ run_elab do
   let some ci := (← getEnv).find? ``ChenEffective.dirichlet_seven_eighths |
     throwError "Missing proved Dirichlet theorem"
   if ci matches .axiomInfo _ then throwError "Dirichlet is still an axiom"
+  logInfo "H29 integration audit passed: exact H<29 cutoff; all three literal Chen recoveries checked."
   logInfo "Chen integration audit passed: Dirichlet is proved; both literal old Chen statements recovered."
 
 #print axioms ChenEffective.TightBudget.chen
 #print axioms ChenEffective.TightBudget.original_chen
 #print axioms ChenEffective.H30Conditional.chen
 #print axioms ChenEffective.H30Conditional.original_chen
+
+#print axioms ChenEffective.H29Conditional.chen
+#print axioms ChenEffective.H29Conditional.original_chen

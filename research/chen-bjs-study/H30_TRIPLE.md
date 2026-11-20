@@ -1,5 +1,10 @@
 # Complete upper-count remainder and the remaining product obligation
 
+This is a historical development snapshot. The current completed H<29
+counting theorem, product input and sole-Platt axiom ledger are documented
+in [NUMERICAL_H29.md](../chen-numerical-study/NUMERICAL_H29.md). The open
+obligations and earlier axiom ledger below describe that earlier snapshot.
+
 ## Verified upper count
 
 `ChenEffective.H30.fifth_triple_closed` proves, for every even

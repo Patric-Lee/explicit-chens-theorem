@@ -1,8 +1,9 @@
-# Platt-only explicit Chen theorem near H = 30
+# Platt-only explicit Chen theorem below H = 29
 
 The temporary reciprocal-prefix axiom has been removed. The checked theorem
-`ChenEffective.H30Conditional.chen` proves Chen's conclusion for every even
-`N ≥ 3^(10^13)`, corresponding to H = 30.02765403654. The literal original
+`ChenEffective.H29Conditional.chen` proves Chen's conclusion for every even
+`N ≥ 3^(3*10^12)`, corresponding to H = 28.82368123221. Lean also
+proves this cutoff is strictly below exp(exp(29)). The literal original
 `Goldbach.ChenTheorem` follows as `original_chen`.
 
 The sole external axiom is `PlattWindow.platt_modulus_one_finite_RH`, declared
@@ -42,7 +43,7 @@ The ten downstream H≈30 proof modules are checked together in
 `BJSH30ConditionalChen.lean` to avoid repeatedly importing the large
 certificate closure. Their original proof bodies are retained unchanged in
 `../chen-numerical-study/proof-sources/H30Conditional/`, with a source/hash
-manifest and thin compatibility import modules. The final audit checks
+manifest and thin compatibility import modules. The earlier H≈30 audit checked
 body preservation as well as the resulting Lean proof and axiom closure.
 `PlattGlobalGridNegativeControls` checks missing-point and mismatched-row
 rejection. No numerical sieve is replayed by these proof joins.
@@ -60,9 +61,29 @@ gives the full prefix window in
 The canonical B₁ cancels in the finite comparison. No numerical enclosure of
 B₁, unverified zero ordinates, or additional Büthe/Schoenfeld assumption is used.
 
+## Variable budget below H = 29
+
+The new H29 lower proof is generic over a proved prefix window. Its concrete
+instance is supplied by the same completed finite certificates and Platt
+analytic tail, in BJSH29ConditionalChen. No window hypothesis remains in the
+public numerical Chen statement.
+
+The contraction allowance is 1/30000, and both distribution exponent-loss
+denominators are 300,000,000. The base mass budget remains 20,000,000 and the
+medium mass budget 5,000,000. A slightly larger factor allowance still fits
+the original 1/20 lower-count loss and 113/100 medium-count loss.
+
+The upper proof uses the already-proved sharp Mertens product in its actual
+Pan normalization, replacing the older large-threshold input in that branch.
+It keeps the remainder as 2 C₅/L³ + 38/L until the final Chen budget. Both
+the lower and complete upper counts now hold at 3^(3*10^12). The old H≈30
+route and its historical audit remain available.
+
+See [the exact H29 statements and proof budget](../chen-numerical-study/NUMERICAL_H29.md).
+
 ## Audits and reproduction
 
-[FINAL_CHEN_AUDIT.json](FINAL_CHEN_AUDIT.json) records the final source/object
+[FINAL_CHEN_H29_AUDIT.json](FINAL_CHEN_H29_AUDIT.json) records the final source/object
 manifest and transitive audit. The final numerical theorem and its recovery
 of old Chen have exactly `propext`, `Classical.choice`, `Quot.sound`, and the
 one published Platt input as axioms. The audit rejects placeholders, unsafe
@@ -80,7 +101,7 @@ git clone -c core.autocrlf=false https://github.com/Patric-Lee/explicit-chens-th
 From a configured checkout, use:
 
 ```sh
-node OpenAI/tools/build-source.mjs AuditBJSH30Conditional AuditBJSTightBudget OAI.AuditChenIntegration
+node --expose-gc OpenAI/tools/build-source.mjs AuditBJSH29Conditional AuditBJSTightBudget OAI.AuditChenIntegration
 ```
 
 The checked artifacts are reusable. A source-only checkout still needs to
@@ -113,7 +134,7 @@ other applications. The development build succeeded with paging; do not
 interpret its physical RAM size as a no-swap memory bound. Kernel-checked
 objects and dependency caches also consume disk space separately from RAM.
 
-For scale, the last fresh downstream Chen check took about 20.7 minutes,
+For scale, the earlier H≈30 release’s fresh downstream Chen check took about 20.7 minutes,
 the focused H≈30 audit 8.7 minutes, and the combined integration audit 16.6
 minutes on this machine, with heavy import/paging costs. These are observed
 individual runs, not reliable forecasts for other hardware.
