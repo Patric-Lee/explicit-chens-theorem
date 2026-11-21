@@ -66,6 +66,12 @@ older 0.67 counting theorem retains its larger cutoff. See the
 [GRH route](research/chen-grh/README.md).
 The prior Platt-only reports record historical proof snapshots.
 
+A [smaller-cutoff budget pilot](research/chen-grh/SHARP_PILOT.md) proves
+sharper pre-sieve moments and numerical payments for the candidate
+3^580000, below exp(exp(13.37)). This is checked groundwork; the final Chen
+theorem remains at the H<14 cutoff above until propagation is complete.
+
+
 ## Approach
 
 Let the singular-series main scale be

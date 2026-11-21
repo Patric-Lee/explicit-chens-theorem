@@ -1,0 +1,46 @@
+{
+  "classification": "CHECKED_BUDGET_PILOT_NOT_NEW_CHEN_THEOREM",
+  "checkedAt": "2026-11-21T23:15:14.797Z",
+  "candidateCutoff": "3^580000",
+  "candidateH": 13.3648312101393,
+  "provedHUpper": 13.37,
+  "oldFinalChenCutoff": "3^1000000",
+  "axioms": "Standard Lean only for these five pilot modules",
+  "records": [
+    {
+      "module": "GRHSharpRootMoment",
+      "sourceHash": "26ea25bb41619120c53f6cd50e825e12da6d05b01ce84237a31ee9818b554f8a",
+      "objectHash": "f440c4f9b4a4ee3100d7c15eaef9c4ab24e8c83c5b989fbf6a7fcd9e1f656134",
+      "seconds": 22.87,
+      "axiomOutput": "'ChenEffective.GRH.prime_root_moment_four_million_sharp' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "GRHSharpDivisorMoments",
+      "sourceHash": "71e86c4d078d67ec3c11582b94bc04a6052e2f3cef6981554d4bab19c8ef4885",
+      "objectHash": "431b7c7407afa3e8ed7c168e9a58e82f9b6b480084069193cf6928a85602f268",
+      "seconds": 19.431,
+      "axiomOutput": "'ChenEffective.GRH.source_small_prime_divisor_moments_sharp' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ChenEffective.GRH.density_divisor_moment_four_million_sharp' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "GRHSharpTruncationPayment",
+      "sourceHash": "a796bb6a31aa13d721a32362f08b7192dc43463ab10674077fb4f7c90ab9e79b",
+      "objectHash": "082e9630ced134747d9a6ff0d7dfea102adabf115cde77f400ca4c0ebcd2a2a9",
+      "seconds": 19.992,
+      "axiomOutput": "C:\\Users\\89270\\Desktop\\Vibe\\goldbach-lean\\research\\chen-grh\\GRHSharpTruncationPayment.lean:19:38: warning: Unused tactic linter: `norm_num at he14` does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\nC:\\Users\\89270\\Desktop\\Vibe\\goldbach-lean\\research\\chen-grh\\GRHSharpTruncationPayment.lean:30:34: warning: Unused tactic linter: `norm_num at he6` does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\nC:\\Users\\89270\\Desktop\\Vibe\\goldbach-lean\\research\\chen-grh\\GRHSharpTruncationPayment.lean:43:36: warning: Unused tactic linter: `norm_num at he30` does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n'ChenEffective.GRH.sharp_medium_truncation_payment' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "GRHSharpCutoffBudget",
+      "sourceHash": "a38e6ae2e43fa228ce0d76946e1b2abe0f1d4d155f5036ce8c531e588825051a",
+      "objectHash": "19b4d93690af61f514d7d0c534f1f8bc34ba4f4356c28740103ef9812781236f",
+      "seconds": 19.563,
+      "axiomOutput": "'ChenEffective.GRHSharp.target_log_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ChenEffective.GRHSharp.targetCutoff_lt_double_exp_13_37' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "GRHSharpPanPayment",
+      "sourceHash": "36395d262ef891cc2e496c1174d2b07f7705a26966cbca59483684ecdbd3a4ea",
+      "objectHash": "7d757827b246ad976b81d45fc51fb1d16da0f04f0cd32a661da54c7e13134e96",
+      "seconds": 19.43,
+      "axiomOutput": "C:\\Users\\89270\\Desktop\\Vibe\\goldbach-lean\\research\\chen-grh\\GRHSharpPanPayment.lean:19:38: warning: Unused tactic linter: `norm_num at he` does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\nC:\\Users\\89270\\Desktop\\Vibe\\goldbach-lean\\research\\chen-grh\\GRHSharpPanPayment.lean:37:34: warning: Unused tactic linter: `norm_num at he` does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n'ChenEffective.GRHSharp.pan_polynomial_payment' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    }
+  ]
+}

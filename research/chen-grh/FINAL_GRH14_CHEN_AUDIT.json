@@ -1,6 +1,6 @@
 {
   "classification": "GRH_ONLY_H14_COMPLETE_CHEN_KERNEL_CHECKED",
-  "checkedAt": "2026-11-21T22:14:51.977Z",
+  "checkedAt": "2026-11-21T23:08:31.810Z",
   "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
   "theorem": "ChenEffective.GRH14.chen",
   "lowerTheorem": "ChenEffective.GRH14.weighted_lower",
