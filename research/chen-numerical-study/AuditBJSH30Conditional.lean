@@ -24,7 +24,7 @@ example : (ChenEffective.jointSelbergBudget (82/10) (1/10000) 0 (1/1000)).margin
 run_elab do
   let standard := #[``propext, ``Classical.choice, ``Quot.sound]
   let allowed := standard ++ #[
-    ``ChenEffective.PlattWindow.platt_modulus_one_finite_RH]
+    ``ChenEffective.GRH.alpoge_dirichlet_grh]
   for n in #[``ChenEffective.H30Conditional.chen,
       ``ChenEffective.H30Conditional.original_chen] do
     let axs ← Lean.collectAxioms n
@@ -76,6 +76,6 @@ run_elab do
     unless seen.contains n do throwError "Required actual counting producer missing: {n}"
   unless seen.contains ``OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re do
     throwError "The actual proved OpenAI Dirichlet theorem is absent"
-  logInfo m!"Platt H30 Chen audit passed: {seen.size} transitive constants."
-  logInfo "Exactly Platt modulus-one finite RH through 1e8 and standard Lean axioms; Dirichlet is proved."
+  logInfo m!"GRH H30 Chen audit passed: {seen.size} transitive constants."
+  logInfo "Exactly full Dirichlet GRH and standard Lean axioms; finite RH is derived; Dirichlet is proved."
   logInfo "Actual lower/triple counts used; literal original implicit Chen statement recovered."

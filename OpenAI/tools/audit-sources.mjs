@@ -3,7 +3,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 const repo=process.env.CHEN_REPO||path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 function strip(s){let out='',depth=0,line=false,str=false;for(let i=0;i<s.length;i++){const c=s[i],n=s[i+1];if(line){if(c==='\n'){line=false;out+='\n';}continue;}if(depth){if(c==='/'&&n==='-'){depth++;i++;}else if(c==='-'&&n==='/'){depth--;i++;}else if(c==='\n')out+='\n';continue;}if(str){if(c==='\\')i++;else if(c==='"')str=false;else if(c==='\n')out+='\n';continue;}if(c==='-'&&n==='-'){line=true;i++;out+=' ';}else if(c==='/'&&n==='-'){depth=1;i++;out+=' ';}else if(c==='"'){str=true;out+=' ';}else out+=c;}if(depth||str)throw Error('Unterminated comment/string');return out;}
-const roots=['research/chen-effective','research/chen-dusart','research/chen-bjs-study','research/chen-numerical-study','OpenAI'];
+const roots=['research/chen-effective','research/chen-dusart','research/chen-bjs-study','research/chen-numerical-study','research/chen-grh','OpenAI'];
 const bad=/\b(sorry|admit|sorryAx|native_decide|unsafe|implemented_by|extern|ofReduceBool|trustCompiler|skipKernelTC|trustLevel)\b/g;
 let files=0;const axioms=[];const failures=[];
 // The audit fixtures READ this option and reject disabled kernel checking.
@@ -14,7 +14,7 @@ roots.forEach(r=>scan(path.join(repo,r)));
 // The complete active Platt proof closure has its own source/object audit.
 // Include its one permitted published input in this repository-wide scan.
 scanFile(path.join(repo,'research/chen-platt/PlattAssumption.lean'));
-const expected=process.argv.includes('--dirichlet-proved')?['platt_modulus_one_finite_RH']:['dirichlet_seven_eighths','platt_modulus_one_finite_RH'];
+const expected=process.argv.includes('--dirichlet-proved')?['alpoge_dirichlet_grh']:['dirichlet_seven_eighths','alpoge_dirichlet_grh'];
 for(const a of axioms)if(!expected.includes(a.name))failures.push(a);
 for(const n of expected)if(axioms.filter(a=>a.name===n).length!==1)failures.push({missingOrDuplicate:n});
 console.log(JSON.stringify({files,axioms,failures,passed:failures.length===0},null,2));

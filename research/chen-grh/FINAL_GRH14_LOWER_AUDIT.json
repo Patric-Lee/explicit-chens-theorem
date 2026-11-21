@@ -1,0 +1,167 @@
+{
+  "classification": "GRH_ONLY_H14_NUMERICAL_LOWER_KERNEL_CHECKED",
+  "checkedAt": "2026-11-21T10:16:35.739Z",
+  "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+  "theorem": "ChenEffective.GRH14.weighted_lower",
+  "cutoff": "3^1000000",
+  "coefficient": "2.02575",
+  "HUpperStrict": 14,
+  "baseLoss": "3/50",
+  "mediumLoss": "111/100",
+  "endpointLoss": "1/20000",
+  "presieveStart": 4000000,
+  "presieveTruncation": "floor(N^(1/200))",
+  "distributionLevel": "N^(249/500)",
+  "externalAxiom": "ChenEffective.GRH.alpoge_dirichlet_grh",
+  "axiomDeclarations": [
+    {
+      "module": "GRHAssumption",
+      "name": "alpoge_dirichlet_grh"
+    }
+  ],
+  "directPackages": [
+    "LeanArchitect",
+    "mathlib"
+  ],
+  "H14ExistenceStatus": "NOT_PROVED: the complete Selberg-square estimate remains separate",
+  "localModules": 86674,
+  "sourceObjectManifestHash": "950d80bb12df471b9bed3b045cd9b0ff85083d8a0fd5687021f66689568c596d",
+  "auditLog": "'ChenEffective.GRH14.weighted_lower' depends on axioms: [propext,\n Classical.choice,\n Quot.sound,\n GRH.alpoge_dirichlet_grh]\nGRH H14 numerical lower audit passed: 1514712 transitive constants.\nActual weighted Chen lower count at 3^1000000; sole added axiom is full Dirichlet GRH.\nNo completed H14 Chen existence theorem is asserted: the complete square estimate is separate.",
+  "numericalLowerModules": [
+    {
+      "module": "AuditGRH14NumericalLower",
+      "sourceHash": "e2c33773763a13d4e948f93aa67414884432d9631c0065e46812c7b2e3e86c80",
+      "objectHash": "c97936662744944490a3a56444ef1f25c8e13126f145a9a3b18975a4bb38ca44"
+    },
+    {
+      "module": "GRH14BaseCandidates",
+      "sourceHash": "1083ed2d526a2f9f17aaae4ff9718ad995702e7505b162913c329eef4205cff6",
+      "objectHash": "a15ab12bca20a2c795644c3d343aae1ce3053f148a952085660bdefa3ab0e022"
+    },
+    {
+      "module": "GRH14BaseDistribution",
+      "sourceHash": "5f902b7bb74f66b583c764dfa87db94e28903e0a63a3867d7eff76b4cd964d87",
+      "objectHash": "4c1f7e428aea8979e1364715728a17d14a5f448c73ce0e9103225df4915c2d8a"
+    },
+    {
+      "module": "GRH14ErrorBudget",
+      "sourceHash": "c30d1135fc83cca2f6dad54157aad4aa4defec70231f167362c4d7696444349e",
+      "objectHash": "1b80c21e35c06bba52e71ebbfa9050c9225fad4cfe95b25c5003c76892cc87c8"
+    },
+    {
+      "module": "GRH14GoldbachProduct",
+      "sourceHash": "affb0a7fd6538a1bf217761f37e7795f10e81493c59834c8fc98959eb076afd8",
+      "objectHash": "1d0e39cf4a749cfcfc95c46bc0c88d2955ec423236702f9ec46e2f7c43bb04d5"
+    },
+    {
+      "module": "GRH14LowerFactor",
+      "sourceHash": "3ae4913c9371a4b5dccbcc7097a8761a5a1bd383b2aeebdccd9339546878b030",
+      "objectHash": "40dda2a5cb41a8290d68d17b97b4cf554055119a37ce8678fd6ede6cdb585be7"
+    },
+    {
+      "module": "GRH14LowerGeometry",
+      "sourceHash": "7f095dcb604d95de4651c7c64b15f140c992dbbd167d627329ab34bcbee5f497",
+      "objectHash": "d97475fcd291e776ef9c94a1b5dfee5c414c7bcac6a2c9074217cf1e6c56b10a"
+    },
+    {
+      "module": "GRH14LowerTailPayment",
+      "sourceHash": "0e6e817eeca66d1683a6357ab8e9b0fa9b63613ed49c23643c383619575cbaf0",
+      "objectHash": "36fe68f60fdee0cb3c10e5916a9e6c4ea08c5f819b553e951cde4bd6682632a9"
+    },
+    {
+      "module": "GRH14MediumAggregate",
+      "sourceHash": "d1eb1319fdc6a5d0be2409f3ab97865de10c5720b92c0dee1eb9f9982b6cb171",
+      "objectHash": "668d82c05a32fcde6236221b0d4fdc6503a58af0fd2a7b1f2d8a027d71e26fbd"
+    },
+    {
+      "module": "GRH14MediumDistribution",
+      "sourceHash": "7b75705e91af53be6057eb2dc47b6f1d8d3f54caa03bf2a64fa81c7a9dbafbe4",
+      "objectHash": "f534512b0cb360a8cc27c83eb993f3946723329c38228ab10ca7424435ee3a7f"
+    },
+    {
+      "module": "GRH14MediumFactor",
+      "sourceHash": "fac050b53a208509af521517be781866300f3dfff0bee0616e071bdfc08ab1ab",
+      "objectHash": "87ee61061abe33504f5098ae821c6192c97d97bab1fdd3058d20e2bc44e45592"
+    },
+    {
+      "module": "GRH14MediumGrid",
+      "sourceHash": "11dfcf67c567fef723af4d85cb18e2fdee32921fae4369e0e2871c8c75f195ba",
+      "objectHash": "44d6dc4622c42de2d412f42654b1ce02e01720cdd1a50c8c7afbbf41e61a1336"
+    },
+    {
+      "module": "GRH14MediumIntegralCaps",
+      "sourceHash": "36e1ec52580982fe6356de944c2cadf8e244322e82d5434683ecd8baef38fbf8",
+      "objectHash": "3830577a682d2d393c5453c9390bb46ae03dca741a65ed4639a8dee72cbe4312"
+    },
+    {
+      "module": "GRH14MediumKernelCertificates",
+      "sourceHash": "fc89b3c79a6a4b08f8471fc3c635a544937ed5d1e9e48a5d0016cf0a8ca3038d",
+      "objectHash": "5f3cbe315ddddd4d2fc303fb4c1aeabc51adc4d29309642b43cc8a32955178ba"
+    },
+    {
+      "module": "GRH14MediumPrimeSum",
+      "sourceHash": "f2e9c2b29ff417ef70ef16383d39dbff89cc3eeb151c4f92d1c2ff1ee6c7adc4",
+      "objectHash": "04b6e28891fe628d34d9df896c0db0a614d7ef2b2a150f18a053c88a0e736ea0"
+    },
+    {
+      "module": "GRH14MediumProfile",
+      "sourceHash": "990603527f045cb9805d20e493b786f4668a072f8a4ce7fc7ff8179b66361813",
+      "objectHash": "9b09554141912a01de5cab388e89b3f7aa2e6c44d22853fd2734db052ba886fd"
+    },
+    {
+      "module": "GRH14MediumTailPayment",
+      "sourceHash": "d5c1c4d8a241a79d46f559d9d7d013738fc04f74344f195b78dcdcc44a253d8c",
+      "objectHash": "9c438ef945bff7b3309c39d53510f0324a6db0b20a57a20efb9b8464dc2d2152"
+    },
+    {
+      "module": "GRH14MertensProduct",
+      "sourceHash": "633ba0d39ee5e8cacb0b0d6f1875409256e38d0ecda249130d1890ffcf38aee5",
+      "objectHash": "ec3883eb559d0a0b45f6289dc9405dbfa852d16568994f6d98fe1f01b3eb77ba"
+    },
+    {
+      "module": "GRH14PrimeIntervals",
+      "sourceHash": "3d86252e7111842e51835ab9dcc6afb8cb9cda8d7ae152ee3cb54e7bb15cb2f8",
+      "objectHash": "1214d355fd83398412c8506ded7f04fbf042fe91c52a3a01b8c57c89bca5b278"
+    },
+    {
+      "module": "GRH14RelativeProduct",
+      "sourceHash": "4049c7fa3e69d7c8683710cad0acb3c75efef28470286facd267b182815b1c36",
+      "objectHash": "e9c5c3c532578789bd0d4b81f36614d2e31246323879bc857a8a14c8bf2f8bff"
+    },
+    {
+      "module": "GRH14SourceMass",
+      "sourceHash": "cf50fe942ffab188bf207431b0e8f8629b68b69970dcc7c95373ca87f3ed4969",
+      "objectHash": "829363a036f8fb4f7104e5e219a05616f831c364b0b26ee2f85cb979be4421ef"
+    },
+    {
+      "module": "GRH14SourceMassCaps",
+      "sourceHash": "11f6b542938fa220ebceb64490e43ee41c337abc6dd0e579a5d259786ee51b4b",
+      "objectHash": "e5ab1e3654ab85d13fa04b61195a2ab49cca743fe43bb756131acaa150359b5a"
+    },
+    {
+      "module": "GRH14SourceUpperMass",
+      "sourceHash": "2f8e10575c527a92e8c4fe43c5350d64336dcf641cafef98e02373e57e5c1518",
+      "objectHash": "52fe3e45dfa819525a9b01520714d6f8d3d72ac6db264b7f6c61660573ff819c"
+    },
+    {
+      "module": "GRH14TruncationBudget",
+      "sourceHash": "780d197d19ed69eb6296fc14f9b9b82d098173005d0cfffc117f9e6e2d6cedfe",
+      "objectHash": "eacf3259f1ecac30fed2039fc315b339bb01148b0fe1b4252d70ed13e99905b2"
+    },
+    {
+      "module": "GRH14WeightedLower",
+      "sourceHash": "377221f5e8b5a05f50e3e6edee460321ad18b1f9bf895f5c4c0ee46d283a28a9",
+      "objectHash": "d43cffd0b99285fe2a1eee94a64f2f7a70fef7c67cfdbe4ec4939defd7af92c3"
+    },
+    {
+      "module": "GRHLowerConditionedTail",
+      "sourceHash": "4e63bb1c3b450f45fafd416ae970e44dedea3babd6129c115999a2fc47c20eac",
+      "objectHash": "95216b9301995b7e234315fe3c7054136901cc3ab5e9e67da6feb2b2136bcf14"
+    },
+    {
+      "module": "GRHLowerRemainderAggregate",
+      "sourceHash": "b5a7464ca8a18d9796a823150b0f7e1988b38ee7d0f3819187e045ccb62b629f",
+      "objectHash": "a9a8faf5a963d9f50c3d5895b3d2650c92dcbddee12310c27c80fe01b5d4f4bb"
+    }
+  ]
+}

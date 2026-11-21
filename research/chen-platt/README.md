@@ -1,4 +1,4 @@
-# Platt-only explicit Chen theorem below H = 29
+# Finite-certificate Chen route below H = 29
 
 The temporary reciprocal-prefix axiom has been removed. The checked theorem
 `ChenEffective.H29Conditional.chen` proves Chen's conclusion for every even
@@ -6,12 +6,13 @@ The temporary reciprocal-prefix axiom has been removed. The checked theorem
 proves this cutoff is strictly below exp(exp(29)). The literal original
 `Goldbach.ChenTheorem` follows as `original_chen`.
 
-The sole external axiom is `PlattWindow.platt_modulus_one_finite_RH`, declared
-in [PlattAssumption.lean](PlattAssumption.lean): every nontrivial zeta zero
-with imaginary part of absolute value at most 100,000,000 has real part 1/2.
-It has exactly the `TernaryGoldbach.PlattZetaRH` predicate used by the local
-calr3 port. It asserts neither full RH nor Dirichlet GRH. The Dirichlet
-seven-eighths theorem is supplied by the existing checked OpenAI proof.
+The former external Platt declaration in [PlattAssumption.lean](PlattAssumption.lean)
+is now a **theorem**, derived from the sole full Dirichlet GRH axiom in
+[GRHAssumption.lean](../chen-grh/GRHAssumption.lean). It retains exactly the
+`TernaryGoldbach.PlattZetaRH` API used by the local calr3 port. No second
+external axiom is needed. The Dirichlet seven-eighths theorem is still
+supplied by the checked OpenAI proof. See the
+[GRH route and H<14 development status](../chen-grh/README.md).
 
 ## Finite certificate and analytic tail
 
@@ -83,10 +84,13 @@ See [the exact H29 statements and proof budget](../chen-numerical-study/NUMERICA
 
 ## Audits and reproduction
 
-[FINAL_CHEN_H29_AUDIT.json](FINAL_CHEN_H29_AUDIT.json) records the final source/object
-manifest and transitive audit. The final numerical theorem and its recovery
+[FINAL_CHEN_H29_AUDIT.json](FINAL_CHEN_H29_AUDIT.json) records the historical
+Platt-only source/object manifest and transitive audit. The new GRH source/object
+audit procedures and current validation status are in the
+[GRH development](../chen-grh/README.md#reproduction). The new full GRH
+Chen recheck is pending additional Windows commit headroom. The final numerical theorem and its recovery
 of old Chen have exactly `propext`, `Classical.choice`, `Quot.sound`, and the
-one published Platt input as axioms. The audit rejects placeholders, unsafe
+one full Dirichlet GRH input as axioms. The audit rejects placeholders, unsafe
 proof dependencies and native compiler trust, and requires the actual lower
 and triple counts, proved Dirichlet theorem, finite window and analytic tail.
 The independent H≈147 route retains its standard-only audit.

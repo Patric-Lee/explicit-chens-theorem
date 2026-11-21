@@ -1,5 +1,11 @@
 # Platt-only Chen theorem with H < 29
 
+Current GRH development: the former Platt axiom is now a theorem derived
+from the sole full Dirichlet GRH axiom. The Platt-only reports and commands
+below describe the earlier checked snapshot. See the
+[current GRH status and reproduction commands](../chen-grh/README.md#reproduction).
+The exact H<29 budget is retained; H<14 is still in development.
+
 The kernel-checked theorem is
 `ChenEffective.H29Conditional.chen` in
 [BJSH29ConditionalChen.lean](BJSH29ConditionalChen.lean).

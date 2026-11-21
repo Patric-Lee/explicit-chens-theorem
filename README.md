@@ -1,40 +1,50 @@
 # Explicit Chen's theorem in Lean
 
 This project formalizes explicit cutoffs for Chen's theorem. Its best checked
-result proves that every even integer at least 3^(3*10^12) is a prime plus
-a prime or semiprime, assuming only Platt's modulus-one finite RH input
-beyond Lean's standard axioms. The exact cutoff is below exp(exp(29)).
+result proves that every even integer at least 3^1000000 is a prime plus
+a prime or a product of two primes, assuming full Dirichlet GRH as the sole
+external axiom beyond Lean's standard axioms. This cutoff is below exp(exp(14)).
 
 ## Results and assumptions
 
 | Route | Exact cutoff | Approximate H, where N₀ = exp(exp(H)) | Additional axiom beyond standard Lean |
 | --- | --- | --- | --- |
-| [Checked Platt-based H<29 theorem](research/chen-numerical-study/BJSH29ConditionalChen.lean) | 3^(3*10^12) | 28.82368123221 | Modulus-one finite RH through height 10^8 |
+| [GRH-based H<14 theorem](research/chen-grh/AuditGRH14Chen.lean) | 3^1000000 | 13.90955838558 | Full Dirichlet GRH (Alpöge statement) |
+| [GRH-based H<29 theorem](research/chen-numerical-study/BJSH29ConditionalChen.lean) | 3^(3*10^12) | 28.82368123221 | Full Dirichlet GRH (Alpöge statement) |
 | [Checked numerical theorem](research/chen-bjs-study/BJSTightChen.lean) | 3^(3^134) | 147.308095 | None |
-| [Checked Platt-based H≈30 theorem](research/chen-numerical-study/BJSH30ConditionalChen.lean) | 3^(10^13) | 30.02765403654 | Modulus-one finite RH through height 10^8 |
+| [GRH-based H≈30 theorem](research/chen-numerical-study/BJSH30ConditionalChen.lean) | 3^(10^13) | 30.02765403654 | Full Dirichlet GRH (Alpöge statement) |
 
-The best Platt-based result is **conditional**. Lean proves its exact cutoff
-is strictly below exp(exp(29)). The earlier H≈30 theorem remains available.
+The H<14 proof is complete: no lower-count, triple-count, sieve, or numerical
+estimate remains an unproved input. We use the full Dirichlet GRH statement
+from Levent Alpöge's announced Lean development as the sole additional axiom,
+to avoid compiling and replaying that large development here. Our local
+build therefore proves Chen's theorem relative to this explicitly declared
+GRH axiom; linking a checked proof of the same GRH statement would discharge
+it. We do not claim that this repository has checked Alpöge's proof.
+Lean proves that our exact cutoff is strictly below exp(exp(14)). The earlier
+H<29 and H≈30 theorems remain available.
 For every even natural number N at or above its cutoff, its statement is
 
 $$
-N\ge N_0=3^{3\cdot10^{12}}
+N\ge N_0=3^{1\,000\,000}
 \quad\Longrightarrow\quad
 \exists p,q\in\mathbb N,\quad
 N=p+q,\quad p\text{ prime},\quad
 q\text{ prime or a product of two primes}.
 $$
 
-The declaration is `ChenEffective.H29Conditional.chen`. See the
-[H<29 budget and audit](research/chen-numerical-study/NUMERICAL_H29.md).
+The declaration is `ChenEffective.GRH14.chen`. See the
+[H<14 proof, complete budget and audit](research/chen-grh/NUMERICAL_CHEN_H14.md).
 Its `original_chen` corollary has exactly the original
 `Goldbach.ChenTheorem` type. This checks that the numerical route proves
 the original existence statement. The standard-only H≈147 theorem has its
 own literal recovery theorem and remains separate from the conditional route.
 
-The sole additional axiom is the published modulus-one Platt finite-RH
-statement through height 100,000,000. The former temporary reciprocal-prefix
-axiom has been removed. The all-real prefix bound
+The sole additional axiom is now full Dirichlet GRH, matching the
+Alpöge/Claude release's all-moduli, all-heights critical-strip statement.
+We assume that statement instead of importing its large proof. The old Platt
+finite-RH declaration is now a theorem derived from GRH, not another axiom.
+The former temporary reciprocal-prefix axiom has been removed. The all-real prefix bound
 
 $$
 \left|\sum_{p\le x}\frac1p-\log\log x-B_1\right|
@@ -42,10 +52,19 @@ $$
 $$
 
 is now proved from the completed kernel-checked finite certificates and
-the Platt analytic tail. There are no extra sieve-density, AP-distribution,
+the finite-height analytic tail (its RH premise is now derived from GRH).
+There are no extra sieve-density, AP-distribution,
 lower-count, triple-count or existence axioms. The final Chen audit permits
-exactly the named Platt input and `propext`, `Classical.choice`, `Quot.sound`.
+exactly the named full Dirichlet GRH input and `propext`, `Classical.choice`, `Quot.sound`.
 See the [proof assembly and audit](research/chen-platt/README.md).
+
+The **H<14 existence theorem is complete and audited**. At the exact cutoff
+3^1000000, the actual weighted lower count has coefficient 2.02575 and the
+complete corrected triple upper count has coefficient 3.993. The exact
+counting bridge leaves the positive representation margin 0.02925. The
+older 0.67 counting theorem retains its larger cutoff. See the
+[GRH route](research/chen-grh/README.md).
+The prior Platt-only reports record historical proof snapshots.
 
 ## Approach
 
@@ -54,6 +73,13 @@ Let the singular-series main scale be
 $$
 M(N)=\mathfrak S(N)\frac{N}{(\log N)^2}.
 $$
+
+For the current H<14 route, the complete inequalities are
+W(N) ≥ 2.02575 M(N), T(N) ≤ 3.993 M(N), and
+R(N) ≥ W(N) − T(N)/2 ≥ 0.02925 M(N) > 0. The
+[current proof notes](research/chen-grh/NUMERICAL_CHEN_H14.md) explain the
+width-sensitive prime-pair grid and target-specific weighted Pan remainder.
+The older routes and their budgets below remain available.
 
 The proof combines actual finite candidate counts, explicit AP-distribution
 estimates, a linear lower sieve, a Selberg-square/triple upper estimate, and
@@ -108,16 +134,16 @@ the exact counting implication below.
    use the actual candidate and penalty counts, rather than assumed
    surrogates. The earlier 0.67 counting theorem retains its separate cutoff.
 
-## Platt finite-RH input and certified prefix window
+## Full Dirichlet GRH and the certified prefix window
 
-The sole additional axiom is
+The sole additional axiom, for all Dirichlet characters and all heights, is
 
-$$
-\zeta(\rho)=0,\quad0<\Re\rho<1,\quad|\Im\rho|\le10^8
+$
+L(\rho,\chi)=0,\quad0<\Re\rho<1
 \quad\Longrightarrow\quad\Re\rho=\tfrac12.
-$$
+$
 
-This is a finite modulus-one statement. The Dirichlet seven-eighths input is
+The former modulus-one Platt input through height 10^8 follows as a theorem. The Dirichlet seven-eighths input is
 proved separately by the vendored OpenAI development.
 
 Writing P(x) for the reciprocal-prime sum, E(x)=P(x)−log log x−B₁ and
@@ -169,13 +195,20 @@ The Git repository does not distribute the local Lean object cache, and JSON
 receipts or JavaScript results do not replace kernel checking. See the
 [certificate build notes](research/chen-platt/README.md#build-time-and-memory).
 
+The [numerical weighted lower count](research/chen-grh/NUMERICAL_LOWER_H14.md)
+now holds for even N >= 3^1000000, below double exp(14), under the sole
+full Dirichlet-GRH axiom. Its final audit is checked. The complete H<14
+Chen existence theorem still requires the Selberg-square estimate.
+
 ## Verification and scope
 
 The checked upgrade uses Lean 4.34.1 and Mathlib revision
 `d13f23b723b8a846827a245b89c10fc7d3f11612`.
-The [H<29 audit report](research/chen-platt/FINAL_CHEN_H29_AUDIT.json) records
-the current source/object hashes, exact cutoff, axiom closure, and recovery
-of the original Chen statement. The earlier
+The [GRH proof status and audit procedures](research/chen-grh/README.md#reproduction)
+record the completed serial H<29 recheck under GRH and the completed
+numerical lower count for the unfinished H<14 Chen route. See the
+[GRH Chen audit report](research/chen-grh/FINAL_CHEN_GRH_AUDIT.json). The
+[Platt-only H<29 report](research/chen-platt/FINAL_CHEN_H29_AUDIT.json) is historical. The earlier
 [upgrade audit](research/chen-effective/UPGRADE_434_AUDIT.md) records the
 checked OpenAI proof and preceding H≈30 release.
 The [OpenAI provenance and build guide](OpenAI/README.md) records the pins,
@@ -196,22 +229,26 @@ of the broader inherited developments:
 ```sh
 node OpenAI/tools/verify-sources.mjs
 node OpenAI/tools/audit-sources.mjs --dirichlet-proved
-node --expose-gc OpenAI/tools/build-source.mjs AuditBJSTightBudget AuditBJSH29Conditional OAI.AuditChenIntegration
+node --expose-gc OpenAI/tools/build-source.mjs AuditGRHAnalytic AuditBJSTightBudget AuditBJSH29Conditional OAI.AuditChenIntegration
 node OpenAI/tools/build-source.mjs PlattThetaInputs PlattSegmentPilot
 ```
 
 For the reproducible hash report, follow the
-[H<29 audit commands](research/chen-numerical-study/NUMERICAL_H29.md#assumptions-audits-and-reuse),
+[GRH audit commands](research/chen-grh/README.md#reproduction),
 which set the build tag and serial memory settings before running the final
 source/object audit. The report records a completed local check; it does not
 replace kernel checking on a fresh source checkout.
 
 Standard-only routes reject custom axioms, placeholders, unsafe proof
 dependencies, and native compiler trust. The conditional H<29 audit permits
-only the published modulus-one Platt input. Historical studies, unfinished experiments,
+only the full Dirichlet GRH input. Historical studies, unfinished experiments,
 and untrusted numerical scans are not silently promoted to theorem inputs.
 
 ## References, provenance, and acknowledgments
+
+- [Alpöge/Claude GRH statement](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/main/src/Statements.lean),
+  used as a single axiom instead of importing the large proof;
+  [independent verification record](https://math.mit.edu/~drew/grh/).
 
 - [subfish-zhou/goldbach-lean](https://github.com/subfish-zhou/goldbach-lean):
   upstream Chen formalization and reusable analytic number theory. Its

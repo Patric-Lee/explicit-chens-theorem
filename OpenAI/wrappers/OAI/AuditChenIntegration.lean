@@ -18,7 +18,7 @@ run_elab do
     throwError "Kernel type checking must be enabled"
   let standard := #[``propext, ``Classical.choice, ``Quot.sound]
   let conditional := standard ++
-    #[``ChenEffective.PlattWindow.platt_modulus_one_finite_RH]
+    #[``ChenEffective.GRH.alpoge_dirichlet_grh]
   for n in #[``ChenEffective.dirichlet_seven_eighths,
       ``ChenEffective.TightBudget.chen,
       ``ChenEffective.TightBudget.original_chen,

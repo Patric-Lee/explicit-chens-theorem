@@ -42,7 +42,7 @@ let ownLedger=fs.existsSync(ledgerPath)?JSON.parse(fs.readFileSync(ledgerPath)):
 for(const name of Object.keys(ownLedger))ownLedger[name]=insertRecord(name,ownLedger[name]);
 canonicalRecords.clear();global.gc?.();
 if(process.env.CHEN_TRACE_LEDGER_MEMORY==='1')console.log(JSON.stringify({ledgerModules:Object.keys(ledger).length,candidateVersions:[...candidates.values()].reduce((n,rs)=>n+rs.length,0),heapMB:Math.round(process.memoryUsage().heapUsed/1024**2)}));
-const searchRoots=[repo,path.join(repo,'OpenAI','wrappers'),path.join(repo,'OpenAI','grouped'),path.join(repo,'OpenAI'),path.join(repo,'research/chen-platt'),path.join(repo,'research/chen-platt/Calr3'),...['chen-effective','chen-dusart','chen-bjs-study','chen-numerical-study'].map(s=>path.join(repo,'research',s))];
+const searchRoots=[repo,path.join(repo,'OpenAI','wrappers'),path.join(repo,'OpenAI','grouped'),path.join(repo,'OpenAI'),path.join(repo,'research/chen-platt'),path.join(repo,'research/chen-platt/Calr3'),...['chen-effective','chen-dusart','chen-bjs-study','chen-numerical-study','chen-grh'].map(s=>path.join(repo,'research',s))];
 const graph=new Map();
 function strip(s){let out='',depth=0,line=false,str=false;for(let i=0;i<s.length;i++){const c=s[i],n=s[i+1];if(line){if(c==='\n'){line=false;out+='\n';}continue;}if(depth){if(c==='/'&&n==='-'){depth++;i++;}else if(c==='-'&&n==='/'){depth--;i++;}else if(c==='\n')out+='\n';continue;}if(str){if(c==='\\')i++;else if(c==='"')str=false;else if(c==='\n')out+='\n';continue;}if(c==='-'&&n==='-'){line=true;i++;}else if(c==='/'&&n==='-'){depth=1;i++;}else if(c==='"')str=true;else out+=c;}return out;}
 function visit(n){

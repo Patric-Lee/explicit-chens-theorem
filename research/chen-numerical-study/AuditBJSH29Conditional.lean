@@ -26,7 +26,7 @@ run_elab do
   if debug.skipKernelTC.get (← getOptions) then
     throwError "Kernel type checking must be enabled"
   let standard := #[``propext, ``Classical.choice, ``Quot.sound]
-  let allowed := standard ++ #[``ChenEffective.PlattWindow.platt_modulus_one_finite_RH]
+  let allowed := standard ++ #[``ChenEffective.GRH.alpoge_dirichlet_grh]
   for n in #[``ChenEffective.H29Conditional.chen,
       ``ChenEffective.H29Conditional.original_chen] do
     let axs ← Lean.collectAxioms n
@@ -89,7 +89,7 @@ run_elab do
       ``ChenEffective.PlattWindow.certified_prefix_window,
       ``OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re] do
     unless seen.contains n do throwError "Required actual producer missing: {n}"
-  logInfo m!"Platt H29 Chen audit passed: {seen.size} transitive constants."
+  logInfo m!"GRH H29 Chen audit passed: {seen.size} transitive constants."
   logInfo "Cutoff 3^(3*10^12) is strictly below exp(exp(29)); literal original Chen recovered."
-  logInfo "Exactly Platt modulus-one finite RH through 1e8 and standard Lean axioms."
+  logInfo "Exactly full Dirichlet GRH and standard Lean axioms; finite RH is derived."
   logInfo "Actual counts, sharper Mertens normalization, variable budget, and certified prefix window used."
