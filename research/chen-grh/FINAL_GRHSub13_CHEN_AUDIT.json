@@ -1,0 +1,47 @@
+{
+  "classification": "GRH_ONLY_HSUB13_COMPLETE_CHEN_KERNEL_CHECKED",
+  "checkedAt": "2026-11-22T05:52:30.582Z",
+  "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+  "theorem": "ChenEffective.GRHSub13.chen",
+  "lowerTheorem": "ChenEffective.GRHSub13.weighted_lower",
+  "tripleTheorem": "ChenEffective.GRHSub13.triple_upper",
+  "cutoff": "3^400000",
+  "lowerCoefficient": "2.02575",
+  "tripleCoefficient": "4.0004",
+  "representationMargin": "0.02555",
+  "HUpperStrict": 13,
+  "HApproximate": 12.99326765370681,
+  "baseLoss": "3/50",
+  "mediumLoss": "111/100",
+  "endpointLoss": "1/20000",
+  "presieveStart": 4000000,
+  "presieveTruncation": "floor(N^(1/200))",
+  "distributionLevel": "N^(249/500)",
+  "externalAxiom": "ChenEffective.GRH.alpoge_dirichlet_grh",
+  "axiomDeclarations": [
+    {
+      "module": "GRHAssumption",
+      "name": "alpoge_dirichlet_grh"
+    }
+  ],
+  "directPackages": [
+    "LeanArchitect",
+    "mathlib"
+  ],
+  "HSUB13ExistenceStatus": "PROVED: actual lower and complete corrected triple estimates, with implicit recovery",
+  "localModules": 86680,
+  "sourceObjectManifestHash": "22834b6ad914d61a6af211904f68bff98a2e4e4dbcd8c7def2a233776ee31ec8",
+  "auditLog": "Original Chen axiom closure: [propext, Classical.choice, Quot.sound, ChenEffective.GRH.alpoge_dirichlet_grh]\nGRH HSub13 complete Chen audit passed: 1517016 transitive constants.\nActual lower coefficient 2.02575 and triple coefficient 4.0004 at 3^400000.\nFull explicit Chen existence and implicit recovery; sole added axiom is full Dirichlet GRH.",
+  "numericalLowerModules": [
+    {
+      "module": "AuditGRHSub13Chen",
+      "sourceHash": "6cf5fedb264b29eede2cff62a0dbc0ee6d130947786eb6eec6f0ef4ce4b26e72",
+      "objectHash": "21433a33735fd9dfb6da6bf3adb9ff47101b27e35bf3f69fbb8b127717b1f734"
+    },
+    {
+      "module": "GRHSub13CompleteAnalytic",
+      "sourceHash": "94be18d128cb624d0c8444622099377fd36a78cc96ae1733ef483eb43136d100",
+      "objectHash": "7dec4616abf05f9c7801411f62c360d84a9331db84466ee87d3242c68cce7e67"
+    }
+  ]
+}

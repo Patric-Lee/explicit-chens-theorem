@@ -1,6 +1,24 @@
-# Full Dirichlet GRH route: completed H < 13.37 Chen theorem
+# Full Dirichlet GRH route: completed H < 13 Chen theorem
 
-The current complete theorem has exact cutoff **3^580000**, with
+The current exact cutoff is **3^400000**, with H approximately
+**12.99326765371** and a Lean proof that the cutoff is below exp(exp(13)).
+The exact theorem is ChenEffective.GRHSub13.chen_explicit; original_chen
+has literally the original Goldbach.ChenTheorem type.
+
+The actual lower and complete triple coefficients are 2.02575 and 4.0004,
+leaving representation margin 0.02555. Full Dirichlet GRH remains the sole
+added axiom. No additional analytic or numerical result is assumed.
+
+See [the complete budget and reproduction commands](NUMERICAL_CHEN_SUB13.md),
+[the theorem and native audit](AuditGRHSub13Chen.lean), and
+[the source/object audit report](FINAL_GRHSub13_CHEN_AUDIT.json).
+The analytic proof is grouped in GRHSub13CompleteAnalytic.lean. All existing
+finite certificates are reused; no new finite computation campaign is required.
+
+## Earlier H < 13.37 development
+
+
+The earlier complete theorem has exact cutoff **3^580000**, with
 H approximately **13.36483121014** and a Lean proof that H < 13.37.
 Its exact statement is ChenEffective.GRH1337.chen_explicit; original_chen
 has literally the original Goldbach.ChenTheorem type.
