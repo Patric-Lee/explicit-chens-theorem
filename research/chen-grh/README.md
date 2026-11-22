@@ -1,6 +1,27 @@
-# Full Dirichlet GRH route: completed H < 13 Chen theorem
+# Full Dirichlet GRH route: completed H < 12.5 Chen theorem
 
-The current exact cutoff is **3^400000**, with H approximately
+The current exact cutoff is **3^240000**, with H approximately
+**12.48244202994** and a Lean proof that it is below exp(exp(12.5)).
+The exact theorem is ChenEffective.GRH125.chen_explicit; original_chen
+has literally the original Goldbach.ChenTheorem type.
+
+The actual lower and complete triple coefficients are 2.02575 and 4.0015,
+leaving representation margin 1/40. Full Dirichlet GRH remains the sole
+added axiom. No additional analytic or numerical result is assumed.
+
+The proof combines the root moment 500, density divisor moment exp(512),
+the stronger moving input, and a rebalanced square-error allowance.
+See [the complete budget and reproduction commands](NUMERICAL_CHEN_H125.md),
+[the theorem and native audit](AuditGRH125Chen.lean),
+[the source/object report](FINAL_GRH125_CHEN_AUDIT.json), and
+[the refined moment proof](GRH125Moments.lean).
+The analytic assembly is GRH125Analytic.lean. All existing finite certificates
+are reused; no new finite computation campaign is required.
+
+## Earlier H < 13 development
+
+
+The earlier exact cutoff is **3^400000**, with H approximately
 **12.99326765371** and a Lean proof that the cutoff is below exp(exp(13)).
 The exact theorem is ChenEffective.GRHSub13.chen_explicit; original_chen
 has literally the original Goldbach.ChenTheorem type.
@@ -14,6 +35,21 @@ See [the complete budget and reproduction commands](NUMERICAL_CHEN_SUB13.md),
 [the source/object audit report](FINAL_GRHSub13_CHEN_AUDIT.json).
 The analytic proof is grouped in GRHSub13CompleteAnalytic.lean. All existing
 finite certificates are reused; no new finite computation campaign is required.
+
+## Stronger moving-quotient input
+
+[AuditGRHStrongMoving.lean](AuditGRHStrongMoving.lean) retains the already
+proved GRH exponent 501/1000 through both moving sums and their actual
+low-conductor aggregation. These inputs are paid for log N >= 10000.
+The production cofactor ledger at the current target is rebuilt with the
+stronger input; its type is checked to match the previous ledger exactly.
+The focused audit rejects use of the superseded weak moving lemmas.
+
+See [the bounds, scope, and reproduction commands](STRONG_MOVING.md) and
+[the source/object report](STRONG_MOVING_AUDIT.json). The standalone report records the earlier input check at 3^400000.
+The complete H<12.5 theorem above now propagates this input with sharper
+pre-sieve moments and a rebalanced square-error allowance. No independent external comparator or alternative-kernel
+check has been run here.
 
 ## Earlier H < 13.37 development
 

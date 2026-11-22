@@ -1,0 +1,59 @@
+{
+  "classification": "GRH_ONLY_H125_COMPLETE_CHEN_KERNEL_CHECKED",
+  "checkedAt": "2026-11-22T11:28:54.630Z",
+  "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+  "theorem": "ChenEffective.GRH125.chen",
+  "lowerTheorem": "ChenEffective.GRH125.weighted_lower",
+  "tripleTheorem": "ChenEffective.GRH125.triple_upper",
+  "cutoff": "3^240000",
+  "lowerCoefficient": "2.02575",
+  "tripleCoefficient": "4.0015",
+  "representationMargin": "0.025",
+  "HUpperStrict": 12.5,
+  "HApproximate": 12.482442029940827,
+  "rootMomentCap": 500,
+  "densityMomentExponent": 512,
+  "logLowerBound": 263000,
+  "selbergCoefficient": "8.0326",
+  "squareAllowance": "1/1000",
+  "tripleResidualAllowance": "1/6000",
+  "pairProxyCoefficient": "0.49644",
+  "baseLoss": "3/50",
+  "mediumLoss": "111/100",
+  "endpointLoss": "1/20000",
+  "presieveStart": 4000000,
+  "presieveTruncation": "floor(N^(1/200))",
+  "distributionLevel": "N^(249/500)",
+  "externalAxiom": "ChenEffective.GRH.alpoge_dirichlet_grh",
+  "axiomDeclarations": [
+    {
+      "module": "GRHAssumption",
+      "name": "alpoge_dirichlet_grh"
+    }
+  ],
+  "directPackages": [
+    "LeanArchitect",
+    "mathlib"
+  ],
+  "H125ExistenceStatus": "PROVED: actual lower and complete corrected triple estimates, with implicit recovery",
+  "localModules": 86683,
+  "sourceObjectManifestHash": "800e1fc139fcb03db712d975c8879130c6205ce238f2436d0ceb5927cb152442",
+  "auditLog": "Original Chen axiom closure: [propext, Classical.choice, Quot.sound, ChenEffective.GRH.alpoge_dirichlet_grh]\nGRH H125 complete Chen audit passed: 1516985 transitive constants.\nActual lower coefficient 2.02575 and triple coefficient 4.0015 at 3^240000.\nFull explicit Chen existence and implicit recovery; sole added axiom is full Dirichlet GRH.",
+  "numericalLowerModules": [
+    {
+      "module": "AuditGRH125Chen",
+      "sourceHash": "d6bb7373df4bd9abe857b5a25fb388ae48c177ee1243266b2d79b0cd7e8a0de0",
+      "objectHash": "8e289f692f50cd85716f659a26b8d1a2c8e84261af83e4de98364c2e5557a3f0"
+    },
+    {
+      "module": "GRH125Analytic",
+      "sourceHash": "2d6fa16d17e665c21012bc0c69bd2cbc8d27a3d7ceb2a8dd32a49288cdf3191a",
+      "objectHash": "231b49beff0ce4249150de5fd8b4d0d4ba42e513c4d008fcd563a3346bc774b4"
+    },
+    {
+      "module": "GRH125Moments",
+      "sourceHash": "b49dea71fb6dbc5d849a2abcaec7eb4aa2e352e4c625c5c09505dc519a4794f9",
+      "objectHash": "8ad40f6854990f39c7b569b396ff9efc4ade3351c1188838289459eec6561700"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "classification": "GRH_STRONG_MOVING_KERNEL_CHECKED",
+  "checkedAt": "2026-11-22T10:40:47.270Z",
+  "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+  "movingLogThreshold": 10000,
+  "characterExponent": "501/1000",
+  "movingDecay": "exp(-1497*log(N)/10000)",
+  "primitiveSavingDegreeMax": 72,
+  "principalSavingDegreeMax": 70,
+  "lowAggregateSavingDegreeMax": 32,
+  "lowConductorLogDegreeMax": 38,
+  "primitiveTheorem": "ChenEffective.GRHStrongMoving.pan_prime_moving",
+  "principalTheorem": "ChenEffective.GRHStrongMoving.pan_principal_moving",
+  "lowAggregateTheorem": "ChenEffective.GRHStrongMoving.pan_low_of_log",
+  "principalAggregateTheorem": "ChenEffective.GRHStrongMoving.pan_principal_of_log",
+  "sourceLedgerTheorem": "ChenEffective.GRHStrongMoving.numerical_pan_ledger",
+  "sourceLedgerCutoff": "3^400000",
+  "chenCutoffStatus": "UNCHANGED: completed Chen release remains H < 13; no smaller end-to-end Chen theorem claimed by this audit",
+  "externalAxiom": "ChenEffective.GRH.alpoge_dirichlet_grh",
+  "axiomDeclarations": [
+    {
+      "module": "GRHAssumption",
+      "name": "alpoge_dirichlet_grh"
+    }
+  ],
+  "directPackages": [
+    "LeanArchitect",
+    "mathlib"
+  ],
+  "localModules": 961,
+  "sourceObjectManifestHash": "18e535f3e3549235dad643efc32ce4f201d40c6ceb489adbfefb6d6f23ebf7a5",
+  "auditLog": "C:\\Users\\89270\\Desktop\\Vibe\\goldbach-lean\\research\\chen-grh\\AuditGRHStrongMoving.lean:22:38: warning: Unused tactic linter: `norm_num at he` does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\nC:\\Users\\89270\\Desktop\\Vibe\\goldbach-lean\\research\\chen-grh\\AuditGRHStrongMoving.lean:38:35: warning: Unused tactic linter: `norm_num at he` does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\nC:\\Users\\89270\\Desktop\\Vibe\\goldbach-lean\\research\\chen-grh\\AuditGRHStrongMoving.lean:88:34: warning: Unused tactic linter: `linarith only [hlog, hlq, hly]` does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\nC:\\Users\\89270\\Desktop\\Vibe\\goldbach-lean\\research\\chen-grh\\AuditGRHStrongMoving.lean:88:34: warning: this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`\nC:\\Users\\89270\\Desktop\\Vibe\\goldbach-lean\\research\\chen-grh\\AuditGRHStrongMoving.lean:88:11: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nC:\\Users\\89270\\Desktop\\Vibe\\goldbach-lean\\research\\chen-grh\\AuditGRHStrongMoving.lean:289:100: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n'ChenEffective.GRHStrongMoving.character_prefix_through' depends on axioms: [propext,\n Classical.choice,\n Quot.sound,\n GRH.alpoge_dirichlet_grh]\n'ChenEffective.GRHStrongMoving.prime_prefix_numerical' depends on axioms: [propext,\n Classical.choice,\n Quot.sound,\n GRH.alpoge_dirichlet_grh]\n'ChenEffective.GRHStrongMoving.pan_prime_moving' depends on axioms: [propext,\n Classical.choice,\n Quot.sound,\n GRH.alpoge_dirichlet_grh]\n'ChenEffective.GRHStrongMoving.pan_principal_moving' depends on axioms: [propext,\n Classical.choice,\n Quot.sound,\n GRH.alpoge_dirichlet_grh]\n'ChenEffective.GRHStrongMoving.pan_low_of_log' depends on axioms: [propext,\n Classical.choice,\n Quot.sound,\n GRH.alpoge_dirichlet_grh]\n'ChenEffective.GRHStrongMoving.pan_principal_of_log' depends on axioms: [propext,\n Classical.choice,\n Quot.sound,\n GRH.alpoge_dirichlet_grh]\n'ChenEffective.GRHStrongMoving.numerical_pan_ledger' depends on axioms: [propext,\n Classical.choice,\n Quot.sound,\n GRH.alpoge_dirichlet_grh]\nStrong cofactor ledger has exactly the previous production type.\nStrong GRH moving audit passed: 72653 constants; sole added axiom GRH.\nPrimitive and principal moving sums and actual low aggregate paid for log N >= 10000.\nActual current-target cofactor ledger uses no superseded weak moving estimate.",
+  "checkedMovingModules": [
+    {
+      "module": "AuditGRHStrongMoving",
+      "sourceHash": "eae226354b016817b29966936daedd7b2301472629c276bc4afec2da1c092c56",
+      "objectHash": "baeac0c075c9ee21d13706291444c6b2c7b6545155b28d3e3e600a10caeb1ff8"
+    }
+  ]
+}
