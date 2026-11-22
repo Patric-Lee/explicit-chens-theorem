@@ -1,0 +1,225 @@
+{
+  "retained": [
+    "GRH1337MertensProduct",
+    "GRH1337GoldbachProduct",
+    "GRH1337SourceMass",
+    "GRH1337SourceUpperMass"
+  ],
+  "components": [
+    {
+      "module": "GRH1337ErrorBudget",
+      "start": 52,
+      "end": 127
+    },
+    {
+      "module": "GRH1337SourceMassCaps",
+      "start": 128,
+      "end": 213
+    },
+    {
+      "module": "GRH1337TruncationBudget",
+      "start": 214,
+      "end": 266
+    },
+    {
+      "module": "GRH1337MomentAggregate",
+      "start": 267,
+      "end": 392
+    },
+    {
+      "module": "GRH1337LowerGeometry",
+      "start": 393,
+      "end": 535
+    },
+    {
+      "module": "GRH1337LowerTailPayment",
+      "start": 536,
+      "end": 612
+    },
+    {
+      "module": "GRH1337ConditionedTail",
+      "start": 613,
+      "end": 752
+    },
+    {
+      "module": "GRH1337MediumTailPayment",
+      "start": 753,
+      "end": 864
+    },
+    {
+      "module": "GRH1337WeightedDistribution",
+      "start": 865,
+      "end": 996
+    },
+    {
+      "module": "GRH1337ChenDistribution",
+      "start": 997,
+      "end": 1056
+    },
+    {
+      "module": "GRH1337BaseDistribution",
+      "start": 1057,
+      "end": 1157
+    },
+    {
+      "module": "GRH1337MediumDistribution",
+      "start": 1158,
+      "end": 1246
+    },
+    {
+      "module": "GRH1337LowerFactor",
+      "start": 1247,
+      "end": 1430
+    },
+    {
+      "module": "GRH1337RelativeProduct",
+      "start": 1431,
+      "end": 1523
+    },
+    {
+      "module": "GRH1337BaseCandidates",
+      "start": 1524,
+      "end": 1610
+    },
+    {
+      "module": "GRH1337PrimeIntervals",
+      "start": 1611,
+      "end": 1682
+    },
+    {
+      "module": "GRH1337MediumPrimeSum",
+      "start": 1683,
+      "end": 1938
+    },
+    {
+      "module": "GRH1337MediumKernelCertificates",
+      "start": 1939,
+      "end": 1979
+    },
+    {
+      "module": "GRH1337MediumFactor",
+      "start": 1980,
+      "end": 2092
+    },
+    {
+      "module": "GRH1337MediumGrid",
+      "start": 2093,
+      "end": 2278
+    },
+    {
+      "module": "GRH1337MediumIntegralCaps",
+      "start": 2279,
+      "end": 2342
+    },
+    {
+      "module": "GRH1337MediumProfile",
+      "start": 2343,
+      "end": 2465
+    },
+    {
+      "module": "GRH1337MediumAggregate",
+      "start": 2466,
+      "end": 2583
+    },
+    {
+      "module": "GRH1337WeightedLower",
+      "start": 2584,
+      "end": 2648
+    },
+    {
+      "module": "GRH1337PrimePairGrid",
+      "start": 2649,
+      "end": 2786
+    },
+    {
+      "module": "GRH1337PrimePairMain",
+      "start": 2787,
+      "end": 2874
+    },
+    {
+      "module": "GRH1337High",
+      "start": 2875,
+      "end": 3137
+    },
+    {
+      "module": "GRH1337PanPayment",
+      "start": 3138,
+      "end": 3173
+    },
+    {
+      "module": "GRH1337PanMoving",
+      "start": 3174,
+      "end": 3356
+    },
+    {
+      "module": "GRH1337PanEndpoints",
+      "start": 3357,
+      "end": 3440
+    },
+    {
+      "module": "GRH1337PanLedger",
+      "start": 3441,
+      "end": 3520
+    },
+    {
+      "module": "GRH1337PanUnweighted",
+      "start": 3521,
+      "end": 3594
+    },
+    {
+      "module": "GRH1337PanWeighted",
+      "start": 3595,
+      "end": 3697
+    },
+    {
+      "module": "GRH1337PanSource",
+      "start": 3698,
+      "end": 3789
+    },
+    {
+      "module": "GRH1337PanCanonical",
+      "start": 3790,
+      "end": 3891
+    },
+    {
+      "module": "GRH1337SelbergRemainder",
+      "start": 3892,
+      "end": 3952
+    },
+    {
+      "module": "GRH1337TripleConstants",
+      "start": 3953,
+      "end": 4052
+    },
+    {
+      "module": "GRH1337ScalarBudget",
+      "start": 4053,
+      "end": 4091
+    },
+    {
+      "module": "GRH1337SelbergBudget",
+      "start": 4092,
+      "end": 4174
+    },
+    {
+      "module": "GRH1337RadiusBudget",
+      "start": 4175,
+      "end": 4270
+    },
+    {
+      "module": "GRH1337TripleBridge",
+      "start": 4271,
+      "end": 4349
+    },
+    {
+      "module": "GRH1337TripleUpper",
+      "start": 4350,
+      "end": 4408
+    },
+    {
+      "module": "GRH1337ChenBridge",
+      "start": 4409,
+      "end": 4445
+    }
+  ]
+}

@@ -1,40 +1,41 @@
 # Explicit Chen's theorem in Lean
 
 This project formalizes explicit cutoffs for Chen's theorem. Its best checked
-result proves that every even integer at least 3^1000000 is a prime plus
+result proves that every even integer at least 3^580000 is a prime plus
 a prime or a product of two primes, assuming full Dirichlet GRH as the sole
-external axiom beyond Lean's standard axioms. This cutoff is below exp(exp(14)).
+external axiom beyond Lean's standard axioms. This cutoff is below exp(exp(13.37)); its double logarithm is approximately 13.364831.
 
 ## Results and assumptions
 
 | Route | Exact cutoff | Approximate H, where N₀ = exp(exp(H)) | Additional axiom beyond standard Lean |
 | --- | --- | --- | --- |
+| [GRH-based H<13.37 theorem](research/chen-grh/AuditGRH1337Chen.lean) | 3^580000 | 13.36483121014 | Full Dirichlet GRH (Alpöge statement) |
 | [GRH-based H<14 theorem](research/chen-grh/AuditGRH14Chen.lean) | 3^1000000 | 13.90955838558 | Full Dirichlet GRH (Alpöge statement) |
 | [GRH-based H<29 theorem](research/chen-numerical-study/BJSH29ConditionalChen.lean) | 3^(3*10^12) | 28.82368123221 | Full Dirichlet GRH (Alpöge statement) |
 | [Checked numerical theorem](research/chen-bjs-study/BJSTightChen.lean) | 3^(3^134) | 147.308095 | None |
 | [GRH-based H≈30 theorem](research/chen-numerical-study/BJSH30ConditionalChen.lean) | 3^(10^13) | 30.02765403654 | Full Dirichlet GRH (Alpöge statement) |
 
-The H<14 proof is complete: no lower-count, triple-count, sieve, or numerical
+The H<13.37 proof is complete: no lower-count, triple-count, sieve, or numerical
 estimate remains an unproved input. We use the full Dirichlet GRH statement
 from Levent Alpöge's announced Lean development as the sole additional axiom,
 to avoid compiling and replaying that large development here. Our local
 build therefore proves Chen's theorem relative to this explicitly declared
 GRH axiom; linking a checked proof of the same GRH statement would discharge
 it. We do not claim that this repository has checked Alpöge's proof.
-Lean proves that our exact cutoff is strictly below exp(exp(14)). The earlier
+Lean proves that our exact cutoff is strictly below exp(exp(13.37)). The earlier
 H<29 and H≈30 theorems remain available.
 For every even natural number N at or above its cutoff, its statement is
 
 $$
-N\ge N_0=3^{1\,000\,000}
+N\ge N_0=3^{580\,000}
 \quad\Longrightarrow\quad
 \exists p,q\in\mathbb N,\quad
 N=p+q,\quad p\text{ prime},\quad
 q\text{ prime or a product of two primes}.
 $$
 
-The declaration is `ChenEffective.GRH14.chen`. See the
-[H<14 proof, complete budget and audit](research/chen-grh/NUMERICAL_CHEN_H14.md).
+The exact-cutoff declaration is `ChenEffective.GRH1337.chen_explicit`. See the
+[H<13.37 proof, complete budget and audit](research/chen-grh/NUMERICAL_CHEN_H1337.md).
 Its `original_chen` corollary has exactly the original
 `Goldbach.ChenTheorem` type. This checks that the numerical route proves
 the original existence statement. The standard-only H≈147 theorem has its
@@ -58,87 +59,75 @@ lower-count, triple-count or existence axioms. The final Chen audit permits
 exactly the named full Dirichlet GRH input and `propext`, `Classical.choice`, `Quot.sound`.
 See the [proof assembly and audit](research/chen-platt/README.md).
 
-The **H<14 existence theorem is complete and audited**. At the exact cutoff
-3^1000000, the actual weighted lower count has coefficient 2.02575 and the
-complete corrected triple upper count has coefficient 3.993. The exact
-counting bridge leaves the positive representation margin 0.02925. The
+The **H<13.37 existence theorem is complete and audited**. At the exact cutoff
+3^580000, the actual weighted lower count has coefficient 2.02575 and the
+complete corrected triple upper count has coefficient 4.0002. The exact
+counting bridge leaves the positive representation margin 0.02565. The
 older 0.67 counting theorem retains its larger cutoff. See the
 [GRH route](research/chen-grh/README.md).
 The prior Platt-only reports record historical proof snapshots.
 
-A [smaller-cutoff budget pilot](research/chen-grh/SHARP_PILOT.md) proves
-sharper pre-sieve moments and numerical payments for the candidate
-3^580000, below exp(exp(13.37)). This is checked groundwork; the final Chen
-theorem remains at the H<14 cutoff above until propagation is complete.
+The [smaller-cutoff budget pilot](research/chen-grh/SHARP_PILOT.md) has now been
+propagated through the complete lower and triple estimates and final Chen audit.
 
 
 ## Approach
 
-Let the singular-series main scale be
+Write
 
 $$
-M(N)=\mathfrak S(N)\frac{N}{(\log N)^2}.
+L=\log N,\qquad M(N)=\mathfrak S(N)\frac{N}{L^2}.
 $$
 
-For the current H<14 route, the complete inequalities are
-W(N) ≥ 2.02575 M(N), T(N) ≤ 3.993 M(N), and
-R(N) ≥ W(N) − T(N)/2 ≥ 0.02925 M(N) > 0. The
-[current proof notes](research/chen-grh/NUMERICAL_CHEN_H14.md) explain the
-width-sensitive prime-pair grid and target-specific weighted Pan remainder.
-The older routes and their budgets below remain available.
+At the exact cutoff $N_0=3^{580000}$, the complete inequalities are
 
-The proof combines actual finite candidate counts, explicit AP-distribution
-estimates, a linear lower sieve, a Selberg-square/triple upper estimate, and
-the exact counting implication below.
+$$
+W(N)\ge2.02575M(N),\qquad T(N)\le4.0002M(N),
+$$
 
-1. **Prime products and pre-sieving.** The reciprocal-prefix window and the
-   proved infinite tail supply the relative Goldbach sieve product bound
+and the corrected finite counting bridge gives
 
-   $$
-   \prod_{u\le p<z}\frac{p-1}{p-2}
-   \le\left(1+\frac{1}{4000}\right)\frac{\log z}{\log u},
-   \qquad 4{,}000{,}000\le u\le z.
-   $$
+$$
+R(N)\ge W(N)-\frac12T(N)\ge0.02565M(N)>0.
+$$
 
-   The product is over primes; the formal adapter also handles the subsets
-   and endpoint conventions used by the sieve. The standard-only route uses
-   the larger start U=3^120, which explains much of its larger cutoff.
-
-2. **Distribution and the lower count.** The proved Dirichlet seven-eighths
-   theorem makes the Siegel and low-conductor inputs effective. Numerical
-   weighted distribution estimates pay the actual QD remainders in the
-   pre-sieved counting problem. The base and medium-prime estimates yield
+1. **Prime products and pre-sieving.** The kernel-checked reciprocal-prefix
+   certificates and proved analytic tail give the relative Goldbach product
+   bound with allowance 1/4000 from 4,000,000 onward. Separate logarithm
+   bounds on five prime intervals reduce the reciprocal-square-root prime
+   moment to 1173, and the density divisor moment to exp(1468). With
+   C = floor(N^(1/200)), the full truncation envelope is paid directly:
 
    $$
-   W(N)\ge2.02575\,M(N)
-   \qquad\left(N\ge3^{3\cdot10^{12}},\ N\text{ even}\right).
+   336L^6\exp(1468+\tfrac12\log2-L/400)\le10^{-12}
+   \qquad(L\ge637000).
    $$
 
-3. **The complete triple estimate.** The two-term Selberg denominator
-   expansion, prime-pair main term, fifth-order square remainder, Q residual,
-   and complementary triples are assembled into
+2. **Actual lower count.** The source-mass error coefficient improves from
+   300/r to 187.5/r, preserving the existing 3/200 allowance at r = 14000.
+   Proved weighted AP distribution at level N^0.498, the truncated lower
+   sieve, and the complete medium-prime aggregate give the stated bound on
+   W(N). The medium integral uses 65,000 cells and retains the aggregate
+   allowance 1.11.
+
+3. **Complete triples.** The two-term Selberg expansion gives denominator
+   coefficient K = 8.0323 at radius epsilon = 1/500. A width-sensitive,
+   symbolic 200,000-cell prime-pair grid gives genuine main coefficient
+   0.498. The complete distribution remainder and complementary triples give
 
    $$
-   T(N)\le
-   \left[8.2\left(0.49254+\frac{1}{10000}\right)
-     +\frac{1}{1000}\right]M(N)
-   =4.040648\,M(N),
-   \qquad N\ge3^{3\cdot10^{12}}.
+   T(N)\le\left(8.0323\cdot0.498+\frac1{125000}
+     +\frac1{16000}\right)M(N)<4.0002M(N).
    $$
 
-   This upper estimate is proved independently of the Platt
-   input. See the [complete triple result](research/chen-numerical-study/NUMERICAL_H29.md#sharper-mertens-normalization).
+4. **Final assembly.** The positive representation count proves prime plus
+   prime or semiprime for every even N at or above the exact cutoff.
+   The literal original Goldbach.ChenTheorem statement is recovered as a
+   corollary. The final audit checks the transitive proof dependencies.
 
-4. **Exact finite counting.** The representation count satisfies
-
-   $$
-   R(N)\ge W(N)-\frac{1}{2}T(N)
-   \ge0.005426\,M(N)>0.
-   $$
-
-   Positivity supplies a prime plus a prime or semiprime. The exact bridges
-   use the actual candidate and penalty counts, rather than assumed
-   surrogates. The earlier 0.67 counting theorem retains its separate cutoff.
+See the [complete numerical proof notes](research/chen-grh/NUMERICAL_CHEN_H1337.md).
+The older H<14, H<29, and standard-only routes remain available. The original
+0.67 counting theorem keeps its larger cutoff.
 
 ## Full Dirichlet GRH and the certified prefix window
 
@@ -201,22 +190,18 @@ The Git repository does not distribute the local Lean object cache, and JSON
 receipts or JavaScript results do not replace kernel checking. See the
 [certificate build notes](research/chen-platt/README.md#build-time-and-memory).
 
-The [numerical weighted lower count](research/chen-grh/NUMERICAL_LOWER_H14.md)
-now holds for even N >= 3^1000000, below double exp(14), under the sole
-full Dirichlet-GRH axiom. Its final audit is checked. The complete H<14
-Chen existence theorem still requires the Selberg-square estimate.
+The complete numerical lower and triple estimates are assembled in the
+[H<13.37 Chen theorem](research/chen-grh/NUMERICAL_CHEN_H1337.md). Its final audit
+and literal recovery of the original implicit statement are checked.
 
 ## Verification and scope
 
 The checked upgrade uses Lean 4.34.1 and Mathlib revision
 `d13f23b723b8a846827a245b89c10fc7d3f11612`.
-The [GRH proof status and audit procedures](research/chen-grh/README.md#reproduction)
-record the completed serial H<29 recheck under GRH and the completed
-numerical lower count for the unfinished H<14 Chen route. See the
-[GRH Chen audit report](research/chen-grh/FINAL_CHEN_GRH_AUDIT.json). The
-[Platt-only H<29 report](research/chen-platt/FINAL_CHEN_H29_AUDIT.json) is historical. The earlier
-[upgrade audit](research/chen-effective/UPGRADE_434_AUDIT.md) records the
-checked OpenAI proof and preceding H≈30 release.
+The [current proof and audit commands](research/chen-grh/NUMERICAL_CHEN_H1337.md#reproduction-and-audit)
+record the completed H<13.37 Chen proof. See the
+[final audit report](research/chen-grh/FINAL_GRH1337_CHEN_AUDIT.json).
+The earlier H<14 and Platt-only reports are historical snapshots.
 The [OpenAI provenance and build guide](OpenAI/README.md) records the pins,
 licenses, source mapping, and transitive proof audits.
 
@@ -235,8 +220,7 @@ of the broader inherited developments:
 ```sh
 node OpenAI/tools/verify-sources.mjs
 node OpenAI/tools/audit-sources.mjs --dirichlet-proved
-node --expose-gc OpenAI/tools/build-source.mjs AuditGRHAnalytic AuditBJSTightBudget AuditBJSH29Conditional OAI.AuditChenIntegration
-node OpenAI/tools/build-source.mjs PlattThetaInputs PlattSegmentPilot
+node --expose-gc OpenAI/tools/build-source.mjs AuditGRH1337Chen
 ```
 
 For the reproducible hash report, follow the

@@ -107,7 +107,7 @@ function launch(v){
  fs.mkdirSync(path.dirname(v.obj),{recursive:true});
  const log=path.join(logs,v.name+'.log'),fd=fs.openSync(log,'w');
  const memory=process.env.CHEN_LEAN_MEMORY_MB||(exclusive(v.name)?'8192':v.name.startsWith('OpenAIGrouped.')?'6144':'4096');
- const args=['-j'+(process.env.CHEN_LEAN_THREADS||'1'),'-M'+memory,'-DmaxErrors=12','-DmaxHeartbeats=3000000','-DmaxRecDepth=4096'];
+ const args=['-j'+(process.env.CHEN_LEAN_THREADS||'1'),'-M'+memory,'-DmaxErrors='+(process.env.CHEN_LEAN_MAX_ERRORS||'12'),'-DmaxHeartbeats=3000000','-DmaxRecDepth=4096'];
  if(v.name.startsWith('OAI.')||v.name.startsWith('OpenAIGrouped.'))args.push('-DautoImplicit=false');
  args.push('-R',v.srcRoot,'-o',v.obj,v.file);
  const start=Date.now();

@@ -1,7 +1,8 @@
 # Smaller-cutoff budget pilot
 
-The completed Chen theorem remains at **3^1000000**, H approximately
-13.909558. This pilot does not claim a Chen theorem at a smaller cutoff.
+This file records the earlier budget pilot. Its propagation is now complete:
+the [new Chen theorem](NUMERICAL_CHEN_H1337.md) has exact cutoff **3^580000**,
+H approximately 13.364831, with GRH as the sole added axiom.
 
 Five new modules have passed Lean checking, with only standard Lean axioms:
 
@@ -22,7 +23,7 @@ Five new modules have passed Lean checking, with only standard Lean axioms:
 The machine-readable source/object receipts are in SHARP_PILOT_AUDIT.json.
 There are no new axioms, native_decide uses, or package dependencies.
 
-Remaining propagation: connect the sharper moments to the actual base and
+At the time of the pilot, remaining propagation was: connect the sharper moments to the actual base and
 medium-prime aggregate tails; specialize the high-conductor and principal
 Pan thresholds to the new target; retune both numerical integration grids;
 recheck lower and complete triple coefficients jointly; assemble and audit

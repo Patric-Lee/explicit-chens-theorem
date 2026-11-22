@@ -1,0 +1,67 @@
+{
+  "classification": "GRH_ONLY_H1337_COMPLETE_CHEN_KERNEL_CHECKED",
+  "checkedAt": "2026-11-22T04:47:51.183Z",
+  "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+  "theorem": "ChenEffective.GRH1337.chen",
+  "lowerTheorem": "ChenEffective.GRH1337.weighted_lower",
+  "tripleTheorem": "ChenEffective.GRH1337.triple_upper",
+  "cutoff": "3^580000",
+  "lowerCoefficient": "2.02575",
+  "tripleCoefficient": "4.0002",
+  "representationMargin": "0.02565",
+  "HUpperStrict": 13.37,
+  "HApproximate": 13.3648312101393,
+  "baseLoss": "3/50",
+  "mediumLoss": "111/100",
+  "endpointLoss": "1/20000",
+  "presieveStart": 4000000,
+  "presieveTruncation": "floor(N^(1/200))",
+  "distributionLevel": "N^(249/500)",
+  "externalAxiom": "ChenEffective.GRH.alpoge_dirichlet_grh",
+  "axiomDeclarations": [
+    {
+      "module": "GRHAssumption",
+      "name": "alpoge_dirichlet_grh"
+    }
+  ],
+  "directPackages": [
+    "LeanArchitect",
+    "mathlib"
+  ],
+  "H1337ExistenceStatus": "PROVED: actual lower and complete corrected triple estimates, with implicit recovery",
+  "localModules": 86688,
+  "sourceObjectManifestHash": "667cf787caa4a29d5f86a5139e7faabab221bdabf4905509c40ed8d5317d82b6",
+  "auditLog": "Original Chen axiom closure: [propext, Classical.choice, Quot.sound, ChenEffective.GRH.alpoge_dirichlet_grh]\nGRH H1337 complete Chen audit passed: 1516990 transitive constants.\nActual lower coefficient 2.02575 and triple coefficient 4.0002 at 3^580000.\nFull explicit Chen existence and implicit recovery; sole added axiom is full Dirichlet GRH.",
+  "numericalLowerModules": [
+    {
+      "module": "AuditGRH1337Chen",
+      "sourceHash": "7e8f86361bf280c4c0b269d1422ce0ddbfd6e5df7d2c25c85aa2fbcbcea6416f",
+      "objectHash": "9effff7a8e8e328275dacf644f8545861aa7dfd3ca89eebd67eae7fde96fe205"
+    },
+    {
+      "module": "GRH1337Analytic",
+      "sourceHash": "bcd20e09a693162ee8448c4d08e3f9dae67b76f0ab5912251bdf12e2edf0ec0c",
+      "objectHash": "c6a28ccede14993cbe75e25b65b9b873c4d58cf27e96ccc129aa42110f30eca2"
+    },
+    {
+      "module": "GRH1337GoldbachProduct",
+      "sourceHash": "056a93e81059c65a96885b9cbcf17173611eb44be0d2d52be6cc6af6b9431f31",
+      "objectHash": "507ffa02b7b416a0a91587b4a2e73e7250f4e18ab023a72c28475320f48abed0"
+    },
+    {
+      "module": "GRH1337MertensProduct",
+      "sourceHash": "1828362f286dc25a80a303958f2b8a6189d3407cd9c64c5da280597a30dc5049",
+      "objectHash": "00823d758d7cc14e0ebc03c3ef256b9428b7a1dd36d02c22682a1e05f682ebab"
+    },
+    {
+      "module": "GRH1337SourceMass",
+      "sourceHash": "378094b4e411f3c05fe2ce407297f8fddd662ca22966a2f614b7270ee255294b",
+      "objectHash": "5bad94e0078054f5d46d4cf96848917929f35d3709ba2b5bb469e651b50781ef"
+    },
+    {
+      "module": "GRH1337SourceUpperMass",
+      "sourceHash": "c6dfbbf0ecc86774bb7d80f88f5172046b8a8ea7c67ffc4e997d7220bd00a624",
+      "objectHash": "c6846844fd2cc70cc301b4f952ac25c686a6b9477841230b4ebb9cbc478eba83"
+    }
+  ]
+}
