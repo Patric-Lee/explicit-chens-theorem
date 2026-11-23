@@ -1,0 +1,2376 @@
+{
+  "classification": "GENERATED_NOT_CHECKED",
+  "endpoint": 4000000,
+  "rootCap": 340,
+  "densityExponent": 350,
+  "rows": [
+    {
+      "module": "GRHMomentCertificates.B000",
+      "r": 10,
+      "a": 100,
+      "b": 121,
+      "lo": 101,
+      "w": 4,
+      "B": 1,
+      "count": 7,
+      "endpoint": 132,
+      "bound": [
+        "207",
+        "10"
+      ],
+      "sourceHash": "01830238bfa1429a3e674641a9eb3653949c24c6e46198ce035bdab1cd7e3122"
+    },
+    {
+      "module": "GRHMomentCertificates.B001",
+      "r": 11,
+      "a": 121,
+      "b": 144,
+      "lo": 123,
+      "w": 4,
+      "B": 1,
+      "count": 6,
+      "endpoint": 154,
+      "bound": [
+        "42491",
+        "2000"
+      ],
+      "sourceHash": "5faafc948ab6ba855542da016c23ab49eae090da7ede84a4d92eb1772a535dbd"
+    },
+    {
+      "module": "GRHMomentCertificates.B002",
+      "r": 12,
+      "a": 144,
+      "b": 169,
+      "lo": 145,
+      "w": 4,
+      "B": 1,
+      "count": 6,
+      "endpoint": 176,
+      "bound": [
+        "43491",
+        "2000"
+      ],
+      "sourceHash": "7f078dba3c42d8e78b0a8dae7a9f9f8dfb80adea03fba0e1cc8246dbc1ba570f"
+    },
+    {
+      "module": "GRHMomentCertificates.B003",
+      "r": 13,
+      "a": 169,
+      "b": 196,
+      "lo": 171,
+      "w": 4,
+      "B": 1,
+      "count": 7,
+      "endpoint": 202,
+      "bound": [
+        "5571",
+        "250"
+      ],
+      "sourceHash": "627e2466434d2500f8fb89095b2688037c343276169a6d3a937eaa65a27db086"
+    },
+    {
+      "module": "GRHMomentCertificates.B004",
+      "r": 14,
+      "a": 196,
+      "b": 225,
+      "lo": 197,
+      "w": 4,
+      "B": 1,
+      "count": 5,
+      "endpoint": 228,
+      "bound": [
+        "56603",
+        "2500"
+      ],
+      "sourceHash": "faf607aafa9db3e13edf890a95445d017d005577a26765cbd1c0e6aa830e8e63"
+    },
+    {
+      "module": "GRHMomentCertificates.B005",
+      "r": 15,
+      "a": 225,
+      "b": 256,
+      "lo": 227,
+      "w": 4,
+      "B": 1,
+      "count": 7,
+      "endpoint": 258,
+      "bound": [
+        "231079",
+        "10000"
+      ],
+      "sourceHash": "5464b5b8018d9994ede235edd166a96c83d1eb4a0c683ac28990649ef9dc63c1"
+    },
+    {
+      "module": "GRHMomentCertificates.B006",
+      "r": 16,
+      "a": 256,
+      "b": 289,
+      "lo": 257,
+      "w": 4,
+      "B": 2,
+      "count": 12,
+      "endpoint": 320,
+      "bound": [
+        "238579",
+        "10000"
+      ],
+      "sourceHash": "ea0ac42318ad8d718d80d40c0943d200efb3f2e535769b9eb109735349901e30"
+    },
+    {
+      "module": "GRHMomentCertificates.B007",
+      "r": 17,
+      "a": 289,
+      "b": 324,
+      "lo": 291,
+      "w": 4,
+      "B": 2,
+      "count": 10,
+      "endpoint": 354,
+      "bound": [
+        "122231",
+        "5000"
+      ],
+      "sourceHash": "dd524f3629272a732215dad4e9d1dab3e1dbcee2e4561db918e8ba4f2f076829"
+    },
+    {
+      "module": "GRHMomentCertificates.B008",
+      "r": 18,
+      "a": 324,
+      "b": 361,
+      "lo": 325,
+      "w": 4,
+      "B": 2,
+      "count": 10,
+      "endpoint": 388,
+      "bound": [
+        "125009",
+        "5000"
+      ],
+      "sourceHash": "09299f1f2682d92d6bdff711d5e4ec6ac629d3579216ad8248d552d8a7753e01"
+    },
+    {
+      "module": "GRHMomentCertificates.B009",
+      "r": 19,
+      "a": 361,
+      "b": 400,
+      "lo": 363,
+      "w": 4,
+      "B": 2,
+      "count": 10,
+      "endpoint": 426,
+      "bound": [
+        "127641",
+        "5000"
+      ],
+      "sourceHash": "d3900c511e4e6d9aabd5dc3032835b39d71def55168fa4e8e87cb7da43d35a90"
+    },
+    {
+      "module": "GRHMomentCertificates.B010",
+      "r": 20,
+      "a": 400,
+      "b": 441,
+      "lo": 401,
+      "w": 4,
+      "B": 2,
+      "count": 12,
+      "endpoint": 464,
+      "bound": [
+        "130641",
+        "5000"
+      ],
+      "sourceHash": "291e534362f608767ee4c502ec5c21ccc2345d0d2735e9ba33c5510ca605c7d8"
+    },
+    {
+      "module": "GRHMomentCertificates.B011",
+      "r": 21,
+      "a": 441,
+      "b": 484,
+      "lo": 443,
+      "w": 4,
+      "B": 2,
+      "count": 11,
+      "endpoint": 506,
+      "bound": [
+        "266521",
+        "10000"
+      ],
+      "sourceHash": "367f396fd96c8db6c1ced856126a7dbdad4c7cd2bb7439e6060ab5375c0226c1"
+    },
+    {
+      "module": "GRHMomentCertificates.B012",
+      "r": 22,
+      "a": 484,
+      "b": 529,
+      "lo": 485,
+      "w": 4,
+      "B": 2,
+      "count": 9,
+      "endpoint": 548,
+      "bound": [
+        "67653",
+        "2500"
+      ],
+      "sourceHash": "b41dfe3a70c0c50639e5feaba451224c5c8021eb660852ea10b0371e5f7e4f0e"
+    },
+    {
+      "module": "GRHMomentCertificates.B013",
+      "r": 23,
+      "a": 529,
+      "b": 576,
+      "lo": 531,
+      "w": 4,
+      "B": 2,
+      "count": 9,
+      "endpoint": 594,
+      "bound": [
+        "137263",
+        "5000"
+      ],
+      "sourceHash": "fdeed68a9be344d598ed8cf96988a011dfb028af2c44cfd97f0271443efd0e44"
+    },
+    {
+      "module": "GRHMomentCertificates.B014",
+      "r": 24,
+      "a": 576,
+      "b": 625,
+      "lo": 577,
+      "w": 4,
+      "B": 2,
+      "count": 10,
+      "endpoint": 640,
+      "bound": [
+        "278693",
+        "10000"
+      ],
+      "sourceHash": "092b389d49cb411fe8040aac40a2f7c6bb50b5b8cf4eac40d6a95fd0c7c3d2c3"
+    },
+    {
+      "module": "GRHMomentCertificates.B015",
+      "r": 25,
+      "a": 625,
+      "b": 676,
+      "lo": 627,
+      "w": 4,
+      "B": 2,
+      "count": 10,
+      "endpoint": 690,
+      "bound": [
+        "282693",
+        "10000"
+      ],
+      "sourceHash": "3b5be4d49ef978eaf1af954b22fe2cb4e29235c34455dfcec79eb4680592aff8"
+    },
+    {
+      "module": "GRHMomentCertificates.B016",
+      "r": 26,
+      "a": 676,
+      "b": 729,
+      "lo": 677,
+      "w": 4,
+      "B": 2,
+      "count": 9,
+      "endpoint": 740,
+      "bound": [
+        "57231",
+        "2000"
+      ],
+      "sourceHash": "b9a5722df0f15f66396ef7cca24788112a83997d77e775a1a19b22a3be7cb895"
+    },
+    {
+      "module": "GRHMomentCertificates.B017",
+      "r": 27,
+      "a": 729,
+      "b": 784,
+      "lo": 731,
+      "w": 4,
+      "B": 2,
+      "count": 9,
+      "endpoint": 794,
+      "bound": [
+        "289489",
+        "10000"
+      ],
+      "sourceHash": "0eceaba69536a00eb4f85d34c1db8b0391f4cf9ce7f078ed14dbc7da7c4b2ef4"
+    },
+    {
+      "module": "GRHMomentCertificates.B018",
+      "r": 28,
+      "a": 784,
+      "b": 841,
+      "lo": 785,
+      "w": 4,
+      "B": 2,
+      "count": 9,
+      "endpoint": 848,
+      "bound": [
+        "18294",
+        "625"
+      ],
+      "sourceHash": "4dba37360e5b93e56ce5d1eef764e05756705045e6ca8f3b5a450dff9778d78b"
+    },
+    {
+      "module": "GRHMomentCertificates.B019",
+      "r": 29,
+      "a": 841,
+      "b": 900,
+      "lo": 843,
+      "w": 4,
+      "B": 2,
+      "count": 8,
+      "endpoint": 906,
+      "bound": [
+        "295463",
+        "10000"
+      ],
+      "sourceHash": "d5b4b821b7ddb18d6913d45308abe03b0085d37a78537660173cc5bfb0ccdcf1"
+    },
+    {
+      "module": "GRHMomentCertificates.B020",
+      "r": 30,
+      "a": 900,
+      "b": 961,
+      "lo": 901,
+      "w": 4,
+      "B": 2,
+      "count": 8,
+      "endpoint": 964,
+      "bound": [
+        "29813",
+        "1000"
+      ],
+      "sourceHash": "4114f2aca2fb277e0342e9ae982edbe6c24fec4427145f6e8474200b61853057"
+    },
+    {
+      "module": "GRHMomentCertificates.B021",
+      "r": 31,
+      "a": 961,
+      "b": 1024,
+      "lo": 963,
+      "w": 4,
+      "B": 2,
+      "count": 10,
+      "endpoint": 1026,
+      "bound": [
+        "75339",
+        "2500"
+      ],
+      "sourceHash": "0ab609f063ba48d711156f26f2b8f76f3a4eb38c1be1c3a572383e96ad8f8267"
+    },
+    {
+      "module": "GRHMomentCertificates.B022",
+      "r": 32,
+      "a": 1024,
+      "b": 1089,
+      "lo": 1025,
+      "w": 4,
+      "B": 3,
+      "count": 15,
+      "endpoint": 1120,
+      "bound": [
+        "76511",
+        "2500"
+      ],
+      "sourceHash": "de0da0ba13d6bfac72bdad93cd8459c26b8dcc33c887d9f6b43bea107388d444"
+    },
+    {
+      "module": "GRHMomentCertificates.B023",
+      "r": 33,
+      "a": 1089,
+      "b": 1156,
+      "lo": 1091,
+      "w": 4,
+      "B": 3,
+      "count": 13,
+      "endpoint": 1186,
+      "bound": [
+        "19374",
+        "625"
+      ],
+      "sourceHash": "06a10fafcab49b88c115061c3ea059b653701fa56d71e62db246e4674a1bba1a"
+    },
+    {
+      "module": "GRHMomentCertificates.B024",
+      "r": 34,
+      "a": 1156,
+      "b": 1296,
+      "lo": 1157,
+      "w": 4,
+      "B": 5,
+      "count": 23,
+      "endpoint": 1316,
+      "bound": [
+        "316749",
+        "10000"
+      ],
+      "sourceHash": "f1e282591ed7d60146081207ba67bbbbe052b823f5e71a0ac9deefbf869cb4f0"
+    },
+    {
+      "module": "GRHMomentCertificates.B025",
+      "r": 36,
+      "a": 1296,
+      "b": 1444,
+      "lo": 1297,
+      "w": 4,
+      "B": 5,
+      "count": 21,
+      "endpoint": 1456,
+      "bound": [
+        "322583",
+        "10000"
+      ],
+      "sourceHash": "0e116024992cd7da9579274a2c2d78cb38689a0e30b4725470123da108776485"
+    },
+    {
+      "module": "GRHMomentCertificates.B026",
+      "r": 38,
+      "a": 1444,
+      "b": 1600,
+      "lo": 1445,
+      "w": 4,
+      "B": 5,
+      "count": 24,
+      "endpoint": 1604,
+      "bound": [
+        "328899",
+        "10000"
+      ],
+      "sourceHash": "b81ae03374a4b5fa9479f472709184eec75c7c16db13e2e0e8224e27e2d51f0f"
+    },
+    {
+      "module": "GRHMomentCertificates.B027",
+      "r": 40,
+      "a": 1600,
+      "b": 1764,
+      "lo": 1601,
+      "w": 4,
+      "B": 6,
+      "count": 27,
+      "endpoint": 1792,
+      "bound": [
+        "335649",
+        "10000"
+      ],
+      "sourceHash": "368c924e3ee1d329eb0825601e815b47a0ce8900c65b0b26eb398ab3b41fda10"
+    },
+    {
+      "module": "GRHMomentCertificates.B028",
+      "r": 42,
+      "a": 1764,
+      "b": 1936,
+      "lo": 1765,
+      "w": 4,
+      "B": 6,
+      "count": 23,
+      "endpoint": 1956,
+      "bound": [
+        "170563",
+        "5000"
+      ],
+      "sourceHash": "c626d1998fd10fa3d5c8448f38e01190bca8bc302caa62f7d639161422867c4a"
+    },
+    {
+      "module": "GRHMomentCertificates.B029",
+      "r": 44,
+      "a": 1936,
+      "b": 2116,
+      "lo": 1937,
+      "w": 4,
+      "B": 6,
+      "count": 24,
+      "endpoint": 2128,
+      "bound": [
+        "346581",
+        "10000"
+      ],
+      "sourceHash": "bd903f4797ce941335eeb8a0f7798a4a9f30bd5535cac1d03ec6d0961542db68"
+    },
+    {
+      "module": "GRHMomentCertificates.B030",
+      "r": 46,
+      "a": 2116,
+      "b": 2304,
+      "lo": 2117,
+      "w": 4,
+      "B": 6,
+      "count": 23,
+      "endpoint": 2308,
+      "bound": [
+        "351581",
+        "10000"
+      ],
+      "sourceHash": "fe9d82f3c60f05f7264c4d6c1fe6c0b9d9b709258ffc3d3a31f7df034dcbc601"
+    },
+    {
+      "module": "GRHMomentCertificates.B031",
+      "r": 48,
+      "a": 2304,
+      "b": 2500,
+      "lo": 2305,
+      "w": 4,
+      "B": 7,
+      "count": 27,
+      "endpoint": 2528,
+      "bound": [
+        "178603",
+        "5000"
+      ],
+      "sourceHash": "f886bab822daac70e1d1c6c7e3f6339ba9d9132a2081827714da392d3e605586"
+    },
+    {
+      "module": "GRHMomentCertificates.B032",
+      "r": 50,
+      "a": 2500,
+      "b": 2704,
+      "lo": 2501,
+      "w": 4,
+      "B": 7,
+      "count": 30,
+      "endpoint": 2724,
+      "bound": [
+        "181603",
+        "5000"
+      ],
+      "sourceHash": "6544b05de6882fc491d537f05958f3fc8ff936d0cb45ff8e0fa30e3e7112008a"
+    },
+    {
+      "module": "GRHMomentCertificates.B033",
+      "r": 52,
+      "a": 2704,
+      "b": 2916,
+      "lo": 2705,
+      "w": 4,
+      "B": 7,
+      "count": 30,
+      "endpoint": 2928,
+      "bound": [
+        "23061",
+        "625"
+      ],
+      "sourceHash": "d4b57939320fc6ba178e07b072d2f97e826f5e6606c7e64c2718c3a53a4aadc7"
+    },
+    {
+      "module": "GRHMomentCertificates.B034",
+      "r": 54,
+      "a": 2916,
+      "b": 3136,
+      "lo": 2917,
+      "w": 4,
+      "B": 7,
+      "count": 25,
+      "endpoint": 3140,
+      "bound": [
+        "186803",
+        "5000"
+      ],
+      "sourceHash": "95539a4f8639f10d9ffb8b2e87a2a48119fe7df71bcaf232fd5ac0d68249047a"
+    },
+    {
+      "module": "GRHMomentCertificates.B035",
+      "r": 56,
+      "a": 3136,
+      "b": 3364,
+      "lo": 3137,
+      "w": 4,
+      "B": 8,
+      "count": 33,
+      "endpoint": 3392,
+      "bound": [
+        "379499",
+        "10000"
+      ],
+      "sourceHash": "a3b074ddf21d5fff97b86f9afac5304c1380c1bc0b0183e13b55fdabe81599fd"
+    },
+    {
+      "module": "GRHMomentCertificates.B036",
+      "r": 58,
+      "a": 3364,
+      "b": 3600,
+      "lo": 3365,
+      "w": 4,
+      "B": 8,
+      "count": 32,
+      "endpoint": 3620,
+      "bound": [
+        "385017",
+        "10000"
+      ],
+      "sourceHash": "24308fe45b8ac1191376e37a8c7d834fafd9e96721dabd136b69ca3c477be15c"
+    },
+    {
+      "module": "GRHMomentCertificates.B037",
+      "r": 60,
+      "a": 3600,
+      "b": 3844,
+      "lo": 3601,
+      "w": 4,
+      "B": 8,
+      "count": 32,
+      "endpoint": 3856,
+      "bound": [
+        "390351",
+        "10000"
+      ],
+      "sourceHash": "a3a219d168f785e05670cc93219e8f37606efe2670b90ed38ae5bf9834d5fb5f"
+    },
+    {
+      "module": "GRHMomentCertificates.B038",
+      "r": 62,
+      "a": 3844,
+      "b": 4096,
+      "lo": 3845,
+      "w": 4,
+      "B": 8,
+      "count": 33,
+      "endpoint": 4100,
+      "bound": [
+        "197837",
+        "5000"
+      ],
+      "sourceHash": "b2f5a48feefcf90448f2f3c3c4f7a5dfb71a824e0af3d96f9768468b45bd4697"
+    },
+    {
+      "module": "GRHMomentCertificates.B039",
+      "r": 64,
+      "a": 4096,
+      "b": 4356,
+      "lo": 4097,
+      "w": 4,
+      "B": 9,
+      "count": 33,
+      "endpoint": 4384,
+      "bound": [
+        "400831",
+        "10000"
+      ],
+      "sourceHash": "98ac50100a47da4698de3f58db8a7fc2d12c8529800740fce58bc656e03b01db"
+    },
+    {
+      "module": "GRHMomentCertificates.B040",
+      "r": 66,
+      "a": 4356,
+      "b": 4624,
+      "lo": 4357,
+      "w": 4,
+      "B": 9,
+      "count": 33,
+      "endpoint": 4644,
+      "bound": [
+        "405831",
+        "10000"
+      ],
+      "sourceHash": "140bc8d1e3c25298f830bfb99d777ecdde37e1571324604a9a95c4afe8eea916"
+    },
+    {
+      "module": "GRHMomentCertificates.B041",
+      "r": 68,
+      "a": 4624,
+      "b": 5041,
+      "lo": 4625,
+      "w": 4,
+      "B": 14,
+      "count": 53,
+      "endpoint": 5072,
+      "bound": [
+        "206813",
+        "5000"
+      ],
+      "sourceHash": "0aa3f54fa83d19c020b6e10bd2196c25a578222a5570247883a17229de801768"
+    },
+    {
+      "module": "GRHMomentCertificates.B042",
+      "r": 71,
+      "a": 5041,
+      "b": 5476,
+      "lo": 5043,
+      "w": 4,
+      "B": 14,
+      "count": 50,
+      "endpoint": 5490,
+      "bound": [
+        "420669",
+        "10000"
+      ],
+      "sourceHash": "1c98f00610deb55b2501340c00b3c41047c2c189d79949c3f99df6131cfb0497"
+    },
+    {
+      "module": "GRHMomentCertificates.B043",
+      "r": 74,
+      "a": 5476,
+      "b": 5929,
+      "lo": 5477,
+      "w": 4,
+      "B": 15,
+      "count": 59,
+      "endpoint": 5956,
+      "bound": [
+        "214321",
+        "5000"
+      ],
+      "sourceHash": "9229a1a5b9d68363ae06f62d05b21d38b33622a37ff1024139439d4cf0197896"
+    },
+    {
+      "module": "GRHMomentCertificates.B044",
+      "r": 77,
+      "a": 5929,
+      "b": 6400,
+      "lo": 5931,
+      "w": 4,
+      "B": 15,
+      "count": 55,
+      "endpoint": 6410,
+      "bound": [
+        "87157",
+        "2000"
+      ],
+      "sourceHash": "02590a0c3e667896df8fac0349d3d3eaa1f02fc92e951d0f5adaf5f64d20a19c"
+    },
+    {
+      "module": "GRHMomentCertificates.B045",
+      "r": 80,
+      "a": 6400,
+      "b": 6889,
+      "lo": 6401,
+      "w": 4,
+      "B": 16,
+      "count": 55,
+      "endpoint": 6912,
+      "bound": [
+        "22133",
+        "500"
+      ],
+      "sourceHash": "0c4ceee4c7d20f507bea69e5f60c12dcfc480346bc9bd9b924e5f3acbb0c7414"
+    },
+    {
+      "module": "GRHMomentCertificates.B046",
+      "r": 83,
+      "a": 6889,
+      "b": 7396,
+      "lo": 6891,
+      "w": 4,
+      "B": 16,
+      "count": 53,
+      "endpoint": 7402,
+      "bound": [
+        "224523",
+        "5000"
+      ],
+      "sourceHash": "cd2be33485c099e06826ad3ed299162e223d4aea385a9edff7b02fb79186ec65"
+    },
+    {
+      "module": "GRHMomentCertificates.B047",
+      "r": 86,
+      "a": 7396,
+      "b": 7921,
+      "lo": 7397,
+      "w": 4,
+      "B": 17,
+      "count": 64,
+      "endpoint": 7940,
+      "bound": [
+        "57061",
+        "1250"
+      ],
+      "sourceHash": "ac0d37cbad6e6f00e5bb34d250e0c308efacdde786df0866bb514d5097a319f6"
+    },
+    {
+      "module": "GRHMomentCertificates.B048",
+      "r": 89,
+      "a": 7921,
+      "b": 8464,
+      "lo": 7923,
+      "w": 4,
+      "B": 17,
+      "count": 58,
+      "endpoint": 8466,
+      "bound": [
+        "92601",
+        "2000"
+      ],
+      "sourceHash": "0ac12bfd00018a4a124ee658d9cb439777d45751211e70d82a60ee45920a44ad"
+    },
+    {
+      "module": "GRHMomentCertificates.B049",
+      "r": 92,
+      "a": 8464,
+      "b": 9025,
+      "lo": 8465,
+      "w": 4,
+      "B": 18,
+      "count": 64,
+      "endpoint": 9040,
+      "bound": [
+        "234981",
+        "5000"
+      ],
+      "sourceHash": "0a8c8518aa198071c6828f56d8374fdd2eac2b28b49565fc94aa8c2da5a40638"
+    },
+    {
+      "module": "GRHMomentCertificates.B050",
+      "r": 95,
+      "a": 9025,
+      "b": 9604,
+      "lo": 9027,
+      "w": 4,
+      "B": 19,
+      "count": 69,
+      "endpoint": 9634,
+      "bound": [
+        "238613",
+        "5000"
+      ],
+      "sourceHash": "050abbb955cf9c8dc3f47da9906a9c745c86b526bf08334ee0806669275a5f14"
+    },
+    {
+      "module": "GRHMomentCertificates.B051",
+      "r": 98,
+      "a": 9604,
+      "b": 10201,
+      "lo": 9605,
+      "w": 4,
+      "B": 19,
+      "count": 68,
+      "endpoint": 10212,
+      "bound": [
+        "96833",
+        "2000"
+      ],
+      "sourceHash": "ba824b21fb053da717b48b46faf2639620253f05c75c370d997d5031141e8a8c"
+    },
+    {
+      "module": "GRHMomentCertificates.B052",
+      "r": 101,
+      "a": 10201,
+      "b": 11025,
+      "lo": 10203,
+      "w": 4,
+      "B": 26,
+      "count": 85,
+      "endpoint": 11034,
+      "bound": [
+        "492581",
+        "10000"
+      ],
+      "sourceHash": "7b8cdeb596292729903efda814e9f375608dcb0c97ac94c3a6c839436fe7eacd"
+    },
+    {
+      "module": "GRHMomentCertificates.B053",
+      "r": 105,
+      "a": 11025,
+      "b": 11881,
+      "lo": 11027,
+      "w": 4,
+      "B": 27,
+      "count": 88,
+      "endpoint": 11890,
+      "bound": [
+        "250481",
+        "5000"
+      ],
+      "sourceHash": "788cae0ee8d860fa808b5a01d8bf861c62e7e37ecb1f6d1a57839fe2808fe756"
+    },
+    {
+      "module": "GRHMomentCertificates.B054",
+      "r": 109,
+      "a": 11881,
+      "b": 12769,
+      "lo": 11883,
+      "w": 4,
+      "B": 28,
+      "count": 100,
+      "endpoint": 12778,
+      "bound": [
+        "510137",
+        "10000"
+      ],
+      "sourceHash": "4fd6255e65da44cf98bbae3dc474c345f86d2a71c082d2bb48ddc996be252d85"
+    },
+    {
+      "module": "GRHMomentCertificates.B055",
+      "r": 113,
+      "a": 12769,
+      "b": 13689,
+      "lo": 12771,
+      "w": 4,
+      "B": 29,
+      "count": 97,
+      "endpoint": 13698,
+      "bound": [
+        "259361",
+        "5000"
+      ],
+      "sourceHash": "59082977c150b8f73c97703e8e03ace314a7cd9b2d90825ec09292a2c548e327"
+    },
+    {
+      "module": "GRHMomentCertificates.B056",
+      "r": 117,
+      "a": 13689,
+      "b": 14641,
+      "lo": 13691,
+      "w": 4,
+      "B": 30,
+      "count": 98,
+      "endpoint": 14650,
+      "bound": [
+        "527099",
+        "10000"
+      ],
+      "sourceHash": "c4fde198a149496ccaa62eac9ed058d6a8220052e32879663e7f35dad61236f8"
+    },
+    {
+      "module": "GRHMomentCertificates.B057",
+      "r": 121,
+      "a": 14641,
+      "b": 15625,
+      "lo": 14643,
+      "w": 4,
+      "B": 31,
+      "count": 107,
+      "endpoint": 15634,
+      "bound": [
+        "267971",
+        "5000"
+      ],
+      "sourceHash": "b688979f7d462f72a647c1e12c0c32897888ca334a1ebc53ea074a31660f3895"
+    },
+    {
+      "module": "GRHMomentCertificates.B058",
+      "r": 125,
+      "a": 15625,
+      "b": 16641,
+      "lo": 15627,
+      "w": 4,
+      "B": 32,
+      "count": 104,
+      "endpoint": 16650,
+      "bound": [
+        "272131",
+        "5000"
+      ],
+      "sourceHash": "b522f841eedfb013bae7742a05bb33cda0bfa7268bef728d10c633d70ef992b6"
+    },
+    {
+      "module": "GRHMomentCertificates.B059",
+      "r": 129,
+      "a": 16641,
+      "b": 17689,
+      "lo": 16643,
+      "w": 4,
+      "B": 33,
+      "count": 108,
+      "endpoint": 17698,
+      "bound": [
+        "110527",
+        "2000"
+      ],
+      "sourceHash": "81e1180ecc23c0ce51f2f106c3c00580e4a7164fdcd3fe8ad1e8cc5159628b29"
+    },
+    {
+      "module": "GRHMomentCertificates.B060",
+      "r": 133,
+      "a": 17689,
+      "b": 18769,
+      "lo": 17691,
+      "w": 4,
+      "B": 34,
+      "count": 110,
+      "endpoint": 18778,
+      "bound": [
+        "280453",
+        "5000"
+      ],
+      "sourceHash": "2c9010c05fb41f4c54cce9050dffc8bfd81dfe60c7170744b7da3348f4da487a"
+    },
+    {
+      "module": "GRHMomentCertificates.B061",
+      "r": 137,
+      "a": 18769,
+      "b": 20164,
+      "lo": 18771,
+      "w": 4,
+      "B": 44,
+      "count": 142,
+      "endpoint": 20178,
+      "bound": [
+        "571271",
+        "10000"
+      ],
+      "sourceHash": "b6f6913d1fa5482528f1d61a0b08edbe8e65d7ee7ddbb31453fa9e8139ec765a"
+    },
+    {
+      "module": "GRHMomentCertificates.B062",
+      "r": 142,
+      "a": 20164,
+      "b": 21609,
+      "lo": 20165,
+      "w": 4,
+      "B": 46,
+      "count": 148,
+      "endpoint": 21636,
+      "bound": [
+        "290847",
+        "5000"
+      ],
+      "sourceHash": "4f74a7d06ee950e5c2e4d21c364dcdd16f5ff0c6b3d6ed55ffce6d693b6d3ebf"
+    },
+    {
+      "module": "GRHMomentCertificates.B063",
+      "r": 147,
+      "a": 21609,
+      "b": 23104,
+      "lo": 21611,
+      "w": 4,
+      "B": 47,
+      "count": 154,
+      "endpoint": 23114,
+      "bound": [
+        "592171",
+        "10000"
+      ],
+      "sourceHash": "affcc455d1ecaeaf3982d994fb592c8fd5e9a5e8aa9d38cb4e6ffcbf500fcaa2"
+    },
+    {
+      "module": "GRHMomentCertificates.B064",
+      "r": 152,
+      "a": 23104,
+      "b": 24649,
+      "lo": 23105,
+      "w": 4,
+      "B": 49,
+      "count": 151,
+      "endpoint": 24672,
+      "bound": [
+        "301053",
+        "5000"
+      ],
+      "sourceHash": "a60d354542d8d2c9a6818fc795f1f67374fe981373d53ad7c1239b9db532de21"
+    },
+    {
+      "module": "GRHMomentCertificates.B065",
+      "r": 157,
+      "a": 24649,
+      "b": 26244,
+      "lo": 24651,
+      "w": 4,
+      "B": 50,
+      "count": 155,
+      "endpoint": 26250,
+      "bound": [
+        "611979",
+        "10000"
+      ],
+      "sourceHash": "33b5848adc6a1be2f670742dea0c8dde8a95f72708413042932253398582733e"
+    },
+    {
+      "module": "GRHMomentCertificates.B066",
+      "r": 162,
+      "a": 26244,
+      "b": 27889,
+      "lo": 26245,
+      "w": 4,
+      "B": 52,
+      "count": 162,
+      "endpoint": 27908,
+      "bound": [
+        "621979",
+        "10000"
+      ],
+      "sourceHash": "4d251dcb6bdbf695e8903a3028f5a7973fa9280ca07cc883acc1c46bbb0bfbb6"
+    },
+    {
+      "module": "GRHMomentCertificates.B067",
+      "r": 167,
+      "a": 27889,
+      "b": 29929,
+      "lo": 27891,
+      "w": 4,
+      "B": 64,
+      "count": 198,
+      "endpoint": 29938,
+      "bound": [
+        "158459",
+        "2500"
+      ],
+      "sourceHash": "71740cfa7627cb3ae2fcd78b72eafc754ffef3fbf31a67c9587884ad9f58c948"
+    },
+    {
+      "module": "GRHMomentCertificates.B068",
+      "r": 173,
+      "a": 29929,
+      "b": 32041,
+      "lo": 29931,
+      "w": 4,
+      "B": 66,
+      "count": 195,
+      "endpoint": 32042,
+      "bound": [
+        "161277",
+        "2500"
+      ],
+      "sourceHash": "eecda4daf605cf52c19f43cc66d4f4d374587b436c42a5dd0a07c248316f3999"
+    },
+    {
+      "module": "GRHMomentCertificates.B069",
+      "r": 179,
+      "a": 32041,
+      "b": 34225,
+      "lo": 32043,
+      "w": 4,
+      "B": 69,
+      "count": 221,
+      "endpoint": 34250,
+      "bound": [
+        "131491",
+        "2000"
+      ],
+      "sourceHash": "4e67afac4bb2950d07a90d6a04192348b2b7a18b213cc4da9117ead9e52687f3"
+    },
+    {
+      "module": "GRHMomentCertificates.B070",
+      "r": 185,
+      "a": 34225,
+      "b": 36481,
+      "lo": 34227,
+      "w": 4,
+      "B": 71,
+      "count": 214,
+      "endpoint": 36498,
+      "bound": [
+        "669023",
+        "10000"
+      ],
+      "sourceHash": "8a84c563191d7ace0cab98c179ba202adb8328d1c895b07c141fc05085b4571e"
+    },
+    {
+      "module": "GRHMomentCertificates.B071",
+      "r": 191,
+      "a": 36481,
+      "b": 38809,
+      "lo": 36483,
+      "w": 4,
+      "B": 73,
+      "count": 221,
+      "endpoint": 38818,
+      "bound": [
+        "340297",
+        "5000"
+      ],
+      "sourceHash": "fbf7408bb0a003ab0be915f43235af36b950d83858b9f236be114fe0d9ccb370"
+    },
+    {
+      "module": "GRHMomentCertificates.B072",
+      "r": 197,
+      "a": 38809,
+      "b": 41209,
+      "lo": 38811,
+      "w": 4,
+      "B": 75,
+      "count": 224,
+      "endpoint": 41210,
+      "bound": [
+        "138393",
+        "2000"
+      ],
+      "sourceHash": "9409edf7c878286120303f8e2d94f76300d810d12241fc296d4d9645af009426"
+    },
+    {
+      "module": "GRHMomentCertificates.B073",
+      "r": 203,
+      "a": 41209,
+      "b": 44100,
+      "lo": 41211,
+      "w": 4,
+      "B": 91,
+      "count": 279,
+      "endpoint": 44122,
+      "bound": [
+        "705709",
+        "10000"
+      ],
+      "sourceHash": "633521d5e8837eef38461abb11c72eb2a59a5c2daa28322f3b079d37167694fd"
+    },
+    {
+      "module": "GRHMomentCertificates.B074",
+      "r": 210,
+      "a": 44100,
+      "b": 47089,
+      "lo": 44101,
+      "w": 4,
+      "B": 94,
+      "count": 269,
+      "endpoint": 47108,
+      "bound": [
+        "718519",
+        "10000"
+      ],
+      "sourceHash": "9954d729ec370b7aafb92a88a4e4cb4544fb140a6afddde05007483e018ab632"
+    },
+    {
+      "module": "GRHMomentCertificates.B075",
+      "r": 217,
+      "a": 47089,
+      "b": 50176,
+      "lo": 47091,
+      "w": 4,
+      "B": 97,
+      "count": 296,
+      "endpoint": 50194,
+      "bound": [
+        "9152",
+        "125"
+      ],
+      "sourceHash": "208b78ecb8464035ffb96026be44fd8b516f810b8ebd8c2a2a112c840f379422"
+    },
+    {
+      "module": "GRHMomentCertificates.B076",
+      "r": 224,
+      "a": 50176,
+      "b": 53361,
+      "lo": 50177,
+      "w": 4,
+      "B": 100,
+      "count": 290,
+      "endpoint": 53376,
+      "bound": [
+        "745107",
+        "10000"
+      ],
+      "sourceHash": "aa779871c02f47a0827880b528f4d7b45a03e54a1649ef0eda5810e185c733d1"
+    },
+    {
+      "module": "GRHMomentCertificates.B077",
+      "r": 231,
+      "a": 53361,
+      "b": 56644,
+      "lo": 53363,
+      "w": 4,
+      "B": 103,
+      "count": 301,
+      "endpoint": 56658,
+      "bound": [
+        "379069",
+        "5000"
+      ],
+      "sourceHash": "c0199b99862158f9e2310aefeabd3134a025b7d0071b7eb42af9710efddf870f"
+    },
+    {
+      "module": "GRHMomentCertificates.B078",
+      "r": 238,
+      "a": 56644,
+      "b": 60516,
+      "lo": 56645,
+      "w": 4,
+      "B": 121,
+      "count": 358,
+      "endpoint": 60516,
+      "bound": [
+        "773181",
+        "10000"
+      ],
+      "sourceHash": "c6bb62ed58d7052d135fb334739be969357017a355eb5ca43c0067fcc3c702ca"
+    },
+    {
+      "module": "GRHMomentCertificates.B079",
+      "r": 246,
+      "a": 60516,
+      "b": 64516,
+      "lo": 60517,
+      "w": 4,
+      "B": 125,
+      "count": 353,
+      "endpoint": 64516,
+      "bound": [
+        "787531",
+        "10000"
+      ],
+      "sourceHash": "5b915ac217ba935f0593f704dedf24c337ac81f3deb6a7cb34634982ece7f83c"
+    },
+    {
+      "module": "GRHMomentCertificates.B080",
+      "r": 254,
+      "a": 64516,
+      "b": 68644,
+      "lo": 64517,
+      "w": 4,
+      "B": 129,
+      "count": 369,
+      "endpoint": 68644,
+      "bound": [
+        "802059",
+        "10000"
+      ],
+      "sourceHash": "e1fd6e51ce5d8e35369e86de3f2c05d4f5aeeb2644210a4610fde024cf61e59f"
+    },
+    {
+      "module": "GRHMomentCertificates.B081",
+      "r": 262,
+      "a": 68644,
+      "b": 72900,
+      "lo": 68645,
+      "w": 4,
+      "B": 133,
+      "count": 383,
+      "endpoint": 72900,
+      "bound": [
+        "408339",
+        "5000"
+      ],
+      "sourceHash": "c48fc4103685292c8ab0b8736a614e3ba11a3c02d770963a0016124e646e94b0"
+    },
+    {
+      "module": "GRHMomentCertificates.B082",
+      "r": 270,
+      "a": 72900,
+      "b": 77841,
+      "lo": 72901,
+      "w": 4,
+      "B": 155,
+      "count": 445,
+      "endpoint": 77860,
+      "bound": [
+        "20829",
+        "250"
+      ],
+      "sourceHash": "0b7d903bb969e38614013379cc4d081316129e80b150d28666206e0669605825"
+    },
+    {
+      "module": "GRHMomentCertificates.B083",
+      "r": 279,
+      "a": 77841,
+      "b": 82944,
+      "lo": 77843,
+      "w": 4,
+      "B": 160,
+      "count": 453,
+      "endpoint": 82962,
+      "bound": [
+        "849397",
+        "10000"
+      ],
+      "sourceHash": "25b45120422722d28a28fff6fe7f90a1829ac585a0be4e8a0c70d27ceacbcfdb"
+    },
+    {
+      "module": "GRHMomentCertificates.B084",
+      "r": 288,
+      "a": 82944,
+      "b": 88209,
+      "lo": 82945,
+      "w": 4,
+      "B": 165,
+      "count": 454,
+      "endpoint": 88224,
+      "bound": [
+        "865161",
+        "10000"
+      ],
+      "sourceHash": "a56097a033dd0a7a8463eca82ea5f76a95fa79d9c747d2113985c3bd7eb857bf"
+    },
+    {
+      "module": "GRHMomentCertificates.B085",
+      "r": 297,
+      "a": 88209,
+      "b": 93636,
+      "lo": 88211,
+      "w": 4,
+      "B": 170,
+      "count": 487,
+      "endpoint": 93650,
+      "bound": [
+        "881559",
+        "10000"
+      ],
+      "sourceHash": "9e5baec0a9461b237f9c5301cd3d54513c7a85989ba23f3273a994573070b336"
+    },
+    {
+      "module": "GRHMomentCertificates.B086",
+      "r": 306,
+      "a": 93636,
+      "b": 99856,
+      "lo": 93637,
+      "w": 4,
+      "B": 195,
+      "count": 541,
+      "endpoint": 99876,
+      "bound": [
+        "899239",
+        "10000"
+      ],
+      "sourceHash": "180eefe217f3495b811ca1b2c20312dce8d2a39368748143cff8c85b06d6c3e0"
+    },
+    {
+      "module": "GRHMomentCertificates.B087",
+      "r": 316,
+      "a": 99856,
+      "b": 106276,
+      "lo": 99857,
+      "w": 4,
+      "B": 201,
+      "count": 549,
+      "endpoint": 106288,
+      "bound": [
+        "916613",
+        "10000"
+      ],
+      "sourceHash": "001639ff4adf9e26e61f8a995829ae6ad3d461b970808684186d45dfb2afc149"
+    },
+    {
+      "module": "GRHMomentCertificates.B088",
+      "r": 326,
+      "a": 106276,
+      "b": 112896,
+      "lo": 106277,
+      "w": 4,
+      "B": 207,
+      "count": 563,
+      "endpoint": 112900,
+      "bound": [
+        "933883",
+        "10000"
+      ],
+      "sourceHash": "2ce39f9df6c0a81e7ab7d58c924e38734f82a6942560c94c4a4761aadda9464f"
+    },
+    {
+      "module": "GRHMomentCertificates.B089",
+      "r": 336,
+      "a": 112896,
+      "b": 120409,
+      "lo": 112897,
+      "w": 4,
+      "B": 235,
+      "count": 646,
+      "endpoint": 120416,
+      "bound": [
+        "95311",
+        "1000"
+      ],
+      "sourceHash": "980ed8f4d707ca210e65711d7e76481deefd9b039b2ba2fb24bd8a534f2ae752"
+    },
+    {
+      "module": "GRHMomentCertificates.B090",
+      "r": 347,
+      "a": 120409,
+      "b": 128164,
+      "lo": 120411,
+      "w": 4,
+      "B": 243,
+      "count": 664,
+      "endpoint": 128186,
+      "bound": [
+        "486123",
+        "5000"
+      ],
+      "sourceHash": "63274ab1fcbb933a8b6a5ca21bf2068854911b536f4074f94866a3f10f39d487"
+    },
+    {
+      "module": "GRHMomentCertificates.B091",
+      "r": 358,
+      "a": 128164,
+      "b": 136161,
+      "lo": 128165,
+      "w": 4,
+      "B": 250,
+      "count": 680,
+      "endpoint": 136164,
+      "bound": [
+        "991241",
+        "10000"
+      ],
+      "sourceHash": "3e1edaa8a108e7c3fd44e68d638f6c1bfcc8dadf9ccfa202208d4fc69b423a9f"
+    },
+    {
+      "module": "GRHMomentCertificates.B092",
+      "r": 369,
+      "a": 136161,
+      "b": 145161,
+      "lo": 136163,
+      "w": 4,
+      "B": 282,
+      "count": 759,
+      "endpoint": 145186,
+      "bound": [
+        "1011811",
+        "10000"
+      ],
+      "sourceHash": "dcf9dde55adae16d46d4195273bf172969915f732de94005a9e450e135534f90"
+    },
+    {
+      "module": "GRHMomentCertificates.B093",
+      "r": 381,
+      "a": 145161,
+      "b": 154449,
+      "lo": 145163,
+      "w": 4,
+      "B": 291,
+      "count": 794,
+      "endpoint": 154474,
+      "bound": [
+        "1032651",
+        "10000"
+      ],
+      "sourceHash": "74cfbaf332ecab8a44ff75c946116ae5f31e980e4b8ebd0af2fb3551b2a00873"
+    },
+    {
+      "module": "GRHMomentCertificates.B094",
+      "r": 393,
+      "a": 154449,
+      "b": 164025,
+      "lo": 154451,
+      "w": 4,
+      "B": 300,
+      "count": 791,
+      "endpoint": 164050,
+      "bound": [
+        "1052779",
+        "10000"
+      ],
+      "sourceHash": "cad1d92fbb25c6479275d2666949fc2b8334bf2aae79c12a101fa47dfbd18437"
+    },
+    {
+      "module": "GRHMomentCertificates.B095",
+      "r": 405,
+      "a": 164025,
+      "b": 174724,
+      "lo": 164027,
+      "w": 4,
+      "B": 335,
+      "count": 877,
+      "endpoint": 174746,
+      "bound": [
+        "537217",
+        "5000"
+      ],
+      "sourceHash": "9daf688c07621ae85c3462d8ff167df88615ea7b448a72655ced937aa9b91f53"
+    },
+    {
+      "module": "GRHMomentCertificates.B096",
+      "r": 418,
+      "a": 174724,
+      "b": 185761,
+      "lo": 174725,
+      "w": 4,
+      "B": 345,
+      "count": 919,
+      "endpoint": 185764,
+      "bound": [
+        "54821",
+        "500"
+      ],
+      "sourceHash": "6347ac446fa255d9665dd864d87ef35326a6ee469a33ec362664aac58ccc29c9"
+    },
+    {
+      "module": "GRHMomentCertificates.B097",
+      "r": 431,
+      "a": 185761,
+      "b": 197136,
+      "lo": 185763,
+      "w": 4,
+      "B": 356,
+      "count": 935,
+      "endpoint": 197154,
+      "bound": [
+        "559057",
+        "5000"
+      ],
+      "sourceHash": "76852c48bbdc4522c895222093c4cdc0d8b07cd80fc2a9c5a8015991176d4cbd"
+    },
+    {
+      "module": "GRHMomentCertificates.B098",
+      "r": 444,
+      "a": 197136,
+      "b": 209764,
+      "lo": 197137,
+      "w": 4,
+      "B": 395,
+      "count": 1040,
+      "endpoint": 209776,
+      "bound": [
+        "570769",
+        "5000"
+      ],
+      "sourceHash": "d5360ce8574648f84786ebae1c1b7af8e7469fae64ece25a8a98b468b00c065a"
+    },
+    {
+      "module": "GRHMomentCertificates.B099",
+      "r": 458,
+      "a": 209764,
+      "b": 222784,
+      "lo": 209765,
+      "w": 4,
+      "B": 407,
+      "count": 1053,
+      "endpoint": 222788,
+      "bound": [
+        "116453",
+        "1000"
+      ],
+      "sourceHash": "c8a956a85c054b1825f5fad4140def691195030755991a1b76bb82ae99848e9b"
+    },
+    {
+      "module": "GRHMomentCertificates.B100",
+      "r": 472,
+      "a": 222784,
+      "b": 237169,
+      "lo": 222785,
+      "w": 4,
+      "B": 450,
+      "count": 1163,
+      "endpoint": 237184,
+      "bound": [
+        "118917",
+        "1000"
+      ],
+      "sourceHash": "6879b5aee93fde47a6e8cf31251664eeeac544a3904193b0e1430a320970bc9a"
+    },
+    {
+      "module": "GRHMomentCertificates.B101",
+      "r": 487,
+      "a": 237169,
+      "b": 252004,
+      "lo": 237171,
+      "w": 4,
+      "B": 464,
+      "count": 1209,
+      "endpoint": 252018,
+      "bound": [
+        "303499",
+        "2500"
+      ],
+      "sourceHash": "841072e93f08dfd369eae890c6ef7a009ed546f3d7583da335a7eaed651341d8"
+    },
+    {
+      "module": "GRHMomentCertificates.B102",
+      "r": 502,
+      "a": 252004,
+      "b": 268324,
+      "lo": 252005,
+      "w": 4,
+      "B": 510,
+      "count": 1307,
+      "endpoint": 268324,
+      "bound": [
+        "77502",
+        "625"
+      ],
+      "sourceHash": "7a6ffbfe8fdf66bc337de48da472f0eb88d000ce877c8ee21a27824a66b6d416"
+    },
+    {
+      "module": "GRHMomentCertificates.B103",
+      "r": 518,
+      "a": 268324,
+      "b": 285156,
+      "lo": 268325,
+      "w": 4,
+      "B": 526,
+      "count": 1345,
+      "endpoint": 285156,
+      "bound": [
+        "632999",
+        "5000"
+      ],
+      "sourceHash": "08be243fe6e5e5eec8653af6836e3b88e00fc3aa26258eb185c7bb56de455c22"
+    },
+    {
+      "module": "GRHMomentCertificates.B104",
+      "r": 534,
+      "a": 285156,
+      "b": 303601,
+      "lo": 285157,
+      "w": 4,
+      "B": 577,
+      "count": 1437,
+      "endpoint": 303620,
+      "bound": [
+        "1292909",
+        "10000"
+      ],
+      "sourceHash": "c0215f03b668e374d8229caba86ad5db4b2cb3dc45b64cd03531a20af4bbc01b"
+    },
+    {
+      "module": "GRHMomentCertificates.B105",
+      "r": 551,
+      "a": 303601,
+      "b": 322624,
+      "lo": 303603,
+      "w": 4,
+      "B": 595,
+      "count": 1533,
+      "endpoint": 322642,
+      "bound": [
+        "330183",
+        "2500"
+      ],
+      "sourceHash": "83bdbe9eb697d986570d49ea9221bc43826eec2eeae99c275060aeb84a97847b"
+    },
+    {
+      "module": "GRHMomentCertificates.B106",
+      "r": 568,
+      "a": 322624,
+      "b": 343396,
+      "lo": 322625,
+      "w": 4,
+      "B": 650,
+      "count": 1636,
+      "endpoint": 343424,
+      "bound": [
+        "269907",
+        "2000"
+      ],
+      "sourceHash": "0c67d7772b5d8cc823d3541488b292e7ea5e4940d9375cf85ab3a0203f8c6c43"
+    },
+    {
+      "module": "GRHMomentCertificates.B107",
+      "r": 586,
+      "a": 343396,
+      "b": 364816,
+      "lo": 343397,
+      "w": 4,
+      "B": 670,
+      "count": 1673,
+      "endpoint": 364836,
+      "bound": [
+        "275617",
+        "2000"
+      ],
+      "sourceHash": "9e52d893277fb512dbd18bfb698f8c47df3444f89f10534ad387bd0fd482d41d"
+    },
+    {
+      "module": "GRHMomentCertificates.B108",
+      "r": 604,
+      "a": 364816,
+      "b": 388129,
+      "lo": 364817,
+      "w": 4,
+      "B": 729,
+      "count": 1792,
+      "endpoint": 388144,
+      "bound": [
+        "703877",
+        "5000"
+      ],
+      "sourceHash": "7216d58e497b0881b5e2f55a02b73f23bce1fcf45e75d3d977b01f4f5340ecdf"
+    },
+    {
+      "module": "GRHMomentCertificates.B109",
+      "r": 623,
+      "a": 388129,
+      "b": 412164,
+      "lo": 388131,
+      "w": 4,
+      "B": 752,
+      "count": 1873,
+      "endpoint": 412194,
+      "bound": [
+        "1437819",
+        "10000"
+      ],
+      "sourceHash": "1279443e81b4e91243e87ff6a050b69854670ca474f194d60074a169c8d1af72"
+    },
+    {
+      "module": "GRHMomentCertificates.B110",
+      "r": 642,
+      "a": 412164,
+      "b": 438244,
+      "lo": 412165,
+      "w": 4,
+      "B": 815,
+      "count": 2020,
+      "endpoint": 438244,
+      "bound": [
+        "367321",
+        "2500"
+      ],
+      "sourceHash": "00e60a3e1c554acce921834db9eab6245040ef6cfba390780cb920eb82be2228"
+    },
+    {
+      "module": "GRHMomentCertificates.B111",
+      "r": 662,
+      "a": 438244,
+      "b": 465124,
+      "lo": 438245,
+      "w": 4,
+      "B": 840,
+      "count": 2047,
+      "endpoint": 465124,
+      "bound": [
+        "750103",
+        "5000"
+      ],
+      "sourceHash": "600d9be2831b9652456f38c809563850828e409033851b6e325e86083a81b8c8"
+    },
+    {
+      "module": "GRHMomentCertificates.B112",
+      "r": 682,
+      "a": 465124,
+      "b": 494209,
+      "lo": 465125,
+      "w": 4,
+      "B": 909,
+      "count": 2231,
+      "endpoint": 494212,
+      "bound": [
+        "1532919",
+        "10000"
+      ],
+      "sourceHash": "76c99f286d7b83d9ac5b83cbc00e810dedbeecd38928f741188e2e561701b151"
+    },
+    {
+      "module": "GRHMomentCertificates.B113",
+      "r": 703,
+      "a": 494209,
+      "b": 525625,
+      "lo": 494211,
+      "w": 4,
+      "B": 982,
+      "count": 2407,
+      "endpoint": 525634,
+      "bound": [
+        "783579",
+        "5000"
+      ],
+      "sourceHash": "8195536a47cea268640d9d4296ccaa8786195c7c724a4585e6b353e7af16cfe5"
+    },
+    {
+      "module": "GRHMomentCertificates.B114",
+      "r": 725,
+      "a": 525625,
+      "b": 558009,
+      "lo": 525627,
+      "w": 4,
+      "B": 1012,
+      "count": 2431,
+      "endpoint": 558010,
+      "bound": [
+        "160069",
+        "1000"
+      ],
+      "sourceHash": "79fd4a0029cb2a3ade9b34ee701ae9946d21980a5e1c3bd017fae546eb5d852d"
+    },
+    {
+      "module": "GRHMomentCertificates.B115",
+      "r": 747,
+      "a": 558009,
+      "b": 592900,
+      "lo": 558011,
+      "w": 4,
+      "B": 1091,
+      "count": 2641,
+      "endpoint": 592922,
+      "bound": [
+        "327209",
+        "2000"
+      ],
+      "sourceHash": "b5ddc90d28172be3bd9175c03e6a8806219c2cc02763e7721f695aa61016f409"
+    },
+    {
+      "module": "GRHMomentCertificates.B116",
+      "r": 770,
+      "a": 592900,
+      "b": 630436,
+      "lo": 592901,
+      "w": 4,
+      "B": 1173,
+      "count": 2806,
+      "endpoint": 630436,
+      "bound": [
+        "1672487",
+        "10000"
+      ],
+      "sourceHash": "bccb15c3af85c8d5a376c4eaa9b332adebf395b974799b655999a1e980a12c4e"
+    },
+    {
+      "module": "GRHMomentCertificates.B117",
+      "r": 794,
+      "a": 630436,
+      "b": 669124,
+      "lo": 630437,
+      "w": 4,
+      "B": 1209,
+      "count": 2877,
+      "endpoint": 669124,
+      "bound": [
+        "854361",
+        "5000"
+      ],
+      "sourceHash": "041eff73cd4c80b2bef5db37ecde2bbedcd38d8df31b61055b4fc8f06e2f0800"
+    },
+    {
+      "module": "GRHMomentCertificates.B118",
+      "r": 818,
+      "a": 669124,
+      "b": 710649,
+      "lo": 669125,
+      "w": 4,
+      "B": 1298,
+      "count": 3112,
+      "endpoint": 710660,
+      "bound": [
+        "1746767",
+        "10000"
+      ],
+      "sourceHash": "40abb4d11c27808eb711cea820e40814e7f7305e96a05d1e2ae86fa8e4f7daca"
+    },
+    {
+      "module": "GRHMomentCertificates.B119",
+      "r": 843,
+      "a": 710649,
+      "b": 755161,
+      "lo": 710651,
+      "w": 4,
+      "B": 1391,
+      "count": 3273,
+      "endpoint": 755162,
+      "bound": [
+        "1785593",
+        "10000"
+      ],
+      "sourceHash": "8c1f005666e930ce44c08b807d7dce363e0bbcc8849d187b2d6e8f8a492e261c"
+    },
+    {
+      "module": "GRHMomentCertificates.B120",
+      "r": 869,
+      "a": 755161,
+      "b": 802816,
+      "lo": 755163,
+      "w": 4,
+      "B": 1490,
+      "count": 3535,
+      "endpoint": 802842,
+      "bound": [
+        "114142",
+        "625"
+      ],
+      "sourceHash": "930004a14c1ddb6d8ddb2e483cf9916c656f4cb8378e245075e9213b0d5de6d2"
+    },
+    {
+      "module": "GRHMomentCertificates.B121",
+      "r": 896,
+      "a": 802816,
+      "b": 851929,
+      "lo": 802817,
+      "w": 4,
+      "B": 1535,
+      "count": 3599,
+      "endpoint": 851936,
+      "bound": [
+        "46661",
+        "250"
+      ],
+      "sourceHash": "b301ed3c097634f3765d270d9ec6b6cbeb6ec71dd6b1faf04280da69c83d5152"
+    },
+    {
+      "module": "GRHMomentCertificates.B122",
+      "r": 923,
+      "a": 851929,
+      "b": 904401,
+      "lo": 851931,
+      "w": 4,
+      "B": 1640,
+      "count": 3822,
+      "endpoint": 904410,
+      "bound": [
+        "1907849",
+        "10000"
+      ],
+      "sourceHash": "aa7a6dd1bab5a29f7bc4d3c8adcf989464b7e8b0d72cb6f9b36dd6885fdc3273"
+    },
+    {
+      "module": "GRHMomentCertificates.B123",
+      "r": 951,
+      "a": 904401,
+      "b": 960400,
+      "lo": 904403,
+      "w": 4,
+      "B": 1750,
+      "count": 4064,
+      "endpoint": 960402,
+      "bound": [
+        "1950583",
+        "10000"
+      ],
+      "sourceHash": "eadbca041532750ffead1525975b8fec4a6f85225ded23d6a42889ad3d58d0c1"
+    },
+    {
+      "module": "GRHMomentCertificates.B124",
+      "r": 980,
+      "a": 960400,
+      "b": 1020100,
+      "lo": 960401,
+      "w": 4,
+      "B": 1866,
+      "count": 4336,
+      "endpoint": 1020112,
+      "bound": [
+        "498707",
+        "2500"
+      ],
+      "sourceHash": "b6f4a6e8f735bdf528d6764f3629f33c2c4d52920f7fe9562486cd87a919d029"
+    },
+    {
+      "module": "GRHMomentCertificates.B125",
+      "r": 1010,
+      "a": 1020100,
+      "b": 1083681,
+      "lo": 1020101,
+      "w": 4,
+      "B": 1987,
+      "count": 4559,
+      "endpoint": 1083684,
+      "bound": [
+        "2039967",
+        "10000"
+      ],
+      "sourceHash": "d11fbfa3b887bd5adf2b58744dce02ea1e29333f596d4552e58bb8db15041dfe"
+    },
+    {
+      "module": "GRHMomentCertificates.B126",
+      "r": 1041,
+      "a": 1083681,
+      "b": 1151329,
+      "lo": 1083683,
+      "w": 4,
+      "B": 2114,
+      "count": 4865,
+      "endpoint": 1151330,
+      "bound": [
+        "2086701",
+        "10000"
+      ],
+      "sourceHash": "17efb957631139b096b46f443084b39e8621ad25b9a159532667116322bb4d63"
+    },
+    {
+      "module": "GRHMomentCertificates.B127",
+      "r": 1073,
+      "a": 1151329,
+      "b": 1223236,
+      "lo": 1151331,
+      "w": 4,
+      "B": 2248,
+      "count": 5170,
+      "endpoint": 1223266,
+      "bound": [
+        "533721",
+        "2500"
+      ],
+      "sourceHash": "66864813b908c3fef64c57777ea5c59b9642c033cd1dc74f35b3894366e8274e"
+    },
+    {
+      "module": "GRHMomentCertificates.B128",
+      "r": 1106,
+      "a": 1223236,
+      "b": 1299600,
+      "lo": 1223237,
+      "w": 4,
+      "B": 2387,
+      "count": 5420,
+      "endpoint": 1299620,
+      "bound": [
+        "218389",
+        "1000"
+      ],
+      "sourceHash": "d9209acc8d67c79a630bbb399d53323ab0fcf57965a9a71d7a983cc665753de1"
+    },
+    {
+      "module": "GRHMomentCertificates.B129",
+      "r": 1140,
+      "a": 1299600,
+      "b": 1380625,
+      "lo": 1299601,
+      "w": 4,
+      "B": 2533,
+      "count": 5744,
+      "endpoint": 1380656,
+      "bound": [
+        "558569",
+        "2500"
+      ],
+      "sourceHash": "99afd234137c26a04c4a642d84496251fdd0abc91ce56b0318ac7bb57f227abc"
+    },
+    {
+      "module": "GRHMomentCertificates.B130",
+      "r": 1175,
+      "a": 1380625,
+      "b": 1466521,
+      "lo": 1380627,
+      "w": 4,
+      "B": 2685,
+      "count": 6078,
+      "endpoint": 1466546,
+      "bound": [
+        "571501",
+        "2500"
+      ],
+      "sourceHash": "90dc2591a68b5c4a243a66415f82896275847d0f9a5dcde3e346b018cf510c6b"
+    },
+    {
+      "module": "GRHMomentCertificates.B131",
+      "r": 1211,
+      "a": 1466521,
+      "b": 1557504,
+      "lo": 1466523,
+      "w": 4,
+      "B": 2844,
+      "count": 6389,
+      "endpoint": 1557530,
+      "bound": [
+        "2338763",
+        "10000"
+      ],
+      "sourceHash": "cd2e4c84bc7c99ddbba01c53e1abb302011723c6f31dcdcd0184dc56a003e64a"
+    },
+    {
+      "module": "GRHMomentCertificates.B132",
+      "r": 1248,
+      "a": 1557504,
+      "b": 1653796,
+      "lo": 1557505,
+      "w": 4,
+      "B": 3010,
+      "count": 6709,
+      "endpoint": 1653824,
+      "bound": [
+        "1196261",
+        "5000"
+      ],
+      "sourceHash": "db92ec03273f4c5c08b11a1d24328ae1d383fb85f72351ff944898282d9d6c17"
+    },
+    {
+      "module": "GRHMomentCertificates.B133",
+      "r": 1286,
+      "a": 1653796,
+      "b": 1755625,
+      "lo": 1653797,
+      "w": 4,
+      "B": 3183,
+      "count": 7100,
+      "endpoint": 1755652,
+      "bound": [
+        "611933",
+        "2500"
+      ],
+      "sourceHash": "352e71a02c7f1c0f4023ad6e3db613059cc6a1c1e60e06ae02df18811986beae"
+    },
+    {
+      "module": "GRHMomentCertificates.B134",
+      "r": 1325,
+      "a": 1755625,
+      "b": 1863225,
+      "lo": 1755627,
+      "w": 4,
+      "B": 3363,
+      "count": 7465,
+      "endpoint": 1863242,
+      "bound": [
+        "313009",
+        "1250"
+      ],
+      "sourceHash": "fda8e0148b3d10dcaf806a380cf3726f6e6c487fca862eba41f463e89ce74cfa"
+    },
+    {
+      "module": "GRHMomentCertificates.B135",
+      "r": 1365,
+      "a": 1863225,
+      "b": 1976836,
+      "lo": 1863227,
+      "w": 4,
+      "B": 3551,
+      "count": 7846,
+      "endpoint": 1976858,
+      "bound": [
+        "160097",
+        "625"
+      ],
+      "sourceHash": "96ed3b1cd5ac98db51bab56f1250d92474810a4406ca40ab9d771d291b6e8a94"
+    },
+    {
+      "module": "GRHMomentCertificates.B136",
+      "r": 1406,
+      "a": 1976836,
+      "b": 2099601,
+      "lo": 1976837,
+      "w": 4,
+      "B": 3837,
+      "count": 8468,
+      "endpoint": 2099620,
+      "bound": [
+        "131089",
+        "500"
+      ],
+      "sourceHash": "c87e4feeaf33a6ac6aa1fd8c7850a7200f90c6f2f35ac6051a2cee0c96962c61"
+    },
+    {
+      "module": "GRHMomentCertificates.B137",
+      "r": 1449,
+      "a": 2099601,
+      "b": 2229049,
+      "lo": 2099603,
+      "w": 4,
+      "B": 4046,
+      "count": 8875,
+      "endpoint": 2229074,
+      "bound": [
+        "268303",
+        "1000"
+      ],
+      "sourceHash": "b4382c98b724e2a7fb5c3d1010e373e139afdad05b9d3f4d2dee8ad7fb54f2ef"
+    },
+    {
+      "module": "GRHMomentCertificates.B138",
+      "r": 1493,
+      "a": 2229049,
+      "b": 2365444,
+      "lo": 2229051,
+      "w": 4,
+      "B": 4263,
+      "count": 9292,
+      "endpoint": 2365466,
+      "bound": [
+        "686317",
+        "2500"
+      ],
+      "sourceHash": "f47f17a3256a17b9988d506ce9881a19e6631060bb5d3395a996ade5ef24e84e"
+    },
+    {
+      "module": "GRHMomentCertificates.B139",
+      "r": 1538,
+      "a": 2365444,
+      "b": 2512225,
+      "lo": 2365445,
+      "w": 4,
+      "B": 4587,
+      "count": 9961,
+      "endpoint": 2512228,
+      "bound": [
+        "1405017",
+        "5000"
+      ],
+      "sourceHash": "08d0ea1331630d1fbca262df071e18ed8977793d338c681bc707677e2edde077"
+    },
+    {
+      "module": "GRHMomentCertificates.B140",
+      "r": 1585,
+      "a": 2512225,
+      "b": 2666689,
+      "lo": 2512227,
+      "w": 4,
+      "B": 4827,
+      "count": 10497,
+      "endpoint": 2666690,
+      "bound": [
+        "1438131",
+        "5000"
+      ],
+      "sourceHash": "c1c87d3350a902590a2f783e5a30fba273f7a74a36963d1a476914b3dfa8f03a"
+    },
+    {
+      "module": "GRHMomentCertificates.B141",
+      "r": 1633,
+      "a": 2666689,
+      "b": 2829124,
+      "lo": 2666691,
+      "w": 4,
+      "B": 5077,
+      "count": 10951,
+      "endpoint": 2829154,
+      "bound": [
+        "2943323",
+        "10000"
+      ],
+      "sourceHash": "ddbebf34183e33aaed6eaf9890240e3ee88801754df7a2d04b900664d5582868"
+    },
+    {
+      "module": "GRHMomentCertificates.B142",
+      "r": 1682,
+      "a": 2829124,
+      "b": 3003289,
+      "lo": 2829125,
+      "w": 4,
+      "B": 5443,
+      "count": 11690,
+      "endpoint": 3003300,
+      "bound": [
+        "376603",
+        "1250"
+      ],
+      "sourceHash": "84ecc0f71cd232e02180b47741fcd9b87aa490b19fccee87622e287f698ec233"
+    },
+    {
+      "module": "GRHMomentCertificates.B143",
+      "r": 1733,
+      "a": 3003289,
+      "b": 3186225,
+      "lo": 3003291,
+      "w": 4,
+      "B": 5717,
+      "count": 12233,
+      "endpoint": 3186234,
+      "bound": [
+        "3083413",
+        "10000"
+      ],
+      "sourceHash": "045207102647bab29bee3d1d35dce6891c2476e82586609ee9d8be48508f36ba"
+    },
+    {
+      "module": "GRHMomentCertificates.B144",
+      "r": 1785,
+      "a": 3186225,
+      "b": 3381921,
+      "lo": 3186227,
+      "w": 4,
+      "B": 6116,
+      "count": 13060,
+      "endpoint": 3381938,
+      "bound": [
+        "3156579",
+        "10000"
+      ],
+      "sourceHash": "f0c3de52aec8790641bc68988fc23063a908540442484c26e7fdf4a1d5dba589"
+    },
+    {
+      "module": "GRHMomentCertificates.B145",
+      "r": 1839,
+      "a": 3381921,
+      "b": 3591025,
+      "lo": 3381923,
+      "w": 4,
+      "B": 6535,
+      "count": 13803,
+      "endpoint": 3591042,
+      "bound": [
+        "3231637",
+        "10000"
+      ],
+      "sourceHash": "22e0052754d25d73930b098142d6b91cbecef58a4acdedba19aceb4dd7a641d5"
+    },
+    {
+      "module": "GRHMomentCertificates.B146",
+      "r": 1895,
+      "a": 3591025,
+      "b": 3810304,
+      "lo": 3591027,
+      "w": 4,
+      "B": 6853,
+      "count": 14535,
+      "endpoint": 3810322,
+      "bound": [
+        "3308339",
+        "10000"
+      ],
+      "sourceHash": "3aed1c83899350f028a75c8e8d6e1c14c7b6f505edd937e5ea86660f3cf9387b"
+    },
+    {
+      "module": "GRHMomentCertificates.B147",
+      "r": 1952,
+      "a": 3810304,
+      "b": 4000000,
+      "lo": 3810305,
+      "w": 4,
+      "B": 5928,
+      "count": 12479,
+      "endpoint": 4000000,
+      "bound": [
+        "3372269",
+        "10000"
+      ],
+      "sourceHash": "c6ca0c7f0dd638886c736e4c1294d0e4e35138166325df67cdcfd89debdfd6e8"
+    }
+  ]
+}

@@ -1,6 +1,28 @@
-# Full Dirichlet GRH route: completed H < 12.2 Chen theorem
+# Full Dirichlet GRH route: completed H < 12 Chen theorem
 
-The current exact cutoff is **3^180000**, with H approximately
+The current exact cutoff is **3^145000**, with H approximately
+**11.97853684902** and a Lean proof that it is below exp(exp(12)).
+The exact theorem is ChenEffective.GRHSub12.chen_explicit. Its original_chen
+corollary has exactly the original Goldbach.ChenTheorem type.
+
+The actual lower and complete triple coefficients are 2.01025 and 4.010,
+leaving representation margin 0.00525. Full Dirichlet GRH remains the sole
+added axiom. No native_decide or new dependency is used.
+
+See [the complete proof and budget](NUMERICAL_CHEN_SUB12.md),
+[the final theorem and audit](AuditGRHSub12Chen.lean),
+[the source/object report](FINAL_GRHSub12_CHEN_AUDIT.json), and
+[the certified moment assembly](GRHSub12Moments.lean).
+The analytic assembly is GRHSub12Analytic.lean. The 148 new interval
+certificates total less than 0.7 MB of source; all are checked in the Lean
+kernel. The earlier large finite campaign is reused (15+ hours for its
+initial source build). Complete certificate-inclusive audits have required
+20–22 GiB of private committed memory for Lean alone.
+
+## Earlier H < 12.2 development
+
+
+The earlier exact cutoff is **3^180000**, with H approximately
 **12.19475995749** and a Lean proof that it is below exp(exp(12.2)).
 The exact theorem is ChenEffective.GRH122.chen_explicit. Its original_chen
 corollary has exactly the original Goldbach.ChenTheorem type.

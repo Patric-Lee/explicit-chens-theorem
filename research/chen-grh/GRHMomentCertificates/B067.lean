@@ -1,0 +1,13 @@
+import GRHMomentCountKernel
+namespace ChenEffective.GRHSub12.MomentCertificates.B067
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+
+def packed : Nat := 8229269817355174284462239220227795572651121196534270300437955380959797399625671137834830395575274137933784921414830187334240149482032045288991633107239690187331690896249958546670882723692926200087630943297935700800425456743386390195716699866108678240483823139394435501513750675906638895005431686035144708
+
+theorem count_checked : Nat.beq (ChenEffective.PlattWindow.segmentCounts 27891 4 64) packed = true := by
+  decide +kernel
+
+theorem sum_checked : Nat.beq (ChenEffective.GRHSub12.sumFields 4 packed 64) 198 = true := by
+  decide +kernel
+end ChenEffective.GRHSub12.MomentCertificates.B067
