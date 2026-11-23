@@ -7,7 +7,7 @@ H < 13 release. The proof is in
 
 The standalone audit below records the input as first checked at the
 H < 13 cutoff 3^400000. It has since been propagated into the
-[complete H < 12.5 theorem](NUMERICAL_CHEN_H125.md), at 3^240000. Its original
+[complete H < 12.2 theorem](NUMERICAL_CHEN_H122.md), at 3^180000. Its original
 audit report is retained as a historical record of the input check.
 
 ## Uniform prime-character prefixes

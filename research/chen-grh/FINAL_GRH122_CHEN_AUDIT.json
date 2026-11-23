@@ -1,0 +1,66 @@
+{
+  "classification": "GRH_ONLY_H122_COMPLETE_CHEN_KERNEL_CHECKED",
+  "checkedAt": "2026-11-23T00:44:54.420Z",
+  "configurationHash": "61c2101d06819752132a2240c5bfb306c9aa35370f8ea8fb4da425b44fcca4b8",
+  "theorem": "ChenEffective.GRH122.chen",
+  "lowerTheorem": "ChenEffective.GRH122.weighted_lower",
+  "tripleTheorem": "ChenEffective.GRH122.triple_upper",
+  "cutoff": "3^180000",
+  "lowerCoefficient": "2.01875",
+  "tripleCoefficient": "4.006",
+  "representationMargin": "0.01575",
+  "HUpperStrict": 12.2,
+  "HApproximate": 12.194759957489046,
+  "rootMomentCap": 465,
+  "densityMomentExponent": 476,
+  "logLowerBound": 197000,
+  "selbergCoefficient": "8.041",
+  "squareAllowance": "1/1000",
+  "tripleResidualAllowance": "1/5000",
+  "pairProxyCoefficient": "0.49654",
+  "baseLoss": "67/1000",
+  "mediumLoss": "111/100",
+  "endpointLoss": "1/20000",
+  "presieveStart": 4000000,
+  "presieveTruncation": "floor(N^(31/5000))",
+  "distributionLevel": "N^(199/400)",
+  "selbergRemainderCap": 30000000,
+  "compensatedMediumShiftConstant": 40,
+  "externalAxiom": "ChenEffective.GRH.alpoge_dirichlet_grh",
+  "axiomDeclarations": [
+    {
+      "module": "GRHAssumption",
+      "name": "alpoge_dirichlet_grh"
+    }
+  ],
+  "directPackages": [
+    "LeanArchitect",
+    "mathlib"
+  ],
+  "H122ExistenceStatus": "PROVED: actual lower and complete corrected triple estimates, with implicit recovery",
+  "localModules": 86686,
+  "sourceObjectManifestHash": "0d29456906605d88ad8598384f84d398aa281c267849e6ee4f4d5f61f879f7fd",
+  "auditLog": "Original Chen axiom closure: [propext, Classical.choice, Quot.sound, ChenEffective.GRH.alpoge_dirichlet_grh]\nGRH H122 complete Chen audit passed: 1517008 transitive constants.\nActual lower coefficient 2.01875 and triple coefficient 4.006 at 3^180000.\nFull explicit Chen existence and implicit recovery; sole added axiom is full Dirichlet GRH.",
+  "numericalLowerModules": [
+    {
+      "module": "AuditGRH122Chen",
+      "sourceHash": "7ef553907db0730e6679c4cad4ee132891d9b5aa93930537a90cacf7987e7bf8",
+      "objectHash": "18882f99099f61db55d31026964b8f088ce2f47198efb238c619e18c4a1f246c"
+    },
+    {
+      "module": "GRH122Analytic",
+      "sourceHash": "d4e36b795c7a0c21951925cd1e16c069ca169bfa3a7a7d87719ea52edcddd787",
+      "objectHash": "f97c8384c3f441f137a11371646a9baa9a6af27c65cb5ad5e8e0a1d648569065"
+    },
+    {
+      "module": "GRH122Moments",
+      "sourceHash": "9303fc0652f4590593a57ff38b2fc1f3edfc4b4f3bb7be9d7dc96259f15c837e",
+      "objectHash": "20569afc0503efc86f79831213cf8a6a5a3716416b970e37e98575bae9e21095"
+    },
+    {
+      "module": "GRHJointBounds",
+      "sourceHash": "675759b8b4ab65161842ec6bee0139a3ced5f62eda52a8abcabfa80879455b84",
+      "objectHash": "59a17a6012f0ef8903b1768602bec5bf73199523df8dd25a8a76ce8745ca83b4"
+    }
+  ]
+}
