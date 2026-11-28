@@ -1,0 +1,16 @@
+{
+  "classification": "LEAN_ARITHMETIC_CONTRACTS_ONLY_CHECKED_NOT_ANALYTIC_ESTIMATES",
+  "checkedAt": "2026-11-23T06:10:26.911Z",
+  "sourceHash": "ce5c89ffe359800cf0bb1b5f3eaed08c4831a1bb23fe5a4af1238bf90370bd1d",
+  "objectHash": "ee6b0bb273e45917239d14d436f12c41f03fee93593c5bf8db2fd7abf4126d8a",
+  "toolchain": "leanprover/lean4:v4.34.1",
+  "manifestHash": "f03cd56239c709215270058df0be3099c3be35007b6f387687a68aa17a525355",
+  "command": "lake env lean -j1 -M3000 -o .lake/build-434/lib/lean/GRHFiniteScaleBudget.olean research/chen-grh/GRHFiniteScaleBudget.lean",
+  "axiomSet": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "log": "'ChenEffective.FiniteScaleStudy.cost_H11' depends on axioms: [propext, Classical.choice, Quot.sound]\r\n'ChenEffective.FiniteScaleStudy.cost_H10' depends on axioms: [propext, Classical.choice, Quot.sound]\r\n'ChenEffective.FiniteScaleStudy.cost_H9' depends on axioms: [propext, Classical.choice, Quot.sound]\r\n'ChenEffective.FiniteScaleStudy.cost_H8' depends on axioms: [propext, Classical.choice, Quot.sound]\r\n'ChenEffective.FiniteScaleStudy.positive_of_actual_count_bounds' depends on axioms: [propext,\r\n Classical.choice,\r\n Quot.sound]\r\n'ChenEffective.FiniteScaleStudy.exact_margins' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "note": "Only antitonicity, exact residual budgets and conditional counting algebra are checked. No Chen theorem at H11/H10/H9/H8 is asserted."
+}

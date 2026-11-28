@@ -1,0 +1,2971 @@
+{
+  "classification": "SPECIALIZED_FINITE_SCALE_BUDGET_STUDY_NOT_A_LEAN_CHEN_PROOF",
+  "assumptionsPolicy": {
+    "soleAllowedExternalAxiom": "ChenEffective.GRH.alpoge_dirichlet_grh",
+    "newAxioms": 0,
+    "nativeDecide": false,
+    "newDependencies": 0,
+    "note": "Proposed analytic bounds below are research obligations, not axioms or imported facts."
+  },
+  "baseline": {
+    "cutoff": "3^145000",
+    "H": 11.97853684901941,
+    "manifest": "97f53dc5e455a510a078050be2ce10dec838bba36fbd6e3adb52cea7c399efa8"
+  },
+  "sourceHashes": {
+    "GRHSub12Analytic.lean": "f486315b97c94bae397aadbe08d0f9e740730742bc383f4d832bcf806c99d573",
+    "GRHSub12Moments.lean": "909d9bb3cbe2eea2abf5a4ccc566590d8cd43cb9af9b76bf032db02be52febb2",
+    "GRHTruncatedPreSieve.lean": "c9f15815ecda86b4a1eaa8d89f25b71f094629a045bfc95540406e00c106af6f",
+    "GRHFiniteScaleBudget.lean": "ce5c89ffe359800cf0bb1b5f3eaed08c4831a1bb23fe5a4af1238bf90370bd1d"
+  },
+  "numericalStudyScriptHash": "e87f4c9fab2c008301e4c2607f5e158ae38db85ba4f6d49f4d3c5285e65382d5",
+  "equations": {
+    "tail": "Ct L^pt exp(Msigma + sigma log 2 - sigma theta L) <= tau",
+    "distribution": "Cd L^pd exp(-(delta-kappa)L) <= tau",
+    "geometry": "g >= 10(theta+delta)+10 log(2)/L; g <= .1",
+    "primeInterval": "eta(L)=(135/L+1200/L^2) exp(-L/160)",
+    "mediumMesh": "196/n+192 n eta",
+    "pairMesh": "759/n+30 n eta+5 n^2 eta^2",
+    "lower": "2.6408-baseLoss-mediumLoss/2-endpointLoss",
+    "triple": "K pair + 2 C5/L^3 + 38/L",
+    "margin": "lower-triple/2 > 0",
+    "frontier": "(log Ct+pt log L+Msigma+log(1/tau))/sigma + log Cd+pd log L+log(1/tau)+kappa L+2 log 2 <= g L/10"
+  },
+  "analyticObligations": [
+    "Prove variable-sigma Rankin tail for the actual base and conditioned source remainders, with the proposed polynomial prefactor.",
+    "Kernel-certify finite Euler-product log caps; the JavaScript sieve and floating sums are only proposals.",
+    "Retain the power-decaying theta interval error and prove it for the actual rpowFloor prime carriers and all grid boundaries.",
+    "Prove the sharp weighted distribution envelope for the actual sources; a pointwise AP theorem alone is insufficient.",
+    "Replace the Pan 39-log-level interface and prove the full weighted convolution/QD Selberg remainder with C5 <= 30000000 at the target.",
+    "Pay source lower/upper mass with the stated losses at the target; current thresholds remain far larger.",
+    "Replace the expanded singular-series cap by S(N) <= 10 log N (or an equally strong bound), and retune the floor reserve. This already pays the existing exp(1096) kernel prefactor at H10 in the numerical model.",
+    "Prove actual medium and pair inequalities and all-real uniformity for every L >= L0, not only at the endpoint.",
+    "If z=300000, prove the relative Goldbach product bound at the same sieve tolerance; small prime moments alone do not justify it."
+  ],
+  "contracts": [
+    {
+      "H": 11,
+      "logLower": 59874,
+      "baseLoss": "17/250",
+      "mediumLoss": "28/25",
+      "endpointLoss": "1/20000",
+      "lower": "8051/4000",
+      "K": "403/50",
+      "pair": "99/200",
+      "C5": "30000000",
+      "normalizedSquare": "60000000/L^3",
+      "normalizedComplement": "38/L",
+      "tripleCap": "3991/1000",
+      "margin": "69/4000",
+      "status": "EXACT_ARITHMETIC_CONTRACT_ANALYTIC_PREMISES_NOT_PROVED"
+    },
+    {
+      "H": 10,
+      "logLower": 22026,
+      "baseLoss": "17/250",
+      "mediumLoss": "28/25",
+      "endpointLoss": "1/20000",
+      "lower": "8051/4000",
+      "K": "403/50",
+      "pair": "99/200",
+      "C5": "30000000",
+      "normalizedSquare": "60000000/L^3",
+      "normalizedComplement": "38/L",
+      "tripleCap": "3992/1000",
+      "margin": "67/4000",
+      "status": "EXACT_ARITHMETIC_CONTRACT_ANALYTIC_PREMISES_NOT_PROVED"
+    },
+    {
+      "H": 9,
+      "logLower": 8103,
+      "baseLoss": "17/250",
+      "mediumLoss": "28/25",
+      "endpointLoss": "1/20000",
+      "lower": "8051/4000",
+      "K": "403/50",
+      "pair": "99/200",
+      "C5": "30000000",
+      "normalizedSquare": "60000000/L^3",
+      "normalizedComplement": "38/L",
+      "tripleCap": "3995/1000",
+      "margin": "61/4000",
+      "status": "EXACT_ARITHMETIC_CONTRACT_ANALYTIC_PREMISES_NOT_PROVED"
+    },
+    {
+      "H": 8,
+      "logLower": 2980,
+      "baseLoss": "17/250",
+      "mediumLoss": "28/25",
+      "endpointLoss": "1/20000",
+      "lower": "8051/4000",
+      "K": "403/50",
+      "pair": "99/200",
+      "C5": "30000000",
+      "normalizedSquare": "60000000/L^3",
+      "normalizedComplement": "38/L",
+      "tripleCap": "4005/1000",
+      "margin": "41/4000",
+      "status": "EXACT_ARITHMETIC_CONTRACT_ANALYTIC_PREMISES_NOT_PROVED"
+    }
+  ],
+  "current": [
+    {
+      "H": 11,
+      "L": 59874,
+      "legacyPanMinimumGap": 0.007165045056140936,
+      "legacyPanMinimumShiftEvenWithNoTruncation": 0.07165045056140935,
+      "presieveLogError": 248.52907054891742,
+      "weightedAPLogError": -2.440919177508974,
+      "inverseLogInterval": 2.7894812976152393e-10,
+      "powerInterval": 6.834962824923234e-166,
+      "inverseLogMeshes": {
+        "mediumGrid": 60495,
+        "mediumError": 0.006479930869996604,
+        "pairGrid": 301161,
+        "pairError": 0.005040530863665712
+      },
+      "powerMeshes": {
+        "mediumGrid": 10000000,
+        "mediumError": 0.0000196,
+        "pairGrid": 10000000,
+        "pairError": 0.0000759
+      },
+      "currentC5Normalized": 2.795351535840504e-7,
+      "complementNormalized": 0.0006346661322109764,
+      "denominatorAAllowed": 887.2834441361659,
+      "denominatorLogErrorWithLinearSingularCap": -2584.5746114100593,
+      "mediumPrimeReciprocalCurrentMajorant": 14339583504,
+      "mediumPrimeReciprocalProposedMajorant": 1.2039728043259361,
+      "inheritedThresholdFailures": [
+        {
+          "name": "lowerSourceProduct",
+          "logThreshold": 120858.33787637873
+        },
+        {
+          "name": "upperSourceMass",
+          "logThreshold": 145017.92071647913
+        },
+        {
+          "name": "floorReserveCoarse",
+          "logThreshold": 150000
+        },
+        {
+          "name": "genericLogCutoffDegree90",
+          "logThreshold": 145561.73379936983
+        },
+        {
+          "name": "LiRemainderAllocatedAs1over3000",
+          "logThreshold": 135000
+        }
+      ],
+      "finalCutoffProved": false
+    },
+    {
+      "H": 10,
+      "L": 22026,
+      "legacyPanMinimumGap": 0.017706309600302853,
+      "legacyPanMinimumShiftEvenWithNoTruncation": 0.17706309600302853,
+      "presieveLogError": 352.2881578665925,
+      "weightedAPLogError": 66.25494935977866,
+      "inverseLogInterval": 2.0612407998475077e-9,
+      "powerInterval": 1.0034812188159521e-62,
+      "inverseLogMeshes": {
+        "mediumGrid": 22255,
+        "mediumError": 0.017614609148866797,
+        "pairGrid": 110789,
+        "pairError": 0.013702005602097096
+      },
+      "powerMeshes": {
+        "mediumGrid": 10000000,
+        "mediumError": 0.0000196,
+        "pairGrid": 10000000,
+        "pairError": 0.0000759
+      },
+      "currentC5Normalized": 0.000005614929991412443,
+      "complementNormalized": 0.0017252338145827659,
+      "denominatorAAllowed": 324.2944441361661,
+      "denominatorLogErrorWithLinearSingularCap": -248.46063019044686,
+      "mediumPrimeReciprocalCurrentMajorant": 1940578704,
+      "mediumPrimeReciprocalProposedMajorant": 1.2039728043259361,
+      "inheritedThresholdFailures": [
+        {
+          "name": "lowerSourceProduct",
+          "logThreshold": 120858.33787637873
+        },
+        {
+          "name": "upperSourceMass",
+          "logThreshold": 145017.92071647913
+        },
+        {
+          "name": "floorReserveCoarse",
+          "logThreshold": 150000
+        },
+        {
+          "name": "genericLogCutoffDegree90",
+          "logThreshold": 145561.73379936983
+        },
+        {
+          "name": "LiRemainderAllocatedAs1over3000",
+          "logThreshold": 135000
+        }
+      ],
+      "finalCutoffProved": false
+    },
+    {
+      "H": 9,
+      "L": 8103,
+      "legacyPanMinimumGap": 0.043317240041462216,
+      "legacyPanMinimumShiftEvenWithNoTruncation": 0.4331724004146221,
+      "presieveLogError": 386.6649226050075,
+      "weightedAPLogError": 87.10102488792954,
+      "inverseLogInterval": 1.5230295238207072e-8,
+      "powerInterval": 1.6899074328649244e-24,
+      "inverseLogMeshes": {
+        "mediumGrid": 8187,
+        "mediumError": 0.04788095531258012,
+        "pairGrid": 40758,
+        "pairError": 0.037246728888554556
+      },
+      "powerMeshes": {
+        "mediumGrid": 10000000,
+        "mediumError": 0.00001960000000324462,
+        "pairGrid": 10000000,
+        "pairError": 0.00007590000000050697
+      },
+      "currentC5Normalized": 0.00011277523315962289,
+      "complementNormalized": 0.0046896211279772925,
+      "denominatorAAllowed": 117.18981913616602,
+      "denominatorLogErrorWithLinearSingularCap": 610.2846305992889,
+      "mediumPrimeReciprocalCurrentMajorant": 262634436,
+      "mediumPrimeReciprocalProposedMajorant": 1.2039728043259361,
+      "inheritedThresholdFailures": [
+        {
+          "name": "lowerSourceProduct",
+          "logThreshold": 120858.33787637873
+        },
+        {
+          "name": "upperSourceMass",
+          "logThreshold": 145017.92071647913
+        },
+        {
+          "name": "floorReserveCoarse",
+          "logThreshold": 150000
+        },
+        {
+          "name": "genericLogCutoffDegree90",
+          "logThreshold": 145561.73379936983
+        },
+        {
+          "name": "LiRemainderAllocatedAs1over3000",
+          "logThreshold": 135000
+        }
+      ],
+      "finalCutoffProved": false
+    },
+    {
+      "H": 8,
+      "L": 2980,
+      "legacyPanMinimumGap": 0.10469378006727469,
+      "legacyPanMinimumShiftEvenWithNoTruncation": 1.0469378006727468,
+      "presieveLogError": 395.51975622723984,
+      "weightedAPLogError": 90.34484744720062,
+      "inverseLogInterval": 1.1260754020089185e-7,
+      "powerInterval": 3.7040452663041215e-10,
+      "inverseLogMeshes": {
+        "mediumGrid": 3011,
+        "mediumError": 0.13019442321984084,
+        "pairGrid": 14990,
+        "pairError": 0.10128761316659281
+      },
+      "powerMeshes": {
+        "mediumGrid": 52498,
+        "mediumError": 0.0074670109540700795,
+        "pairGrid": 261350,
+        "pairError": 0.0058083550682507
+      },
+      "currentC5Normalized": 0.0022672659100850708,
+      "complementNormalized": 0.012751677852348993,
+      "denominatorAAllowed": 40.98519413616604,
+      "denominatorLogErrorWithLinearSingularCap": 925.6295695363277,
+      "mediumPrimeReciprocalCurrentMajorant": 35521600,
+      "mediumPrimeReciprocalProposedMajorant": 1.2039728046963407,
+      "inheritedThresholdFailures": [
+        {
+          "name": "lowerSourceProduct",
+          "logThreshold": 120858.33787637873
+        },
+        {
+          "name": "upperSourceMass",
+          "logThreshold": 145017.92071647913
+        },
+        {
+          "name": "floorReserveCoarse",
+          "logThreshold": 150000
+        },
+        {
+          "name": "genericLogCutoffDegree90",
+          "logThreshold": 145561.73379936983
+        },
+        {
+          "name": "LiRemainderAllocatedAs1over3000",
+          "logThreshold": 135000
+        }
+      ],
+      "finalCutoffProved": false
+    }
+  ],
+  "moments": [
+    {
+      "z": 4000000,
+      "sigma": 0.025,
+      "logMomentApproximate": 3.4356728700567096,
+      "proposedLogCap": 3.44,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.05,
+      "logMomentApproximate": 3.923943380454533,
+      "proposedLogCap": 3.93,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.075,
+      "logMomentApproximate": 4.534209058211658,
+      "proposedLogCap": 4.54,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.1,
+      "logMomentApproximate": 5.304931996761324,
+      "proposedLogCap": 5.31,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.125,
+      "logMomentApproximate": 6.288067841307954,
+      "proposedLogCap": 6.29,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.15,
+      "logMomentApproximate": 7.554092618221001,
+      "proposedLogCap": 7.56,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.175,
+      "logMomentApproximate": 9.19897546232112,
+      "proposedLogCap": 9.2,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.2,
+      "logMomentApproximate": 11.353870771561564,
+      "proposedLogCap": 11.36,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.225,
+      "logMomentApproximate": 14.198616801538657,
+      "proposedLogCap": 14.2,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.25,
+      "logMomentApproximate": 17.980570064951014,
+      "proposedLogCap": 17.99,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.275,
+      "logMomentApproximate": 23.040929642443103,
+      "proposedLogCap": 23.05,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.3,
+      "logMomentApproximate": 29.85158851592616,
+      "proposedLogCap": 29.86,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.325,
+      "logMomentApproximate": 39.066797865987766,
+      "proposedLogCap": 39.07,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.35,
+      "logMomentApproximate": 51.59569735896113,
+      "proposedLogCap": 51.6,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.375,
+      "logMomentApproximate": 68.70426561583241,
+      "proposedLogCap": 68.71,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.4,
+      "logMomentApproximate": 92.15878547506497,
+      "proposedLogCap": 92.16,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.425,
+      "logMomentApproximate": 124.42792884783809,
+      "proposedLogCap": 124.43,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.45,
+      "logMomentApproximate": 168.96765113946222,
+      "proposedLogCap": 168.97,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.475,
+      "logMomentApproximate": 230.62309173617115,
+      "proposedLogCap": 230.63,
+      "certified": false
+    },
+    {
+      "z": 4000000,
+      "sigma": 0.5,
+      "logMomentApproximate": 316.19577920107,
+      "proposedLogCap": 316.2,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.025,
+      "logMomentApproximate": 3.168822970170932,
+      "proposedLogCap": 3.17,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.05,
+      "logMomentApproximate": 3.546335023653989,
+      "proposedLogCap": 3.55,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.075,
+      "logMomentApproximate": 3.9996839406100664,
+      "proposedLogCap": 4,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.1,
+      "logMomentApproximate": 4.5480178738811,
+      "proposedLogCap": 4.55,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.125,
+      "logMomentApproximate": 5.215864886736587,
+      "proposedLogCap": 5.22,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.15,
+      "logMomentApproximate": 6.03473801724639,
+      "proposedLogCap": 6.04,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.175,
+      "logMomentApproximate": 7.04523771285468,
+      "proposedLogCap": 7.05,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.2,
+      "logMomentApproximate": 8.299809734557984,
+      "proposedLogCap": 8.3,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.225,
+      "logMomentApproximate": 9.866367750250005,
+      "proposedLogCap": 9.87,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.25,
+      "logMomentApproximate": 11.833057646682,
+      "proposedLogCap": 11.84,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.275,
+      "logMomentApproximate": 14.314530539544148,
+      "proposedLogCap": 14.32,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.3,
+      "logMomentApproximate": 17.460210752884457,
+      "proposedLogCap": 17.47,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.325,
+      "logMomentApproximate": 21.465203157562488,
+      "proposedLogCap": 21.47,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.35,
+      "logMomentApproximate": 26.584693640987766,
+      "proposedLogCap": 26.59,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.375,
+      "logMomentApproximate": 33.15297333422865,
+      "proposedLogCap": 33.16,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.4,
+      "logMomentApproximate": 41.60858248251486,
+      "proposedLogCap": 41.61,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.425,
+      "logMomentApproximate": 52.52755021567832,
+      "proposedLogCap": 52.53,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.45,
+      "logMomentApproximate": 66.66733540385835,
+      "proposedLogCap": 66.67,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.475,
+      "logMomentApproximate": 85.02489202689064,
+      "proposedLogCap": 85.03,
+      "certified": false
+    },
+    {
+      "z": 300000,
+      "sigma": 0.5,
+      "logMomentApproximate": 108.91333758050716,
+      "proposedLogCap": 108.92,
+      "certified": false
+    }
+  ],
+  "profiles": [
+    {
+      "id": "qsum_cleanup_retaining_Pan",
+      "tailC": 102,
+      "tailP": 4,
+      "apC": 320000000000000000,
+      "apP": 7,
+      "kappa": 0.001,
+      "tau": 0.0001,
+      "retainPan": true
+    },
+    {
+      "id": "variable_rankin_existing_powers",
+      "tailC": 336,
+      "tailP": 6,
+      "apC": 320000000000000000,
+      "apP": 7,
+      "kappa": 0.001,
+      "tau": 0.000001
+    },
+    {
+      "id": "linear_tail_existing_AP",
+      "tailC": 336,
+      "tailP": 1,
+      "apC": 320000000000000000,
+      "apP": 7,
+      "kappa": 0.001,
+      "tau": 0.000001
+    },
+    {
+      "id": "linear_tail_sharp_distribution",
+      "tailC": 16,
+      "tailP": 1,
+      "apC": 10,
+      "apP": 4,
+      "kappa": 0,
+      "tau": 0.0001
+    },
+    {
+      "id": "quadratic_tail_sharp_distribution",
+      "tailC": 16,
+      "tailP": 2,
+      "apC": 10,
+      "apP": 4,
+      "kappa": 0,
+      "tau": 0.0001
+    },
+    {
+      "id": "optimistic_stress_test",
+      "tailC": 1,
+      "tailP": 0,
+      "apC": 1,
+      "apP": 2,
+      "kappa": 0,
+      "tau": 0.0001
+    }
+  ],
+  "comparisons": [
+    {
+      "H": 11,
+      "z": 4000000,
+      "profile": "qsum_cleanup_retaining_Pan",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.3,
+        "g": 0.121,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 11,
+      "z": 300000,
+      "profile": "qsum_cleanup_retaining_Pan",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.325,
+        "g": 0.113,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 11,
+      "z": 4000000,
+      "profile": "variable_rankin_existing_powers",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 4,
+      "bestPositive": {
+        "H": 11,
+        "L": 59874,
+        "z": 4000000,
+        "sigma": 0.3,
+        "proposedMomentLogCap": 29.86,
+        "profile": "variable_rankin_existing_powers",
+        "theta": 0.00645,
+        "delta": 0.00319,
+        "g": 0.097,
+        "K": 8.053,
+        "pair": 0.493368,
+        "base": 0.065334,
+        "medium": 1.105126,
+        "lower": 2.022853,
+        "triple": 3.973727449667365,
+        "margin": 0.03598927516631756,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.169683,
+          "hat": 0.539258
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -13.971148887194609,
+        "apLog": -13.816979177508983,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 884.439429136166,
+        "denominatorLogErrorWithLinearSingularCap": -2581.7305964100597,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": false
+      },
+      "bestWithinGeometry": {
+        "H": 11,
+        "L": 59874,
+        "z": 4000000,
+        "sigma": 0.3,
+        "proposedMomentLogCap": 29.86,
+        "profile": "variable_rankin_existing_powers",
+        "theta": 0.00645,
+        "delta": 0.00319,
+        "g": 0.097,
+        "K": 8.053,
+        "pair": 0.493368,
+        "base": 0.065334,
+        "medium": 1.105126,
+        "lower": 2.022853,
+        "triple": 3.973727449667365,
+        "margin": 0.03598927516631756,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.169683,
+          "hat": 0.539258
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -13.971148887194609,
+        "apLog": -13.816979177508983,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 884.439429136166,
+        "denominatorLogErrorWithLinearSingularCap": -2581.7305964100597,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": false
+      },
+      "leastShift": {
+        "sigma": 0.3,
+        "g": 0.097,
+        "marginWithinSupportedGeometry": 0.03598927516631756
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 11,
+      "z": 300000,
+      "profile": "variable_rankin_existing_powers",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 11,
+      "bestPositive": {
+        "H": 11,
+        "L": 59874,
+        "z": 300000,
+        "sigma": 0.35,
+        "proposedMomentLogCap": 26.59,
+        "profile": "variable_rankin_existing_powers",
+        "theta": 0.00537,
+        "delta": 0.00319,
+        "g": 0.086,
+        "K": 8.053,
+        "pair": 0.493368,
+        "base": 0.060824,
+        "medium": 1.020268,
+        "lower": 2.069792,
+        "triple": 3.973727449667365,
+        "margin": 0.08292827516631762,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.168138,
+          "hat": 0.53449
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -13.883484528166607,
+        "apLog": -13.816979177508983,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 884.439429136166,
+        "denominatorLogErrorWithLinearSingularCap": -2581.7305964100597,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": true
+      },
+      "bestWithinGeometry": {
+        "H": 11,
+        "L": 59874,
+        "z": 300000,
+        "sigma": 0.35,
+        "proposedMomentLogCap": 26.59,
+        "profile": "variable_rankin_existing_powers",
+        "theta": 0.00537,
+        "delta": 0.00319,
+        "g": 0.086,
+        "K": 8.053,
+        "pair": 0.493368,
+        "base": 0.060824,
+        "medium": 1.020268,
+        "lower": 2.069792,
+        "triple": 3.973727449667365,
+        "margin": 0.08292827516631762,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.168138,
+          "hat": 0.53449
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -13.883484528166607,
+        "apLog": -13.816979177508983,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 884.439429136166,
+        "denominatorLogErrorWithLinearSingularCap": -2581.7305964100597,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": true
+      },
+      "leastShift": {
+        "sigma": 0.35,
+        "g": 0.086,
+        "marginWithinSupportedGeometry": 0.08292827516631762
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 11,
+      "z": 4000000,
+      "profile": "linear_tail_existing_AP",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 14,
+      "bestPositive": {
+        "H": 11,
+        "L": 59874,
+        "z": 4000000,
+        "sigma": 0.25,
+        "proposedMomentLogCap": 17.99,
+        "profile": "linear_tail_existing_AP",
+        "theta": 0.00326,
+        "delta": 0.00319,
+        "g": 0.065,
+        "K": 8.053,
+        "pair": 0.493368,
+        "base": 0.052214,
+        "medium": 0.862348,
+        "lower": 2.157362,
+        "triple": 3.973727449667365,
+        "margin": 0.17049827516631755,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.165251,
+          "hat": 0.525481
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -13.816914411784438,
+        "apLog": -13.816979177508983,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 884.439429136166,
+        "denominatorLogErrorWithLinearSingularCap": -2581.7305964100597,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": false
+      },
+      "bestWithinGeometry": {
+        "H": 11,
+        "L": 59874,
+        "z": 4000000,
+        "sigma": 0.25,
+        "proposedMomentLogCap": 17.99,
+        "profile": "linear_tail_existing_AP",
+        "theta": 0.00326,
+        "delta": 0.00319,
+        "g": 0.065,
+        "K": 8.053,
+        "pair": 0.493368,
+        "base": 0.052214,
+        "medium": 0.862348,
+        "lower": 2.157362,
+        "triple": 3.973727449667365,
+        "margin": 0.17049827516631755,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.165251,
+          "hat": 0.525481
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -13.816914411784438,
+        "apLog": -13.816979177508983,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 884.439429136166,
+        "denominatorLogErrorWithLinearSingularCap": -2581.7305964100597,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": false
+      },
+      "leastShift": {
+        "sigma": 0.25,
+        "g": 0.065,
+        "marginWithinSupportedGeometry": 0.17049827516631755
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 11,
+      "z": 300000,
+      "profile": "linear_tail_existing_AP",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 17,
+      "bestPositive": {
+        "H": 11,
+        "L": 59874,
+        "z": 300000,
+        "sigma": 0.3,
+        "proposedMomentLogCap": 17.47,
+        "profile": "linear_tail_existing_AP",
+        "theta": 0.00269,
+        "delta": 0.00319,
+        "g": 0.059,
+        "K": 8.053,
+        "pair": 0.493368,
+        "base": 0.049754,
+        "medium": 0.818154,
+        "lower": 2.181919,
+        "triple": 3.973727449667365,
+        "margin": 0.1950552751663177,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.164441,
+          "hat": 0.522881
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -13.823265052756444,
+        "apLog": -13.816979177508983,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 884.439429136166,
+        "denominatorLogErrorWithLinearSingularCap": -2581.7305964100597,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": true
+      },
+      "bestWithinGeometry": {
+        "H": 11,
+        "L": 59874,
+        "z": 300000,
+        "sigma": 0.3,
+        "proposedMomentLogCap": 17.47,
+        "profile": "linear_tail_existing_AP",
+        "theta": 0.00269,
+        "delta": 0.00319,
+        "g": 0.059,
+        "K": 8.053,
+        "pair": 0.493368,
+        "base": 0.049754,
+        "medium": 0.818154,
+        "lower": 2.181919,
+        "triple": 3.973727449667365,
+        "margin": 0.1950552751663177,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.164441,
+          "hat": 0.522881
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -13.823265052756444,
+        "apLog": -13.816979177508983,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 884.439429136166,
+        "denominatorLogErrorWithLinearSingularCap": -2581.7305964100597,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": true
+      },
+      "leastShift": {
+        "sigma": 0.3,
+        "g": 0.059,
+        "marginWithinSupportedGeometry": 0.1950552751663177
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 11,
+      "z": 4000000,
+      "profile": "linear_tail_sharp_distribution",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 18,
+      "bestPositive": {
+        "H": 11,
+        "L": 59874,
+        "z": 4000000,
+        "sigma": 0.25,
+        "proposedMomentLogCap": 17.99,
+        "profile": "linear_tail_sharp_distribution",
+        "theta": 0.00275,
+        "delta": 0.00093,
+        "g": 0.037,
+        "K": 8.0166,
+        "pair": 0.493368,
+        "base": 0.041724,
+        "medium": 0.660654,
+        "lower": 2.2686990000000002,
+        "triple": 3.955768854467365,
+        "margin": 0.29081457276631784,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.161524,
+          "hat": 0.513464
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -9.22750184950786,
+        "apLog": -9.38024437455649,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 918.268239136166,
+        "denominatorLogErrorWithLinearSingularCap": -2615.5594064100596,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": false
+      },
+      "bestWithinGeometry": {
+        "H": 11,
+        "L": 59874,
+        "z": 4000000,
+        "sigma": 0.25,
+        "proposedMomentLogCap": 17.99,
+        "profile": "linear_tail_sharp_distribution",
+        "theta": 0.00275,
+        "delta": 0.00093,
+        "g": 0.037,
+        "K": 8.0166,
+        "pair": 0.493368,
+        "base": 0.041724,
+        "medium": 0.660654,
+        "lower": 2.2686990000000002,
+        "triple": 3.955768854467365,
+        "margin": 0.29081457276631784,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.161524,
+          "hat": 0.513464
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -9.22750184950786,
+        "apLog": -9.38024437455649,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 918.268239136166,
+        "denominatorLogErrorWithLinearSingularCap": -2615.5594064100596,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": false
+      },
+      "leastShift": {
+        "sigma": 0.25,
+        "g": 0.037,
+        "marginWithinSupportedGeometry": 0.29081457276631784
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 11,
+      "z": 300000,
+      "profile": "linear_tail_sharp_distribution",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 19,
+      "bestPositive": {
+        "H": 11,
+        "L": 59874,
+        "z": 300000,
+        "sigma": 0.25,
+        "proposedMomentLogCap": 11.84,
+        "profile": "linear_tail_sharp_distribution",
+        "theta": 0.00234,
+        "delta": 0.00093,
+        "g": 0.033,
+        "K": 8.0166,
+        "pair": 0.493368,
+        "base": 0.040084,
+        "medium": 0.632428,
+        "lower": 2.2844520000000004,
+        "triple": 3.955768854467365,
+        "margin": 0.30656757276631796,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.161003,
+          "hat": 0.511774
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -9.240416849507866,
+        "apLog": -9.38024437455649,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 918.268239136166,
+        "denominatorLogErrorWithLinearSingularCap": -2615.5594064100596,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": true
+      },
+      "bestWithinGeometry": {
+        "H": 11,
+        "L": 59874,
+        "z": 300000,
+        "sigma": 0.25,
+        "proposedMomentLogCap": 11.84,
+        "profile": "linear_tail_sharp_distribution",
+        "theta": 0.00234,
+        "delta": 0.00093,
+        "g": 0.033,
+        "K": 8.0166,
+        "pair": 0.493368,
+        "base": 0.040084,
+        "medium": 0.632428,
+        "lower": 2.2844520000000004,
+        "triple": 3.955768854467365,
+        "margin": 0.30656757276631796,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.161003,
+          "hat": 0.511774
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -9.240416849507866,
+        "apLog": -9.38024437455649,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 918.268239136166,
+        "denominatorLogErrorWithLinearSingularCap": -2615.5594064100596,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": true
+      },
+      "leastShift": {
+        "sigma": 0.25,
+        "g": 0.033,
+        "marginWithinSupportedGeometry": 0.30656757276631796
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 11,
+      "z": 4000000,
+      "profile": "quadratic_tail_sharp_distribution",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 16,
+      "bestPositive": {
+        "H": 11,
+        "L": 59874,
+        "z": 4000000,
+        "sigma": 0.25,
+        "proposedMomentLogCap": 17.99,
+        "profile": "quadratic_tail_sharp_distribution",
+        "theta": 0.00349,
+        "delta": 0.00093,
+        "g": 0.045,
+        "K": 8.0166,
+        "pair": 0.493368,
+        "base": 0.045004,
+        "medium": 0.717648,
+        "lower": 2.2369220000000003,
+        "triple": 3.955768854467365,
+        "margin": 0.2590375727663179,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.162575,
+          "hat": 0.516867
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -9.304194216395498,
+        "apLog": -9.38024437455649,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 918.268239136166,
+        "denominatorLogErrorWithLinearSingularCap": -2615.5594064100596,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": false
+      },
+      "bestWithinGeometry": {
+        "H": 11,
+        "L": 59874,
+        "z": 4000000,
+        "sigma": 0.25,
+        "proposedMomentLogCap": 17.99,
+        "profile": "quadratic_tail_sharp_distribution",
+        "theta": 0.00349,
+        "delta": 0.00093,
+        "g": 0.045,
+        "K": 8.0166,
+        "pair": 0.493368,
+        "base": 0.045004,
+        "medium": 0.717648,
+        "lower": 2.2369220000000003,
+        "triple": 3.955768854467365,
+        "margin": 0.2590375727663179,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.162575,
+          "hat": 0.516867
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -9.304194216395498,
+        "apLog": -9.38024437455649,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 918.268239136166,
+        "denominatorLogErrorWithLinearSingularCap": -2615.5594064100596,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": false
+      },
+      "leastShift": {
+        "sigma": 0.25,
+        "g": 0.045,
+        "marginWithinSupportedGeometry": 0.2590375727663179
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 11,
+      "z": 300000,
+      "profile": "quadratic_tail_sharp_distribution",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 18,
+      "bestPositive": {
+        "H": 11,
+        "L": 59874,
+        "z": 300000,
+        "sigma": 0.275,
+        "proposedMomentLogCap": 14.32,
+        "profile": "quadratic_tail_sharp_distribution",
+        "theta": 0.00295,
+        "delta": 0.00093,
+        "g": 0.039,
+        "K": 8.0166,
+        "pair": 0.493368,
+        "base": 0.042544,
+        "medium": 0.674835,
+        "lower": 2.2607885000000003,
+        "triple": 3.955768854467365,
+        "margin": 0.2829040727663179,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.161786,
+          "hat": 0.514312
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -9.289583036881499,
+        "apLog": -9.38024437455649,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 918.268239136166,
+        "denominatorLogErrorWithLinearSingularCap": -2615.5594064100596,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": true
+      },
+      "bestWithinGeometry": {
+        "H": 11,
+        "L": 59874,
+        "z": 300000,
+        "sigma": 0.275,
+        "proposedMomentLogCap": 14.32,
+        "profile": "quadratic_tail_sharp_distribution",
+        "theta": 0.00295,
+        "delta": 0.00093,
+        "g": 0.039,
+        "K": 8.0166,
+        "pair": 0.493368,
+        "base": 0.042544,
+        "medium": 0.674835,
+        "lower": 2.2607885000000003,
+        "triple": 3.955768854467365,
+        "margin": 0.2829040727663179,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.161786,
+          "hat": 0.514312
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -9.289583036881499,
+        "apLog": -9.38024437455649,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 918.268239136166,
+        "denominatorLogErrorWithLinearSingularCap": -2615.5594064100596,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": true
+      },
+      "leastShift": {
+        "sigma": 0.275,
+        "g": 0.039,
+        "marginWithinSupportedGeometry": 0.2829040727663179
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 11,
+      "z": 4000000,
+      "profile": "optimistic_stress_test",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 19,
+      "bestPositive": {
+        "H": 11,
+        "L": 59874,
+        "z": 4000000,
+        "sigma": 0.2,
+        "proposedMomentLogCap": 11.36,
+        "profile": "optimistic_stress_test",
+        "theta": 0.00173,
+        "delta": 0.00053,
+        "g": 0.023,
+        "K": 8.0101,
+        "pair": 0.493368,
+        "base": 0.035984,
+        "medium": 0.562571,
+        "lower": 2.3234805,
+        "triple": 3.9525619624673642,
+        "margin": 0.34719951876631794,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.159711,
+          "hat": 0.507482
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -9.217774563888012,
+        "apLog": -9.733224733775263,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 924.255639136166,
+        "denominatorLogErrorWithLinearSingularCap": -2621.5468064100596,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": false
+      },
+      "bestWithinGeometry": {
+        "H": 11,
+        "L": 59874,
+        "z": 4000000,
+        "sigma": 0.2,
+        "proposedMomentLogCap": 11.36,
+        "profile": "optimistic_stress_test",
+        "theta": 0.00173,
+        "delta": 0.00053,
+        "g": 0.023,
+        "K": 8.0101,
+        "pair": 0.493368,
+        "base": 0.035984,
+        "medium": 0.562571,
+        "lower": 2.3234805,
+        "triple": 3.9525619624673642,
+        "margin": 0.34719951876631794,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.159711,
+          "hat": 0.507482
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -9.217774563888012,
+        "apLog": -9.733224733775263,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 924.255639136166,
+        "denominatorLogErrorWithLinearSingularCap": -2621.5468064100596,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": false
+      },
+      "leastShift": {
+        "sigma": 0.2,
+        "g": 0.023,
+        "marginWithinSupportedGeometry": 0.34719951876631794
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 11,
+      "z": 300000,
+      "profile": "optimistic_stress_test",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 20,
+      "bestPositive": {
+        "H": 11,
+        "L": 59874,
+        "z": 300000,
+        "sigma": 0.225,
+        "proposedMomentLogCap": 9.87,
+        "profile": "optimistic_stress_test",
+        "theta": 0.00143,
+        "delta": 0.00053,
+        "g": 0.02,
+        "K": 8.0101,
+        "pair": 0.493368,
+        "base": 0.034754,
+        "medium": 0.541824,
+        "lower": 2.335084,
+        "triple": 3.9525619624673642,
+        "margin": 0.35880301876631804,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.159327,
+          "hat": 0.506197
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -9.238501384374015,
+        "apLog": -9.733224733775263,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 924.255639136166,
+        "denominatorLogErrorWithLinearSingularCap": -2621.5468064100596,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": true
+      },
+      "bestWithinGeometry": {
+        "H": 11,
+        "L": 59874,
+        "z": 300000,
+        "sigma": 0.225,
+        "proposedMomentLogCap": 9.87,
+        "profile": "optimistic_stress_test",
+        "theta": 0.00143,
+        "delta": 0.00053,
+        "g": 0.02,
+        "K": 8.0101,
+        "pair": 0.493368,
+        "base": 0.034754,
+        "medium": 0.541824,
+        "lower": 2.335084,
+        "triple": 3.9525619624673642,
+        "margin": 0.35880301876631804,
+        "eta": 6.834962824923234e-166,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.159327,
+          "hat": 0.506197
+        },
+        "square": 2.795351535840504e-7,
+        "complement": 0.0006346661322109764,
+        "tailLog": -9.238501384374015,
+        "apLog": -9.733224733775263,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 924.255639136166,
+        "denominatorLogErrorWithLinearSingularCap": -2621.5468064100596,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": true
+      },
+      "leastShift": {
+        "sigma": 0.225,
+        "g": 0.02,
+        "marginWithinSupportedGeometry": 0.35880301876631804
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 10,
+      "z": 4000000,
+      "profile": "qsum_cleanup_retaining_Pan",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.275,
+        "g": 0.305,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 10,
+      "z": 300000,
+      "profile": "qsum_cleanup_retaining_Pan",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.35,
+        "g": 0.283,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 10,
+      "z": 4000000,
+      "profile": "variable_rankin_existing_powers",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.3,
+        "g": 0.233,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 10,
+      "z": 300000,
+      "profile": "variable_rankin_existing_powers",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.375,
+        "g": 0.204,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 10,
+      "z": 4000000,
+      "profile": "linear_tail_existing_AP",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.25,
+        "g": 0.154,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 10,
+      "z": 300000,
+      "profile": "linear_tail_existing_AP",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.3,
+        "g": 0.139,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 10,
+      "z": 4000000,
+      "profile": "linear_tail_sharp_distribution",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 4,
+      "bestPositive": {
+        "H": 10,
+        "L": 22026,
+        "z": 4000000,
+        "sigma": 0.25,
+        "proposedMomentLogCap": 17.99,
+        "profile": "linear_tail_sharp_distribution",
+        "theta": 0.0073,
+        "delta": 0.00234,
+        "g": 0.097,
+        "K": 8.0421,
+        "pair": 0.494659,
+        "base": 0.066324,
+        "medium": 1.106116,
+        "lower": 2.0213680000000003,
+        "triple": 3.9798279926445743,
+        "margin": 0.031454003677713116,
+        "eta": 1.0034812188159521e-62,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.169683,
+          "hat": 0.539258
+        },
+        "square": 0.000005614929991412443,
+        "complement": 0.0017252338145827659,
+        "tailLog": -9.26159562989535,
+        "apLog": -9.238339496106406,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 327.92873413616604,
+        "denominatorLogErrorWithLinearSingularCap": -252.09492019044683,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": false
+      },
+      "bestWithinGeometry": {
+        "H": 10,
+        "L": 22026,
+        "z": 4000000,
+        "sigma": 0.25,
+        "proposedMomentLogCap": 17.99,
+        "profile": "linear_tail_sharp_distribution",
+        "theta": 0.0073,
+        "delta": 0.00234,
+        "g": 0.097,
+        "K": 8.0421,
+        "pair": 0.494659,
+        "base": 0.066324,
+        "medium": 1.106116,
+        "lower": 2.0213680000000003,
+        "triple": 3.9798279926445743,
+        "margin": 0.031454003677713116,
+        "eta": 1.0034812188159521e-62,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.169683,
+          "hat": 0.539258
+        },
+        "square": 0.000005614929991412443,
+        "complement": 0.0017252338145827659,
+        "tailLog": -9.26159562989535,
+        "apLog": -9.238339496106406,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 327.92873413616604,
+        "denominatorLogErrorWithLinearSingularCap": -252.09492019044683,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": false
+      },
+      "leastShift": {
+        "sigma": 0.25,
+        "g": 0.097,
+        "marginWithinSupportedGeometry": 0.031454003677713116
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 10,
+      "z": 300000,
+      "profile": "linear_tail_sharp_distribution",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 10,
+      "bestPositive": {
+        "H": 10,
+        "L": 22026,
+        "z": 300000,
+        "sigma": 0.3,
+        "proposedMomentLogCap": 17.47,
+        "profile": "linear_tail_sharp_distribution",
+        "theta": 0.00601,
+        "delta": 0.00234,
+        "g": 0.084,
+        "K": 8.0421,
+        "pair": 0.494659,
+        "base": 0.060994,
+        "medium": 1.005991,
+        "lower": 2.0767605000000002,
+        "triple": 3.9798279926445743,
+        "margin": 0.08684650367771307,
+        "eta": 1.0034812188159521e-62,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.16786,
+          "hat": 0.533626
+        },
+        "square": 0.000005614929991412443,
+        "complement": 0.0017252338145827659,
+        "tailLog": -9.262366270867346,
+        "apLog": -9.238339496106406,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 327.92873413616604,
+        "denominatorLogErrorWithLinearSingularCap": -252.09492019044683,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": true
+      },
+      "bestWithinGeometry": {
+        "H": 10,
+        "L": 22026,
+        "z": 300000,
+        "sigma": 0.3,
+        "proposedMomentLogCap": 17.47,
+        "profile": "linear_tail_sharp_distribution",
+        "theta": 0.00601,
+        "delta": 0.00234,
+        "g": 0.084,
+        "K": 8.0421,
+        "pair": 0.494659,
+        "base": 0.060994,
+        "medium": 1.005991,
+        "lower": 2.0767605000000002,
+        "triple": 3.9798279926445743,
+        "margin": 0.08684650367771307,
+        "eta": 1.0034812188159521e-62,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.16786,
+          "hat": 0.533626
+        },
+        "square": 0.000005614929991412443,
+        "complement": 0.0017252338145827659,
+        "tailLog": -9.262366270867346,
+        "apLog": -9.238339496106406,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 327.92873413616604,
+        "denominatorLogErrorWithLinearSingularCap": -252.09492019044683,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": true
+      },
+      "leastShift": {
+        "sigma": 0.3,
+        "g": 0.084,
+        "marginWithinSupportedGeometry": 0.08684650367771307
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 10,
+      "z": 4000000,
+      "profile": "quadratic_tail_sharp_distribution",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.25,
+        "g": 0.115,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 10,
+      "z": 300000,
+      "profile": "quadratic_tail_sharp_distribution",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 2,
+      "bestPositive": {
+        "H": 10,
+        "L": 22026,
+        "z": 300000,
+        "sigma": 0.3,
+        "proposedMomentLogCap": 17.47,
+        "profile": "quadratic_tail_sharp_distribution",
+        "theta": 0.00752,
+        "delta": 0.00234,
+        "g": 0.099,
+        "K": 8.0421,
+        "pair": 0.494659,
+        "base": 0.067144,
+        "medium": 1.121711,
+        "lower": 2.0127505,
+        "triple": 3.9798279926445743,
+        "margin": 0.02283650367771295,
+        "eta": 1.0034812188159521e-62,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.169967,
+          "hat": 0.540131
+        },
+        "square": 0.000005614929991412443,
+        "complement": 0.0017252338145827659,
+        "tailLog": -9.240165418142457,
+        "apLog": -9.238339496106406,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 327.92873413616604,
+        "denominatorLogErrorWithLinearSingularCap": -252.09492019044683,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": true
+      },
+      "bestWithinGeometry": {
+        "H": 10,
+        "L": 22026,
+        "z": 300000,
+        "sigma": 0.3,
+        "proposedMomentLogCap": 17.47,
+        "profile": "quadratic_tail_sharp_distribution",
+        "theta": 0.00752,
+        "delta": 0.00234,
+        "g": 0.099,
+        "K": 8.0421,
+        "pair": 0.494659,
+        "base": 0.067144,
+        "medium": 1.121711,
+        "lower": 2.0127505,
+        "triple": 3.9798279926445743,
+        "margin": 0.02283650367771295,
+        "eta": 1.0034812188159521e-62,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.169967,
+          "hat": 0.540131
+        },
+        "square": 0.000005614929991412443,
+        "complement": 0.0017252338145827659,
+        "tailLog": -9.240165418142457,
+        "apLog": -9.238339496106406,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 327.92873413616604,
+        "denominatorLogErrorWithLinearSingularCap": -252.09492019044683,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": true
+      },
+      "leastShift": {
+        "sigma": 0.3,
+        "g": 0.099,
+        "marginWithinSupportedGeometry": 0.02283650367771295
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 10,
+      "z": 4000000,
+      "profile": "optimistic_stress_test",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 12,
+      "bestPositive": {
+        "H": 10,
+        "L": 22026,
+        "z": 4000000,
+        "sigma": 0.2,
+        "proposedMomentLogCap": 11.36,
+        "profile": "optimistic_stress_test",
+        "theta": 0.00471,
+        "delta": 0.00133,
+        "g": 0.061,
+        "K": 8.0258,
+        "pair": 0.494659,
+        "base": 0.051564,
+        "medium": 0.833828,
+        "lower": 2.1722720000000004,
+        "triple": 3.9717650509445748,
+        "margin": 0.18638947452771304,
+        "eta": 1.0034812188159521e-62,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.16471,
+          "hat": 0.523746
+        },
+        "square": 0.000005614929991412443,
+        "complement": 0.0017252338145827659,
+        "tailLog": -9.24986256388801,
+        "apLog": -9.294622294550223,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 333.4902991361661,
+        "denominatorLogErrorWithLinearSingularCap": -257.65648519044703,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": false
+      },
+      "bestWithinGeometry": {
+        "H": 10,
+        "L": 22026,
+        "z": 4000000,
+        "sigma": 0.2,
+        "proposedMomentLogCap": 11.36,
+        "profile": "optimistic_stress_test",
+        "theta": 0.00471,
+        "delta": 0.00133,
+        "g": 0.061,
+        "K": 8.0258,
+        "pair": 0.494659,
+        "base": 0.051564,
+        "medium": 0.833828,
+        "lower": 2.1722720000000004,
+        "triple": 3.9717650509445748,
+        "margin": 0.18638947452771304,
+        "eta": 1.0034812188159521e-62,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.16471,
+          "hat": 0.523746
+        },
+        "square": 0.000005614929991412443,
+        "complement": 0.0017252338145827659,
+        "tailLog": -9.24986256388801,
+        "apLog": -9.294622294550223,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 333.4902991361661,
+        "denominatorLogErrorWithLinearSingularCap": -257.65648519044703,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": false
+      },
+      "leastShift": {
+        "sigma": 0.2,
+        "g": 0.061,
+        "marginWithinSupportedGeometry": 0.18638947452771304
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 10,
+      "z": 300000,
+      "profile": "optimistic_stress_test",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 16,
+      "bestPositive": {
+        "H": 10,
+        "L": 22026,
+        "z": 300000,
+        "sigma": 0.225,
+        "proposedMomentLogCap": 9.87,
+        "profile": "optimistic_stress_test",
+        "theta": 0.00389,
+        "delta": 0.00133,
+        "g": 0.053,
+        "K": 8.0258,
+        "pair": 0.494659,
+        "base": 0.048284,
+        "medium": 0.775372,
+        "lower": 2.20478,
+        "triple": 3.9717650509445748,
+        "margin": 0.21889747452771258,
+        "eta": 1.0034812188159521e-62,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.163637,
+          "hat": 0.520299
+        },
+        "square": 0.000005614929991412443,
+        "complement": 0.0017252338145827659,
+        "tailLog": -9.252298384374011,
+        "apLog": -9.294622294550223,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 333.4902991361661,
+        "denominatorLogErrorWithLinearSingularCap": -257.65648519044703,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": true
+      },
+      "bestWithinGeometry": {
+        "H": 10,
+        "L": 22026,
+        "z": 300000,
+        "sigma": 0.225,
+        "proposedMomentLogCap": 9.87,
+        "profile": "optimistic_stress_test",
+        "theta": 0.00389,
+        "delta": 0.00133,
+        "g": 0.053,
+        "K": 8.0258,
+        "pair": 0.494659,
+        "base": 0.048284,
+        "medium": 0.775372,
+        "lower": 2.20478,
+        "triple": 3.9717650509445748,
+        "margin": 0.21889747452771258,
+        "eta": 1.0034812188159521e-62,
+        "grids": {
+          "mediumGrid": 10000000,
+          "mediumError": 0.0000196,
+          "pairGrid": 10000000,
+          "pairError": 0.0000759
+        },
+        "caps": {
+          "kernel": 0.163637,
+          "hat": 0.520299
+        },
+        "square": 0.000005614929991412443,
+        "complement": 0.0017252338145827659,
+        "tailLog": -9.252298384374011,
+        "apLog": -9.294622294550223,
+        "tests": {
+          "geometry": true,
+          "mediumSourceRatio": true,
+          "truncation": true,
+          "distribution": true,
+          "tailMonotone": true,
+          "distributionMonotone": true,
+          "powerThetaEndpoint": true,
+          "positive": true
+        },
+        "modelPositive": true,
+        "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+        "requiredDenominatorA": 333.4902991361661,
+        "denominatorLogErrorWithLinearSingularCap": -257.65648519044703,
+        "inheritedSourceAndDenominatorGatesDischarged": false,
+        "requiresSmallerProductWindow": true
+      },
+      "leastShift": {
+        "sigma": 0.225,
+        "g": 0.053,
+        "marginWithinSupportedGeometry": 0.21889747452771258
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 9,
+      "z": 4000000,
+      "profile": "qsum_cleanup_retaining_Pan",
+      "sigmaCandidates": 18,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.275,
+        "g": 0.763,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 9,
+      "z": 300000,
+      "profile": "qsum_cleanup_retaining_Pan",
+      "sigmaCandidates": 18,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.35,
+        "g": 0.705,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 9,
+      "z": 4000000,
+      "profile": "variable_rankin_existing_powers",
+      "sigmaCandidates": 18,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.3,
+        "g": 0.583,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 9,
+      "z": 300000,
+      "profile": "variable_rankin_existing_powers",
+      "sigmaCandidates": 18,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.375,
+        "g": 0.508,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 9,
+      "z": 4000000,
+      "profile": "linear_tail_existing_AP",
+      "sigmaCandidates": 19,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.25,
+        "g": 0.387,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 9,
+      "z": 300000,
+      "profile": "linear_tail_existing_AP",
+      "sigmaCandidates": 19,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.3,
+        "g": 0.347,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 9,
+      "z": 4000000,
+      "profile": "linear_tail_sharp_distribution",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.25,
+        "g": 0.253,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 9,
+      "z": 300000,
+      "profile": "linear_tail_sharp_distribution",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.275,
+        "g": 0.219,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 9,
+      "z": 4000000,
+      "profile": "quadratic_tail_sharp_distribution",
+      "sigmaCandidates": 19,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.25,
+        "g": 0.298,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 9,
+      "z": 300000,
+      "profile": "quadratic_tail_sharp_distribution",
+      "sigmaCandidates": 19,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.3,
+        "g": 0.256,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 9,
+      "z": 4000000,
+      "profile": "optimistic_stress_test",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.2,
+        "g": 0.163,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 9,
+      "z": 300000,
+      "profile": "optimistic_stress_test",
+      "sigmaCandidates": 20,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.25,
+        "g": 0.14,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 8,
+      "z": 4000000,
+      "profile": "qsum_cleanup_retaining_Pan",
+      "sigmaCandidates": 0,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": null,
+      "certifiedFeasible": false
+    },
+    {
+      "H": 8,
+      "z": 300000,
+      "profile": "qsum_cleanup_retaining_Pan",
+      "sigmaCandidates": 0,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": null,
+      "certifiedFeasible": false
+    },
+    {
+      "H": 8,
+      "z": 4000000,
+      "profile": "variable_rankin_existing_powers",
+      "sigmaCandidates": 7,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.3,
+        "g": 1.475,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 8,
+      "z": 300000,
+      "profile": "variable_rankin_existing_powers",
+      "sigmaCandidates": 13,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.375,
+        "g": 1.287,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 8,
+      "z": 4000000,
+      "profile": "linear_tail_existing_AP",
+      "sigmaCandidates": 14,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.25,
+        "g": 0.997,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 8,
+      "z": 300000,
+      "profile": "linear_tail_existing_AP",
+      "sigmaCandidates": 17,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.3,
+        "g": 0.889,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 8,
+      "z": 4000000,
+      "profile": "linear_tail_sharp_distribution",
+      "sigmaCandidates": 16,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.225,
+        "g": 0.661,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 8,
+      "z": 300000,
+      "profile": "linear_tail_sharp_distribution",
+      "sigmaCandidates": 18,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.275,
+        "g": 0.57,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 8,
+      "z": 4000000,
+      "profile": "quadratic_tail_sharp_distribution",
+      "sigmaCandidates": 16,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.25,
+        "g": 0.768,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 8,
+      "z": 300000,
+      "profile": "quadratic_tail_sharp_distribution",
+      "sigmaCandidates": 18,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.3,
+        "g": 0.66,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 8,
+      "z": 4000000,
+      "profile": "optimistic_stress_test",
+      "sigmaCandidates": 17,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.2,
+        "g": 0.435,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    },
+    {
+      "H": 8,
+      "z": 300000,
+      "profile": "optimistic_stress_test",
+      "sigmaCandidates": 19,
+      "positiveCandidates": 0,
+      "bestPositive": null,
+      "bestWithinGeometry": null,
+      "leastShift": {
+        "sigma": 0.25,
+        "g": 0.372,
+        "marginWithinSupportedGeometry": null
+      },
+      "certifiedFeasible": false
+    }
+  ],
+  "frontiers": [
+    {
+      "H": 11,
+      "L": 59874,
+      "scenario": "optimistic_stress_test",
+      "sigma": 0.3,
+      "geometryCap": 0.1,
+      "deltaMinimum": 0.0005212669211711414,
+      "thetaAvailable": 0.009467156314614675,
+      "maximumAllowedLogMoment": 160.63267062822754,
+      "proposed300kLogMoment": 17.47,
+      "requiredMomentLogReduction": 0,
+      "maximumAllowedAtAnySigmaUpToOne": 556.933029628703,
+      "emptyProductImpossibleForSigmaUpToOne": false
+    },
+    {
+      "H": 10,
+      "L": 22026,
+      "scenario": "optimistic_stress_test",
+      "sigma": 0.3,
+      "geometryCap": 0.1,
+      "deltaMinimum": 0.0013261735257162426,
+      "thetaAvailable": 0.008642356975484159,
+      "maximumAllowedLogMoment": 47.688681896460054,
+      "proposed300kLogMoment": 17.47,
+      "requiredMomentLogReduction": 0,
+      "maximumAllowedAtAnySigmaUpToOne": 180.45306718947796,
+      "emptyProductImpossibleForSigmaUpToOne": false
+    },
+    {
+      "H": 9,
+      "L": 8103,
+      "scenario": "optimistic_stress_test",
+      "sigma": 0.3,
+      "geometryCap": 0.1,
+      "deltaMinimum": 0.0033580549990000785,
+      "thetaAvailable": 0.006556402957243296,
+      "maximumAllowedLogMoment": 6.519675422618562,
+      "proposed300kLogMoment": 17.47,
+      "requiredMomentLogReduction": 10.950324577381437,
+      "maximumAllowedAtAnySigmaUpToOne": 43.223045610006295,
+      "emptyProductImpossibleForSigmaUpToOne": false
+    },
+    {
+      "H": 8,
+      "L": 2980,
+      "scenario": "optimistic_stress_test",
+      "sigma": 0.3,
+      "geometryCap": 0.1,
+      "deltaMinimum": 0.008459630043951371,
+      "thetaAvailable": 0.0013077702310285138,
+      "maximumAllowedLogMoment": -8.249137939604676,
+      "proposed300kLogMoment": 17.47,
+      "requiredMomentLogReduction": 25.719137939604675,
+      "maximumAllowedAtAnySigmaUpToOne": -6.006332264071158,
+      "emptyProductImpossibleForSigmaUpToOne": true
+    }
+  ],
+  "recommendedH10": {
+    "H": 10,
+    "L": 22026,
+    "z": 4000000,
+    "sigma": 0.25,
+    "proposedMomentLogCap": 17.99,
+    "profile": "linear_tail_sharp_distribution",
+    "theta": 0.0073,
+    "delta": 0.00234,
+    "g": 0.097,
+    "K": 8.0421,
+    "pair": 0.494659,
+    "base": 0.066324,
+    "medium": 1.106116,
+    "lower": 2.0213680000000003,
+    "triple": 3.9798279926445743,
+    "margin": 0.031454003677713116,
+    "eta": 1.0034812188159521e-62,
+    "grids": {
+      "mediumGrid": 10000000,
+      "mediumError": 0.0000196,
+      "pairGrid": 10000000,
+      "pairError": 0.0000759
+    },
+    "caps": {
+      "kernel": 0.169683,
+      "hat": 0.539258
+    },
+    "square": 0.000005614929991412443,
+    "complement": 0.0017252338145827659,
+    "tailLog": -9.26159562989535,
+    "apLog": -9.238339496106406,
+    "tests": {
+      "geometry": true,
+      "mediumSourceRatio": true,
+      "truncation": true,
+      "distribution": true,
+      "tailMonotone": true,
+      "distributionMonotone": true,
+      "powerThetaEndpoint": true,
+      "positive": true
+    },
+    "modelPositive": true,
+    "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+    "requiredDenominatorA": 327.92873413616604,
+    "denominatorLogErrorWithLinearSingularCap": -252.09492019044683,
+    "inheritedSourceAndDenominatorGatesDischarged": false,
+    "requiresSmallerProductWindow": false
+  },
+  "alternativeH10": {
+    "H": 10,
+    "L": 22026,
+    "z": 300000,
+    "sigma": 0.3,
+    "proposedMomentLogCap": 17.47,
+    "profile": "quadratic_tail_sharp_distribution",
+    "theta": 0.00752,
+    "delta": 0.00234,
+    "g": 0.099,
+    "K": 8.0421,
+    "pair": 0.494659,
+    "base": 0.067144,
+    "medium": 1.121711,
+    "lower": 2.0127505,
+    "triple": 3.9798279926445743,
+    "margin": 0.02283650367771295,
+    "eta": 1.0034812188159521e-62,
+    "grids": {
+      "mediumGrid": 10000000,
+      "mediumError": 0.0000196,
+      "pairGrid": 10000000,
+      "pairError": 0.0000759
+    },
+    "caps": {
+      "kernel": 0.169967,
+      "hat": 0.540131
+    },
+    "square": 0.000005614929991412443,
+    "complement": 0.0017252338145827659,
+    "tailLog": -9.240165418142457,
+    "apLog": -9.238339496106406,
+    "tests": {
+      "geometry": true,
+      "mediumSourceRatio": true,
+      "truncation": true,
+      "distribution": true,
+      "tailMonotone": true,
+      "distributionMonotone": true,
+      "powerThetaEndpoint": true,
+      "positive": true
+    },
+    "modelPositive": true,
+    "status": "UNPROVED_ANALYTIC_PACKAGE_NOT_A_CHEN_THEOREM",
+    "requiredDenominatorA": 327.92873413616604,
+    "denominatorLogErrorWithLinearSingularCap": -252.09492019044683,
+    "inheritedSourceAndDenominatorGatesDischarged": false,
+    "requiresSmallerProductWindow": true
+  },
+  "selfChecks": {
+    "exactRationalContracts": 4,
+    "legacyPanExcludesH10H9H8": true,
+    "noNewCutoffClaim": true
+  }
+}

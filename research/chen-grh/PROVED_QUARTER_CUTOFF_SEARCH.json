@@ -1,0 +1,41 @@
+{
+  "classification": "FIXED_PACKAGE_SEARCH_WITH_SEPARATE_KERNEL_CERTIFIED_IMPLEMENTATION",
+  "scope": "Minimum within the displayed source-accuracy/counting package, not global optimality over Chen methods.",
+  "selected": {
+    "r": 2977,
+    "exponent": 119081,
+    "logLower": 130691,
+    "H": 11.781607040426973
+  },
+  "candidates": 2024,
+  "parameters": {
+    "sigma": "1/4",
+    "momentLogCap": "1799/100",
+    "presieveStart": 4000000,
+    "truncationExponent": "13/2500",
+    "epsilon": "9/2500",
+    "distributionExponent": "1241/2500",
+    "sourceUpperAllowance": "21/1000",
+    "sourceLowerParameter": 20000000,
+    "lowerCoefficient": "2.00825",
+    "tripleCoefficient": "4.015",
+    "representationMargin": "3/4000",
+    "K": "8059/1000",
+    "pairMain": "0.498",
+    "mediumLoss": "1139/1000"
+  },
+  "constraints": {
+    "sourceAccuracy": "62500 <= 21*r",
+    "sourceExponent": "E >= 40*r+1",
+    "sourceLowerExponent": 110010,
+    "uniformLogLower": 130690
+  },
+  "formalMinimum": "ChenEffective.GRHQuarterChen.source_accuracy_exponent_minimal",
+  "formalChen": "ChenEffective.GRHQuarterChen.chen_explicit",
+  "formalH": "ChenEffective.GRHQuarterChen.chen_of_double_exp_11782",
+  "separateAuditRecord": "FINAL_GRH_QUARTER_CHEN_AUDIT.json",
+  "unprovedH10TargetsUsed": false,
+  "newAxioms": 0,
+  "newDependencies": 0,
+  "nativeDecide": false
+}

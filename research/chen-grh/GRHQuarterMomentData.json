@@ -1,0 +1,5089 @@
+{
+  "classification": "GENERATED_QUARTER_MOMENT_PROPOSALS_NOT_KERNEL_CHECKED",
+  "endpoint": 4000000,
+  "denominator": "1000000000000",
+  "numerator": "17982053214203",
+  "logCap": "1799/100",
+  "rows": [
+    {
+      "module": "GRHQuarterCertificates.C000",
+      "lo": 3,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 514,
+      "numerator": "4291331490302",
+      "sourceHash": "41bfcf4963fd0c70aa6d1c745a55a9f72585bd3c9df5f36d7c23b07da2121ee0"
+    },
+    {
+      "module": "GRHQuarterCertificates.C001",
+      "lo": 515,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 1026,
+      "numerator": "530085877764",
+      "sourceHash": "dc88836dce0b14015b26cdbf80007b52f310629716e51a0aad30a88c45b2e2db"
+    },
+    {
+      "module": "GRHQuarterCertificates.C002",
+      "lo": 1027,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 1538,
+      "numerator": "333171623971",
+      "sourceHash": "7cbb307703197f7bc4162a1feab6ea7cd377fdcbf30d1a7b0d1efe8f951acc59"
+    },
+    {
+      "module": "GRHQuarterCertificates.C003",
+      "lo": 1539,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 2050,
+      "numerator": "247177827553",
+      "sourceHash": "eef2034b46269d5e06efc88d18328c62765e2c354ed6e5d32047f7dcc1200e67"
+    },
+    {
+      "module": "GRHQuarterCertificates.C004",
+      "lo": 2051,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 2562,
+      "numerator": "200818547116",
+      "sourceHash": "e634c9a8636b6735a42b296a0d1017a1047633bfbc32f5003d725fc5f47873ec"
+    },
+    {
+      "module": "GRHQuarterCertificates.C005",
+      "lo": 2563,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 3074,
+      "numerator": "167406332119",
+      "sourceHash": "97b720c1e0f59d9196631aa82c347863b8b0c61f0e0e4c17c3180dec69a4b230"
+    },
+    {
+      "module": "GRHQuarterCertificates.C006",
+      "lo": 3075,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 3586,
+      "numerator": "144692120775",
+      "sourceHash": "5075373ab0ad37b95601a1ee5710f5e65bbb8154dfec0c6f3115233bf3a4ed98"
+    },
+    {
+      "module": "GRHQuarterCertificates.C007",
+      "lo": 3587,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 4098,
+      "numerator": "128300099082",
+      "sourceHash": "713950c84875c2fa8be3e1f5d051010d06245a7a5fc3faf649024fea3c1d68ee"
+    },
+    {
+      "module": "GRHQuarterCertificates.C008",
+      "lo": 4099,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 4610,
+      "numerator": "111202468519",
+      "sourceHash": "45b2a471ae5bb3dd09252c92d899ec32d24fcac4849c4be80426b1cfc2e1de2b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C009",
+      "lo": 4611,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 5122,
+      "numerator": "107293830705",
+      "sourceHash": "74226c7a3e92b6f758676b291864c18cf178d6e9dbf738182c3632f51404cbdb"
+    },
+    {
+      "module": "GRHQuarterCertificates.C010",
+      "lo": 5123,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 5634,
+      "numerator": "86749347178",
+      "sourceHash": "5e3a667daee995fb1309f42e13cdbb1c40cbdc91e63791480a92eb0637567677"
+    },
+    {
+      "module": "GRHQuarterCertificates.C011",
+      "lo": 5635,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 6146,
+      "numerator": "93284019437",
+      "sourceHash": "e31957b283b62e4624bb5a9bd637fb74ba08c0c0ced0e1dd9da954fee76e221c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C012",
+      "lo": 6147,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 6658,
+      "numerator": "79128713863",
+      "sourceHash": "8393eb71cfdd1fd2adbab0cf0101300cf4c9d6eeeec5a77291a18762e7b26c50"
+    },
+    {
+      "module": "GRHQuarterCertificates.C013",
+      "lo": 6659,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 7170,
+      "numerator": "78710087903",
+      "sourceHash": "5def9f8bddb8dc6965ef7a4be4a389062a566a5e1054aa0e5142e55ea768895b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C014",
+      "lo": 7171,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 7682,
+      "numerator": "73116359523",
+      "sourceHash": "bde0b6ff9171926836a09ec8b84e455ce9dd0db6ac5939e851a695f63cecfd4e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C015",
+      "lo": 7683,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 8194,
+      "numerator": "64843158905",
+      "sourceHash": "15995269d76365fa09656f02e01c67b1c2bd343d057b0fc9ed3f4fdfbf439269"
+    },
+    {
+      "module": "GRHQuarterCertificates.C016",
+      "lo": 8195,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 8706,
+      "numerator": "64130002316",
+      "sourceHash": "c5f56c25df4a44782bd97e0dd8c580d33f71358f96f09c5e983d9a79f8f8867d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C017",
+      "lo": 8707,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 9218,
+      "numerator": "63615000721",
+      "sourceHash": "01dbe466b7cee588e96c3401a7267176c9a4bc33f0870578df8cdb4204628907"
+    },
+    {
+      "module": "GRHQuarterCertificates.C018",
+      "lo": 9219,
+      "w": 0,
+      "degree": 7,
+      "B": 256,
+      "upper": 9730,
+      "numerator": "59967980522",
+      "sourceHash": "25e686d7eab61b081e067e9ea7da90fd60a0b9fdce3a880900e66271007ef70e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C019",
+      "lo": 9731,
+      "w": 0,
+      "degree": 7,
+      "B": 135,
+      "upper": 10000,
+      "numerator": "30637079565",
+      "sourceHash": "7f8ce1d1e2642969d0173462e6974f48cd2cf9a2083ff9b52d534c86afb38ad9"
+    },
+    {
+      "module": "GRHQuarterCertificates.C020",
+      "lo": 10001,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 18192,
+      "numerator": "681526691332",
+      "sourceHash": "e0caf137e2e70e931f9ee3f82a0b98f441757b51ab8d4b7ca11066f01fe582b1"
+    },
+    {
+      "module": "GRHQuarterCertificates.C021",
+      "lo": 18193,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 26384,
+      "numerator": "453863217947",
+      "sourceHash": "8a845d7816fb9b39333428c456f1416ee9660036f7fd74b52a057d17cec908c8"
+    },
+    {
+      "module": "GRHQuarterCertificates.C022",
+      "lo": 26385,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 34576,
+      "numerator": "349450238937",
+      "sourceHash": "ce78eac31f77d48d74f4c0f0d29679f21288f1a5d0a8395e9227d971daad40b2"
+    },
+    {
+      "module": "GRHQuarterCertificates.C023",
+      "lo": 34577,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 42768,
+      "numerator": "286135637372",
+      "sourceHash": "547b27a70cee0a4e9f0cb1fb4a8aec9cdf04fcf7e53bdcf4a98e586f9adfa614"
+    },
+    {
+      "module": "GRHQuarterCertificates.C024",
+      "lo": 42769,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 50960,
+      "numerator": "236848521051",
+      "sourceHash": "66045bb49c40a52431447a17dcba5fe717f8586f20ededbbe2f13348cbccb020"
+    },
+    {
+      "module": "GRHQuarterCertificates.C025",
+      "lo": 50961,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 59152,
+      "numerator": "214635025130",
+      "sourceHash": "ec92e3bf61089c416b57d0b73411e4608d01f7ecaefbd7c017d83707dd05fc9e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C026",
+      "lo": 59153,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 67344,
+      "numerator": "184259454922",
+      "sourceHash": "868c679edf73207f587e2c7d046f0868a17a8d4fe30a6982f1edffb2846d441b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C027",
+      "lo": 67345,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 75536,
+      "numerator": "169310180123",
+      "sourceHash": "043c4d235f9476a0e7c93998f46ccccfed07697757279f8b33916b11326de021"
+    },
+    {
+      "module": "GRHQuarterCertificates.C028",
+      "lo": 75537,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 83728,
+      "numerator": "155627720911",
+      "sourceHash": "9e5f91fb23f85bddbb4ded85653fb423fa34dfe558e8f89f634bd96f6d092b2e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C029",
+      "lo": 83729,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 91920,
+      "numerator": "140228738191",
+      "sourceHash": "fc59335149443a51d28ce37c8fc215c49316aaccf58dfd2aef5d6c5ee7adf112"
+    },
+    {
+      "module": "GRHQuarterCertificates.C030",
+      "lo": 91921,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 100112,
+      "numerator": "133827691155",
+      "sourceHash": "2c4f6f10cbcf28cb472abd8b555f376e91011129aa2e6cdbb4ccd7dd4a1adba1"
+    },
+    {
+      "module": "GRHQuarterCertificates.C031",
+      "lo": 100113,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 108304,
+      "numerator": "122819910907",
+      "sourceHash": "f27a6996cd8c48a4efbed1dfc0b43e637d262e61d1e9484ef31328a77e88d1ff"
+    },
+    {
+      "module": "GRHQuarterCertificates.C032",
+      "lo": 108305,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 116496,
+      "numerator": "115030625984",
+      "sourceHash": "c086fbc2c3ca3f824e45aaa35041a3613c116e64de1ffafcdf05c3c898b5cf96"
+    },
+    {
+      "module": "GRHQuarterCertificates.C033",
+      "lo": 116497,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 124688,
+      "numerator": "109583941904",
+      "sourceHash": "0d2386c24e05eb148177d4d0bc8879a5e8e22a2634c93d32f932089e93617b4f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C034",
+      "lo": 124689,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 132880,
+      "numerator": "103580570053",
+      "sourceHash": "8f700c0c73fb979b6caeaf33ef038b027fa4b5d6b135d0a7fbc8ec2f11b4c0e9"
+    },
+    {
+      "module": "GRHQuarterCertificates.C035",
+      "lo": 132881,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 141072,
+      "numerator": "99030972036",
+      "sourceHash": "7012b5f3167b5d038174536ff7121508506a8f0e7a57f8b1eb3955e0f3ca9f8a"
+    },
+    {
+      "module": "GRHQuarterCertificates.C036",
+      "lo": 141073,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 149264,
+      "numerator": "92758642627",
+      "sourceHash": "c254bb08f0f42a504c62606bb56d7ba370a1c183aaff683fb0ae79be4cb164d4"
+    },
+    {
+      "module": "GRHQuarterCertificates.C037",
+      "lo": 149265,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 157456,
+      "numerator": "90479408628",
+      "sourceHash": "e7d3884622d17d5415aa68d883018ad39c9a3d1c8bf03810eaf6040ae1cc93b9"
+    },
+    {
+      "module": "GRHQuarterCertificates.C038",
+      "lo": 157457,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 165648,
+      "numerator": "83737126918",
+      "sourceHash": "d7d1f2eeb0bfc09169251722c9bbb90504a82a391aafe2b8d3f4c2b5fe830f5d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C039",
+      "lo": 165649,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 173840,
+      "numerator": "81399321294",
+      "sourceHash": "64f2c4b52bf9a15caa1cd4ac6389a80a3eb26b3c7904e93adaaa15c123d8fd87"
+    },
+    {
+      "module": "GRHQuarterCertificates.C040",
+      "lo": 173841,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 182032,
+      "numerator": "78821502812",
+      "sourceHash": "0ff7e4901cfa6d0d08a92c646ac2b98f0d37a4da62a5964099edae460397c078"
+    },
+    {
+      "module": "GRHQuarterCertificates.C041",
+      "lo": 182033,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 190224,
+      "numerator": "77341594290",
+      "sourceHash": "3a6c3353258c22731ae46b5ec232731b17eb93cb10fe2fc379d3a22b2c752571"
+    },
+    {
+      "module": "GRHQuarterCertificates.C042",
+      "lo": 190225,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 198416,
+      "numerator": "73558536729",
+      "sourceHash": "50c286ea8f1680d78777632782edbfed642b7da2368364a6b52c342f43ff6a01"
+    },
+    {
+      "module": "GRHQuarterCertificates.C043",
+      "lo": 198417,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 206608,
+      "numerator": "70246988858",
+      "sourceHash": "4decb22b0725fb002848ea8f8c74b7b9c1a8848767988dd5d1cb459c6ace3894"
+    },
+    {
+      "module": "GRHQuarterCertificates.C044",
+      "lo": 206609,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 214800,
+      "numerator": "69641075698",
+      "sourceHash": "07c88696f1c21f4c2d4d84d41564811255d9b32559b8c14e661e769b16b0e088"
+    },
+    {
+      "module": "GRHQuarterCertificates.C045",
+      "lo": 214801,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 222992,
+      "numerator": "65757884155",
+      "sourceHash": "3be88c4c7a03398cf38338d2a320b593b11eae32838015f9d4107a9293989d0c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C046",
+      "lo": 222993,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 231184,
+      "numerator": "65630794853",
+      "sourceHash": "97cc86655860089eb5a574b14fbab78b2b7abe17769f1e2a60a5712030797382"
+    },
+    {
+      "module": "GRHQuarterCertificates.C047",
+      "lo": 231185,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 239376,
+      "numerator": "60131804160",
+      "sourceHash": "81900436cc3baef09122dbb0b0cc77770de95de22672d3066c57dd99423e0f7b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C048",
+      "lo": 239377,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 247568,
+      "numerator": "61564686974",
+      "sourceHash": "f7ced94065f691b06277067bbcdf135f26b8ce34077e89a3ffc1cbfd822360fc"
+    },
+    {
+      "module": "GRHQuarterCertificates.C049",
+      "lo": 247569,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 255760,
+      "numerator": "59964389192",
+      "sourceHash": "1a458bceb338dad44b5bf64413b81dc917008f1c1badbc659be3ae8706754212"
+    },
+    {
+      "module": "GRHQuarterCertificates.C050",
+      "lo": 255761,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 263952,
+      "numerator": "56424922791",
+      "sourceHash": "45980d1ae72319242f25405b76dd23eba77e9096b1a0e99030f1d2aa66004d0d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C051",
+      "lo": 263953,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 272144,
+      "numerator": "57192089872",
+      "sourceHash": "4d25696242bc9a96aa752cb817819a9bbd6f024fb19c519ede8267abbb455f88"
+    },
+    {
+      "module": "GRHQuarterCertificates.C052",
+      "lo": 272145,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 280336,
+      "numerator": "54155665552",
+      "sourceHash": "f010d729492626127584fbcf94cc26a655f28c484b7a5d5c96ecbb72aeca44e8"
+    },
+    {
+      "module": "GRHQuarterCertificates.C053",
+      "lo": 280337,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 288528,
+      "numerator": "52585000492",
+      "sourceHash": "11ea1436f2337910d57bfa72f0d7e5d4c64bc3cfdbf059b841f44afe90ea09cc"
+    },
+    {
+      "module": "GRHQuarterCertificates.C054",
+      "lo": 288529,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 296720,
+      "numerator": "51949808645",
+      "sourceHash": "015d8b5948d0cf033173670c06f717b2e8d7418fd5fdb3cd51e19d24fd28e800"
+    },
+    {
+      "module": "GRHQuarterCertificates.C055",
+      "lo": 296721,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 304912,
+      "numerator": "51413777452",
+      "sourceHash": "3cfa4eee3c791fed72f3be2d2fea6878e7d5fbd82028ea5044d4c1460a4b0b45"
+    },
+    {
+      "module": "GRHQuarterCertificates.C056",
+      "lo": 304913,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 313104,
+      "numerator": "49171356691",
+      "sourceHash": "f3dadd27ed7e5b1e474603306d1b41a36d01d0828a4c43b9c33a6dc3d1b1a163"
+    },
+    {
+      "module": "GRHQuarterCertificates.C057",
+      "lo": 313105,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 321296,
+      "numerator": "50557057142",
+      "sourceHash": "6a39fcac5009f6734ae1e9e442b80fe7b6c10231a11360b78b2c08077e6faddf"
+    },
+    {
+      "module": "GRHQuarterCertificates.C058",
+      "lo": 321297,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 329488,
+      "numerator": "48339979174",
+      "sourceHash": "91e1451ab013f8504e781b038fdbeaf2c13be11893b3bc4709311713872fb49c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C059",
+      "lo": 329489,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 337680,
+      "numerator": "47226610298",
+      "sourceHash": "8521a550527c808fff612a5f6246e436257655f637d0b9b2a31c8633aa7533c2"
+    },
+    {
+      "module": "GRHQuarterCertificates.C060",
+      "lo": 337681,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 345872,
+      "numerator": "45513969712",
+      "sourceHash": "8be524126568d7a6281afe98dff72a700a60479dec825982f09d267ba48f7727"
+    },
+    {
+      "module": "GRHQuarterCertificates.C061",
+      "lo": 345873,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 354064,
+      "numerator": "45766639414",
+      "sourceHash": "d2690a581059387043dc969d9bd4142ecc05457faa77baa5d81bbe58e757f2e8"
+    },
+    {
+      "module": "GRHQuarterCertificates.C062",
+      "lo": 354065,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 362256,
+      "numerator": "43190014413",
+      "sourceHash": "07ec6fad32d08ca1521b6ca8e220fd3083a34b30ce98f6bb87621c95d44ef755"
+    },
+    {
+      "module": "GRHQuarterCertificates.C063",
+      "lo": 362257,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 370448,
+      "numerator": "42672534298",
+      "sourceHash": "eb1f93633aab9093c10354c296c110fef616c1c6191deeb58e89639d61aeebea"
+    },
+    {
+      "module": "GRHQuarterCertificates.C064",
+      "lo": 370449,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 378640,
+      "numerator": "42361036887",
+      "sourceHash": "f97e7434bc429137040659f8c669846162ccf35a6091a030bfee50cc40c89757"
+    },
+    {
+      "module": "GRHQuarterCertificates.C065",
+      "lo": 378641,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 386832,
+      "numerator": "41940949808",
+      "sourceHash": "4b31b6685b3ee756fafdff0b2608d8dcc07d27db67bd0107994a4ef4199409d3"
+    },
+    {
+      "module": "GRHQuarterCertificates.C066",
+      "lo": 386833,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 395024,
+      "numerator": "41856016588",
+      "sourceHash": "42ba67160c10e93ce95416c61b7837e3f5679991cdb9622bc476990cf44a0c95"
+    },
+    {
+      "module": "GRHQuarterCertificates.C067",
+      "lo": 395025,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 403216,
+      "numerator": "39247541191",
+      "sourceHash": "e9736fa3f9007566da7dc20899079880673a47f4c24dae907ec46ed01b1f1d03"
+    },
+    {
+      "module": "GRHQuarterCertificates.C068",
+      "lo": 403217,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 411408,
+      "numerator": "39212467796",
+      "sourceHash": "0c7919fa65da4383e5ea4f5e83008ed17377f04bd5d26d7f2ac2fc6891a0a446"
+    },
+    {
+      "module": "GRHQuarterCertificates.C069",
+      "lo": 411409,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 419600,
+      "numerator": "39742192158",
+      "sourceHash": "5ab47ebb869cf390d42401f3f46b7f85e6fe1ba5e6fadd3e384a5bedfdd8b6c6"
+    },
+    {
+      "module": "GRHQuarterCertificates.C070",
+      "lo": 419601,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 427792,
+      "numerator": "37828743278",
+      "sourceHash": "01396c47d193662b98116300e1ac336e2894e16a34cb0c8e8a5c0cf9f13d8f41"
+    },
+    {
+      "module": "GRHQuarterCertificates.C071",
+      "lo": 427793,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 435984,
+      "numerator": "39683470534",
+      "sourceHash": "1a33fd9d45ef886766738fcdd09586727aec0ef2293915061efcee9d3cd76598"
+    },
+    {
+      "module": "GRHQuarterCertificates.C072",
+      "lo": 435985,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 444176,
+      "numerator": "37408414721",
+      "sourceHash": "fa213dd4d6b467146285d355c9a1ca9b4a9bc0dd120af7430bc8bd61434eb2f6"
+    },
+    {
+      "module": "GRHQuarterCertificates.C073",
+      "lo": 444177,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 452368,
+      "numerator": "36025038563",
+      "sourceHash": "c0d9997df39e678fd43e16b157ac0afa300fbd72c2c504dc13a10158294bba81"
+    },
+    {
+      "module": "GRHQuarterCertificates.C074",
+      "lo": 452369,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 460560,
+      "numerator": "34450524475",
+      "sourceHash": "21ffae5f9cc2fedcad34a8ebdae175afcbcc7e0cafa48d955af24cd20fa58fc2"
+    },
+    {
+      "module": "GRHQuarterCertificates.C075",
+      "lo": 460561,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 468752,
+      "numerator": "35976816816",
+      "sourceHash": "b0f676fdd47470268e28a00bc18f966cff9465e59ca1e3452c08bb513fe6bcb9"
+    },
+    {
+      "module": "GRHQuarterCertificates.C076",
+      "lo": 468753,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 476944,
+      "numerator": "36182102220",
+      "sourceHash": "e88b26bd41c9621fe45b474eb102d936f61f9a96a1452973472d5c91e8317a0c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C077",
+      "lo": 476945,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 485136,
+      "numerator": "34063441774",
+      "sourceHash": "4bf1fff82301c210e2ba768b0bb00c1cdff125f36ac1ef3d1df6b9356d5b581c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C078",
+      "lo": 485137,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 493328,
+      "numerator": "34177245529",
+      "sourceHash": "cfd8b78421b0f7e14bd874765e7d3e9c4cbfe5cd83c4cff87937149563759014"
+    },
+    {
+      "module": "GRHQuarterCertificates.C079",
+      "lo": 493329,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 501520,
+      "numerator": "34564298709",
+      "sourceHash": "c4aca0e46054019a9484d4bd0b8a9c6642299cf628c86eb23bd0274f1026d8ca"
+    },
+    {
+      "module": "GRHQuarterCertificates.C080",
+      "lo": 501521,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 509712,
+      "numerator": "32436494857",
+      "sourceHash": "37567c51f5757c51a2f8a20b3a0397656ec2afb8453e4cd88b7fbbd5dbee07d0"
+    },
+    {
+      "module": "GRHQuarterCertificates.C081",
+      "lo": 509713,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 517904,
+      "numerator": "33153352653",
+      "sourceHash": "99b38243afcd1fd39ff70050174410feea4ec560182bebd0d1e1efab05611345"
+    },
+    {
+      "module": "GRHQuarterCertificates.C082",
+      "lo": 517905,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 526096,
+      "numerator": "32816545869",
+      "sourceHash": "f5def16a6721ed6ce982f8483408011d7e5a268b3972a8524cadb8be214cc0c9"
+    },
+    {
+      "module": "GRHQuarterCertificates.C083",
+      "lo": 526097,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 534288,
+      "numerator": "31819855902",
+      "sourceHash": "1ddeeec36537209848f5637d2442d49bb9306be3aa4f9df68d8f2a7a072d70cb"
+    },
+    {
+      "module": "GRHQuarterCertificates.C084",
+      "lo": 534289,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 542480,
+      "numerator": "30997592245",
+      "sourceHash": "ab1c1125a0fea57c6658b271f6c1947f018c648e18cf663d2532a3249928e353"
+    },
+    {
+      "module": "GRHQuarterCertificates.C085",
+      "lo": 542481,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 550672,
+      "numerator": "30899272079",
+      "sourceHash": "3a7577f6db90dcff5fd575de2649cb28844e7ecb4708282dd27f8fea159ae0db"
+    },
+    {
+      "module": "GRHQuarterCertificates.C086",
+      "lo": 550673,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 558864,
+      "numerator": "30359686924",
+      "sourceHash": "6e035f480678df89bc6fd1609b62303ecd0a161d044f4f11a272fff23a700ffb"
+    },
+    {
+      "module": "GRHQuarterCertificates.C087",
+      "lo": 558865,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 567056,
+      "numerator": "30224871911",
+      "sourceHash": "e1bf4b10bb2a6131cb83e3530a8efc6792d5a6fccd67cd7ca8c5415b3210a1cb"
+    },
+    {
+      "module": "GRHQuarterCertificates.C088",
+      "lo": 567057,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 575248,
+      "numerator": "30286192739",
+      "sourceHash": "ac24fce454949abeb6a3ca322cfd81890fd332424582c2b16340a69ea7848d81"
+    },
+    {
+      "module": "GRHQuarterCertificates.C089",
+      "lo": 575249,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 583440,
+      "numerator": "30061076468",
+      "sourceHash": "907cd1949d7be40ca67e8cfd81fcb17c9aa06f655f1254655e30adf5f2d92870"
+    },
+    {
+      "module": "GRHQuarterCertificates.C090",
+      "lo": 583441,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 591632,
+      "numerator": "29368355037",
+      "sourceHash": "f44f18ff5ef64e5214b0b3b38e8c94b131dbdfc4fc4cf7c0e82cb22c865678ad"
+    },
+    {
+      "module": "GRHQuarterCertificates.C091",
+      "lo": 591633,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 599824,
+      "numerator": "29157883944",
+      "sourceHash": "6f45672621bdb189ecec63b0bbee1310d49bb98333942c1d5c0080ca7274b21d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C092",
+      "lo": 599825,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 608016,
+      "numerator": "28906140292",
+      "sourceHash": "b8bbae3d8dfa2a337cef59d3d8abc9147ab68760f36d265a2773064a4b527558"
+    },
+    {
+      "module": "GRHQuarterCertificates.C093",
+      "lo": 608017,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 616208,
+      "numerator": "28615150360",
+      "sourceHash": "5f9dfe14249d5464f1cfcc855d527c0922798f6bfd9972072c7e862f00679be9"
+    },
+    {
+      "module": "GRHQuarterCertificates.C094",
+      "lo": 616209,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 624400,
+      "numerator": "28104379640",
+      "sourceHash": "231cf93c338f9867b7ca0370f49dd9c3728b81841a681baab5066014334f785c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C095",
+      "lo": 624401,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 632592,
+      "numerator": "27010486318",
+      "sourceHash": "d9eb2785b70c98bbfc51d55fd055a2851fb1c5dbab2ea34d3490bd7127e9d669"
+    },
+    {
+      "module": "GRHQuarterCertificates.C096",
+      "lo": 632593,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 640784,
+      "numerator": "26753747779",
+      "sourceHash": "e46c3cab3a54688fc9625b779d1ea369156e8cad278e1e8caa53118558cde1ae"
+    },
+    {
+      "module": "GRHQuarterCertificates.C097",
+      "lo": 640785,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 648976,
+      "numerator": "27205012374",
+      "sourceHash": "bb6643d1b70a58d6ecebd720b34abc9449deb73664b98c217cbc58bcd83d74a3"
+    },
+    {
+      "module": "GRHQuarterCertificates.C098",
+      "lo": 648977,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 657168,
+      "numerator": "26774681198",
+      "sourceHash": "1ddab1aad5c4bd67c7e53e096c5e1fb9bcf300449827f0c3cfdea5ffb2d1c14f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C099",
+      "lo": 657169,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 665360,
+      "numerator": "27133052245",
+      "sourceHash": "52a6b5168bd6d9c2a24e4626359c0c925d4bcc201da44305af340a0457a2f225"
+    },
+    {
+      "module": "GRHQuarterCertificates.C100",
+      "lo": 665361,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 673552,
+      "numerator": "26105761119",
+      "sourceHash": "4f18c88ad75b9cc9f46da67483bf43792f3b05e42bc51c7f0a0ae3dfe11d715e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C101",
+      "lo": 673553,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 681744,
+      "numerator": "26211165162",
+      "sourceHash": "dfc375c377967e65567606f6960637ebd8328a1cfb0f14e2e33b2dcec658959a"
+    },
+    {
+      "module": "GRHQuarterCertificates.C102",
+      "lo": 681745,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 689936,
+      "numerator": "25976848301",
+      "sourceHash": "7459403e322252791fce40e63e8c00e52225511355c600bba48e95b7edcd6f4c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C103",
+      "lo": 689937,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 698128,
+      "numerator": "25536331414",
+      "sourceHash": "da9c87ac4c555d229d8da7a0206aa1d1235d2b87dab89bb53d9df404374dd350"
+    },
+    {
+      "module": "GRHQuarterCertificates.C104",
+      "lo": 698129,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 706320,
+      "numerator": "25394557360",
+      "sourceHash": "02dc19435d04e8ca9bca5bbcd8a8e9c9671aaa9c4a19d7d6e5483f190540e56c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C105",
+      "lo": 706321,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 714512,
+      "numerator": "25014460183",
+      "sourceHash": "71b70bb6abd724d6acc792f7455f46bd46f5baf8b7771296fa434bef55f4e93e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C106",
+      "lo": 714513,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 722704,
+      "numerator": "24716419833",
+      "sourceHash": "8031519f4db5d62dee82ad3b03a078301e2df9901ba0f7972d0d6c02f613fdb2"
+    },
+    {
+      "module": "GRHQuarterCertificates.C107",
+      "lo": 722705,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 730896,
+      "numerator": "24873920284",
+      "sourceHash": "3438d1cf22fc5530641533a8036ee44ad65424b2e552aecffef642cee3e964e7"
+    },
+    {
+      "module": "GRHQuarterCertificates.C108",
+      "lo": 730897,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 739088,
+      "numerator": "24463474140",
+      "sourceHash": "842ead0494c139f2e25bd5b5590e5ffab6abf91631e1f7ae9ee8b787f2e619d4"
+    },
+    {
+      "module": "GRHQuarterCertificates.C109",
+      "lo": 739089,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 747280,
+      "numerator": "22986014037",
+      "sourceHash": "5883e0532e557ddb6427d642f67151020085b9ac9cd0bed655a7d27c2233377c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C110",
+      "lo": 747281,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 755472,
+      "numerator": "24536179602",
+      "sourceHash": "925453c2ba44fb147bade1018b9fbd13024f764b2503e69e0af69f982c03e790"
+    },
+    {
+      "module": "GRHQuarterCertificates.C111",
+      "lo": 755473,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 763664,
+      "numerator": "23629178226",
+      "sourceHash": "7ea8020cd07d8b70b6d0101493be16c03f31b5d7b48274b10c904870b79bbc01"
+    },
+    {
+      "module": "GRHQuarterCertificates.C112",
+      "lo": 763665,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 771856,
+      "numerator": "24026971466",
+      "sourceHash": "ee084aa010941a66f437cd418394a75243945c781a9758a663840583b7b0d381"
+    },
+    {
+      "module": "GRHQuarterCertificates.C113",
+      "lo": 771857,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 780048,
+      "numerator": "23139848030",
+      "sourceHash": "2c9dcec466ac8255f837a1cff4b90262f053c48c78542356c93221e790a1be71"
+    },
+    {
+      "module": "GRHQuarterCertificates.C114",
+      "lo": 780049,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 788240,
+      "numerator": "23227291390",
+      "sourceHash": "fbde428735ecfc3b857d41d987e1a8cafeeaccaca475ff8d6d4283bba15a84d4"
+    },
+    {
+      "module": "GRHQuarterCertificates.C115",
+      "lo": 788241,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 796432,
+      "numerator": "23275045330",
+      "sourceHash": "8d45ede3adc2be7dbea3154a06805c0885280ec5de4e5a7fa88e15fbd39e799d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C116",
+      "lo": 796433,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 804624,
+      "numerator": "22681885770",
+      "sourceHash": "d17bc95c31879817aefe3ce5a1169e73c2ed1a44f8f8dca65bcc181de5da70ba"
+    },
+    {
+      "module": "GRHQuarterCertificates.C117",
+      "lo": 804625,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 812816,
+      "numerator": "22620631767",
+      "sourceHash": "71e631a67443d023e5348a26aa81962d98240e1d3df3c2a29141be03bdba44d1"
+    },
+    {
+      "module": "GRHQuarterCertificates.C118",
+      "lo": 812817,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 821008,
+      "numerator": "22189158140",
+      "sourceHash": "4c112b163f97b77b99530b82f8866164dbed4253dcdb13075d4abf6636b4bbe1"
+    },
+    {
+      "module": "GRHQuarterCertificates.C119",
+      "lo": 821009,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 829200,
+      "numerator": "22727037097",
+      "sourceHash": "8c4dcbb7e666534e7d966332197b2ef395438e2e5187f6627a0548ae9088af3f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C120",
+      "lo": 829201,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 837392,
+      "numerator": "21789692109",
+      "sourceHash": "6bbea670971fb5704124879e85c1bf31187402e9c3dd775a38dbd704cc011a7e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C121",
+      "lo": 837393,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 845584,
+      "numerator": "21629305966",
+      "sourceHash": "1bb0b25f328c87b020de8236e385aea9fbb1803dd539318e8736b956ef4c8041"
+    },
+    {
+      "module": "GRHQuarterCertificates.C122",
+      "lo": 845585,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 853776,
+      "numerator": "21221176797",
+      "sourceHash": "4d8947c1cd8d55b0cd9622d19cfe772ca225877375d64dd11acb4ccf5c4b585e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C123",
+      "lo": 853777,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 861968,
+      "numerator": "21641668845",
+      "sourceHash": "875393a99d195fd202bb523c106bfd986aab43971dddec6f6b8f2c674d202db4"
+    },
+    {
+      "module": "GRHQuarterCertificates.C124",
+      "lo": 861969,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 870160,
+      "numerator": "21985984283",
+      "sourceHash": "0d916ec4764a91f3dcf1d69dcc1fbd39d0ca284ae685e4797f3946caff6c794a"
+    },
+    {
+      "module": "GRHQuarterCertificates.C125",
+      "lo": 870161,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 878352,
+      "numerator": "20841637191",
+      "sourceHash": "c38989c40d770a177e0cfab89cceaa756f33c7590cbf0195fbd769844579ee2d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C126",
+      "lo": 878353,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 886544,
+      "numerator": "21328788592",
+      "sourceHash": "07eebfdff71150ba2873dd6ae649e7080adf0b35aaa3eb2183a761bb3d4720e0"
+    },
+    {
+      "module": "GRHQuarterCertificates.C127",
+      "lo": 886545,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 894736,
+      "numerator": "20831913720",
+      "sourceHash": "4242ce7aa189e169befa7d5261b080917840e8ccb761f0fbfdc6c33ee4b27fd8"
+    },
+    {
+      "module": "GRHQuarterCertificates.C128",
+      "lo": 894737,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 902928,
+      "numerator": "20067814768",
+      "sourceHash": "352be2903d341b027ededaaee55f0dbc0d0aac98ad45deb1742cd23b2fe150e3"
+    },
+    {
+      "module": "GRHQuarterCertificates.C129",
+      "lo": 902929,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 911120,
+      "numerator": "21133631433",
+      "sourceHash": "17a5a4aea71549a080aa0f187537d289e0c62b4bf3d961bde9d94070eb343bc3"
+    },
+    {
+      "module": "GRHQuarterCertificates.C130",
+      "lo": 911121,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 919312,
+      "numerator": "20035324226",
+      "sourceHash": "6d8942dd07d23b4149858b1af44f4051731d4b7762fd5520d0d76b82370a3114"
+    },
+    {
+      "module": "GRHQuarterCertificates.C131",
+      "lo": 919313,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 927504,
+      "numerator": "20513009156",
+      "sourceHash": "5cb571b912ebcb3d6df33a83cece4e53f3d3bfc7f9e6f106da1b83e2fae29b43"
+    },
+    {
+      "module": "GRHQuarterCertificates.C132",
+      "lo": 927505,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 935696,
+      "numerator": "20073830088",
+      "sourceHash": "6fb3e426fffc4dcfc2467f53d6b71b88558690f2f47a8abebb6df224e14e17c1"
+    },
+    {
+      "module": "GRHQuarterCertificates.C133",
+      "lo": 935697,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 943888,
+      "numerator": "19908164668",
+      "sourceHash": "0c6c76d2a3d1ef26499000a1f6014f0937bc8c2008524cf0d8c4fb7b56a746c0"
+    },
+    {
+      "module": "GRHQuarterCertificates.C134",
+      "lo": 943889,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 952080,
+      "numerator": "19148040352",
+      "sourceHash": "c044509b1852e3a7a2de91eb2cbb0886f638f9f10ba74ab56016a5df5cb06c71"
+    },
+    {
+      "module": "GRHQuarterCertificates.C135",
+      "lo": 952081,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 960272,
+      "numerator": "19158081456",
+      "sourceHash": "99630faa13507aa8129d47d33442cab534b5a5c94376f8820b9acb852d02abd2"
+    },
+    {
+      "module": "GRHQuarterCertificates.C136",
+      "lo": 960273,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 968464,
+      "numerator": "19791034653",
+      "sourceHash": "e4579f7ce8441512b791235af4675db175a6f696693c89dd472fa5f400376d33"
+    },
+    {
+      "module": "GRHQuarterCertificates.C137",
+      "lo": 968465,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 976656,
+      "numerator": "19665208336",
+      "sourceHash": "be8e57fb7a399476d37cf28a735be4b4ba276721af2b1813094259d167d9a377"
+    },
+    {
+      "module": "GRHQuarterCertificates.C138",
+      "lo": 976657,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 984848,
+      "numerator": "18277305470",
+      "sourceHash": "a288eaa58d56c07764033f8e3cf5c563f2da67f9827f9326ac60559085942764"
+    },
+    {
+      "module": "GRHQuarterCertificates.C139",
+      "lo": 984849,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 993040,
+      "numerator": "18905457317",
+      "sourceHash": "b9e5e6da839fb31bc46b9823e148d8bab019c068250ae2fb4b2f8b9a9debf58f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C140",
+      "lo": 993041,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1001232,
+      "numerator": "19108336579",
+      "sourceHash": "933946d63fecac5217c0f646eacd4458098e49ef8f0f0289bcadf5b5d7c57f4f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C141",
+      "lo": 1001233,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1009424,
+      "numerator": "19659200215",
+      "sourceHash": "af8fa5d59dda5bfdc9983be97f3f5609140b6d8440536250a0b271cfa3f85e4a"
+    },
+    {
+      "module": "GRHQuarterCertificates.C142",
+      "lo": 1009425,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1017616,
+      "numerator": "18654661331",
+      "sourceHash": "ff02edcd03294f9cc89a50366a68740223b71ee41d646756cb0f61f94156ab1e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C143",
+      "lo": 1017617,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1025808,
+      "numerator": "18888140617",
+      "sourceHash": "fb0ff6240c4d6b187cd770245c6ad974bb32972f4fea84b3dfb0679edac9c6ce"
+    },
+    {
+      "module": "GRHQuarterCertificates.C144",
+      "lo": 1025809,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1034000,
+      "numerator": "18150989822",
+      "sourceHash": "c6522c4948cf67666393ddf78eb91876476b73e42e3eae665b86dac7c6dfb7aa"
+    },
+    {
+      "module": "GRHQuarterCertificates.C145",
+      "lo": 1034001,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1042192,
+      "numerator": "18260826943",
+      "sourceHash": "20f8a1dc5480164327db90bbfd579a14adb7e34c1a0c1bafa991f877d63505ac"
+    },
+    {
+      "module": "GRHQuarterCertificates.C146",
+      "lo": 1042193,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1050384,
+      "numerator": "18215031547",
+      "sourceHash": "d973101ed2bec7fe0fae817f4528a12fa0027043089c7e5c4884dba47aa03610"
+    },
+    {
+      "module": "GRHQuarterCertificates.C147",
+      "lo": 1050385,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1058576,
+      "numerator": "17433151689",
+      "sourceHash": "92477eb9f35c8d0d2e6b1dc96475f9d97f67e0c2a1fc4610e9a0ec7354a33143"
+    },
+    {
+      "module": "GRHQuarterCertificates.C148",
+      "lo": 1058577,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1066768,
+      "numerator": "17729754729",
+      "sourceHash": "5c97a5d692ec1234d3a252bdd22c79a810ee9f98dadac08e080f359a5f88be41"
+    },
+    {
+      "module": "GRHQuarterCertificates.C149",
+      "lo": 1066769,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1074960,
+      "numerator": "17931680523",
+      "sourceHash": "f155262ffb4e5ae7d63892eb5f7c4e5172fa721394e893db408060ed4c7ca9b2"
+    },
+    {
+      "module": "GRHQuarterCertificates.C150",
+      "lo": 1074961,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1083152,
+      "numerator": "18191448432",
+      "sourceHash": "534441a70a3b780763219474299aee02c4cead29ffa8a87d6f0cd9e9a3ed2088"
+    },
+    {
+      "module": "GRHQuarterCertificates.C151",
+      "lo": 1083153,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1091344,
+      "numerator": "17367768892",
+      "sourceHash": "a824167858dcbaab53f1decf710b015b10e1105fb8849c2b2b06376b638ff313"
+    },
+    {
+      "module": "GRHQuarterCertificates.C152",
+      "lo": 1091345,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1099536,
+      "numerator": "17808751301",
+      "sourceHash": "55bb788bd8de58d0ab133dae80f475a2842725ec37d2c1a6fc0d88eeb8c8d1c5"
+    },
+    {
+      "module": "GRHQuarterCertificates.C153",
+      "lo": 1099537,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1107728,
+      "numerator": "17767882150",
+      "sourceHash": "3a7805a8097b8ccd253c298f1d76b5b0eafb543301dd671d69956a253633e810"
+    },
+    {
+      "module": "GRHQuarterCertificates.C154",
+      "lo": 1107729,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1115920,
+      "numerator": "18053320327",
+      "sourceHash": "96ab339819a9e6fefa8c16d2abfcec43057e23ddd1e40c020ac3e1ea6417e955"
+    },
+    {
+      "module": "GRHQuarterCertificates.C155",
+      "lo": 1115921,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1124112,
+      "numerator": "16662740969",
+      "sourceHash": "0e9ec23cb79f4538c1800df1e6f6125b0fc47c3045873a0e56851c3a293243ed"
+    },
+    {
+      "module": "GRHQuarterCertificates.C156",
+      "lo": 1124113,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1132304,
+      "numerator": "17213774498",
+      "sourceHash": "53c2cd947f526bd4d42d3a431238281fe213f750b8e4d44a626033168002361f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C157",
+      "lo": 1132305,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1140496,
+      "numerator": "17063684275",
+      "sourceHash": "3145517ad8e718f674ff547b3f7944e65af94cde7280958424ddd057f7dc52d4"
+    },
+    {
+      "module": "GRHQuarterCertificates.C158",
+      "lo": 1140497,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1148688,
+      "numerator": "16451872095",
+      "sourceHash": "3b54873331717f3f0176c398ff5e1d8f5fa01dd1d7fd8fd738a47a982bc6ffaa"
+    },
+    {
+      "module": "GRHQuarterCertificates.C159",
+      "lo": 1148689,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1156880,
+      "numerator": "17196284500",
+      "sourceHash": "34166c47275708ac642843f397a9f440e420da0ed92f07598b35f7dbbfde7eb8"
+    },
+    {
+      "module": "GRHQuarterCertificates.C160",
+      "lo": 1156881,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1165072,
+      "numerator": "17475981521",
+      "sourceHash": "63bb087c163fdc263852bd54b863fe62f5ce28108652563b03f2eb1bbfac52f2"
+    },
+    {
+      "module": "GRHQuarterCertificates.C161",
+      "lo": 1165073,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1173264,
+      "numerator": "16475739187",
+      "sourceHash": "1838c1dfc18f82167e843c4f682ca1806d02f875ba147d8beafc0d89f890de80"
+    },
+    {
+      "module": "GRHQuarterCertificates.C162",
+      "lo": 1173265,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1181456,
+      "numerator": "17123265360",
+      "sourceHash": "81d8732ebb399aa5adbae34a4d01aedeb352864de387253ecb9b4e31da3ecc4b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C163",
+      "lo": 1181457,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1189648,
+      "numerator": "16754206318",
+      "sourceHash": "3b10b84e40fac29598595029512fbeece4cdfc58fde568779961d1d73edca6b5"
+    },
+    {
+      "module": "GRHQuarterCertificates.C164",
+      "lo": 1189649,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1197840,
+      "numerator": "16304693948",
+      "sourceHash": "f383bde8a12ba24044ffa7716210bd848db63e6b33968627e62b5b28c5b93ce7"
+    },
+    {
+      "module": "GRHQuarterCertificates.C165",
+      "lo": 1197841,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1206032,
+      "numerator": "15665107640",
+      "sourceHash": "aadee72f3c2367dce4b06a4c4a8858cf07a0e8f0693808384028788f0186824b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C166",
+      "lo": 1206033,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1214224,
+      "numerator": "16303554403",
+      "sourceHash": "2e98dcfd66a7a23aa3d91246506efce5101267bcfc6fb6fd0a1f7d32985be373"
+    },
+    {
+      "module": "GRHQuarterCertificates.C167",
+      "lo": 1214225,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1222416,
+      "numerator": "15920027985",
+      "sourceHash": "db49f3c8ce10d9ade603db9f53e496d794c4c3954c3dede0f72a82cd5dc13c1e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C168",
+      "lo": 1222417,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1230608,
+      "numerator": "15949316819",
+      "sourceHash": "3e7df7de17d52f9d6b31f38e6b0c3b8bad4c9b4dd65ac1eea582c5d5d70ad9f0"
+    },
+    {
+      "module": "GRHQuarterCertificates.C169",
+      "lo": 1230609,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1238800,
+      "numerator": "15351402009",
+      "sourceHash": "90bafffcbcf8902964d8d379f0eec256fa3e5bbc3838d76a16918bbb2ee73753"
+    },
+    {
+      "module": "GRHQuarterCertificates.C170",
+      "lo": 1238801,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1246992,
+      "numerator": "15899526221",
+      "sourceHash": "5c4e7ab08060431689ce7ca249a7fbe13be487a324eeba02e00f363123642d91"
+    },
+    {
+      "module": "GRHQuarterCertificates.C171",
+      "lo": 1246993,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1255184,
+      "numerator": "15902795751",
+      "sourceHash": "5829f414e8fc41cf5d4af36852e3b1bd9a96651b02f8f7fbef860cd49b9a673f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C172",
+      "lo": 1255185,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1263376,
+      "numerator": "15905476045",
+      "sourceHash": "63710d85acb21751e81641a60b14f6c432a4a8216fd47bbd2fda8431a2282f5f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C173",
+      "lo": 1263377,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1271568,
+      "numerator": "16015180830",
+      "sourceHash": "38acaea02eff2d2ef1ccb0b0880ab68a07e8f216badf26fd9d7c4b2cedbc37c9"
+    },
+    {
+      "module": "GRHQuarterCertificates.C174",
+      "lo": 1271569,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1279760,
+      "numerator": "15113278626",
+      "sourceHash": "9ad2745d41d4a2c925c5b6d1d77a2e046a0cee5b1fca9d428503853bb7bf8f3e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C175",
+      "lo": 1279761,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1287952,
+      "numerator": "15596777144",
+      "sourceHash": "ffae578cf35e76a0884be3960713a01ba0893d2fc6d6601f49ad19171117df73"
+    },
+    {
+      "module": "GRHQuarterCertificates.C176",
+      "lo": 1287953,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1296144,
+      "numerator": "15101715054",
+      "sourceHash": "8439877bafe948c67957efdc6d71dbc5ca1866322f667d466bbba475605e647c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C177",
+      "lo": 1296145,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1304336,
+      "numerator": "15396617640",
+      "sourceHash": "e0e8013edfcd2457fd60ff66b69b6287ab3ff3e90332c07e408466ed1fbfceb2"
+    },
+    {
+      "module": "GRHQuarterCertificates.C178",
+      "lo": 1304337,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1312528,
+      "numerator": "14932563409",
+      "sourceHash": "2edd2ef62600f8a979b39c8386982e74f549b347c0f6ebbd481b3cff2c3ad63d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C179",
+      "lo": 1312529,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1320720,
+      "numerator": "14629976323",
+      "sourceHash": "ad2761e4a8637b9e532e3570d3919a6983eed663ef7e59393c1e6ea9fb013525"
+    },
+    {
+      "module": "GRHQuarterCertificates.C180",
+      "lo": 1320721,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1328912,
+      "numerator": "15519831881",
+      "sourceHash": "677e57af72650925558b0cff2fe4d2abdb6afe3748216feba4610fd1727b431d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C181",
+      "lo": 1328913,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1337104,
+      "numerator": "14674306221",
+      "sourceHash": "e70a738aa94abf44055be1c2d0ff4457a574c8ffee9716665103d6d64d037c7b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C182",
+      "lo": 1337105,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1345296,
+      "numerator": "15068913194",
+      "sourceHash": "58fd8157963b89ee634946bbb5c6f53752eaf246273477229e90c6de8f17efec"
+    },
+    {
+      "module": "GRHQuarterCertificates.C183",
+      "lo": 1345297,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1353488,
+      "numerator": "14463875778",
+      "sourceHash": "28a6567dc03821205cdbdccbe18749368477275c33f8d4271ac5e4288afc9d2d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C184",
+      "lo": 1353489,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1361680,
+      "numerator": "14703548068",
+      "sourceHash": "ce73c2c21cb4a76eeba10c9ac0fa6e243d903a8f58381ebf0afe7ab8cef78dff"
+    },
+    {
+      "module": "GRHQuarterCertificates.C185",
+      "lo": 1361681,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1369872,
+      "numerator": "14713139965",
+      "sourceHash": "97c70a5c577d5ee9d8851c5ba924993f4236c3c29bf8483a92f6049a21baed20"
+    },
+    {
+      "module": "GRHQuarterCertificates.C186",
+      "lo": 1369873,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1378064,
+      "numerator": "14646660934",
+      "sourceHash": "62710545d0ad55e5726b111e32ae63a0956b59fe436c0d31fd6c69f670730bea"
+    },
+    {
+      "module": "GRHQuarterCertificates.C187",
+      "lo": 1378065,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1386256,
+      "numerator": "14632638406",
+      "sourceHash": "45904f81a7b4e23ef78f8626bb7ef9ab6ff33d03df7bcd42efe4e30250c53e5d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C188",
+      "lo": 1386257,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1394448,
+      "numerator": "14268030038",
+      "sourceHash": "cee8e337e218e4317728618519d3838fb7d6ff2809fc100b08d3c092ff760d74"
+    },
+    {
+      "module": "GRHQuarterCertificates.C189",
+      "lo": 1394449,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1402640,
+      "numerator": "14926506802",
+      "sourceHash": "8fc5b426d1e686163bb2d6d40c185925743b987975255cc0c5bd0d67f07da651"
+    },
+    {
+      "module": "GRHQuarterCertificates.C190",
+      "lo": 1402641,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1410832,
+      "numerator": "13994726666",
+      "sourceHash": "7d2d8181e5b4b43b4a0407b896dd52ce61495861b6a202b3862d8f0214006e25"
+    },
+    {
+      "module": "GRHQuarterCertificates.C191",
+      "lo": 1410833,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1419024,
+      "numerator": "13565852000",
+      "sourceHash": "ae34e8a5e6730fcdea8f52562b4a2fa85cf44eef17e075944d1ded12346f9add"
+    },
+    {
+      "module": "GRHQuarterCertificates.C192",
+      "lo": 1419025,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1427216,
+      "numerator": "14462023891",
+      "sourceHash": "3f3205a2970405f0f75e92427a6da675e8efe56dc15b06af8d6c18bb62a873d5"
+    },
+    {
+      "module": "GRHQuarterCertificates.C193",
+      "lo": 1427217,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1435408,
+      "numerator": "14521730847",
+      "sourceHash": "a92b61c0ceca393ca4bc515d9ad375983def99d72a93a67ad418eac8dc12d5a1"
+    },
+    {
+      "module": "GRHQuarterCertificates.C194",
+      "lo": 1435409,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1443600,
+      "numerator": "14022970731",
+      "sourceHash": "7be5d0d131e58fce61b9f6852f4a6a4707e96a426bb503291f0a7e8fbe04ff17"
+    },
+    {
+      "module": "GRHQuarterCertificates.C195",
+      "lo": 1443601,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1451792,
+      "numerator": "13963230905",
+      "sourceHash": "0488774baf66c992f4f7c284c78a41458d8855d65f615e399c640964c2a5155b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C196",
+      "lo": 1451793,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1459984,
+      "numerator": "13832640156",
+      "sourceHash": "e9c8defed69f2dc701d2dc074c87fdb6c5afbba87be9777f6c01bf29e1a34a07"
+    },
+    {
+      "module": "GRHQuarterCertificates.C197",
+      "lo": 1459985,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1468176,
+      "numerator": "14062809704",
+      "sourceHash": "75e32c843d6d002e381466642073740af27f868c2366a36d5b19d92e8b69ee44"
+    },
+    {
+      "module": "GRHQuarterCertificates.C198",
+      "lo": 1468177,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1476368,
+      "numerator": "13382188510",
+      "sourceHash": "2a5cd61a815f985c4410eda9c4d7b4fa26d444373d4841346039b503e3fc1912"
+    },
+    {
+      "module": "GRHQuarterCertificates.C199",
+      "lo": 1476369,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1484560,
+      "numerator": "14373602854",
+      "sourceHash": "45bc2fd9fe8f8bfa5830124f765bfbdc2a4d6aa51cc349cd58b88b5523d461f6"
+    },
+    {
+      "module": "GRHQuarterCertificates.C200",
+      "lo": 1484561,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1492752,
+      "numerator": "13697049851",
+      "sourceHash": "93ada440f5f339cf99439dc2ffcab9d21300f3288bd728ed21c2137fb10f3c6b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C201",
+      "lo": 1492753,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1500944,
+      "numerator": "13618073984",
+      "sourceHash": "0c77e0f08add365993a587935bc5c2ba667c8f6df9c916e7cc33ace16cf600ca"
+    },
+    {
+      "module": "GRHQuarterCertificates.C202",
+      "lo": 1500945,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1509136,
+      "numerator": "13985054990",
+      "sourceHash": "883ae16de107d38ada1a2a73ccabb78bda226afaa86932bdea78a4b4d64b73d8"
+    },
+    {
+      "module": "GRHQuarterCertificates.C203",
+      "lo": 1509137,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1517328,
+      "numerator": "13413727889",
+      "sourceHash": "b28ea6cce7cda06f3851bcd918e93a2d0df54edc1515871f1b7df2996304dc42"
+    },
+    {
+      "module": "GRHQuarterCertificates.C204",
+      "lo": 1517329,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1525520,
+      "numerator": "13312470911",
+      "sourceHash": "d12c5308b386fd998326426fe994d4b8be37403554b5f581af1cc9c4f93afd0b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C205",
+      "lo": 1525521,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1533712,
+      "numerator": "12678768017",
+      "sourceHash": "e71c94e345dd6e601af5a92b86ac3eafea7da2691a1e371b1f70ad6678a8ea33"
+    },
+    {
+      "module": "GRHQuarterCertificates.C206",
+      "lo": 1533713,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1541904,
+      "numerator": "13414469365",
+      "sourceHash": "ad73b17431d1abdbf9656dfb306a2bbe5b02481ef966609c2d0a7fe37ef1ab09"
+    },
+    {
+      "module": "GRHQuarterCertificates.C207",
+      "lo": 1541905,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1550096,
+      "numerator": "13107170705",
+      "sourceHash": "bf2aff94444cfdbf7ac55d78144876f0b9d0ca9061162c7c64d5bd62168ef3cd"
+    },
+    {
+      "module": "GRHQuarterCertificates.C208",
+      "lo": 1550097,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1558288,
+      "numerator": "13193535469",
+      "sourceHash": "36980c8f200c799f7738bfab62bb3aa35c271e43bd46e8ac4c9018ef5b27affb"
+    },
+    {
+      "module": "GRHQuarterCertificates.C209",
+      "lo": 1558289,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1566480,
+      "numerator": "13255904468",
+      "sourceHash": "5c4a466c004968ef1aed43ebb82812b141ca8cd9b48d0f9c1cb60c52a8a92022"
+    },
+    {
+      "module": "GRHQuarterCertificates.C210",
+      "lo": 1566481,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1574672,
+      "numerator": "13021287685",
+      "sourceHash": "0d38319668d725334467b3cca5bdfd8792cd0f657216284d7c914bbd108a2b38"
+    },
+    {
+      "module": "GRHQuarterCertificates.C211",
+      "lo": 1574673,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1582864,
+      "numerator": "12540428777",
+      "sourceHash": "d70d9d56c55d28146e5962293928094b44c8f3d8b6ef7ad04da9343de671c54e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C212",
+      "lo": 1582865,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1591056,
+      "numerator": "12875809584",
+      "sourceHash": "db63c4347045109dbdc7399de27924ee49f556ca2de0fcfdc92a2db7b81377dc"
+    },
+    {
+      "module": "GRHQuarterCertificates.C213",
+      "lo": 1591057,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1599248,
+      "numerator": "12623362309",
+      "sourceHash": "02f4fab6b930cff384a6e6306d2e65ae336a5986dba5efe7358526e70eb08fab"
+    },
+    {
+      "module": "GRHQuarterCertificates.C214",
+      "lo": 1599249,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1607440,
+      "numerator": "13337347982",
+      "sourceHash": "5354699e629128a03fad160a1d12015c2171e64b0011bdb5dc2e6f44a8ad8619"
+    },
+    {
+      "module": "GRHQuarterCertificates.C215",
+      "lo": 1607441,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1615632,
+      "numerator": "12393347080",
+      "sourceHash": "3e68fa5956c2f38fe6db8b3e4fa26223146b94d92744818f48a368a02bab58e2"
+    },
+    {
+      "module": "GRHQuarterCertificates.C216",
+      "lo": 1615633,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1623824,
+      "numerator": "12746857672",
+      "sourceHash": "ef4642d199f2bfd303fe146933771f2a3590ac8ed9f16b43fa4fe6bc93331a41"
+    },
+    {
+      "module": "GRHQuarterCertificates.C217",
+      "lo": 1623825,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1632016,
+      "numerator": "12986894372",
+      "sourceHash": "e10fcf84138ef4f6a61e06f7d3bb398d844caa3c740cb6b63e8f61e07361e309"
+    },
+    {
+      "module": "GRHQuarterCertificates.C218",
+      "lo": 1632017,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1640208,
+      "numerator": "12563288580",
+      "sourceHash": "bca566133cb6f13f836ea745a93fa2fcdbd93a2c8686f51bf6a8db38e8c7652f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C219",
+      "lo": 1640209,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1648400,
+      "numerator": "12405352126",
+      "sourceHash": "76709dda908bbeb62a1564d6e927473202087a01583a209bab801e1f34cec644"
+    },
+    {
+      "module": "GRHQuarterCertificates.C220",
+      "lo": 1648401,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1656592,
+      "numerator": "12819278156",
+      "sourceHash": "683fe01440644952e9c7a9269a6e8079f816db47d3d0b2e3b9bf459f0af3b166"
+    },
+    {
+      "module": "GRHQuarterCertificates.C221",
+      "lo": 1656593,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1664784,
+      "numerator": "11942744721",
+      "sourceHash": "2de80be2ee57b7f209555505440ae80a43d751abbaa06c612558ccf418889e40"
+    },
+    {
+      "module": "GRHQuarterCertificates.C222",
+      "lo": 1664785,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1672976,
+      "numerator": "12834546270",
+      "sourceHash": "f448d57facfa26625f372645c6b1912e7c3f225fb817177717aa59a35f01f07b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C223",
+      "lo": 1672977,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1681168,
+      "numerator": "12830058009",
+      "sourceHash": "90e5a782fbaa9c46852d766a82c75ca7628d89ee0cb56070e1bc5c4c0ae7289b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C224",
+      "lo": 1681169,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1689360,
+      "numerator": "11897816192",
+      "sourceHash": "7c586e6c94d4acd0c8580f5aabd1682aba0bf7b411188ce69f1dd0e0eec017d2"
+    },
+    {
+      "module": "GRHQuarterCertificates.C225",
+      "lo": 1689361,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1697552,
+      "numerator": "12327891085",
+      "sourceHash": "9d0500eb1dd7c924524723ec4792c99dea08b29493298d96d4c99193857495ed"
+    },
+    {
+      "module": "GRHQuarterCertificates.C226",
+      "lo": 1697553,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1705744,
+      "numerator": "12305581613",
+      "sourceHash": "bfec59ed2d05eb2de14a2323a853fd11f73793f85bd3fccdb106a7ece661f7ca"
+    },
+    {
+      "module": "GRHQuarterCertificates.C227",
+      "lo": 1705745,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1713936,
+      "numerator": "12090285977",
+      "sourceHash": "6f3815f00a105c21c45c44ef679e831c8e6756bae0a26af4aa6dd955161b5264"
+    },
+    {
+      "module": "GRHQuarterCertificates.C228",
+      "lo": 1713937,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1722128,
+      "numerator": "12174335441",
+      "sourceHash": "bbc8070d19675eee33a424c1390e485e58e9f7e720017d11107a6e9b4c0a3f9f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C229",
+      "lo": 1722129,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1730320,
+      "numerator": "11897319598",
+      "sourceHash": "0f6cd3e6efd7329dfc1df854f721ff5778afa4706d2b25a3b4c3a6aed024813f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C230",
+      "lo": 1730321,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1738512,
+      "numerator": "11686384634",
+      "sourceHash": "77b8a8bc941b9c05cd38583097494b2c0c8cf51edc864e060bd27455e3285ea0"
+    },
+    {
+      "module": "GRHQuarterCertificates.C231",
+      "lo": 1738513,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1746704,
+      "numerator": "12150759718",
+      "sourceHash": "44bf6c82df94c36a2892f07fde750fbaa3183983e82a525de9ceda00f276376f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C232",
+      "lo": 1746705,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1754896,
+      "numerator": "12506815319",
+      "sourceHash": "79fe90cceb486ecabaa5e2138eb11afb48be95353ad7953a0c22c5aa136dd89c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C233",
+      "lo": 1754897,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1763088,
+      "numerator": "10999367303",
+      "sourceHash": "af8609fb7f453dab7015b5c8de17393feae72b80e6f9d56051dac9638c573353"
+    },
+    {
+      "module": "GRHQuarterCertificates.C234",
+      "lo": 1763089,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1771280,
+      "numerator": "12023695865",
+      "sourceHash": "0d57858e3eb74e74e31e29205cc9adc90d40bc1630c48eb8f9285d854757f3a7"
+    },
+    {
+      "module": "GRHQuarterCertificates.C235",
+      "lo": 1771281,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1779472,
+      "numerator": "11960893887",
+      "sourceHash": "e9a170ecdb77914272bf23f4dc64264c3a68e55e1a7b3d33e0ede2067b579221"
+    },
+    {
+      "module": "GRHQuarterCertificates.C236",
+      "lo": 1779473,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1787664,
+      "numerator": "11899267036",
+      "sourceHash": "c38046dc9529b4936003b6e0c300325059a05f791fe3ec53e77362b84fcbde58"
+    },
+    {
+      "module": "GRHQuarterCertificates.C237",
+      "lo": 1787665,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1795856,
+      "numerator": "11734146879",
+      "sourceHash": "821cdaa1ffbad87034d14db52049dd36804e94a37c3b0017111c49b17cca7214"
+    },
+    {
+      "module": "GRHQuarterCertificates.C238",
+      "lo": 1795857,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1804048,
+      "numerator": "11550915195",
+      "sourceHash": "81e461ee0e8e08702d67cf9c41ebbecc9fde950721761c451acd00874989850b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C239",
+      "lo": 1804049,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1812240,
+      "numerator": "11941851792",
+      "sourceHash": "f2db0340d75769e63b09752ad52ecc34a256e78c8a9199c6513c5765509a3b58"
+    },
+    {
+      "module": "GRHQuarterCertificates.C240",
+      "lo": 1812241,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1820432,
+      "numerator": "11288958964",
+      "sourceHash": "a109787cc371600ceffaaed45e5888de81490a134020882d525971506cb5beb3"
+    },
+    {
+      "module": "GRHQuarterCertificates.C241",
+      "lo": 1820433,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1828624,
+      "numerator": "12003460430",
+      "sourceHash": "6be35ea8f86e8eb8215188b4a55758e48513d1eb1b078ed6ddd5f07ec7b2b968"
+    },
+    {
+      "module": "GRHQuarterCertificates.C242",
+      "lo": 1828625,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1836816,
+      "numerator": "11375854304",
+      "sourceHash": "8031f16c8e9a9b6e26a356ed0a1d2d60b93d8c90d88d7dc83052f709f34634a9"
+    },
+    {
+      "module": "GRHQuarterCertificates.C243",
+      "lo": 1836817,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1845008,
+      "numerator": "11357030339",
+      "sourceHash": "3d231e49df746c9d48ab985eb54837b4eece46f86475317bcc7468a4a45de6d6"
+    },
+    {
+      "module": "GRHQuarterCertificates.C244",
+      "lo": 1845009,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1853200,
+      "numerator": "11420548611",
+      "sourceHash": "04d1d268452aa6f9a8df498e3e0e720aad7e3314215df47562d7e25583024d39"
+    },
+    {
+      "module": "GRHQuarterCertificates.C245",
+      "lo": 1853201,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1861392,
+      "numerator": "11764419327",
+      "sourceHash": "39f49eb2ad691efb0749f58dbf04a012c92b081395a6ed574e11eb68993cf918"
+    },
+    {
+      "module": "GRHQuarterCertificates.C246",
+      "lo": 1861393,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1869584,
+      "numerator": "11705203707",
+      "sourceHash": "805ccd70ff165e08d01fd914b15fed50520b6c2f9d3f69d666f08b8e16c3cbfc"
+    },
+    {
+      "module": "GRHQuarterCertificates.C247",
+      "lo": 1869585,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1877776,
+      "numerator": "11167986801",
+      "sourceHash": "e049d37bffffe84a5e14a3c3089e674904eef42d98d360ad03942f08f3046cdc"
+    },
+    {
+      "module": "GRHQuarterCertificates.C248",
+      "lo": 1877777,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1885968,
+      "numerator": "11270942656",
+      "sourceHash": "30127f46b24e12ef2e952c36d23d14ae071c46d64949e97a7456fb740194b7ff"
+    },
+    {
+      "module": "GRHQuarterCertificates.C249",
+      "lo": 1885969,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1894160,
+      "numerator": "11511522008",
+      "sourceHash": "789f16c761625462ee4339879e1e0b6f56bfc69e0ce9f9aed3a77414c6efcc11"
+    },
+    {
+      "module": "GRHQuarterCertificates.C250",
+      "lo": 1894161,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1902352,
+      "numerator": "10822676912",
+      "sourceHash": "92c1145ea2be1c8ea7c0ccb7f82c72fb32d27e407e3b9ba541d2e8e54c678871"
+    },
+    {
+      "module": "GRHQuarterCertificates.C251",
+      "lo": 1902353,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1910544,
+      "numerator": "11181211238",
+      "sourceHash": "1863de0adfa89ab53580e515d8a9f0b6f5e7a770ffaa07f50256257ac000f31c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C252",
+      "lo": 1910545,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1918736,
+      "numerator": "11439975742",
+      "sourceHash": "46b3f7f3e3e657de9005dfdee38548d83d2775edc4605e238e847a3a278b572f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C253",
+      "lo": 1918737,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1926928,
+      "numerator": "11011615128",
+      "sourceHash": "eecc5a4ae9e87ffb01cd5cc7673d8d5a09b4e64800c2b31055b0366ce6d10429"
+    },
+    {
+      "module": "GRHQuarterCertificates.C254",
+      "lo": 1926929,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1935120,
+      "numerator": "11055495731",
+      "sourceHash": "6d18ca530ad15757d3522f2c20e594e336ac88efe034b6da83936e7b941193c3"
+    },
+    {
+      "module": "GRHQuarterCertificates.C255",
+      "lo": 1935121,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1943312,
+      "numerator": "11136490564",
+      "sourceHash": "368e246c8dd705075ecc3b8c0cb71224f00336bb56c9544406411b20a701b781"
+    },
+    {
+      "module": "GRHQuarterCertificates.C256",
+      "lo": 1943313,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1951504,
+      "numerator": "10888768635",
+      "sourceHash": "ffd4304ef2b448eaa1c1493787c3fceeac051e19766f9cd624e59f2fb3d07b6c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C257",
+      "lo": 1951505,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1959696,
+      "numerator": "10777254678",
+      "sourceHash": "df16fa0220e590596dc6b2716349588d26b1fed1e5969142372a874f328df62f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C258",
+      "lo": 1959697,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1967888,
+      "numerator": "10782113596",
+      "sourceHash": "6afd4555620ecebe08dbd688745eb5ab787639d975bd0400e35d8a27006b20ee"
+    },
+    {
+      "module": "GRHQuarterCertificates.C259",
+      "lo": 1967889,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1976080,
+      "numerator": "10229965345",
+      "sourceHash": "495593192f597d3e212f1eff3b223ec84f5edb39505f7bd67e6ac07da9207f45"
+    },
+    {
+      "module": "GRHQuarterCertificates.C260",
+      "lo": 1976081,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1984272,
+      "numerator": "11212070804",
+      "sourceHash": "9c92d735c8c1ca1c03826c71bac6262df4e60ab9decc480cb1840b03111e92e2"
+    },
+    {
+      "module": "GRHQuarterCertificates.C261",
+      "lo": 1984273,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 1992464,
+      "numerator": "10605093654",
+      "sourceHash": "32987e9382aab266e73729f983259c75853fc6187c861ca22daa1a0ef7dde63b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C262",
+      "lo": 1992465,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2000656,
+      "numerator": "11124080755",
+      "sourceHash": "495d04b4e939935307d5a0e90869c2aa7cd0b57530d4991e193d183ac70c8d84"
+    },
+    {
+      "module": "GRHQuarterCertificates.C263",
+      "lo": 2000657,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2008848,
+      "numerator": "10975731038",
+      "sourceHash": "2bd5d46a4aef4cd8b9d869053ce21821ed86c4989e4e7ba69d489d6f6033b172"
+    },
+    {
+      "module": "GRHQuarterCertificates.C264",
+      "lo": 2008849,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2017040,
+      "numerator": "10791154588",
+      "sourceHash": "03cd2d43b3c90c60b162d851169627bea5854bdb464b52ec6af69a5c4fe44143"
+    },
+    {
+      "module": "GRHQuarterCertificates.C265",
+      "lo": 2017041,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2025232,
+      "numerator": "10381995001",
+      "sourceHash": "b254d82e50dcbe66d2606ebd2298f150195cd237658160fb186f38455ac5acc9"
+    },
+    {
+      "module": "GRHQuarterCertificates.C266",
+      "lo": 2025233,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2033424,
+      "numerator": "10951330897",
+      "sourceHash": "50656239a7935566fcf95f9f90a2f7ceffccf09cf6d87fb23061131e8b4845b8"
+    },
+    {
+      "module": "GRHQuarterCertificates.C267",
+      "lo": 2033425,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2041616,
+      "numerator": "10300651518",
+      "sourceHash": "cdbdf4731a14b13bba34017ab14f2a65129ee052af7cd6c11902f352ea394526"
+    },
+    {
+      "module": "GRHQuarterCertificates.C268",
+      "lo": 2041617,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2049808,
+      "numerator": "10363238371",
+      "sourceHash": "9f7fabdaa42adc89a0d8c770aef80a88895f97544e1509f97175ac6219bf1bb3"
+    },
+    {
+      "module": "GRHQuarterCertificates.C269",
+      "lo": 2049809,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2058000,
+      "numerator": "10480656240",
+      "sourceHash": "ae9a3d388428bcb33cd8074c544125b598489bc4c066bb968e599f960741eeaf"
+    },
+    {
+      "module": "GRHQuarterCertificates.C270",
+      "lo": 2058001,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2066192,
+      "numerator": "10672208541",
+      "sourceHash": "acaf32beb7b9e3f37ea700a0fb5b8df76b6e46d99ff327da29f37e595c2a108d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C271",
+      "lo": 2066193,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2074384,
+      "numerator": "10270546308",
+      "sourceHash": "3d1e2b4e989838860664a5f9716c982e40ab95c4526bbca66adc5c8d57624471"
+    },
+    {
+      "module": "GRHQuarterCertificates.C272",
+      "lo": 2074385,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2082576,
+      "numerator": "10037270647",
+      "sourceHash": "af9df13c95017aaeae152cfec301809ef0c4c8a86b4806313a9ceaab09fa3cfb"
+    },
+    {
+      "module": "GRHQuarterCertificates.C273",
+      "lo": 2082577,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2090768,
+      "numerator": "10596436586",
+      "sourceHash": "5037930c2f78b1fe5fe4dd02a8e5d20a6795d6014a63c068acfc067499a32bc3"
+    },
+    {
+      "module": "GRHQuarterCertificates.C274",
+      "lo": 2090769,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2098960,
+      "numerator": "10143255598",
+      "sourceHash": "8fe4a285927179517b3f6ec6ec6acc40add0797697636025eace9b9e89f54be7"
+    },
+    {
+      "module": "GRHQuarterCertificates.C275",
+      "lo": 2098961,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2107152,
+      "numerator": "10588957672",
+      "sourceHash": "649c86cf3294b0d842fad7b039f9e6585ce4ca8b65c8526d52e67d8a6a08f3bd"
+    },
+    {
+      "module": "GRHQuarterCertificates.C276",
+      "lo": 2107153,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2115344,
+      "numerator": "10138679851",
+      "sourceHash": "4be2dc3f76ce8c12ecde0966c100f093cda171343a561263cdc83fe8944f2a8e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C277",
+      "lo": 2115345,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2123536,
+      "numerator": "10073281773",
+      "sourceHash": "43de83aa44d11cc6dd3edb3d813712b4ee46726f28e85df77c2207c238c5aacf"
+    },
+    {
+      "module": "GRHQuarterCertificates.C278",
+      "lo": 2123537,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2131728,
+      "numerator": "10352201073",
+      "sourceHash": "2497629609a55713bcbc26f70019ba34e49c40590b8d9d86763bc875e00c67f7"
+    },
+    {
+      "module": "GRHQuarterCertificates.C279",
+      "lo": 2131729,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2139920,
+      "numerator": "9997086454",
+      "sourceHash": "38df0011778ff02b367d010ea0066c3b58b2ec789ed3ff6f0a5ac5b56c022efa"
+    },
+    {
+      "module": "GRHQuarterCertificates.C280",
+      "lo": 2139921,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2148112,
+      "numerator": "10383251059",
+      "sourceHash": "775f1ada6748dcd3ebcdcce8f35cff8cd4731511802699ff3ab054024c017088"
+    },
+    {
+      "module": "GRHQuarterCertificates.C281",
+      "lo": 2148113,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2156304,
+      "numerator": "10065595306",
+      "sourceHash": "349a94a086008c467c54f8626ff7f976fb5a5d72ba3b17d6395e0802e752dc80"
+    },
+    {
+      "module": "GRHQuarterCertificates.C282",
+      "lo": 2156305,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2164496,
+      "numerator": "10431747285",
+      "sourceHash": "f7ad0b787a28e103b8d8b97f632e8ce917f7acd403606a6d301bf7a8d16d7af0"
+    },
+    {
+      "module": "GRHQuarterCertificates.C283",
+      "lo": 2164497,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2172688,
+      "numerator": "9793838066",
+      "sourceHash": "16acfa8ef53fb09d9c7fbf718e5075772094604c641ca1b63ffc31a300f0853a"
+    },
+    {
+      "module": "GRHQuarterCertificates.C284",
+      "lo": 2172689,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2180880,
+      "numerator": "10069597122",
+      "sourceHash": "486dc7d5454918a34d0d0e4ba6ed043f2cc5f96ca298db6d596f082ce2a26627"
+    },
+    {
+      "module": "GRHQuarterCertificates.C285",
+      "lo": 2180881,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2189072,
+      "numerator": "9845434687",
+      "sourceHash": "4dd39b7fafebdec47072292a863a10ee3a7011aaa590c9e7d97a8c412829833c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C286",
+      "lo": 2189073,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2197264,
+      "numerator": "9924586885",
+      "sourceHash": "8cca618cc46291c5c4a575a246b6de94b4596792b9e295227fe44239f8d0bb29"
+    },
+    {
+      "module": "GRHQuarterCertificates.C287",
+      "lo": 2197265,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2205456,
+      "numerator": "9631333346",
+      "sourceHash": "495068692c56876e273567c33f1511bb84b8bf37f466df395092d95ee68105b7"
+    },
+    {
+      "module": "GRHQuarterCertificates.C288",
+      "lo": 2205457,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2213648,
+      "numerator": "10116060669",
+      "sourceHash": "0f9330d767e1f63477310f602aac11b54e9b7204297fa42d67817c4e788ad6cd"
+    },
+    {
+      "module": "GRHQuarterCertificates.C289",
+      "lo": 2213649,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2221840,
+      "numerator": "9244201821",
+      "sourceHash": "d0bb1dcd9d19b439c058e034da80b3312c440a5b08b63b3b39a7231e4b14c5e7"
+    },
+    {
+      "module": "GRHQuarterCertificates.C290",
+      "lo": 2221841,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2230032,
+      "numerator": "10182679641",
+      "sourceHash": "20d1d688f1b22fe3fa13932a650ad0b5a24a3a08b1d96c9195ca205151ec3c4f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C291",
+      "lo": 2230033,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2238224,
+      "numerator": "9787627602",
+      "sourceHash": "240d4b8e6d113564c6a7f73141bfa95decf6fd829dd79ca53429f10ae020fa9d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C292",
+      "lo": 2238225,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2246416,
+      "numerator": "9743197511",
+      "sourceHash": "49e1bd54319ef31ecb5bb9e8abc404ff18d0afa0c4c1091b41320d020e694087"
+    },
+    {
+      "module": "GRHQuarterCertificates.C293",
+      "lo": 2246417,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2254608,
+      "numerator": "9490655752",
+      "sourceHash": "caf41b247ecd4d9060caf7c2f66cf986df05b56e6731db7c1aeb5d22b74d4c0b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C294",
+      "lo": 2254609,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2262800,
+      "numerator": "9950746663",
+      "sourceHash": "1f3615a1f77e3e8e45096b73b69780eba995678ebcc617b77fa45745b843df0e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C295",
+      "lo": 2262801,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2270992,
+      "numerator": "10113512266",
+      "sourceHash": "c01e3d8bb93e15eec0f23795edc61729cf05946526af675a80a790e7170e1c55"
+    },
+    {
+      "module": "GRHQuarterCertificates.C296",
+      "lo": 2270993,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2279184,
+      "numerator": "9827868292",
+      "sourceHash": "92dab62399da6775319ad46b826c2c0cf2c38a1b898403a43b984a7980f151b1"
+    },
+    {
+      "module": "GRHQuarterCertificates.C297",
+      "lo": 2279185,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2287376,
+      "numerator": "9164669709",
+      "sourceHash": "17298b5d4e782491081b9018602c6acdac9594bcf5d749b5487e5cf977ee7933"
+    },
+    {
+      "module": "GRHQuarterCertificates.C298",
+      "lo": 2287377,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2295568,
+      "numerator": "9586238475",
+      "sourceHash": "3a9666bb5f3b5b80ea92030f30e342c66eeed059954b64ad51a2d19b55166cc5"
+    },
+    {
+      "module": "GRHQuarterCertificates.C299",
+      "lo": 2295569,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2303760,
+      "numerator": "9714433677",
+      "sourceHash": "b76706a38105ca7a5941060aed1e65c5ad61eb3846e795bdbf71871f341dea5b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C300",
+      "lo": 2303761,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2311952,
+      "numerator": "9620117981",
+      "sourceHash": "2823dbf3e0ee3ccac77fa48e3131fb7f25dcede7262e7310c4409995fa55c6f8"
+    },
+    {
+      "module": "GRHQuarterCertificates.C301",
+      "lo": 2311953,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2320144,
+      "numerator": "9067174027",
+      "sourceHash": "6b0fb7fb5315ba092bf3014f735c55cb9e13d792a06206300d70e732f2e26c91"
+    },
+    {
+      "module": "GRHQuarterCertificates.C302",
+      "lo": 2320145,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2328336,
+      "numerator": "9416448394",
+      "sourceHash": "b2709fb9674fe63a59d0be3de56ccc3a753197fbcb6ed6017290c961e3a14b6b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C303",
+      "lo": 2328337,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2336528,
+      "numerator": "9425422690",
+      "sourceHash": "df827edda687c56a8d4a2cae3feab56a76ef9a10429788617741c3d439a9024f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C304",
+      "lo": 2336529,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2344720,
+      "numerator": "9316444247",
+      "sourceHash": "e31623d01d24ccafb51248aebd5fa5e0748f5138461d8860b7693ad49d6f9a65"
+    },
+    {
+      "module": "GRHQuarterCertificates.C305",
+      "lo": 2344721,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2352912,
+      "numerator": "9090059324",
+      "sourceHash": "00668741f65e5c97309d5166cdbc3b671d3cbd3f60cfe3bdbdb5c25fe33b00aa"
+    },
+    {
+      "module": "GRHQuarterCertificates.C306",
+      "lo": 2352913,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2361104,
+      "numerator": "9402291180",
+      "sourceHash": "323bf5c423bab741a260a41cd2fe41f93bb676affda287f1dc6b680d1e1dcf33"
+    },
+    {
+      "module": "GRHQuarterCertificates.C307",
+      "lo": 2361105,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2369296,
+      "numerator": "9562179653",
+      "sourceHash": "e30dbf1a159c6c8dbeb9e5ced609987517392af7898f224fc409f02f22ca9b81"
+    },
+    {
+      "module": "GRHQuarterCertificates.C308",
+      "lo": 2369297,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2377488,
+      "numerator": "9136446260",
+      "sourceHash": "917bcf486abee133975e0687b944be87a46f316dd71db25825ad33e7b4c716d7"
+    },
+    {
+      "module": "GRHQuarterCertificates.C309",
+      "lo": 2377489,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2385680,
+      "numerator": "9163018793",
+      "sourceHash": "8eed3bea8e6e50e0750456b7d3708c8622cdbe3a8ac88b54471de0c1dcd496a7"
+    },
+    {
+      "module": "GRHQuarterCertificates.C310",
+      "lo": 2385681,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2393872,
+      "numerator": "9455579986",
+      "sourceHash": "685853f5f740d90392a75845c06bd73b7a2ce47cfa14ff6a5e1452f14884782c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C311",
+      "lo": 2393873,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2402064,
+      "numerator": "9215563829",
+      "sourceHash": "a114b0801da085dfdb627dfdcc9d6e5e0b777d96a5ee4c900594a01ef719bb07"
+    },
+    {
+      "module": "GRHQuarterCertificates.C312",
+      "lo": 2402065,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2410256,
+      "numerator": "9026882455",
+      "sourceHash": "9c9195f7cce0f6cf7fb9844f909c69e6c742a991b6cf413ea6be15bdade87776"
+    },
+    {
+      "module": "GRHQuarterCertificates.C313",
+      "lo": 2410257,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2418448,
+      "numerator": "9465187609",
+      "sourceHash": "f347c195516da1d89c33f4d378266dc238eb7d99b8920c7dd4eef2681df6c68e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C314",
+      "lo": 2418449,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2426640,
+      "numerator": "9112262298",
+      "sourceHash": "6ecbf79b06434ef8acce88f8f228c725a9038b68416b2508ca3115eb6b35c06a"
+    },
+    {
+      "module": "GRHQuarterCertificates.C315",
+      "lo": 2426641,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2434832,
+      "numerator": "8957988079",
+      "sourceHash": "d612429054558a5fe52cdfc02020cc153069fa4563856b75298fdf332e8abd57"
+    },
+    {
+      "module": "GRHQuarterCertificates.C316",
+      "lo": 2434833,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2443024,
+      "numerator": "8968135155",
+      "sourceHash": "3d8698be1649837559762eec10e1ff582eb2d61b973d66cb034add34da83ad4f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C317",
+      "lo": 2443025,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2451216,
+      "numerator": "9076433868",
+      "sourceHash": "a53111b3b1af3144c76bee13e73166a70ec55c100ec03796ea5446429a8a4204"
+    },
+    {
+      "module": "GRHQuarterCertificates.C318",
+      "lo": 2451217,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2459408,
+      "numerator": "9363084069",
+      "sourceHash": "16a80b5fe25faaefa53c34fa76873c2948854c0af10eec1f705e81b16a0b9434"
+    },
+    {
+      "module": "GRHQuarterCertificates.C319",
+      "lo": 2459409,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2467600,
+      "numerator": "9063502412",
+      "sourceHash": "a1250545f7f80a9bb7fd9e6c55fe69e56c5885d6507fbf72fa8bbfcedd560cf3"
+    },
+    {
+      "module": "GRHQuarterCertificates.C320",
+      "lo": 2467601,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2475792,
+      "numerator": "8749258951",
+      "sourceHash": "1d4a88be0767d212bd9e81471630bf5255190f921f7aee60a9af7bbd9bb9382d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C321",
+      "lo": 2475793,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2483984,
+      "numerator": "8873107234",
+      "sourceHash": "3572073c23b4599d896e4df60ce5b17a5a21731f1f67cf0164f1c131239363a3"
+    },
+    {
+      "module": "GRHQuarterCertificates.C322",
+      "lo": 2483985,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2492176,
+      "numerator": "9141456124",
+      "sourceHash": "901eae7edcbc4bf20707c58704490db63214a5d4dfdd9ec9f4665c1ba3036c24"
+    },
+    {
+      "module": "GRHQuarterCertificates.C323",
+      "lo": 2492177,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2500368,
+      "numerator": "8909511452",
+      "sourceHash": "c869f9b029fcec679a03880a8a055df69836addd8324e8d7a9e9d5eaa124a4f2"
+    },
+    {
+      "module": "GRHQuarterCertificates.C324",
+      "lo": 2500369,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2508560,
+      "numerator": "8984070656",
+      "sourceHash": "0e29e2c54e83b285ff999a7310f1c11c7937fec7d3818566792be760d792841d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C325",
+      "lo": 2508561,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2516752,
+      "numerator": "8834161987",
+      "sourceHash": "40d1e08b7cb789abda68bafc496909846585dc443c12e4fc9cd6b0a55200be1b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C326",
+      "lo": 2516753,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2524944,
+      "numerator": "9099419310",
+      "sourceHash": "73599ab37b4f8a954eb0118e987e76b7c04b446a9a6d0d94628fc4e88added9c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C327",
+      "lo": 2524945,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2533136,
+      "numerator": "8950279401",
+      "sourceHash": "a18bbad5f747ff03640e5b680d4efbf498db146fd804049bb16dd2f2b76e74f5"
+    },
+    {
+      "module": "GRHQuarterCertificates.C328",
+      "lo": 2533137,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2541328,
+      "numerator": "8563245133",
+      "sourceHash": "1bfe4b35738e52d1955cb15dc0143f7d8691f39439f32d3381e037af266c00b3"
+    },
+    {
+      "module": "GRHQuarterCertificates.C329",
+      "lo": 2541329,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2549520,
+      "numerator": "8748501895",
+      "sourceHash": "932fe4192497fbaef05c2ce075513b900ec6c1b7e1823c9c12191e9f7f6e1800"
+    },
+    {
+      "module": "GRHQuarterCertificates.C330",
+      "lo": 2549521,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2557712,
+      "numerator": "8664329465",
+      "sourceHash": "c344ac7619eabe61d5a5577e438bed20e056992003b40685cdbb0bf4e807b414"
+    },
+    {
+      "module": "GRHQuarterCertificates.C331",
+      "lo": 2557713,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2565904,
+      "numerator": "8691118473",
+      "sourceHash": "5c439d7c9b55fdc964455c92703fb9c5a1807346d7ba348ebed23e018c3fd85e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C332",
+      "lo": 2565905,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2574096,
+      "numerator": "8859071195",
+      "sourceHash": "4f607db204d67947d97fc41c4e1499fa104ce3533d61b19089e2ec50e5e912b4"
+    },
+    {
+      "module": "GRHQuarterCertificates.C333",
+      "lo": 2574097,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2582288,
+      "numerator": "9245898605",
+      "sourceHash": "ccda2573856ee8ca94e197773705eae446bce4a37b8649712e2e620dc81ce84c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C334",
+      "lo": 2582289,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2590480,
+      "numerator": "8722726711",
+      "sourceHash": "97d551d7b31aefce9cd9a8f9a2ac6d8e34140d99359d96462fd83e30f3cb9fa3"
+    },
+    {
+      "module": "GRHQuarterCertificates.C335",
+      "lo": 2590481,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2598672,
+      "numerator": "8561391122",
+      "sourceHash": "ade8bc0a60e262c913eb568b36b725b1a4b3203862914c0e70847868e8cdc0c7"
+    },
+    {
+      "module": "GRHQuarterCertificates.C336",
+      "lo": 2598673,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2606864,
+      "numerator": "8385572741",
+      "sourceHash": "cd01d573a0381588e1321c1e780a604b63d95d2fd7610f5465d7220cf5ab0d96"
+    },
+    {
+      "module": "GRHQuarterCertificates.C337",
+      "lo": 2606865,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2615056,
+      "numerator": "8645508049",
+      "sourceHash": "a67d7cc2e2604a51285aee81abdc917524c9c49eceaf86ebe45c408cbfa565cf"
+    },
+    {
+      "module": "GRHQuarterCertificates.C338",
+      "lo": 2615057,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2623248,
+      "numerator": "8547968576",
+      "sourceHash": "2f1c69a0f0ecdae8d09f4985f28468d6a72969ea686372d774b606d4e223599f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C339",
+      "lo": 2623249,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2631440,
+      "numerator": "8635991107",
+      "sourceHash": "bfdec8199500e9f57f4c28719240441fb6f69a43c489f9f494386740165756eb"
+    },
+    {
+      "module": "GRHQuarterCertificates.C340",
+      "lo": 2631441,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2639632,
+      "numerator": "8477306218",
+      "sourceHash": "07c2734e8d1013758f9a34e44494bbea2e9e2f9cb4f66c096ff981e6ea83cd07"
+    },
+    {
+      "module": "GRHQuarterCertificates.C341",
+      "lo": 2639633,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2647824,
+      "numerator": "8796189538",
+      "sourceHash": "02baaea33fa0b16b6440465b7eadc8705f1b3e99c983287ab69d8946af3ec7ad"
+    },
+    {
+      "module": "GRHQuarterCertificates.C342",
+      "lo": 2647825,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2656016,
+      "numerator": "8622042604",
+      "sourceHash": "722b9f99905e5e54045b8a93350fccdbc7db27cf559683abf15055fd626ae5bd"
+    },
+    {
+      "module": "GRHQuarterCertificates.C343",
+      "lo": 2656017,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2664208,
+      "numerator": "8541016213",
+      "sourceHash": "4510bc5c68dc5f0f547aacc58b08c42de1fb1582b6f9366a78fe2210ebbac7ac"
+    },
+    {
+      "module": "GRHQuarterCertificates.C344",
+      "lo": 2664209,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2672400,
+      "numerator": "8200118562",
+      "sourceHash": "4693257e37bac3c56fa82e8e4d86857d44f33f0d7bccd8bc8c1f8c1dca39daa4"
+    },
+    {
+      "module": "GRHQuarterCertificates.C345",
+      "lo": 2672401,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2680592,
+      "numerator": "8425234796",
+      "sourceHash": "7038f6c2ac1ecb50829ef486cca52ad5d0a3c9e52b64afc87eac5cb3f743b1c8"
+    },
+    {
+      "module": "GRHQuarterCertificates.C346",
+      "lo": 2680593,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2688784,
+      "numerator": "8421279455",
+      "sourceHash": "42930e9e2b7d908d1b182881e1bb0d87c8322881cc3cc9e440f889ee3575a49d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C347",
+      "lo": 2688785,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2696976,
+      "numerator": "8599701920",
+      "sourceHash": "8ce24dd3562edaf3d70e215bf3d3531baf8f25b37c5d852459e519b6df913e0d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C348",
+      "lo": 2696977,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2705168,
+      "numerator": "8534436478",
+      "sourceHash": "d8bb4910e07f0a7adf5b534d041942cc67769150d2ef8dbda4242a3a597762c0"
+    },
+    {
+      "module": "GRHQuarterCertificates.C349",
+      "lo": 2705169,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2713360,
+      "numerator": "8409179401",
+      "sourceHash": "42126bff15dd0af17b08417d7f1003ae6f3d3985cbac731295c8e5d1cea6c89f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C350",
+      "lo": 2713361,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2721552,
+      "numerator": "8480818121",
+      "sourceHash": "54636abb9860f9d6986cace276a899056095c2a595b19eced98915d42be741d8"
+    },
+    {
+      "module": "GRHQuarterCertificates.C351",
+      "lo": 2721553,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2729744,
+      "numerator": "8039926036",
+      "sourceHash": "ae68fed4fff4e4d955d5b9ede7d088334770f3a3eec5c54aee794552026e4e51"
+    },
+    {
+      "module": "GRHQuarterCertificates.C352",
+      "lo": 2729745,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2737936,
+      "numerator": "7856948344",
+      "sourceHash": "2caea173875b6079e832c14ee5ad14b403db1b293b68e393f961049ca79e4b73"
+    },
+    {
+      "module": "GRHQuarterCertificates.C353",
+      "lo": 2737937,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2746128,
+      "numerator": "8483904547",
+      "sourceHash": "731ff0469c492f8d85dfbebb6b395aa82abae889546fd60762a6847bc26ee154"
+    },
+    {
+      "module": "GRHQuarterCertificates.C354",
+      "lo": 2746129,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2754320,
+      "numerator": "8120828059",
+      "sourceHash": "7a62d1c02d8905a19736fa41e95649bf74f559beec2f5dd1ada15b33ddf63b4a"
+    },
+    {
+      "module": "GRHQuarterCertificates.C355",
+      "lo": 2754321,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2762512,
+      "numerator": "8415776831",
+      "sourceHash": "6d69643a6de0a5a6d4a2b5764e9dd6ec8506725200eb469d7b6e07ccb851f3db"
+    },
+    {
+      "module": "GRHQuarterCertificates.C356",
+      "lo": 2762513,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2770704,
+      "numerator": "8084744637",
+      "sourceHash": "2abbd81c3bc833edda25ede6608ec51bba6c718979c1190180fc992f2bffd21c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C357",
+      "lo": 2770705,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2778896,
+      "numerator": "8230290159",
+      "sourceHash": "aa30f5229eabc056cd98b2a7773128afbaec6edfb2a5ab36a5ac55a0eb9cb828"
+    },
+    {
+      "module": "GRHQuarterCertificates.C358",
+      "lo": 2778897,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2787088,
+      "numerator": "8226681380",
+      "sourceHash": "6c0c10b5438a0b624f9685dde16a573e979bc51ec6feb7e934c2d129c9ceb2f5"
+    },
+    {
+      "module": "GRHQuarterCertificates.C359",
+      "lo": 2787089,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2795280,
+      "numerator": "7942330551",
+      "sourceHash": "eb1c67cc0fadffcd2e415f98344ebe53c556952e0e0333299d31f3add9ae1d0e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C360",
+      "lo": 2795281,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2803472,
+      "numerator": "8279074941",
+      "sourceHash": "bd895e614b036904adec7101085aab1c3b1c21598f8c457873412bbb318aed21"
+    },
+    {
+      "module": "GRHQuarterCertificates.C361",
+      "lo": 2803473,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2811664,
+      "numerator": "8584887151",
+      "sourceHash": "55a7fcfec07829d19b5ddecb4131cd2827f07e6754d62a4a5bb50f47c4bffa3c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C362",
+      "lo": 2811665,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2819856,
+      "numerator": "8228268870",
+      "sourceHash": "10b0d88a66e6345c9c464d3ec74e8c4c57b620b972d66b377f89e5b990f4668f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C363",
+      "lo": 2819857,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2828048,
+      "numerator": "7888251698",
+      "sourceHash": "f88463b15ff145ffca563b14da33c421b7f43f7e2c475b170295ce3fed04537d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C364",
+      "lo": 2828049,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2836240,
+      "numerator": "8412103375",
+      "sourceHash": "825a8b49e37fa07a41ae041c3290037d35005a11ed242cba3801a51da3bbbcbf"
+    },
+    {
+      "module": "GRHQuarterCertificates.C365",
+      "lo": 2836241,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2844432,
+      "numerator": "8291770802",
+      "sourceHash": "682f433d52b189c68737f4054be2ce6626467b70a65fdea1cbfd22f8895f7476"
+    },
+    {
+      "module": "GRHQuarterCertificates.C366",
+      "lo": 2844433,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2852624,
+      "numerator": "7880318958",
+      "sourceHash": "a14f298836197813e7fb07d8e65ef60cafbeca76fd0b93fdea77859ea7d8fe0f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C367",
+      "lo": 2852625,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2860816,
+      "numerator": "7863569751",
+      "sourceHash": "c14ca51de2ea7ec56c6554b61d996bc8a29f97fab26b99ff16c7effce32e714c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C368",
+      "lo": 2860817,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2869008,
+      "numerator": "8078695000",
+      "sourceHash": "7c877beac8c0bb35252de4337b410698f017a8084966b6e60d031326c563852a"
+    },
+    {
+      "module": "GRHQuarterCertificates.C369",
+      "lo": 2869009,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2877200,
+      "numerator": "7699547798",
+      "sourceHash": "4709bf29e0a433ce630f7814f2ea44011464e706167da63cf573ba6cc0975a9b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C370",
+      "lo": 2877201,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2885392,
+      "numerator": "7928550848",
+      "sourceHash": "47e9bb47ddd5148c0a5768703be6deed6cb949636a63c11b2fcbff11f174970a"
+    },
+    {
+      "module": "GRHQuarterCertificates.C371",
+      "lo": 2885393,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2893584,
+      "numerator": "7868587497",
+      "sourceHash": "2a4c72891a7432a9a9a16e670b4596827f3555694e9074dd66385fa6db6de977"
+    },
+    {
+      "module": "GRHQuarterCertificates.C372",
+      "lo": 2893585,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2901776,
+      "numerator": "7880490170",
+      "sourceHash": "fbcb350ccb77afe927783eef3e892e0e52e959b034f82f89885de04c7773b9f6"
+    },
+    {
+      "module": "GRHQuarterCertificates.C373",
+      "lo": 2901777,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2909968,
+      "numerator": "7935632287",
+      "sourceHash": "bb3dd2d6da763b2f9f4ddff4fe3c295fdb9f62f39f3d151a504def94d5b49140"
+    },
+    {
+      "module": "GRHQuarterCertificates.C374",
+      "lo": 2909969,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2918160,
+      "numerator": "7632628180",
+      "sourceHash": "3a84d1cc41221d2a077668ecf90d88ac274e070be834b9d974bdb2924888dc58"
+    },
+    {
+      "module": "GRHQuarterCertificates.C375",
+      "lo": 2918161,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2926352,
+      "numerator": "8173982201",
+      "sourceHash": "0a0a45843592e06ddf946195c8c2d4a91d9818d9516538b47a6c56c0063916a7"
+    },
+    {
+      "module": "GRHQuarterCertificates.C376",
+      "lo": 2926353,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2934544,
+      "numerator": "7500738081",
+      "sourceHash": "86cde98641e637729347a78486e776bcc53617b8429cec6d42010849d31d6fe9"
+    },
+    {
+      "module": "GRHQuarterCertificates.C377",
+      "lo": 2934545,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2942736,
+      "numerator": "7883831493",
+      "sourceHash": "d33c90321c3719c51ee0b40c8343f1063b9d3e948331bfb0809b6d35cc0b37ac"
+    },
+    {
+      "module": "GRHQuarterCertificates.C378",
+      "lo": 2942737,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2950928,
+      "numerator": "7710778319",
+      "sourceHash": "ad05e2ce348f2b17a12d3f04ab31952121efb6cd09e2842ba745836ac8622115"
+    },
+    {
+      "module": "GRHQuarterCertificates.C379",
+      "lo": 2950929,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2959120,
+      "numerator": "7539170240",
+      "sourceHash": "558aac30d3e012171fcd3b08a4d7d8059427de52f6cd9b32c216af93d856481b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C380",
+      "lo": 2959121,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2967312,
+      "numerator": "7990067633",
+      "sourceHash": "3f899fc6750d5f9c1ad915460f82a6d45e46d2558441585adedb42e9ce2cd184"
+    },
+    {
+      "module": "GRHQuarterCertificates.C381",
+      "lo": 2967313,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2975504,
+      "numerator": "7804175132",
+      "sourceHash": "09f1cfa4d99f0f1ebcbe07e78f7ee488e91b12add4d766d525eae201ae706b9b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C382",
+      "lo": 2975505,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2983696,
+      "numerator": "7844150739",
+      "sourceHash": "be564fde4a2a7cc1db716e871a859da6dd88fc429dd6e07c35f05c67cdc16947"
+    },
+    {
+      "module": "GRHQuarterCertificates.C383",
+      "lo": 2983697,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 2991888,
+      "numerator": "7561266644",
+      "sourceHash": "8436e5374a36a23e8424a7d1352fc184b3de3155d94788b88d7fae6a1b302320"
+    },
+    {
+      "module": "GRHQuarterCertificates.C384",
+      "lo": 2991889,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3000080,
+      "numerator": "7896269017",
+      "sourceHash": "ab3603af9d82b2553865dd6e4f4adee030b5c23b0fc8a9f68de76125b0ce7736"
+    },
+    {
+      "module": "GRHQuarterCertificates.C385",
+      "lo": 3000081,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3008272,
+      "numerator": "7726159846",
+      "sourceHash": "ffb7411d0faab28a0a76d52f9677c216638cfd2dbfc7289b54f24c868d8e957e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C386",
+      "lo": 3008273,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3016464,
+      "numerator": "7598767430",
+      "sourceHash": "f6b12908d5f0de4edfc0367cac1cd8add21cd16e50f4fe773caa3e4664d77494"
+    },
+    {
+      "module": "GRHQuarterCertificates.C387",
+      "lo": 3016465,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3024656,
+      "numerator": "7415986941",
+      "sourceHash": "1358564065d72e021da5e4e15b91ef53eb16b864183b2b1a5cc1d878b5d104ae"
+    },
+    {
+      "module": "GRHQuarterCertificates.C388",
+      "lo": 3024657,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3032848,
+      "numerator": "7665333875",
+      "sourceHash": "f242f3c50a0d806c5fba31adb4026cb600be3b84fc84c7b2ff8e3b3d15b05625"
+    },
+    {
+      "module": "GRHQuarterCertificates.C389",
+      "lo": 3032849,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3041040,
+      "numerator": "7455306202",
+      "sourceHash": "4914da0ef3aa275d2f33eb1018ec14948d0f721cb58695dfd9c571af06d0bd5c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C390",
+      "lo": 3041041,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3049232,
+      "numerator": "7578973906",
+      "sourceHash": "c697dc29b645942f1798123fb3da8323abe4dff728fffc6474cd3b18fdf0493b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C391",
+      "lo": 3049233,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3057424,
+      "numerator": "7411544254",
+      "sourceHash": "156539f5e09ef94777c81af08cce44d2bd3a858a30fb1c5e07463e069d714fac"
+    },
+    {
+      "module": "GRHQuarterCertificates.C392",
+      "lo": 3057425,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3065616,
+      "numerator": "7355464862",
+      "sourceHash": "8f04f623725fe8b7355887511c4f6f4691b933724c9e1192174cc74e392d3fd8"
+    },
+    {
+      "module": "GRHQuarterCertificates.C393",
+      "lo": 3065617,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3073808,
+      "numerator": "7726192900",
+      "sourceHash": "77c3d09a5edb5223b82da727dd93f85a26d865de6ae041fdee18aee69caf6d24"
+    },
+    {
+      "module": "GRHQuarterCertificates.C394",
+      "lo": 3073809,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3082000,
+      "numerator": "7958249594",
+      "sourceHash": "3e0e5f7c96b4f8b205a01364ebb5ba8fe5737b603f4db33bcdf257a063631cf7"
+    },
+    {
+      "module": "GRHQuarterCertificates.C395",
+      "lo": 3082001,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3090192,
+      "numerator": "7626503661",
+      "sourceHash": "55bcc0df77eea77fc8937c9afdf015589c6682a9a1dee77c4b96938e25db3c59"
+    },
+    {
+      "module": "GRHQuarterCertificates.C396",
+      "lo": 3090193,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3098384,
+      "numerator": "7392698587",
+      "sourceHash": "ba4fb0815b3b1f4493e6e8f40e14b00df4783bdfb8c9564ae48821f8abf5ea2f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C397",
+      "lo": 3098385,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3106576,
+      "numerator": "7391410777",
+      "sourceHash": "477190d1a23691caa01c242a44156287b3f6d27ddb9c71cfcb70d74d0853aa7a"
+    },
+    {
+      "module": "GRHQuarterCertificates.C398",
+      "lo": 3106577,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3114768,
+      "numerator": "7472498872",
+      "sourceHash": "a8f3429133da9805f56b952909bcd569bd6d8992194195a9f311f6304360959c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C399",
+      "lo": 3114769,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3122960,
+      "numerator": "7648330033",
+      "sourceHash": "b629c649b64fb01217d46fa3d88211f4090f8531ade29b4dfd756fdb2f85afe7"
+    },
+    {
+      "module": "GRHQuarterCertificates.C400",
+      "lo": 3122961,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3131152,
+      "numerator": "7470081103",
+      "sourceHash": "802bbdefea986a29bca82783b7314a58f195c9d1e2b48e698402361281792bc7"
+    },
+    {
+      "module": "GRHQuarterCertificates.C401",
+      "lo": 3131153,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3139344,
+      "numerator": "7225157123",
+      "sourceHash": "c5e77536e1d39e50211ec904edccd1cffa33ef43ea537954d7afddc671220464"
+    },
+    {
+      "module": "GRHQuarterCertificates.C402",
+      "lo": 3139345,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3147536,
+      "numerator": "7332784262",
+      "sourceHash": "143bf7a86cecbb54920cf1b9d1a07a873a5d483381237a45074b18a8e26f3b42"
+    },
+    {
+      "module": "GRHQuarterCertificates.C403",
+      "lo": 3147537,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3155728,
+      "numerator": "7602005383",
+      "sourceHash": "fc899944f759fa6eec63702bd26196e2df4ce88b0a0b682665e5df2eb52d0f8a"
+    },
+    {
+      "module": "GRHQuarterCertificates.C404",
+      "lo": 3155729,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3163920,
+      "numerator": "7209936313",
+      "sourceHash": "f9849cbc129afabbdb58e3e3a8b23375b86226065c7895e0a5aad3eafa0be105"
+    },
+    {
+      "module": "GRHQuarterCertificates.C405",
+      "lo": 3163921,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3172112,
+      "numerator": "7639744585",
+      "sourceHash": "abfac5beb859b0d0179bfd1e587b9ac7435e294a64675fb42e309039dbfbeebb"
+    },
+    {
+      "module": "GRHQuarterCertificates.C406",
+      "lo": 3172113,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3180304,
+      "numerator": "7088144638",
+      "sourceHash": "93d0052c44b00bdd311244cb4b1d2631d4519414867d4d3560b1f175f23290c9"
+    },
+    {
+      "module": "GRHQuarterCertificates.C407",
+      "lo": 3180305,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3188496,
+      "numerator": "7529955504",
+      "sourceHash": "d295a351c6984be2cf3d46ef84a10c622acedf2c444963df43bd3e80892d6ef1"
+    },
+    {
+      "module": "GRHQuarterCertificates.C408",
+      "lo": 3188497,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3196688,
+      "numerator": "7461966731",
+      "sourceHash": "12d3785061f3a5437672e37e542141dd9a81c018ad9526f08c44e1d5c94a1c37"
+    },
+    {
+      "module": "GRHQuarterCertificates.C409",
+      "lo": 3196689,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3204880,
+      "numerator": "7581111108",
+      "sourceHash": "3d8829d7b27f38f823cd5a2256cd2b98c693619b20aaee23901367061cd619ff"
+    },
+    {
+      "module": "GRHQuarterCertificates.C410",
+      "lo": 3204881,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3213072,
+      "numerator": "7433282960",
+      "sourceHash": "2f28b418aa0ff0a79a18362ac3eefe8a7ed7d66c063b8585901a3ca5349362c2"
+    },
+    {
+      "module": "GRHQuarterCertificates.C411",
+      "lo": 3213073,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3221264,
+      "numerator": "7286146356",
+      "sourceHash": "09a426f1fbc2806cc05d446d76cfa33c04f0725bb9c5ef7110a86c271680801b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C412",
+      "lo": 3221265,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3229456,
+      "numerator": "7378328348",
+      "sourceHash": "56f84d2d4113578f85c56441e4ba32a757b5ceaea57c68c6f5831f9e31b99c69"
+    },
+    {
+      "module": "GRHQuarterCertificates.C413",
+      "lo": 3229457,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3237648,
+      "numerator": "7403891072",
+      "sourceHash": "32145d7383869d9f458a7505f83df9368392d9d8db3a23232bdfd92b1a6b5c5a"
+    },
+    {
+      "module": "GRHQuarterCertificates.C414",
+      "lo": 3237649,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3245840,
+      "numerator": "7006735135",
+      "sourceHash": "c8ae5194dd286a53b942b33c998c0950a1b77eb46dd7d9582f8dc8d8f5fafc8b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C415",
+      "lo": 3245841,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3254032,
+      "numerator": "7125521904",
+      "sourceHash": "62f46f071379272171256aa149090ee74772ee0e4b2bd3a1d69b7d2a54d8e8b6"
+    },
+    {
+      "module": "GRHQuarterCertificates.C416",
+      "lo": 3254033,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3262224,
+      "numerator": "7322662687",
+      "sourceHash": "09310319ff2b99641dd191b760b65ce15f04bde580dd9ed92ff7f8fd23fe6397"
+    },
+    {
+      "module": "GRHQuarterCertificates.C417",
+      "lo": 3262225,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3270416,
+      "numerator": "7164322057",
+      "sourceHash": "14622d0b97acfdc066be0d3330335dfe8d283ba2b833312b0d7d02c81cc3c699"
+    },
+    {
+      "module": "GRHQuarterCertificates.C418",
+      "lo": 3270417,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3278608,
+      "numerator": "7426173077",
+      "sourceHash": "4454c87aedd7a06a3fe4baf7f243f81025f79924cbb4964c28cb815afc302d25"
+    },
+    {
+      "module": "GRHQuarterCertificates.C419",
+      "lo": 3278609,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3286800,
+      "numerator": "6914662739",
+      "sourceHash": "a05689ce2212048c12a1851c69b0d0a6146a417023d1dafe9e5ddfe8ac7158e5"
+    },
+    {
+      "module": "GRHQuarterCertificates.C420",
+      "lo": 3286801,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3294992,
+      "numerator": "7163417526",
+      "sourceHash": "100fa9d6b1826dd904216b75b5c42b5730996e466696aefef9effc50635b25f4"
+    },
+    {
+      "module": "GRHQuarterCertificates.C421",
+      "lo": 3294993,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3303184,
+      "numerator": "6758665793",
+      "sourceHash": "1959d80f2b66242f61c3f1556a98db4da2f8544e00e8462e591e9fadd35a9569"
+    },
+    {
+      "module": "GRHQuarterCertificates.C422",
+      "lo": 3303185,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3311376,
+      "numerator": "7293037822",
+      "sourceHash": "110a61db5989c6f2c6dfabe1be2dcd23e33bf9a05e4530fa7d57e9b2d694f5c5"
+    },
+    {
+      "module": "GRHQuarterCertificates.C423",
+      "lo": 3311377,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3319568,
+      "numerator": "7045642165",
+      "sourceHash": "85e9f378c15883ae5da87efcfcfa4475664885fb5de18246b9057956f5ffc7d5"
+    },
+    {
+      "module": "GRHQuarterCertificates.C424",
+      "lo": 3319569,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3327760,
+      "numerator": "7110340925",
+      "sourceHash": "4bd777522f5cb32cdcac48eed29e6c045ee8a9ede863065bdb5d12add1734b61"
+    },
+    {
+      "module": "GRHQuarterCertificates.C425",
+      "lo": 3327761,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3335952,
+      "numerator": "6954819502",
+      "sourceHash": "9cbe304400ee58965c6aa7b64e133ea098c0ca25ed3f92a83fdca259c31c5ce8"
+    },
+    {
+      "module": "GRHQuarterCertificates.C426",
+      "lo": 3335953,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3344144,
+      "numerator": "7135824725",
+      "sourceHash": "0a31f82326e25edb9381db3380e025891578b665ff3bfeb6cef3eed0155593eb"
+    },
+    {
+      "module": "GRHQuarterCertificates.C427",
+      "lo": 3344145,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3352336,
+      "numerator": "6929255311",
+      "sourceHash": "068630860a9e0cdc37573f8d8805a0668ead039a224c68c799c5e93d417a8059"
+    },
+    {
+      "module": "GRHQuarterCertificates.C428",
+      "lo": 3352337,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3360528,
+      "numerator": "6594586310",
+      "sourceHash": "0d26ce1ac1b6eecfce5258b28d4edb5db60e57257e175b7413ee24268633db15"
+    },
+    {
+      "module": "GRHQuarterCertificates.C429",
+      "lo": 3360529,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3368720,
+      "numerator": "7212307296",
+      "sourceHash": "d463a4e98486b74007a0cb2f6457d081f1ea3d24c9807111d8e8b91b2705f839"
+    },
+    {
+      "module": "GRHQuarterCertificates.C430",
+      "lo": 3368721,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3376912,
+      "numerator": "6955555986",
+      "sourceHash": "0886c5da694a670246c1b68d81ebdba65d186eb2a85e9430fe25b85ca1e05e59"
+    },
+    {
+      "module": "GRHQuarterCertificates.C431",
+      "lo": 3376913,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3385104,
+      "numerator": "7109417764",
+      "sourceHash": "dbbceb751a2e722461351e1ea20e49ad404fd8231b09d778771d666d8cd03b62"
+    },
+    {
+      "module": "GRHQuarterCertificates.C432",
+      "lo": 3385105,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3393296,
+      "numerator": "6866478112",
+      "sourceHash": "f3e1846a134509b86afafadbece206ea5b7e9d2f9db921fa3008441c54c652b8"
+    },
+    {
+      "module": "GRHQuarterCertificates.C433",
+      "lo": 3393297,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3401488,
+      "numerator": "7070980816",
+      "sourceHash": "42c0445456b92175f8d31ebe9b472446bb4f332dc8213dbdd634e7aa7c92007a"
+    },
+    {
+      "module": "GRHQuarterCertificates.C434",
+      "lo": 3401489,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3409680,
+      "numerator": "7147340739",
+      "sourceHash": "24e40d54035ec6a45355848dd78fddb4136a3b8e095287e8323b2051325d5482"
+    },
+    {
+      "module": "GRHQuarterCertificates.C435",
+      "lo": 3409681,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3417872,
+      "numerator": "6994587948",
+      "sourceHash": "4043a243c7d3f10f1deda8bd3a7b8b7075860c684ef0c41234834944ad9c6e46"
+    },
+    {
+      "module": "GRHQuarterCertificates.C436",
+      "lo": 3417873,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3426064,
+      "numerator": "6867653897",
+      "sourceHash": "be91b1ce6e01be548a0e65740326b716d339bdc1e349a010577ee9b74c998cb7"
+    },
+    {
+      "module": "GRHQuarterCertificates.C437",
+      "lo": 3426065,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3434256,
+      "numerator": "6982108153",
+      "sourceHash": "f586a1dc59d9a03c718e76d6ae59b23c91b6f77f80c69c356989513b5ef4cc7d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C438",
+      "lo": 3434257,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3442448,
+      "numerator": "7108778433",
+      "sourceHash": "0e2ab6e89ab78fcac201c477201cf6e8cfefed42d26d705fdb8faf53834ea707"
+    },
+    {
+      "module": "GRHQuarterCertificates.C439",
+      "lo": 3442449,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3450640,
+      "numerator": "7007664324",
+      "sourceHash": "68f97091cafc524a3418c3a8c3c6572f112961e670459f6f3db339824abab261"
+    },
+    {
+      "module": "GRHQuarterCertificates.C440",
+      "lo": 3450641,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3458832,
+      "numerator": "6654855683",
+      "sourceHash": "4181bf90c7b0c908d9c0355a79c46b53ce498206d7bd0f670b2d4f91d11c352c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C441",
+      "lo": 3458833,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3467024,
+      "numerator": "6592700047",
+      "sourceHash": "51e7b21b3bbcd73675df33348e239be2887de447ee24f6d91ef8048cfc1263ae"
+    },
+    {
+      "module": "GRHQuarterCertificates.C442",
+      "lo": 3467025,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3475216,
+      "numerator": "6782073552",
+      "sourceHash": "f074c4d504de3288ab624fc2f92b21d0fefe250a743de5a719c9325c20f60b8e"
+    },
+    {
+      "module": "GRHQuarterCertificates.C443",
+      "lo": 3475217,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3483408,
+      "numerator": "6356376648",
+      "sourceHash": "afe60623d0a57130ba61afde5702d8c0d296ce84e9b6461a3f108bbdae9ed81f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C444",
+      "lo": 3483409,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3491600,
+      "numerator": "6720592625",
+      "sourceHash": "25068b1ff751613eb2fb4d065819a2612cb12f658f402fdd2ba92cd4c6869961"
+    },
+    {
+      "module": "GRHQuarterCertificates.C445",
+      "lo": 3491601,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3499792,
+      "numerator": "6783763735",
+      "sourceHash": "4c346853c60bf41019d2889bbed530075ac8f932d25612417f91498fbbeb9cf1"
+    },
+    {
+      "module": "GRHQuarterCertificates.C446",
+      "lo": 3499793,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3507984,
+      "numerator": "6634603902",
+      "sourceHash": "a90fa9a330d9e66c55dbe187a127e4e257f81e2544ce38e38208de0b2d89a283"
+    },
+    {
+      "module": "GRHQuarterCertificates.C447",
+      "lo": 3507985,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3516176,
+      "numerator": "6859576551",
+      "sourceHash": "ec84834577234b5d04aeb472a532ea5e2a9d7fbb376a63564e75863184ba23fe"
+    },
+    {
+      "module": "GRHQuarterCertificates.C448",
+      "lo": 3516177,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3524368,
+      "numerator": "6462339745",
+      "sourceHash": "5585383d20ce7c176ab9db3a081a207a7fdeb73b5bc2f07179ece207d7424f4d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C449",
+      "lo": 3524369,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3532560,
+      "numerator": "6587469568",
+      "sourceHash": "393800e49b9bbd820984d0c124ab98084edb269d53db5611df340963ae5a7a3d"
+    },
+    {
+      "module": "GRHQuarterCertificates.C450",
+      "lo": 3532561,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3540752,
+      "numerator": "6650535300",
+      "sourceHash": "d32ced984ca4a42b3c2acf5ba071dc8e5f5f830200348a30aa860176a1f0d381"
+    },
+    {
+      "module": "GRHQuarterCertificates.C451",
+      "lo": 3540753,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3548944,
+      "numerator": "6675896940",
+      "sourceHash": "63d41539a81a9e519323e0626fe6fb5257ab706cc59cf85a900f94b8a7eebb37"
+    },
+    {
+      "module": "GRHQuarterCertificates.C452",
+      "lo": 3548945,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3557136,
+      "numerator": "6651965969",
+      "sourceHash": "b41c8050024183f697717d8f5855b6eb5ff29ad04daabf774927f1b1ab93dfca"
+    },
+    {
+      "module": "GRHQuarterCertificates.C453",
+      "lo": 3557137,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3565328,
+      "numerator": "6726804970",
+      "sourceHash": "24fa703083d21ab8e1eb6a0adcb099ee39a649b0192eda97aa661a512183832f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C454",
+      "lo": 3565329,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3573520,
+      "numerator": "6678483676",
+      "sourceHash": "d1957fd559c6b524bde5403a5216eef77ff06243c46db66b5a9aae8c5afb8294"
+    },
+    {
+      "module": "GRHQuarterCertificates.C455",
+      "lo": 3573521,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3581712,
+      "numerator": "6495028617",
+      "sourceHash": "5939a9ce359d53283993ed1cf3d4b4e2501769dd892a2fb7e0f4483fa94c38b3"
+    },
+    {
+      "module": "GRHQuarterCertificates.C456",
+      "lo": 3581713,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3589904,
+      "numerator": "6729095901",
+      "sourceHash": "2dd4301142000696e945b7770cd4b23ebac4c372e3e503cf0915650114f59e76"
+    },
+    {
+      "module": "GRHQuarterCertificates.C457",
+      "lo": 3589905,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3598096,
+      "numerator": "6729614812",
+      "sourceHash": "07a83667b243df5aa0b7bf45a9bba216f8bcd7947210ba62bedc184e179d6c77"
+    },
+    {
+      "module": "GRHQuarterCertificates.C458",
+      "lo": 3598097,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3606288,
+      "numerator": "6681608386",
+      "sourceHash": "1a3a8871cdcd055c181ac48c0d389fd79b33fa5d5bbb39928733624b3cfdb3b7"
+    },
+    {
+      "module": "GRHQuarterCertificates.C459",
+      "lo": 3606289,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3614480,
+      "numerator": "7048289564",
+      "sourceHash": "9a07e80f753e7ece324226afd509cdd6e84f9c6b81132695a7a4b603b85a1dbe"
+    },
+    {
+      "module": "GRHQuarterCertificates.C460",
+      "lo": 3614481,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3622672,
+      "numerator": "6695322979",
+      "sourceHash": "aa52e2d37b1c0c4c7c688a120b1960ec84b1c18b3d4aa864bd997513fed3e1d2"
+    },
+    {
+      "module": "GRHQuarterCertificates.C461",
+      "lo": 3622673,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3630864,
+      "numerator": "6708444562",
+      "sourceHash": "aa883dadada5a9bc9e66184198aea4dbb691c29792c53fedc2b8f15208e27cf9"
+    },
+    {
+      "module": "GRHQuarterCertificates.C462",
+      "lo": 3630865,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3639056,
+      "numerator": "6418098734",
+      "sourceHash": "dae800d78b8a3123d8aa756c2b71fdaa96f3d4ba7c475dbbf09d5e1edd50da49"
+    },
+    {
+      "module": "GRHQuarterCertificates.C463",
+      "lo": 3639057,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3647248,
+      "numerator": "6492042801",
+      "sourceHash": "1251523b72a28e3645ba3e7cafdf8fdd4086d1ba0f72805be91850a8d493c433"
+    },
+    {
+      "module": "GRHQuarterCertificates.C464",
+      "lo": 3647249,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3655440,
+      "numerator": "6118267735",
+      "sourceHash": "3ece5a004cb293bee212a7addd9391aa3db8cc92b42cc1891db8dfe5c34efca3"
+    },
+    {
+      "module": "GRHQuarterCertificates.C465",
+      "lo": 3655441,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3663632,
+      "numerator": "6687527385",
+      "sourceHash": "48c1c633cf053f8a435edc63c48f31bed44f4baa87e0f500a3e3baf53f251a39"
+    },
+    {
+      "module": "GRHQuarterCertificates.C466",
+      "lo": 3663633,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3671824,
+      "numerator": "6483434029",
+      "sourceHash": "ca449c49ca61a26cf1f55100a6ec8222a7fd72f39223ed5fc13afe3124de582b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C467",
+      "lo": 3671825,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3680016,
+      "numerator": "7050010475",
+      "sourceHash": "7d3b70b380b29a659b8b67dd6d1f7abe60b1560d75f06142050949e03cda47a4"
+    },
+    {
+      "module": "GRHQuarterCertificates.C468",
+      "lo": 3680017,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3688208,
+      "numerator": "6245470890",
+      "sourceHash": "918550ca21fc74315fe1e4cd47b4548ee8f2130735b20d68f7e2a5743dc4e783"
+    },
+    {
+      "module": "GRHQuarterCertificates.C469",
+      "lo": 3688209,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3696400,
+      "numerator": "6678784605",
+      "sourceHash": "e7aafafb1264753e8ab7684570862e6f048800a4c6e7411bed06f7651cf056ca"
+    },
+    {
+      "module": "GRHQuarterCertificates.C470",
+      "lo": 3696401,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3704592,
+      "numerator": "6548069418",
+      "sourceHash": "7a35a0c20368b2101af8dc04ebb8a9cdbf8af7b522c8608c444d86e47c728ff1"
+    },
+    {
+      "module": "GRHQuarterCertificates.C471",
+      "lo": 3704593,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3712784,
+      "numerator": "6393707834",
+      "sourceHash": "5ebf22c41032f019142193a0d0e9b319979858696cd54b1d889420dd186326f4"
+    },
+    {
+      "module": "GRHQuarterCertificates.C472",
+      "lo": 3712785,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3720976,
+      "numerator": "6538261693",
+      "sourceHash": "4130870990838951e8a7ad60f881e86c2bd56be79d4aa5b77d9403a69b5f1204"
+    },
+    {
+      "module": "GRHQuarterCertificates.C473",
+      "lo": 3720977,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3729168,
+      "numerator": "6658506404",
+      "sourceHash": "85b55e1077a1e138def80492ab6dc1f1547529be9ca98a209a690e5bf5325a09"
+    },
+    {
+      "module": "GRHQuarterCertificates.C474",
+      "lo": 3729169,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3737360,
+      "numerator": "6623878152",
+      "sourceHash": "7398c797f3c96ef81666fd0843791500d063c3a61e3e40eb52d8590265d0ba7f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C475",
+      "lo": 3737361,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3745552,
+      "numerator": "6126158077",
+      "sourceHash": "bf07a5d156ec421e8fd33104bab4d76c53ca9a95a85c66fab65117c0f45e68ab"
+    },
+    {
+      "module": "GRHQuarterCertificates.C476",
+      "lo": 3745553,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3753744,
+      "numerator": "6613898563",
+      "sourceHash": "c50ca5d9a1f14021078871e99cc35118351725708b90ab433636f0ce2a9585b5"
+    },
+    {
+      "module": "GRHQuarterCertificates.C477",
+      "lo": 3753745,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3761936,
+      "numerator": "6106310373",
+      "sourceHash": "c0774d8510861eb01aecc15507c359db8ddc1e8e94106e804542f1fe5a7f1016"
+    },
+    {
+      "module": "GRHQuarterCertificates.C478",
+      "lo": 3761937,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3770128,
+      "numerator": "6332352195",
+      "sourceHash": "38e756d5f62137a261639b11e6db6a4e693bfd1d73b60c1fd7bb58ad0387769f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C479",
+      "lo": 3770129,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3778320,
+      "numerator": "6298380792",
+      "sourceHash": "8528f0539c8bf31aefcadfc3efd3abe8a6ac8f04dbbceead5afcda8a48218433"
+    },
+    {
+      "module": "GRHQuarterCertificates.C480",
+      "lo": 3778321,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3786512,
+      "numerator": "6429553993",
+      "sourceHash": "f677df1ed2ad68b0de83c0b62280c11f5c2c84b34ae8bc278c58b8e33ac623b0"
+    },
+    {
+      "module": "GRHQuarterCertificates.C481",
+      "lo": 3786513,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3794704,
+      "numerator": "6043070884",
+      "sourceHash": "0e7c4aa19209d88ef58c3500979e3f31c079efb44e6ea47bc594cfaf20405ea3"
+    },
+    {
+      "module": "GRHQuarterCertificates.C482",
+      "lo": 3794705,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3802896,
+      "numerator": "6467599671",
+      "sourceHash": "b412b285fe6ad881ee81fa860b257c538b25e7a80b927869dd380011c5b3a038"
+    },
+    {
+      "module": "GRHQuarterCertificates.C483",
+      "lo": 3802897,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3811088,
+      "numerator": "6457060716",
+      "sourceHash": "3b8c4962c1af4a9b82a67de2e0f1be67159874186009a910efcecfa4fec7ceef"
+    },
+    {
+      "module": "GRHQuarterCertificates.C484",
+      "lo": 3811089,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3819280,
+      "numerator": "6528508625",
+      "sourceHash": "cf52dc82fe3c5504717d951f29c0f006b739797d9c73a18f1b9c22eadf86014f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C485",
+      "lo": 3819281,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3827472,
+      "numerator": "6237880959",
+      "sourceHash": "a0ad89948d89448588c2110482e719dbb1ec2033bd3c7a6d5753f052244cf1bd"
+    },
+    {
+      "module": "GRHQuarterCertificates.C486",
+      "lo": 3827473,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3835664,
+      "numerator": "6344508430",
+      "sourceHash": "89d7f59014b68c575cdab871b25fcf8d72477e40540c1c199cab2827fae1f0f5"
+    },
+    {
+      "module": "GRHQuarterCertificates.C487",
+      "lo": 3835665,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3843856,
+      "numerator": "6380753033",
+      "sourceHash": "355ee9822a9717787afcde8e6c31ba2963c63b01b01cf73d140d7e5d7cb03648"
+    },
+    {
+      "module": "GRHQuarterCertificates.C488",
+      "lo": 3843857,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3852048,
+      "numerator": "6254409019",
+      "sourceHash": "36878e3a505b16f9bf9b5063781efafe18039e09518c551d35e23fd56619530b"
+    },
+    {
+      "module": "GRHQuarterCertificates.C489",
+      "lo": 3852049,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3860240,
+      "numerator": "6325567074",
+      "sourceHash": "4105d5e8cd7d77551ad4fb0dc9bc95f18153e88ed46f0102e515c9f6a3a8debf"
+    },
+    {
+      "module": "GRHQuarterCertificates.C490",
+      "lo": 3860241,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3868432,
+      "numerator": "6176419250",
+      "sourceHash": "6b701775debe5b2d37a9c2f98f86f59e5c3bfda0084e8af78a16fa4683d9df35"
+    },
+    {
+      "module": "GRHQuarterCertificates.C491",
+      "lo": 3868433,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3876624,
+      "numerator": "6074054721",
+      "sourceHash": "a5d20f27d637fbaa091171bda797d97286dd9bfefe2b7a49aac82fa030afd53f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C492",
+      "lo": 3876625,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3884816,
+      "numerator": "6145407317",
+      "sourceHash": "9ae4e47e2c8d2cc816d848fbfdb59b2a268d2f07203d8b39fed8a90e84d199fb"
+    },
+    {
+      "module": "GRHQuarterCertificates.C493",
+      "lo": 3884817,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3893008,
+      "numerator": "6412468541",
+      "sourceHash": "caffa37a08db71fe0fae032fddb5ae0b8aee399b0a32ecaf92e69a36c5830efc"
+    },
+    {
+      "module": "GRHQuarterCertificates.C494",
+      "lo": 3893009,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3901200,
+      "numerator": "6275847081",
+      "sourceHash": "16392f0229aa3216e84d83a62a4a93549022fc59c59b841d73608c9ee0fb93dd"
+    },
+    {
+      "module": "GRHQuarterCertificates.C495",
+      "lo": 3901201,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3909392,
+      "numerator": "6173707691",
+      "sourceHash": "88952aacdb61f0e70762c3ce5a005af1e5bde47d9f2f788f209a0df089e9cd96"
+    },
+    {
+      "module": "GRHQuarterCertificates.C496",
+      "lo": 3909393,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3917584,
+      "numerator": "6164217151",
+      "sourceHash": "ddca3d495704a25f65feb12cde15b2bb66dcc730da260e66c580ed3cf56cf71c"
+    },
+    {
+      "module": "GRHQuarterCertificates.C497",
+      "lo": 3917585,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3925776,
+      "numerator": "6257578304",
+      "sourceHash": "c8175e3a44354ba1e8e2e4b7b97ea6d928b0a8857ee7a3a9d84bb7fbee7e8810"
+    },
+    {
+      "module": "GRHQuarterCertificates.C498",
+      "lo": 3925777,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3933968,
+      "numerator": "6259357722",
+      "sourceHash": "338e3680576f81fab076926a4b91ec1a66e542361c147f0ce10480c6ca8e6473"
+    },
+    {
+      "module": "GRHQuarterCertificates.C499",
+      "lo": 3933969,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3942160,
+      "numerator": "6135262413",
+      "sourceHash": "b3b81f13e3bfa8c908dc7dff917d04daaa2023c6c31bcc473c37d274a0eee1fd"
+    },
+    {
+      "module": "GRHQuarterCertificates.C500",
+      "lo": 3942161,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3950352,
+      "numerator": "6422287492",
+      "sourceHash": "161801a16f53ba6ffd2456770a1d6d8d547c209562139a0f630379db5e8da392"
+    },
+    {
+      "module": "GRHQuarterCertificates.C501",
+      "lo": 3950353,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3958544,
+      "numerator": "5945287739",
+      "sourceHash": "139ed1ac388a37df5b39f29f9f4d3e5dae37ad23e49a5393a16208d393a45483"
+    },
+    {
+      "module": "GRHQuarterCertificates.C502",
+      "lo": 3958545,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3966736,
+      "numerator": "5811063751",
+      "sourceHash": "66170239dede91c9e5043e996fda1e59ab7c8358a999ae6750f9f3d9ec12a547"
+    },
+    {
+      "module": "GRHQuarterCertificates.C503",
+      "lo": 3966737,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3974928,
+      "numerator": "6278870705",
+      "sourceHash": "023c4ae9ad8cc31f37fd8da27818845cd422c9cc37d938fe5fa1c5effb6f0c11"
+    },
+    {
+      "module": "GRHQuarterCertificates.C504",
+      "lo": 3974929,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3983120,
+      "numerator": "6076575142",
+      "sourceHash": "f573cf1d6e154889672e0bc58e0ce043f33d2060741a9e06b336ce8e0df6827a"
+    },
+    {
+      "module": "GRHQuarterCertificates.C505",
+      "lo": 3983121,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3991312,
+      "numerator": "5784136356",
+      "sourceHash": "298a5903312539f693c714afd8bf33bf6d3030cfd308b14a5701b3feaecb8a4f"
+    },
+    {
+      "module": "GRHQuarterCertificates.C506",
+      "lo": 3991313,
+      "w": 4,
+      "degree": 3,
+      "B": 256,
+      "upper": 3999504,
+      "numerator": "5967495643",
+      "sourceHash": "7e00e0a7d65f0ae9b560d34c05751f86da5d6cfc22c18eeae766627d24c26ad9"
+    },
+    {
+      "module": "GRHQuarterCertificates.C507",
+      "lo": 3999505,
+      "w": 4,
+      "degree": 3,
+      "B": 16,
+      "upper": 4000016,
+      "numerator": "406536821",
+      "sourceHash": "64e018e61c656a8e62efd6f94d5edd80a5082382660f977b88a22fc1f9a5405f"
+    }
+  ]
+}

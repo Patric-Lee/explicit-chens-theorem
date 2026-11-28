@@ -1,14 +1,15 @@
 # Explicit Chen's theorem in Lean
 
 This project formalizes explicit cutoffs for Chen's theorem. Its best checked
-result proves that every even integer at least 3^145000 is a prime plus
+result proves that every even integer at least 3^119081 is a prime plus
 a prime or a product of two primes, assuming full Dirichlet GRH as the sole
-external axiom beyond Lean's standard axioms. This cutoff is below exp(exp(12)); its double logarithm is approximately 11.978537.
+external axiom beyond Lean's standard axioms. This cutoff is below exp(exp(11.782)); its double logarithm is approximately 11.781607.
 
 ## Results and assumptions
 
 | Route | Exact cutoff | Approximate H, where N₀ = exp(exp(H)) | Additional axiom beyond standard Lean |
 | --- | --- | --- | --- |
+| [GRH-based H<11.782 theorem](research/chen-grh/AuditGRHQuarterChen.lean) | 3^119081 | 11.78160704043 | Full Dirichlet GRH (Alpöge statement) |
 | [GRH-based H<12 theorem](research/chen-grh/AuditGRHSub12Chen.lean) | 3^145000 | 11.97853684902 | Full Dirichlet GRH (Alpöge statement) |
 | [GRH-based H<12.2 theorem](research/chen-grh/AuditGRH122Chen.lean) | 3^180000 | 12.19475995749 | Full Dirichlet GRH (Alpöge statement) |
 | [GRH-based H<12.5 theorem](research/chen-grh/AuditGRH125Chen.lean) | 3^240000 | 12.48244202994 | Full Dirichlet GRH (Alpöge statement) |
@@ -19,27 +20,27 @@ external axiom beyond Lean's standard axioms. This cutoff is below exp(exp(12));
 | [Checked numerical theorem](research/chen-bjs-study/BJSTightChen.lean) | 3^(3^134) | 147.308095 | None |
 | [GRH-based H≈30 theorem](research/chen-numerical-study/BJSH30ConditionalChen.lean) | 3^(10^13) | 30.02765403654 | Full Dirichlet GRH (Alpöge statement) |
 
-The H<12 proof is complete: no lower-count, triple-count, sieve, or numerical
+The H<11.782 proof is complete: no lower-count, triple-count, sieve, or numerical
 estimate remains an unproved input. We use the full Dirichlet GRH statement
 from Levent Alpöge's announced Lean development as the sole additional axiom,
 to avoid compiling and replaying that large development here. Our local
 build therefore proves Chen's theorem relative to this explicitly declared
 GRH axiom; linking a checked proof of the same GRH statement would discharge
 it. We do not claim that this repository has checked Alpöge's proof.
-Lean proves that our exact cutoff is strictly below exp(exp(12)). The earlier
+Lean proves that our exact cutoff is strictly below exp(exp(11.782)). The earlier
 H<29 and H≈30 theorems remain available.
 For every even natural number N at or above its cutoff, its statement is
 
 $$
-N\ge N_0=3^{145\,000}
+N\ge N_0=3^{119\,081}
 \quad\Longrightarrow\quad
 \exists p,q\in\mathbb N,\quad
 N=p+q,\quad p\text{ prime},\quad
 q\text{ prime or a product of two primes}.
 $$
 
-The exact-cutoff declaration is `ChenEffective.GRHSub12.chen_explicit`. See the
-[H<12 proof, complete budget and audit](research/chen-grh/NUMERICAL_CHEN_SUB12.md).
+The exact-cutoff declaration is `ChenEffective.GRHQuarterChen.chen_explicit`. See the
+[H<11.782 proof, complete budget and audit](research/chen-grh/NUMERICAL_CHEN_QUARTER.md).
 Its `original_chen` corollary has exactly the original
 `Goldbach.ChenTheorem` type. This checks that the numerical route proves
 the original existence statement. The standard-only H≈147 theorem has its
@@ -63,10 +64,13 @@ lower-count, triple-count or existence axioms. The final Chen audit permits
 exactly the named full Dirichlet GRH input and `propext`, `Classical.choice`, `Quot.sound`.
 See the [proof assembly and audit](research/chen-platt/README.md).
 
-The **H<12 existence theorem is complete and audited**. At the exact cutoff
-3^145000, the actual weighted lower count has coefficient 2.01025 and the
-complete corrected triple upper count has coefficient 4.010. The exact
-counting bridge leaves the positive representation margin 0.00525. The
+This is a certified minimum within the selected source-accuracy/counting package,
+not a claim of global optimality over all Chen methods.
+
+The **H<11.782 existence theorem is complete and audited**. At the exact cutoff
+3^119081, the actual weighted lower count has coefficient 2.00825 and the
+complete corrected triple upper count has coefficient 4.015. The exact
+counting bridge leaves the positive representation margin 0.00075. The
 older 0.67 counting theorem retains its larger cutoff. See the
 [GRH route](research/chen-grh/README.md).
 The prior Platt-only reports record historical proof snapshots.
@@ -87,6 +91,21 @@ The [parameter study](research/chen-grh/JOINT_PARAMETER_STUDY.json) is
 numerical exploration; only the separately kernel-checked bounds enter
 the theorem.
 
+The [specialized finite-scale budget study](research/chen-grh/SPECIALIZED_FINITE_SCALE_STUDY.md)
+examines H = 11, 10, 9 and 8. Its positive H10 packages require unproved
+analytic improvements; they are not inputs to the checked H<11.782 result.
+
+The [H10 finite-band experiment](research/chen-grh/H10_FINITE_BAND_EXPERIMENT.md)
+adds checked prime-interval, medium-prime mass and variable Rankin lemmas,
+plus exact coverage and conditional budgets for 199 bands. The interior
+Chen estimates remain unproved; this does not establish the H10 target.
+
+The [quarter-moment tail assembly](research/chen-grh/QUARTER_TAIL_PROGRESS.md)
+certifies the finite exponent-1/4 moments through four million and connects
+them to the actual source and medium-prime tails. The checked absolute
+tail still has a 26 L^4 prefactor after normalization; the proposed 16 L
+and the sharper weighted distribution remain research obligations.
+
 ## Approach
 
 Write
@@ -95,50 +114,41 @@ $$
 L=\log N,\qquad M(N)=\mathfrak S(N)\frac{N}{L^2}.
 $$
 
-At the exact cutoff $N_0=3^{145000}$, the complete inequalities are
+At the exact cutoff $N_0=3^{119081}$, the complete inequalities are
 
 $$
-W(N)\ge2.01025M(N),\qquad T(N)\le4.010M(N),
+W(N)\ge2.00825M(N),\qquad T(N)\le4.015M(N),
 $$
 
 and the corrected finite counting bridge gives
 
 $$
-R(N)\ge W(N)-\frac12T(N)\ge0.00525M(N)>0.
+R(N)\ge W(N)-\frac12T(N)\ge0.00075M(N)>0.
 $$
 
 1. **Prime products and pre-sieving.** The kernel-checked reciprocal-prefix
    certificates and proved analytic tail give the relative Goldbach product
-   bound with allowance 1/4000 from 4,000,000 onward. Certified counts on
-   148 intervals prove a reciprocal-square-root prime moment at most
-   337.2269 < 340, giving density divisor moment at most exp(350).
-   With C = floor(N^(29/5000)), the complete truncation envelope is paid:
+   bound from 4,000,000 onward. The 508 quarter-moment certificates give
+   both required exponent-1/4 divisor moments with logarithmic cap 17.99.
+   With C = floor(N^(13/2500)), the actual Rosser counts and complete
+   truncation errors are paid for L >= 130690.
 
-   $$
-   336L^6\exp(350+\tfrac12\log2-29L/10000)\le10^{-12}
-   \qquad(L\ge159000).
-   $$
-
-2. **Actual lower count.** The source-mass error coefficient improves from
-   187.5/r to 62.5/r for r >= 10, using allowance 1/50
-   at r = 3300. The power-decaying theta estimate gives reciprocal-prime
-   interval error 1/L^2 instead of 100/L^2.
-   Proved weighted AP distribution at level N^0.497, the truncated lower
-   sieve, and the complete medium-prime aggregate give the stated bound on
-   W(N). The medium integral uses 65,000 cells and retains the aggregate
-   allowance 1.135. The weighted distribution sum retains its stronger
-   GRH exponent, paying 3.2e17 L^7 exp(-L/500) <= 10^-12.
+2. **Actual lower count.** The source upper-mass allowance is 21/1000,
+   using r = 2977 and the proved error coefficient 62.5/r. The actual
+   weighted AP distribution at level N^(1241/2500), truncated lower sieve,
+   and complete medium-prime aggregate give the stated lower count.
+   The medium loss is 1.139, base loss 0.063, and endpoint loss 1/20000.
+   The existing GRH AP estimate is retained, with exponent saving 0.0026.
 
 3. **Complete triples.** The two-term Selberg expansion gives denominator
-   coefficient K = 8.049 at radius epsilon = 3/1000. A width-sensitive,
-   symbolic 200,000-cell prime-pair grid gives genuine main coefficient
-   0.498. Retaining the actual interval error reduces the proxy coefficient
-   to 0.49664. The square-error allowance is rebalanced to M(N)/1000.
-   The complete distribution remainder and complementary triples give
+   coefficient K = 8.059 at radius epsilon = 9/2500. The symbolic
+   prime-pair grid gives genuine main coefficient 0.498, with proxy
+   coefficient 0.49674. The complete distribution remainder and
+   complementary triples give
 
    $$
-   T(N)\le\left(8.049\cdot0.498+\frac1{1000}
-     +\frac1{4000}\right)M(N)<4.010M(N).
+   T(N)\le\left(8.059\cdot0.498+\frac1{1000}
+     +\frac1{3000}\right)M(N)<4.015M(N).
    $$
 
 4. **Final assembly.** The positive representation count proves prime plus
@@ -146,7 +156,7 @@ $$
    The literal original Goldbach.ChenTheorem statement is recovered as a
    corollary. The final audit checks the transitive proof dependencies.
 
-See the [complete numerical proof notes](research/chen-grh/NUMERICAL_CHEN_SUB12.md).
+See the [complete numerical proof notes](research/chen-grh/NUMERICAL_CHEN_QUARTER.md).
 The older H<12.2, H<12.5, H<13, H<13.37, H<14, H<29, and standard-only routes remain available. The original
 0.67 counting theorem keeps its larger cutoff.
 
@@ -212,17 +222,17 @@ receipts or JavaScript results do not replace kernel checking. See the
 [certificate build notes](research/chen-platt/README.md#build-time-and-memory).
 
 The complete numerical lower and triple estimates are assembled in the
-[H<12 Chen theorem](research/chen-grh/NUMERICAL_CHEN_SUB12.md). Its final audit
+[H<11.782 Chen theorem](research/chen-grh/NUMERICAL_CHEN_QUARTER.md). Its final audit
 and literal recovery of the original implicit statement are checked.
 
 ## Verification and scope
 
 The checked upgrade uses Lean 4.34.1 and Mathlib revision
 `d13f23b723b8a846827a245b89c10fc7d3f11612`.
-The [current proof and audit commands](research/chen-grh/NUMERICAL_CHEN_SUB12.md#verification-and-reproduction)
-record the completed H<12 Chen proof. See the
-[final audit report](research/chen-grh/FINAL_GRHSub12_CHEN_AUDIT.json).
-The earlier H<12.2, H<12.5, H<13, H<14, and Platt-only reports are historical snapshots.
+The [current proof and audit commands](research/chen-grh/NUMERICAL_CHEN_QUARTER.md#verification-and-reproduction)
+record the completed H<11.782 Chen proof. See the
+[final audit report](research/chen-grh/FINAL_GRH_QUARTER_CHEN_AUDIT.json).
+The earlier H<12, H<12.2, H<12.5, H<13, H<14, and Platt-only reports are historical snapshots.
 The [OpenAI provenance and build guide](OpenAI/README.md) records the pins,
 licenses, source mapping, and transitive proof audits.
 
@@ -241,11 +251,11 @@ of the broader inherited developments:
 ```sh
 node OpenAI/tools/verify-sources.mjs
 node OpenAI/tools/audit-sources.mjs --dirichlet-proved
-node --expose-gc OpenAI/tools/build-source.mjs AuditGRHSub12Chen
+node --expose-gc OpenAI/tools/build-source.mjs AuditGRHQuarterChen
 ```
 
 For the reproducible hash report, follow the
-[GRH audit commands](research/chen-grh/NUMERICAL_CHEN_SUB12.md#verification-and-reproduction),
+[GRH audit commands](research/chen-grh/NUMERICAL_CHEN_QUARTER.md#verification-and-reproduction),
 which set the build tag and serial memory settings before running the final
 source/object audit. The report records a completed local check; it does not
 replace kernel checking on a fresh source checkout.

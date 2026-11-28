@@ -1,6 +1,21 @@
-# Full Dirichlet GRH route: completed H < 12 Chen theorem
+# Full Dirichlet GRH route: completed H < 11.782 Chen theorem
 
-The current exact cutoff is **3^145000**, with H approximately
+The current exact cutoff is **3^119081**, with H approximately **11.78160704043**.
+Lean proves the strict comparison with exp(exp(11.782)). The exact theorem
+is `ChenEffective.GRHQuarterChen.chen_explicit`; its `original_chen` corollary
+has exactly the original `Goldbach.ChenTheorem` type. The actual weighted
+lower and complete triple coefficients are 2.00825 and 4.015, leaving margin
+3/4000. Full Dirichlet GRH is the sole added axiom; no native_decide or new dependency is used.
+
+See [the complete proof and budget](NUMERICAL_CHEN_QUARTER.md),
+[the final theorem and audit](AuditGRHQuarterChen.lean), and
+[the source/object report](FINAL_GRH_QUARTER_CHEN_AUDIT.json).
+The 508 quarter-moment certificates are reused. The minimum is certified
+within this source-accuracy/counting package, without a global optimality claim.
+
+## Earlier H < 12 theorem
+
+The earlier exact cutoff is **3^145000**, with H approximately
 **11.97853684902** and a Lean proof that it is below exp(exp(12)).
 The exact theorem is ChenEffective.GRHSub12.chen_explicit. Its original_chen
 corollary has exactly the original Goldbach.ChenTheorem type.
@@ -18,6 +33,29 @@ certificates total less than 0.7 MB of source; all are checked in the Lean
 kernel. The earlier large finite campaign is reused (15+ hours for its
 initial source build). Complete certificate-inclusive audits have required
 20–22 GiB of private committed memory for Lean alone.
+
+## Specialized finite-scale research study
+
+See [the four-scale study](SPECIALIZED_FINITE_SCALE_STUDY.md),
+[its numerical requirements](SPECIALIZED_FINITE_SCALE_STUDY.json), and
+[the checked arithmetic contracts](GRHFiniteScaleBudget.lean).
+The H10 packages are research targets with explicit unproved analytic
+obligations. The H10 target remains unproved.
+
+## H10 finite-band experiment
+
+[The experiment](H10_FINITE_BAND_EXPERIMENT.md) gives 199 exact logarithmic
+bands and conditional positive budgets. Retained prime intervals, the
+actual medium-prime reciprocal mass, and variable Rankin truncation are
+proved in Lean. The new analytic tail/distribution packages and actual
+interior Chen counts remain unproved. These conditional bands do not establish H = 10.
+
+See [the quarter-moment and tail progress](QUARTER_TAIL_PROGRESS.md) and
+[its component verification](QUARTER_TAIL_COMPONENT_CHECK.json). The 508
+kernel certificates prove the exponent-1/4 divisor moments with logarithmic
+cap 17.99. They are assembled into the actual source and medium-prime
+tails. Their current normalized bound has prefactor 26 L^4; no 16 L
+bound or Chen theorem at H = 10 is claimed.
 
 ## Earlier H < 12.2 development
 

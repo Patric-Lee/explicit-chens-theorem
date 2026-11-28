@@ -1,0 +1,214 @@
+{
+  "classification": "H10_BAND_COMPONENTS_KERNEL_CHECKED_INTERIOR_CHEN_UNPROVED",
+  "checkedAt": "2026-11-28T01:02:59.706Z",
+  "toolchain": "leanprover/lean4:v4.34.1",
+  "manifestHash": "f03cd56239c709215270058df0be3099c3be35007b6f387687a68aa17a525355",
+  "command": "Pinned Lean kernel checks; quarterassembly source campaign for shared interfaces, direct lean -j1 -M8192 checks for GRHH10BandCover and GRHH10BandBudget.",
+  "allowedComponentAxioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "modules": [
+    {
+      "module": "GRHH10PrimeIntervals",
+      "sourceHash": "e53f0f1f2f00aed22b4f537cd93b32aac0bc8110e16a9ee078142e3ab3384baf",
+      "objectHash": "0b3eeea94a7aedf5ef3733b1dfc4b034561e8644601132cc845162a328e4c33f",
+      "checkedRoots": [
+        "retained_prefix",
+        "retained_scaled_prefix",
+        "retained_interval",
+        "actual_medium_prime_mass",
+        "old_cutoff_log_cap",
+        "log_lower_of_double_exp_ten"
+      ],
+      "axiomSets": [
+        [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      ],
+      "log": "C:\\Users\\89270\\Desktop\\Vibe\\goldbach-lean\\research\\chen-grh\\GRHH10PrimeIntervals.lean:49:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nC:\\Users\\89270\\Desktop\\Vibe\\goldbach-lean\\research\\chen-grh\\GRHH10PrimeIntervals.lean:108:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n'ChenEffective.H10Band.retained_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ChenEffective.H10Band.retained_scaled_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ChenEffective.H10Band.retained_interval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ChenEffective.H10Band.actual_medium_prime_mass' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ChenEffective.H10Band.old_cutoff_log_cap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ChenEffective.H10Band.log_lower_of_double_exp_ten' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "importedObjects": [
+        {
+          "module": "DusartPort.Application",
+          "objectHash": "b3c9478fd13e5c7e8ef8dbfc264a9e26f3739260f4bf63d0cc81c5e85b95f098",
+          "provenance": "saved HSub12 checked ledger"
+        },
+        {
+          "module": "MathlibNt.SieveTheory.Arithmetic.PrimeReciprocalLogScale",
+          "objectHash": "0591f1072b15af4dc2e34f7bd835b5ad9c5df1b6a32e62ce718f27ac29264b40",
+          "provenance": "saved HSub12 checked ledger"
+        },
+        {
+          "module": "MathlibNt.SieveTheory.Switching.SourceSieve",
+          "objectHash": "00c49741743d03e0d13dd6c1511e9f0ce0d1bc32c8e99eb209ce0df408f9a2de",
+          "provenance": "saved HSub12 checked ledger"
+        }
+      ]
+    },
+    {
+      "module": "GRHH10Rankin",
+      "sourceHash": "9b378cf8a53a268ab31c1ee726cd255b9f3cf515c4bf6af6e42e97a47916f960",
+      "objectHash": "f894caa6922f733b0a16f96eb194dede45ae6959aba9f53f38e2bba4d23c9073",
+      "checkedRoots": [
+        "preSieve_errSum_truncated_sigma",
+        "preSieve_rem_truncated_moments_sigma",
+        "squarefree_divisor_moment_exact_log"
+      ],
+      "axiomSets": [
+        [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      ],
+      "log": "C:\\Users\\89270\\Desktop\\Vibe\\goldbach-lean\\research\\chen-grh\\GRHH10Rankin.lean:131:19: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead\nC:\\Users\\89270\\Desktop\\Vibe\\goldbach-lean\\research\\chen-grh\\GRHH10Rankin.lean:132:19: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead\n'ChenEffective.H10Band.preSieve_errSum_truncated_sigma' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ChenEffective.H10Band.preSieve_rem_truncated_moments_sigma' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ChenEffective.H10Band.squarefree_divisor_moment_exact_log' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "importedObjects": [
+        {
+          "module": "GRHTruncatedPreSieve",
+          "objectHash": "69c0b1e57a4e6a0c96a0117d33a253ad5f88fa0645030ad05044efaaa46b5670",
+          "provenance": "saved HSub12 checked ledger"
+        },
+        {
+          "module": "GRHDivisorMoments",
+          "objectHash": "7d8b3a99aea3a036ef3529d48c181a863b82231ce81046e6049bb215726c5df1",
+          "provenance": "saved HSub12 checked ledger"
+        }
+      ]
+    },
+    {
+      "module": "GRHH10MediumMass",
+      "sourceHash": "72ab860be640a39c37de614f4a2375a8b6d3196f94ed1817c03118a19859d706",
+      "objectHash": "3a88e45437829a17ceedd30b48ec284063f7612b6662ccc42fcdd0840d88fabf",
+      "checkedRoots": [
+        "intervalError_small",
+        "actual_medium_prime_mass_cap",
+        "medium_aggregate_of_reciprocal_majorant"
+      ],
+      "axiomSets": [
+        [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      ],
+      "log": "'ChenEffective.H10Band.intervalError_small' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ChenEffective.H10Band.actual_medium_prime_mass_cap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ChenEffective.H10Band.medium_aggregate_of_reciprocal_majorant' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "importedObjects": [
+        {
+          "module": "GRHH10PrimeIntervals",
+          "objectHash": "0b3eeea94a7aedf5ef3733b1dfc4b034561e8644601132cc845162a328e4c33f",
+          "provenance": "refreshed kernel-checked H10 interface"
+        }
+      ]
+    },
+    {
+      "module": "GRHH10BandCover",
+      "sourceHash": "7a421a7d11daf19bc846ca266ecde2b84f5fcd47e013fc4e4b8bce7e4df46765",
+      "objectHash": "1edcd9f962fd015028fbb3962142ae3ce1d7efc07e5fde92b554ddeb0c1f6069",
+      "checkedRoots": [
+        "endpoints_checked",
+        "log_band_cover",
+        "paste_saved_cutoff"
+      ],
+      "axiomSets": [
+        [],
+        [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      ],
+      "log": "'ChenEffective.H10Band.endpoints_checked' does not depend on any axioms\r\n'ChenEffective.H10Band.log_band_cover' depends on axioms: [propext, Classical.choice, Quot.sound]\r\n'ChenEffective.H10Band.paste_saved_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "importedObjects": [
+        {
+          "module": "GRHH10PrimeIntervals",
+          "objectHash": "0b3eeea94a7aedf5ef3733b1dfc4b034561e8644601132cc845162a328e4c33f",
+          "provenance": "refreshed kernel-checked H10 interface"
+        }
+      ]
+    },
+    {
+      "module": "GRHH10BandBudget",
+      "sourceHash": "f23075f843c9801bd674771213084931a5b0257b352d69c248a02e86c9cffe52",
+      "objectHash": "87c431752983231183fcdf77fafd5933c4d3d7c90dee081942d7dfb1a266e799",
+      "checkedRoots": [
+        "band_coefficients_checked",
+        "positive_of_band_counts"
+      ],
+      "axiomSets": [
+        [],
+        [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      ],
+      "log": "'ChenEffective.H10Band.band_coefficients_checked' does not depend on any axioms\r\n'ChenEffective.H10Band.positive_of_band_counts' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "importedObjects": [
+        {
+          "module": "GRHH10BandCover",
+          "objectHash": "1edcd9f962fd015028fbb3962142ae3ce1d7efc07e5fde92b554ddeb0c1f6069",
+          "provenance": "new component check"
+        },
+        {
+          "module": "GRHFiniteScaleBudget",
+          "objectHash": "ee6b0bb273e45917239d14d436f12c41f03fee93593c5bf8db2fd7abf4126d8a",
+          "provenance": "prior arithmetic check"
+        }
+      ]
+    }
+  ],
+  "scope": "Actual retained prime interval and harmonic-mass bounds, variable Rankin truncation, exact Euler identity, band coverage and conditional coefficient arithmetic only. No interior Chen representation theorem is proved."
+}
